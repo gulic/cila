@@ -42,7 +42,8 @@ CEPSS = $(CJPGS:.jpg=.eps)
 
 cubierta: cubierta.tex $(CEPSS)
 	latex cubierta
-	dvips -o cubierta.ps cubierta.dvi
+	dvips -o Cubiertas_A3.ps cubierta.dvi
+	ps2pdf Cubiertas_A3.ps Cubiertas_A3.pdf
 
 book.ind: $(FILES)
 	latex book
@@ -56,21 +57,25 @@ all: $(FILES) $(EPSS) $(EJEMPLOS) book.ind book.bbl
 	latex book
 	dvips -o $(NAME).ps book.dvi
 
+pdf: all
+	ps2pdf $(NAME).ps $(NAME).pdf
+
 html: $(FILES) $(EPSS)
 	latex2html main
 
-splitps: Libro_CILA.ps
-	echo "quit" | gs -sDEVICE=pswrite -sOutputFile=Libro_CILA_%03d.ps Libro_CILA.ps
+splitps: $(NAME).ps
+	echo "quit" | gs -sDEVICE=pswrite -sOutputFile=$(NAME)_%03d.ps $(NAME).ps
 
-splitpdf:
-	for f in `ls Libro_CILA_*.ps`; do \
+splitpdf: splitps
+	for f in `ls $(NAME)_*.ps`; do \
 	rm -f $$f.pdf; \
 	ff=`echo "$$f" | cut -f1 -d.`; \
 	ps2pdf $$ff.ps $$ff.pdf; \
 	done
 
-splitcls:
-	rm -f Libro_CILA_*.ps
+clean_splits:
+	rm -f $(NAME)_*.ps
+	rm -f $(NAME)_*.pdf
 
 dist: $(FILES) $(IMAGES) $(EJEMPLOS)
 	mkdir $(DISTDIR)
@@ -89,7 +94,7 @@ install: $(FILES) $(IMAGES) $(EJEMPLOS) $(NAME).ps
 	#install -m 644 ejemplos/*.* $(DOCSDIR)/$(PACKAGE)/ejemplos
 	#mv -fv ejemplos/.CVS ejemplos/CVS
 
-clean:
+clean: clean_splits
 	rm -f *.aux *.log *.dvi *.idx *.ilg *.ind *.toc *.bbl \
 	      *.blg *.lot *.lof *.lde *.exa
 	rm -rf main
