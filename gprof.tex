@@ -1,0 +1,45 @@
+%Autor: Carlos Paramio
+
+\chapter{GNU gprof}\label{gprof}
+
+Puede  sernos de  mucha  utilidad que  ejecutemos  nuestro software  a
+través de un  {\em profiler}, como puede ser {\tt  gprof}, ya que Éste
+nos  proporcionará suficiente  información  para  detectar cuellos  de
+botella en nuestro programa, que serín susceptibles de optimizar.
+
+\section{El profiler gprof}
+
+Como ya  se ha dicho,  a menudo  deseamos optimizar el  rendimiento de
+nuestro  programa,  pero  en determinadas  ocasiones  resulta  difícil
+conocer dónde  están localizados los  cuellos de botella.  Bien podría
+ser una función que consuma una  gran cantidad de tiempo de ejecución,
+como alguna otra que, aunque  muy rápida, se ejecuta demasiadas veces.
+Esto nos  permitirá optimizar  de manera adecuada  nuestra aplicación,
+sustituyendo por macros o funciones {\tt inline} aquellas más llamadas
+(para eliminar el retardo de resolución  de la llamada) y mejorando el
+código en sí.
+
+Para   compilar  nuestra   aplicación   de  forma   que  gprof   pueda
+posteriormente extraer toda esta  información, simplemente añadimos el
+parámetro {\tt -pg} al compilador  GCC. Una vez hecho esto, procedemos
+a ejecutar  el programa en  sí, y tras  salir correctamente de  él (al
+finalizar {\tt main()},  o tras un {\tt exit()}),  observaremos que se
+ha generado un nuevo fichero en  el directorio de trabajo llamado {\tt
+gmon.out}. Sólo nos queda pasar este archivo a través de gprof, con el
+siguiente formato: \\
+
+\begin{verbatim}
+gprof <opciones> <ejecutable> <gmon.out>
+\end{verbatim}
+
+En  nuestro  sempiterno  ejemplo  de  programa,  haríamos  {\tt  gprof
+miprograma gmon.out}.
+
+Hay una opción que merece la  pena destacar, que nos muestra el código
+fuente  de nuestro  programa junto  con un  conteo de  ejecuciones por
+línea. Esta opción se activa con el parámetro {\tt -A}.
+
+Una  vez  más,  ampliaremos  nuestros  conocimientos  acerca  de  esta
+herramienta usando el comando {\tt info  gprof}, o bien con la lectura
+del manual de GNU \cite{gprof}.
+
