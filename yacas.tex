@@ -43,7 +43,9 @@ funciones para probar  lo que queremos programar,  para luego escribir
 un script.  Para entrar al intérprete  de Yacas basta con  ejecutar el
 comando  {\tt  yacas}  en  una  consola o  terminal.  Para  salir  del
 intérprete puedes  pulsar {\tt Control-C}  o bien ejecutar  la función
-\verb+quit();+.
+\verb+quit();+. Pulstar  {\tt Control-C} también es  útil para detener
+inmediatamente la  ejecución del intérprete  de Yacas (o de  un script
+escrito para Yacas).
 
 \begin{verbatim}
 $ yacas
@@ -57,11 +59,11 @@ To see example commands, keep typing Example();
 In>
 \end{verbatim}
 
-También   existe  una   interfaz  gráfica   llamada  Porteus.   Si  la
-tienes  instalada  deberías  poder  iniciarla  ejecutando  el  comando
-\verb+proteusworksheet+. Esta  utilidad te  proporcioa un  entorno más
-cómodo e integrado  en el que puedes probar código  en el intérprete e
-ir escribiendo un script en el editor que incluye.
+También  existe una  interfaz gráfica  llamada Proteus.  Si la  tienes
+instalada  deberías   poder  iniciarla  ejecutando  el   comando  {\tt
+proteusworksheet}. Esta utilidad te proporcioa un entorno más cómodo e
+integrado  en el  que  puedes  probar código  en  el  intérprete e  ir
+escribiendo un script en el editor que incluye.
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=0.7\textwidth]{imagenes/proteus.eps}
@@ -76,11 +78,11 @@ de programar en  Yacas veremos que el punto y  coma hay que escribirlo
 siempre,  de modo  que es  mejor acostumbrarse  a ponerlo  para evitar
 posteriores dolores de cabeza.
 
-Para ir abriendo  el apetito sigue la sugerencia de  Yacas: ejecuta la
-función  \verb+Ejample();+ varias  veces. Por  supuesto no  tienes que
-teclear el comando todas las veces, ya que Yacas cuenta con edición de
-línea al estilo de GNU Emacs (utiliza GNU readline). Esto quiere decir
-que todos  los comandos  que ejecutes  en Yacas  se almacenarán  en un
+Para  ir abriendo  el apetito  sigue la  sugerencia de  Yacas: ejecuta
+la  función \verb+Ejample();+  varias  veces. Por  supuesto no  tienes
+que  teclear el  comando  todas las  veces, ya  que  Yacas cuenta  con
+edición  de línea  al  estilo  de GNU  Emacs.  Esto  quiere decir  que
+todos  los  comandos  que  ejecutes  en Yacas  se  almacenarán  en  un
 historial, y para repetirlos puedes  recuperarlos pulsando la tecla de
 cursor  hacia arriba.  Este  historial queda  guardado  en el  fichero
 \verb+.yacas_history+ en tu directorio  personal. Veamos la salida que
@@ -133,9 +135,8 @@ lenguajes del mundo de Un*x, es sensible a las mayúsculas; esto es, no
 es lo mismo \verb+esto+ que \verb+Esto+ ni que \verb+eSTO+.
 
 Estos ejemplos ilustran  lo fácil que es obtener  buenos resultados en
-cálculos  simbólicos  con  Yacas.  Sin embargo  es  probable  que  los
-resultados  de  los siguientes  ejemplos  no  te resulten  fáciles  de
-interpretar:
+cálculos  simbólicos  con  Yacas.  Sin  embargo  es  probable  que  el
+resultado del siguiente ejemplo no te resulte fácil de interpretar:
 
 \begin{verbatim}
 In> Integrate(x) ((x-y)^3)
@@ -286,21 +287,38 @@ In> Area (3, 5);
 Out> 47.1238898035;
 \end{verbatim}
 
-Cuando  definimos una  función en  Yacas, la  parte a  la derecha  del
-operador de asignación \verb+:=+ no se  evalúa sino que se asigna como
-expresión a la  función. Si quieres que Yacas evalúe  la parte derecha
-de  la  definición de  una  función  puedes  forzarlo con  la  función
-\verb+Eval()+. Esto es  útil cuando la evaluación de  la parte derecha
-resulta computacionalemente costosa, por ejemplo  en el caso de series
-de Taylor.  Si evaluamos una  expansión en  series de Taylor  antes de
-asignarla a la función, la máquina no tendrá que calcular la expansión
-cada vez que la función sea llamada.
+Al definir  una función, Yacas no  evalúa la parte de  la derecha sino
+que se asigna  como expresión simbólica. Esto puede  no interesarte en
+casos como el que ilustra el siguiente ejemplo:
 
 \begin{verbatim}
-In> f(x) := Eval (Taylor (x, 0, 9) Sin(x))
+In> f(x) := x^5;
 Out> True;
-In> f(x)
-Out> x-x^3/6+x^5/120-x^7/5040+x^9/362880;
+In> g(x) := D(x) f(x);
+Out> True;
+In> g(x)
+Out> 5*x^4;
+In> g(2)
+Out> 5*x^4;
+\end{verbatim}
+
+Sería  deseable que  \verb+g(2)+  devolviera el  valor  de la  función
+\verb+g(x)+  cuando  \verb+x+  vale  $2$,   pero  no  lo  hace  porque
+\verb+g(x)+ almacena la expresión  \verb+5*x^4+ sin ninguna referencia
+a la  necesidad de evaluarla en  un valor determinado. Sin  embargo si
+indicamos a  Yacas que  evalúe la  expresión antes  de asignarla  a la
+función  (mediante  \verb+Eval()+)  podremos  pedirle  que  evalúe  la
+función \verb+g(x)+ en valores determinados. Esto que parece un follón
+es  en realidad  simple, el  siguiente ejemplo  muestra el  código que
+funciona como es de esperar:
+
+\begin{verbatim}
+In> g(x) := Eval (D(x) f(x));
+Out> True;
+In> g(x)
+Out> 5*x^4;
+In> g(2)
+Out> 80;
 \end{verbatim}
 
 \section{Listas}
@@ -381,18 +399,6 @@ Out> True;
 \caption{Representación gráfica con GNUplot desde Yacas}
 \end{figure}
 
+\section{Poturrí de funciones útiles}
 
-
-\section{Rizando el rizo}
-
-\begin{verbatim}
-In> f(x) := x^5;
-Out> True;
-In> f1(x) := D(x) f(x)
-Out> True;
-In> Eval (Subst(x, 1) f(x))
-Out> 1;
-In> Eval (Subst(x, 1) f1(x))
-Out> 5;
-\end{verbatim}
-
+\section{Un ejemplo práctico}
