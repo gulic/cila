@@ -41,7 +41,7 @@
 
  Módulo III: Edición de gráficos y documentos
  1. OpenOffice                          (Félix,      1)
- 2. HTML: lenguaje, ¿bluefish, quanta?  (Félix,    1.5)
+ 2. HTML                                (Félix,    1.5)
  3. Edición de gráficos:
     - DIA                               (Félix,   0.75)
     - QCad                              (Félix,   0.75)
@@ -52,9 +52,8 @@
  Módulo IV:  Herramientas para matemáticas
  1. Octave y SciLab                     (Alberto, 1.25)
  2. GNUplot                             (Alberto, 0.75)
- 3. R                                   (Miguev,   0.5)
- 4. Yacas                               (Miguev,   0.5)
- 5. Python                              (Miguel,     1)
+ 3. R                                   (Miguev,     1)
+ 4. Yacas                               (Miguev,     1)
 
  Módulo V:   Herramientas de programación
  1. Editores: 
@@ -70,15 +69,17 @@
 
 
  Versión resumida de Agosto 2002:
- 1. Historia y conceptos de GNU/Linux                            (Félix,   0.5)
- 2. Intérprete de comandos                                       (Félix,     1)
+ 1. Historia y conceptos de GNU/Linux                            (Félix,  0.25)
+ 2. Intérprete de comandos                                       (Félix,  0.75)
  3. El entorno X-Window. Gestores de ventanas                    (Jesús,   0.5)
- 4. El escritorio GNOME                                          (Jesús,     1)
- 5. El escritorio KDE                                            (Jesús,     1)
- 6. Herramientas de red de GNU/Linux                             (Alberto,   1)
- 7. Herramientas de red de GNU/Linux                             (Alberto, 1.5)
- 8. Documentación y sistemas de ayuda                            (Miguel,    1)
- 9. Aplicaciones diversas                                        (Miguel,  1.5)
+ 4. El escritorio GNOME                                          (Jesús,   0.5)
+ 5. El escritorio KDE                                            (Félix,   0.5)
+ 6. Documentación y sistemas de ayuda                            (Félix,   0.5)
+ 7. Herramientas de red: Navegadores y correo                    (Alberto,   2)
+ 8. Herramientas de red: SSH, FTP                                (Jesús,     1)
+ 9. Aplicaciones para gráficos: DIA, Qcad, GIMP                  (Miguel,    1)
+10. Aplicaciones para documentos: LaTeX, LyX, OpenOffice         (Miguel,    1)
+11. Instalar programas compilando: VideoLan Client               (Miguel,    1)
  
 
  Versión resumida de Octubre 2002:

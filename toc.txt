@@ -39,7 +39,6 @@
  2. GNUplot                                                                <== Alberto
  3. R                                                                      <== Miguel 聲gel
  4. Yacas                                                                  <== Miguel 聲gel
- 5. Python                                                                 <== Miguel 聲gel
 
  M鏚ulo V:   Herramientas de programaci鏮
  1. Editores: VI, VIM y GNU Emacs                                          <== Carlos C. y Miguel 聲gel
