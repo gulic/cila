@@ -10,7 +10,7 @@ NAME = Libro_CILA
 .PHONY: clean
 PNGS = $(wildcard imagenes/*.png)
 JPGS = $(wildcard imagenes/*.jpg)
-EPSS = $(JPGS:.jpg=.eps)
+EPSS = $(JPGS:.jpg=.eps) $(PNGS:.png=.eps)
 
 TEXS = $(wildcard *.tex)
 
