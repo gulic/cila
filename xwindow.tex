@@ -3,7 +3,7 @@
 \chapter{El entorno X-Window}
 
 
-\section{Qué es X-Window}\index{X}
+\section{¿Qué es X-Window?}\index{X} 
 
 En algunos  sistemas operativos  el entorno gráfico,  también conocido
 como  {\em  GUI  (Graphic  User Interface)}\index{GUI}  es  una  parte
@@ -14,14 +14,15 @@ el  entorno  gráfico  no  sólo  no  suele  ser  sustituible  sino  que
 sencillamente el sistema operativo no puede funcionar sin él. La mayor
 parte  de los  sistemas operativos  que cumplen  esta descripción  son
 sistemas jóvenes, desarrollados recientemente, con la clara convicción
-de que el entorno gráfico era la gran panacea. El tiempo ha demostrado
-que  estaban parcialmente  equivocados.  Disponer de  GUI facilita  el
-acceso del gran público a la informática, pero resta mucha flexibildad
-a los profesionales y/o  usuarios avanzados, cuyas necesidades siempre
-van un paso por delante de las soluciones aportadas por el GUI. Prueba
-ello es que algunos sistemas netamente gráficos han comenzado a cuidar
-su interfaz  de comandos con el  objetivo de poder introducirse  en el
-segmento de los servidores y estaciones de trabajo profesionales.
+de  que  el  entorno  gráfico  era  la  gran  panacea.  El  tiempo  ha
+demostrado  que  estaban  parcialmente equivocados.  Disponer  de  GUI
+facilita  el acceso  del gran  público  a la  informática, pero  resta
+mucha flexibilidad  a los profesionales y/o  usuarios avanzados, cuyas
+necesidades  siempre  van  un  paso  por  delante  de  las  soluciones
+aportadas por  el GUI. Prueba  ello es que algunos  sistemas netamente
+gráficos  han  comenzado a  cuidar  su  interfaz  de comandos  con  el
+objetivo  de poder  introducirse en  el segmento  de los  servidores y
+estaciones de trabajo profesionales.
 
 La bases de los sistemas operativos UNIX actuales se establecieron por
 Bell Laboratories en torno a 1970. En aquella época los ordenadores no
@@ -35,69 +36,72 @@ en  el  sistema. Por  lo  tanto  puede  ser sustituido  según  nuestra
 conveniencia.
 
 El entorno  gráfico más ampliamente  extendido en el  mundo UNIX/Linux
-son las X-Window, conocidas comúnmente como {\em X}\index{X} a secas.
+son las {\sf  X-Window}, conocidas comúnmente como  {\sf X}\index{X} a
+secas.
 
-\subsection{La arquitectura de las X}
+\subsection{La arquitectura de las X} 
 
-Las    X   presentan    una   arquitectura    (Figura   \ref{xwindow})
+Las  {\sf   X}  presentan  una  arquitectura   (Figura  \ref{xwindow})
 cliente/servidor que  en muchos  casos ha sido  alabada pero  en otros
 muchos criticada.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=\textwidth]{imagenes/xwindow.eps}
-\caption{Arquitectura cliente/servidor del sistema X-Window}\label{xwindow}
+\caption{Arquitectura cliente/servidor del sistema X-Window}
+\label{xwindow}
 \end{figure}
 
-La arquitectura  de las  X se divide  en dos  elementos fundamentales.
-Por  un  lado  el  {\em servidor  X}\index{servidor  X}  encargado  de
-gestionar  el  uso  de  los dispositivos  de  salida  (p.ej.  tarjetas
-gráficas) y de  los dispositivos de entrada  (p.ej. teclados, ratones,
-tabletas digitalizadoras,  etc). Por el  otro lado, los  {\em clientes
-X}\index{cliente X}  nombre con  el que  se conoce a  cada una  de las
-aplicaciones que hacen uso del sistema X. Las pulsaciones de tecla, el
-movimiento  del ratón  o  cualquier  otra acción  del  usuario en  los
-dispositivos de entrada es detectada  por servidor y transferida a los
-clientes. De la misma manera  los clientes transfieren al servidor las
-peticiones de  operaciones a realizar  sobre el dispositivo  de salida
-(p.ej.  trazar un  línea  en  pantalla, dibujar  un  punto, volcar  un
-bitmap,  etc).  La comunicación  entre  cliente  y servidor  sigue  un
+La  arquitectura   de  las  {\sf   X}  se  divide  en   dos  elementos
+fundamentales.  Por  un lado  el  {\em  servidor X}\index{servidor  X}
+encargado de  gestionar el uso de  los dispositivos de salida  (p. ej.
+tarjetas gráficas) y de los  dispositivos de entrada (p. ej. teclados,
+ratones, tabletas  digitalizadoras, etc). Por  el otro lado,  los {\em
+clientes X}\index{cliente X} nombre con el que se conoce a cada una de
+las aplicaciones que hacen uso del sistema {\sf X}. Las pulsaciones de
+tecla, el movimiento del ratón o  cualquier otra acción del usuario en
+los dispositivos de entrada es  detectada por servidor y transferida a
+los clientes. De la misma  manera los clientes transfieren al servidor
+las  peticiones de  operaciones  a realizar  sobre  el dispositivo  de
+salida (p. ej.  trazar un línea en pantalla, dibujar  un punto, volcar
+un bitmap,  etc). La  comunicación entre cliente  y servidor  sigue un
 protocolo  estandarizado que  corre  sobre los  servicios  de red  del
 sistema. Esto permite  que los clientes no tengan por  qué estar en la
 misma máquina que  el servidor. Eso quiere decir que  podemos tener un
-servidor X en  nuestra máquina local a través del  que interactuar con
-clientes que se ejecutan de forma remota en otro ordenador,sin que por
-ello notemos  diferencia alguna. Aparte  de todo esto las,  X realizan
-ciertas optimizaciones en  los casos en los que cliente  y servidor se
-encuentran  en la  misma máquina.  Por ejemplo,  se permite  el acceso
-directo al hardware  de vídeo ignorando el protocolo  descrito, con lo
-que  se aprovechan  las características  de aceleración  3D de  muchas
-tarjetas  modernas. Con  ello las  X se  convierten en  una plataforma
-potente para ejecutar  aplicaciones exigentes desde un  punto de vista
-gráfico sin por ello perder su flexibilidad.
+servidor {\sf X} en nuestra máquina local a través del que interactuar
+con clientes que se ejecutan de forma remota en otro ordenador,sin que
+por ello notemos  diferencia alguna. Aparte de todo esto  las, {\sf X}
+realizan  ciertas optimizaciones  en los  casos en  los que  cliente y
+servidor se encuentran en la misma máquina. Por ejemplo, se permite el
+acceso directo al  hardware de vídeo ignorando  el protocolo descrito,
+con  lo que  se aprovechan  las características  de aceleración  3D de
+muchas tarjetas  modernas. Con ello las  {\sf X} se convierten  en una
+plataforma potente para ejecutar aplicaciones exigentes desde un punto
+de vista gráfico sin por ello perder su flexibilidad.
 
-Otra característica  interesante del  sistema X  es que  podemos tener
-varios servidores  en una  misma máquina,  donde cada  uno es  un {\em
-ente} independiente que utiliza sus  propios dispositivos de entrada y
-salida. Evidentemente no es habitual disponer de más de un monitor y/o
-teclado pero  en ocaciones  se pueden  utilizar servidores  sin salida
-gráfica. También es  posible que todos usen los  mismos dispositivos y
-que se habilite algún mecanismo  para que podamos conmutar entre ellos
-a voluntad.
+Otra característica  interesante del  sistema {\sf  X} es  que podemos
+tener varios  servidores en una  misma máquina,  donde cada uno  es un
+{\em  ente}  independiente que  utiliza  sus  propios dispositivos  de
+entrada y salida.  Evidentemente no es habitual disponer de  más de un
+monitor y/o  teclado pero en  ocasiones se pueden  utilizar servidores
+sin  salida gráfica.  También es  posible  que todos  usen los  mismos
+dispositivos  y  que se  habilite  algún  mecanismo para  que  podamos
+conmutar entre ellos a voluntad.
 
 \subsection{Gestores de ventanas}
 
 En  todo  buen  entorno  gráfico  moderno  las  aplicaciones  utilizan
-ventanas para  interactuar con el  usuario. Sin embargo el  servidor X
-sólo entiende un número limitado  de primitivas gráficas, como dibujar
-líneas  y puntos  o copiar  áreas  de la  pantalla. Por  ello se  hace
-necesaria la presencia de una aplicación cliente {\em especial} que se
-encargue de  crear, destruir,  mover, gestionar el  foco y  en general
-gestionar  todas las  cuestiones referentes  al comportamiento  de las
-ventanas, utilizando para ello las  primitivas del servidor X. A dicha
-aplicación  se la  denomina {\em  gestor de  ventanas}\index{gestor de
-ventanas}. En la Figura \ref{xwindow}  podemos ver su situación dentro
-de la arquitectura de las X-Window.
+ventanas para interactuar con el usuario. Sin embargo el servidor {\sf
+X}  sólo entiende  un  número limitado  de  primitivas gráficas,  como
+dibujar  líneas y  puntos  o copiar  áreas de  la  pantalla. Por  ello
+se  hace  necesaria  la  presencia  de  una  aplicación  cliente  {\em
+especial}  que se  encargue de  crear, destruir,  mover, gestionar  el
+foco  y  en  general  gestionar todas  las  cuestiones  referentes  al
+comportamiento de  las ventanas,  utilizando para ello  las primitivas
+del servidor  {\sf X}. A dicha  aplicación se la denomina  {\em gestor
+de  ventanas}\index{gestor de  ventanas}. En  la Figura  \ref{xwindow}
+podemos  ver  su situación  dentro  de  la  arquitectura de  las  {\sf
+X-Window}.
 
 En una  distribución de  Linux pueden  haber cerca  de 40  gestores de
 ventanas  entre los  que un  usuario debe  elegir. Cada  uno de  ellos
@@ -107,20 +111,19 @@ nuestras ventanas  de forma  diferente (e.j. la  barra de  título, los
 botones  de  control, los  bordes),  dotándolos  de un  comportamiento
 particular  y  característico según  las  preferencias  del equipo  de
 programadores  que  lo diseñó.  Empezando  por  los estéticamente  más
-valorados como {\em Windows Maker}  o {\em Enlightenment}; pasando por
-los  que imitan  a  otros sistemas  como {\em  AfteStep}  o {\em  F(?)
+valorados como {\sf  Window Maker} o {\sf  Enlightenment}; pasando por
+los  que imitan  a otros  sistemas como  {\sf AfterStep}  o {\sf  F(?)
 Virtual Window  Manager} (en una  de sus variantes nos  proporciona el
 look de Microsoft® Windows® 95); o los que permiten ser personalizados
-con  {\em temas}  diferentes como  {\em  Ice Windows  Manager} o  {\em
+con  {\em temas}  diferentes  como  {\sf Ice  Window  Manager} o  {\sf
 Sawfish}; y  terminando por los  más ligeros  y rápidos pero  no menos
-funcionales como  {\em Fast  Light Window Manager}  se cubre  toda una
+funcionales como  {\sf Fast  Light Window Manager}  se cubre  toda una
 variedad de necesidades del usuario.
-
 
 \subsection{Entornos de escritorio}
 
 Ahora que  disponemos de  ventanas se  hace necesario  rellenarlas con
-algo.  A la  hora de  programar  una aplicación  para las  X se  suele
+algo. A la hora de programar una  aplicación para las {\sf X} se suele
 recurrir a  los {\em toolkits}\index{toolkits}. Se  trata de librerías
 diseñadas  para proporcionar  diferentes  tipos de  controles (p.  ej.
 botones,  barras de  menús, cuadros  de edición,  etc) facilitando  su
@@ -130,14 +133,14 @@ acciones que se  hagan sobre ellos a  través del uso de  alguno de los
 dispositivos de entrada  posibles, etc. Trabajar sin hacer  uso de los
 toolkits implicaría diseñar y gestionar nuestros propios controles.
 
-Es importante destacar  que una aplicación X funciona sea  cual sea el
-gestor de  ventanas seleccionado. Por tanto,  el uso de uno  u otro es
-una elección personal del usuario. Sin embargo, el uso de un toolkit u
-otro en una aplicación es elección  del equipo de programadores que ha
-trabajado en ella. Eso unido a  la gran variedad de toolkits existente
-en  Linux convierte  nuestro  escritorio en  una  selva donde  podemos
-ver  una fauna  de  aplicaciones  con interfaces  gráficas  de lo  más
-variopinto.
+Es importante  destacar que una  aplicación {\sf X} funciona  sea cual
+sea el  gestor de ventanas  seleccionado. Por tanto,  el uso de  uno u
+otro es  una elección  personal del  usuario. Sin  embargo, el  uso de
+un  toolkit  u otro  en  una  aplicación  es  elección del  equipo  de
+programadores que ha  trabajado en ella. Eso unido a  la gran variedad
+de toolkits  existente en  Linux convierte  nuestro escritorio  en una
+selva  donde podemos  ver  una fauna  de  aplicaciones con  interfaces
+gráficas de lo más variopinto.
 
 Para garantizar  que las aplicaciones presenten  una interfaz similar,
 reduciendo la curva de aprendizaje  de los usuarios, han aparecido los
@@ -155,15 +158,15 @@ actualidad disponemos de dos grandes entornos de escritorio:
 
 \begin{description}
 
-\item[GNOME]\index{GNOME} Funciona  con el toolkit  GTK\index{GTK} que
-fue originalmente diseñado para  GIMP. Quizás las principales ventajas
-de este entorno  no estén tanto del  lado del usuario como  del de los
-programadores, de la tecnología que subyace debajo del sistema y de la
-declaración de intenciones con la que se inició el proyecto.
+\item[GNOME]\index{GNOME} Funciona con el toolkit {\sf GTK}\index{GTK}
+que fue originalmente diseñado para {\sf GIMP}. Quizás las principales
+ventajas de este entorno no estén  tanto del lado del usuario como del
+de los programadores, de la  tecnología que subyace debajo del sistema
+y de la declaración de intenciones con la que se inició el proyecto.
 
-\item[KDE]\index{KDE} Funciona sobre el  toolkit Qt\index{Qt}, lo cual
-provocó  una gran  polémica  en sus  orígenes al  no  disponer de  una
-licencia todo  los {\em libre} que  se deseaba. En la  actualidad esos
+\item[KDE]\index{KDE} Funciona sobre el toolkit {\sf Qt}\index{Qt}, lo
+cual provocó una  gran polémica en sus orígenes al  no disponer de una
+licencia todo  lo {\em libre}  que se  deseaba. En la  actualidad esos
 problemas se  han resuelto y es,  hoy por hoy, considerado  por muchos
 como el entorno con la interfaz más atractiva de los dos.
 
@@ -173,32 +176,16 @@ Cada  uno tiene  sus más  y sus  menos pero  la gran  realidad es  que
 presentan una interfaz muy intuitiva que se aprende a manejar desde el
 primer momento.
 
+\section{Trabajar con las X-Window}
 
-\section{El escritorio GNOME}\index{GNOME}
-
-Debido a la sencillez de los  entornos de escritorio resulta absurdo e
-inútil intentar explicar  detalladamente su manejo. La  mejor forma de
-aprender es  sentarnos delante de  uno de ellos,  ser un poco  osado y
-ante todo tener la buena  costumbre de leer detenidamente todo aquello
-que  nos indique  el sistema.  Sin embargo,  si vamos  a realizar  una
-primera  toma  de  contacto  guiada en  la  que  aprenderemos  algunos
-conceptos  básicos que  nos serán  de gran  ayuda en  el futuro.  Para
-empezar nos centraremos  en uno de los dos entornos  de escritorio que
-hemos comentado  anteriormente. Concretamente echaremos un  vistazo al
-entorno  de escritorio  GNOME\index{GNOME}. Sin  embargo, los  devotos
-de  KDE  no  deben  preocuparse  puesto  que  conociendo  uno  resulta
-extremadamente sencillo  llegar a dominar  el otro. Aun así,  al final
-del  capitulo,  comentaremos  algunos  aspectos de  interés  sobre  el
-fantástico entorno de escritorio que es KDE.
-
-Al iniciar  un sistema Linux con  las X instaladas es  probable que se
-nos permita autentificarnos  desde el modo gráfico.  En caso contrario
-sólo  dispondremos  de  una  consola  esperando  a  que  introduzcamos
-el  nombre  de  usuario.  Si  nuestro  caso  es  este  último  debemos
-autentificarnos, y ejecutar el comando  {\tt startx} cuando el sistema
-nos indique  que está  disponible para  recibir nuestros  comandos. El
-comando  {\tt startx}  iniciará el  entorno gráfico.  Evidentemente al
-terminar nuestro trabajo volveremos a la consola.
+Al iniciar  un sistema Linux  con las  {\sf X} instaladas  es probable
+que  se  nos  permita  autentificarnos   desde  el  modo  gráfico.  En
+caso  contrario  sólo dispondremos  de  una  consola esperando  a  que
+introduzcamos el  nombre de  usuario. Si nuestro  caso es  este último
+debemos  autentificarnos, y  ejecutar el  comando {\tt  startx} cuando
+el  sistema nos  indique  que está  disponible  para recibir  nuestros
+comandos.  El  comando  {\tt  startx}  iniciará  el  entorno  gráfico.
+Evidentemente al terminar nuestro trabajo volveremos a la consola.
 
 \begin{figure}[hbtp]
 \centering
@@ -207,181 +194,94 @@ terminar nuestro trabajo volveremos a la consola.
 \end{figure}
 
 Para  que la  autentificación desde  el  modo gráfico  sea posible  es
-necesario  tener  instalado  un  {\em  display  manager}.  Algunos  de
-ellos  son  {\tt  xdm}\index{xdm}, {\tt  kdm}\index{kdm}  (KDE),  {\tt
-gdm}\index{gdm}  (GNOME), etc.  Como ya  hemos comentado  nosotros nos
-centraremos  en GNOME,  y  por  tanto en  este  último.  En la  Figura
+necesario  tener  instalado  un  {\em  display  manager}\index{Display
+manager}.    Algunos   de    ellos    son   {\tt    xdm}\index{Display
+manager!xdm}, {\tt  kdm}\index{Display manager!kdm} ({\sf  KDE}), {\tt
+gdm}\index{Display  manager!gdm}  ({\sf  GNOME}), etc.  En  la  Figura
 \ref{gdm} podemos ver un ejemplo de la clásica ventana que nos muestra
-GDM  nada más  terminar la  carga  del sistema.  Básicamente nos  está
-pidiendo nuestro nombre  de usuario, para una vez  pulsado {\tt enter}
-pedirnos la password. Con esa información seremos autentificados en el
-sistema y se iniciará una nueva  sesión con nuestra cuenta de usuario.
-Es  importante destacar  que  dentro  de nuestra  sesión  todo lo  que
-hagamos es personal.  Eso quiere decir que los cambios,  sean del tipo
-que sean, sólo  afectarán a nuestra sesiones futuras pero  no a las de
-los otros usuarios de la máquina.
-
-Volviendo al  GDM, éste  dispone de  algunas opciones  adicionales que
-podemos emplear antes de iniciar el proceso de autentificación.
-
-\begin{description}
-
-\item[SESIÓN] Nos permite elegir la  naturaleza de la próxima sesión a
-iniciar. Opciones habituales son GNOME y KDE. Elegiéndolas iniciaremos
-sesión  con el  entorno de  escritorio que  prefiramos. También  puede
-haber alguna sesión  especial {\em a prueba de fallos},  o que carezca
-de  un entorno  de escritorio  específico,  o cualquier  otro tipo  de
-sesión  que el  administrador  del sistema  haya  deseado incluir.  La
-opción por defecto es {\tt ÚLTIMA} que hace referencia a entrar con el
-tipo de  sesión que  tenemos asignado nosotros  por defecto.  Si nunca
-hemos elegido ninguno lo normal es  que el tipo por defecto sea GNOME.
-Si hacemos una selección diferente a  la opción por defecto el sistema
-nos preguntara  si queremos que  el nuevo  tipo de sesión  sea nuestra
-sesión por defecto,  y por tanto a la que  que corresponderá la opción
-{\tt ÚLTIMA} la próxima vez.
-
-\item[IDIOMA] Aparte  de elegir  sesión podemos seleccionar  el idioma
-con el  que queremos  trabajar. Las aplicaciones  traducidas mostrarán
-toda la información  en dicho idioma. Igual que antes,  la opción {\tt
-ÚLTIMA}  habla de  nuestra última  selección, es  decir el  idioma por
-defecto.
-
-\item[SISTEMA] Nos permite apagar, suspender o reniciar la maquina. En
-algunos sistemas, y siempre y cuando dispongamos de la cuenta del {\tt
-root},  nos permite  configurar  GDM. Es  importante  recordar que  al
-cerrar  nuestra sesión  volvemos a  la ventana  de GDM  por lo  que si
-deseamos apagar  el sistema  éste sería el  momento de  seleccionar la
-opción correspondiente.
-
-\end{description}
+{\sf GDM} nada más terminar la carga del sistema. Básicamente nos está
+pidiendo nuestro nombre  de usuario, para una vez  pulsado {\tt ENTER}
+pedirnos la contraseña. Con  esa información seremos autentificados en
+el  sistema y  se  iniciará una  nueva sesión  con  nuestra cuenta  de
+usuario. Es importante  destacar que dentro de nuestra  sesión todo lo
+que hagamos  es personal. Eso quiere  decir que los cambios,  sean del
+tipo que sean, sólo afectarán a nuestra sesiones futuras pero no a las
+de los otros usuarios de la máquina.
 
 Antes  de continuar  es importante  destacar algunas  cosas. En  Linux
 existe lo que se  denomina {\em terminales virtuales}\index{terminal}.
 Si estamos  en modo texto podemos  usar la combinación de  teclas {\tt
-Alt+F?} para pasar de un terminal  a otro. Eso se comprueba fácilmente
+A-F?} para  pasar de un terminal  a otro. Eso se  comprueba fácilmente
 porque vemos  cómo cambia el contenido  de la pantalla. El  uso de los
 terminales virtuales  nos permite mantener varias  sesiones abiertas y
 trabajar de forma independiente en ellas. Cuando se inicia un servidor
-X  éste queda  asociado a  uno de  esos terminales  virtuales (podemos
-tener varios servidores asociados a distintos terminales); normalmente
-al  {\tt  F7}.  Debido al  mecanismo  por  el  que  las X  manejan  el
-teclado, en  los terminales asociados  a servidores  X ya no  se puede
-usar  {\tt Alt+F?}  sino que  para  cambiar de  terminal debemos  usar
-{\tt  Ctrl+Alt+F?}. Usando  la primera  combinación de  teclas en  los
-terminales en  modo texto  y la  última en  los asociados  a las  X no
-tendremos problemas para movernos por ellos  y pasar de modo gráfico a
-consola a nuestro antojo.
+{\sf  X}  éste queda  asociado  a  uno  de esos  terminales  virtuales
+(podemos tener  varios servidores  asociados a  distintos terminales);
+normalmente al  {\tt F7}. Debido al  mecanismo por el que  las {\sf X}
+manejan el teclado,  en los terminales asociados a  servidores {\sf X}
+ya  no se  puede usar  {\tt A-F?}  sino que  para cambiar  de terminal
+debemos usar {\tt C-A-F?}. Usando  la primera combinación de teclas en
+los terminales en modo texto, y la  última en los asociados a las {\sf
+X}, no  tendremos problemas para  movernos por  ellos y pasar  de modo
+gráfico a consola a nuestro antojo.
 
 Otro punto  importante es que sólo  cuando veamos un mensaje  del tipo
 {\tt Kernel Panic}  podemos decir que nuestro Linux se  ha colgado. En
 cualquier  otro  caso  estamos  frente a  sencillos  cuelgues  de  las
 aplicaciones con  las que  trabajamos. No debemos  preocuparnos puesto
 que Linux proporciona  los suficientes recursos como  para que podamos
-recuperar el control  de la máquina. Por ejemplo podemos  cambiar a un
+recuperar el control de la máquina.  Por ejemplo, podemos cambiar a un
 terminal diferente  de la consola  para matar aplicaciones que  se han
-quedado  colgadas en  nuestro  terminal  de trabajo  o  en  las X.  En
-situaciones críticas puede  ser necesario terminar con las  X de forma
-prematura. Para  ello se  pulsa la secuencia  {\tt Ctrl+Alt+Backspace}
-que cierra  el servidor X  abortando todas las  aplicaciones gráficas.
-Evidentemente los datos no guardados se perderán.
+quedado colgadas en nuestro terminal de trabajo  o en las {\sf X} . En
+situaciones críticas puede  ser necesario terminar con las  {\sf X} de
+forma prematura. Para  ello se pulsa la  secuencia {\tt C-A-Backspace}
+que  cierra  el servidor  {\sf  X}  abortando todas  las  aplicaciones
+gráficas. Evidentemente los datos no guardados se perderán.
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.5\textwidth]{imagenes/menu.eps}
-\caption{Menú de panel de GNOME}\label{menu}
-\end{figure}
+En Linux, cuando queremos ejecutar aplicaciones de modo consola dentro
+de una ventana  {\sf X} se utilizan los {\em  emuladores de terminal}.
+El  más  básico  es  el  {\tt xterm}\index{xterm}  que  viene  con  la
+instalación estándar de las {\sf X},  pero existen muchos otros y cada
+entorno suele  venir con uno  propio. El de  {\sf GNOME} está  en {\tt
+MENÚ PRINCIPAL  $\rightarrow$ SISTEMA  $\rightarrow$ TERMINAL  UNIX DE
+GNOME}, mientras  que al de {\sf  KDE} podemos acceder pulsando  en el
+icono con  un terminal y  una concha disponible  en el panel  de dicho
+entorno  de  escritorio  (Figura  \ref{kde_panel}).  En  ocasiones  es
+posible  que intentemos  ejecutar  una aplicación  que  nunca llega  a
+mostrar su  ventana principal o que  da algún tipo de  error grave. En
+esos casos es  recomendable ejecutar el programa desde  un emulador de
+terminal. Como ya hemos comentado las aplicaciones para {\sf X} no son
+diferentes de otras aplicaciones por lo que suelen mostrar información
+por la  consola, si  esta está disponible.  Esa información  puede ser
+vital para resolver nuestro problema.
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.5\textwidth]{imagenes/panel.eps}
-\caption{Panel de alineado de GNOME}\label{panel}
-\end{figure}
-
-Suponiendo  que iniciamos  sesión en  la  máquina lo  primero que  nos
-llamará  la  antención  son  los  {\em  paneles}  (Figuras  \ref{menu}
-y  \ref{panel}).  Si pulsamos  en  la  huella  del panel  inferior,  o
-seleccionamos alguna de las  opciones del panel superior, dispondremos
-de acceso a las aplicaciones instaladas  en el sistema. La mayor parte
-de las aplicaciones  GNOME están clasificadas y  disponibles en alguno
-de  los submenús  correspondientes. (p.  ej. {\tt  APLICACIONES}, {\tt
-UTILERÍAS}, {\tt  GRÁFICOS}, etc).  En {\tt  MENÚS KDE}  se encuentran
-clasificadas todas  las aplicaciones KDE  instaladas, y en  {\tt MENÚS
-DEBIAN} todas  las aplicaciones de la  distribución independientemente
-del entorno de  escritorio para las que fueron  desarrolladas. En este
-punto es  importante recordar que  podemos ejecutar cualquiera  de las
-aplicaciones  sin importar  que estemos  trabajando en  un entorno  de
-escritorio diferente a aquel para el que fueron diseñadas.
-
-Otras  opciones son  el menú  {\tt FAVORITOS},  que es  personalizable
-con  nuestras  aplicaciones preferidas,  la  opción  {\tt BLOQUEAR  LA
-PANTALLA}, para proteger nuestro escritorio si tenemos que abandonarlo
-por  cualquier  motivo  (es  importante recordar  que  de  esa  manera
-evitaremos  que  manipulen  nuestros   datos  pero  siempre  queda  la
-posibilidad  de  que  pulsen  {\tt  Ctrl+Alt+Backspace}  para  abortar
-todas las  aplicaciones gráficas, perdiendo  los datos no  guardados y
-volviendo a  la ventana de inicio  de sesión del GDM),  la opción {\tt
-TERMINAR SESIÓN} para terminar nuestra  sesión y volver al GDM (Figura
-\ref{gdm}). Si accedemos a  {\tt CONFIGURACIÓN $\rightarrow$ CENTRO DE
-CONTROL DE GNOME} dispondremos de todas las opciones para personalizar
-nuestro escritorio.
-
-Manejar GNOME  es cuestión de  jugar un  rato y probar  las diferentes
-opciones. Disponemos de  tres botones en nuestro  ratón (ya hablaremos
-de eso más adelante) y se trata de utilizarlos sobre los elementos del
-escritorio para  ver como reaccionan.  Por ejemplo sobre los  iconos o
-sobre el  fondo del escritorio, sobre  los menús, sobre la  huella del
-panel inferior,  sobre una parte descubierta  de un panel o  sobre las
-pequeñas aplicaciones que se ejecutan sobre ellas. Por cierto que esas
-pequeñas  aplicacions  se  denominan  {\em  applets}\index{applets}  y
-podemos  instalar cuantas  queramos si  jugamos un  poco con  el botón
-derecho  de  nuestro  ratón  y  una  parte  descubierta  de  un  panel
-cualquiera. Otros ejemplos se consiguen al pulsar con el botón derecho
-sobre un menú y así poder  elegir añadirlo a {\tt FAVORITOS}, o pulsar
-sobre la línea discontinua de la  parte superior de los menús para ver
-como se despendren y quedan en una ventana a parte.
-
-En Linux existen muchos {\em emuladores de terminal}. Dichos programas
-permiten ejecutar aplicaciones  de modo consola dentro  de una ventana
-X.  El más  básico es  el {\tt  xterm}\index{xterm} que  viene con  la
-instalación  estándar de  las  X,  pero existen  muchos  otros y  cada
-entorno suele venir  con uno propio. El de GNOME  está en {\tt SISTEMA
-$\rightarrow$ TERMINAL  UNIX DE  GNOME}. En  ocasiones es  posible que
-intentemos  ejecutar  una aplicación  que  nunca  llega a  mostrar  su
-ventana principal o que da algún tipo de error grave. En esos casos es
-recomendable ejecutar el programa desde  el emulador de terminal. Como
-ya hemos comentado las aplicaciones para  X no son diferentes de otras
-aplicaciones por lo que suelen  mostrar información por la consola, si
-esta está  disponible. Esa información  puede ser vital  para resolver
-nuestro problema.
-
-Cuando ejecutamos una  aplicación X desde el emulador  de terminal (p.
-ej. {\tt gnome-edit}  que es el editor por defecto  del entorno GNOME)
-vemos que  éste se queda  bloqueado a la  espera de que  la aplicación
-termine. Esto no  debería sorprendernos puesto que  en realidad ocurre
-lo mismo cuando ejecutamos una aplicación  de consola. Para que eso no
-suceda  debemos  añadir  un  {\tt  \&} al  final  del  comando  de  la
-aplicación  X,  o pulsar  {\tt  Ctrl+Z}  y  ejecutar el  comando  {\tt
-bg}\index{bg} sobre el emulador después de que la aplicación haya sido
-iniciada. De esta manera la aplicación  X pasa a ejecutarse en segundo
-plano, liberando al emulador de terminal para que pueda recibir nuevos
-comandos.
+Cuando ejecutamos una aplicación {\sf X} desde el emulador de terminal
+(p. ej. {\tt xclock}) vemos que éste se queda bloqueado a la espera de
+que la aplicación termine. Esto no debería sorprendernos puesto que en
+realidad ocurre lo mismo cuando  ejecutamos una aplicación de consola.
+Para que eso no suceda debemos añadir un {\tt \&} al final del comando
+de la  aplicación {\sf X},  o pulsar {\tt  C-Z} y ejecutar  el comando
+{\tt bg}\index{bg} sobre el emulador después de que la aplicación haya
+sido iniciada. De esta manera la  aplicación {\sf X} pasa a ejecutarse
+en segundo  plano, liberando  al emulador de  terminal para  que pueda
+recibir nuevos comandos.
 
 En  general mostrar  el  clásico  aviso de  que  una aplicación  tiene
 archivos  modificados y  va a  ser  cerrada es  responsabilidad de  la
 propia aplicación. El cierre de  la ventana principal por la pulsación
 del  correspondiente botón  en la  barra  de título  es notificado  al
 proceso propietario de la ventana.  Normalmente se suele mostrar dicho
-mensaje y  una vez  aceptado se  termina el proceso.  Por una  lado es
+mensaje  y una  vez aceptado  se termina  el proceso.  Sin embargo  es
 posible que nuestra aplicación no  disponga de esa característica. Por
-ejemplo si cerramos el emulador  de terminal cuando estamos ejecutando
-sobre  él  cualquier tipo  de  aplicación  (sea  de  consola o  de  X)
-dicha aplicación  termina inmediatamente perdiéndose los  datos que no
-hubieran  sido  guardados.  O  sea,  como  en  el  caso  anterior,  si
-ejecutamos {\tt gnome-editor} sobre el terminal, escribimos algo sobre
-el editor, y  cerramos el terminal, veremos como  nuestra apliación de
-edición  terminará sin  advertir nada  de la  pérdida de  datos, y  el
-terminal se cerrará  sin indicarnos que se encuentra  esperando por el
-editor.
+ejemplo, si cerramos  el emulador de terminal (muy pocos  avisan de la
+posible pérdida de datos) cuando estamos ejecutando sobre él cualquier
+tipo de  aplicación (sea  de consola  o de  {\sf X})  dicha aplicación
+termina  inmediatamente perdiéndose  los  datos que  no hubieran  sido
+guardados. O sea,  si ejecutamos {\tt gnome-edit} o  {\tt kedit} sobre
+el terminal,  escribimos algo  en el editor,  y cerramos  el terminal,
+veremos como nuestra aplicación de edición terminará sin advertir nada
+de la pérdida de datos, y el terminal se cerrará sin indicarnos que se
+encuentra esperando por el editor.
 
 \begin{figure}[hbtp]
 \centering
@@ -389,141 +289,516 @@ editor.
 \caption{Barra de título del gestor de ventanas Sawfish}\label{btitulo}
 \end{figure}
 
-Por otro  lado es posible  que el proceso  esté bloqueado y  no reciba
-el  mensaje.  En  ese caso  la  ventana  no  se  cerrará a  menos  que
-forcemos su destrucción  con la opción correspondiente en  el menú del
-marco  de  la  venta  (Figura  \ref{btitulo}, menú  del  botón  de  la
-izquierda).  Entonces  el  gestor  de  ventanas  la  cerrará  pero  la
-aplicación seguirá ejecutándose en  segundo plano aunque para nosotros
-ya no  exista. La única  solución será matarla  a mano con  el comando
-{\tt  kill}\index{kill} desde  un emulador  de terminal.  Si vemos  un
-consumo de CPU  excesivo o un sistema demasiado lento  puede deberse a
-la existencia de procesos en segundo plano que no fueron destruidos en
-su momento. Una aplicación interesante es {\tt xkill}\index{xkill}. Si
-la ejecutamos nos  aparecerá un punto de mira en  el cursor de nuestro
-ratón.  Al  pulsar sobre  una  ventana  la  aplicación se  encarga  de
-destruir al proceso asociado a la misma.
+Por otro lado es posible que el  proceso esté bloqueado y no reciba el
+mensaje. En ese caso la ventana no  se cerrará a menos que forcemos su
+destrucción con la  opción correspondiente en el menú del  marco de la
+venta  (Figura  \ref{btitulo}, botón  de  la  izquierda). Entonces  el
+gestor de ventanas la cerrará  pero la aplicación seguirá ejecutándose
+en segundo plano aunque para nosotros  ya no exista. La única solución
+será matarla  a mano  con el comando  {\tt kill}\index{kill}  desde un
+emulador de terminal. Si vemos un consumo de CPU excesivo o un sistema
+demasiado lento puede  deberse a la existencia de  procesos en segundo
+plano que no fueron destruidos en su momento.
 
-Como hemos dicho anteriormente, a la hora  de aprender a usar las X no
-basta con jugar con los botones  izquierdo y derecho de nuestro ratón.
-En las X  el botón central es de tanta  importancia que suele disponer
-de funciones adicionales  que no están presentes en los  otros dos. En
-entornos de escritorio como KDE o GNOME esto suele implicar un menú de
-contexto adicional al que se muestra  usando el botón derecho; pero en
-otras  aplicaciones  podemos encontrar  formas  de  manejo de  lo  más
-curiosas. Tal es  su importancia que en  caso de no disponer  de él se
-emula  por la  pulsación simultanea  de los  dos botones  estándar del
-ratón. Una  aplicación interesante  del botón central  es su  uso para
-copiar texto entre  aplicaciones sea cual sea la toolkit  bajo las que
-hayan  sido  desarrolladas.  Basta  con marcar  nuestro  texto  en  la
+Una  aplicación   interesante  es  {\tt  xkill}\index{xkill}.   Si  la
+ejecutamos nos  aparecerá un  punto de  mira en  el cursor  de nuestro
+ratón.  Al  pulsar sobre  una  ventana  la  aplicación se  encarga  de
+destruir al  proceso asociado  a la misma.  La aplicación  {\tt xkill}
+puede ser lanzada desde un emulador de terminal o desde los cuadros de
+diálogo de  las opciones {\tt  LANZAR} o  {\tt EJECUTAR} de  los menús
+principales de los distintos entornos de escritorio.
+
+Como hemos dicho anteriormente, a la  hora de aprender a usar las {\sf
+X} no basta  con jugar con los botones izquierdo  y derecho de nuestro
+ratón. En  las {\sf X}  el botón central  es de tanta  importancia que
+suele disponer de funciones adicionales  que no están presentes en los
+otros dos. En entornos de escritorio como {\sf KDE} o {\sf GNOME} esto
+suele implicar un menú de contexto  adicional al que se muestra usando
+el botón derecho; pero en  otras aplicaciones podemos encontrar formas
+de manejo de lo más curiosas. Tal  es su importancia que en caso de no
+disponer de él se emula por la pulsación simultanea de los dos botones
+estándar del ratón. Una aplicación interesante del botón central es su
+uso para copiar texto entre aplicaciones, sea cual sea la toolkit bajo
+las que hayan sido desarrolladas. Basta con marcar nuestro texto en la
 aplicación de  origen para  que al  pulsar el botón  central en  la de
 destino éste se pegue a continuación de la posición actual del cursor.
-En el servidor X  existe un búffer que se llena  cada vez que marcamos
-texto en  alguna aplicación. El botón  central del ratón lo  único que
-hace  es volcar  ese  texto  como si  hubiera  sido  escrito desde  el
-teclado. Por  tanto para  utilizar este sistema  es importante  ser lo
+En el  servidor {\sf  X} existe un  búffer que se  llena cada  vez que
+marcamos texto  en alguna  aplicación. El botón  central del  ratón lo
+único que hace es volcar ese  texto como si hubiera sido escrito desde
+el teclado. Por tanto para utilizar  este sistema es importante ser lo
 suficientemente cuidadoso  como para  no marcar  otra cosa  después de
 marcar el texto a copiar.
 
+\section{El escritorio de GNOME}\index{GNOME}
 
-\section{El escritorio KDE}\index{KDE}
+Debido a la sencillez de los  entornos de escritorio resulta absurdo e
+inútil intentar explicar  detalladamente su manejo. La  mejor forma de
+aprender es  sentarnos delante de uno  de ellos, ser un  poco osado, y
+ante todo tener la buena  costumbre de leer detenidamente todo aquello
+que nos indique el sistema. Sin  embargo, vamos a realizar una primera
+toma  de contacto  guiada  en la  que  aprenderemos algunos  conceptos
+básicos que  nos serán de  gran ayuda en  el futuro. Para  empezar nos
+centraremos  en  uno de  los  dos  entornos  de escritorio  que  hemos
+comentado anteriormente. Concretamente echaremos un vistazo al entorno
+de escritorio  {\sf GNOME}\index{GNOME}.  Sin embargo, los  devotos de
+{\sf  KDE} no  deben  preocuparse puesto  que  conociendo uno  resulta
+extremadamente sencillo  llegar a dominar  el otro. Aun así,  al final
+del  capitulo,  comentaremos  algunos  aspectos de  interés  sobre  el
+fantástico entorno de escritorio que es {\sf KDE}.
 
-KDE es entorno  de escritorio con gestor de ventanas  propio basado en
-X-Window  que nos  da un  entorno gráfico  amigable para  realizar las
-operaciones más  comunes con  nuestro ordenador.  Cuenta con  un panel
-donde tener nuestras aplicaciones organizadas, un gestor de archivos y
-navegador  web  ({\em  Konqueror}\index{Konqueror}),  y  otros  muchos
-programas para hacer nuestro trabajo  mucho más cómodo, o pasar buenos
-ratos de ocio frente al ordenador.
+\subsection{GNOME Display Manager}
+\index{GNOME!Display Manager,GNOME!gdm,Display manager!gdm}
+
+Si  nuestro sistema  tiene  instalado el  entorno  de escritorio  {\sf
+GNOME} y permite la autentificación  desde el modo gráfico es probable
+que tengamos instalado el {\sf  GDM (GNOME Display Manager)} como {\em
+display manager}.  {\sf GDM}  dispone de algunas  opciones adicionales
+que podemos emplear antes de  iniciar el proceso de autentificación, y
+que no tienen porque estar presentes en otros display manager.
+
+\begin{description}
+
+\item[SESIÓN] Nos permite elegir la  naturaleza de la próxima sesión a
+iniciar. Opciones habituales son {\sf GNOME} y {\sf KDE}. Eligiéndolas
+iniciaremos  sesión  con  el  entorno de  escritorio  que  prefiramos.
+También puede haber alguna sesión especial {\em a prueba de fallos}, o
+que carezca de  un entorno de escritorio específico,  o cualquier otro
+tipo de sesión que el  administrador del sistema haya deseado incluir.
+La opción por defecto es {\tt ÚLTIMA} que hace referencia a entrar con
+el tipo de sesión que tenemos  asignado nosotros por defecto. Si nunca
+hemos elegido  ninguno lo normal es  que el tipo por  defecto sea {\sf
+GNOME}. Si hacemos una selección diferente  a la opción por defecto el
+sistema nos  preguntara si queremos  que el  nuevo tipo de  sesión sea
+nuestra sesión por defecto, y por  tanto a la que que corresponderá la
+opción {\tt ÚLTIMA} la próxima vez.
+
+\item[IDIOMA] Aparte  de elegir  sesión podemos seleccionar  el idioma
+con el  que queremos  trabajar. Las aplicaciones  traducidas mostrarán
+toda la información  en dicho idioma. Igual que antes,  la opción {\tt
+ÚLTIMA}  habla de  nuestra última  selección, es  decir el  idioma por
+defecto.
+
+\item[SISTEMA] Nos  permite apagar, suspender o  reiniciar la máquina.
+En algunos sistemas,  y siempre y cuando dispongamos  de la contraseña
+de la  cuenta del  {\tt root},  nos permite  configurar {\sf  GDM}. Es
+importante recordar que al cerrar nuestra sesión volvemos a la ventana
+de {\sf GDM}  por lo que si  deseamos apagar el sistema  éste sería el
+momento de seleccionar la opción correspondiente.
+
+\end{description}
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=0.9\textwidth]{imagenes/pantallazo_kde_descrito.eps}
-\caption{Aspecto del escritorio KDE}
+\includegraphics[width=0.7\textwidth]{imagenes/gnome_menu.eps}
+\caption{Menú de panel de GNOME}\label{gnome_menu}
 \end{figure}
 
-Al igual que en GNOME, en KDE contamos con un panel en el que se organizan
-todos los menús y aplicaciones. Este concepto es familiar en la inmensa
-mayoría de los gestores de ventanas y entornos gráficos que podamos encontrar
-en cualquier ordenador. Este panel puede ser ubicado por toda la pantalla,
-redimensionado, etc., y es áltamente configurable en aspecto, tamaño y
-funcionalidades.
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.5\textwidth]{imagenes/gnome_menu_principal.eps}
+\caption{Panel alineado de GNOME y menú principal}
+\label{gnome_menu_principal}
+\end{figure}
+
+\subsection{Paneles y menús de GNOME}
+
+Suponiendo  que iniciamos  sesión en  la  máquina lo  primero que  nos
+llamará la atención son los  {\em paneles} (Figuras \ref{gnome_menu} y
+\ref{gnome_menu_principal}).  Si  pulsamos  en  la  huella  del  panel
+inferior, o seleccionamos  alguna de las opciones  del panel superior,
+dispondremos de acceso a las aplicaciones instaladas en el sistema. La
+mayor  parte de  las  aplicaciones {\sf  GNOME}  están clasificadas  y
+disponibles en alguno  de los submenús correspondientes.  (p. ej. {\tt
+APLICACIONES}, {\tt  UTILIDADES}, {\tt GRÁFICOS}, etc).  En {\tt MENÚS
+KDE}  se  encuentran clasificadas  todas  las  aplicaciones {\sf  KDE}
+instaladas,  y en  {\tt MENÚS  DEBIAN}  todas las  aplicaciones de  la
+distribución, independientemente  del entorno  de escritorio  para las
+que fueron  desarrolladas. En  este punto  es importante  recordar que
+podemos  ejecutar  cualquiera de  las  aplicaciones  sin importar  que
+estemos trabajando en un entorno  de escritorio diferente a aquel para
+el que fueron diseñadas.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.9\textwidth]{imagenes/gnome_favoritos.eps}
+\caption{Añadir elemento al menú {\tt FAVORITOS}}
+\label{gnome_favoritos}
+\end{figure}
+
+Otras opciones son el menú  {\tt FAVORITOS}, que es personalizable con
+nuestras aplicaciones preferidas usando la opción {\tt AÑADIR DESDE EL
+MENÚ}  (Figura  \ref{gnome_favoritos}),  la opción  {\tt  BLOQUEAR  LA
+PANTALLA}, para proteger nuestro escritorio si tenemos que abandonarlo
+por  cualquier  motivo  (es  importante recordar  que  de  esa  manera
+evitaremos  que  manipulen  nuestros   datos  pero  siempre  queda  la
+posibilidad de que  pulsen {\tt C-A-Backspace} para  abortar todas las
+aplicaciones gráficas, perdiendo los datos  no guardados y volviendo a
+la  ventana de  inicio de  sesión  del {\sf  GDM}), y  la opción  {\tt
+TERMINAR SESIÓN}  para terminar nuestra  sesión y volver al  {\sf GDM}
+(Figura \ref{gdm}).
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.9\textwidth]{imagenes/gnome_menu_persis.eps}
+\caption{Hacer que un menú sea persistente}
+\label{gnome_menu_persis}
+\end{figure}
+
+En  {\sf  GTK},   y  por  tanto  en  {\sf  GNOME},   todos  los  menús
+cuentan  con   una  pequeña  marca   en  la  parte   superior  (Figura
+\ref{gnome_menu_persis}). Si pulsamos en ella  el menú se desprende de
+la aplicación  y pasa  a estar  en una  ventana independiente.  De esa
+manera podemos acceder a un menú con opciones de uso habitual de forma
+más rápida y sencilla.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.6\textwidth]{imagenes/gnome_menu_contexto.eps}
+\caption{Menú de contexto de los elementos del menú principal}
+\label{gnome_menu_contexto}
+\end{figure}
+
+Tal y  como podemos  apreciar en la  Figura \ref{gnome_menu_contexto},
+todos los elementos del menú principal disponen de un menú de contexto
+que se despliega cuando pulsamos con el botón derecho de nuestro ratón.
+Entre las  opciones de  dicho menú contamos  con algunas  que permiten
+añadir el elemento al panel,  quitarlo del menú principal, añadirlo al
+menú {\tt  FAVORITOS} o  alterar sus  propiedades, entre  muchas otras
+alternativas.
+
+\begin{figure}[hbtp]
+\centering
+\subfigure[Cuadro de diálogo {\tt LANZAR PROGRAMA}]{%
+\includegraphics[width=0.45\textwidth]{imagenes/gnome_lanzar.eps}
+\label{gnome_lanzar}}
+\subfigure[Cuadro de diálogo avanzado {\tt LANZAR PROGRAMA}]{%
+\includegraphics[width=0.45\textwidth]{imagenes/gnome_lanzar_avd.eps}
+\label{gnome_lanzar_avd}}
+\end{figure}
+
+Una de las  opciones más interesantes de dicho menú  de contexto es la
+que  se encuentra  bajo el  texto de  {\tt PONER  EN EL  FORMULARIO DE
+EJECUCIÓN}. Esa opción abre el cuadro de diálogo {\tt LANZAR PROGRAMA}
+y lo rellena con las propiedades del elemento del menú principal sobre
+el que estamos trabajando. Ese  mismo cuadro está disponible como {\tt
+LANZAR} en el menú principal. En la Figura \ref{gnome_lanzar} vemos el
+cuadro  de diálogo  {\tt LANZAR  PROGRAMA}, que  podremos observar  si
+seleccionamos  dicha  opción.  En  dicho  cuadro  de  diálogo  podemos
+seleccionar la aplicación {\sf GNOME}  que deseamos ejecutar, así como
+añadirla al menú  de favoritos. El mismo cuadro de  diálogo dispone de
+{\em  opciones  avanzadas}  (Figura  \ref{gnome_lanzar_avd})  que  nos
+permiten especificar la línea de comandos a ejecutar o especificar que
+deseamos  que  la aplicación  se  ejecute  dentro  de un  emulador  de
+terminal. La primera de las opciones resulta especialmente interesante
+si la aplicación  no está disponible entre las que  nos permite elegir
+el cuadro  de diálogo (p. ej.  {\tt xkill}) o porque  queramos pasarle
+alguna opción de la línea de comandos de la aplicación.
+
+Manejar  {\sf  GNOME} es  cuestión  de  jugar  un  rato y  probar  las
+diferentes opciones. Disponemos  de tres botones en  nuestro ratón (ya
+hablamos de  eso en  apartados anteriores) y  se trata  de utilizarlos
+sobre los elementos del entorno para ver como reaccionan. Por ejemplo,
+si pulsamos  con el botón derecho  del nuestro ratón sobre  algún área
+sin elementos de  algunos de los paneles, veremos un  menú de contexto
+similar  al menú  principal del  que  hemos estado  hablando hasta  el
+momento.  En el  menú  del  que estamos  hablando  existe un  elemento
+denominado {\tt PANEL} que contiene  las opciones de configuración del
+panel. Con opciones podemos:
+
+\begin{description}
+
+\item[AÑADIR AL PANEL] Esta opción nos permite añadir nuevos elementos
+al  panel.  A  parte  de  los  tipos de  botones  entre  los  que  nos
+deja  elegir,  podemos  acceder  a  {\tt  MENÚ}  para  añadir  algunos
+de  los  diversos tipos  de  menús  de aplicaciones.  También  podemos
+acceder  a  {\tt  LANZADOR  DESDE MENÚ}  y  elegir  alguna  aplicación
+del  menú principal.  Esto crea  un  botón que  lanzará la  aplicación
+automáticamente con sólo pulsar sobre  el mismo. Todos estos elementos
+pueden ser movidos, incluso entre paneles, con sólo pulsar sobre ellos
+con  el  botón  central.  También podemos  modificar  sus  propiedades
+pulsando con el botón derecho y seleccionando la opción adecuada.
+
+\item[CREAR UN PANEL] Nos permite crear diferentes tipos de paneles en
+cualquier parte de la pantalla.  Es importante destacar que para mover
+un panel  de sitio basta  con pulsar con  el botón central  de nuestro
+ratón  en cualquier  área descubierta  del panel  que pensamos  mover.
+También podemos  pulsar sobre  las flechas de  los extremos  del mismo
+para ocultarlo, y ampliar de esta manera el área de trabajo de nuestro
+escritorio.
+
+\item[PROPIEDADES] Con esta opción podemos alterar las características
+del  panel. Algunas  de esas  características  son el  tipo de  panel,
+su  tamaño,  la forma  en  que  le panel  se  oculta,  y la  presencia
+de  los  botones  de  escondido.   Además,  bajo  en  nombre  de  {\tt
+PROPIEDADES GLOBALES}  se encuentran las opciones  para configurar las
+características por defecto para todos los paneles.
+
+\item[EDITAR MENUS] Carga el  {\em editor de menús}\index{GNOME!editor
+de menús} que nos permite personalizar los menús de aplicaciones.
+
+\end{description}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.9\textwidth]{imagenes/gnome_apliques.eps}
+\caption{Ejemplos de paneles con apliques}
+\label{gnome_apliques}
+\end{figure}
+
+Uno de los aspectos más interesantes del entorno de escritorio de {\sf
+GNOME} es la existencia de los {\em apliques}\index{GNOME!apliques} (o
+{\em  applets}\index{GNOME!applets}).  Los  apliques no  son  más  que
+pequeñas utilidades  cuya interfaz de  usuario está confinada  al área
+del  panel  donde  está instalado  (Figura  \ref{gnome_apliques}).  Su
+instalación es  tan simple  como seleccionar {\tt  PANEL $\rightarrow$
+AÑADIR  AL PANEL  $\rightarrow$ APLIQUE}  en  el menú  del panel.  Los
+apliques  están  clasificados, por  lo  que  debemos desplazarnos  por
+las  diferentes categorías  hasta  que seleccionemos  el que  deseamos
+instalar.  Al igual  que el  resto de  los elementos  de los  paneles,
+podemos  moverlos utilizando  el  botón central  del  ratón o  podemos
+alterar su propiedades utilizando  el botón derecho. El comportamiento
+exacto  frente a  los  diferentes  uso del  ratón  sobre los  apliques
+dependen de  las preferencias  del programador, por  lo que  puede ser
+interesante consular  la ayuda  de cada uno  para aprender  a explotar
+todo su potencial.
+
+\subsection{Administración de archivos}
+
+Al igual que los entornos  de escritorio de otros sistemas operativos,
+{\sf GNOME} permite la administración sencilla y eficiente de nuestros
+archivos.  Dos  son  los  programas  que  habitualmente  nos  podremos
+encontrar instalados en {\sf GNOME} y que sirven para esta tarea:
+
+\subsubsection{GNOME Midnight Commander}
+\index{GNOME!gmc,GNOME!Midnight Commander}
+
+{\sf Midnight  Commander} nació  como una  herramienta de  consola que
+pretendía imitar y mejorar en lo  posible a otra conocida utilidad del
+mundo  de MSDOS  denominada {\sf  Comandante Norton®}.  Dicha utilidad
+simplificaba de forma considerable  todas las tareas de administración
+de archivos  (tales como la edición,  la copia, la búsqueda,  etc.) al
+proporcionar una completa  interfaz en modo texto. Con  el tiempo {\sf
+Midnight Commander}  fue portado  al entorno  gráfico de  {\sf GNOME},
+aunque las principales mejoras  siguen desarrollándose para la versión
+de consola que podemos utilizar con sólo ejecutar el comando {\tt mc}.
+
+{\sf GMC (GNOME  Midnight Commander)} se encarga  de gestionar nuestro
+fondo de escritorio como área  de trabajo\footnote{En ocasiones y pese
+a  que el  {\sf GMC}  esté  instalado el  programa puede  que no  esté
+cargado,  y por  tanto  carecemos  de iconos  en  el escritorio.  Para
+resolverlo  podemos  lanzar  el  comando {\tt  gmc}  desde  el  cuadro
+de  diálogo  {\tt  LANZAR  PROGRAMA}.  Y  a  continuación  seleccionar
+{\tt CONFIGURACIÓN  $\rightarrow$ SESIÓN $\rightarrow$  GUARDAR SESIÓN
+ACTUAL}  en  el  menú  principal  de {\sf  GNOME}}.  En  ella  podemos
+depositar los archivos o directorios que utilicemos habitualmente. Con
+sólo pulsar  con el  botón derecho  de nuestro  ratón sobre  el mismo,
+dispondremos  de  todo  un  conjunto  de  opciones  para  organizar  y
+configurar nuestro escritorio. También podremos crear diferentes tipos
+de  nuevos elementos,  como por  ejemplo directorios  o lanzadores  de
+aplicaciones.
+
+Al igual  que en otros  entornos gráficos, podemos arrastrar  y soltar
+los  diferentes elementos  para  moverlos  entre directorios.  También
+podemos  hacer  una  doble  pulsación  con  el  botón  izquierdo  para
+abrirlos, o pulsar el botón derecho de nuestro ratón para acceder a un
+completo  menú  con  las  acciones  que  podemos  realizar  sobre  los
+elementos seleccionados.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/gnome_gmc.eps}
+\caption{GNOME Midnight Commander}
+\label{gnome_gmc}
+\end{figure}
+
+Si elegimos  abrir un directorio,  {\sf GMC} suele  responder abriendo
+una ventana similar  a la de la Figura \ref{gnome_gmc}.  En el área de
+las izquierda  de dicha  ventana disponemos  de una  representación de
+todo el  árbol de directorios  de nuestro sistema, lo  cual simplifica
+notablemente  la navegación.  Mientras que  en el  área de  la derecha
+podemos ver los archivos y/o subdirectorio de directorio seleccionado.
+{\sf GMC} nos permite seleccionar  diferentes tipos de vistas para los
+archivos, así  como manipularlos a nuestra  conveniencia utilizando el
+ratón. Nuevamente podemos arrastrar y soltar para mover archivos entre
+directorios,  o  podemos utilizar  el  botón  derecho del  ratón  para
+seleccionar una de las múltiples acciones de las que disponemos.
+
+\subsubsection{Nautilus}
+\index{GNOME!Nautilus}
+
+Aunque {\sf  GMC} es  un administrador de  archivos sencillo  y ligero
+su  desarrollo está  prácticamente  abandonado. En  su  lugar se  está
+imponiendo el uso  de una aplicación mucho más  potente, y visualmente
+más  atractiva,  denominada  {\sf  Nautilus}. Aun  así  es  importante
+destacar  que {\sf  Nautilus} es  una aplicación  excesivamente pesada
+para ordenadores un tanto antiguos y/o escasos de recursos.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/gnome_nautilus.eps}
+\caption{Administrador de archivos Nautilus}
+\label{gnome_nautilus}
+\end{figure}
+
+{\sf Nautilus} pretende ser par {\sf  GNOME} lo que {\sf Konqueror} es
+para {\sf KDE}.  Es decir, un administrador de  archivos, un navegador
+web  y un  visor de  documentos. Como  podemos observar  en la  Figura
+\ref{gnome_nautilus} la disposición de  todos los elementos en similar
+a la que tenemos  en {\sf GMC}. Es más, en lo  que a la administración
+de  archivo se  refiere se  comporta  de forma  exactamente igual.  Si
+estamos  acostumbrados  a manejar  a  uno  no tendremos  problemas  en
+utilizar el otro.
+
+\subsection{Configuración del escritorio}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/gnome_control.eps}
+\caption{Centro de control GNOME}
+\label{gnome_control}
+\end{figure}
+
+La  configuración  para  personalizar  nuestros  escritorio  se  puede
+realizar  desde  el  {\sf  Centro  de  control}\index{GNOME!Centro  de
+control} (Figura \ref{gnome_control}). Para acceder al mismo basta con
+seleccionar  {\tt CONFIGURACIÓN  $\rightarrow$  CENTRO  DE CONTROL  DE
+GNOME} en el menú principal del entorno.
+
+En la parte derecha de la  ventana contamos con la lista de categorías
+en las que se clasifican  las diferentes opciones de configuración del
+entorno de escritorio {\sf GNOME}.  Cuando seleccionamos una de dichas
+categorías  el  lado izquierdo  cambia  para  mostrarnos las  opciones
+disponibles.
+
+Cualquier  cambio en  la  configuración puede  ser  validado con  {\tt
+ACEPTAR}  o  rechazado  con   {\tt  CANCELAR}.  Sin  embargo,  podemos
+comprobar los efectos de esos cambios con sólo pulsar en {\tt PROBAR}.
+El sistema  automáticamente se  ajustará a nuestras  preferencias pero
+sin guardar los cambios definitivamente.  Antes de cerrar el centro de
+control es  necesario que pulsemos  {\tt ACEPTAR}  en cada una  de las
+categorías, independientemente  de que las  hallamos probado o  no. El
+título de la  categoría modificada se muestra en  rojo para indicarnos
+que todavía no hemos aceptado o  rechazado los cambios. Por último, el
+botón  {\tt REVERTIR}  nos  permite devolver  las  opciones al  estado
+anterior al de las modificaciones.
+
+\section{El escritorio de KDE}\index{KDE}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.8\textwidth]{imagenes/pantallazo_kde_descrito.eps}
+\caption{Aspecto del escritorio KDE}
+\label{kde}
+\end{figure}
+
+{\sf  KDE} es  entorno de  escritorio  con gestor  de ventanas  propio
+basado  en {\sf  X-Window}  que  nos da  un  entorno gráfico  amigable
+para  realizar  las  operaciones  más comunes  con  nuestro  ordenador
+(Figura  \ref{kde}).   Cuenta  con  un  panel   donde  tener  nuestras
+aplicaciones organizadas, un gestor de  archivos y navegador web ({\em
+Konqueror}\index{KDE!Konqueror}), y otros  muchos programas para hacer
+nuestro trabajo mucho más cómodo, o  pasar buenos ratos de ocio frente
+al ordenador.
+
+\subsection{Paneles y menús de KDE}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.9\textwidth]{imagenes/kde_panel.eps}
+\caption{Panel de KDE y algunos de sus iconos descritos}
+\label{kde_panel}
+\end{figure}
+
+Al  igual que  en {\sf  GNOME},  en {\sf  KDE} contamos  con un  panel
+en  el  que  se  organizan  todos los  menús  y  aplicaciones  (Figura
+\ref{kde_panel}). Este concepto  es familiar en la  inmensa mayoría de
+los gestores  de ventanas  y entornos  gráficos que  podamos encontrar
+en  cualquier  ordenador.  Este  panel  puede  ser  ubicado  por  toda
+la  pantalla, redimensionado,  etc.,  y es  altamente configurable  en
+aspecto, tamaño y funcionalidades.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.35\textwidth]{imagenes/kde_menuk.eps}
+\caption{Menú ``K'' desplegado}
+\label{kde_menuk}
+\end{figure}
 
 Se puede acceder  a los programas a  través del menú que  se activa al
-pulsar sobre el icono con una {\em  K}, y un engranaje, a la izquierda
-del panel de la parte inferior. Los programas se distribuyen en varios
-submenús,  y  se clasifican  por  tipos.  Normalmente, estos  submenús
-suelen tener títulos como {\em Programas}, {\em Multimedia}, etc\dots
+pulsar sobre el  icono con una {\em K} (Figura  \ref{kde_menuk}), y un
+engranaje,  a  la  izquierda  del  panel de  la  parte  inferior.  Los
+programas  se distribuyen  en  varios submenús,  y  se clasifican  por
+tipos.  Normalmente, estos  submenús  suelen tener  títulos como  {\tt
+PROGRAMAS}, {\tt MULTIMEDIA}, etc\dots
 
-El Terminal puede conseguirse en KDE mediante el botón que aparece en el
-panel que simboliza un monitor con una pequeña concha(shell en inglés)
-en su esquina superior izquierda.
-
-No debemos confundirlo con el que se encuentra por defecto inmediatamente
-a su derecha, con unas barras de colores pintadas en el interior de un
-monitor. Este es el que abre el centro de control de KDE, mediante el cual
-podemos configurar la totalidad de los parámetros gráficos, estéticos,
-de sonido, de rendimiento, de manejo, etc.
+El emulador  de terminal  puede conseguirse en  {\sf KDE}  mediante el
+botón que aparece en el panel que simboliza un monitor con una pequeña
+concha (shell en inglés) en  su esquina superior izquierda. No debemos
+confundirlo con  el que se  encuentra por defecto inmediatamente  a su
+derecha, con  unas barras  de colores  pintadas en  el interior  de un
+monitor.  Este es  el que  abre  el centro  de control  de {\sf  KDE},
+mediante el  cual podemos  configurar la  totalidad de  los parámetros
+gráficos, estéticos, de sonido, de rendimiento, de manejo, etc.
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=\textwidth]{imagenes/kde_panel.eps}
-\caption{Panel de KDE y algunos de sus iconos descritos}\label{gdm}
+\includegraphics[width=0.5\textwidth]{imagenes/pantallazo_kde_ejecutar.eps}
+\caption{Cuadro de diálogo {\tt EJECUTAR} tras pulsar en {\tt OPCIONES }}
+\label{kde_ejecutar}
 \end{figure}
 
-Una de las combinaciones de teclas más últiles en KDE es {\tt Alt+F2},
-que  nos muestra  el  cuadro de  diálogo {\em  Ejecutar},  en el  cual
+Una de  las combinaciones de teclas  más útiles en {\sf KDE}  es {\tt A-F2},
+que  nos muestra  el  cuadro de  diálogo {\tt  EJECUTAR},  en el  cual
 podemos indicar  cualquier comando  que queramos ejecutar.  Este mismo
 cuadro de diálogo nos da la posibilidad de ejecutar el programa, tanto
 como otro usuario, como dentro de una sesión del emulador de terminal.
-A esta última opción se accede pulsando el bóton {\em Opciones}.
+A  esta última  opción  se  accede pulsando  el  botón {\tt  OPCIONES}
+(Figura \ref{kde_ejecutar}).
 
-Respecto a las funciones de los botones del ratón en KDE, el botón derecho
-sobre el escritorio nos muestra un menú con unas pocas opciones, como crear
-nuevos objetos en nuestro escritorio (accesos directos o enlaces, carpetas,etc)
-,ejecutar comandos, activar menú de escritorio (lo cual nos muestra las
-opciones del menú que obtenemos con el botón derecho, en la parte superior
-de nuestra pantalla, de forma permanente.
+Respecto a  las funciones de  los botones del  ratón en {\sf  KDE}, el
+botón derecho sobre  el escritorio nos muestra un menú  con unas pocas
+opciones,  como crear  nuevos objetos  en nuestro  escritorio (accesos
+directos o enlaces, carpetas,etc),  ejecutar comandos, activar menú de
+escritorio (lo  cual nos muestra  las opciones del menú  que obtenemos
+con el  botón derecho, en  la parte  superior de nuestra  pantalla, de
+forma permanente.
 
-Para movernos por nuestros archivos, así como para navegar por internet,
-KDE pone a nuestra disposición un potente navegador: Konqueror.
-
-En la barra de direcciones de Konqueror podemos poner tanto directorios
-locales de nuestro ordenador, como ubicaciones ftp, http e incluso
-carpetas compartidas de windows (utilizando la sintaxis 
-{\tt smb://nombre\_netbios/carpeta}).
-
-Si ponemos un directorio local de nuestro ordenador (p.ej: /home/fulanito),
-KDE muestra un gestor de archivos, dando numerosas vistas, la posiblidad
-de previsualizar archivos de imagen,etc.
-
-Si ponemos un recurso ftp, konqueror muestra también una vista de carpetas,
-mediante la cual podemos manejar cómodamente un FTP, subiendo y bajando
-archivos con tan sólo arrastrar y soltar.
-
-Si ponemos una dirección web, konqueror la muestra normalmente.
-
-Para arrancar konqueror, hacemos clic en el icono con un globo terráqueo y 
-un engranaje situado en nuestro panel (ver imagen del panel descrita más
-arriba).
+\subsection{Administración de archivos}
 
 \begin{figure}[hbtp]
 \centering
-\subfigure[Menú ``K'' desplegado]{%
-\includegraphics[width=0.35\textwidth]{imagenes/kde_menuk.eps}}
-\label{Menu ``K''}
-\subfigure[Cuadro de diálogo ejecutar tras pulsar el botón {\em Opciones}]{%
-\includegraphics[width=0.55\textwidth]{imagenes/pantallazo_kde_ejecutar.eps}}
+\includegraphics[width=0.8\textwidth]{imagenes/kde_konqueror_web.eps}
+\caption{Konqueror como navegador web}
+\label{kde_konqueror_web}
 \end{figure}
+
+Para  movernos  por  nuestros  archivos, así  como  para  navegar  por
+Internet, {\sf KDE} pone a nuestra disposición una potente aplicación:
+{\em Konqueror}\index{KDE!Konqueror} (Figura \ref{kde_konqueror_web}).
+En   la   barra   de    direcciones   de   dicho   navegador   podemos
+poner   tanto  directorios   locales   de   nuestro  ordenador,   como
+ubicaciones   FTP   ({\tt   ftp://nombre\_equipo/nombre\_directorio}),
+HTTP   ({\tt   http://nombre\_equipo/nombre\_directorio}   e   incluso
+carpetas     compartidas     de      Microsoft®     Windows®     ({\tt
+smb://nombre\_netbios/carpeta}).
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=0.75\textwidth]{imagenes/kde_konqueror_web.eps}
-\caption{Konqueror como navegador web}\label{Konqueror como navegador web}
+\includegraphics[width=0.8\textwidth]{imagenes/kde_konqueror_dir.eps}
+\caption{Konqueror como gestor de archivos}
+\label{kde_konqueror_dir}
 \end{figure}
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.75\textwidth]{imagenes/kde_konqueror_dir.eps}
-\caption{Konqueror como gestor de archivos}\label{Konqueror como gestor de archivos}
-\end{figure}
+Si  por  ejemplo ponemos  un  directorio  local de  nuestro  ordenador
+tal  como {\tt  /home/usuario} (Figura  \ref{kde_konqueror_dir}), {\sf
+Konqueror}  muestra un  gestor de  archivos que  dispone de  numerosas
+vistas, la posibilidad  de previsualizar archivos de  imagen, etc. Sin
+embargo, si  ponemos un recurso  FTP, {\sf Konqueror}  muestra también
+una vista de carpetas, mediante  la cual podemos manejar cómodamente y
+de forma  transparente dichos  recursos. Por  ejemplo podemos  subir y
+bajar archivos con tan sólo arrastrar y soltar.
+
+Para arrancar {\sf Konqueror}, debemos pulsar en el icono con un globo
+terráqueo  y  un  engranaje  situado  en  nuestro  panel  (ver  Figura
+\ref{kde_panel}).
+

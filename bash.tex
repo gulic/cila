@@ -8,9 +8,9 @@ comandos  (o shell  en la  literatura inglesa).  Como en  muchos otros
 casos la variedad de intérpretes  de comandos existente es muy amplia.
 Sin embargo  existe uno que ha  destacado sobre los demás,  o al menos
 que  ha sabido  ocupar el  puesto  de estándar  de facto  en el  mundo
-GNU/Linux. Estamos hablando  del Bourne Shell, más  conocido como {\tt
-bash}\index{bash}, que  suele ser el intérprete  de comandos instalado
-por defecto en nuestro sistema.
+GNU/Linux. Estamos hablando del {\sf  Bourne Shell}, más conocido como
+{\tt  bash}\index{bash},  que  suele  ser el  intérprete  de  comandos
+instalado por defecto en nuestro sistema.
 
 En  general esto  no  desmerece  en nada  las  posibilidades de  otros
 intérpretes de comandos  como pueden ser el {\tt  tsh}\index{tsh} o el
@@ -124,10 +124,11 @@ usuarios autentificados en el sistema.  Al añadir las opciones {\tt am
 I}  estamos  indicando  que  queremos  que  sólo  muestre  información
 referente a nosotros como usuarios.
 
-\item El comando {\tt pwd}\index{pwd} informa del directorio actual de trabajo.
+\item El comando {\tt pwd}\index{pwd} informa del directorio actual de
+trabajo.
 
-\item El comando {\tt date}\index{date} muestra la fecha y hora actual del
-sistema.
+\item El comando {\tt date}\index{date} muestra la fecha y hora actual
+del sistema.
 
 \end{enumerate}
 
@@ -286,11 +287,11 @@ $ less < lista_archivos
 
 \subsection{Ejecutar en segundo plano: {\tt \&}}
 
-Si  al final  de un  comando añadimos  {\tt \&},  éste se  ejecutará en
+Si al  final de  un comando  añadimos {\tt \&},  éste se  ejecutará en
 segundo plano.  Es decir, el {\tt  bash} no esperará a  que el comando
 termine,  permitiéndonos seguir  ejecutando nuevos  programas mientras
 este se ejecuta en paralelo. Evidentemente resulta muy práctico cuando
-suponemos  que un  comando  va  a  llevar un  tiempo  de de  ejecución
+suponemos  que un  comando  va  a llevar  un  tiempo  de de  ejecución
 prolongado y nosotros deseamos poder seguir utilizando el sistema.
 
 
@@ -462,7 +463,7 @@ ejecuta el comando {\tt ls \$DIR}  que listará el contenido del citado
 directorio. Al rodear el comando por comillas invertidas la salida del
 mismo no va a la consola sino que  se almacena para su uso por el {\tt
 for}. Éste  toma esa salida  como una lista  de elementos por  los que
-tiene que pasar la variable {\tt  \$a} en cada iteración. Por tanto, en
+tiene que pasar la variable {\tt \$a} en cada iteración. Por tanto, en
 cada interación {\tt  \$a} contedrán el nombre de uno  de los archivos
 del directorio {\tt \$DIR}.
 

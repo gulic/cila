@@ -24,13 +24,12 @@ $ lclint main.c holafunc.c
 \end{verbatim}
 
 Si disponemos de nuestro programa perfectamente compilado y observamos
-que presenta algún  error del  que no  sabemos determinar  su origen,
-significa que ha llegado la  hora utilizar el depurador. GNU/Linux
-dispone del GNU Debugger bajo el comando  {\tt gdb}\label{gdb}. Para
-\index{Depuradores!GNU Debugger (GDB)}
-usarlo sólo debemos ejecutarlo especificando el nombre del programa en
-la línea de comandos; y haber compilado nuestro programa con la opción
-{\tt -g}.
+que  presenta algún  error del  que no  sabemos determinar  su origen,
+significa  que ha  llegado la  hora utilizar  el depurador.  GNU/Linux
+dispone del {\sf  GNU Debugger} bajo el  comando {\tt gdb}\label{gdb}.
+Para  \index{Depuradores!GNU  Debugger   (GDB)}  usarlo  sólo  debemos
+ejecutarlo  especificando  el  nombre  del programa  en  la  línea  de
+comandos; y haber compilado nuestro programa con la opción {\tt -g}.
 
 \begin{verbatim}
 $ gdb holamundo
@@ -96,8 +95,8 @@ llamadas por el programa.
 El  número  de  comandos  es  mucho más  grande  pero  basta  con  los
 anteriores para agilizar enormemente  nuestro trabajo. Una alternativa
 a todo  esto es  usar el {\tt  ddd} que se  puede considerar  como una
-interfaz gráfica para el  {\tt gdb}. Funciona sobre las X  y su uso es
-semejante a de los depuradores existentes en otras plataformas.
+interfaz gráfica  para el {\tt gdb}.  Funciona sobre las {\sf  X} y su
+uso es semejante a de los depuradores existentes en otras plataformas.
 
 \section{Data Display Debugger: DDD}
 \index{Depuradores!Data Display Debugger}
@@ -159,30 +158,30 @@ y escoger la opcion display.
 \index{Depuradores!puntos de ruptura}
 
 Bueno, ya tenemos un watch de la variable, pero\ldots ¿que pasa cuando
-pulsamos sobre  el botón  de run?  ¡No vemos nada!  Bueno, eso  es una
-circunstancia pasajera, vamos  a colocar un {\em  punto de ruptura} o punto
-de ruptura.
+pulsamos sobre el botón de run? ¡No vemos nada! Bueno, eso es una
+circunstancia pasajera, vamos a colocar un {\em punto de ruptura} o
+punto de ruptura.
 
-Los puntos de ruptura son  lugares  donde el  depurador  hará que  nuestro
-programa   pare  la   ejecucuón   para,  de   esta  manera,   analizar
-detenidamente el estado  de nuestro programa. La manera  de colocar un
-punto de ruptura en el  {\tt ddd} es simplemente desplazarse hasta  la línea donde
-deseamos colocar  el punto de ruptura y  hacer un  doble click con  el boton
+Los puntos de ruptura son lugares donde el depurador hará que nuestro
+programa pare la ejecucuón para, de esta manera, analizar detenidamente
+el estado de nuestro programa. La manera de colocar un punto de ruptura
+en el {\tt ddd} es simplemente desplazarse hasta la línea donde deseamos
+colocar el punto de ruptura y hacer un doble click con el boton
 izquierdo del ratón.
 
-Vemos que se nos coloca un símbolo  de stop donde hemos hecho el doble
-click,  lo que  indica que  hay un  punto de ruptura. Si  pulsamos sobre  el
-punto de ruptura  con el  boton derecho  vemos que  se nos  da la  opcion de
-desactivarlo, quitarlo y una muy  extraña de propiedades. La opcion de
-propiedades hace  que nos  aparezca un  cuadro de  dialogo en  el cual
+Vemos que se nos coloca un símbolo de stop donde hemos hecho el doble
+click, lo que indica que hay un punto de ruptura. Si pulsamos sobre el
+punto de ruptura con el boton derecho vemos que se nos da la opcion
+de desactivarlo, quitarlo y una muy extraña de propiedades. La opcion
+de propiedades hace que nos aparezca un cuadro de dialogo en el cual
 podemos introducir una expresión, ésta expresión se utiliza para hacer
-que nuestro punto de ruptura sea inteligente  y no pare la ejecución siempre
-que  el programa  pase por  allí, sino  que solo  se parará  cuando la
-expresión  se cumpla,  por ejemplo,  si ponemos  el punto de ruptura  en un
-bucle con 10.000 iteraciones y nosotros queremos que se pare cuando la
-i (variable  que cuenta  las iteraciones)  llegue a  5000 pues  lo que
-hemos de poner en  propiedades del punto de ruptura es {\tt i  = 5000} y de
-esa manera  nos saltaremos  las 5000 primeras  iteraciones que  no nos
+que nuestro punto de ruptura sea inteligente y no pare la ejecución
+siempre que el programa pase por allí, sino que solo se parará cuando
+la expresión se cumpla, por ejemplo, si ponemos el punto de ruptura en
+un bucle con 10.000 iteraciones y nosotros queremos que se pare cuando
+la i (variable que cuenta las iteraciones) llegue a 5000 pues lo que
+hemos de poner en propiedades del punto de ruptura es {\tt i = 5000} y
+de esa manera nos saltaremos las 5000 primeras iteraciones que no nos
 interesan.
 
 \begin{figure}[hbtp]
@@ -194,35 +193,35 @@ interesan.
 \subsection{Ejecución paso a paso}
 \index{Depuradores!ejecución paso a paso}
 
-Ahora que  ya tienes un  watch y un  punto de ruptura, en este  momento solo
-podemos ir  saltanto de  punto de ruptura en  punto de ruptura, y  esto no  nos es
-suficiente  así  que  vamos  a  intentar controlar  más  el  flujo  de
-ejecución  de  nuestros  programas.  Para esta  tarea  tenemos  varias
-herramientas comunes en  la mayoría de depuradores, en el  caso del dd
-las encontramos en una ventana que tenemos flotando sobre el depurador,
-con lo cual no es complicado utilizarlas, siempre las tenemos a mano y
-son las siguientes:
+Ahora que ya tienes un watch y un punto de ruptura, en este momento
+solo podemos ir saltanto de punto de ruptura en punto de ruptura, y
+esto no nos es suficiente así que vamos a intentar controlar más el
+flujo de ejecución de nuestros programas. Para esta tarea tenemos varias
+herramientas comunes en la mayoría de depuradores, en el caso del dd las
+encontramos en una ventana que tenemos flotando sobre el depurador, con
+lo cual no es complicado utilizarlas, siempre las tenemos a mano y son
+las siguientes:
 
 \begin{description}
 
-\item[{\em Step}:]{(paso) esta herramienta nos  sirve, como su propio nombre
-indica, para  ejecutar nuestro  programa paso  a paso.  Normalmente lo
-que  hacemos es  colocar  un  punto de ruptura al  inicio  de  la funcion  o
-procedimiento que  queremos analizar  y luego  ir pulsando  {\tt step}
-para analizar sentencia a sentencia que es lo que hace nuesto código.}
+\item[{\em Step}:]{(paso) esta herramienta nos sirve, como su propio
+nombre indica, para ejecutar nuestro programa paso a paso. Normalmente
+lo que hacemos es colocar un punto de ruptura al inicio de la funcion o
+procedimiento que queremos analizar y luego ir pulsando {\tt step} para
+analizar sentencia a sentencia que es lo que hace nuesto código.}
 
-\item[{\em Next}:]{(siguiente) muy  parecida a step, solo  que pulsando {\tt
-next} si en el código hay una llamada a una funcion o procedimiento no
-entramos  en  ella, sino  que  ejecuta  ésta  y  nos colocamos  en  la
+\item[{\em Next}:]{(siguiente) muy parecida a step, solo que pulsando
+{\tt next} si en el código hay una llamada a una funcion o procedimiento
+no entramos en ella, sino que ejecuta ésta y nos colocamos en la
 siguiente línea del programa.}
 
-\item[{\em Until}:]{(hasta)  esta herramienta  nos  sirve  para ejecutar  el
-programa hasta  la posición actual  del cursor,  es muy parecida  a un
-punto de ruptura temporal.}
+\item[{\em Until}:]{(hasta) esta herramienta nos sirve para ejecutar el
+programa hasta la posición actual del cursor, es muy parecida a un punto
+de ruptura temporal.}
 
-\item[{\em Cont}:]{(continuar)  saltamos  hasta  el siguiente  punto de ruptura  o
-hasta el final del programa si es  que no hay ningún punto de ruptura más en
-el flujo de ejecución.}
+\item[{\em Cont}:]{(continuar) saltamos hasta el siguiente punto de
+ruptura o hasta el final del programa si es que no hay ningún punto de
+ruptura más en el flujo de ejecución.}
 
 \end{description}
 
@@ -241,9 +240,9 @@ que hablamos es la de {\em ver} los punteros.
 Seguramente has hecho  más de un programa con memoria  dinámica que no
 acababa de  funcionar bien porque se  te perdían punteros y  no sabias
 muy bien  por donde andaban  o a  dónde estaban apuntando,  pues bien,
-esto ya no es excusa para entregar  una práctica a medio hacer, el {\tt ddd}
-viene en nuestra ayuda y  tenemos la {\sf herramienta definitiva} para
-la depuración con punteros.\\
+esto ya no es excusa para entregar una práctica a medio hacer, el {\tt
+ddd} viene en nuestra ayuda  y tenemos la {\em herramienta definitiva}
+para la depuración con punteros.\\
 
 Cuando  haces un  watch de  una  estructura (record)  salen todos  los
 campos en un  recuadro y los punteros también salen  como otro tipo de

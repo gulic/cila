@@ -18,7 +18,7 @@ de un programa:
 
 \item[Compilar] Traduce cada archivo fuente en C {\tt (*.c)} del
 programa a lenguaje máquina, almacenando la traducción en los archivos
-de código objeto {\tt (*.o)}. Para ello usamos el {\bf GCC (GNU C
+de código objeto {\tt (*.o)}. Para ello usamos el {\sf GCC (GNU C
 Compiler)} a través del comando {\tt gcc}\index{gcc}.
 
 \item[Enlazar] Une todos los archivos de código objeto generados en la
@@ -51,9 +51,9 @@ $ ./a.out
 El que a buen árbol se arrima, buena sombra le cobija.
 \end{verbatim}
 
-Es probable que pocos programadores consideren que {\tt a.out} sea un
-nombre apropiado para el ejecutable de su aplicación. Con el fin de
-cambiar dicho nombre se puede utilizar la opción {\tt -o
+Es probable que pocos programadores consideren que {\tt a.out} sea
+un nombre apropiado para el ejecutable de su aplicación. Con el
+fin de cambiar dicho nombre se puede utilizar la opción {\tt -o
 nombre\_ejecutable}.
 
 \begin{verbatim}
@@ -65,8 +65,8 @@ El que a buen árbol se arrima, buena sombra le cobija.
 Como podemos apreciar, el ejecutable de nuestra aplicación ahora se
 denomina {\tt holamundo}.
 
-Una práctica muy habitual en programación es dividir nuestro código en
-varios archivos, cada uno especializado en un tarea determinada.
+Una práctica muy habitual en programación es dividir nuestro código
+en varios archivos, cada uno especializado en un tarea determinada.
 Supongamos que disponemos del siguiente programa:
 
 \begin{ejemplo}{holamain.c}{Ejemplo de programa en varios archivos}
@@ -107,7 +107,7 @@ holamain.c} y el de {\tt holafunc.c}. El compilador sabe que para que
 nuestro programa funcione es necesario que esté enlazado a una serie de
 bibliotecas estándar del sistema, así que las incluye automáticamente.
 
-Una de esas bibliotecas es la {\bf Biblioteca GNU Estándar de C (GLIBC,
+Una de esas bibliotecas es la {\sf Biblioteca GNU Estándar de C (GLIBC,
 GNU C Library)}, comunmente conocida como {\tt libc}\index{libc}.
 Podemos acceder a la documentación de dicha biblioteca a través del
 comando:
@@ -118,7 +118,7 @@ $ info libc
 
 Funciones como {\tt fopen()}, {\tt malloc()}, {\tt printf()} y en
 general todas las del C estándar y muchas más se definen en la {\tt
-libc}.  Evidentemente en nuestro sistema existen bibliotecas para toda
+libc}. Evidentemente en nuestro sistema existen bibliotecas para toda
 clase de tareas cuya documentación se puede obtener recurriendo a la
 ayuda del sistema. Sin embargo, la mayor parte de esas bibliotecas no se
 enlazan automáticamente, así que nos queda la duda de cómo resolver este
@@ -127,8 +127,7 @@ problema. Por ejemplo vamos a modificar {\tt holafunc.c}:
 \begin{ejemplo}{holafuncm.c}{Ejemplo de progrma que requiere la
 biblioteca de funciones matemáticas} Definición de la función {\tt
 holafunc()} encargada de mostrar un mensaje por la salida estándar y de
-calcular el coseno de 0.5 radianes.
-\end{ejemplo}
+calcular el coseno de 0.5 radianes. \end{ejemplo}
 
 Si compilamos {\tt holamundo} veremos el siguiente mensaje de error:
 
@@ -153,16 +152,16 @@ El que a buen árbol se arrima, buena sombra lo cobija,
 y el coseno de 0.500000 es 0.877583.
 \end{verbatim}
 
-Al especificar {\tt -lm} se enlaza la biblioteca {\tt libm} (como vemos
-no hace falta poner el prefijo {\tt lib} cuando se indica el nombre de
-la biblioteca) que contiene la definición de {\tt cos()}. Es importante
-destacar que el enlazador sólo busca bibliotecas en una serie de
-directorios estándar de nuestro sistema. Por ejemplo, {\tt libm} se
+Al especificar {\tt -lm} se enlaza la biblioteca {\tt libm} (como
+vemos no hace falta poner el prefijo {\tt lib} cuando se indica el
+nombre de la biblioteca) que contiene la definición de {\tt cos()}. Es
+importante destacar que el enlazador sólo busca bibliotecas en una serie
+de directorios estándar de nuestro sistema. Por ejemplo, {\tt libm} se
 encuentra en {\tt /usr/lib/} que es un directorio estándar. Si deseamos
 enlazar bibliotecas situadas en otros directorios, como por ejemplo el
 directorio actual, debemos usar la opción {\tt -Lruta\_biblioteca}. Por
-ejemplo, el siguiente comando enlaza a nuestro programa una biblioteca de
-nombre {\tt libpropia} que se encuentra en el directorio actual:
+ejemplo, el siguiente comando enlaza a nuestro programa una biblioteca
+de nombre {\tt libpropia} que se encuentra en el directorio actual:
 
 \begin{verbatim}
 $ gcc -L. -lm -lpropia -o holamundo holamain.c holafuncm.c
@@ -179,8 +178,8 @@ generar el código objeto para cada archivo:
 $ gcc -c holamain.c holafuncm.c
 \end{verbatim}
 
-Ahora tenemos dos nuevos archivos denominados {\tt holamain.o} y {\tt
-holafuncm.o} que se corresponden con el código objeto de {\tt
+Ahora tenemos dos nuevos archivos denominados {\tt holamain.o} y
+{\tt holafuncm.o} que se corresponden con el código objeto de {\tt
 holamain.c} y {\tt holafuncm.c} respectivamente.
 
 Para enlazar, sólo debemos especificar los archivos de código objeto en
@@ -198,10 +197,10 @@ la última compilación. Esto no parece importante cuando trabajamos en
 proyectos pequeños con apenas un par de archivos. Pero es fundamental a
 la hora de desarrollar programas de mayor envergadura.
 
-También es posible utilizar directamente {\tt ld}, en lugar de ejecutar
-{\tt gcc} y que éste llame al primero. El problema es que debemos
-indicarle a mano al {\tt ld} que enlace a nuestro programa las
-bibliotecas estándar del sistema, puesto que él no lo hace
+También es posible utilizar directamente {\tt ld}, en lugar de
+ejecutar {\tt gcc} y que éste llame al primero. El problema es que
+debemos indicarle a mano al {\tt ld} que enlace a nuestro programa
+las bibliotecas estándar del sistema, puesto que él no lo hace
 automáticamente. Ya que {\tt gcc} hace dicho trabajo por nosotros,
 evitaremos entrar en más detalles.
 
@@ -235,14 +234,14 @@ A diferencia de ejemplos anteriores, nuestro programa no funcionará si
 no disponemos de {\tt libholafunc.so}. Sin embargo, cualquier programa
 futuro podrá utilizar las funciones de nuestra biblioteca.
 
-El inconveniente de crear bibliotecas de enlace dinámico es que hay que
-instalarlas en algún directorio donde el enlazador dinámico ({\tt
-ld.so}) sepa que hay bibliotecas (p.ej. {\tt /usr/lib}), pero la labor
-de instalar o desinstalar bibliotecas en el sistema, así como la de
-configurar {\tt ld.so} para que las busque es del {\tt root}. Por ello,
-si ejecutáramos ahora nuestro programa éste no funcionaría, puesto que
-sería incapaz de encontrar {\tt libholafunc.so}. Para que esto no sea
-así debemos definir la variable de entorno
+El inconveniente de crear bibliotecas de enlace dinámico es que hay
+que instalarlas en algún directorio donde el enlazador dinámico
+({\tt ld.so}) sepa que hay bibliotecas (p.ej. {\tt /usr/lib}), pero
+la labor de instalar o desinstalar bibliotecas en el sistema, así
+como la de configurar {\tt ld.so} para que las busque es del {\tt
+root}. Por ello, si ejecutáramos ahora nuestro programa éste no
+funcionaría, puesto que sería incapaz de encontrar {\tt libholafunc.so}.
+Para que esto no sea así debemos definir la variable de entorno
 \$LD\_LIBRARY\_PATH\index{\$LD\_LIBRARY\_PATH} con la ruta de nuestra
 biblioteca.
 
@@ -253,16 +252,16 @@ El que a buen árbol se arrima, buena sombra le cobija,
 y el coseno de 0.500000 es 0.877583.
 \end{verbatim}
 
-La forma en la que hemos generado nuestra biblioteca de enlace dinámico no
-suele dar problemas en sistemas GNU/Linux bajo plataforma Intel x86. Sin
-embargo, no es el procedimiento recomendado. Lo ideal, con el fin de garantizar
-la compatibilidad entre plataformas, es que compilemos el código fuente de
-nuestra biblioteca de enlace dinámico con la opción {\tt -fPIC}. Dicha opción
-fuerza al compilador a generar código independiente de la posición. De esa
-manera la biblioteca puede ser cargada en cualquier punto del espacio de
-direcciones de la memoria de las aplicaciones que la utilizan. Por tanto, el
-procedimiento estándar para generar nuestro programa queda de la siguiente
-manera:
+La forma en la que hemos generado nuestra biblioteca de enlace dinámico
+no suele dar problemas en sistemas GNU/Linux bajo plataforma Intel x86.
+Sin embargo, no es el procedimiento recomendado. Lo ideal, con el fin
+de garantizar la compatibilidad entre plataformas, es que compilemos
+el código fuente de nuestra biblioteca de enlace dinámico con la
+opción {\tt -fPIC}. Dicha opción fuerza al compilador a generar código
+independiente de la posición. De esa manera la biblioteca puede ser
+cargada en cualquier punto del espacio de direcciones de la memoria de
+las aplicaciones que la utilizan. Por tanto, el procedimiento estándar
+para generar nuestro programa queda de la siguiente manera:
 
 \begin{verbatim}
 $ gcc -c holamain.c
@@ -281,10 +280,10 @@ $ gcc -L. -lholafunc -o holamundo holamain.c
 
 \section{¿Y que pasa con el C++?}
 
-A la hora de compilar código en C++ (habitualmente con extensiones {\tt
-*.C, *.cc, *.cpp, *.c++, *.cp, *.cxx}) se utiliza el comando {\tt
-g++}\index{g++}. Básicamente se encarga de ejecutar el {\tt gcc}
-habilitando el C++ como lenguaje por defecto, y añadiendo las
+A la hora de compilar código en C++ (habitualmente con extensiones
+{\tt *.C, *.cc, *.cpp, *.c++, *.cp, *.cxx}) se utiliza el comando
+{\tt g++}\index{g++}. Básicamente se encarga de ejecutar el {\tt
+gcc} habilitando el C++ como lenguaje por defecto, y añadiendo las
 bibliotecas estándar del C++ en la fase de enlazado. Por tanto, todo lo
 explicado para {\tt gcc} es aplicable para el {\tt g++}. Y si no, veamos
 el siguiente código de ejemplo:
