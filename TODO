@@ -11,11 +11,22 @@ pasarán a ser WIP ("Work In Progress")
 Prioritario
 ===========
 
+ - Formato: ¿XML? ¿LaTeX? ¿DocBook? Decidámosnos ya.
+
+ - Pantallazos: Repetirlos  en formato  PNG (apt-get  install netpbm).
+   Por  favor  procuren utilizar  pantallazos  no  mayores de  800x600
+   píxeles, pues más  grandes no quedan del todo  bien al imprimirlos.
+   Las pantallazos  deben hacerse en  escritorios Gnome 2.2 y  KDE 3.1
+   con fondos temas claros y bonitos, nada de escritorios minimalistas
+   y oscuros (esto también va por mí 0:-)
+
  - Tema de Yacas. Actualizar de GnuPlot a Plot2D. Añadir ejemplos más
    jugosos de Álgebra Lineal y polinomios.
 
- - Tema de OpenOffice. Carlos Pérez (aka Sirma) tiene material valioso
-   para este tema. Lo subirá tan pronto sea posible.
+ - Tema de  OpenOffice. Carlos Pérez  (aka Sirma) a  aportado material
+   para este tema.  Se trata de un tema sobre  StarOffice que escribió
+   para los  cursos de LuCAS, así  que hay que adaptarlo  para que sea
+   válido para OpenOffice. También hay que substituir los pantallazos.
 
  - Manipulación  de gráficos.  Habría que  dividirlo en  varios temas,
    tratando un programa  por tema, de forma que  constituyan un módulo
@@ -69,7 +80,7 @@ Sugerido
    que he visto  hasta ahora son gEDA, oregano y  DIA. Me quedaría con
    gEDA, aunque es un poco complicado de hechar a caminar.
 
- - Diseño 3D ¿qué  tal blender o vertex? ¿Alguien con  CI 9078 que sea
+ - Diseño 3D ¿qué  tal blender o vertex? ¿Alguien con  CI 7486 que sea
    capaz de explicar esto a un estudiante novato? X-D
 
  - Herramientas  para  química. Que  recuerde  ahora  mismo existe  un
