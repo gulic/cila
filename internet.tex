@@ -65,28 +65,27 @@ nuevos navegadores web dentro del mundillo del Software Libre
 FTP  (File Transfer  Protocol) es  un  protocolo que  se utiliza  para
 transferir información, almacenada en  ficheros, de una máquina remota
 a  otra local,  o viceversa.  Para  poder realizar  esta operación  es
-necesario conocer la {\em dirección IP} (o el ``nombre'') de la
-máquina a  la que nos  queremos conectar  para realizar algún  tipo de
-transferencia. Es fundamental distinguir entre máquina local y máquina
-remota:
+necesario conocer la dirección  IP o el nombre de la  máquina a la que
+nos queremos  conectar para realizar  algún tipo de  transferencia. Es
+fundamental distinguir entre máquina local y máquina remota:
 
 \begin{description}
 
-\item[Máquina local]  Es  aquélla desde donde nos  conectamos para hacer
+\item[Máquina local] Es aquélla desde  donde nos conectamos para hacer
 la transferencia, es decir, donde ejecutamos ftp.
 
-\item[Máquina  remota]   Es  aquella  a   la  que  nos  conectamos  para
+\item[Máquina  remota]  Es  aquella  a  la  que  nos  conectamos  para
 transferir información.
 
 \end{description}
 
 \subsection{ Inicio de sesión FTP}
 
-Para realizar  transferencias  de ficheros  por protocolo  FTP
-se  establecen  conexiones (sesiones)  entre  la  máquina local  y  la
-remota. Estas sesiones comienzan por  la autentificación del usuario y
+Para  realizar  transferencias  de   ficheros  por  protocolo  FTP  se
+establecen conexiones (sesiones)  entre la máquina local  y la remota.
+Estas  sesiones  comienzan  por   la  autentificación  del  usuario  y
 prosiguen  con las  transferencias.  Finalmente la  sesión se  cierra.
-Veamos un breve ejemplo. 
+Veamos un ejemplo:
 
 \begin{verbatim}
 $ ftp euler
@@ -95,21 +94,20 @@ Connected to euler.fmat.ull.es.
 Name (euler:miguev): 
 \end{verbatim}
 
-  El   servidor  nos  preguntará   un  nombre  de   usuario,  y
-seguidamente la contraseña. El nombre  que daremos debe ser una cuenta
-de  usuario válida  en el  servidor al  que intentamos  acceder, y  la
-contraseña  lógicamente debe  ser  correspondiente a  ese  usuario. En
-servidores públicos  suele  existir una cuenta de  acceso anónima sólo
-para leer (o tal vez una carpeta donde poner cosas pero no leer). Para
-acceder a un FTP  como usuario  anónimo se  utiliza el  nombre {\em anonymous}
-y se proporciona  la  dirección  de  correo  electrónico  como  contraseña.
+El servidor  nos preguntará  un nombre de  usuario, y  seguidamente la
+contraseña.  El nombre  que daremos  debe  ser una  cuenta de  usuario
+válida  en el  servidor al  que  intentamos acceder,  y la  contraseña
+lógicamente  debe ser  correspondiente  a ese  usuario. En  servidores
+públicos suele existir una cuenta de  acceso anónima sólo para leer (o
+tal vez una carpeta donde poner cosas pero no leer). Para acceder a un
+FTP como  usuario anónimo se  utiliza el  nombre {\tt anonymous}  y se
+proporciona la dirección de correo electrónico como contraseña.
 
-
- Una vez introducido el nombre  y la contraseña el servidor nos
-recibirá  y  el  programa  cliente  de FTP  nos  mostrará  un  prompt,
-manifestando así que  está preparado para ejecutar las  órdenes que le
-demos. A  partir de aquí  se realizan las maniobras  posibles mediante
-los comándos de FTP que veremos más adelante. 
+Una vez introducido el nombre y la contraseña el servidor nos recibirá
+y el programa cliente de FTP  nos mostrará un prompt, manifestando así
+que está preparado para ejecutar las órdenes que le demos. A partir de
+aquí se realizan  las maniobras posibles mediante los  comándos de FTP
+que veremos más adelante.
 
 \begin{verbatim}
 $ ftp euler
@@ -121,12 +119,12 @@ Password:
 230 User miguev logged in.
 Remote system type is UNIX.
 Using binary mode to transfer files.
-ftp&gt;
+ftz>
 \end{verbatim}
 
 
 
-\subsection{ Comandos del FTP}
+\subsection{Comandos del FTP}
 
 
 El protocolo FTP dispone de unos comandos estándares suficientes 
@@ -136,70 +134,72 @@ vemos a continuación un resumen.
 
 \begin{description}
 
-\item[help]  Proporciona una lista de los comandos del FTP de la máquina
-local
-
-\item[help   comando]    Proporciona   información  sobre   el   comando
-especificado, correspondeinte a la máquina local
-
-\item[lcd directorio-local]  Para moverse de  un directorio a otro en la
+\item[help]  Proporciona una  lista  de  los comandos  del  FTP de  la
 máquina local
 
-\item[lcd unidad:]   Para cambiar de una  unidad de disco a  otra, en el
+\item[help   comando]  Proporciona   información   sobre  el   comando
+especificado, correspondeinte a la máquina local
+
+\item[lcd directorio-local] Para moverse de un directorio a otro en la
+máquina local
+
+\item[lcd unidad:] Para  cambiar de una unidad de disco  a otra, en el
 caso particular de que la máquina local esa un PC con Windows o MS-DOS
 
-\item[cd directorio-remoto]  Para moverse de un directorio a otro en la máquina remota
-
-\item[lls directorio-local]   Para listar el contenido  de un directorio
-en la máquina local
-
-\item[[ls|dir] directorio-remoto] 
-Para listar el contenido de un directorio en la máquina remota
-
-\item[! comando]  Para ejecutar un comando en la máquina local
-
-\item[delete fichero-remoto]  Para borrar un fichero en la máquina remota
-
-\item[delete  ficheros-remotos]   Para  borrar  varios  ficheros  en  la
+\item[cd directorio-remoto] Para moverse de un directorio a otro en la
 máquina remota
 
-\item[rmdir directorio-remoto]  Para borrar  un directorio en la máquina
+\item[lls directorio-local] Para listar  el contenido de un directorio
+en la máquina local
+
+\item[[ls|dir]  directorio-remoto]  Para  listar el  contenido  de  un
+directorio en la máquina remota
+
+\item[! comando] Para ejecutar un comando en la máquina local
+
+\item[delete  fichero-remoto] Para  borrar  un fichero  en la  máquina
 remota
 
-\item[mkdir directorio-remoto]   Para crear un directorio  en la máquina
-remota
+\item[delete  ficheros-remotos]  Para  borrar varios  ficheros  en  la
+máquina remot                                                        a
 
-\item[pwd]  Para  saber el directorio en  el que se está,  en la máquina
-remota
+\item[rmdir directorio-remoto] Para borrar un directorio en la máquina
+remot                                                                a
 
-\item[ascii]  Para hacer la transferencia  en formato ASCII (lo hace por
+\item[mkdir directorio-remoto] Para crear  un directorio en la máquina
+remot                                                                a
+
+\item[pwd] Para saber  el directorio en el que se  está, en la máquina
+remot                                                                a
+
+\item[ascii] Para hacer la transferencia en formato ASCII (lo hace por
 defecto)
 
-\item[binary]   Para  hacer  la  transferencia en  formato  binario,  se
+\item[binary]  Para  hacer la  transferencia  en  formato binario,  se
 utiliza el comando:
 
-\item[get      fichero-remoto     fichero-local]       Transfiere     el
-{\tt fichero-remoto}  desde  la  máquina  remota a  la  máquina  local,
+\item[get   fichero-remoto    fichero-local]   Transfiere    el   {\tt
+fichero-remoto}  desde   la  máquina   remota  a  la   máquina  local,
 guardándolo con el nombre {\tt fichero-local} en la máquina local
 
-\item[mget lista-ficheros-remotos]  Transfiere los ficheros listados desde
-la máquina remota a la máquina local.
+\item[mget  lista-ficheros-remotos] Transfiere  los ficheros  listados
+desde la máquina remota a la máquina local.
 
-\item[prompt]  (Des)activa el modo  interactivo de las transferencias de
+\item[prompt] (Des)activa el modo interactivo de las transferencias de
 ficheros múltiples.
 
-\item[put      fichero-local     fichero-remoto]       Transfiere     el
-{\tt fichero-local}  desde  la  máquina  local  a  la  máquina  remota,
-guardándolo con el nombre {\tt fichero-remoto} en la máquina remota
+\item[put   fichero-local    fichero-remoto]   Transfiere    el   {\tt
+fichero-local} desde la máquina local a la máquina remota, guardándolo
+con el nombre {\tt fichero-remoto} en la máquina remota
 
-\item[mput  lista-ficheros-locales]   Transfiere los  ficheros  listados
+\item[mput  lista-ficheros-locales] Transfiere  los ficheros  listados
 desde la máquina local a la máquina remota.
 
 \end{description}
 
-Obviamente, el comando {\tt ftp} no es el único programa cliente
-de  FTP disponible.  Existen multitud  de programas  clientes de  FTP,
-tanto para GNU/Linux como para  otras plataformas, como p.ej. el gFTP.
+Obviamente, el  comando {\tt ftp} no  es el único programa  cliente de
+FTP disponible. Existen  multitud de programas clientes  de FTP, tanto
+para GNU/Linux como para otras plataformas, como p.ej. el gFTP.
 
 
 
@@ -366,18 +366,17 @@ TELNET/SSH para sistemas Microsoft® Windows®.
 \subsection{Mutt }
 
 
-       Mutt  es un programa  cliente de correo  electrónico, lo
-      que en  inglés se denomina  un MUA  (Mail User Agent,  agente de
-      correo del  usuario). Es un programa  ``de consola'', lo
-      que  significa  que no  necesita  un  entorno de  ventanas  para
-      ejecutarse. Al igual que  otros programas basados en pulsasiones
-      de  teclas,  Mutt  resulta  ser  poco  intuitivo  al  principio.
-      Afortunadamente,  se encuentra  traducido  al  castellano y  eso
-      ayuda bastante. 
+       Mutt es  un programa cliente  de correo electrónico, lo  que en
+      inglés se denomina un MUA (Mail User Agent, agente de correo del
+      usuario). Es un programa ``de consola'', lo que significa que no
+      necesita un  entorno de ventanas  para ejecutarse. Al  igual que
+      otros programas  basados en pulsasiones de  teclas, Mutt resulta
+      ser poco  intuitivo al principio. Afortunadamente,  se encuentra
+      traducido al castellano y eso ayuda bastante.
 
-       Vamos a usar mutt  para familirizarnos un poco él, verán
-      que es  simple. Abrimos  una ventana de  emulador de  terminal y
-      ejecutan el comando {\tt mutt}. 
+       Vamos a usar mutt para familirizarnos  un poco él, verán que es
+      simple. Abrimos una  ventana de emulador de  terminal y ejecutan
+      el comando {\tt mutt}.
 
 \begin{verbatim}
       $ mutt
@@ -555,15 +554,6 @@ Ayuda para index                                                       -- (15%)
 \end{verbatim}
 
 
-
-\subsection{Kmail }
-
-
- Kmail es el programa cliente de correo para KDE, fácil de usar
-y a la vez muy versátil y  configurable. Dada su facilidad de manejo y
-la premura  de tiempo en  el curso  actual, no entraremos  en detalles
-sobre su manejo y configuración. Sólo les animaremos a que sean osados
-y exploren libremente sus opciones de configuración. 
 
 
 

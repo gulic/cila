@@ -31,7 +31,8 @@
 \usepackage{makeidx}
 
 % Paquete para hiperenlaces HTML
-\usepackage{html}
+%\usepackage{html}
+%\usepackage{hyperlatex}
 
 % Paquete para filas múltiples (para tablas)
 \usepackage{multirow}
@@ -73,6 +74,14 @@
 % Portadas, nota de copyright y dedicatoria
 \frontmatter
 \include{portada}
+
+
+% Presentación y Contribuciones
+\pagestyle{plain}
+\incluye{presentacion}
+\incluye{contrib}
+\newpage
+\pagestyle{fancy}
 
 % Modificación de algunas variables para adaptarlas a nuestro uso particular
 \renewcommand{\partname}{MÓDULO}

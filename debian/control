@@ -8,7 +8,7 @@ Standards-Version: 3.5.2
 Package: cila-libro
 Architecture: all
 Depends: ${shlibs:Depends}
-Suggests:, cila-modules, cila-mod1, cila-mod2, cila-mod3, cila-mod4, cila-mod5, cila-mod6
+Suggests: cila-mod1, cila-mod2, cila-mod3, cila-mod4, cila-mod5, cila-mod6
 Description: Libro del Curso de Introducción a Linux para Alumnos
  Libro del Curso de Introducción a Linux para Alumnos
  .
