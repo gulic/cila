@@ -45,12 +45,9 @@ Las  {\sf   X}  presentan  una  arquitectura   (Figura  \ref{xwindow})
 cliente/servidor que  en muchos  casos ha sido  alabada pero  en otros
 muchos criticada.
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=\textwidth]{imagenes/xwindow.eps}
+\begin{figura}{xwindow}{1}
 \caption{Arquitectura cliente/servidor del sistema X-Window}
-\label{xwindow}
-\end{figure}
+\end{figura}
 
 La  arquitectura   de  las  {\sf   X}  se  divide  en   dos  elementos
 fundamentales.  Por  un lado  el  {\em  servidor X}\index{servidor  X}
@@ -187,11 +184,9 @@ el  sistema nos  indique  que está  disponible  para recibir  nuestros
 comandos.  El  comando  {\tt  startx}  iniciará  el  entorno  gráfico.
 Evidentemente al terminar nuestro trabajo volveremos a la consola.
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/gdm.eps}
+\begin{figura}{gdm}{0.98}
 \caption{Ventana de autentificación de GDM}\label{gdm}
-\end{figure}
+\end{figura}
 
 Para  que la  autentificación desde  el  modo gráfico  sea posible  es
 necesario  tener  instalado  un  {\em  display  manager}\index{Display
@@ -283,11 +278,9 @@ veremos como nuestra aplicación de edición terminará sin advertir nada
 de la pérdida de datos, y el terminal se cerrará sin indicarnos que se
 encuentra esperando por el editor.
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/btitulo.eps}
+\begin{figura}{btitulo}{0.9}
 \caption{Barra de título del gestor de ventanas Sawfish}\label{btitulo}
-\end{figure}
+\end{figura}
 
 Por otro lado es posible que el  proceso esté bloqueado y no reciba el
 mensaje. En ese caso la ventana no  se cerrará a menos que forcemos su
@@ -387,43 +380,34 @@ momento de seleccionar la opción correspondiente.
 
 \end{description}
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/gnome_menu.eps}
-\caption{Menú de panel de GNOME}\label{gnome_menu}
-\end{figure}
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.5\textwidth]{imagenes/gnome_menu_principal.eps}
-\caption{Panel alineado de GNOME y menú principal}
-\label{gnome_menu_principal}
-\end{figure}
-
 \subsection{Paneles y menús de GNOME}
 
 Suponiendo  que iniciamos  sesión en  la  máquina lo  primero que  nos
 llamará la atención son los  {\em paneles} (Figuras \ref{gnome_menu} y
-\ref{gnome_menu_principal}).  Si  pulsamos  en  la  huella  del  panel
-inferior, o seleccionamos  alguna de las opciones  del panel superior,
-dispondremos de acceso a las aplicaciones instaladas en el sistema. La
-mayor  parte de  las  aplicaciones {\sf  GNOME}  están clasificadas  y
-disponibles en alguno  de los submenús correspondientes.  (p. ej. {\tt
-APLICACIONES}, {\tt  UTILIDADES}, {\tt GRÁFICOS}, etc).  En {\tt MENÚS
-KDE}  se  encuentran clasificadas  todas  las  aplicaciones {\sf  KDE}
-instaladas,  y en  {\tt MENÚS  DEBIAN}  todas las  aplicaciones de  la
-distribución, independientemente  del entorno  de escritorio  para las
-que fueron  desarrolladas. En  este punto  es importante  recordar que
-podemos  ejecutar  cualquiera de  las  aplicaciones  sin importar  que
-estemos trabajando en un entorno  de escritorio diferente a aquel para
-el que fueron diseñadas.
+\ref{gnome_menu_principal}).  
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.9\textwidth]{imagenes/gnome_favoritos.eps}
-\caption{Añadir elemento al menú {\tt FAVORITOS}}
-\label{gnome_favoritos}
-\end{figure}
+\begin{figura}{gnome_menu}{0.98}
+\caption{Menú de panel de GNOME}\label{gnome_menu}
+\end{figura}
+
+Si  pulsamos  en  la  huella   del  panel  inferior,  o  seleccionamos
+alguna  de las  opciones del  panel superior,  dispondremos de  acceso
+a  las  aplicaciones instaladas  en  el  sistema.  La mayor  parte  de
+las  aplicaciones  {\sf GNOME}  están  clasificadas  y disponibles  en
+alguno de  los submenús correspondientes. (p.  ej. {\tt APLICACIONES},
+{\tt  UTILIDADES},  {\tt  GRÁFICOS},  etc).  En  {\tt  MENÚS  KDE}  se
+encuentran clasificadas todas las aplicaciones {\sf KDE} instaladas, y
+en  {\tt MENÚS  DEBIAN}  todas las  aplicaciones  de la  distribución,
+independientemente  del  entorno de  escritorio  para  las que  fueron
+desarrolladas.  En  este  punto  es importante  recordar  que  podemos
+ejecutar  cualquiera  de las  aplicaciones  sin  importar que  estemos
+trabajando en un  entorno de escritorio diferente a aquel  para el que
+fueron diseñadas.
+
+\begin{figura}{gnome_menu_principal}{0.6}
+\caption{Panel alineado de GNOME y menú principal}
+\label{gnome_menu_principal}
+\end{figura}
 
 Otras opciones son el menú  {\tt FAVORITOS}, que es personalizable con
 nuestras aplicaciones preferidas usando la opción {\tt AÑADIR DESDE EL
@@ -437,12 +421,10 @@ la  ventana de  inicio de  sesión  del {\sf  GDM}), y  la opción  {\tt
 TERMINAR SESIÓN}  para terminar nuestra  sesión y volver al  {\sf GDM}
 (Figura \ref{gdm}).
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.9\textwidth]{imagenes/gnome_menu_persis.eps}
-\caption{Hacer que un menú sea persistente}
-\label{gnome_menu_persis}
-\end{figure}
+\begin{figura}{gnome_favoritos}{0.98}
+\caption{Añadir elemento al menú {\tt FAVORITOS}}
+\label{gnome_favoritos}
+\end{figura}
 
 En  {\sf  GTK},   y  por  tanto  en  {\sf  GNOME},   todos  los  menús
 cuentan  con   una  pequeña  marca   en  la  parte   superior  (Figura
@@ -451,12 +433,10 @@ la aplicación  y pasa  a estar  en una  ventana independiente.  De esa
 manera podemos acceder a un menú con opciones de uso habitual de forma
 más rápida y sencilla.
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.6\textwidth]{imagenes/gnome_menu_contexto.eps}
-\caption{Menú de contexto de los elementos del menú principal}
-\label{gnome_menu_contexto}
-\end{figure}
+\begin{figura}{gnome_menu_persis}{0.98}
+\caption{Hacer que un menú sea persistente}
+\label{gnome_menu_persis}
+\end{figura}
 
 Tal y  como podemos  apreciar en la  Figura \ref{gnome_menu_contexto},
 todos los elementos del menú principal disponen de un menú de contexto
@@ -466,15 +446,10 @@ añadir el elemento al panel,  quitarlo del menú principal, añadirlo al
 menú {\tt  FAVORITOS} o  alterar sus  propiedades, entre  muchas otras
 alternativas.
 
-\begin{figure}[hbtp]
-\centering
-\subfigure[Cuadro de diálogo {\tt LANZAR PROGRAMA}]{%
-\includegraphics[width=0.45\textwidth]{imagenes/gnome_lanzar.eps}
-\label{gnome_lanzar}}
-\subfigure[Cuadro de diálogo avanzado {\tt LANZAR PROGRAMA}]{%
-\includegraphics[width=0.45\textwidth]{imagenes/gnome_lanzar_avd.eps}
-\label{gnome_lanzar_avd}}
-\end{figure}
+\begin{figura}{gnome_menu_contexto}{0.6}
+\caption{Menú de contexto de los elementos del menú principal}
+\label{gnome_menu_contexto}
+\end{figura}
 
 Una de las  opciones más interesantes de dicho menú  de contexto es la
 que  se encuentra  bajo el  texto de  {\tt PONER  EN EL  FORMULARIO DE
@@ -493,6 +468,16 @@ terminal. La primera de las opciones resulta especialmente interesante
 si la aplicación  no está disponible entre las que  nos permite elegir
 el cuadro  de diálogo (p. ej.  {\tt xkill}) o porque  queramos pasarle
 alguna opción de la línea de comandos de la aplicación.
+
+\begin{figure}[hbtp]
+\centering
+\subfigure[Cuadro de diálogo {\tt LANZAR PROGRAMA}]{%
+\includegraphics[width=0.45\textwidth]{imagenes/gnome_lanzar.eps}
+\label{gnome_lanzar}}
+\subfigure[Cuadro de diálogo avanzado {\tt LANZAR PROGRAMA}]{%
+\includegraphics[width=0.45\textwidth]{imagenes/gnome_lanzar_avd.eps}
+\label{gnome_lanzar_avd}}
+\end{figure}
 
 Manejar  {\sf  GNOME} es  cuestión  de  jugar  un  rato y  probar  las
 diferentes opciones. Disponemos  de tres botones en  nuestro ratón (ya
@@ -538,12 +523,10 @@ de menús} que nos permite personalizar los menús de aplicaciones.
 
 \end{description}
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.9\textwidth]{imagenes/gnome_apliques.eps}
+\begin{figura}{gnome_apliques}{1}
 \caption{Ejemplos de paneles con apliques}
 \label{gnome_apliques}
-\end{figure}
+\end{figura}
 
 Uno de los aspectos más interesantes del entorno de escritorio de {\sf
 GNOME} es la existencia de los {\em apliques}\index{GNOME!apliques} (o
@@ -604,12 +587,10 @@ abrirlos, o pulsar el botón derecho de nuestro ratón para acceder a un
 completo  menú  con  las  acciones  que  podemos  realizar  sobre  los
 elementos seleccionados.
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/gnome_gmc.eps}
+\begin{figura}{gnome_gmc}{0.98}
 \caption{GNOME Midnight Commander}
 \label{gnome_gmc}
-\end{figure}
+\end{figura}
 
 Si elegimos  abrir un directorio,  {\sf GMC} suele  responder abriendo
 una ventana similar  a la de la Figura \ref{gnome_gmc}.  En el área de
@@ -633,12 +614,10 @@ más  atractiva,  denominada  {\sf  Nautilus}. Aun  así  es  importante
 destacar  que {\sf  Nautilus} es  una aplicación  excesivamente pesada
 para ordenadores un tanto antiguos y/o escasos de recursos.
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/gnome_nautilus.eps}
+\begin{figura}{gnome_nautilus}{0.85}
 \caption{Administrador de archivos Nautilus}
 \label{gnome_nautilus}
-\end{figure}
+\end{figura}
 
 {\sf Nautilus} pretende ser par {\sf  GNOME} lo que {\sf Konqueror} es
 para {\sf KDE}.  Es decir, un administrador de  archivos, un navegador
@@ -651,18 +630,16 @@ utilizar el otro.
 
 \subsection{Configuración del escritorio}
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/gnome_control.eps}
-\caption{Centro de control GNOME}
-\label{gnome_control}
-\end{figure}
-
 La  configuración  para  personalizar  nuestros  escritorio  se  puede
 realizar  desde  el  {\sf  Centro  de  control}\index{GNOME!Centro  de
 control} (Figura \ref{gnome_control}). Para acceder al mismo basta con
 seleccionar  {\tt CONFIGURACIÓN  $\rightarrow$  CENTRO  DE CONTROL  DE
 GNOME} en el menú principal del entorno.
+
+\begin{figura}{gnome_control}{0.85}
+\caption{Centro de control GNOME}
+\label{gnome_control}
+\end{figura}
 
 En la parte derecha de la  ventana contamos con la lista de categorías
 en las que se clasifican  las diferentes opciones de configuración del
@@ -684,12 +661,10 @@ anterior al de las modificaciones.
 
 \section{El escritorio de KDE}\index{KDE}
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.8\textwidth]{imagenes/pantallazo_kde_descrito.eps}
+\begin{figura}{pantallazo_kde_descrito}{0.6}
 \caption{Aspecto del escritorio KDE}
 \label{kde}
-\end{figure}
+\end{figura}
 
 {\sf  KDE} es  entorno de  escritorio  con gestor  de ventanas  propio
 basado  en {\sf  X-Window}  que  nos da  un  entorno gráfico  amigable
@@ -702,12 +677,10 @@ al ordenador.
 
 \subsection{Paneles y menús de KDE}
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.9\textwidth]{imagenes/kde_panel.eps}
+\begin{figura}{kde_panel}{0.9}
 \caption{Panel de KDE y algunos de sus iconos descritos}
 \label{kde_panel}
-\end{figure}
+\end{figura}
 
 Al  igual que  en {\sf  GNOME},  en {\sf  KDE} contamos  con un  panel
 en  el  que  se  organizan  todos los  menús  y  aplicaciones  (Figura
@@ -716,13 +689,6 @@ los gestores  de ventanas  y entornos  gráficos que  podamos encontrar
 en  cualquier  ordenador.  Este  panel  puede  ser  ubicado  por  toda
 la  pantalla, redimensionado,  etc.,  y es  altamente configurable  en
 aspecto, tamaño y funcionalidades.
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.35\textwidth]{imagenes/kde_menuk.eps}
-\caption{Menú ``K'' desplegado}
-\label{kde_menuk}
-\end{figure}
 
 Se puede acceder  a los programas a  través del menú que  se activa al
 pulsar sobre el  icono con una {\em K} (Figura  \ref{kde_menuk}), y un
@@ -740,13 +706,6 @@ monitor.  Este es  el que  abre  el centro  de control  de {\sf  KDE},
 mediante el  cual podemos  configurar la  totalidad de  los parámetros
 gráficos, estéticos, de sonido, de rendimiento, de manejo, etc.
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.5\textwidth]{imagenes/pantallazo_kde_ejecutar.eps}
-\caption{Cuadro de diálogo {\tt EJECUTAR} tras pulsar en {\tt OPCIONES }}
-\label{kde_ejecutar}
-\end{figure}
-
 Una de  las combinaciones de teclas  más útiles en {\sf KDE}  es {\tt A-F2},
 que  nos muestra  el  cuadro de  diálogo {\tt  EJECUTAR},  en el  cual
 podemos indicar  cualquier comando  que queramos ejecutar.  Este mismo
@@ -754,6 +713,17 @@ cuadro de diálogo nos da la posibilidad de ejecutar el programa, tanto
 como otro usuario, como dentro de una sesión del emulador de terminal.
 A  esta última  opción  se  accede pulsando  el  botón {\tt  OPCIONES}
 (Figura \ref{kde_ejecutar}).
+
+\begin{figure}[hbtp]
+\centering
+\subfigure[Menú ``K'' desplegado]{%
+\includegraphics[width=0.49\textwidth]{imagenes/kde_menuk.eps}}
+\label{kde_menuk}
+\subfigure[Cuadro de diálogo {\tt EJECUTAR} tras pulsar en {\tt OPCIONES }]{%
+\includegraphics[width=0.49\textwidth]{imagenes/pantallazo_kde_ejecutar.eps}}
+\label{kde_ejecutar}
+\caption{Menú ``K'' desplegado y cuadro de diálogo {\tt EJECUTAR} tras pulsar en {\tt OPCIONES }}
+\end{figure}
 
 Respecto a  las funciones de  los botones del  ratón en {\sf  KDE}, el
 botón derecho sobre  el escritorio nos muestra un menú  con unas pocas
@@ -765,13 +735,6 @@ forma permanente.
 
 \subsection{Administración de archivos}
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.8\textwidth]{imagenes/kde_konqueror_web.eps}
-\caption{Konqueror como navegador web}
-\label{kde_konqueror_web}
-\end{figure}
-
 Para  movernos  por  nuestros  archivos, así  como  para  navegar  por
 Internet, {\sf KDE} pone a nuestra disposición una potente aplicación:
 {\em Konqueror}\index{KDE!Konqueror} (Figura \ref{kde_konqueror_web}).
@@ -781,13 +744,6 @@ ubicaciones   FTP   ({\tt   ftp://nombre\_equipo/nombre\_directorio}),
 HTTP   ({\tt   http://nombre\_equipo/nombre\_directorio}   e   incluso
 carpetas     compartidas     de      Microsoft®     Windows®     ({\tt
 smb://nombre\_netbios/carpeta}).
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.8\textwidth]{imagenes/kde_konqueror_dir.eps}
-\caption{Konqueror como gestor de archivos}
-\label{kde_konqueror_dir}
-\end{figure}
 
 Si  por  ejemplo ponemos  un  directorio  local de  nuestro  ordenador
 tal  como {\tt  /home/usuario} (Figura  \ref{kde_konqueror_dir}), {\sf
@@ -802,3 +758,12 @@ Para arrancar {\sf Konqueror}, debemos pulsar en el icono con un globo
 terráqueo  y  un  engranaje  situado  en  nuestro  panel  (ver  Figura
 \ref{kde_panel}).
 
+\begin{figura}{kde_konqueror_web}{0.55}
+\caption{Konqueror como navegador web}
+\label{kde_konqueror_web}
+\end{figura}
+
+\begin{figura}{kde_konqueror_dir}{0.55}
+\caption{Konqueror como gestor de archivos}
+\label{kde_konqueror_dir}
+\end{figura}
