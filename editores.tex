@@ -688,10 +688,16 @@ por {\tt vim} sin que cambien palabras del texto como vivir, etc.
 :s/\<vi\>/vim
 \end{verbatim}
 
-% Carlos (faraox): revisa este ejemplo para que quede claro
 
-y si  queremos sustituir solo  la palabra vi  que se encuentre  en una
-sola línea por vim, podremos utilizar:
+Podemos utilizar el carácter \verb.^. le indica al vim que no exista ningun carácter antes de la expresión regular que queremos sustituir en esa línea, y el carácter \verb.$. le indica al vim que no  exista ningun carácter despuéas de la expresión regular que queremos sustituir en usa línea. Vamos a ver unos ejemplos: 
+\begin{verbatim}
+:s/^vi/vim/g
+\end{verbatim}
+En este ejemplo, se cambia la palabra {\tt vi} por {\tt vim} si no existe ningun carácter delante de la palabra {\tt vi}.
+\begin{verbatim}
+:s/vi$/vim
+\end{verbatim}
+En el anterior ejemplo, se sustituye la palabra {\tt vi} por {\tt vim} que se encuentre al final de una línea.
 
 \begin{verbatim}
 :s/^vi$/vim
