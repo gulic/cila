@@ -36,7 +36,7 @@
  2. Hardware y kernel (kernel-package)
  3. Administración básica (adduser, floppy, cdrom, APT)
  4. Software para los módulos del TILA.
- 5. Paquetes en fuentes (bajar, compilar e instalar videolan y xine con aalib) 
+ 5. Paquetes en fuentes (bajar, compilar e instalar videolan y xine con aa) 
  6. Software adicional (a gusto del consumidor)
 
  Módulo III: Edición de gráficos y documentos
@@ -57,7 +57,7 @@
 
  Módulo V:   Herramientas de programación
  1. Editores: 
-    - VI, VIM, GVIM                     (Miguel,   1)
+    - Emacs, VI, VIM, GVIM              (Miguel,   1)
 	- GNU Emacs                         (Miguel,   1)
  2. FreePascal                          (Miguel, 0.5)
  3. GNU Fortran                         (Miguel, 0.5)
@@ -88,10 +88,11 @@
  3. El entorno X-Window. Gestores de ventanas                    (Jesús,   0.5)
  4. El escritorio GNOME                                          (Jesús,     1)
  5. El escritorio KDE                                            (Félix,     1)
- 6. Herramientas de red de GNU/Linux                             (Jesús,     1)
- 6. Herramientas de red de GNU/Linux                             (Alberto, 1.5)
- 7. Documentación y sistemas de ayuda                            (Alberto,   1)
- 8. El entorno de programación FreePascal                        (Miguel,  0.5)
- 9. El compilador GNU Fortran 77                                 (Miguel,  0.5)
-10. Herramientas de programación: depuradores, editores, etc.    (Miguel,  1.5)
+ 6. Sistemas de ayuda y documentación                            (Félix,   0.5)
+ 7. Herramientas de red de GNU/Linux                             (Jesús,   0.5)
+ 7. Herramientas de red de GNU/Linux                             (Alberto, 1.5)
+ 8. Documentación y sistemas de ayuda                            (Alberto,   1)
+ 9. El entorno de programación FreePascal                        (Miguel,  0.5)
+10. El compilador GNU Fortran 77                                 (Miguel,  0.5)
+11. Herramientas de programación: depuradores, editores, etc.    (Miguel,    1)
 
