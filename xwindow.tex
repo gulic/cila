@@ -197,7 +197,7 @@ manager!xdm}, {\tt  kdm}\index{Display manager!kdm} ({\sf  KDE}), {\tt
 gdm}\index{Display  manager!gdm}  ({\sf  GNOME}), etc.  En  la  Figura
 \ref{gdm} podemos ver un ejemplo de la clásica ventana que nos muestra
 {\sf GDM} nada más terminar la carga del sistema. Básicamente nos está
-pidiendo nuestro nombre  de usuario, para una vez  pulsado {\tt ENTER}
+pidiendo nuestro nombre  de usuario, para una vez  pulsado {\tt Enter}
 pedirnos la contraseña. Con  esa información seremos autentificados en
 el  sistema y  se  iniciará una  nueva sesión  con  nuestra cuenta  de
 usuario. Es importante  destacar que dentro de nuestra  sesión todo lo
@@ -395,7 +395,7 @@ llamará la atención son los  {\em paneles} (Figuras \ref{gnome_menu} y
 \ref{gnome_menu_principal}).  
 
 \begin{figura}{gnome_menu}{0.98}
-\caption{Menú de panel de GNOME}\label{gnome_menu}
+\caption{Menú de panel de {\sf GNOME}}\label{gnome_menu}
 \end{figura}
 
 Si  pulsamos  en  la  huella   del  panel  inferior,  o  seleccionamos
@@ -413,7 +413,7 @@ trabajando en un  entorno de escritorio diferente a aquel  para el que
 fueron diseñadas.
 
 \begin{figura}{gnome_menu_principal}{0.6}
-\caption{Panel alineado de GNOME y menú principal}
+\caption{Panel alineado de {\sf GNOME} y menú principal}
 \label{gnome_menu_principal}
 \end{figura}
 
@@ -496,7 +496,7 @@ sin elementos de  algunos de los paneles, veremos un  menú de contexto
 similar  al menú  principal del  que  hemos estado  hablando hasta  el
 momento.  En el  menú  del  que estamos  hablando  existe un  elemento
 denominado {\tt PANEL} que contiene  las opciones de configuración del
-panel. Con opciones podemos:
+panel. Con dichas opciones podemos:
 
 \begin{description}
 
@@ -638,7 +638,7 @@ utilizar el otro.
 
 \subsection{Configuración del escritorio}
 
-La  configuración  para  personalizar  nuestros  escritorio  se  puede
+La  configuración  para  personalizar   nuestro  escritorio  se  puede
 realizar  desde  el  {\sf  Centro  de  control}\index{GNOME!Centro  de
 control} (Figura \ref{gnome_control}). Para acceder al mismo basta con
 seleccionar  {\tt CONFIGURACIÓN  $\rightarrow$  CENTRO  DE CONTROL  DE
@@ -669,112 +669,285 @@ anterior al de las modificaciones.
 
 \section{El escritorio de KDE}\index{KDE}
 
-\begin{figura}{pantallazo_kde_descrito}{0.6}
-\caption{Aspecto del escritorio KDE}
-\label{kde}
+{\sf KDE}  es un entorno de  escritorio con gestor de  ventanas propio
+basado en {\sf  X-Window} que nos da un entorno  gráfico amigable para
+realizar  las operaciones  más comunes  con nuestro  ordenador. En  la
+Figura \ref{kde_screenshot}  podemos observar  un ejemplo  clásico del
+escritorio de {\sf KDE}. Es importante recordar que en muchos sistemas
+para  llegar a  acceder  a  un escritorio  como  este  es posible  que
+tengamos que pasar por un {\em display manager}.
+
+\begin{figura}{kde_screenshot}{0.98}
+\caption{Aspecto del escritorio de KDE}
+\label{kde_screenshot}
 \end{figura}
 
-{\sf  KDE} es  entorno de  escritorio  con gestor  de ventanas  propio
-basado  en {\sf  X-Window}  que  nos da  un  entorno gráfico  amigable
-para  realizar  las  operaciones  más comunes  con  nuestro  ordenador
-(Figura  \ref{kde}).   Cuenta  con  un  panel   donde  tener  nuestras
-aplicaciones organizadas, un gestor de  archivos y navegador web ({\em
-Konqueror}\index{KDE!Konqueror}), y otros  muchos programas para hacer
-nuestro trabajo mucho más cómodo, o  pasar buenos ratos de ocio frente
-al ordenador.
+El uso  de un display manager  u otro es independiente  del escritorio
+que vayamos a utilizar. Sin embargo  {\sf KDE} dispone del suyo propio
+para garantizar una integración perfecta, en todos los sentidos, entre
+el entorno de escritorio y el  display manager. En la Figura \ref{kdm}
+podemos  ver la  clásica  ventana  de {\sf  KDM},  que  como se  puede
+apreciar presenta las características habituales  en la mayor parte de
+los display managers existentes.
+
+\begin{figura}{kdm}{0.5}
+\caption{Ventana de autentificación de KDM}\label{kdm}
+\end{figura}
 
 \subsection{Paneles y menús de KDE}
-
-\begin{figura}{kde_panel}{0.9}
-\caption{Panel de KDE y algunos de sus iconos descritos}
-\label{kde_panel}
-\end{figura}
 
 Al  igual que  en {\sf  GNOME},  en {\sf  KDE} contamos  con un  panel
 en  el  que  se  organizan  todos los  menús  y  aplicaciones  (Figura
 \ref{kde_panel}). Este concepto  es familiar en la  inmensa mayoría de
-los gestores  de ventanas  y entornos  gráficos que  podamos encontrar
-en  cualquier  ordenador.  Este  panel  puede  ser  ubicado  por  toda
-la  pantalla, redimensionado,  etc.,  y es  altamente configurable  en
-aspecto, tamaño y funcionalidades.
+los entornos  gráficos de usuario  que podamos encontrar  en cualquier
+ordenador, sólo que en ocasiones lo hayamos bajo un nombre diferente.
 
-Se puede acceder  a los programas a  través del menú que  se activa al
-pulsar sobre el  icono con una {\em K} (Figura  \ref{kde_menuk}), y un
-engranaje,  a  la  izquierda  del  panel de  la  parte  inferior.  Los
-programas  se distribuyen  en  varios submenús,  y  se clasifican  por
-tipos.  Normalmente, estos  submenús  suelen tener  títulos como  {\tt
-PROGRAMAS}, {\tt MULTIMEDIA}, etc\dots
+\begin{figura}{kde_panel}{0.98}
+\caption{Panel principal de {\sf KDE}}
+\label{kde_panel}
+\end{figura}
 
-El emulador  de terminal  puede conseguirse en  {\sf KDE}  mediante el
-botón que aparece en el panel que simboliza un monitor con una pequeña
-concha (shell en inglés) en  su esquina superior izquierda. No debemos
-confundirlo con  el que se  encuentra por defecto inmediatamente  a su
-derecha, con  unas barras  de colores  pintadas en  el interior  de un
-monitor.  Este es  el que  abre  el centro  de control  de {\sf  KDE},
-mediante el  cual podemos  configurar la  totalidad de  los parámetros
-gráficos, estéticos, de sonido, de rendimiento, de manejo, etc.
+Si pulsamos  con el botón derecho  de nuestro ratón sobre  alguna área
+sin  elementos del  panel, veremos  un menú  de contexto  pensado para
+configurar los  paneles de {\sf  KDE}. En  el mismo disponemos  de las
+siguientes opciones:
 
-Una de  las combinaciones de  teclas más útiles  en {\sf KDE}  es {\tt
-A-F2}, que nos muestra el cuadro de diálogo {\tt EJECUTAR}, en el cual
-podemos indicar  cualquier comando  que queramos ejecutar.  Este mismo
-cuadro de diálogo nos da la posibilidad de ejecutar el programa, tanto
-como otro usuario, como dentro de una sesión del emulador de terminal.
-A  esta última  opción  se  accede pulsando  el  botón {\tt  OPCIONES}
-(Figura \ref{kde_ejecutar}).
+\begin{description}
+
+\item[AÑADIR]  Esta  opción nos  permite  añadir  nuevos elementos  al
+panel.  Por  ejemplo,  podemos  añadir  {\tt  BOTONES  DE  APLICACIÓN}
+eligiendo  la  aplicación  adecuada  en  el menú  o  submenús  que  se
+despliegan al  elegir dicha  opción. Dentro  de esos  submenús podemos
+seleccionar  la opción  {\tt AÑADIR  ESTE MENÚ}  para añadir  al panel
+un  acceso  al  submenú   completo  (Figura  \ref{kde_add_menu}).  Con
+{\tt  BOTONES ESPECIALES}  podemos crear  accesos a  algunas funciones
+integradas  en  KDE.  Entre  dichas funciones  contamos  con  el  {\tt
+MENÚ  K}, los  {\tt  MARCADORES},  el {\tt  SISTEMA  DE IMPRESIÓN},  o
+los  {\tt  DOCUMENTOS  RECIENTES}.  Por  último  podemos  añadir  {\em
+applets}\index{KDE!applets} de  forma similar a como  haríamos en {\sf
+GNOME}.
+
+\item[ELIMINAR] Nos  permite eliminar cualquier elemento  integrado en
+el panel.
+
+\item[TAMAÑO]  Fijar el  alto del  panel a  cualquiera de  los valores
+predefinidos, o personalizarlo con el alto en pixels.
+
+\item[CONFIGURAR   PANEL]  Con   esta  opción   podemos  alterar   las
+características  del panel.  Algunas  de esas  características son  la
+posición del panel,  el alto y el  largo, la forma en que  el panel se
+oculta, y  la presencia de  los botones de escondido.  También podemos
+crear {\em  paneles hijo} adicionales  en diferentes posiciones  y con
+diferentes tamaños.
+
+\item[AYUDA] Acceso a la ayuda del panel de {\sf KDE}.
+
+\end{description}
+
+\begin{figura}{kde_add_menu}{0.86}
+\caption{Añadir al panel un acceso al menú {\tt EDITORES}}
+\label{kde_add_menu}
+\end{figura}
+
+Para acceder  a las aplicaciones  instaladas podemos utilizar  el {\tt
+MENÚ K}\index{KDE!Menú  K}. Dicho  menú se activa  al pulsar  sobre el
+botón  con  una {\tt  K}  y  un engranaje  a  la  izquierda del  panel
+(Figura \ref{kde_menuk}).  Las aplicaciones  se distribuyen  en varios
+submenús que se clasifican  por categorías. Normalmente estos submenús
+suelen tener  títulos como {\tt APLICACIONES},  {\tt MULTIMEDIA}, {\tt
+INTERNET}, etc. Dentro de cada submenú se encuentran los accesos a las
+aplicaciones  más  comunes  de  una  categoría  dada.  Además  podemos
+encontrar elementos como {\tt MÁS PROGRAMAS}, que despliega un submenú
+con  otros programas  de la  misma categoría  pero no  tan comunes,  y
+{\tt  DEBIAN},  que  da  acceso  a todas  las  aplicaciones  de  dicha
+categoría  instaladas en  la distribución,  independientemente de  que
+estén integradas en {\sf KDE} o no.
+
+\begin{figura}{kde_menuk}{0.6}
+\caption{Menú K de {\sf KDE}}
+\label{kde_menuk}
+\end{figura}
+
+Otras opciones  son {\tt  KFIND}, que es  una aplicación  pensada para
+realizar búsquedas  de archivos,  y {\tt PERSONAL},  que es  un acceso
+rápido a  nuestro directorio personal en  la máquina. En el  menú {\tt
+MARCADORES} podemos tener acceso a archivos o contenidos de la Web que
+hemos decidido  almacenar ahí.  El objetivo es  disponer de  un acceso
+rápido, y ordenado por categorías, a dichos contenidos.
+
+La opción  {\tt EJECUTAR COMANDO}  nos abre  el cuadro de  diálogo del
+mismo nombre,  que podemos  ver en  la Figura  \ref{kde_lanzar}. Dicho
+cuadro también  puede ser  abierto haciendo uso  de la  combinación de
+teclas  {\tt  A-F2}.  En  él podemos  indicar  cualquier  comando  que
+queramos  ejecutar.  El  mismo  cuadro  dispone  de  opciones  (Figura
+\ref{kde_lanzar_opt}) que nos permiten  especificar que el comando sea
+ejecutado  como  un  usuario  diferente, con  un  nivel  de  prioridad
+distinta,  o indicar  que  deseamos que  la  aplicación sea  ejecutada
+dentro de un emulador de terminal. A estas opciones se accede pulsando
+el botón {\tt OPCIONES} del cuadro de diálogo.
 
 \begin{figure}[hbtp]
 \centering
-\subfigure[Menú ``K'' desplegado]{%
-\includegraphics[width=0.49\textwidth]{imagenes/kde_menuk.eps}}
-\label{kde_menuk}
-\subfigure[Cuadro de diálogo {\tt EJECUTAR} tras pulsar en {\tt OPCIONES }]{%
-\includegraphics[width=0.49\textwidth]{imagenes/pantallazo_kde_ejecutar.eps}}
-\label{kde_ejecutar}
-\caption{Menú ``K'' desplegado y cuadro de diálogo {\tt EJECUTAR} tras pulsar en {\tt OPCIONES }}
+\subfigure[Cuadro de diálogo {\tt EJECUTAR COMANDO}]{%
+\includegraphics[width=0.45\textwidth]{imagenes/kde_lanzar.eps}
+\label{kde_lanzar}}
+\subfigure[Cuadro de diálogo avanzado {\tt EJECUTAR COMANDO}]{%
+\includegraphics[width=0.45\textwidth]{imagenes/kde_lanzar_opt.eps}
+\label{kde_lanzar_opt}}
 \end{figure}
+
+Igual que en el entorno de escritorio {\sf GNOME} en {\sf KDE} podemos
+utilizar {\tt BLOQUEAR PANTALLA}  para proteger nuestro escritorio, si
+tenemos que abandonarlo por cualquier  motivo, o {\tt TERMINAR SESIÓN}
+para terminar nuestra sesión y volver al {\sf KDM} (Figura \ref{kdm}).
+En este  sentido es importante  comentar que  una de las  opciones más
+interesantes, disponible  a través del  {\tt MENÚ K}, es  {\tt INICIAR
+NUEVA SESIÓN}. Gracias  a dicha opción podemos crear  una nueva sesión
+de las  {\sf X}  y asociarla  a uno de  los terminales  virtuales (ver
+página \pageref{terminal}). Esto nos permite  tener dos o más sesiones
+abiertas en las {\sf X} y conmutar entre unas y otras.
+
+Ya hemos  comentado que  el panel  de {\sf KDE}  puede contener  uno o
+varios  botones de  aplicación, entre  otros elementos.  Habitualmente
+entre esos  botones está  el acceso  al emulador  de terminal  de {\sf
+KDE}, más conocido como {\sf Konsole}. Dicho botón suele ser el que se
+simboliza como un  monitor (o terminal) con una  pequeña concha (shell
+en inglés) en  una de sus esquinas. No debemos  confundirlo con el que
+se  encuentra  por defecto  inmediatamente  a  su derecha  en  algunas
+configuraciones de {\sf  KDE}, con unas barras de  colores pintadas en
+el interior de un monitor. Este es el que abre el centro de control de
+{\sf KDE},  mediante el  cual podemos configurar  la totalidad  de los
+parámetros gráficos, estéticos, de  sonido, de rendimiento, de manejo,
+etc.
 
 Respecto a  las funciones de  los botones del  ratón en {\sf  KDE}, el
 botón derecho sobre  el escritorio nos muestra un menú  con unas pocas
-opciones,  como crear  nuevos objetos  en nuestro  escritorio (accesos
-directos o enlaces, carpetas,etc),  ejecutar comandos, activar menú de
-escritorio (lo  cual nos muestra  las opciones del menú  que obtenemos
-con el  botón derecho, en  la parte  superior de nuestra  pantalla, de
-forma permanente.
+opciones, como  crear nuevos elementos en  nuestro escritorio (accesos
+directos o enlaces, directorios, etc), ejecutar comandos, o configurar
+el  escritorio. Si  pulsamos con  el botón  derecho del  nuestro ratón
+sobre alguno de  los elementos del panel, veremos el  menú de contexto
+asociado  al elemento.  Los menús  de contexto  de los  applets suelen
+disponer  de  opciones  acorde  con  las  funciones  asignadas  a  los
+mismos. Sin  embargo, las opciones  de los otros elementos  suelen ser
+bastante estándar. Por  ejemplo, para mover el elemento  por el panel,
+eliminarlo, cambiar sus  propiedades y acceder a  la configuración del
+panel.  Concretamente esta  última opción  se denomina  {\tt MENÚ  DEL
+PANEL}.
+
+Los diferentes  elementos del  panel suelen  venir delimitados  por un
+separador con un pequeña flecha negra.  Tanto si pulsamos con el botón
+derecho del  ratón sobre dichos  separadores, como si pulsamos  con el
+izquierdo sobre la flecha dispondremos de un menú similar al que hemos
+comentado en el párrafo anterior (Figura \ref{kde_menu_panel}).
+
+\begin{figura}{kde_menu_panel}{0.86}
+\caption{Menú del panel de {\sf KDE}}
+\label{kde_menu_panel}
+\end{figura}
+
 
 \subsection{Administración de archivos}
 
-Para  movernos  por  nuestros  archivos, así  como  para  navegar  por
-Internet, {\sf KDE} pone a nuestra disposición una potente aplicación:
-{\em Konqueror}\index{KDE!Konqueror} (Figura \ref{kde_konqueror_web}).
-En   la   barra   de    direcciones   de   dicho   navegador   podemos
-poner   tanto  directorios   locales   de   nuestro  ordenador,   como
-ubicaciones   FTP   ({\tt   ftp://nombre\_equipo/nombre\_directorio}),
-HTTP   ({\tt   http://nombre\_equipo/nombre\_directorio}   e   incluso
-carpetas     compartidas     de      Microsoft®     Windows®     ({\tt
+Uno de  los puntos fuertes  a favor de {\sf  KDE} es el  programa {\sf
+Konqueror}\index{KDE!Konqueror}. {\sf  Konqueror} integra en  una sola
+aplicación las funciones de administración de archivos, navegación web
+y visor  de documentos.  Además de  todo eso se  trata de  un programa
+completamente  ampliable  que  puede aumentar  sus  funcionalidades  a
+partir  del uso  de {\em  plugins}. Gracias  a ellos  podemos realizar
+tareas como  administrar los  archivos en los  equipos de  nuestra red
+de  área local  (LAN),  administrar y  configurar  nuestro sistema  de
+impresión, examinar nuestros CDs de audio, etc.
+
+Cuando  pulsamos sobre  los  directorios o  dispositivos presentes  en
+nuestro escritorio se nos abre {\sf  Konqueror} con el objetivo de que
+podamos ver su contenido. En la Figura \ref{kde_konqueror_dir} podemos
+ver  una  ventana  de  {\sf  Konqueror} donde  se  puede  explorar  el
+directorio {\tt /etc}.
+
+\begin{figura}{kde_konqueror_dir}{0.86}
+\caption{Konqueror como administrador de archivos}
+\label{kde_konqueror_dir}
+\end{figura}
+
+Como podemos apreciar la ventana de {\sf Konqueror} como administrador
+de  archivos  es   similar  a  la  de   muchos  otros  administradores
+de  archivos  que  hayamos  podido   ver.  La  mayor  parte  de  dicha
+ventana  está ocupada  por los  iconos de  los directorios  y archivos
+presentes en  el directorio  actual. Inmediatamente encima  tenemos la
+{\em  barra  de  herramientas  de dirección}  donde  podemos  escribir
+la  ruta  del  directorio  que  deseamos  explorar.  Puesto  que  {\sf
+Konqueror}  es  un  programa  que integra  múltiples  funcionales,  en
+dicha  barra  podemos  poner  la ruta  de  otros  recursos  diferentes
+a  un   directorio.  Por  ejemplo,   podemos  poner  una   ruta  hacia
+una  página  web   ({\tt  http://nombre\_equipo/ruta\_página}),  a  un
+directorio  en  un   FTP  (ftp://nombre\_equipo/nombre\_directorio)  e
+incluso  a  una  carpeta   compartida  de  Microsoft®  Windows®  ({\tt
 smb://nombre\_netbios/carpeta}).
 
-Si  por  ejemplo ponemos  un  directorio  local de  nuestro  ordenador
-tal  como {\tt  /home/usuario} (Figura  \ref{kde_konqueror_dir}), {\sf
-Konqueror}  muestra un  gestor de  archivos que  dispone de  numerosas
-vistas, la posibilidad  de previsualizar archivos de  imagen, etc. Sin
-embargo, si  ponemos un recurso  FTP, {\sf Konqueror}  muestra también
-una vista de carpetas, mediante  la cual podemos manejar cómodamente y
-de forma  transparente dichos  recursos. Por  ejemplo podemos  subir y
-bajar archivos con tan sólo arrastrar y soltar.
+Como ya hemos comentado {\sf  Konqueror} dispone de características de
+visor. Eso  significa que  pulsando sobre los  iconos de  los archivos
+podemos ver su  contenido. En los supuestos en que  {\sf Konqueror} no
+esté capacitado para  la visualización de un  determinado contenido se
+abre  el programa  adecuado. De  la  misma manera  pulsando sobre  los
+directorios  podemos navegar  por el  sistema de  ficheros de  nuestro
+equipo. En la barra de herramientas de la parte superior disponemos de
+botones para  subir un  nivel en  el árbol  de directorios,  avanzar o
+retroceder, o  cambiar el modo de  vista de los archivos.  Usando {\em
+arrastrar y soltar} podemos mover, copiar o crear un enlace a archivos
+y directorios. Mientras  que pulsando con el  botón derecho disponemos
+de  un  menú  de  contexto  con  algunas  opciones  adicionales,  como
+renombrar,  eliminar,  o  editar  las  propiedades  de  un  archivo  o
+directorio dado.
 
-Para arrancar {\sf Konqueror}, debemos pulsar en el icono con un globo
-terráqueo  y  un  engranaje  situado  en  nuestro  panel  (ver  Figura
-\ref{kde_panel}).
+En el  lado de  la izquierda de  la ventana contamos  con el  panel de
+navegación,  que  puede  desarrollar  diferentes  funciones  según  la
+pestaña de la izquierda que  hayamos seleccionado. Podemos navegar por
+nuestros marcadores, por  el historial de navegación, por  la Red, por
+el  árbol de  directorios  de  nuestro equipo,  etc.  En general  {\sf
+Konqueror} es  un programa  muy potente con  decenas de  funciones que
+debemos probar.
 
-\begin{figura}{kde_konqueror_web}{0.55}
+Para  utilizar {\sf  Konqueror} como  navegador debemos  pulsar en  el
+botón con un  globo terráqueo y un engranaje situado  en nuestro panel
+(ver  Figura \ref{kde_panel}).  En  la Figura  \ref{kde_konqueror_web}
+podemos ver el ejemplo de un ventana de {\sf Konqueror} con una pagina
+web cargada.  La forma  de manejo del  mismo no dista  de la  forma de
+manejo de cualquier otro navegador que hayamos utilizado.
+
+\begin{figura}{kde_konqueror_web}{0.86}
 \caption{Konqueror como navegador web}
 \label{kde_konqueror_web}
 \end{figura}
 
-\begin{figura}{kde_konqueror_dir}{0.55}
-\caption{Konqueror como gestor de archivos}
-\label{kde_konqueror_dir}
+
+\subsection{Configuración del escritorio}
+
+La  configuración para  personalizar el  escritorio se  puede realizar
+desde el {\sf Centro  de control}\index{KDE!Centro de control} (Figura
+\ref{kde_control}). Para  acceder al mismo basta  con seleccionar {\tt
+PREFERENCIAS $\rightarrow$ CENTRO DE CONTROL} en el menú del entorno.
+
+\begin{figura}{kde_control}{0.8}
+\caption{Centro de control de {\sf KDE}}
+\label{kde_control}
 \end{figura}
 
-Con eso, el amigo lector ya  tiene opciones gráficas a elegir. ¡Que lo
-disfrute!
+En la parte derecha de la  ventana contamos con un árbol de categorías
+en las que se clasifican  las diferentes opciones de configuración del
+entorno de  escritorio {\sf KDE}.  Cuando seleccionamos una  de dichas
+categorías  el  lado izquierdo  cambia  para  mostrarnos las  opciones
+disponibles.
+
+Cualquier  cambio  en la  configuración  debe  ser validado  con  {\tt
+APLICAR}  para  que  tenga  efecto.  Adicionalmente  podemos  utilizar
+{\tt  RESTAURAR} para  cancelar  las modificaciones  realizadas en  la
+configuración, o {\tt PREDETERMINADO} para cargar la configuración por
+defecto de {\sf KDE} en la categoría seleccionada. En caso de realizar
+modificaciones  en  la  configuración  de  una  categoría,  y  de  que
+intentemos cambiar  a otra sin  validar los  cambios de la  actual, el
+sistema  nos avisará  de  la  situación y  nos  permitirá aplicar  los
+cambios, deshacerlos, o cancelar el cambio de categoría.
+
+Con todo esto, el amigo lector ya tiene opciones gráficas para elegir.
+¡Que lo disfrute!.
+
