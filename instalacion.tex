@@ -5,7 +5,7 @@
 
 \section{Introducción}
 
-En este capítulo  repasaremos de forma genérica,para que  nos sirva de
+En este capítulo repasaremos de forma  genérica, para que nos sirva de
 guía, una instalación de cualquier  distribución de Linux. Tenemos que
 decir que lo que nos planteamos  conseguir no es tarea sencilla porque
 todas  las  distribuciones  tienen  sus  pequeñas  diferencias  aunque
@@ -14,12 +14,11 @@ que son comunes que aquí vamos a detallar. El orden en el que aparecen
 las  diferentes  etapas  comentadas  en este  capítulo  no  tiene  por
 que  ser necesariamente  de  forma  estricta a  seguir  por todas  las
 distribuciones, pero  es uno  de los  más usuales  en los  procesos de
-instalación de las distintas distribuciones.\\
+instalación.\\
 
-Atención, antes de comenzar con la instalación recomendamos que se lea
-la sección referente a las particiones  que se puede encontrar en este
-mismo capítulo.\\
-
+¡¡Atención!! Antes de comenzar con  la instalación recomendamos que se
+lea la sección  referente a las particiones que se  puede encontrar en
+este mismo capítulo.\\
 
 \section{Arrancando}
 
@@ -37,18 +36,18 @@ le demos la orden de continuar.\\
 \caption{Instalación 1}
 \end{figure}
 
-Si nuestra  placa no soporta  el arranque  desde CD siempre  se pueden
+Si nuestra placa no soporta el  arranque desde el CD siempre se pueden
 hacer los  disketes para arrancar  desde la disketera. Todos  los PC's
-que disponen de disketera pueden  arrancar  desde  ella. Para arrancar
-el sistema  de instalación desde  discos de  3,5" tendremos que buscar
-en el  contenido del CD de instalación de la distribución las imágenes
-de los  discos  de arranque. Normalmente están en un directorio que se
-llama "images",  aunque  esto no siempre es una norma fija. Cuando los
-encontremos tendremos que copiar las imágenes a disketes. Esto se hace
-con una herramienta que normalmente traen también todos los CDs de las
-distribuciones  que se llama rawrite.  Seguiremos las indicaciones que
-nos dé el rawrite para hacer los disketes de instalación y guardaremos
-con celo el trabajo realizado hasta ahora.\\
+que disponen de disketera pueden arrancar desde ella. Para arrancar el
+sistema de instalación desde discos de 3,5" tendremos que buscar en el
+contenido del CD de instalación de la distribución las imágenes de los
+discos de  arranque. Normalmente están  en un directorio que  se llama
+"images",  aunque  esto no  siempre  es  una  norma fija.  Cuando  los
+encontremos tendremos que copiar las  imágenes a los disketes. Esto se
+hace  con una  herramienta  que normalmente  traen  también todos  los
+CDs  de  las  distribuciones  que se  llama  rawrite.  Seguiremos  las
+indicaciones  que  nos  dé  el  rawrite para  hacer  los  disketes  de
+instalación y guardaremos con celo el trabajo realizado hasta ahora.\\
 
 Una  vez  que  tenemos  esos discos en la mano tendremos que decirle a
 nuestra  BIOS  que  intente  arrancar  en primer desde la disketera, y
@@ -61,10 +60,10 @@ instalación de nuestra distribución listo para continuar.
 Normalmente después  de la bienvenida  tendremos que elegir  el idioma
 para la instalación y la distribución del teclado que usaremos.\\
 
-El idioma  está a vuestro gusto,  elegid aquél con el  que más comodos
+El idioma  es a  vuestro gusto,  elegid aquél con  el que  más comodos
 estéis  y  la distribución  de  teclado  se  recomienda que  uséis  la
 distribución  de  vuestro teclado,  ya  que  si  no lo  hacéis  podéis
-encontraros que pulsando la tecla ñ aparezca una `p' o algún otro
+encontraros que  pulsando la  tecla ñ  aparezca una  `p' o  algún otro
 carácter. Los teclados españoles son del tipo qwerty-ES.
 
 \begin{figure}[hbtp]
@@ -80,41 +79,40 @@ peligroso porque  podemos dañar la información  almacenada en nuestros
 discos duros.\\
 
 Lo primero que nos planteamos es si  vamos a tener un ordenador con un
-único  sistema operativo,  en nuestro  caso  linux o  si serán  varios
-sistemas operativos,  cuyo caso  más generalizado  es linux  y windows
+único  sistema operativo,  en nuestro  caso  Linux o  si serán  varios
+sistemas operativos,  cuyo caso  más generalizado  es Linux  y Windows
 conviviendo en el mismo ordenador.\\
 
 
-\subsection{El caso más general: convivencia}
+\subsection{El caso más general: convivamos con Windows}
 
 Comenzamos  por  el caso  más  general,  es  decir, los  dos  sistemas
-operativos juntos. Suponemos que ya  está instalado windows y que sólo
-tenemos un disco  duro, en ese caso tendremos que  hacer sitio para la
-instalación de  linux en el  disco duro  que disponemos. Este  paso es
-delicado  pero si  se siguen  los pasos  aquí detallados  no tendremos
+operativos juntos. Suponemos que ya  está instalado Windows y que sólo
+tenemos un disco  duro. En ese caso tendremos que  hacer sitio para la
+instalación de  Linux en el  disco duro  que disponemos. Este  paso es
+delicado, pero  si se  siguen los pasos  aquí detallados  no tendremos
 problemas. Los  pasos a  seguir para  no perder  la información  de la
-partición de nuestro windows son los siguientes:
+partición de nuestro Windows son los siguientes:
 
 \begin{enumerate}
-	\item{Hacer un desfragmentado de nuestra partición de windows.}
+\item{Desfragmentar la partición de Windows.}
 
-	\item{Decidir cuánto espacio vamos a dejar para la instalación de
-	nuestro sistema linux. Esta decisión corre a cuenta del usuario.
-	Recomendamos para una instalación completa de las distribuciones
-	alrededor de 2Gb de espacio en disco.}
+\item{Decidir  cuánto espacio  vamos a  dejar para  la instalación  de
+Linux. Esta  decisión corre  a cuenta del  usuario. Se  recomienda que
+para  una  instalación  completa  de las  distribuciones,  se  reserve
+alrededor de 2Gb de espacio en disco.}
 
-	\item{Reducir el tamaño de la partición de windows. Para llevar a
-	cabo esta tarea se tienen varias posibilidades. Podemos encontrar
-	sofware\footnote{Uno de los paquetes de software más usados en
-	estos menesteres es el \emph{PartitionMagic} de \emph{PowerQuest}}
-	para windows, que facilita la labor permitiendo
-	redimensionar el tamaño de la partición de manera gráfica. Ésta es
-	la opción que recomendamos para los usuarios con poca experiencia
-	en este tipo de prácticas. Para usuarios con algo más de
-	conocimientos tenemos utilidades menos amigables pero más fáciles
-	de conseguir como son el fdisk de linux y el diskdruid. Tened
-	cuidado con estas dos herramientas porque, repetimos, pueden
-	dañar el contenido de vuestros discos duros.}
+\item{Reducir  el tamaño  de la  partición de  Windows. Para  llevar a
+cabo  esta tarea  se  tienen varias  posibilidades. Podemos  encontrar
+sofware\footnote{Uno de los  paquetes de software más  usados en estos
+menesteres  es  el  \emph{PartitionMagic} de  \emph{PowerQuest}}  para
+Windows, que facilita la labor  permitiendo redimensionar el tamaño de
+la partición  de manera  gráfica. Ésta es  la opción  que recomendamos
+para los usuarios con poca experiencia en este tipo de prácticas. Para
+usuarios  con  algo  más  de conocimientos  tenemos  utilidades  menos
+amigables pero más  fáciles de conseguir como son el  fdisk de Linux y
+el  diskdruid.  Tened  cuidado  con  estas  dos  herramientas  porque,
+repetimos, pueden dañar el contenido de vuestros discos duros.}
 
 \begin{figure}[hbtp]
 \centering
@@ -122,17 +120,18 @@ partición de nuestro windows son los siguientes:
 \caption{Instalación 3}
 \end{figure}
 
-	\item{Establecer las particiones de linux. Necesitaremos dos
-	particiones en lugar de una como se piensa inicialmente. A
-	continuación se detalla este paso.}
+\item{Establecer   las  particiones   de   Linux. Se necesitarán   dos
+particiones  en   lugar  de  una   como  se  piensa   inicialmente.  A
+continuación se detallará este paso.}
+
 \end{enumerate}
 
 
 \subsection{La vida en solitario}
 
-Trataremos el  segundo supuesto, en  nuestro disco duro sólo  habrá un
-sistema operativo, linux. Tendremos que hacer dos particiones, en este
-punto hay  mucho que  explicar empezaremos por  comentar los  tipos de
+Trataremos el  segundo supuesto: en  nuestro disco duro sólo  habrá un
+sistema operativo, Linux. Tendremos que hacer dos particiones, en este
+punto hay  mucho que explicar.  Empezaremos por comentar los  tipos de
 particiones que  normalmente se pueden  encontrar en un  PC doméstico.
 Hemos  de tener  claro lo  que  son particiones  primarias, lógicas  y
 extendidas.
@@ -146,7 +145,7 @@ extendidas.
 Podremos  disponer como  máximo  de cuatro  particiones primarias.  Si
 hacemos uso  de todas las  particiones primarias ya no  podremos crear
 más particiones de ningún  otro tipo\footnote{Como observación diremos
-que en  windows tendremos problemas a  la hora de trabajar  con más de
+que en  Windows tendremos problemas a  la hora de trabajar  con más de
 una partición primaria en FAT16 o FAT32}.}
 
 \item[Particiones  lógicas:]{   en  caso  de  querer   más  de  cuatro
@@ -161,22 +160,22 @@ particiones extendidas desde una partición primaria.}
 
 \end{description}
 
-Una  vez aclarados  los tipos  de partición  que podemos  encontrarnos
-vamos a determinar  la manera que tiene linux de  asignarles un nombre
-de dispositivo. En liux todos  los dispositivos son ficheros, desde la
+Una vez  aclarados los tipos  de particiones que  podemos encontrarnos
+vamos a determinar  la manera que tiene Linux de  asignarles un nombre
+de dispositivo. En Linux todos los dispositivos son ficheros, desde la
 pantalla  ({\tt  /dev/stdout})  hasta el  teclado  ({\tt  /dev/stdin})
 pasando por los discos duros, CD-ROM, etc\ldots.\\
 
-
 \subsection{Nomenclatura de particiones}
 
-Primero decir que  los PC's domésticos suelen  tener dos controladoras
-de  disco duro  (ide1 e  ide2) y  en cada  una de  estas controladoras
-podremos  conectar dos  dispositivos  físicos  (dispositivo maestro  y
-dispositivo esclavo). A estas controladoras  se puede conectar todo lo
-que  tenga una  interfaz  hardware  ide, ésto  es,  discos duros  ide,
-CD-ROM's  ide, DVD's  ide, y  un  largo excétera  de dispositivos.  La
-manera de  nombrar los ficheros  correspondientes a cada uno  de estos
+En primer  lugar hemos de decir  que los PC's domésticos  suelen tener
+dos controladoras de disco  duro (IDE1 e IDE2) y en  cada una de estas
+controladoras podremos conectar  dos dispositivos físicos (dispositivo
+maestro  y  dispositivo  esclavo).  A  estas  controladoras  se  puede
+conectar todo lo que tenga una  interfaz hardware IDE, esto es, discos
+duros IDE, CD-ROM's IDE, DVD's IDE, y una larga lista de dispositivos.
+
+La manera de nombrar los ficheros correspondientes a cada uno de estos
 elementos de hardware es la siguiente:
 
 \begin{center}
@@ -197,7 +196,12 @@ Esclavo & $\Rightarrow$ & {\tt /dev/hdd} \\
 \right.$
 \end{center}
 
-Sigamos con  la nomenclatura de  las particiones utilizada  por linux.
+Por si  quedaran más  dudas, como casi  todos estamos  acostumbrados a
+trabajar en Windows, si cada  disco forma una única partición, podemos
+decir que {\tt /dev/hda} es el  equivalente a {\bf C:}, {\tt /dev/hdb}
+es el equivalente a {\bf D:} y así sucesivamente\dots
+
+Sigamos con  la nomenclatura de  las particiones utilizada  por Linux.
 Las particiones primarias y las lógicas se nombran añadiendo al nombre
 del dispositivo, ya detallado, un número que indica el órden lógico de
 la partición.  La primera  partición de  uno de  los discos  será {\tt
@@ -211,9 +215,9 @@ números están reservados para las particiones primarias, por lo tanto,
 las particiones extendidas  empezarán a numerarse a  partir del cinco.
 Tenemos un disco duro, con una  partición lógica, tres primarias, y en
 la  partición  lógica  tenemos tres  particiones  extendidas,  haremos
-referencia a  cada una de  las particiones de esta  manera. (suponemos
+referencia a  cada una de  las particiones de esta  manera. (Suponemos
 que el  disco está  conectado como maestro  a la  primera controladora
-ide)\\
+IDE)\\
 
 \begin{center}
 \begin{tabular}{rcl}
@@ -235,16 +239,16 @@ lógica y que aprendiéndonos un par de reglas todo va sobre ruedas.\\
 \subsection{Esas dos particiones}
 
 En  este punto  ya es  hora de  introducir el  significado de  las dos
-particiones necesarias en un sistema linux.  La primera de ellas es la
-partición de  swap, ésta  partición le sirve  al sistema  operativo de
-memoria de  intercambio, en el momento  en el que se  llena la memoria
+particiones necesarias en un sistema Linux.  La primera de ellas es la
+partición de swap. Esta partición lo utiliza el sistema operativo como
+memoria de  intercambio. En el momento  en el que se  llena la memoria
 principal  de nuestro  ordenador,  el sistema  utiliza  la memoria  de
 intercambio  para continuar  ejecutando los  programas sin  problemas.
 Esta partición es  de uso exclusivo del sistema, lo  que significa que
-no la podremos  utilizar para guar nuestro datos. La  buena noticia es
-que esta partición es muy pequeña, normalmente es suficiente con dejar
-para la partición de swap 256 Mb  de disco, no obstante puede ser todo
-lo grande  que se  quiera, siempre  que haya sitio  para el  resto del
+no la podremos  utilizar para guardar nuestro datos.  La buena noticia
+es que  esta partición es  muy pequeña, normalmente es  suficiente con
+dejar para la partición de swap 256 Mb de disco, no obstante puede ser
+todo lo grande que se quiera, siempre que haya sitio para el resto del
 sistema. El  tipo de sistema de  ficheros que tendremos que  asignar a
 esta partición no tiene duda, Linux Swap.\\
 
@@ -253,7 +257,7 @@ del  nuevo sistema  operativo,  en ella  encontraremos desde  nuestros
 directorios personales hasta los programas  de usuario, pasando por el
 núcleo del sistema  operativo, por lo tanto,  esta partición tendremos
 que dejarle  bastante sitio.  Como ya hemos  recomendado anteriormente
-2Gb  serán suficientes  para una  instalación normal  de linux.  Ahora
+2Gb  serán suficientes  para una  instalación normal  de Linux.  Ahora
 entremos en el fantástico mundo de  los sistemas de ficheros, que como
 llevamos haciendo hasta el momento también daremos un breve repaso.
 
@@ -261,74 +265,83 @@ llevamos haciendo hasta el momento también daremos un breve repaso.
 \subsection{Tipos de sistemas de ficheros}
 
 Los  sistemas de  ficheros  se pueden  clasificar  de varias  maneras,
-nosotros  lo  haremos atendiendo  a  la  capacidad de  journaling.  El
-journaling es una técnica que implementan algunos sistemas de ficheros
-muy parecida  a la  utilizada por  las transacciones  en las  bases de
-datos. La técnica consiste en que  todas las operaciones que se han de
-realizar sobre  el sistema de  ficheros se  guardan en disco  antes de
-realizarse, luego,  se van llevando a  cabo y se van  eliminando de la
-lista a  medida que se concluye  su ejecución. La ventaja  que nos dan
-los sistemas  con journaling  es que  si nuestro  sistema se  cae (por
-ejemplo se va la luz) todas las  tareas que el disco tendría que haber
-hecho para mantener la estructura  lógica del sistema de ficheros está
-guardada  y  cuando reestablecemos  el  sistema  tenemos el  disco  en
-perfecto estado,  eliminando de esta manera  los famosos verificadores
-de la estructura del disco, el más conocido es scandisk.\\
+nosotros  lo haremos  atendiendo a  la  capacidad de  los sistemas  de
+ficheros transaccionales  (journaling). El  journaling es  una técnica
+que  implementan  algunos  sistemas  de ficheros  muy  parecida  a  la
+utilizada  por las  transacciones en  las bases  de datos.  La técnica
+consiste en que todas las operaciones  que se han de realizar sobre el
+sistema de ficheros se guardan en  disco antes de realizarse que luego
+se van llevando a cabo y se van eliminando de la lista a medida que se
+concluye  su  ejecución. La  ventaja  que  nos  dan los  sistemas  con
+journaling es que si nuestro sistema se cae (por ejemplo se va la luz)
+todas las tareas que el disco tendría que haber hecho para mantener la
+estructura  lógica del  sistema  de ficheros  está  guardada y  cuando
+reestablecemos  el  sistema  tenemos  el  disco  en  perfecto  estado,
+eliminando de esta  manera los famosos verificadores  de la estructura
+del disco, el más conocido es scandisk.\\
 
 Comencemos con los sistemas de ficheros que no implementan journaling,
-estos son:
+éstos son:
 \begin{description}
-	\item[FAT16:]{sistema de fichero nativo de windows95 (sin una política de
-	seguridad robusta).}
-	\item[FAT32:]{sistema de ficheros nativo de windows98-windowsMe (sin
-	política de seguridad robusta).}
-	\item[ext2:]{sistema de ficheros nativo de Linux 2.x y 4.x (con una buena
-	política de seguridad).}
+\item[FAT16:]{sistema de fichero nativo  de Windows95 (sin política de
+seguridad robusta).}
+
+\item[FAT32:]{sistema de  ficheros nativo de  Windows98-WindowsMe (sin
+política de seguridad robusta).}
+
+\item[ext2:]{sistema de  ficheros nativo de  Linux 2.x y 4.x  (con una
+buena política de seguridad).}
+
 \end{description}
 
 Sistemas de ficheros que implementan journaling
 \begin{description}
-	\item[ext3:]{Este sistema de ficheros es una evolución del ext2 que
-	implementa journaling además de la política de seguridad basada en
-	permisos del ext2.}
-	\item[ReiserFs:]{Sistema de ficheros con journaling que obtiene muy
-	buenos resultados trabajando con ficheros de gran tamaño, también
-	cuenta con una muy buena política de seguridad.}
-	\item[NTFS:]{Sistema de ficheros nativo de windowsNT, windows200 y
-	windowsXP, tiene un sistema de seguridad basado en ficheros y en
-	listas de control de acceso. Desgraciadamente este tipo de sistema
-	de ficheros no es abierto, está sometido a continuos cambios por
-	parte de su dueño, Microsoft, y por lo tanto no se tiene un buen
-	soporte en linux, de tal modo que sólo está soportado de manera
-	segura la lectura de este tipo de sistema de fichero.}
-	\item[XFS:]{sistema de ficheros que implementan las máquinas silicon
-	graphics.}
-	\item[JFS:]{sistema de ficheros que implementan los main frame IBM.}
+
+\item[ext3:]{Este sistema  de ficheros es  una evolución del  ext2 que
+implementa journaling  además de  la política  de seguridad  basada en
+permisos del ext2.}
+
+\item[ReiserFs:]{Sistema de  ficheros con  journaling que  obtiene muy
+buenos  resultados trabajando  con  ficheros de  gran tamaño,  también
+cuenta con una muy buena política de seguridad.}
+
+\item[NTFS:]{Sistema de  ficheros nativo  de WindowsNT,  Windows2000 y
+WindowsXP,  tiene un  sistema de  seguridad  basado en  ficheros y  en
+listas de control de acceso.  Desgraciadamente este tipo de sistema de
+ficheros no es abierto, está sometido a continuos cambios por parte de
+su dueño,  Microsoft, y por  lo tanto no se  tiene un buen  soporte en
+Linux, de tal modo que sólo está soportado de manera segura la lectura
+de este tipo de sistema de fichero.}
+
+\item[XFS:]{sistema de  ficheros que implementan las  máquinas silicon
+graphics.}
+
+\item[JFS:]{sistema de ficheros que implementan los main frame IBM.}
+
 \end{description}
 
-Con esta  brevísima descripción  de los tipos  de sistema  de ficheros
-podreis elegir visotros mismos cual poner. Nuestra recomendación es la
-de  poner ext2  ya que  este  sistema de  ficheros está  en todas  las
-distribuciones, pero si  vuestra distribución os da  la posibilidad de
-utilizar un sistema de ficheros con  journaling escoged ext3 ya que en
-las comparativas  obtiene mejores resultados en  sistemas de propósito
-general que  los otros tipos de  sistema de fichero con  journaling, y
-por  su puesto,  la elección  entre journaling  o no  journaling es  a
-primera. No solo  por tener que estar esperando a  que termine el fsck
-sino  por  la robustez  y  eficiencia  de  este  tipo de  sistemas  de
-ficheros.\\
+Con  esta   brevísima  descripción   de  los   tipos  de   sistema  de
+ficheros podréis  elegir vosotros  mismos cuál queréis  poner. Nuestra
+recomendación es la de poner ext2 ya que este sistema de ficheros está
+en todas  las distribuciones,  pero si vuestra  distribución os  da la
+posibilidad de utilizar un sistema  de ficheros con journaling escoged
+ext3 ya que en las comparativas obtiene mejores resultados en sistemas
+de propósito  general que los  otros tipos  de sistema de  fichero con
+journaling,  y  por  supuesto,  la  elección  entre  journaling  o  no
+journaling es la primera. No solo  por tener que estar esperando a que
+termine el proceso de fsck, sino  también por la robustez y eficiencia
+de este tipo de sistemas de ficheros.\\
 
-Vamos  a  dar  por  último  la respuesta  a  la  pregunta  que  muchos
-de  vosotros os  estareis  haciendo ¿Podré  utilizar  la partición  de
-windows  desde linux  y  la  de linux  desde  windows?.  Como no,  hay
-varias respuestas para  esta cuestión tambien, pero  bastante claras y
-tajantes.  La respuesta  a si  se podrán  utilizar las  particiones de
-linux  desde windows  es no.  La otra  respuesta depende  del tipo  de
-sistema  de fichero  que tengamos  en  windows, para  los sistemas  de
-ficheros  con FAT16  o FAT32  se podrán  utilizar sin  problemas estas
-particiones.  Para los  sistemas de  ficheros con  NTFS solo  podremos
-utilizarlos en  modo lectura, no  podremos escribir ni borrar  nada en
-esa partición desde linux.
+Vamos  a dar  por último  la  respuesta a  la pregunta  que muchos  de
+vosotros os estaréis haciendo: ¿Podré utilizar la partición de Windows
+desde  Linux y  la  de  Linux desde  Windows?.  Hay varias  respuestas
+bastante claras y  tajantes. La respuesta a si se  podrán utilizar las
+particiones de  Linux desde Windows  es no. La otra  respuesta depende
+del tipo  de sistema  de ficheros  que tengamos  en Windows.  Para los
+sistemas de  ficheros del tipo  FAT16 o  FAT32 se podrán  utilizar sin
+problemas. Para los sistemas de  ficheros con NTFS lo más recomendable
+es utilizarlos en modo lectura, ya que es muy peligroso intentar hacer
+una operación de escritura en esa partición desde Linux.
 
 \section{Instalación del kernel y los módulos}
 
@@ -337,12 +350,12 @@ tener que colocar  todos los ficheros. Ahora tendremos  que comenzar a
 tomar decisiones  para indicar qué es  lo que queremos instalar  y qué
 hardware tenemos en nuestra máquina.\\
 
-Lo  primero  que tendremos  que  hacer  es  elegir qué  kernel  poner,
-normalmente podemos  elegir entre varias  opciones, no muchas  pero sí
-algunas. Llegados a  este punto si no sabéis por  cuál elegir, escoged
-la recomendada por la distribución. Ésta es siempre una buena elección
-en caso de duda. En cambio si sabéis el kernel que queréis poner entre
-todas las opciones, seleccionadlo y continuemos con la instalación.\\
+Lo  primero  que tendremos  que  hacer  es  elegir qué  kernel  poner.
+Normalmente podemos elegir entre unas  pocas opciones. Llegados a este
+punto si  no sabéis  por cuál  elegir, escoged  la recomendada  por la
+distribución. Ésta es  siempre una buena elección en caso  de duda. En
+cambio si sabéis el kernel que queréis poner entre todas las opciones,
+seleccionadlo y continuemos con la instalación.\\
 
 Una vez  decidido qué kernel  vamos a  usar tendremos que,  en algunas
 instalaciones,  decir qué  hardware  tenemos instalado  y qué  drivers
@@ -379,11 +392,11 @@ Este es otro de los pasos delicados de la instalación, menos que el de
 particionar el disco duro pero tambien tendremos que tener cuidado con
 lo  que hacemos.  Vamos a  seguir la  estructura del  apartado de  las
 particiones, es decir, vamos a separar los sistemas donde conviven dos
-sistemas operativos y los sistemas donde sólo tenemos linux.\\
+sistemas operativos y los sistemas donde sólo tenemos Linux.\\
 
-Para aquellas máquinas con arranque dual  windows y linux lo normal es
+Para aquellas máquinas con arranque dual  Windows y Linux lo normal es
 que no se disponga de un sistema gestor del arranque antes de instalar
-linux, por  lo tanto tendremos que  instalar el gestor de  arranque de
+Linux, por  lo tanto tendremos que  instalar el gestor de  arranque de
 nuestra distribución  (LILO o GRUB) en  el master boot record  MBR. Lo
 que lograremos de con esto es que nuestro cargador se ejecute antes de
 cualquiera de  los sistemas operativos  y nos permita decidir  cual de
@@ -613,7 +626,7 @@ router ADSL, y una conexión mediante un cable - modem.
 \subsection{Acceso mediante modem}
 
 Casi  todos los  modems externos  están  soportados por  el kernel  de
-linux; en  cambio hay  muy pocos  modem internos  para los  cuales hay
+Linux; en  cambio hay  muy pocos  modem internos  para los  cuales hay
 soporte en nuestro S.O. favorito.  Actualmente existe soporte para los
 siguientes:
 
@@ -727,7 +740,7 @@ configuración.
 La configuración de acceso usando una  línea ADSL que vamos a explicar
 en  este apartado  es usando  un  Router ADSL  el cual  debe de  estar
 previamente  configurado. También  necesitaremos una  tarjeta Ethernet
-que funcione en linux.\\
+que funcione en Linux.\\
 
 Para poder  realizar el acceso  tenemos que configurar la  interfaz de
 red. Normalmente  usaremos el  programa {\bf  ifconfig} con  una orden
@@ -791,7 +804,7 @@ internet através de un cable modem.
 
 \section{Configuración de la impresora: CUPS}
 
-En  linux podemos  utilizar varios  sitemas de  impresión y  nos sería
+En  Linux podemos  utilizar varios  sitemas de  impresión y  nos sería
 imposible explicarte como se configuran  todos ellos, aquí nos vamos a
 centrar en uno en concreto, CUPS, Common Unix Printing System.\\
 
