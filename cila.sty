@@ -19,7 +19,7 @@
 %%% Last modified    February 22th 2002
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesPackage{tila}
+\ProvidesPackage{cila}
              [2002/02/22 v0.1
                  LaTeX package (Estilo para los apuntes del TILA)]
 
@@ -28,12 +28,12 @@
 %%%
 \setlength{\paperwidth}{18cm}
 \setlength{\paperheight}{24cm}
-\setlength{\hoffset}{0cm}
-\setlength{\voffset}{-0.5cm}
 \setlength{\textwidth}{13cm}
 \setlength{\textheight}{18cm}
-\setlength{\parindent}{0cm}
-\setlength{\parskip}{1.5ex plus 0.5ex minus 0.5ex}
+\setlength{\hoffset}{0cm}
+\setlength{\voffset}{0cm}
+%\setlength{\parindent}{0cm}
+\setlength{\parskip}{1.1ex plus 0.5ex minus 0.5ex}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{1}
 
@@ -101,12 +101,14 @@
 %%%   que se limita a imprimir la cadena "Hola Mundo" en la salida estandar.
 %%% \end{ejemplo}
 %%%
+
 \newcommand{\listadeejemplos}{%
 \cleardoublepage\chapter*{Índice de ejemplos}% Creamos el índice de ejemplos
 \label{IndiceDeEjemplos}\@starttoc{lde}}%      y lo etiquetamos 
 \newcounter{nejemplo}[chapter]%                Contador subordinado al chapter
 \newcommand{\ejemploname}{Ejemplo }%           Nombre de la etiqueta
 \newcommand{\ejemplopath}{ejemplos/}%          Directorio de ejemplos
+
 \newenvironment{ejemplo}[2]{%                  Entorno "ejemplo", 2 argumentos
 \newcommand{\source}{#1} %                     Descripción corta del ejemplo
 \newcommand{\descripcion}{{\tt[#1]} #2} %      Descripción larga del ejemplo
@@ -132,6 +134,34 @@
 %%%
 \newcommand{\incluir}[1]{\include{#1}\newpage\thispagestyle{empty}}
 
+%%%
+%%%  Definicion de \part, modificación de la definición de \part de ull.sty
+%%%
+
+\def\thepart{\Roman{part}}
+\def\part#1{\cleardoublepage
+\thispagestyle{empty}
+\framebox[\textwidth][c]{{\centering \Large \partname \thepart} \\ {\Huge #1}}
+}
+
+%\def\thepart{\Roman{part}}
+%\def\part#1{\cleardoublepage
+%\thispagestyle{empty}
+%\begin{center}
+%\rule{0.3\textwidth}{2pt}
+%%\hskip 10pt
+%\raisebox{-0.5mm}{\parbox{0.3\textwidth}{\centering \Large \partname \thepart}}
+%%\hskip 10pt
+%\rule{0.3\textwidth}{2pt}
+%{\vrule width 2pt}\parbox{0.9\textwidth}{%
+%\vskip 20pt
+%\centering \Huge #1}{\vrule width 2pt
+%\vskip 20pt}
+%\end{center}
+%\stepcounter{part}
+%\pagebreak
+%\thispagestyle{empty}
+%}
 
 %%% 
 %%% Definición de \chapter, modificación de una opción del paquete fncychap.sty
@@ -140,7 +170,6 @@
 %%%% DEFINITION OF Chapapp variables
 \newcommand{\CNV}{\huge\bfseries}
 \newcommand{\ChNameVar}[1]{\renewcommand{\CNV}{#1}}
-
 
 %%%% DEFINITION OF TheChapter variables
 \newcommand{\CNoV}{\huge\bfseries}
@@ -162,7 +191,6 @@
    \else #1
   \fi
 \fi}
-
 
 %%%% DEFINITION OF Title variables
 \newcommand{\CTV}{\Huge\bfseries}
@@ -190,15 +218,12 @@
    \fi
 \fi}
 
-
-
 \newlength{\mylen}
 \newlength{\myhi}
 \newlength{\px}
 \newlength{\py}
 \newlength{\pyy}
 \newlength{\pxx}
-
 
 \def\mghrulefill#1{\leavevmode\leaders\hrule\@height #1\hfill\kern\z@}
 
@@ -244,7 +269,7 @@
 	\par\nobreak
 	\vskip -10pt
 	\rule{\RW}{2\baselineskip}\mghrulefill{\RW}\rule{\RW}{2\baselineskip}
-	\vskip 60\p@
+	\vskip 40\p@
   }
 \renewcommand{\DOTIS}[1]{%
   \setlength{\py}{\fboxrule}
@@ -254,7 +279,7 @@
 	\fbox{\parbox{\mylen}{\vskip 2\baselineskip\CTV\FmTi{#1}
 	\par\nobreak\vskip \baselineskip}} 
   \setlength{\fboxrule}{\py}
-  \vskip 60\p@
+  \vskip 40\p@
   }
 
 \ProcessOptions* \relax
@@ -284,63 +309,4 @@
   }}
 
 \endinput
-
-%%%
-%%%  Definicion de \part, modificación de la definición de \part de ull.sty
-%%%
-
-\def\thepart{\Roman{part}}
-\def\part{\cleardoublepage   % Empieza nueva página.
-   \thispagestyle{empty}     % El estilo de la pagina Parte es 'plain'
-  \if@twocolumn              % IF estilo two-column
-     \onecolumn              %  THEN \onecolumn
-     \@tempswatrue           %       @tempswa := true
-    \else \@tempswafalse     %  ELSE @tempswa := false
-  \fi                        % FI
-  \secdef\@part\@spart}
-
-%%% BEGIN: Redefinición de \@part utilizando el estilo de \chapter (de fncychap)
-\def\@part[#1]#2{\ifnum \c@secnumdepth >-2\relax  % IF secnumdepth > -2
-        \refstepcounter{part}                     %   THEN aumenta contador
-        \addcontentsline{toc}{part}{\Large\sc #1}       % añade al indice
-        \else                                     % ELSE añade linea sin numerar
-        \addcontentsline{toc}{part}{\Large\sc #1}\fi    % FI
-   \markboth{}{}
-   {\center
-   % Si secnumdepth > -2 Imprime 'Modulo <1>' en el borde superior del recuadro.
-   % En otro caso sólo imprime el título dentro del recuadro
-    \vspace*{40mm}
-    \ifnum \c@secnumdepth >-2\relax
-	   	\vskip 20\p@
-		\setlength{\myhi}{2.5\baselineskip}
-		\setlength{\px}{\myhi}
-		\addtolength{\px}{-1\RW}
-		\rule[-1.003\px]{\RW}{\myhi}\mghrulefill{\RW}
-		\hskip 10pt
-		\raisebox{-0.5\py}{\CNV\FmN{\partname} {\Huge\thepart}}
-		\hskip 10pt
-		\mghrulefill{\RW}\rule[-1.003\px]{\RW}{\myhi}
-		\par\nobreak
-		\vskip -15\p@
-		\setlength{\mylen}{\textwidth}
-		\addtolength{\mylen}{-2\RW}
-		{\vrule width\RW}\parbox{\mylen}{\CTV\FmTi{#1}}{\vrule width\RW}
-		\par\nobreak
-		\vskip -10pt
-		\rule{\RW}{2\baselineskip}\mghrulefill{\RW}\rule{\RW}{2\baselineskip}
-		\vskip 60\p@
-	\fi
-	}\@endpart}
-
-\def\@endpart{\vfil\newpage
-   \if@twoside
-       \hbox{}
-       \thispagestyle{empty}
-       \newpage
-   \fi
-   \if@tempswa
-    \twocolumn
-   \fi}
-%%% END: Redefinición de \@part utilizando el estilo de \chapter (de fncychap)
-
 
