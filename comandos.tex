@@ -180,97 +180,117 @@ comando --help}.
 \begin{verbatim}
 [felix@localhost apuntes]$ ls --help
 Modo de empleo: ls [OPCIÓN]... [FICHERO]...
-List information about the FILEs (the current directory by default).
-Sort entries alphabetically if none of -cftuSUX nor --sort.
+Muestra información acerca de los FICHEROs (del directorio actual por defecto).
+Ordena las entradas alfabéticamente si no se especifica ninguna de las
+opciones -cftuSUX ni --sort.
 
+Los argumentos obligatorios para las opciones largas son también obligatorios
+para las opciones cortas
   -a, --all                  do not hide entries starting with .
   -A, --almost-all           do not list implied . and ..
+      --author               print the author of each file
   -b, --escape               print octal escapes for nongraphic characters
-      --block-size=SIZE      use SIZE-byte blocks
-  -B, --ignore-backups       do not list implied entries ending with ~
-  -c                         with -lt: sort by, and show, ctime (time of
- last
-                               modification of file status information)
-                               with -l: show ctime and sort by name
-                               otherwise: sort by ctime
-  -C                         list entries by columns
-      --color[=WHEN]         control whether color is used to distinguish
- file
-                               types.  WHEN may be `never', `always', or
- `auto'
-  -d, --directory            list directory entries instead of contents
-  -D, --dired                generate output designed for Emacs' dired mode
-  -f                         do not sort, enable -aU, disable -lst
-  -F, --classify             append indicator (one of */=@|) to entries
-      --format=WORD          across -x, commas -m, horizontal -x, long -l,
+      --block-size=TAMAÑO    utiliza bloques de TAMAÑO bytes
+  -B, --ignore-backups       no muestra la entradas que terminan con ~
+  -c                         con -lt: ordena por ctime y muestra ctime (fecha
+                               de última modificación del fichero)
+                               con -l: muestra ctime y ordena por nombre
+                               en cualquier otro caso: ordena por ctime
+  -C                         muestra las entradas por columnas
+      --color[=CUÁNDO]       especifica si se usará color para distinguir los
+                               tipos de ficheros. CUÁNDO puede ser `never',
+                               `always' o `auto'
+  -d, --directory            muestra las entradas de los directorios en lugar
+                             de sus contenidos
+  -D, --dired                genera el resultado para el modo `dired' de Emacs
+  -f                         no ordena, utiliza -aU, no utiliza -lst
+  -F, --classify             añade un indicador (uno de */=@|) a las entradas
+      --format=PALABRA       across -x, commas -m, horizontal -x, long -l,
                                single-column -1, verbose -l, vertical -C
-      --full-time            list both full date and full time
-  -g                         (ignored)
-  -G, --no-group             inhibit display of group information
-  -h, --human-readable  print sizes in human readable format (e.g., 1K 234M
- 2G)
-      --si                   likewise, but use powers of 1000 not 1024
-  -H                         same as `--si' for now; soon to change
-                               to conform to POSIX
-      --indicator-style=WORD append indicator with style WORD to entry
- names:
-                               none (default), classify (-F), file-type
- (-p)
-  -i, --inode                print index number of each file
-  -I, --ignore=PATTERN       do not list implied entries matching shell
- PATTERN
-  -k, --kilobytes            like --block-size=1024
-  -l                         use a long listing format
-  -L, --dereference          list entries pointed to by symbolic links
-  -m                         fill width with a comma separated list of
- entries
-  -n, --numeric-uid-gid      list numeric UIDs and GIDs instead of names
-  -N, --literal              print raw entry names (don't treat e.g.
- control
-                               characters specially)
-  -o                         use long listing format without group info
-  -p, --file-type            append indicator (one of /=@|) to entries
-  -q, --hide-control-chars   print ? instead of non graphic characters
-      --show-control-chars   show non graphic characters as-is (default
-                             unless program is `ls' and output is a
- terminal)
-  -Q, --quote-name           enclose entry names in double quotes
-      --quoting-style=WORD   use quoting style WORD for entry names:
-                               literal, locale, shell, shell-always, c,
- escape
-  -r, --reverse              reverse order while sorting
-  -R, --recursive            list subdirectories recursively
-  -s, --size                 print size of each file, in blocks
-  -S                         sort by file size
-      --sort=WORD            extension -X, none -U, size -S, time -t,
-                               version -v
-                             status -c, time -t, atime -u, access -u, use
- -u
-      --time=WORD            show time as WORD instead of modification
- time:
-                               atime, access, use, ctime or status; use
-                               specified time as sort key if --sort=time
-  -t                         sort by modification time
-  -T, --tabsize=COLS         assume tab stops at each COLS instead of 8
-  -u                         with -lt: sort by, and show, access time
-                               with -l: show access time and sort by name
-                               otherwise: sort by access time
-  -U                         do not sort; list entries in directory order
-  -v                         sort by version
-  -w, --width=COLS           assume screen width instead of current value
-  -x                         list entries by lines instead of by columns
-  -X                         sort alphabetically by entry extension
-  -1                         list one file per line
-      --help                 display this help and exit
-      --version              output version information and exit
+      --full-time            como -l --time-style=full-iso
+  -g                         como -l, pero no muestra el propietario
+  -G, --no-group             no muestra la información del grupo
+  -h, --human-readable       muestra los tamaños de forma legible
+                             (p.e. 1K 234M 2G)
+      --si                   análogo, pero utilizando potencias de 1000,
+                             no de 1024
+  -H, --dereference-command-line  sigue los enlaces simbólicos en la línea de
+                                  órdenes
+      --indicator-style=PALABRA  añade un indicador con estilo PALABRA a los
+                                 nombres de las entradas: none (predeterminado),
+                                 classify (-F), file-type (-p)
+  -i, --inode                muestra el número de nodo-i de cada fichero
+  -I, --ignore=PATRÓN        no lista las entradas que coincidan (encajen)
+                             con PATRÓN de shell
+  -k                         como --block-size=1K
+  -l                         utiliza un formato de listado largo
+  -L, --dereference          al mostrar la información de un fichero para un
+                               enlace simbólico, muestra la información del
+                               fichero al que apunta el enlace en lugar de la
+                               del propio enlace
+  -m                         rellena el ancho con una lista de entradas
+                             separadas por comas
+  -n, --numeric-uid-gid      como -l, pero muestra los UIDs y GIDs numéricos
+  -N, --literal              muestra los nombres literalmente (no trata p.ej.
+                             los caracteres de control de forma especial)
+  -o                         como -l, pero no muestra el grupo
+  -p  --file-type            añade un indicador (uno de /=@|) a las entradas
+  -q, --hide-control-chars   imprime ? en lugar de los caracteres no gráficos
+      --show-control-chars   muestra los caracteres no gráficos tal y como
+                             son (predeterminado a menos que el programa sea
+                             `ls' y la salida sea un terminal)
+  -Q, --quote-name           encierra los nombres de las entradas entre
+                             comillas
+      --quoting-style=PALABRA  utiliza el estilo de cita PALABRA para los
+                               nombres de las entradas:
+                               literal, locale, shell, shell-always, c, escape
+  -r, --reverse              invierte el orden, en su caso
+  -R, --recursive            muestra los subdirectorios recursivamente
+  -s, --size                 muestra el tamaño de cada fichero, en bloques
+  -S                         ordena los ficheros por tamaño
+      --sort=PALABRA         extension -X, none -U, size -S, time -t, version -v
+                             status -c, time -t, atime -u, access -u, use -u
+      --time=PALABRA         muestra la fecha según PALABRA, en lugar de la
+                             fecha de modificación:
+                               atime, access, use, ctime ó status; utiliza
+                               la fecha especificada como clave de ordenación
+                               si --sort=time
+      --time-style=PALABRA   muestra la fecha utilizando el estilo PALABRA:
+                               full-iso, iso, locale, posix-iso, +FORMATO
+                             FORMATO se interpreta como en `date'; si FORMATO
+                             es FORMATO1<nuevalínea>FORMATO2, FORMATO1 se
+                             aplica a los ficheros no recientes y FORMATO2
+                             a los ficheros recientes
+  -t                         ordena por la fecha de modificación
+  -T, --tabsize=COLS         establece los topes de tabulación a cada COLS
+                             en lugar de 8
+  -u                         con -lt: ordena por atime y muestra atime (fecha
+                               de último acceso al fichero)
+                               con -l: muestra atime y ordena por nombre
+                               en cualquier otro caso: ordena por atime
+  -U                         no ordena; muestra las entradas en el orden del
+                             directorio
+  -v                         ordena por versión
+  -w, --width=COLS           establece el ancho de la pantalla en lugar del
+                             valor actual
+  -x                         muestra las entradas por líneas en vez de por
+                             columnas
+  -X                         ordena alfabéticamente por la extensión de la
+                             entrada
+  -1                         muestra un fichero por cada línea
+      --help     muestra esta ayuda y finaliza
+      --version  muestra la versión y finaliza
 
-By default, color is not used to distinguish types of files.  That is
-equivalent to using --color=none.  Using the --color option without the
-optional WHEN argument is equivalent to using --color=always.  With
---color=auto, color codes are output only if standard output is connected
-to a terminal (tty).
+TAMAÑO puede ser (o puede ser un entero seguido opcionalmente por) uno
+de los siguientes: kB 1.000, K 1.024, MB 1.000.000, M 1.048.576, y así
+en adelante para G, T, P, E, Z, Y.
 
-Comunicar `bugs' a bug-fileutils@gnu.org.
+Por defecto, no se emplea color para distinguir los tipos de ficheros. Esto
+equivale a usar --color=none. Usar la opción --color sin el argumento opcional
+CUÁNDO equivale a usar --color=always. Con --color=auto, sólo se muestran
+los códigos de color si la salida estándar está conectada a un terminal (tty).
+
+Comunicar bichos a <bug-fileutils@gnu.org>.
 \end{verbatim}
 
 Disculpe el  lector semejante ejemplo, pero  era para que se  viera la
