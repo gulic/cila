@@ -73,7 +73,7 @@ las  directrices de  la DGFS(no  distribuye el  código, no  se permite
 redistribuir el código,etc).
 
 
-\subsection{apt-get}
+\subsection{Apt-get}
 
 El comando {\bf  apt-get} se utiliza para la  manipulación de paquetes
 deb. Permite la instalación de paquetes, borrado, \dots
@@ -110,7 +110,7 @@ deb. Permite la instalación de paquetes, borrado, \dots
 \caption{Otras opciones del apt-get}
 \end{table}
 
-\subsection{apt-cache}
+\subsection{Apt-cache}
 
 El comando apt-cache trabaja con la  cache de los paquetes. El comando
 no manipula  el estado  del sistema,  por lo que  puede ser  usado por
@@ -143,7 +143,7 @@ el  fichero podemos  por  ejemplo darle  las órdenes  al  APT para  la
 utilización de un  proxy. Podemos encontrar un ejemplo  del fichero en
 {\tt /usr/share/doc/apt/examples/configure-index.gz}
 
-\subsection{APT-CDROM}
+\subsection{Apt-cdrom}
 
 El comando apt-cdrom permite añadir nuevos cdrom al sources.list. Para
 añadir un cdrom la orden es {\tt apt-cdrom add}
@@ -286,6 +286,35 @@ PID USER     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME COMMAND
 1541 faraox    10   0  3148 3148  2184 S     0.1  1.7   0:00 Eterm
 1 root       8   0   480  436   416 S     0.0  0.2   0:04 init
 \end{verbatim}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|p{0.88\textwidh}|}
+\hline
+{\tt espacio} & Actualiza la pantalla \\
+{\tt Ctrol + L} & Borra y reescribe la pantalla \\
+{\tt k} & Mata un proceso(kill) \\
+{\tt r} & Cambia la prioridad de cualquier proceso \\
+{\tt s} & Cambia el intervalo de refresco(por defecto es cada 5 segundos) \\
+{\tt o} & Cambia el orden de los elementos \\
+{\tt N} & Ordenar procesos por PID \\
+{\tt P} & Mostrar procesos por el uso de la CPU(por defecto)\\
+{\tt M} & Mostrar procesos por el uso de memoria \\
+{\tt T} & Mostrar procesos por tiempo \\
+{\tt W} & Guarda la configuración  en ~/.toprc\\
+\hline
+\end{tabular}
+\caption{Teclas para la interactuación con el top}
+\end{table}
+
+\subsection*{Nice:prioridad en procesos}
+
+Una CPU tiene que comprartir su tiempo de cálculo con varios procesos. {\tt Nice} es un programa que permite cambiar la prioridad de un proceso en nuestro sistema. La prioridad tiene un rango desde -20 a 20. Un usuario normal tiene prioridad 0 cuando ejecuta cualquier comando desde la consola. Con el comando nice, ese usuario normal solo puede bajar la prioridad del proceso, nunca subirlo, solo root es capaz de ello.
+El esquema de utilización sería: {nice -n prioridad comando} o también podemos utilizar el comando {\tt rnice} para cambiar la prioridad de un proceso: {\tt renice prioridad PID}
+
+\section{Los servicios en debian}
+
+Los servicios o demonios son procesos que se ejecutan automáticamente al arrancar el sistema o al llamarlos y que esperan cualquier petición. Es el caso por ejemplo de Apache, Qmail, SSH, etc. Los servicios normalmente se inician al iniciar el sistema, pero podemos iniciarlo(start), pararlo(stop) o reiniciandolo, sería así: {\tt /etc/init.d/servicio opción}. 
+Para que el servicio no se inicie cuando arrancamos el sistema, podemos usar el comando update-rc.d. Este comando lo que hace es crear enlaces a los diferentes directorios de runlevels. Para que no se inicie automáticamente: {\tt update-rc.d -f servicio remove}. Para añadir un servicio, simplemente creamos el script de nuestro servicio en Bourne Shell Script y lo copiamos al directorio /etc/init.d/. Si queremos que se inicie automáticamente al arrancar escribimos: {\tt update-rc.d servicio defaults}
 
 \section{Los archivos de registro }
 
