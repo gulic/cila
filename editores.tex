@@ -4,6 +4,95 @@
 \chapter{Editores de texto}
 
 
+
+\section{Joe}
+
+El primer editor  que suele aprenderse en Linux es  {\sf Joe}, por ser
+muy sencillo  y rápido.  Puede usarse  para editar  cualquier fichero,
+pero  aquí trataremos  su uso  básico, lo  justo para  editar pequeños
+textos,  ficheros de  configuración, pequeños  programas. Todos  estos
+ficheros pueden editarse  con más comodidad con  editores más potentes
+como {\sf  Emacs} o {\sf VIM}  pero para ello es  necesario aprender a
+usarlos primero, lo cual puede  no resultar tan sencillo como aprender
+{\sf Joe}.
+
+Veremos sólo un par de comandos  de {\sf Joe}, simplemente como editar
+un fichero existente o nuevo, guardarlo sin salir, salir sin guardarlo
+y salir guardándolo. Para obtener más información sobre otras opciones
+del editor existe el comando de ayuda que explicaremos luego.
+
+El manejo de {\tt Joe} se basa en combinaciones de teclas con la tecla
+{\tt Control}. Denotaremos por {\tt C-x  y} a la combinación de teclas
+que se  obtiene al  pulsar la tecla  {\tt Control},  seguidamente (sin
+soltar la  primera) pulsar la  tecla {\tt  x} y después  (soltando las
+teclas anteriores) pulsar  la tecla {\tt y}. Veamos  un rápido ejemplo
+del uso de este editor. En un terminal ejecuta:
+
+\begin{verbatim}
+$ joe prueba.txt
+\end{verbatim}
+
+Escribe una frase sencilla, tal como:
+
+\begin{verbatim}
+Si algo funciona, no lo toques.
+\end{verbatim}
+
+Para guardar el  fichero utilizamos la combinación de  teclas {\tt C-k
+s} y  entonces {\tt Joe}  te preguntará el  nombre con el  que quieres
+guardar el fichero.
+
+\begin{verbatim}
+Name of file to save (^C to abort): hola.txt
+\end{verbatim}
+
+Si pulsamos ahora  ahora {\tt C-c} simplemente cancelamos  la orden de
+guardar el  fichero, pero  no perdemos su  contenido. Para  guardar el
+fichero pulsamos {\tt Enter}, modificando  el nombre del fichero si lo
+deseamos. Ahora añadimos otra línea:
+
+\begin{verbatim}
+Si algo funciona, no lo toques.
+Si algo funciona, y no sabes por qué, úsalo siempre.
+\end{verbatim}
+
+Ahora saldremos  del editor {\bf  guardando los cambios},  mediante la
+combinación de teclas {\tt C-k x}. De esta manera volveremos al prompt
+del sistema siendo informados de que el fichero ha sido guardado.
+
+\begin{verbatim}
+File prueba.txt saved.
+$
+\end{verbatim}
+
+Como última maniobra, abrimos de  nuevo el fichero, borramos la última
+línea y salimos sin guardar los cambios.
+
+
+\begin{verbatim}
+$ joe prueba.txt
+\end{verbatim}
+
+Boramos la  última línea  usando las teclas  de borrado  habituales, y
+pulsamos {\tt C-c}  para salir sin guardar los cambios.  El editor nos
+pedirá confirmación antes de salir.  Podemos responder que sí queremos
+salir  pulsando {\tt  y},  o  por el  contrario  cancelar la  maniobra
+pulsando {\tt n} o  {\tt C-c}. Decimos que sí ({\tt  y}) y volvemos al
+prompt del sistema.
+
+\begin{verbatim}
+Lose changes to this file (y,n,^C)? 
+File hola.txt not saved.
+$
+\end{verbatim}
+
+Esto es  lo mínimo que  debes saber para editar  con {\tt Joe},  y con
+esto  será suficiente  aquí pues  en  lo sucesivo  aprenderás a  hacer
+operaciones más avanzadas con otros editores. Para conocer sobre otras
+opciones de este editor, se puede utilizar la opción {\tt Ctrl-k h}.
+
+
+
 \section{GNU Emacs}
 
 
@@ -30,7 +119,7 @@ ventanas de edición de texto, etc.).
 Empieza editando un fichero de texto básico. En la consola ponemos:
 
 \begin{verbatim}
-$ emacs prueba.c
+$ emacs hola.c
 \end{verbatim}
 
 y escribe un programa común y corto:
@@ -69,7 +158,9 @@ realizar  cualquiera de  las operaciones  que ofrece.  Algunas de  las
 combinaciones de  teclas para  moverse cómodamente por  los documentos
 son:
 
-\begin{tabular}{|c|p{0.7\textwidth}|}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|l|}
 \hline
 {\tt A-f  } & Sitúa el cursor al principio de la palabra siguiente. \\
 {\tt A-b  } & Sitúa el cursor al principio de la palabra anterior. \\
@@ -82,18 +173,24 @@ son:
 {\tt C-l  } & Sitúa el cursor justo al principio de la línea del medio de la pantalla \\
 \hline
 \end{tabular}
+\caption{Combinaciones de teclas para moverse con GNU Emacs}
+\end{table}
 
 Algunas teclas para eliminar texto:
 
-\begin{tabular}{|c|p{0.7\textwidth}|}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|l|}
 \hline
-{\tt A-d } & Elimina la palabra que sigue al cursor. \\
+{\tt A-d }      & Elimina la palabra que sigue al cursor. \\
 {\tt A-delete } & Elimina la palabra anterior al cursor. \\
-{\tt C-k } & Elimina la línea actual entera. \\
-{\tt A-k } & Elimina la frase siguiente \\
+{\tt C-k }      & Elimina la línea actual entera. \\
+{\tt A-k }      & Elimina la frase siguiente \\
 {\tt C-x + BackSpace } & Elimina la frase anterior \\
 \hline
 \end{tabular}
+\caption{Combinaciones de teclas para borrar texto con GNU Emacs}
+\end{table}
 
 Hay que añadir un truco bastante  útil que es la combinación de teclas
 {\tt C-u}, la cual nos permite repetir cualquier comando n veces.
@@ -239,6 +336,7 @@ pasar al modo {\tt edición}. Esta transición puede hacerse de 8 formas
 diferentes.
 
 \begin{table}[htbp]
+\centering
 \begin{tabular}{|c|p{0.88\textwidth}|}
 \hline
 {\tt i} & Comienza a insertar texto en la posición del cursor.                       \\
@@ -275,7 +373,7 @@ La última línea  de la interfaz (o de la  consola) debería parecerse a
 esto:
 
 \begin{verbatim}
-"hola.c" [New File]                                       0,0-1         All
+"hola.c" [New File]                                  0,0-1         All
 \end{verbatim}
 
 Esta  línea es  la {\em  barra de  estado} del  editor. Es  aquí donde
@@ -288,7 +386,7 @@ A  continuación pulsamos  la tecla  {\tt i}  para pasar  al modo  {\em
 edición}. Observamos que la barra de estado se muestra diferente:
 
 \begin{verbatim}
--- INSERT --                                              0,1           All
+-- INSERT --                                         0,1           All
 \end{verbatim}
 
 Ahora es el momento de teclear, escribe el siguiente código:
@@ -315,7 +413,7 @@ resultado, en este  caso información sobre el fichero  que acabamos de
 guardar.
 
 \begin{verbatim}
-"hola.c" [New] 6L, 62C written                            6,1           All
+"hola.c" [New] 6L, 62C written                       6,1           All
 \end{verbatim}
 
 En esta  línea {\sf VI} nos  indica que ha escrito  el fichero hola.c,
@@ -353,9 +451,9 @@ simple punto {\tt .} solitario en modo {\em comando}.
 
 Para  salir  del  editor  {\bf  sin} guardar  el  fichero  utiliza  el
 comando {\tt  :q!}. Probablemente realizarás esta  operación con mucha
-frecuencia  al principio,  cuando se  cometas algún  error grave  como
-teclear una palabra  sin pasar al modo {\em edición}.  En el modo {\em
-comando} cada tecla tiene su función, y es diferente además si está en
+frecuencia al principio, cuando cometas algún error grave como teclear
+una palabra sin pasar al modo  {\em edición}. En el modo {\em comando}
+cada  tecla  tiene su  función,  y  es  diferente  además si  está  en
 mayúsculas que si  está en minúsculas. Por lo tanto,  una regla de oro
 con  {\sf VI}  es: cuando  no  sepas con  qué comando  hacer algo,  no
 pruebes teclas  al azar.  Y por supuesto,  cuando estés  editando algo
@@ -493,73 +591,144 @@ que en las expresiones regulares de {\sf VI} son:
 \verb_. * $ / [ ] \ * -_
 
 En  una expresión  regular,  \verb_._ encaja  con cualquier  caracter,
-\verb.*. con  el principio de  la línea, \verb.$.  con el final  de la
+\verb.^. con  el principio de  la línea, \verb.$.  con el final  de la
 línea, \verb.-., \verb.[. y \verb.]. permiten definir rangos, \verb.*.
-extiende  el significado  del  anterior caracter  a  ninguna o  varias
-ocurrencias del  mismo. La barra {\tt  /} se utiliza para  separar los
-patrones  de  búsqueda  y  reemplazo,  por  lo  que  no  puede  usarse
-directamente en los patrones. Para utilizar alguno de estos caracteres
-de forma que  encajen consigo mismos (por ejemplo para  busar un punto
-en  el  texto) hay  que  {\em  escaparlos} anteponiéndoles  una  barra
-invertida (\verb.\.).
+extiende el  significado de la  expresión que  le preceda a  ninguna o
+varias  ocurrencias de  la misma.  La barra  \verb./. se  utiliza para
+separar  los  patrones de  búsqueda.  Para  utilizar alguno  de  estos
+caracteres de forma que encajen consigo mismos (por ejemplo para busar
+un punto  en el  texto) hay que  {\em escaparlos}  anteponiéndoles una
+barra invertida (\verb.\.).
 
 Otros  caracteres   adquieren  un  significado  especial   cuando  son
 precedidos de la barra invertida.  Así \verb.\|. es el operador ``o'',
 es decir la  expresión \verb.casa\|coche. encaja con {\tt  casa} y con
-{\tt coche}.
-En {\tt VIM} se pueden usar las expresiones de {\tt VI} tales como \verb.$. pero también utiliza el carácter \verb.^. que encaja con el principio de la línea. El carácter \verb.\<. se utiliza para hacer erferencia el principio de palabra y \verb.\>. hace referencia al final de palabra. Así podremos sustituir la palabra {\tt vi} por {\tt vim} sin que cambien palabras del texto como vivir, etc.
+{\tt coche}.  Los símbolos de desigualdad  permiten delimitar palabras
+en un patrón, usando \verb.\<. que  encaja con el principio de palabra
+y \verb.\>. con  el final. Así podremos sustituir la  palabra {\tt vi}
+por {\tt vim} sin que cambien palabras del texto como vivir, etc.
+
 \begin{verbatim}
-$ :s/\<vi\>/vim
+:s/\<vi\>/vim
 \end{verbatim}
-y si queremos sustituir solo la palabra vi que se encuentre en una sola línea por vim, podremos utilizar:
+
+% Carlos (faraox): revisa este ejemplo para que quede claro
+
+y si  queremos sustituir solo  la palabra vi  que se encuentre  en una
+sola línea por vim, podremos utilizar:
+
 \begin{verbatim}
-$ :s/^vi$/vim
+:s/^vi$/vim
 \end{verbatim}
 
 Los metacaracteres nos permiten una gran flexibilidad a la hora de
 trabajar con expresiones regulares.
+
 \begin{table}[htbp]
-\begin{tabular}{|c|p{0.88\textwidth}|}
+\centering
+\begin{tabular}{|c|l|}
 \hline
-{\tt .} & Cualquier caracter \\
-{\tt \verb.\.s} & Espacios en blanco \\
-{\tt \verb.\.d} & Digitos \\
-{\tt \verb.\.h} & Cualquier letra \\
-{\tt \verb.\.w} & Letras y digitos \\
-{\tt \verb.\.l} & Letras minúsculas \\
-\tt \verb.\.u} & Letras mayúsculas \\
+{\tt .}         & Cualquier caracter \\
+{\tt \verb.\s.} & Espacios en blanco \\
+{\tt \verb.\d.} & Digitos \\
+{\tt \verb.\h.} & Cualquier letra \\
+{\tt \verb.\w.} & Letras y digitos \\
+{\tt \verb.\l.} & Letras minúsculas \\
+{\tt \verb.\u.} & Letras mayúsculas \\
 \hline
 \end{tabular}
-\caption{Metacaracteres}
+\caption{Metacaracteres en las expresiones regulares de VI}
 \end{table}
 
-Vamos a poner un ejemplo con este tipo de comandos. Si queremos buscar en el texto fechas con el formato DD/MM/AAAA, lo que haríamos sería: 
+Vamos a poner un ejemplo con este tipo de comandos. Si queremos buscar
+en el texto fechas con el formato DD/MM/AAAA, lo que haríamos sería:
+
 \begin{verbatim}
-$ /\d\d/\d\d/\d\d\d\d
+/\d\d/\d\d/\d\d\d\d
 \end{verbatim}
 
-O por ejemplo si buscamos palabras que empiezen con mayúsculas de un modo sencillo podemos hacer:
+O por ejemplo  si buscamos palabras que empiezen con  mayúsculas de un
+modo sencillo podemos hacer:
+
 \begin{verbatim}
-$ /\u\l
+/\u\l
 \end{verbatim}
-Ahora vamos a introducir unos elementos nuevos para hacer nuestros reemplazos y nuestra busquedas más \verb. "profesionales".. Uno de ellos son los \verb."Cuantificadores".. Si necesitamos buscar en un documento grandes grupos de números de 9 cifras por ejemplo nos resultaría muy trabajoso escribir \verb./\d\d\d\d\d\d\d\d\d.. Los cuantificadores son diversas expresiones que nos permiten definir el número de veces que aparecerá el tipo de caracter que queremos buscar. Los más importantes son \verb.\+., relaciona el caracter que aparece una o más veces en una palabra, \verb.\=., relaciona el caracter que aparece 0, 1 o más veces en una palabra. Con \verb.\{n,m}. relaciona el caracter si se encuentra entre n y m veces. La expresión \verb.\{n}. relaciona el caracter si se encutra n veces. Así en el ejemplo anterior podríamos usar:
+
+Ahora   vamos  a   introducir   unos  elementos   nuevos  para   hacer
+reemplazos y  busquedas más  ``profesionales''. Uno  de ellos  son los
+{\em cuantificadores}.  Si necesitamos  buscar en  un documento  grandes
+grupos de números de 9 cifras por ejemplo nos resultaría muy trabajoso
+escribir \verb./\d\d\d\d\d\d\d\d\d.. Los  cuantificadores son diversas
+expresiones que nos permiten definir  el número de veces que aparecerá
+el  tipo de  caracter que  queremos  buscar. Los  más importantes  son
+\verb.\+., relaciona  el caracter que aparece  una o más veces  en una
+palabra, \verb.\=., relaciona el caracter que aparece 0, 1 o más veces
+en  una  palabra.  Con  \verb.\{n,m}.  relaciona  el  caracter  si  se
+encuentra entre  n y  m veces. La  expresión \verb.\{n}.  relaciona el
+caracter si se  encutra n veces. Así en el  ejemplo anterior podríamos
+usar:
+
 \begin{verbatim}
-$/\d\{9}
+/\d\{9}
 \end{verbatim}
+
 y nos mostraría las expresiones que contengan 9 digitos.
-Podemos convinar los cuantificadores con los rangos de caracteres para conseguir mejores resultados. Los rangos de expresiones regulares son definidos dentro de \verb.[].. Por ejemplo, \verb./[a-z]. buscará en el texto todos las letras minúsculas, \verb./[A-Z]. todas las letras mayúsculas. También existe un valor negativo en los rangos, es el {\tt \verb.^.}. El comando \verb./[^a-z]. mostrará todas las letras mayúsculas.
-Tambien podemos cambiar el orden de las frases de todo un texto o de zonas específicas. Se utilizan los \verb."agrupadores".. Se trata de crear grupos de expresiones que luego para sustituir utilizaremos expresiones que nos permitan reordenarlos. Para definir un grupo se utiliza \verb.\(\)., el texto que se encuentre entre esos el paréntesis y la barra invertida será la expresion que buscará. Por ejemplo, estamos usando un archivo con varios nombres de ciudades, pero para poder utilizarlo necesitamos que todos esten al principio de la línea, sin ningun espacio, podemos utilizar el siguiente comando: 
-\begin{verbatim}
-:1,$s/\(\s\+\)\(\w\+\)/\2/g.
-\end{verbatim}
-el anterior comando busca en todo el documento(\verb.1,$.)que conetenga cualquier número espacios delante(\verb.\(\s\+\).) y que detrás contenga alun texto(\verb.\(\w\+\).) y lo sustituye por la exresión(\verb.\2.), es decir, solo mantiene el grupo \verb.\2., el que contiene la palabra. 
+
+Podemos combinar los cuantificadores con los rangos de caracteres para
+conseguir mejores resultados. Los  rangos de expresiones regulares son
+definidos dentro  de \verb.[].. Por ejemplo,  \verb./[a-h]. buscará en
+el  texto  todos las  letras  entre  la a  y  la  h, ambas  inclusive,
+\verb./[A-H].  haría  lo  mismo   en  mayúsculas.  También  existe  un
+valor  negativo  en los  rangos,  es  el  {\tt \verb.^.}.  El  comando
+\verb./[^j-z]. mostrará todas las letras minúsculas anteriores a la j.
+
+Para  buscar mayúsculas  o minúsculas  hay algo  mejor que  los rangos
+\verb.[a-z]. y  \verb.[A-Z]., que  son las  {\em clases}. Las  clases se
+refieren mediante  palabras encerradas entre \verb.[[:.  y \verb.:]].,
+por  lo  que para  buscar  una  expresión  mediante clases  el  patrón
+de  búsqueda deberá  contener  \verb.[[:clase:]]. Las  clases que  nos
+interesan son:
 
 \begin{table}[htbp]
-\begin{tabular}{|c|p{0.88\textwidth}|}
+\centering
+\begin{tabular}{|c|l|}
+\hline
+{\tt \verb.[[:lower:]].} & cualquier letra minúscula (incluída {\tt ñ}) \\
+{\tt \verb.[[:upper:]].} & cualquier letra mayúscula (incluída {\tt Ñ}) \\
+{\tt \verb.[[:alpha:]].} & cualquier letra \\
+{\tt \verb.[[:digit:]].} & cualquier dígito \\
+\hline
+\end{tabular}
+\caption{Metacaracteres en las expresiones regulares de VI}
+\end{table}
+
+Tambien podemos cambiar el  orden de las frases de todo  un texto o de
+zonas  específicas,  utilizando los  {\em  agrupadores}.  Se trata  de
+crear  grupos de  expresiones  que luego  para sustituir  utilizaremos
+expresiones  que  nos permitan  reordenarlos.  Para  definir un  grupo
+se  utiliza \verb.\(\).,  el  texto  que se  encuentre  entre esos  el
+paréntesis ``escapados''  será la expresion que  buscará. Por ejemplo,
+estamos usando  un archivo con  varios nombres de ciudades,  pero para
+poder utilizarlo necesitamos que todos esten al principio de la línea,
+sin ningun espacio, podemos utilizar el siguiente comando:
+
+\begin{verbatim}
+:%s/^\(\s\+\)\(\w\+\)/\2/g
+\end{verbatim}
+
+El anterior comando busca en todo el documento (\verb.%.) que contenga
+cualquier número espacios al principio de la línea (\verb.\(\s\+\).) y
+que detrás contenga algún texto(\verb.\(\w\+\)). y lo sustituye por la
+exresión(\verb.\2.), es  decir, solo  mantiene el grupo  \verb.\2., el
+que contiene la palabra.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|l|}
 \hline
 {\tt \verb.\1.} & Hace referencia al primer grupo \\
 {\tt \verb.\2.} & Hace referencia al segundo grupo \\
-{\tt ...} & ... \\
+{\tt \verb.\n.} & Hace referencia al n-ésimo grupo, con n entre 1 y 9 \\
 {\tt \verb.\U.} & Todos los siguientes carateres se cambirán en mayúsculas \\
 {\tt \verb.\L.} & Todos los siguiente caracteres se cambiarán a minúsculas \\
 {\tt \verb.\E.} & Finaliza el parámetro \verb.\U. y \verb.\L. \\
@@ -570,93 +739,4 @@ el anterior comando busca en todo el documento(\verb.1,$.)que conetenga cualquie
 \end{tabular}
 \caption{Opciones de los agrupadores}
 \end{table}
-
-\section{Joe}
-
-
-El primer editor  que suele aprenderse en Linux es  {\sf Joe}, por ser
-muy sencillo  y rápido.  Puede usarse  para editar  cualquier fichero,
-pero  aquí  trataremos su  uso  básico  para editar  pequeños  textos,
-ficheros de  configuración, pequeños  programas. Todos  estos ficheros
-pueden editarse con más comodidad  con editores más potentes como {\sf
-Emacs} o  {\sf VIM}  pero para  ello es  necesario aprender  a usarlos
-primero, lo  cual puede  no resultar tan  sencillo como  aprender {\sf
-Joe}.
-
-Veremos sólo un par de comandos  de {\sf Joe}, simplemente como editar
-un fichero existente o nuevo, guardarlo sin salir, salir sin guardarlo
-y salir guardándolo. Para obtener más información sobre otras opciones
-del editor existe el comando de ayuda que explicaremos luego.
-
-El manejo de {\tt Joe} se basa en combinaciones de teclas con la tecla
-{\tt Control}. Denotaremos por {\tt C-x  y} a la combinación de teclas
-que se  obtiene al  pulsar la tecla  {\tt Control},  seguidamente (sin
-soltar la  primera) pulsar la  tecla {\tt  x} y después  (soltando las
-teclas anteriores) pulsar  la tecla {\tt y}. Veamos  un rápido ejemplo
-del uso de este editor. En un terminal ejecutamos:
-
-\begin{verbatim}
-$ joe prueba.txt
-\end{verbatim}
-
-Escribe una frase sencilla, tal como:
-
-\begin{verbatim}
-Si algo funciona, no lo toques.
-\end{verbatim}
-
-Para guardar el  fichero utilizamos la combinación de  teclas {\tt C-k
-s} y  entonces {\tt Joe}  te preguntará el  nombre con el  que quieres
-guardar el fichero.
-
-\begin{verbatim}
-Name of file to save (^C to abort): hola.txt
-\end{verbatim}
-
-Si pulsamos ahora  ahora {\tt \flq Ctrl\frq  c} simplemente cancelamos
-la orden  de guardar el fichero,  pero no perdemos su  contenido. Para
-guardar el  fichero pulsamos  {\tt Enter},  modificando el  nombre del
-fichero si lo deseamos. Ahora añadimos otra línea:
-
-\begin{verbatim}
-Si algo funciona, no lo toques.
-Si algo funciona, y no sabes por qué, úsalo siempre.
-\end{verbatim}
-
-Ahora saldremos  del editor {\bf  guardando los cambios},  mediante la
-combinación  de  teclas  {\tt  \flq  Ctrl\frq k  x}.  De  esta  manera
-volveremos al prompt  del sistema siendo informados de  que el fichero
-ha sido guardado.
-
-\begin{verbatim}
-File prueba.txt saved.
-$
-\end{verbatim}
-
-Como última maniobra, abrimos de  nuevo el fichero, borramos la última
-línea y salimos sin guardar los cambios.
-
-
-\begin{verbatim}
-$ joe prueba.txt
-\end{verbatim}
-
-Boramos la última línea como haríamos  en el {\tt edit} del {\tt DOS},
-y pulsamos {\tt  \flq Ctrl\frq c} para salir sin  guardar los cambios.
-El editor  nos pedirá confirmación  antes de salir.  Podemos responder
-que sí queremos salir pulsando {\tt y}, o por el contrario cancelar la
-maniobra pulsando  {\tt n}  o {\tt  \flq Ctrl\frq  c}. Decimos  que sí
-({\tt y}) y volvemos al prompt del sistema.
-
-\begin{verbatim}
-Lose changes to this file (y,n,^C)? 
-File hola.txt not saved.
-$
-\end{verbatim}
-
-Esto es lo mínimo  que debemos saber para editar con  {\tt Joe}, y con
-esto nos conformaremos  aquí pues en lo sucesivo  aprenderemos a hacer
-operaciones más avanzadas con otros editores. Para conocer sobre otras
-opciones  de  este editor,  se  puede  utilizar  la opción  {\tt  \flq
-Ctrl\frq k h}.
 
