@@ -1,4 +1,4 @@
-%Autor: Sin asignar
+%Autor: aplatanad, amd77, faraox
 
 \chapter{Aplicaciones para Internet}
 
@@ -545,20 +545,43 @@ i:Salir  -:PágAnt  <Space>:PróxPág  ?:Ayuda
 Ayuda para index                                                       -- (15%) 
 
 \end{verbatim}
-Fetchmail
 
-Fetchmail es una aplicación que nos permite descargar de nuestro servidor de correo nuestros e-mails, puede como cliente y como servicio. La funcion del fetchmail es conectarse al servidor de correo, bajarse los e-mails y luego paserle los e-mails a nuestro servidor de correo smtp instalado en nuestra máquina(Debian por ejemplo instala por defecto el exim, aunque existen otro como qmail y postfix) y luego el servidor lo envía a los buzones de los usuarios.
-Para la configuración del fetchmail se utiliza el fichero ~/.fetchmailrc. Vamos a utilizar un ejemplo sencillo.
+\subsection{Fetchmail}
+
+Fetchmail  es una  aplicación  que nos  permite  descargar de  nuestro
+servidor  de  correo  nuestros  e-mails, puede  como  cliente  y  como
+servicio.  La  funcion del  fetchmail  es  conectarse al  servidor  de
+correo,  bajarse los  e-mails y  luego paserle  los e-mails  a nuestro
+servidor  de  correo  smtp  instalado en  nuestra  máquina(Debian  por
+ejemplo instala por defecto el exim,  aunque existen otro como qmail y
+postfix) y luego el servidor lo envía a los buzones de los usuarios.
+
+Para   la  configuración   del   fetchmail  se   utiliza  el   fichero
+\verb|~/.fetchmailrc|. Vamos a utilizar un ejemplo sencillo.
 
 \begin{verbatim}
 poll pop.gulic.org proto POP3 
         user "faraox@gulic.org" is there with password "XXXXX" is faraox here 
 \end{verbatim}
 
-La primera línea llama, {\tt poll}, al servidor {\tt pop.gulic.org} e indica su protocolo con la opción {\tt proto}, seguidamente del protocolo, {\tt POP3}. En la siguiente línea se define el uruario y contraseña y las opciones del usuario. Con la opción {\tt user is there} definimos el nombre de usuario, {\tt faraox@gulic.org} y luego se define con {\tt with password} nuestra contraseña {\tt XXXX}, la opción {\tt is here} nos indica el usuario al que debe ir el correo, {\tt faraox}.
-%si alguien tiene tiempo que añada algo sobre revisar el correo con comandos, si nutilizar el archivo de configuración
+La primera línea llama, {\tt  poll}, al servidor {\tt pop.gulic.org} e
+indica  su  protocolo con  la  opción  {\tt proto},  seguidamente  del
+protocolo, {\tt  POP3}. En la siguiente  línea se define el  uruario y
+contraseña y  las opciones  del usuario.  Con la  opción {\tt  user is
+there} definimos el nombre de  usuario, {\tt faraox@gulic.org} y luego
+se define  con {\tt with  password} nuestra contraseña {\tt  XXXX}, la
+opción {\tt is here}  nos indica el usuario al que  debe ir el correo,
+{\tt faraox}.
 
-Una utilidad interesante si estamos manejando una máquina con varios usuarios es la utilización de el fetchmail como demonio. Creamos el fichero de configuración y lo movemos a /etc/fetchmailrc. En la cabezera usamos la opción {\tt set daemon} seguida de el número en segundo de el intervalo de tiempo con el que queremos que se ejecute.
+% si alguien tiene  tiempo que añada algo sobre revisar  el correo con
+% comandos, si nutilizar el archivo de configuración
+
+Una utilidad interesante  si estamos manejando una  máquina con varios
+usuarios es  la utilización de  el fetchmail como demonio.  Creamos el
+fichero  de  configuración y  lo  movemos  a /etc/fetchmailrc.  En  la
+cabezera usamos  la opción {\tt  set daemon}  seguida de el  número en
+segundo de el intervalo de tiempo con el que queremos que se ejecute.
+
 \begin{table}[htbp]
 \centering
 \begin{tabular}{|c|p{0.88\textwidh}|}
@@ -588,14 +611,6 @@ Una utilidad interesante si estamos manejando una máquina con varios usuarios es
 \caption{Algunas opciones para el usuario}
 \end{table}
 
-Otra utilidad interesante es {\tt fetchmailconf}. Es un programa gráfico que nos permite configurar de forma intuitiva nuestro .fetchmailrc.
-
-
-
-
-
-
-
-
-
-
+Otra  utilidad  interesante es  {\tt  fetchmailconf}.  Es un  programa
+gráfico  que  nos  permite   configurar  de  forma  intuitiva  nuestro
+{\tt .fetchmailrc}.

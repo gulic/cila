@@ -1,4 +1,4 @@
-%Autor: mojopikon
+%Autor: faraox & ese
 
 \chapter{Administración básica}
 
@@ -197,29 +197,28 @@ $ls
 [1]+  Running                 ls --color -R / >/dev/null &
 \end{verbatim}
 
-Aquí  vemos   que  estamos   ejecutando  el  comando   anterior.  Elo.
-elemento {\tt [1]}  nos indica  el número del  proceso que  se estáo.
-ejecutando  en segundo  plano  y cual  es su  estado,  en este  casoo.
-{\tt Running}(corriendo).  Seguidamente  nos  muestra  cual  es  elo.
-proces Podemos utilizar también el  comando {\tt fg} para mandar uno.
-proceso a  el primer  plano y  el comando  {\tt bg} para  mandar elo.
-proceso a segundo plan                                              o.
+Aquí vemos  que estamos  ejecutando el  comando anterior.  El elemento
+{\tt [1]} nos  indica el número del proceso que  se está ejecutando en
+segundo  plano  y cual  es  su  estado,  en  este caso  {\tt  Running}
+(corriendo).  Seguidamente nos  muestra  cual es  el proceso.  Podemos
+utilizar también el comando {\tt fg}  para mandar un proceso al primer
+plano y el comando {\tt bg} para mandar el proceso a segundo plano.
 
 \begin{verbatim}
 $fg
 ls --color -R / >/dev/null
 \end{verbatim}
 
-{\tt fg} manda  el proceso a primer  plano y nos muestra  el programa
-que ha mandado.  Sí tenemos varios procesos en  segundo plano añadimos
-el número del proceso.
+{\tt fg} manda el proceso a primer plano y nos muestra el programa que
+ha mandado.  Sí tenemos varios  procesos en segundo plano  añadimos el
+número del proceso.
 
-El comando  {\tt bg} se utiliza  cuando tenemos por  ejemplo procesos
+El comando  {\tt bg}  se utiliza cuando  tenemos por  ejemplo procesos
 suspendidos.  Los   procesos  suspendidos  son  programas   que  estan
 ``parados'', es  decir, no consumen ni  CPU ni memoria, y  que podemos
 volver  a poner  en marcha  en  cualquier momento.  Para suspender  un
-proceso utilizamos la  combinación de teclas {\tt Ctrl +  Z}, al igual
-que para interrurmpir un proceso utilizamos {\tt Ctrl + C}.
+proceso utilizamos  la combinación de  teclas {\tt C-z}, al  igual que
+para interrurmpir un proceso utilizamos {\tt C-c}.
 
 \begin{verbatim}
 $jobs
@@ -230,7 +229,7 @@ Esta tarea está parada(Stopped).
 
 \subsection{El comando ps}
 
-El  comando {\tt ps}  permite mostrar  todos los  procesos que  están
+El  comando {\tt  ps} permite  mostrar  todos los  procesos que  están
 corriendo  en nuestro  sistema. Veamos  una  parte de  una salide  del
 coamndo ps:
 
@@ -308,13 +307,36 @@ PID USER     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME COMMAND
 
 \subsection*{Nice:prioridad en procesos}
 
-Una CPU tiene que comprartir su tiempo de cálculo con varios procesos. {\tt Nice} es un programa que permite cambiar la prioridad de un proceso en nuestro sistema. La prioridad tiene un rango desde -20 a 20. Un usuario normal tiene prioridad 0 cuando ejecuta cualquier comando desde la consola. Con el comando nice, ese usuario normal solo puede bajar la prioridad del proceso, nunca subirlo, solo root es capaz de ello.
-El esquema de utilización sería: {nice -n prioridad comando} o también podemos utilizar el comando {\tt rnice} para cambiar la prioridad de un proceso: {\tt renice prioridad PID}
+Una CPU tiene que comprartir su tiempo de cálculo con varios procesos.
+{\tt  Nice} es  un programa  que permite  cambiar la  prioridad de  un
+proceso en  nuestro sistema. La prioridad  tiene un rango desde  -20 a
+20.  Un usuario  normal  tiene prioridad  0  cuando ejecuta  cualquier
+comando desde la consola. Con el comando nice, ese usuario normal solo
+puede  bajar la  prioridad del  proceso, nunca  subirlo, solo  root es
+capaz de ello.
+
+El esquema de utilización sería: {nice -n prioridad comando} o también
+podemos utilizar el  comando {\tt rnice} para cambiar  la prioridad de
+un proceso: {\tt renice prioridad PID}
 
 \section{Los servicios en debian}
 
-Los servicios o demonios son procesos que se ejecutan automáticamente al arrancar el sistema o al llamarlos y que esperan cualquier petición. Es el caso por ejemplo de Apache, Qmail, SSH, etc. Los servicios normalmente se inician al iniciar el sistema, pero podemos iniciarlo(start), pararlo(stop) o reiniciandolo, sería así: {\tt /etc/init.d/servicio opción}. 
-Para que el servicio no se inicie cuando arrancamos el sistema, podemos usar el comando update-rc.d. Este comando lo que hace es crear enlaces a los diferentes directorios de runlevels. Para que no se inicie automáticamente: {\tt update-rc.d -f servicio remove}. Para añadir un servicio, simplemente creamos el script de nuestro servicio en Bourne Shell Script y lo copiamos al directorio /etc/init.d/. Si queremos que se inicie automáticamente al arrancar escribimos: {\tt update-rc.d servicio defaults}
+Los servicios o demonios son  procesos que se ejecutan automáticamente
+al  arrancar  el  sistema  o  al llamarlos  y  que  esperan  cualquier
+petición.  Es el  caso por  ejemplo de  Apache, Qmail,  SSH, etc.  Los
+servicios normalmente se  inician al iniciar el  sistema, pero podemos
+iniciarlo(start),  pararlo(stop)  o  reiniciandolo,  sería  así:  {\tt
+/etc/init.d/servicio opción}.
+
+Para  que el  servicio  no  se inicie  cuando  arrancamos el  sistema,
+podemos usar el comando update-rc.d. Este comando lo que hace es crear
+enlaces  a los  diferentes directorios  de runlevels.  Para que  no se
+inicie  automáticamente: {\tt  update-rc.d -f  servicio remove}.  Para
+añadir un servicio, simplemente creamos  el script de nuestro servicio
+en Bourne  Shell Script y  lo copiamos al directorio  /etc/init.d/. Si
+queremos que  se inicie  automáticamente al arrancar  escribimos: {\tt
+update-rc.d servicio defaults}
+
 
 \section{Los archivos de registro }
 
@@ -337,8 +359,9 @@ nuestra máquina.
 muestra información más simple. En el podemos controlar por ejemplo la
 información del demonio pppd.
 
-\item Los ficheros \verb+~/.bash\_history+. Estos ficheros muestran los
-comandos que han sido ejecutados por los usuarios desde la consola.
+\item  Los ficheros  \verb+~/.bash\_history+. Estos  ficheros muestran
+los  comandos  que han  sido  ejecutados  por  los usuarios  desde  la
+consola.
 
 \item El fichero  wtmp. En el hay un listado  de todas las conecciones
 que ha  tenido la máquinamientras  ha permanecido encendida.  Se puede
@@ -373,7 +396,8 @@ tiempos, 1,5 y 15 minutos.
 
 \subsection*{w}
 
-Muestra los usuarios que se encuentran en el sistema. Veamos un ejemplo:
+Muestra  los usuarios  que  se  encuentran en  el  sistema. Veamos  un
+ejemplo:
 
 \begin{verbatim}
 $w
@@ -383,8 +407,8 @@ faraox   tty1     -                16:01    1:58m  2.69s  0.00s  /bin/sh /usr/bi
 faraox   pts/0    :0.0             16:02    9.00s 40.22s 40.16s  vi administracion.tex 
 \end{verbatim}
 
-La primera  línea que muestra el  comando {\tt w} es la  salida de el
-comando {\tt uptime}.  Por orden,  la información  que muestra  es el
+La primera  línea que muestra  el comando {\tt w}  es la salida  de el
+comando  {\tt uptime}.  Por orden,  la información  que muestra  es el
 nombre de usuario,  la consola desde donde ha entrado,  desde donde se
 conecta, la  hora de entrada, el  idle, el tiempo usado  por todos los
 procesos  de  esa  consola(tty),  el tiempo  usado  por  los  procesos
@@ -392,7 +416,7 @@ actuales y lo que está haciendo el usuario.
 
 \subsection*{free}
 
-El  comando {\tt free}  muestra  información sobre  el  estado de  la
+El  comando {\tt  free}  muestra  información sobre  el  estado de  la
 memoria del  sistema. Muestran  tanto el estado  de la  memoria física
 como de  la swap. También muestra  el buffer utilizado por  el kernel.
 Una salida del comando {\tt free}
