@@ -15,7 +15,7 @@ todas  las  distribuciones  tienen  sus  pequeñas  diferencias  aunque
 generalmente todas pasan en sus procesos de instalación por unas fases
 que son comunes que aquí vamos a detallar. El orden en el que aparecen
 las  diferentes  etapas  comentadas  en este  capítulo  no  tiene  por
-que  ser necesariamente  de  forma  estricta a  seguir  por todas  las
+que  ser de  forma  estricta el orden a  seguir  por todas  las
 distribuciones, pero  es uno  de los  más usuales  en los  procesos de
 instalación.
 
@@ -43,7 +43,7 @@ que disponen de disketera pueden arrancar desde ella. Para arrancar el
 sistema de instalación desde discos de 3,5" tendremos que buscar en el
 contenido del CD de instalación de la distribución las imágenes de los
 discos de  arranque. Normalmente están  en un directorio que  se llama
-"images",  aunque  esto no  siempre  es  una  norma fija.  Cuando  los
+"images",  aunque  esto no es  una  norma fija.  Cuando  los
 encontremos tendremos que copiar las  imágenes a los disketes. Esto se
 hace  con una  herramienta  que normalmente  traen  también todos  los
 CDs  de  las  distribuciones  que se  llama  rawrite.  Seguiremos  las
@@ -51,9 +51,9 @@ indicaciones  que  nos  dé  el  rawrite para  hacer  los  disketes  de
 instalación y guardaremos con celo el trabajo realizado hasta ahora.
 
 Una  vez  que  tenemos  esos discos en la mano tendremos que decirle a
-nuestra  BIOS  que  intente  arrancar  en primer desde la disketera, y
-reiniciamos y colocamos el diskete de instalación en  la  disketera, y
-tras unos momentos de incertidumbre tendremos finalmente el sistema de
+nuestra  BIOS  que  intente  arrancar  en primer desde la disketera, 
+reiniciamos y colocamos el diskete de instalación en  la  disketera.
+Tras unos momentos de incertidumbre tendremos finalmente el sistema de
 instalación de nuestra distribución listo para continuar.
 
 \section{Idioma y teclado}
@@ -89,7 +89,7 @@ Comenzamos  por  el caso  más  general,  es  decir, los  dos  sistemas
 operativos juntos. Suponemos que ya  está instalado Windows y que sólo
 tenemos un disco  duro. En ese caso tendremos que  hacer sitio para la
 instalación de  Linux en el  disco duro  que disponemos. Este  paso es
-delicado, pero  si se  siguen los pasos  aquí detallados  no tendremos
+delicado, pero  si se  siguen las instrucciones aquí detalladas  no tendremos
 problemas. Los  pasos a  seguir para  no perder  la información  de la
 partición de nuestro Windows son los siguientes:
 
@@ -110,13 +110,13 @@ la partición  de manera  gráfica. Ésta es  la opción  que recomendamos
 para los usuarios con poca experiencia en este tipo de prácticas. Para
 usuarios  con  algo  más  de conocimientos  tenemos  utilidades  menos
 amigables pero más fáciles de conseguir  como son el fips sobre msdos,
-el fdisk y el parted de Linux  y el diskdruid. Tened cuidado con estas
+el fdisk, el parted de Linux  y el diskdruid. Tened cuidado con estas
 dos  herramientas  porque, repetimos,  pueden  dañar  el contenido  de
 vuestros discos duros.
 
 \item Establecer   las  particiones   de   Linux. Se necesitarán   dos
 particiones  en   lugar  de  una   como  se  piensa   inicialmente.  A
-continuación se detallará este paso.
+continuación se detallará este paso, común a la convivencia y a la vida en soledad.
 
 \end{enumerate}
 
@@ -212,9 +212,11 @@ refiriendo según la tabla anterior.
 Las unidades lógicas también se nombran  utilizando el orden en el que
 se definen  pero teniendo  en cuenta que  los cuatro  primeros números
 están reservados  para las  particiones primarias,  por lo  tanto, las
-unidades lógicas empezarán a numerarse  a partir del cinco. Tenemos un
+unidades lógicas empezarán a numerarse  a partir del cinco.
+
+Imaginemos por un momento que tenemos un
 disco  duro, con  una partición  extendida,  tres primarias,  y en  la
-partición extendida tenemos tres  unidades lógicas, haremos referencia
+partición extendida tenemos tres  unidades lógicas. Haremos referencia
 a cada una de las particiones  de esta manera (Suponemos que el disco
 está conectado como maestro a la primera controladora IDE).
 
@@ -230,7 +232,7 @@ partición primaria 3 & $\Rightarrow$ & {\tt /dev/hda4} \\
 \end{tabular}\\
 \end{center}
 
-Bien, sabemos  que esto es  bastante denso  al principio cuando  no se
+Bien, sabemos  que esto es  bastante denso  al principio, cuando  no se
 tiene práctica,  pero con el  uso nos  daremos cuenta que  tiene mucha
 lógica y que aprendiéndonos un par de reglas todo va sobre ruedas.
 
@@ -343,7 +345,9 @@ llamada  {\em explore2fs}).  La  otra respuesta  depende  del tipo  de
 sistema  de ficheros  que tengamos  en Windows.  Para los  sistemas de
 ficheros del tipo FAT16 o FAT32 se podrán utilizar sin problemas. Para
 los sistemas de ficheros con  NTFS, lo más recomendable es utilizarlos
-en modo lectura, ya que la  parte de escritura no está completada, por
+en modo lectura, ya que el soporte de escritura no está completo debido
+a que Microsoft no revela los cambios que introduce en el esquema del sistema
+de ficheros, por
 tanto,  es muy  peligroso  hacer operaciones  de  escritura ahí  desde
 Linux. Esta limitación en ambos  sentidos es producto de la ocultación
 de  información  sobre  la  que  se  basan  los  sistemas  cerrados  y
@@ -395,8 +399,7 @@ módulo y  cargado con éxito  en el kernel, tendremos  que proporcionar
 la  información necesaria  al  sistema para  que  se pueda  configurar
 dicho hardware  correctamente, que  generalmente será  algún parámetro
 adicional. En  el caso de la  tarjeta de red tendremos  que decirle si
-coge la configuración por dhcp o  si la especificamos nosotros a mano,
-etc\ldots
+coge la configuración por dhcp o  si la especificamos nosotros a mano.
 
 \section{Estableciendo el arranque}
 
@@ -553,10 +556,10 @@ El programa {\tt xf86config} es un programa de consola, en modo texto,
 que modifica  los ficheros  de configuración del  servidor X,  para lo
 cual necesitaremos  los privilegios  de superusuario. Para  invocar el
 programa abrimos una  consola, accedemos como root  (usando el comando
-su si se procede) y  tecleamos {\tt xf86config}. Nos encontraremos con
+su si procede) y  tecleamos {\tt xf86config}. Nos encontraremos con
 una  pantalla  de descripción  de  la  aplicación. Cabe  destacar  que
 la  ejecución  del programa  se  podrá  abortar en  cualquier  momento
-presionando la combinación  de teclas C-C. Así que no  debemos temer a
+presionando la combinación  de teclas Ctrl-C. Así que no  debemos temer a
 equivocarnos ya que al interrumpir  esta herramienta no se afectan los
 ficheros de configuración existentes.
 
@@ -857,30 +860,30 @@ Tendremos  que ir  facilitando  los  datos que  se  nos solicitan,  lo
 primero es asignarle un nombre, decir  donde se encuentra y añadir una
 breve descripción al nombre.
 
-\begin{figura}{cups_instalando1}{0.7}
-\caption{Configuración de una nueva impresora}
-\end{figura}
+%\begin{figura}{cups_instalando1}{0.7}
+%\caption{Configuración de una nueva impresora}
+%\end{figura}
 
 Lo  siguiente   es  seleccionar  donde  tendremos   conectada  nuestra
 impresora,  normalmente tendremos  conectada  la  impresora al  puerto
 paralelo ({\tt Parallel Port \#1})
 
-\begin{figura}{cups_instalando2}{0.7}
-\caption{Selección del puerto de la impresora}
-\end{figura}
+%\begin{figura}{cups_instalando2}{0.7}
+%\caption{Selección del puerto de la impresora}
+%\end{figura}
 
 En  la siguiente  página tendremos  que seleccionar  el fabricante  de
 nuestra impresora.
 
-\begin{figura}{cups_instalando3}{0.7}
-\caption{Selección del fabricante de la impresora}
-\end{figura}
+%\begin{figura}{cups_instalando3}{0.7}
+%\caption{Selección del fabricante de la impresora}
+%\end{figura}
 
 A continuación elegiremos el modelo de impresora.
 
-\begin{figura}{cups_instalando4}{0.7}
-\caption{Selección del modelo de la impresora}
-\end{figura}
+%\begin{figura}{cups_instalando4}{0.7}
+%\caption{Selección del modelo de la impresora}
+%\end{figura}
 
 y listo, nuestra  impresora ya está instalada,  simplemente faltan los
 últimos  retoques. Pulsaremos  sobre el  nombre  que le  hemos dado  a
