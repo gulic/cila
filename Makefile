@@ -33,6 +33,13 @@ all: $(EPSS)
 %.pdf: %.ps
 	ps2pdf $@
 
+CJPGS = $(wildcard cubierta/*.jpg)
+CEPSS = $(CJPGS:.jpg=.eps)
+
+cubierta: cubierta.tex $(CEPSS)
+	latex cubierta
+	dvips -o cubierta.ps cubierta.dvi
+
 all: $(FILES) $(EPSS) $(EJEMPLOS)
 	latex book
 	makeindex book.idx
@@ -66,4 +73,4 @@ clean:
 	rm -f *.aux *.log *.dvi *.idx *.ilg *.ind *.toc *.bbl \
 	      *.blg *.lot *.lof *.lde *.exa
 	rm -rf main
-	rm -f $(EPSS)
+	rm -f $(EPSS) $(CEPSS)
