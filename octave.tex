@@ -1,22 +1,69 @@
 %Autor: amd77
 
+%buscar include y arreglar el > que falta
+%FALTAN TODAS LAS IMAGENES
+%FALTA PONER \index
+
 \chapter{GNU Octave}
 
- Octave se puede definir como un lenguaje de alto nivel pensado
-para  cálculos numéricos,  en especial  para trabajar  con matrices  y
-vectores. Se puede usar para resolver numéricamente pro\-ble\-más lineales
-o no lineales, o para hacer otros tipos de experimentos numéricos. Los
-comandos que  se quieren ejecutar se  pueden escribir interactivamente
-en  una  línea  de  comandos,  o  bien,  en  caso  de  que  se  quiera
-automatizar una ejecución, se puede escribir el script correspondiente
-y ejecutarlo de manera sencilla.
+% extraido de 'info octave' (paquete octave2.?-doc).
+% el uso de la parte de mkoctfile requiere octave2.?-headers
 
- Para ejecutar Octave de manera interactiva, se abre un shell y
-se teclea {\tt octave}, tras lo que aparece un prompt y queda preparado
-a la espera de que teclees comandos.
+ Octave se puede  definir como un lenguaje de alto  nivel inspirado en
+un software comercial llamado  {\sc MATLAB®} (MATrix LABoratory). {\sc
+MATLAB®}  estuvo pensado  inicialmente  para  álgebra numérica  lineal
+(matrices,  vectores  y  sus  operaciones),  y con  el  tiempo  se  le
+ha  sacado  partido a  esta  forma  de  trabajo.  De la  misma  forma,
+Octave empezó  siendo un software  para que los alumnos  de Ingeniería
+Química de las {\sc Universidades  de Wisconsin-Madison} y {\sc Texas}
+calcularan reacciones químicas.
+
+A partir de ese momento, las  contribuciones de los usuarios han hecho
+evolucionar este  software y han añadido  librerías y funcionalidades.
+Ahora, las  aplicaciones de Octave ya  no se limitan a  simple trabajo
+con matrices  y vectores,  como una mera  calculadora, sino  que ahora
+aparte de  aplicaciones puramente  matemáticas o numéricas,  es válido
+para  otros campos  de más  ciencias  e ingenierías.  Entre ellos,  el
+procesamiento de  señales (sonido), de imágenes  (filtrados, análisis,
+etc), estadística,  geometría, redes  neuronales, sistemas  de control
+realimentados y hasta dibujo vectorial. Intentaremos poner ejemplos de
+cada una de estas aplicaciones en la medida de lo posible para mostrar
+la versatilidad de Octave.
+
+Estas librerías se  pueden programar de forma  interpretada, usando el
+propio  lenguaje de  octave,  o de  forma  binaria, usando  cualquiera
+de  los  lenguajes  que  soporte  {\sf gcc}  como  {\sf  C/C++},  {\sf
+pascal}  o {\sf  fortran} (recordemos  que todo  el código  objeto era
+intercambiable).  Además, también  se  puede hacer  a  la inversa,  es
+decir, traducir programas de octave  a c++ usando una librería llamada
+{\sf liboctave}.  Con esto  se elimina la  etapa de  interpretación al
+ejecutarlo con lo que se  gana velocidad cuando ésta sea determinante.
+Parece que hay bastantes cosas por ver, así que vamos a empezar.
+
+La web oficial de Octave es: http://bevo.che.wisc.edu/octave
+
+\section{Entorno}
+
+Octave  tiene una  filosofía de  uso semejante  a la  de muchas  otras
+aplicaciones de  este libro: una interfaz  en forma de shell,  con una
+linea  de  comandos potente  con  muchos  atajos y  facilidades,  para
+problemas sencillos, y la posibilidad de poder agrupar muchos comandos
+en ficheros de  scripts, organizados en funciones,  para enfrentarse a
+problemas complejos o para realizar automatizaciones.
+
+Para comenzar a ver el manejo básico vamos a ejecutar Octave de manera
+interactiva.  Con  este  método  de trabajo,  si  cometemos  un  error
+al  entrar  una  línea,  podremos corregirlo  sobre  la  marcha.  Para
+ejecutarlo, abre  un terminal y  en la  línea de comandos  teclea {\tt
+octave}. Tras  un mensaje de  bienvenida, Octave te muestra  un prompt
+que indica  que está preparado y  a la espera de  comandos. En algunas
+distribuciones, Octave puede  tener su icono en uno de  los menues del
+sistema, en la zona de  aplicaciones matemáticas. Teclear {\tt octave}
+en la consola es más rápido y  funciona el 100\% de las veces. Esto es
+lo que se nos muestra:
 
 \begin{verbatim}
-alberto@mencey:~$ octave
+$ octave
 GNU Octave, version 2.1.34 (i386-pc-linux-gnu).
 Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001 John W. Eaton.
 This is free software with ABSOLUTELY NO WARRANTY.
@@ -25,53 +72,17 @@ For details, type `warranty'.
 octave:1>
 \end{verbatim}
 
-  Si quieres  salir  al  shell desde  dentro  de Octave  teclea
-{\tt exit},  {\tt quit}  o   {\tt CTRL+D}.  Para  hacer  representaciones
-gráficas deberás haber ejecutado Octave desde un shell dentro de las X
-puesto que la  representación gráfica se realiza  usando Gnuplot, cuya
-forma de funcionar por defecto es en entorno X-Window.
+Cuando quieras  salir de Octave teclea  {\tt exit}, {\tt quit}  o {\tt
+C-D} y volverás al shell de partida.
 
- Existen varias maneras de  documentarse sobre la forma de usar
-Octave.
-
-\begin{itemize}
-
-\item  Si quieres  ir relajadamente y de forma  ordenada mirando cosas
-por tu cuenta, la mejor fuente, aunque no siempre actualizada, es abrir
-un shell y ejecutar:
+La  ayuda  completa  de  octave  la puedes  obtener  desde  el  prompt
+tecleando  {\tt help  -i}. También  puedes visualizar  la misma  ayuda
+desde el  shell tecleando {\tt  info octave}. Luego,  la documentación
+para  cada  función  y  variables  se  obtienen  tecleando  {\tt  help
+nombredelafuncion}. Por ejemplo:
 
 \begin{verbatim}
-alberto@mencey:~$ info octave
-\end{verbatim}
-
-Podrás navegar por una ayuda detallada,  mientras por el otro lado vas
-trabajando, y  en la que  se describen las funciones  documentadas del
-programa, pero  clasificadas por  materias y  explicadas de  una forma
-cuidadosa.  Usa  {\tt tabulador},  {\tt flechas}, {\tt enter}  y  {\tt u},
-{\tt s} para  buscar y  {\tt q} para  salir. Si ya  eres un  usuario más
-avanzado, puedes  pasearte por el  árbol de directorios que  cuelga de
-{\tt /usr/share/octave}
-
-
-\item   Para   el  más  osado,  escribiendo   sencillamente  {\tt help}
-aparece el  gigantesco listado de funciones  disponibles descompuestas
-en  categorías  que  se  puede  visualizar  con  las  flechas,  teclas
-{\tt Home/RePag/AvPag/End} y q para regresar a la línea de comandos
-(también regresa  pasando el  final). Ésta es  la ayuda  más completa,
-pues presenta todas las funciones  existentes en el sistema, muchas de
-las cuales a lo mejor no están agregadas en el {\tt info}.
-
-
-\item   Para  obtener ayuda  de  una  función en  particular,  teclear
-{\tt help  nombredelafuncion}.  Si  el  lector  teclea  los  siguientes
-ejemplos, obtendrá, aparte  del resultado que se  transcribe aquí, una
-coletilla  que informa  sobre como  obtener ayuda  desde el  entorno o
-en  la WWW.  La  omitiremos  para clarificar  y  ahorrar espacio.  Por
-ejemplo, veamos que  resulta de ver la ayuda de  la función cotangente
-hiperbólica:
-
-\begin{verbatim}
-octave:2> help coth
+octave:9> help coth
 coth is the user-defined function from the file
 /usr/share/octave/2.1.34/m/elfun/coth.m
 
@@ -79,202 +90,689 @@ coth is the user-defined function from the file
      Compute the hyperbolic cotangent of each element of X.
 \end{verbatim}
 
-La mayoría de los comandos complejos de Octave disponen de esta ayuda.
-Vemos que se  nos dice una descripción  de los parámetros y  de lo que
+La mayoría de los comandos de Octave disponen de esta ayuda. Vemos que
+lo que se  nos dice es una  descripción de los parámetros y  de lo que
 realiza la función, lo cual es suficiente para que podamos utilizarla.
-Para el autodidacta, sólo tienes que ir al listado largo, quedarte con
-la categoría  que te interese, e  ir chequeando cada función  a ver si
-hace lo que nos interesa.
 
-\end{itemize}
+Cuando se  invoca sin argumentos  se obtiene  un listado de  todas las
+operaciones,  funciones  y  variables  incorporadas  definidas  en  el
+sistema.  Para  conseguir esta  información,  octave  rastrea por  los
+directorios donde están  instaladas las funciones; de  ahí su peculiar
+forma  de  organizar  esta  salida,  que  nos  muestra  las  funciones
+clasificadas  por temas,  lo  que  puede ayudarnos  a  mirar y  probar
+funciones. Además,  aquí podemos  encontrarnos funciones que  no estan
+pasadas a la documentación.
 
-  Si leemos  más detenidamente  el principio  de la  ayuda, nos
-comenta que {\tt coth(X)} es una función  definida por el usuario en un
-fichero  situado en  {\tt /usr/share/octave/version/m/elfun/coth.m}
-Si  tenemos curiosidad  por ver  ese fichero,  descartando comentarios
-precedidos por {\tt \#\#}, observamos lo siguiente:
+Octave usa la  libería {\em GNU readline} para la  edición en línea de
+comandos,  al  igual que  {\em  bash}  y  otros programas  {\em  GNU}.
+Contiene  un historial  que se  puede leer  con las  flechas arriba  y
+abajo, muchas  combinaciones de teclas  para hacer muchas  cosas. Para
+más información y explicación sobre estas características teclea desde
+un shell {\tt info rluserman}. No entraremos más en este tema.
+
+Cada  vez que  te equivoques  en la  sintaxis, octave  te indicará  la
+posición donde  cree que está  el fallo  con un angulillo  \verb|^|. A
+veces no se puede fiar uno completamente,  y solo te ayuda a saber más
+o menos donde se localiza. Veámoslo aquí:
 
 \begin{verbatim}
-function w = coth (z)
+octave:13>  functon y = f (x) y = x^2; endfunction
+parse error:
 
-  if (nargin != 1)
-    usage ("coth (z)");
-  endif
+>>>  functon y = f (x) y = x^2; endfunction
+              ^
+\end{verbatim}
 
-  w = cosh (z) ./ sinh (z);
+Otro tipo de errores pueden ocurrir dentro de funciones. En este caso,
+son errores en tiempo de ejecución,  porque ocurren por un fallo en la
+ejecución del  programa. En este  caso, lo que  aparece es la  línea y
+posición dentro de  la función y en  la función que lo llamó  y en las
+siguientes. Por ejemplo en este hipotético caso:
 
+\begin{verbatim}
+octave:13> f ()
+error: `x' undefined near line 1 column 24
+error: evaluating expression near line 1, column 24
+error: evaluating assignment expression near line 1, column 22
+error: called from `f'
+\end{verbatim}
+
+En este caso, la función f se  compone de unas funciones que se llaman
+a  otras. El  error está  en la  línea 1  con una  x mal  definida. La
+función que  contiene este error,  según octave, formaba parte  de una
+expresión en la linea 1, que a  su vez formaba parte de una asignación
+tambien en la línea 1. Obsérvese que la función es la que definimos en
+el anterior ejemplo y el error  es que hace falta pasarle un parámetro
+a la función.
+
+Los  comentarios  dentro del  código  de  octave  se preceden  con  el
+caracter \verb|#|  o \verb|%|  y abarcan desde  ese caracter  hasta el
+final de la línea. Si ponemos en octave un código como este:
+
+\begin{verbatim}
+function xdot = f (x, t)
+
+# usage: f (x, t)
+#
+# This function defines the right hand
+# side functions for a set of nonlinear
+# differential equations.
+
+  r = 0.25;
+  ...
 endfunction
 \end{verbatim}
 
-  Como  el  lector  ha  visto,  así  es  como  se  amplían  las
-capacidades  de  Octave  y   se  implementan  nuevos  comandos.  Todas
-las  funciones  que  has  visto  en  el  listado  largo  (excepto  las
-nativas)  proceden  de  ficheros  {\tt *.m},  por  lo  que  puedes  ver
-incluso  de  que  forma   están  implementadas  simplemente  hiendo  a
-{\tt /usr/share/octave},   localizándolas  y   mirándolas  por   ti
-mismo.  Si  durante su  uso  diario  encuentras  algún defecto  en  su
-funcionamiento, tú mismo  puedes ir a su código fuente  y comprobar si
-el fallo es tuyo o es de la función, en este caso podrás contribuir al
-proyecto  enviando la  notificación del  bug  y su  corrección, si  la
-conoces.
+Octave interpreta los comentarios después  de la función como el texto
+de ayuda. De  esta forma, cuando hagamos {\tt help  xdot} nos mostrará
+como ayuda el texto que hemos definido en el ejemplo.
 
- Ni  que decir  tiene que puedes  crear tus  propias funciones,
-siguiendo   unas  pequeñas   reglas   que  puedes   consultar  en   la
-documentación, y si las  colocas dentro de {\tt /usr/share/octave},
-serán  añadidas al  listado como  si  de las  funciones originales  se
-tratasen. Si la función que  has creado es interesante, siempre puedes
-enviarla a  los autores de Octave  para que la incluyan  en la próxima
-versión.
-
-  Si, de  igual forma,  hacemos help  sobre comandos  nativos de
-Octave:
+Cuando una línea se hace demasiado larga se puede añadir al final
+de la linea una barra invertida \verb|\| o unos puntos suspensivos
+\verb|...| y continuar en la siguiente línea.
 
 \begin{verbatim}
-octave:3> help sinh
-help: sorry, `sinh' is not documented
-octave:4> help cosh
-help: sorry, `cosh' is not documented
+x = long_variable_name ...
+    + longer_variable_name \
+    - 42
 \end{verbatim}
 
- Octave  nos da un mensaje  de error puesto que  esa función no
-está implementada  mediante un fichero {\tt *.m},  una función definida
-por el usuario,  sino que es una función nativa  del lenguaje. También
-existen otras funciones, con extensión  {\tt *.oct} que no son visibles
-pues están compiladas para optimizar su rendimiento, como por ejemplo:
-
+Otra cosa interesante es que por defecto se muestra el resultado de la
+operación al realizarla salvo cuando se  añade un \verb|;| al final de
+la operación. También se pueden  hacer varias operaciones en una misma
+linea separándolas con \verb|;|.
 
 \begin{verbatim}
-octave:5> help lsode
-lsode is the dynamically-linked function from the file
-/usr/lib/octave/2.1.34/oct/i386-pc-linux-gnu/lsode.oct
-...
+octave:1> a=sqrt(3)
+a = 1.7321
+octave:2> b=sqrt(5);
+octave:3> b
+b = 2.2361
+octave:4> sqrt(7)
+ans = 2.6458
 \end{verbatim}
 
- Los  tipos de  datos en  Octave son  los vectores  y matrices,
-strings y  estructuras. Las  matrices y vectores  son los  más usados,
-los  strings  no  se  suelen  usar sino  para  presentar  mensajes,  y
-las  estructuras  suelen ser  una  buena  base para  organizar  tareas
-complicadas, pero  no se  tratarán aquí. En  el siguiente  log veremos
-definiciones de cada uno de ellos.
+Como última nota, añadir que cuando  no capturamos el valor de retorno
+aparece la  palabra {\tt ans},  que representa el último  resultado, y
+que se puede usar como variable  en la siguiente línea. Continuando el
+ejemplo anterior:
 
 \begin{verbatim}
-octave:6> a=[1,2,3]
+octave:5> ans*ans
+ans = 7.0000
+octave:6> ans*ans
+ans = 49.000
+\end{verbatim}
+
+\subsection{Tipos de datos}
+
+En Octave  hay tres tipos  de datos: numéricos (escalares,  vectores y
+matrices), cadenas  (strings) y estructuras.  Como es de  suponer, los
+numéricos son los  más usados, mientras que cadenas solo  se usan para
+presentar mensajes.  Las estructuras  es algo que  nos pueden  dar una
+buena base  para organizar tareas  más complicadas. A  continuación se
+muestra la forma de definir cada uno de ellos.
+
+\begin{verbatim}
+octave:13> a=[1 2 3]
 a =
   1  2  3
 
-octave:7> b=[1,2,3;4,5,6;7,8,9]
+octave:14> b=[1,2,3;4,5,6]
 b =
   1  2  3
   4  5  6
-  7  8  9
 
-octave:8> c="hola mundo"
+octave:15> c="hola mundo"
 c = hola mundo
 
-octave:9> d.vector=[1,2];
-octave:10> d.matriz=[1,2;3,4];
-octave:11> d
+octave:16> d.vector=[1;2];
+octave:17> d.matriz=[1 2; 3 4];
+octave:18> d.texto="titulo";
+octave:19> d
 d =
 {
+  texto = titulo
   vector =
-    1  2
+    1
+    2
 
   matriz =
     1  2
     3  4
+
 }
+octave:20> d.vector
+d.vector =
+    1
+    2
 \end{verbatim}
 
-  Se  hace  necesario  anotar  una  característica  introducida
-sutilmente en  este último  ejemplo. Un  punto y coma  al final  de la
-línea le  dice a Octave que  no muestre ninguna salida  al ejecutar el
-comando.  Así, en  el ejemplo,  las  asignaciones a  la estructura  no
-mostraron mensaje pues tenían {\tt ;} al final.
+Se observará  que las definiciones  de matrices o vectores,  las filas
+van separadas  por comas  \verb|(,)| o  espacios \verb|(  )| mientras
+que  las columnas  se separan  por  punto y  coma \verb|(;)|.  También
+observamos que  una estructura no  es mas  que un {\em  paquete} donde
+se  pueden almacenar  varias  variables relacionadas  juntas. Se  usan
+principalmente para reducir  el número de argumentos  de las funciones
+agrupando todos  los argumentos relacionados en  estructuras y pasando
+éstas.
 
- También añadiré que para mostrar el valor de una variable sólo
-hay que introducir su  nombre, tal como se ha hecho  en el ultimo paso
-del ejemplo  anterior. Si queremos  ver qué variables existen  en este
-momento  en  el  programa,  simplemente  tecleamos  {\tt who}  (versión
-reducida) o {\tt whos} (versión larga).
+En  relación con  matrices y  vectores, las  siguientes funciones  nos
+informan sobre las dimensiones de estos elementos. Por ejemplo:
 
 \begin{verbatim}
-octave:12> who
+octave:25> length(a)
+ans = 3
+octave:26> columns(b)
+ans = 3
+octave:27> rows(b)
+ans = 2
+octave:28> size(b)
+ans =
 
-*** currently compiled functions:
-coth
+  2  3
+\end{verbatim}
+
+Donde {\tt length}  da la dimensión de un vector  fila o columna, {\tt
+columns} y {\tt  rows} dan las columnas  o filas de una  matriz y {\tt
+size} devuelve un vector fila con las dimensiones.
+
+Ya hemos visto  la forma más simple de definir  una matriz. También se
+puede  definir una  matriz en  base a  otras matrices  existentes. Por
+ejemplo,  continuando de  lo  anterior, podemos  construir una  matriz
+concatenando un vector fila junto a otro o encima de otro:
+
+\begin{verbatim}
+octave:34> g=[a a]
+g =
+
+  1  2  3  1  2  3
+
+octave:35> g=[a;a]
+g =
+
+  1  2  3
+  1  2  3
+\end{verbatim}
+
+Como última nota sobre vectores y matrices, solo comentar que hay una
+forma taquigráfica de definir un vector secuencial. {\tt m:n} devuelve
+un vector de números consecutivos desde m hasta n de uno en uno, ámbos
+inclusive. Por ejemplo:
+
+\begin{verbatim}
+octave:36> -2:3
+ans =
+
+  -2  -1   0   1   2   3
+\end{verbatim}
+
+De  igual   manera,  {\tt  m:s:n}   devuelve  un  vector   de  números
+consecutivos que van desde m hasta n de s en s. Por ejemplo:
+
+\begin{verbatim}
+octave:37> 7:-2:1
+ans =
+
+  7  5  3  1
+\end{verbatim}
+
+Las operaciones con cadenas, solo decir  que se tratan como vectores y
+que hay muchas funciones para su  manejo pero que no nombraremos aquí.
+Las operaciones  con matrices  y vectores son  las usuales.  De resto,
+comentar que tambien existen tipos de datos booleanos.
+
+\subsection{Variables y expresiones}
+
+Octave te permite  llamar a las variables con  secuencias de cualquier
+longitud de letras, números y  subrayados, pero sin empezar en dígito.
+Los  nombres son  sensibles a  mayúsculas/minúsculas. Ya  hemos tenido
+ejemplos anteriormente.
+
+Una vez que  ha sido definida una variable, puede  ser util conocer el
+comando {\tt who} que nos da  una lista de variables definidas, y {\tt
+whos} que nos muestra más información.
+
+\begin{verbatim}
+octave:15> who 
 
 *** local user variables:
-a  b  c  d
 
-octave:13> whos
+a  b  c  d  g
 
-*** currently compiled functions:
-prot  type                       rows   cols  name
-====  ====                       ====   ====  ====
- rwd  user-defined function         -      -  coth
+octave:16> whos
 
 *** local user variables:
+
 prot  type                       rows   cols  name
 ====  ====                       ====   ====  ====
  rwd  matrix                        1      3  a
- rwd  matrix                        3      3  b
+ rwd  matrix                        2      3  b
  rwd  string                        1     10  c
  rwd  struct                        -      -  d
+ rwd  matrix                        2      3  g
 \end{verbatim}
 
-  Como  curiosidad,  añadir  que Octave,  la  primera  vez  que
-ejecutas  una  función  de  usuario, realiza  una  parte  de  análisis
-sintáctico para verificación de la  función y luego compila la función
-para  seguidamente ejecutarla,  todo  esto de  forma transparente.  La
-segunda vez  que ejecutas  la función,  si el  fuente no  ha cambiado,
-aprovecha  la compilación  anterior  y pasa  a ejecutar  directamente,
-ahorrando un tiempo precioso en el proceso.
+En  caso de  que queramos  eliminar una  variable de  memoria usaremos
+la  orden  {\tt  clean  nombredevariable}. En  caso  de  que  queramos
+borrar  todas las  variables simplemente  teclearemos {\tt  clear} sin
+argumentos.
 
- Otro aspecto muy útil  es que Octave posee estructuras típicas
-de lenguajes de programación propiamente dichos, como son: {\tt if},
-{\tt switch}, {\tt while}, {\tt do-until},  {\tt for}, {\tt break},
-{\tt continue}, y {\tt unwind\_protect}  y {\tt try-catch}
-para  el manejo  de  excepciones. También  se  definen los  operadores
-lógicos típicos  and, or,  ...; los  de comparación  {\tt ==}, {\tt !=},
-{\tt $>=$}, ...; incluso los operadores  típicos de post-incremento
-{\tt x++} y similares de C++. Esto último y la existencia de los try-catch
-posiblemente hayan hecho pensar a algún lector que existe alguna
-relación  entre Octave  y C++...
-Pues  ese lector  ha pensado  correctamente. Al  final nombraremos  la
-relación.
+La primera  expresión que podemos  aprender es la {\em  extracción} de
+valores  desde una  matriz.  En el  caso más  sencillo  de extraer  un
+elemento,  por ejemplo,  de la  fila 1  y columna  2, escribimos  {\tt
+a(1,2)}. El operador \verb|:| (dos puntos)  nos vale de comodín, y nos
+valdrá  para extraer,  por ejemplo,  toda la  fila 1  escribiendo {\tt
+a(1,:)} o toda la columna  2 escribiendo {\tt a(:,2)}. También podemos
+incluir rangos en los argumentos, por ejemplo, para sacar las columnas
+2 y 3 sería {\tt a(:,[2 3])}.
 
-  Para limpiar  la memoria  se usa  el comando  {\tt clear}. Con
-{\tt save}  guardamos el  entorno de  va\-ria\-bles a  un fichero,  para su
-posterior recuperación  con {\tt load}. Proseguiremos  haciendo algunas
-operaciones básicas sobre matrices y vectores.
+Cabe señalar que  las matrices en octave se  crean dinámicamente, bajo
+demanda, es  decir, que  no hay que  asignarles previamente  un tamaño
+prefijado. Por ejemplo, este código al final contendrá un vector de 10
+elementos:
 
 \begin{verbatim}
-octave:14> a=[1:4]    # comienzo -> paso=1 -> final
-a =
-  1  2  3  4
+for i = 1:10
+  a (i) = sqrt (i);
+endfor
+\end{verbatim}
 
-octave:15> b=[2:2:8]  # comienzo -> paso -> final
-b =
-  2  4  6  8
+Aunque no debemos  hacer uso de esta creación dinámica  salvo en casos
+irremediables, pues en el anterior ejemplo hemos reasignado memoria 10
+veces, pues hemos creado primero un  vector de tamaño 1, luego otro de
+tamaño 2, etc.  En cambio, si hubiésemos previamente  creado un vector
+de ceros de tamaño 10, con  {\tt zeros(1,10)}, el bucle no necesitaría
+cambiar el  tamaño del vector.  Aunque la mejor medida  para conseguir
+velocidad es aprovechar la notación matricial  de octave, y en vez del
+anterior ejemplo, escribir  {\tt a=sqrt(1:10);}, que hace  lo mismo en
+una sola línea y es aún más rapido. Dejemos el inciso y sigamos.
 
-octave:16> a.*b   # multiplicación elemento a elemento
+Las expresiones más usadas son las aritméticas, que detallamos como:
+
+\begin{itemize}
+
+\item `X +  Y´ y `X - Y´  La suma y la resta. Si  ambos operandos son
+matrices, el número  de filas y columnas deben coincidir.  Si un es un
+número, su  valor es  añadido/restado a todos  los elementos  del otro
+operando.
+
+\item `X  .+ Y´  y `X  .- Y´ Suma  o resta  elemento a  elemento. Son
+equivalentes a `+´ y `-´.
+
+\item `X *  Y´ Multiplicación de matrices. El número  de columnas de X
+debe coincidir con el de filas de Y.
+
+\item `X .* Y´ Multiplicación  elemento a elemento. Si ambos operandos
+son matrices, sus dimensiones deben coincidir.
+
+\item `X / Y´ División por la derecha. Esto es conceptualmente
+equivalente a la expresión {\tt (inverse (y´) * x´)´ } usada para
+resolver sistemas lineales, pero que se calcula sin hacer la inversa
+de {\tt y´}.
+
+\item `X ./ Y´ División por la derecha elemento a elemento.
+
+\item  `X $\backslash$ Y´ División  por  la izquierda.  Esto es  conceptualmente
+equivalente a la expresión {\tt inverse (x)  * y } pero que se calcula
+sin hacer la inversa de {\tt x}.
+
+\item `X .$\backslash$ Y´ División por la izquierda elemento a elemento.
+
+\item `X $\hat{}$ Y´ o `X ** Y´  Potencia. Si X e Y son escalares, devuelve X
+elevado  a la  potencia  de Y.  Si  X es  escalar e  Y  es una  matriz
+cuadrada, se calcula usando autovalores. Si X es una matriz cuadrada e
+Y es un  escalar, la matriz se calcula  con repetidas multiplicaciones
+si Y es entero y usando autovalores si no es entero.
+
+\item `X .$\hat{}$ Y´ o `X .**  Y´ Potencia elemento a elemento. Si ambos sin
+matrices, sus dimensiones deben coincidir.
+
+\item `X.´´ Traspuesta. 
+
+\item  `X´´  Traspuesta compleja  conjugada.  Para  valores reales  es
+equivalente a la traspuesta. Para  valores complejos, es equivalente a
+la expresión {\tt conj(X.´)}.
+
+\end{itemize}
+
+Luego tenemos los operadores de comparación, que pueden ser \verb|<|
+menor, \verb|<=| menor o igual, \verb|==| igual, \verb|>=| mayor o
+igual, \verb|>| mayor y cualquiera de estos \verb|!=|, \verb|~=| o
+\verb|<>| distinto. Aplicados entre matrices devuelven una matriz de
+unos y ceros, con unos en los elementos donde la condición se cumpla
+y cero donde no se cumpla. También tenemos operadores booleanos y de
+incrementación y decrementación, pero que no los vamos a nombrar.
+
+\subsection{Control de flujo}
+
+Las sentencias para  el control de flujo son las  típicas de cualquier
+lenguaje de programación. Pondremos un simple ejemplo de cada una para
+que sirva de referencia en el caso que tuvieras que usarlas. Todas las
+sentencias se caracterizan por finalizar con una sentencia {\tt end*}.
+
+\subsubsection{if}
+
+El caso más general de {\tt if} es la estructura if-elseif-else-endif,
+que se muestra aquí.
+
+\begin{verbatim}
+if (rem (x, 2) == 0)
+  printf ("x es par\n");
+elseif (rem (x, 3) == 0)
+  printf ("x es impar y divisible por 3\n");
+else
+  printf ("x es impar\n");
+endif
+\end{verbatim}
+
+\subsubsection{switch}
+
+Es de  reciente implantación  así que  se considera  experimental (con
+respecto a la versión 2.0.5). Es  una mera traducción de un bloque if,
+así  que las  condiciones siempre  se  miran de  arriba a  abajo y  se
+ejecuta el código de la primera que  sea verdadera y luego se sale. La
+forma de uso es la siguiente:
+
+\begin{verbatim}
+switch x
+  case (x>=5)
+    printf("x es mayor o igual que 5\n");
+  case (x>=2)
+    printf("x es mayor o igual que 2 y menor que 5\n");
+  otherwise
+    printf("x es menor que 2\n");
+endswitch
+\end{verbatim}
+
+\subsubsection{while}
+
+Primero se comprueba la condición, y si es válida se ejecuta el cuerpo
+y el proceso se repite. Si no es válida se sale.
+
+\begin{verbatim}
+fib = ones (1, 10);
+i = 3;
+while (i <= 10)
+  fib (i) = fib (i-1) + fib (i-2);
+  i++;
+endwhile
+\end{verbatim}
+
+\subsubsection{do-until}
+
+Es el mismo caso que el  {\tt while}, pero comprobando la condición al
+final, después  de haber  ejecutado una  vez el  cuerpo. Es  decir, se
+ejecuta  el cuerpo  y se  comprueba la  condición, y  si es  válida se
+ejecuta el cuerpo de nuevo y el  proceso se repite. Si no es válida se
+sale.
+
+\begin{verbatim}
+fib = ones (1, 10);
+i = 2;
+do
+  i++;
+  fib (i) = fib (i-1) + fib (i-2);
+until (i == 10)
+\end{verbatim}
+
+\subsubsection{for}
+
+La variable del bucle se asigna consecutivamente a todos los elementos
+de un vector. En el caso de ejemplo, la variable i toma los valores 3,
+4, \dots, 9 y 10, ejecutando luego el cuerpo.
+
+\begin{verbatim}
+fib = ones (1, 10);
+for i = 3:10
+  fib (i) = fib (i-1) + fib (i-2);
+endfor
+\end{verbatim}
+
+\subsubsection{break/continue}
+
+La sentencia break permite salir de un bucle {\tt for} o {\tt while} y
+seguir la ejecución  del programa en la sentencia  siguiente al bucle.
+La  sentencia {\tt  continue} simplemente  se salta  todo el  cuerpo y
+realiza la siguiente iteración del bucle sin salirse.
+
+\subsubsection{unwind\_protect/try}
+
+Octave  permite  dos formas limitadas de  manejo de  excepciones.  Más
+información en el manual.
+
+
+\subsection{Funciones}
+
+Pongamos un ejemplo  de como se define una función  en octave. En este
+ejemplo, a la función se le pasa  un argumento que debe ser un vector,
+y se devuelve la media de sus componentes:
+
+\begin{verbatim}
+function retval = avg (v)
+  # ayuda: la funcion avg(v) devuelve el promedio
+  # de las componentes del vector v
+
+  retval = sum (v) / length (v);
+endfunction
+\end{verbatim}
+
+Como se puede apreciar, es una función  con un argumento y un valor de
+retorno.  En octave,  los argumentos  de  la función  son locales,  es
+decir,  que los  argumentos  son  copias de  los  originales  y si  se
+modifican desde dentro de la función, los cambios no son vistos por el
+llamante.  Esto implica  que la  única forma  que tenemos  de devolver
+valores al llamante sea usando valores  de retorno como en el ejemplo.
+Podemos hacer que devuelva más  de un valor de retorno, disponiéndolos
+entre corchetes, como en este otro ejemplo que calcula el máximo de un
+vector.
+
+\begin{ejemplo}{vmax.m}{Función en  octave para devolver el  máximo de
+un vector}  La función  recibe un  vector y  devuelve dos  valores, el
+máximo valor encontrado en el vector y la posición donde se encuentra.
+\end{ejemplo}
+
+Excepto para casos  muy simples, no es práctico  teclear las funciones
+en la línea de comandos. Las  funciones se suelen guardar en ficheros,
+que se  pueden editar fácilmente  y guardarlas para su  uso posterior.
+Existe una pauta  que hay que seguir,  y es que el  nombre del archivo
+debe ser  el nombre  de la  función con la  extensión \verb|.m|  en el
+directorio de  trabajo. Por ejemplo,  la función vmax que  acabamos de
+definir la tendríamos  que guardar en un fichero  llamado {\em vmax.m}
+para que funcionase.
+
+De igual forma se pueden colocar en ficheros instrucciones sueltas sin
+formar funciones.  Esto se denomina  {\em ficheros script}.  Cuando se
+ejecuta uno de ellos, las  instrucciones que contiene se ejecutan como
+si se escribieran una a una por la línea de comandos.
+
+Cuando se  le ordena a octave  que ejecute una función  el proceso que
+realiza es el siguiente: la lee  y la analiza sintácticamente; en caso
+que no  existan errores,  la compila  en un formato  interno y  pasa a
+ejecutarla. En  caso de que el  usuario le ordene a  octave ejecutarla
+otra  vez, si  el fichero  no ha  sido modificado,  octave utiliza  la
+función ya compilada ahorrando el tiempo de lectura y análisis.
+
+Veamos esto  con un ejemplo.  Cojamos el  código fuente de  la función
+anterior, guardémoslo en  un fichero llamado {\em  vmax.m} y tecleemos
+lo siguiente:
+
+\begin{verbatim}
+octave:1> clear
+octave:2> who
+octave:3> help vmax
+vmax is the user-defined function from the file
+/home/alberto/cvs/Libro\_CILA/ejemplos/vmax.m
+
+ayuda: vmax(v) devuelve el máximo valor de un vector 
+y la posición que ocupa
+...
+
+octave:3> [max idx]=vmax([5 4 3 2 7 5 4 9 6])
+max = 9
+idx = 8
+octave:4> who
+
+*** currently compiled functions:
+
+vmax
+
+*** local user variables:
+
+idx  max
+\end{verbatim}
+
+Como estamos viendo, efectivamente {\tt  who} al principio, despues de
+limpiar la  memoria, no nos  decía nada,  pero despues de  ejecutar la
+función,  nos informa  que la  tiene  ya compilada  y almacenada  para
+posteriores usos.
+
+Donde se hagan  usos más exigentes de octave, este  esquema, aunque es
+inteligente, resulta poco  óptimo, pues lo que se hace  es traducir la
+función a un lenguaje intermedio que luego octave interpreta cuando se
+le manda a ejecutar. Si nuestro  uso requiere de la máxima potencia de
+cálculo,  viene bien  saber que  octave  es capaz  de ejecutar  código
+objeto  compilado con  gcc,  es decir,  código de  c,  c++, fortran  o
+pascal. Veamos un ejemplo en c++ para darnos cuenta lo sencillo que es
+y de las posibilidades que nos puede abrir.
+
+\begin{ejemplo}{oregonator.cc}{Función  en  c++   que  compilaremos  a formato  nativo de  octave}  
+Esta  función recibe  un vector  de tres  elementos como  argumento de
+entrada y hace un cálculo con esos valores para devolver un resultado.
+\end{ejemplo}
+
+No vamos  a analizar este  ejemplo en profundidad, sino  solamente dar
+unas  pistas sobre  como está  hecho. En  primer lugar  vemos un  {\tt
+\#include <octave/oct.h}. Lo  que hace es definir todos  los tipos de
+datos de octave y las funciones  nativas como clases y métodos de c++.
+Con  esto  queremos  decir  que  si  en  octave  podíamos  hacer  {\tt
+length(vector)} para  obtener las  dimensiones de  un vector,  en {\em
+c++}  podremos hacer  lo mismo  usando {\tt  vector.lenght}. Entendido
+esto, el  resto son meras particularidades  sintácticas específicas de
+c++ en las  que no entraremos. Para compilar este  código, vayámonos a
+un shell y escribamos lo siguiente:
+
+\begin{verbatim}
+alberto@baifito:ejemplos\$ ls oregonator.*
+oregonator.cc
+alberto@baifito:ejemplos\$ mkoctfile oregonator.cc 
+alberto@baifito:ejemplos\$ ls oregonator.*
+oregonator.cc  oregonator.o  oregonator.oct
+\end{verbatim}
+
+El fichero {\em oregonator.o} es  un código objeto como cualquier otro
+que se obtiene con gcc. El  fichero {\em oregonator.oct} es la función
+recompilada para octave. Para probarla, entremos en octave y tecleemos
+lo siguiente:
+
+\begin{verbatim}
+octave:1> help oregonator  
+oregonator is the dynamically-linked function from the file
+/home/alberto/cvs/Libro_CILA/ejemplos/oregonator.oct
+
+El `oregonador'.
+
+...
+octave:2> oregonator([1 2 3]) 
 ans =
-   2   8  18  32
 
-octave:17> a./b   # división elemento a elemento
-ans =
-  0.50000  0.50000  0.50000  0.50000
+   77.269353
+   -0.012942
+   -0.322000
+\end{verbatim}
 
-octave:18> a*b'   # vector 1x4 x vector 4x1
-ans = 60
+Como verás, en  la ayuda de la función aparece  el texto que definimos
+en el código  fuente, así como una advertencia de  que la función está
+dinámicamente linkada  a las librerías  de octave. En el  segundo paso
+vemos que la  ejecución de la función tambien funciona.  Eso sí, si no
+pasamos los parámetros correctamente veremos como un {\em Segmentation
+Fault} cierra  nuestro octave.  El problema es  que no  comprobamos el
+tipo de  dato en el código  de c++, pero añadiendo  las comprobaciones
+pertinentes podremos  manejar estos casos  excepcionales y no  se dará
+este problema.
 
-octave:19> a'*b   # vector 4x1 x vector 1x4
-ans =
-   2   4   6   8
-   4   8  12  16
-   6  12  18  24
-   8  16  24  32
+La  ejecución  de  código  compilado  como este  puede  llegar  a  ser
+hasta  10 veces  más rapido  que  el código  interpretado, en  fichero
+con  extensión \verb|.m|.  Además, podemos  linkar funciones  de otros
+lenguajes simplemente escribiendo una capa tal como hemos visto que se
+encargue de leer/escribir  los datos en estructuras de  octave. Y como
+en esos otros lenguajes se pueden  hacer ventanas gráficas o acceder a
+periféricos, eso significa que en octave tambien se podrá. Las rutinas
+de procesamiento  de imágenes  que veremos  (o las  de sonido,  que no
+veremos)  son un  ejemplo de  ello. Para  más ejemplos,  consultar los
+ficheros con extensión \verb|.cc| de la distribución de octave.
 
+\subsection{Representación gráfica}
+
+En los siguientes ejemplos entraremos en el campo de la representación
+gráfica,  que también  es sencillo  (NOTA: no  olvidarse los  puntos y
+comás  al final  de  línea  pues los  vectores  son  algo largos  para
+estarlos visualizando, y pulsar {\tt q} para cerrar las gráficas).
+
+Para hacer  representaciones gráficas  deberás haber  ejecutado Octave
+desde un shell dentro de las X puesto que la representación gráfica se
+realiza  usando Gnuplot,  cuya forma  de funcionar  por defecto  es en
+entorno  X-Window. No  nos adentraremos  demasiado pues  describiremos
+Gnuplot en otro capítulo.
+
+\begin{itemize}
+
+\item Presentación en  una dimensión: La función  {\tt plot(vector)} o
+{\tt plot(x,y)}  es muy  sencilla de usar.  La diferencia  entre ambas
+llamadas  es que  cuando presentamos  un vector,  el eje  x se  numera
+automáticamente de  1 en  adelante, mientras que  la segunda  forma de
+llamarla, el  valor del eje  x está  definido por nosotros.  Veamos el
+siguiente ejemplo que presenta un período de una senoidal.
+
+\begin{verbatim}
+octave:25> x=[0:0.01:1];
+octave:26> y=sin(2*pi*x);
+octave:27> plot(x) # presentamos una recta
+octave:28> plot(y) # presentamos una senoidal
+octave:29> plot(x,y) # senoidal, pero con eje x bien puesto
+\end{verbatim}
+
+Se pueden presentar varias gráficas en  una usando la opción {\tt hold
+on} y se pueden añadir titulos  a las graficas con un tercer parametro
+a la funcion plot. Veamos un ejemplo:
+
+\begin{ejemplo}{sinus.m}{Presentacion grafica cuatro sinusoidales.}
+Mostramos graficas sobreimpresas entre ellas y les asignamos titulos.
+\end{ejemplo}
+
+Octave+Gnuplot permiten diferentes estilos en las gráficas. Por
+ejemplo, en polares, de la forma {\tt polar($\theta$,$\rho$)}:
+
+\begin{ejemplo}{polares.m}{Presentacion grafica en polares.}
+Mostramos cuatro graficas diferentes en polares en cuatro cuadrantes.
+\end{ejemplo}
+
+Tambien en forma de histograma, adornando las graficas con titulos.
+
+\begin{ejemplo}{histo.m}{Presentacion histograma.}
+Mostramos un histograma y sus datos de partida, con titulos sobre las graficas.
+\end{ejemplo}
+
+
+\item Representación en dos dimensiones:  La función {\tt mesh(x,y,z)} hace
+una representación  3D dados dos vectores  {\tt x} e {\tt  y} para los
+ejes y una matriz bidimensional {\tt z} que será la coordenada Z en un
+espacio  tridimensional.  En  este  ejemplo, lo  más  complicado  será
+generar una  matriz {\tt z}  bonita. Una vez  tenemos la matriz  y los
+ejes, la llamada es directa.
+
+\begin{ejemplo}{meshplot.m}{Grafica en tres dimensiones.}
+Mostramos una sinc en 3 dimensiones, asi como los planos usados para generarla.
+\end{ejemplo}
+
+\end{itemize}
+
+\subsection{Trabajo con matrices}
+
+Octave  tiene una  amplia  colección de  funciones  para trabajar  con
+matrices y vectores. Las veremos en un ejemplo.
+
+\begin{verbatim}
 octave:20> c=diag([1,2,3,4]) # creación de matrices diagonales
 c =
   1  0  0  0
@@ -299,121 +797,168 @@ ans =
   0  0  1  0
   0  0  0  1
 
+octave:15> ones(2,3) # matriz 2x3 repleta de unos
+ans =
+
+  1  1  1
+  1  1  1
+
+octave:16> zeros(1,7) # matriz 1x7 repleta de ceros
+ans =
+
+  0  0  0  0  0  0  0
+
 octave:24> rand(4,3) # matriz de números aleatorios 4x3
 ans =
   0.85927  0.43700  0.85462
   0.88050  0.27016  0.52905
   0.58098  0.54402  0.29237
   0.41791  0.73324  0.45943
+
+octave:5> randn(3,2) # matriz de números aleatorios gaussiana
+ans =
+
+   0.64262  -1.03740
+   0.31010  -1.38565
+  -0.64096   0.58650
+
+octave:7> diff([1 2 4 5 7 9 11 14]) # resta cada elemento con su anterior
+ans =
+
+  1  2  1  2  2  2  3
+
+octave:8> find ([0 0 0 0 0 0 1 0 0 0 5 0]) # encuentra indices elementos no nulos
+ans =
+
+   7  11
+octave:9> linspace (1, 10, 8) # subdivide linealmente el intervalo [1,10] en 8 puntos.
+ans =
+
+   1.0000   2.2857   3.5714   4.8571   6.1429   7.4286   8.7143  10.0000
+
+octave:13> logspace (0, 3, 6) # subdivide logarítmicamente el intervalo [10^0,10^3] en 6 puntos.
+ans =
+
+     1.0000     3.9811    15.8489    63.0957   251.1886  1000.0000
+
+octave:26> [a,b,c]=lu([1,3,2;3,2,1;3,2,6]) # factorización lu de una matriz
+a =
+
+  1.00000  0.00000  0.00000
+  0.33333  1.00000  0.00000
+  1.00000  0.00000  1.00000
+
+b =
+
+  3.00000  2.00000  1.00000
+  0.00000  2.33333  1.66667
+  0.00000  0.00000  5.00000
+
+c =
+
+  0  1  0
+  1  0  0
+  0  0  1
+
+octave:27> [a,b,c]=qr([1,3,2;3,2,1;3,2,6]) # factorización QR
+a =
+
+  -0.312348  -0.752156  -0.580259
+  -0.156174  -0.561851   0.812362
+  -0.937043   0.344361   0.058026
+
+b =
+
+  -6.40312  -3.12348  -3.59200
+   0.00000  -2.69145  -1.40463
+   0.00000   0.00000   2.03091
+
+c =
+
+  0  0  1
+  0  1  0
+  1  0  0
+
+
 \end{verbatim}
 
- Esto es  sólo una mínima expresión de  los comandos utilizados
-para vectores y matrices. Cuando ya  se tiene experiencia y se conocen
-todos los  comandos, muchas  cosas que  se suelen  ha\-cer con  bucles u
-otras construcciones  se empiezan a  hacer con vectores y  entonces es
-cuando aprovechas al máximo las capacidades de Octave. En las primeras
-secciones de {\tt info octave} o en los primeros capítulos de cualquier
-manual de  Matlab; se pueden  encontrar paso a  paso explicaciones
-sobre todas estas funciones.
 
-  En los  siguientes  ejemplos  entraremos en  el  campo de  la
-representación gráfica,  que también  es sencillo (NOTA:  no olvidarse
-los puntos y comás al final de línea pues los vectores son algo largos
-para estarlos visualizando, y pulsar {\tt q} para cerrar las gráficas).
+\subsection{Resolución numérica de ecuaciones diferenciales}
 
+\begin{ejemplo}{ode.m}{Resuelve una EDO ordinaria}
+Resuelve una EDO ordinaria de tercer orden y muestra por pantalla
+la evolucion de los x(t).
+\end{ejemplo}
 
- Presentación en una  dimensión: La función {\tt plot(vector)} o
-{\tt plot(x,y)}  es muy  sencilla de  usar. La  diferencia entre  ambas
-llamadas  es que  cuando presentamos  un vector,  el eje  x se  numera
-automáticamente de  1 en  adelante, mientras que  la segunda  forma de
-llamarla, el  valor del eje  x está  definido por nosotros.  Veamos el
-siguiente ejemplo que presenta un período de una senoidal.
+\subsection{Manipulación de polinomios}
+
+Un polinomio de grado r en octave se presenta como un vector de
+dimensiones r+1. A partir de el se pueden realizar operaciones.
 
 \begin{verbatim}
-octave:25> x=[0:0.01:1];
-octave:26> y=sin(2*pi*x);
-octave:27> plot(x) # presentamos una recta
-octave:28> plot(y) # presentamos una senoidal
-octave:29> plot(x,y) # senoidal, pero con eje x bien puesto
+octave:10> a=[1,2,3]; # a(x)=x^2+2x+3
+octave:11> b=[3,2,3,2]; #b(x)=3x^3+2x^2+3x+2
+octave:19> polyout(a)
+1*s^2 + 2*s^1 + 3
+octave:18> polyout(b)
+3*s^3 + 2*s^2 + 3*s^1 + 2
+octave:20> polyout(conv(a,b)) # producto de polinomios
+3*s^5 + 8*s^4 + 16*s^3 + 14*s^2 + 13*s^1 + 6
+octave:13> [coc, resto]=deconv([3 8 16 14 13 6],b); # division
+octave:24> polyout (coc) # el cociente de la division
+1*s^2 + 2*s^1 + 3
+octave:25> polyout (resto)         # el resto de la division
+0*s^5 + 0*s^4 + 0*s^3 + 0*s^2 + 0*s^1 + 0
+octave:26> polyout(polyderiv (b))  # la derivada de b(x)
+9*s^2 + 4*s^1 + 3
+octave:27> polyout(polyinteg (b))  # la integral de b(x)
+0.75*s^4 + 0.666667*s^3 + 1.5*s^2 + 2*s^1 + 0
+octave:17> polyval (b,2)           # b(x) evaluado en x=2
+ans = 40
 \end{verbatim}
 
- Representación en dos dimensiones: La función {\tt mesh(x,y,z)}
-hace una representación 3D dados dos vectores {\tt x} e {\tt y} para los
-ejes y una matriz bidimensional {\tt z}  que será la coordenada Z en un
-espacio  tridimensional.  En  este  ejemplo, lo  más  complicado  será
-generar una  matriz {\tt z}  bonita. Una  vez tenemos  la matriz  y los
-ejes, la llamada es directa.
+% Optimización: no tengo ni idea.
+% Distribuciones estadísticas: no tengo ni idea.
+% Funciones financieras: no tengo ni idea.
 
-\begin{verbatim}
-octave:30> x=[-1:0.1:1]; # vector del eje x
-octave:31> y=[-1:0.1:1]; # vector del eje x
-octave:32> [mx,my]=meshgrid(x,y); # genera matrices de ejes
-octave:33> mesh(mx) # matriz que representa las x
-octave:34> mesh(my) # matriz que representa las y
-octave:35> mz=2-mx.^2-my.^2; # elemento por elemento
-octave:36> mesh(x,y,mz)
-\end{verbatim}
+\subsection{Teoría de control}
 
-  Dentro  del  campo  de   la  ingeniería,  Octave  dispone  de
-una  excelente toolbox  para  teoría del  control,  donde se  utilizan
-estructuras  para  abstraer  al  usuario el  concepto  de  función  de
-transferencia  de un  sistema, y  funciones para  el procesamiento  de
-señales. En este  último caso, permite aplicar los  resultados a casos
-reales ya que tiene módulos para cargar y salvar los datos de imágenes
-y sonidos.
+La versión 2.1 de octave incorpora  una Toolbox de Control. El control
+es una rama de la ingeniería  dedicada a modelar sistemas mediante las
+ecuaciones diferenciales  que relacionan  su salida  con su  entrada y
+predecir su comportamiento frente a diferentes entradas. En la toolbox
+se se  utilizan estructuras  para abstraer al  usuario el  concepto de
+función de transferencia de un sistema.
 
-  La transformada  de  Fourier discreta,  más  conocida por  el
-nombre  de  su algoritmo  FFT  ({\bf Fast  Fourier Transform}),  es  la
-versión  discreta  y  periódica  de  la  transformada  exponencial  de
-Fourier. Es una función muy usada en  ingeniería y en la vida real. La
-tomaremos como  la función  para la ingeniería  por antonomasia,  y en
-este ejemplo veremos  qué sencillo resulta obtener  la transformada de
-Fourier discreta de un pulso.
+% no se si no completar esto porque es muy aburrido y poco vistoso.
 
-\begin{verbatim}
-octave:37> x=[-1:0.01:1];
-octave:38> y=(abs(x)<0.2); # escalon generado con una comparación
-octave:39> plot(x,y) # función original
-octave:40> f=abs(fftshift(fft(y)));
-octave:41> plot(f)  # función transformada
-\end{verbatim}
+\subsection{Procesamiento de señales}
 
- Por último, dentro del  campo de las Matemáticas, Octave tiene
-muchas  más funciones  avanzadas para  realizar cálculos  financieros,
-distribuciones estadísticas, álgebra lineal  y ecuaciones no lineales,
-polinomios, etc,  unas más  avanzadas que otras,  lo que  bien valdría
-dedicarle un estudio particular. Como ejemplo indicativo se muestra lo
-que  es necesario  escribir para  resolver numéricamente  una ecuación
-diferencial no lineal de  la forma {\bf dx/dt=f(x,t)} con condición
-inicial {\bf x(t=t0)=x0}. Aunque no podamos  ver el código de lsode
-puesto que es una función interna, nos puede servir como ejemplo de lo
-versátil  que puede  resultar en  calculo numérico  la metodología  de
-Octave al trabajar solo con vectores y matrices. 
+En esta categoría  están todas las funciones dedicadas  a trabajar con
+espectros de señales. Tanto la  {\em FFT}, como filtros digitales {\em
+FIR} e {\em  IIR}, diferentes tipos de ventanas, o  calculo de modelos
+ARMA.
 
-\begin{verbatim}
-octave:42> function xdot = f (x, t)
-> r = 0.25;
-> k = 1.4;
-> a = 1.5;
-> b = 0.16;
-> c = 0.9;
-> d = 0.8;
-> xdot(1) = r*x(1)*(1 - x(1)/k) - a*x(1)*x(2)/(1 + b*x(1));
-> xdot(2) = c*a*x(1)*x(2)/(1 + b*x(1)) - d*x(2);
-> endfunction
-octave:43> x0 = [1; 2];
-octave:44> t = linspace (0, 50, 200)';
-octave:45> x = lsode ("f", x0, t);
-octave:46> plot (t, x)
-\end{verbatim}
+% Estaría bien que alguien comprobase los valores de las escalas, porque
+% no me suenan nada que en la fft quedara así (jesus?)
 
-  Para   cualquiera  que  desee  optimizar   las  computaciones
-realizadas  con   Octave,  Octave  provee  de   una  librería  llamada
-{\tt liboctave} que define unas clases  sobre C++ que te permiten pasar
-tu  script  desde  Octave  hacia C++  casi  directamente,  para  luego
-compilarlo y obtener tu ejecutable, o  para crear tu código objeto que
-puedas integrar  en una  aplicación mayor  escrita en  otros lenguajes
-como C, C++, Perl, Python, etc. 
+La transformada de Fourier discreta, más conocida por el nombre de su
+algoritmo FFT ({\bf Fast Fourier Transform}), es la versión discreta
+y periódica de la transformada exponencial de Fourier. Es una función
+muy usada en ingeniería y en la vida real. La tomaremos como la
+función para la ingeniería por antonomasia, y en este ejemplo veremos
+qué sencillo resulta obtener la transformada de Fourier discreta de
+una senoidal y un pulso.
 
- La  web oficial de Octave  es: http://bevo.che.wisc.edu/octave
+\begin{ejemplo}{fftview.m}{Muestra  la FFT  de dos  funciones} Muestra
+por pantalla el módulo  y la fase de dos funciones:  una senoidal y un
+pulso. \end{ejemplo}
+
+% estaría bien poner un filtro de ejemplo, antes y despues de pasar
+% una señal por el.
+
+% FALTA PARTE DE TRATAMIENTO DE IMAGENES.
+
+En la sección de Gnuplot veremos como salvar estas gráficas en un fichero.
+
 
