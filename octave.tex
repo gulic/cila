@@ -7,8 +7,8 @@
 % extraido de 'info octave' (paquete octave2.?-doc).
 % el uso de la parte de mkoctfile requiere octave2.?-headers
 
- Octave se puede  definir como un lenguaje de alto  nivel inspirado en
-un software comercial llamado  {\sc MATLAB®} (MATrix LABoratory). {\sc
+Octave se puede definir como un lenguaje de alto nivel inspirado en un
+software  comercial llamado  {\sc MATLAB®}  (MATrix LABoratory).  {\sc
 MATLAB®}  estuvo pensado  inicialmente  para  álgebra numérica  lineal
 (matrices,  vectores  y  sus  operaciones),  y con  el  tiempo  se  le
 ha  sacado  partido a  esta  forma  de  trabajo.  De la  misma  forma,
@@ -21,7 +21,7 @@ evolucionar este  software y han añadido  librerías y funcionalidades.
 Ahora, las  aplicaciones de Octave ya  no se limitan a  simple trabajo
 con matrices  y vectores,  como una mera  calculadora, sino  que ahora
 aparte de  aplicaciones puramente  matemáticas o numéricas,  es válido
-para  otros campos  de más  ciencias  e ingenierías.  Entre ellos,  el
+para  otros  campos  de  ciencias   e  ingenierías.  Entre  ellos,  el
 procesamiento de  señales (sonido), de imágenes  (filtrados, análisis,
 etc), estadística,  geometría, redes  neuronales, sistemas  de control
 realimentados y hasta dibujo vectorial. Intentaremos poner ejemplos de
@@ -59,7 +59,7 @@ al  entrar  una  línea,  podremos corregirlo  sobre  la  marcha.  Para
 ejecutarlo, abre  un terminal y  en la  línea de comandos  teclea {\tt
 octave}. Tras  un mensaje de  bienvenida, Octave te muestra  un prompt
 que indica  que está preparado y  a la espera de  comandos. En algunas
-distribuciones, Octave puede  tener su icono en uno de  los menues del
+distribuciones, Octave puede  tener su icono en uno de  los menúes del
 sistema, en la zona de  aplicaciones matemáticas. Teclear {\tt octave}
 en la consola es más rápido y  funciona el 100\% de las veces. Esto es
 lo que se nos muestra:
@@ -93,19 +93,19 @@ coth is the user-defined function from the file
 \end{verbatim}
 
 La mayoría de los comandos de Octave disponen de esta ayuda. Vemos que
-lo que se  nos dice es una  descripción de los parámetros y  de lo que
-realiza la función, lo cual es suficiente para que podamos utilizarla.
+se nos  dice una  descripción de  los parámetros y  lo que  realiza la
+función, lo cual es suficiente para que podamos utilizarla.
 
 Cuando se  invoca sin argumentos  se obtiene  un listado de  todas las
 operaciones,  funciones  y  variables  incorporadas  definidas  en  el
-sistema.  Para  conseguir esta  información,  octave  rastrea por  los
+sistema.  Para  conseguir esta  información,  Octave  rastrea por  los
 directorios donde están  instaladas las funciones; de  ahí su peculiar
 forma  de  organizar  esta  salida,  que  nos  muestra  las  funciones
 clasificadas  por temas,  lo  que  puede ayudarnos  a  mirar y  probar
 funciones. Además,  aquí podemos  encontrarnos funciones que  no están
 pasadas a la documentación.
 
-Octave usa la  libería {\em GNU readline} para la  edición en línea de
+Octave usa la librería {\em GNU  readline} para la edición en línea de
 comandos,  al  igual que  {\em  bash}  y  otros programas  {\em  GNU}.
 Contiene  un historial  que se  puede leer  con las  flechas arriba  y
 abajo, muchas  combinaciones de teclas  para hacer muchas  cosas. Para
@@ -114,7 +114,7 @@ un shell {\tt info rluserman}. No entraremos más en este tema.
 
 Cada  vez que  te equivoques  en la  sintaxis, octave  te indicará  la
 posición donde  cree que está  el fallo  con un angulillo  \verb|^|. A
-veces no se puede fiar uno completamente,  y solo te ayuda a saber más
+veces no se puede fiar uno completamente,  y sólo te ayuda a saber más
 o menos donde se localiza. Veámoslo aquí:
 
 \begin{verbatim}
@@ -129,7 +129,7 @@ Otro tipo de errores pueden ocurrir dentro de funciones. En este caso,
 son errores en tiempo de ejecución,  porque ocurren por un fallo en la
 ejecución del  programa. En este  caso, lo que  aparece es la  línea y
 posición dentro de  la función y en  la función que lo llamó  y en las
-siguientes. Por ejemplo en este hipotético caso:
+siguientes. Por ejemplo, en este hipotético caso:
 
 \begin{verbatim}
 octave:13> f ()
@@ -148,8 +148,8 @@ el anterior ejemplo y el error  es que hace falta pasarle un parámetro
 a la función.
 
 Los  comentarios  dentro del  código  de  octave  se preceden  con  el
-caracter \verb|#|  o \verb|%|  y abarcan desde  ese caracter  hasta el
-final de la línea. Si ponemos en octave un código como este:
+carácter \verb|#|  o \verb|%|  y abarcan desde  ese carácter  hasta el
+final de la línea. Si ponemos en octave un código como éste:
 
 \begin{verbatim}
 function xdot = f (x, t)
@@ -169,8 +169,8 @@ Octave interpreta los comentarios después  de la función como el texto
 de ayuda. De  esta forma, cuando hagamos {\tt help  xdot} nos mostrará
 como ayuda el texto que hemos definido en el ejemplo.
 
-Cuando una línea se hace demasiado larga se puede añadir al final
-de la linea una barra invertida \verb|\| o unos puntos suspensivos
+Cuando una línea  se hace demasiado larga se puede  añadir al final de
+la  linea  una barra  invertida  \verb|\|  o unos  puntos  suspensivos
 \verb|...| y continuar en la siguiente línea.
 
 \begin{verbatim}
@@ -194,10 +194,10 @@ octave:4> sqrt(7)
 ans = 2.6458
 \end{verbatim}
 
-Como última nota, añadir que cuando  no capturamos el valor de retorno
-aparece la  palabra {\tt ans},  que representa el último  resultado, y
-que se puede usar como variable  en la siguiente línea. Continuando el
-ejemplo anterior:
+Como última nota, hay que añadir  que cuando no capturamos el valor de
+retorno  aparece  la  palabra  {\tt ans},  que  representa  el  último
+resultado, y  que se puede usar  como variable en la  siguiente línea.
+Continuando el ejemplo anterior:
 
 \begin{verbatim}
 octave:5> ans*ans
@@ -206,14 +206,13 @@ octave:6> ans*ans
 ans = 49.000
 \end{verbatim}
 
-\section{Tipos de datos}
-\index{Octave!tipos de datos}
-En Octave  hay tres tipos  de datos: numéricos (escalares,  vectores y
-matrices), cadenas  (strings) y estructuras.  Como es de  suponer, los
-numéricos son los  más usados, mientras que cadenas solo  se usan para
-presentar mensajes.  Las estructuras  es algo que  nos pueden  dar una
-buena base  para organizar tareas  más complicadas. A  continuación se
-muestra la forma de definir cada uno de ellos.
+\section{Tipos de  datos} \index{Octave!tipos de datos}  En Octave hay
+tres  tipos  de datos:  numéricos  (escalares,  vectores y  matrices),
+cadenas (strings) y estructuras. Como es de suponer, los numéricos son
+los  más usados,  mientras que  cadenas  sólo se  usan para  presentar
+mensajes. Las estructuras  son algo que nos pueden dar  una buena base
+para organizar  tareas más complicadas.  A continuación se  muestra la
+forma de definir cada uno de ellos.
 
 \begin{verbatim}
 octave:13> a=[1 2 3]
@@ -251,9 +250,9 @@ d.vector =
 \end{verbatim}
 
 Se observará  que las definiciones  de matrices o vectores,  las filas
-van separadas  por comas  \verb|(,)| o  espacios \verb|(  )| mientras
+van  separadas por  comas \verb|(,)|  o espacios  \verb|( )|  mientras
 que  las columnas  se separan  por  punto y  coma \verb|(;)|.  También
-observamos que  una estructura no  es mas  que un {\em  paquete} donde
+observamos que  una estructura no  es más  que un {\em  paquete} donde
 se  pueden almacenar  varias  variables relacionadas  juntas. Se  usan
 principalmente para reducir  el número de argumentos  de las funciones
 agrupando todos  los argumentos relacionados en  estructuras y pasando
@@ -297,10 +296,10 @@ g =
   1  2  3
 \end{verbatim}
 
-Como última nota sobre vectores y matrices, solo comentar que hay una
-forma taquigráfica de definir un vector secuencial. {\tt m:n} devuelve
-un vector de números consecutivos desde m hasta n de uno en uno, ámbos
-inclusive. Por ejemplo:
+Como última  nota sobre vectores  y matrices, sólo queda  comentar que
+hay una forma taquigráfica de  definir un vector secuencial. {\tt m:n}
+devuelve un vector  de números consecutivos desde m hasta  n de uno en
+uno, ambos inclusive. Por ejemplo:
 
 \begin{verbatim}
 octave:36> -2:3
@@ -319,7 +318,7 @@ ans =
   7  5  3  1
 \end{verbatim}
 
-Las operaciones con cadenas, solo decir  que se tratan como vectores y
+De las operaciones  con cadenas diremos que se tratan  como vectores y
 que hay muchas funciones para su  manejo pero que no nombraremos aquí.
 Las operaciones  con matrices  y vectores son  las usuales.  De resto,
 comentar que también existen tipos de datos booleanos.
@@ -396,18 +395,18 @@ Las expresiones más usadas son las aritméticas, que detallamos como:
 \begin{description}
 
 \item[  X+Y y  X-Y  ] La  suma  y  la resta.  Si  ambos operandos  son
-matrices, el número  de filas y columnas deben coincidir.  Si un es un
-número, su  valor es  añadido/restado a todos  los elementos  del otro
-operando.
+matrices, el número de filas y  columnas deben coincidir. Si uno es un
+número,  su valor  es añadido  o restado  respectivamente a  todos los
+elementos del otro operando.
 
 \item[  X.+Y  y  X.-Y  ]  Suma   o  resta  elemento  a  elemento.  Son
 equivalentes a las anteriores.
 
-\item[ X*Y ]  Multiplicación de matrices. El número de  columnas de X
-debe coincidir con el de filas de Y.
+\item[ X*Y  ] Producto de  matrices. El número  de columnas de  X debe
+coincidir con el de filas de Y.
 
-\item[ X.*Y ] Multiplicación  elemento a elemento. Si ambos operandos
-son matrices, sus dimensiones deben coincidir.
+\item[  X.*Y ]  Producto  de  dos elementos.  Si  ambos operandos  son
+matrices, sus dimensiones deben coincidir.
 
 \item[  X/Y  ]  División  por  la  derecha.  Esto  es  conceptualmente
 equivalente a  la expresión  {\tt (inverse  (y´) *  x´)´ }  usada para
@@ -433,18 +432,18 @@ matrices, sus dimensiones deben coincidir.
 
 \item[X.´] Traspuesta. 
 
-\item[X´]  Traspuesta compleja  conjugada.  Para  valores reales  es
+\item[X´]  Traspuesta  compleja  conjugada.  Para  valores  reales  es
 equivalente a la traspuesta. Para  valores complejos, es equivalente a
 la expresión {\tt conj(X.´)}.
 
 \end{description}
 
-Luego tenemos los operadores de comparación, que pueden ser \verb|<|
-menor, \verb|<=| menor o igual, \verb|==| igual, \verb|>=| mayor o
-igual, \verb|>| mayor y cualquiera de estos \verb|!=|, \verb|~=| o
-\verb|<>| distinto. Aplicados entre matrices devuelven una matriz de
-unos y ceros, con unos en los elementos donde la condición se cumpla
-y cero donde no se cumpla. También tenemos operadores booleanos y de
+Luego tenemos los  operadores de comparación, que  pueden ser \verb|<|
+menor, \verb|<=|  menor o  igual, \verb|==|  igual, \verb|>=|  mayor o
+igual, \verb|>|  mayor y  cualquiera de  estos \verb|!=|,  \verb|~=| o
+\verb|<>| distinto.  Aplicados entre matrices devuelven  una matriz de
+unos y ceros, con unos en los elementos donde la condición se cumpla y
+cero donde  no se  cumpla. También tenemos  operadores booleanos  y de
 incrementación y decrementación, pero que no los vamos a nombrar.
 
 \section{Control de flujo}
@@ -544,7 +543,6 @@ realiza la siguiente iteración del bucle sin salirse.
 Octave  permite  dos formas limitadas de  manejo de  excepciones.  Más
 información en el manual.
 
-
 \section{Funciones}
 \index{Octave!funciones}
 Pongamos un ejemplo  de como se define una función  en octave. En este
@@ -625,8 +623,8 @@ vmax
 idx  max
 \end{verbatim}
 
-Como estamos viendo, efectivamente {\tt  who} al principio, despues de
-limpiar la  memoria, no nos  decía nada,  pero despues de  ejecutar la
+Como estamos viendo, efectivamente {\tt  who} al principio, después de
+limpiar la  memoria, no nos  decía nada,  pero después de  ejecutar la
 función,  nos informa  que la  tiene  ya compilada  y almacenada  para
 posteriores usos.
 
@@ -639,20 +637,20 @@ objeto  compilado con  gcc,  es decir,  código de  c,  c++, fortran  o
 pascal. Veamos un ejemplo en c++ para darnos cuenta lo sencillo que es
 y de las posibilidades que nos puede abrir.
 
-\begin{ejemplo}{oregonator.cc}{Función  en  c++   que  compilaremos  a formato  nativo de  octave}  
-Esta  función recibe  un vector  de tres  elementos como  argumento de
-entrada y hace un cálculo con esos valores para devolver un resultado.
-\end{ejemplo}
+\begin{ejemplo}{oregonator.cc}{Función  en  c++   que  compilaremos  a
+formato  nativo de  octave}  Esta  función recibe  un  vector de  tres
+elementos como argumento de entrada y hace un cálculo con esos valores
+para devolver un resultado. \end{ejemplo}
 
 No  vamos  a analizar  este  ejemplo  en profundidad,  sino  solamente
 dar  unas pistas  sobre  como está  hecho. En  primer  lugar vemos  un
 \verb|include <octave/oct.h|. Lo  que hace es definir  todos los tipos
 de datos  de octave y las  funciones nativas como clases  y métodos de
-c++. Con  esto queremos  decir que  si en  octave podíamos  hacer {\tt
+C++. Con  esto queremos  decir que  si en  octave podíamos  hacer {\tt
 length(vector)} para  obtener las  dimensiones de  un vector,  en {\em
-c++}  podremos hacer  lo mismo  usando {\tt  vector.lenght}. Entendido
+C++}  podremos hacer  lo mismo  usando {\tt  vector.lenght}. Entendido
 esto, el  resto son meras particularidades  sintácticas específicas de
-c++ en las  que no entraremos. Para compilar este  código, vayámonos a
+C++ en las  que no entraremos. Para compilar este  código, vayámonos a
 un shell y escribamos lo siguiente:
 
 \begin{verbatim}
@@ -690,16 +688,16 @@ dinámicamente linkada  a las librerías  de octave. En el  segundo paso
 vemos que la  ejecución de la función tambien funciona.  Eso sí, si no
 pasamos los parámetros correctamente veremos como un {\em Segmentation
 Fault} cierra  nuestro octave.  El problema es  que no  comprobamos el
-tipo de  dato en el código  de c++, pero añadiendo  las comprobaciones
+tipo de  dato en el código  de C++, pero añadiendo  las comprobaciones
 pertinentes podremos  manejar estos casos  excepcionales y no  se dará
 este problema.
 
-La  ejecución  de  código  compilado  como este  puede  llegar  a  ser
-hasta  10 veces  más rápido  que  el código  interpretado, en  fichero
-con  extensión \verb|.m|.  Además, podemos  linkar funciones  de otros
-lenguajes simplemente escribiendo una capa tal como hemos visto que se
-encargue de leer/escribir  los datos en estructuras de  octave. Y como
-en esos otros lenguajes se pueden  hacer ventanas gráficas o acceder a
+La ejecución de código compilado como éste puede llegar a ser hasta 10
+veces más rápido que el  código interpretado, en fichero con extensión
+\verb|.m|. Además, podemos enlazar (link) funciones de otros lenguajes
+simplemente escribiendo una capa tal  como hemos visto que se encargue
+de leer/escribir  los datos en estructuras  de octave. Y como  en esos
+otros  lenguajes  se  pueden  hacer  ventanas  gráficas  o  acceder  a
 periféricos, eso significa que en octave también se podrá. Las rutinas
 de procesamiento  de imágenes  que veremos  (o las  de sonido,  que no
 veremos)  son un  ejemplo de  ello. Para  más ejemplos,  consultar los
@@ -744,8 +742,8 @@ a la función {\tt plot}. Veamos un ejemplo:
 \caption{Múltiples líneas por gráfica.}
 \end{figure}
 
-\begin{ejemplo}{sinus.m}{Presentación gráfica cuatro sinusoidales.}
-Mostramos gráficas sobreimpresas entre ellas y les asignamos títulos.
+\begin{ejemplo}{sinus.m}{Presentación  gráfica  cuatro  sinusoidales.}
+Mostramos gráficas sobreimpresas entre  ellas y les asignamos títulos.
 \end{ejemplo}
 
 Octave  y Gnuplot  permiten diferentes  estilos en  las gráficas.  Por
@@ -767,9 +765,8 @@ También en forma de histograma, adornando las gráficas con títulos.
 \caption{Representación de histogramas}
 \end{figure}
 
-\begin{ejemplo}{histo.m}{Presentación histograma.}
-Mostramos un histograma y sus  datos de partida, con títulos
-sobre las gráficas. 
+\begin{ejemplo}{histo.m}{Presentación   histograma.}    Mostramos   un
+histograma y  sus datos  de partida, con  títulos sobre  las gráficas.
 \end{ejemplo}
 
 \subsection*{Representación en 3D}
@@ -782,9 +779,8 @@ función  llamada {\tt  contour(x,y,z)} con  los mismos  argumentos que
 ejemplo, lo más complicado será generar una matriz {\tt z} bonita. Una
 vez tenemos la matriz y los ejes, las dos llamadas son directas.
 
-\begin{ejemplo}{meshplot.m}{Gráfica en tres dimensiones.}
-Mostramos una  sinc en  3 dimensiones,  así como  los planos
-usados para generarla. 
+\begin{ejemplo}{meshplot.m}{Gráfica  en  tres dimensiones.}  Mostramos
+una sinc en 3 dimensiones, así  como los planos usados para generarla.
 \end{ejemplo}
 
 \begin{figure}[hbtp]
@@ -932,7 +928,7 @@ la evolución de los {\tt x(t)}.
 \index{Octave!polinomios}
 
 Un  polinomio de  grado r  en  octave se  presenta como  un vector  de
-dimensiones $r+1$. A partir de el se pueden realizar operaciones.
+dimensiones $r+1$. A partir de él se pueden realizar operaciones.
 
 \begin{verbatim}
 octave:10> a=[1,2,3]; # a(x)=x^2+2x+3
@@ -968,7 +964,7 @@ La versión 2.1 de octave incorpora  una Toolbox de Control. El control
 es una rama de la ingeniería  dedicada a modelar sistemas mediante las
 ecuaciones diferenciales  que relacionan  su salida  con su  entrada y
 predecir su comportamiento frente a diferentes entradas. En la toolbox
-se se  utilizan estructuras  para abstraer al  usuario el  concepto de
+se  utilizan  estructuras para  abstraer  al  usuario el  concepto  de
 función de transferencia de un sistema.
 
 % no se si no completar esto porque es muy aburrido y poco vistoso.
@@ -979,15 +975,15 @@ función de transferencia de un sistema.
 
 En esta categoría  están todas las funciones dedicadas  a trabajar con
 espectros de señales. Tanto la  {\em FFT}, como filtros digitales {\em
-FIR} e {\em  IIR}, diferentes tipos de ventanas, o  calculo de modelos
+FIR} e {\em  IIR}, diferentes tipos de ventanas, o  cálculo de modelos
 ARMA.
 
-La transformada de Fourier discreta, más conocida por el nombre de su
-algoritmo FFT ({\bf Fast Fourier Transform}), es la versión discreta
-y periódica de la transformada exponencial de Fourier. Es una función
-muy usada en ingeniería y en la vida real. La tomaremos como la
-función para la ingeniería por antonomasia, y en este ejemplo veremos
-qué sencillo resulta obtener la transformada de Fourier discreta de
+La transformada de Fourier discreta, más  conocida por el nombre de su
+algoritmo FFT ({\bf Fast Fourier Transform}), es la versión discreta y
+periódica de  la transformada exponencial  de Fourier. Es  una función
+muy  usada en  ingeniería y  en  la vida  real. La  tomaremos como  la
+función para la ingeniería por  antonomasia, y en este ejemplo veremos
+qué sencillo  resulta obtener la  transformada de Fourier  discreta de
 una senoidal y un pulso.
 
 \begin{ejemplo}{fftview.m}{Muestra  la FFT  de dos  funciones} Muestra
@@ -1010,7 +1006,7 @@ debe dar dos deltas de dirac) y un pulso (que debe dar una sinc).
 
 \index{Octave!tratamiento de imágenes}
 
-Por  último veamos  un  ejemplo  de como  se  pueden cargar,  realizar
+Por  último veamos  un  ejemplo  de cómo  se  pueden cargar,  realizar
 modificaciones,  visualizar y  salvar imágenes  usando las  rutinas de
 octave.  Con  esto  podremos  realizar muchas  operaciones  útiles  en
 procesado, realzado y análisis de  imágenes, útiles en muchas áreas de
@@ -1018,27 +1014,27 @@ las ciencias.
 
 En primer lugar suponemos sabido que una imagen se puede entender como
 una matriz  donde cada punto tiene  un color diferente. Cada  punto se
-llama {\em pixel}. Hay muchas  formas de representar pixeles, y octave
+llama {\em píxel}. Hay muchas  formas de representar pixeles, y octave
 maneja tres de ellas, que son las siguientes:
 
 \begin{description}
 
-\item[escala de grises]  En una imagen en escala de  grises cada pixel
+\item[escala de grises]  En una imagen en escala de  grises cada píxel
 se  representa  por  un  valor de  punto  flotante  comprendido  entre
 0,  que  significa  negro,  y  1, que  significa  blanco.  Por  tanto,
 la  representación  de una  imagen  es  una  matriz llena  de  valores
 comprendidos entre 0 y 1. En  este caso, un valor de 0.5 representaría
 un color gris que tiene partes  iguales de blanco y negro mientras que
-un valor  de 0.2 representaría  un color que tiene  20% de negro  y el
+un valor de  0.2 representaría un color  que tiene 20\% de  negro y el
 resto de blanco.
 
 \item[color RGB] Cualquier  color en la naturaleza  se puede aproximar
 (no es una  correspondencia exacta) como suma de  sus tres componentes
 de color, a saber:  rojo (R, red), verde (G, green)  y azul (B, blue).
-De esta forma, cada pixel de  una imagen en color se puede representar
-como un trío de valores de sus tres componentes. Por tanto, una imagen
-en formato  RGB son  tres matrices  del mismo  tamaño, donde  cada una
-almacena los valores de una componente.
+De esta forma, cada píxel de  una imagen en color se puede representar
+como  un terna  de valores  de sus  tres componentes.  Por tanto,  una
+imagen en formato  RGB son tres matrices del mismo  tamaño, donde cada
+una almacena los valores de una componente.
 
 \item[color  indexado]   Como  en  una  imagen   suele  haber  colores
 repetidos,  esta representación  lista  por un  lado  los colores,  de
@@ -1076,8 +1072,8 @@ octave:19> imshow(ma,256)
 Observando la matriz  {\tt ma} observamos que todos  sus valores están
 en el  rango $[0,1]$. Si  vemos su tamaño,  vemos que es  100x100. Las
 diferentes  llamadas  a {\tt  imshow}  se  diferencian en  el  segundo
-parámetro, que  representa el  número de colores  discretos en  el que
-presentará la imagen contínua. En el primer caso veremos solamente dos
+parámetro  que representa  el número  de colores  discretos en  el que
+presentará la imagen continua. En el primer caso veremos solamente dos
 colores, en la segunda 16 y en la tercera 256.
 
 Probemos ahora  a trabajar con  una imagen  en color. La  función {\tt
@@ -1135,9 +1131,9 @@ octave:65> imshow(g,256)
 \index{Octave!filtrado de imágenes}
 
 Comenzaremos los análisis con  un filtrado/realzado. Estas operaciones
-se realizan  barriendo todos  los pixels  de la  imagen y  creando una
-nueva imagen  donde cada pixel  es una  ponderación de los  valores de
-cada  pixel y  sus vecinos  según unas  matrices preestablecidos.  Las
+se realizan  barriendo todos  los píxels  de la  imagen y  creando una
+nueva imagen  donde cada píxel  es una  ponderación de los  valores de
+cada  píxel y  sus vecinos  según unas  matrices preestablecidos.  Las
 matrices
 
 \[
@@ -1159,7 +1155,7 @@ matrices
 \end{array}\]
 
 Ahora veamos como  se aplicaría un filtro. Este filtro  es el primero,
-que  genera una  imagen  donde  cada pixel  es  un  promedio entre  el
+que  genera una  imagen  donde  cada píxel  es  un  promedio entre  el
 correspondiente en  la imagen original  y sus cuatro vecinos  por cada
 lado.
 
@@ -1239,5 +1235,3 @@ octave:47> imshow(h,256)
 \centering\includegraphics[width=0.8\textwidth]{imagenes/image4.m.eps}
 \caption{Imagen tras aplicar detector de bordes.}
 \end{figure}
-
-
