@@ -1,0 +1,6 @@
+sink ("salida.txt")
+hoja.datos = read.table ("muestra.dat")
+attach (hoja.datos)
+print (summary (Edad))
+sink ()
+print (summary (Ingresos))
