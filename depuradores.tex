@@ -102,7 +102,7 @@ semejante a de los depuradores existentes en otras plataformas.
 \section{Data Display Debugger: DDD}
 
 Como ya  hemos comentado anteriormente los  programadores suelen pasar
-mucho tiempo utilizando un depuraror  para encontrar fallos que no son
+mucho tiempo utilizando un depuraror  para buscar fallos que no son
 faciles de encontrar simplemente mirando el código, esto suele ocurrir
 muy  habitualmente cuando  se trabaja  con memoria  dinámica, pues  la
 asignacion de  ésta no se hace  en tiempo de compilación,  sino que se
@@ -125,16 +125,16 @@ verás uno de los más laureados, el {\sf Data Display Debugger}.
 \caption{DDD 1}
 \end{figure}
 
-Este es el  aspecto que presenta el ddd cuando  lo arrancamos, vamos a
-ir por pasos mostrando lo que normalmente un programador como nosotros
-vamos a necesitar de un depurador.
+Este es  el aspecto que  presenta el  {\tt ddd} cuando  lo arrancamos,
+vamos a ir por pasos mostrando  lo que normalmente un programador como
+nosotros vamos a necesitar de un depurador.
 
 \subsection{Mostrar el contenido de las variables}
 
 Para mostrar el contenido de las  variables lo que tendremos que hacer
 es, como se dice coloquialmente, colocar un {\em watch} a la variable.
-En ddd  esto es  muy sencillo de  hacer y hay  varias maneras,  una de
-ellas puede  ser escribir  el nombre  de la variable  en el  cuadro de
+En {\tt ddd} esto  es muy sencillo de hacer y  hay varias maneras, una
+de ellas puede ser  escribir el nombre de la variable  en el cuadro de
 texto que  tenemos justo por  debajo de la barra  de manú y  pulsar el
 botón de watch que está al mismo nivel un poco más a la derecha:
 
@@ -158,13 +158,13 @@ y escoger la opcion display.
 
 Bueno, ya tenemos un watch de la variable, pero\ldots ¿que pasa cuando
 pulsamos sobre  el botón  de run?  ¡No vemos nada!  bueno, eso  es una
-circunstancia pasajera, vamos  a colocar un {\em  breackpoint} o punto
+circunstancia pasajera, vamos  a colocar un {\em  breakpoint} o punto
 de ruptura.
 
-Los  breackpoints son  lugares  donde el  depurador  hará que  nuestro
+Los  breakpoints son  lugares  donde el  depurador  hará que  nuestro
 programa   pare  la   ejecucuón   para,  de   esta  manera,   analizar
 detenidamente el estado  de nuestro programa. La manera  de colocar un
-breakpoint en el  ddd es simplemente desplazarse hasta  la línea donde
+breakpoint en el  {\tt ddd} es simplemente desplazarse hasta  la línea donde
 deseamos colocar  el breakpoint y  hacer un  doble click con  el boton
 izquierdo del ratón.
 
@@ -176,16 +176,16 @@ propiedades hace  que nos  aparezca un  cuadro de  dialogo en  el cual
 podemos introducir una expresión, ésta expresión se utiliza para hacer
 que nuestro breakpoint sea inteligente  y no pare la ejecución siempre
 que  el programa  pase por  allí, sino  que solo  se parará  cuando la
-expresión  se cumpla,  por ejemplo,  si ponemos  el breackpoint  en un
+expresión  se cumpla,  por ejemplo,  si ponemos  el breakpoint  en un
 bucle con 10.000 iteraciones y nosotros queremos que se pare cuando la
 i (variable  que cuenta  las iteraciones)  llegue a  5000 pues  lo que
-hemos de poner en  propiedades del breackpoint es {\tt i  = 5000} y de
+hemos de poner en  propiedades del breakpoint es {\tt i  = 5000} y de
 esa manera  nos saltaremos  las 5000 primeras  iteraciones que  no nos
 interesan.
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=\textwidth]{imagenes/ddd_breackpoint.eps}
+\includegraphics[width=\textwidth]{imagenes/ddd_breakpoint.eps}
 \caption{DDD 4}
 \end{figure}
 
@@ -196,28 +196,28 @@ podemos ir  saltanto de  breakpoint en  breakpoint, y  esto no  nos es
 suficiente  así  que  vamos  a  intentar controlar  más  el  flujo  de
 ejecución  de  nuestros  programas.  Para esta  tarea  tenemos  varias
 herramientas comunes en  la mayoría de depuradores, en el  caso del dd
-las encontramos en una ventana que tenmos flotando sobre el depurador,
+las encontramos en una ventana que tenemos flotando sobre el depurador,
 con lo cual no es complicado utilizarlas, siempre las tenemos a mano y
 son las siguientes:
 
 \begin{description}
 
-\item[Step:]{(paso) esta herramienta nos  sirve, como su propio nombre
+\item[{\em Step}:]{(paso) esta herramienta nos  sirve, como su propio nombre
 indica, para  ejecutar nuestro  programa paso  a paso.  Normalmente lo
 que  hacemos es  colocar  un  breakpoint al  inicio  de  la funcion  o
 procedimiento que  queremos analizar  y luego  ir pulsando  {\tt step}
 para analizar sentencia a sentencia que es lo que hace nuesto código.}
 
-\item[Next:]{(siguiente) muy  parecida a step, solo  que pulsando {\tt
+\item[{\em Next}:]{(siguiente) muy  parecida a step, solo  que pulsando {\tt
 next} si en el código hay una llamada a una funcion o procedimiento no
 entramos  en  ella, sino  que  ejecuta  ésta  y  nos colocamos  en  la
 siguiente línea del programa.}
 
-\item[Until:]{(hasta)  esta herramienta  nos  sirve  para ejecutar  el
+\item[{\em Until}:]{(hasta)  esta herramienta  nos  sirve  para ejecutar  el
 programa hasta  la posición actual  del cursor,  es muy parecida  a un
 breakpoint temporal.}
 
-\item[Cont:]{(continuar)  saltamos  hasta  el siguiente  breakpoint  o
+\item[{\em Cont}:]{(continuar)  saltamos  hasta  el siguiente  breakpoint  o
 hasta el final del programa si es  que no hay ningún breakpoint más en
 el flujo de ejecución.}
 
@@ -225,9 +225,7 @@ el flujo de ejecución.}
 
 A  parte de  estas  herramientas  tenemos algunas  más  que se  suelen
 utilizar  menos, por  ejemplo  aquellas que  ejecutan exactamente  una
-instrucción (de código máquina)
-
-% os invito a experimentar cosas nuevas también aquí.
+instrucción (de código máquina).
 
 \subsection{Visión de punteros}
 
@@ -239,12 +237,9 @@ capacidad  de  la que  hablamos  es  la  de  {\sf ver}  los  punteros.
 Seguramente has hecho  más de un programa con memoria  dinámica que no
 acababa de  funcionar bien porque se  te perdían punteros y  no sabias
 muy bien  por donde andaban  o a  dónde estaban apuntando,  pues bien,
-esto ya no es excusa para entregar  una práctica a medio hacer, el ddd
+esto ya no es excusa para entregar  una práctica a medio hacer, el {\tt ddd}
 viene en nuestra ayuda y  tenemos la {\sf herramienta definitiva} para
-la depuración con punteros
-
-% al flexo de nuestra mesa de trabajo  (os prometo que eso no le gusta
-% a nuestro sistema operativo favorito).\\
+la depuración con punteros.\\
 
 Cuando  haces un  watch de  una  estructura (record)  salen todos  los
 campos en un  recuadro y los punteros también salen  como otro tipo de
