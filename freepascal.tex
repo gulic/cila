@@ -242,26 +242,31 @@ ppc386 -g programa.pas programa
 
 Con esto, ``Incrustamos'' el código fuente de nuestro programa en el
 interior del ejecutable, de forma que si ejecutamos gdb pasando como
-argumento el nombre del programa, podremos hacerle una traza. El
-siguiente sería un ejemplo de ejecución de un programa pascal desde
-gdb.
+argumento el nombre del programa, podremos hacerle una traza.
 
+Para saber más acerca de como hacer una traza a nuestros programas 
+escritos en Pascal, puedes consultar la sección sobre GDB, en este 
+mismo manual.
+
+
+Otros argumentos interesantes del compilador de FreePascal:
+
+Sin entrar demasiado en las interioridades de FreePascal, creo que estas
+opciones pueden ayudarte a la hora de compilar una práctica, o de
+estructurar mejor tus proyectos. Ahí van:
+
+\begin{verbatim} -FUdirectorio \end{verbatim}: Esta opción nos permite 
+guardar las ``units'', una vez compiladas, en el directorio especificado.
+Por ejemplo:
 \begin{verbatim}
-$ gdb programa
-
-(mensajes de inicio de gdb omitidos)
-(gdb) list
-1        program programa;
-2        var variable:string;
-3
-4 	 begin
-5               for a:=1 to 10 do
-6		begin
-7			readln(variable);
-8		end;
-9
-10       end.
+ppc386 -FUunits unidad.pas
 \end{verbatim}
+
+Para utilizar units que estén en otro directorio que no sea el actual,
+utilizamos el parámetro \begin{verbatim} -Fudirectorio \end{verbatim} 
+(nótese que en este caso la `u' es minúscula). 
+
+% Hey, sería bueno añadir unos cuantos switches más :-)
 
 Con esta  breve presentación  ya sabemos  lo suficiente  para compilar
 prácticas en  Pascal, sólo queda  aprender el lenguaje y  pasar muchas
