@@ -100,8 +100,12 @@ dist: $(FILES) $(IMAGES) $(EJEMPLOS)
 	rm -rf $(DISTDIR)
 
 install: $(FILES) $(IMAGES) $(EJEMPLOS) $(NAME).ps
-	install -d $(DOCSDIR)/$(PACKAGE)
-
+	install -m 755 -d $(DOCSDIR)/$(PACKAGE)
+	install -m 755 -d $(DOCSDIR)/$(PACKAGE)/ejemplos
+	install -m 644 $(NAME).ps $(DOCSDIR)/$(PACKAGE)
+	mv -fv ejemplos/CVS ejemplos/.CVS
+	install -m 644 ejemplos/* $(DOCSDIR)/$(PACKAGE)/ejemplos
+	mv -fv ejemplos/.CVS ejemplos/CVS
 
 clean:
 	rm -f *~ *.aux *.log *.dvi *.idx *.ilg *.ind *.toc *.bbl \
