@@ -77,9 +77,9 @@ EXAMPLES = 	ejemplos/HolaMundo.for 		\
 	ps2pdf $@
 
 all: $(FILES) $(IMAGES) $(EJEMPLOS)
-	latex book
-	makeindex book.tex
-	latex book
+	#latex book
+	#makeindex book.tex
+	#latex book
 	bibtex book
 	latex book
 	dvips -o $(NAME).ps book.dvi

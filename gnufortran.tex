@@ -10,20 +10,24 @@ Fortran no es un lenguaje de  propósito general como C, Pascal, Python
 o Perl y por eso sólo  se utiliza en entornos científicos como centros
 de cálculo.
 
-El lenguaje de programación {\tt  Fortran} está orientado puramente al
-cálculo numérico, y es un lenguaje importante en entornos científicos.
-Su nombre viene de {\bf For}mula {\bf Tran}slator, ya que su mayor uso
-era traducir  las fórmulas  de cálculo matemático  al lenguaje  de las
-máquinas.  Desde sus  principios, el  lenguaje Fortran  ha tenido  una
-sintaxis muy peculiar,  adaptada al uso de tarjetas  perforadas. En la
-actualidad, Fortran se  utiliza en asignaturas de  Cálculo en carreras
-técnicas como Matemáticas, Física y algunas ingenierías.
+El lenguaje  de programación {\tt  Fortran} es importante  en entornos
+científicos.  Su  nombre   es  un  acrónimo  de   {\bf  For}mula  {\bf
+Tran}slator, ya que su mayor uso  era traducir las fórmulas de cálculo
+matemático  al lenguaje  de  las máquinas.  Desde  sus principios,  el
+lenguaje Fortran ha tenido una  sintaxis muy peculiar, adaptada al uso
+de  tarjetas  perforadas. En  la  actualidad,  Fortran se  utiliza  en
+asignaturas de Cálculo en carreras técnicas como Matemáticas, Física y
+algunas ingenierías.
 
 Utilizaremos aquí el  compilador {\bf GNU Fortran},  compatible con la
 mayoría  del  lenguaje básico  de  Fortran  77 y  algunas  extensiones
 propias de Fortran  90, suficiente para las  prácticas de programación
-en Fortran 77.  Para programación en Fortran 95 existe  un proyecto en
-marcha de compilador en {\tt http://g95.sourceforge.net}
+en Fortran 77. En este libro nos mantendremos dentro del estándar ANSI
+Fortran 77.
+
+Para programación  en Fortran 95  existe un proyecto de  compilador en
+marcha en {\tt http://g95.sourceforge.net}, aunque aún se encuentra en
+estado larval.
 
 \section{Uso básico del compilador}
 
@@ -39,11 +43,11 @@ Programa básico de holamundo en Fortran 77, define un formato e imprime
 un mensaje usándolo. también incluye una línea de comentario.
 \end{ejemplo}
 
-Para compilar el  programa utiliza el comando {\tt g77}  como si fuera
-el {\tt  gcc}. El compilador {\tt  g77} también produce la  salida por
-defecto  en un  ejecutable  llamado {\tt  a.out},  opción que  podemos
-modificar con  la opción  {\tt -o  nombredelejecutable}. De  hecho, el
-comando {\tt g77} admite muchas de las opciones que admite {\tt gcc}.
+El comando para  invocar al compilador es {\tt g77},  y su sintaxis es
+muy  similar  a  la  del  compilador  {\tt  gcc}  (GNU  C/C++).  Estos
+compiladores producen  la salida por  defecto en un ejecutable  con el
+nombre {\tt a.out}, comportamiento que  puedes modificar con la opción
+{\tt -o nombreejecutable}.
 
 \begin{verbatim}
 $ ls
@@ -108,9 +112,156 @@ $ ./HolaMundo2
 
 \end{verbatim}
 
-Estos pocos  comandos serán suficientes  para compilar y  ejecutar las
-prácticas de Fortran 77 que podamos  necesitar, pero no piensen que es
-verdad eso  de que  {\em ``Real  programers do  Artificial Inteligence
-programs in Fortran''}.
+Si lo prefieres puedes también  compilar los ficheros de código fuente
+por  separado para  obtener los  ficheros  de código  objeto, y  luego
+enlazarlos al final.  Esto resulta útil cuando  tienes muchos ficheros
+de código fuente y sólo estás trabajando en uno de ellos, ya que puede
+significar  un  ahorro de  tiempo  no  tener  que compilar  todos  los
+ficheros cada  vez que quieras  compilar el programa. En  este ejemplo
+los comandos serían los siguientes:
+
+\begin{verbatim}
+$ g77 -c HolaMundo2.for 
+$ g77 -c Saludos.for 
+$ g77 -o HolaMundo2 HolaMundo2.o Saludos.o
+\end{verbatim}
+
+En  los dos  primeros  comandos,  la opción  {\tt  -c} del  compilador
+le  indica  que sólo  debe  generar  el  código objeto,  sin  intentar
+enlazarlo. En el último, el compilador está recibiendo los ficheros de
+código objeto  (y la  opción para modificar  el nombre  del ejecutable
+resultante) e interpreta que debe  enlazarlos. Es importante notar que
+no podemos utilizar el comando {\tt ld} para enlazar código en Fortran
+porque faltarían muchos símbolos  (mayormente funciones) que {\tt g77}
+se encarga de poner pero {\tt ld} desconoce.
+
+Si después de  haber compilado el programa de esta  forma modificas el
+fichero {\tt Saludos.for}  y quieres recompilar el  programa, sólo has
+de recompilar el fichero (o los  ficheros) que has modificado y volver
+a enlazar los ficheros de código objeto: 
+
+\begin{verbatim}
+$ g77 -c Saludos.for 
+$ g77 -o HolaMundo2 HolaMundo2.o Saludos.o
+\end{verbatim}
+
+En  este ejemplo  no  se nota  la  ventaja, pero  en  una práctica  de
+programación  en la  que estás  aprovechando tres  ficheros de  código
+fuente de  prácticas anteriores y  escribiendo otros tres  ficheros de
+código fuente nuevos, según la máquina en la que trabajes puede que no
+te  apetezca  tener  que  compilar  los seis  ficheros  cada  vez  que
+modificas uno. Si a esto le sumas el uso de GNU Make (que estudiaremos
+más adelante) el proceso de  compilación y recompilación resulta mucho
+más cómodo.
 
 \section{Mezclando Fortran con C}
+
+Con lo que has visto en este  tema sabes más que suficiente para hacer
+prácticas de programación  en Fortran 77, pero ahora vamos  a rizar el
+rizo un  poco. Si  sabes algo  (un poco)  de programación  en C  no te
+resultará difícil entender  lo siguiente, en caso  contrario deja este
+apartado para cuando hayas terminado con  los temas de GNU C/C++ y GNU
+Make.
+
+Fortran es un lenguaje de  cálculo numérico, e intentar programar algo
+que  no sea  cálculo numérico  en Fortran  puede ser  un suplicio.  Un
+ejemplo  sencillo  de esto  es  un  menú, que  permanezca  preguntando
+opciones hasta  que el usuario  decida salir del programa.  Es posible
+programar un  menú en Fortran,  pero no  resulta tan efectivo  como en
+otros lenguajes como C o Pascal.
+
+C es  un lenguaje de  propósito general,  lo que significa  que puedes
+programar  en C  casi cualquier  cosa  que te  propongas. Sin  embargo
+programar cálculo numérico  en C puede no ser tan  cómodo como hacerlo
+en Fortran.  Entonces, unamos  ambos lenguajes  en un  mismo programa,
+aprovechando lo mejor de cada uno.
+
+Esta curiosa mezcla es posible con  los compiladores de GNU, porque de
+hecho el compilador de GNU Fortran está basado en el de GNU C/C++. Sin
+embargo hay una serie de consideraciones  que debes tener en cuenta, y
+es conveniente  que sepas programar algo  en C porque hay  que mirarlo
+desde el punto de vista del lenguaje C.
+
+\begin{itemize}
+
+\item {\bf  En  Fortran las funciones reciben siempre  punteros}. Esto
+implica  que si  modificas  el valor  de un  parámetro  dentro de  una
+función en Fortran,  ese cambio seguirá siendo  efectivo tras terminar
+la función.
+
+\item  {\bf En  Fortran  los vectores  son  también punteros}.  Cuando
+declaras en Fortran  un vector puedes especificar el  rango de índices
+que será válido  dentro del vector, por ejemplo  {\tt integer a(-2:8)}
+define un  vector de enteros que  puede ser indexado desde  -2 hasta 8
+ambos  inclusive, de  forma  que  {\tt a(-2)}  y  {\tt  a(8)} son  los
+extremos del  vector. Esto  se maneja internamente  como un  puntero a
+entero a  partir del cual hay  11 posiciones reservadas. Es  decir, su
+equivalente en C sería {\tt int a[11]} y {\tt a(-2)} sería {\tt a[0]}.
+Incluso programando sólo en Fortran es importante entender esto.
+
+\item {\bf Las funciónes de Fortran se renombran en el código objeto}.
+Esto es, si  has definido una función en Fortran  llamada {\tt spline}
+para  llamarla desde  C debes  hacerlo  con el  nombre {\tt  spline\_}
+(añadiendo  dos caracteres  de  subrayado). Además  debes pasarle  los
+parámetros como punteros.
+
+\item {\bf Las funciones llamadas desde Fortran también se renombran}.
+Para llamar  a la función {\tt  menu} desde el código  Fortran hay que
+definirla en C con el nombre {\tt menu\_}.
+
+\item {\bf  Los ficheros  de código fuente  se compilan  sin enlazar}.
+Para  compilar un  fichero  de  código fuente  de  Fortran utiliza  el
+comando {\tt g77 -c fichero.for} y  para compilar un fichero de código
+fuente de C utiliza el comando {\tt gcc -c fichero.for}.
+
+\item {\bf Los  ficheros de código objeto se enlazan  con g77}. Cuando
+hayas compilado todos los fuentes  utiliza el compilador {\tt g77} (no
+el {\tt gcc}) para enlazarlo y producir el ejecutable.
+
+\end{itemize}
+
+Veamos un ejemplo sencillo de cómo usar esto. Los siguientes ficheros,
+dos  de Fortran  y  uno de  C, implementan  un  sencillo algoritmo  de
+ordenación de datos (selección directa). 
+
+\begin{ejemplo}%
+{ordena.for}%
+{Ejemplo de programación conjunta Fortran y C}
+Declara las variables, llama al menú escrito en C y finalmente muestra
+el contenido del vector después de terminar el menú. Nótese que el 
+vector {\tt a} está indexado desde 1 hasta {\tt n}.
+\end{ejemplo}
+
+\begin{ejemplo}%
+{menu.c}%
+{Ejemplo de programación conjunta Fortran y C}
+Implementa el  menú que  permite operar  con el vector  y llamar  a la
+función {\tt mysort} programada en Fortran. Además protege al programa
+de entradas de  datos erróneas o maliciosas. Nótese qe  el vector {\tt
+a} es de tamaño  {\tt *n}, pero sólo se utilizan  las {\tt m} primeras
+posiciones, indexadas desde {\tt 0} hasta {\tt m - 1}.
+\end{ejemplo}
+
+\begin{ejemplo}%
+{mysort.for}%
+{Ejemplo de programación conjunta Fortran y C}
+Implementa en Fortran  el método de ordenación  por selección directa.
+Nótese que  el tamaño del  vector se recibe  como parámetro y  sólo se
+utilizan  las {\tt  m} primeras  posiciones, indexadas  desde {\tt  1}
+hasta {\tt m}.
+\end{ejemplo}
+
+Para compilar este programa hazlo fichero a fichero, generando primero
+los ficheros de  código objeto utilizando {\tt g77} o  {\tt gcc} según
+esté cada  fichero de código fuente  escrito en Fortran o  en C. Luego
+enlazalos todos con {\tt g77}.
+
+\begin{verbatim}
+$ g77 -c ordena.for 
+$ gcc -c menu.c 
+$ g77 -c mysort.for 
+$ g77 -o ordena ordena.o menu.o mysort.o
+\end{verbatim}
+
+Con la  ayuda de GNU  Make el proceso  de recompilado se  convierte en
+algo casi automático y bastante más cómodo.

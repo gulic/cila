@@ -29,10 +29,11 @@
 \setlength{\paperwidth}{18cm}
 \setlength{\paperheight}{24cm}
 \setlength{\textwidth}{13cm}
-\setlength{\textheight}{18cm}
+\setlength{\textheight}{19cm}
 \setlength{\hoffset}{0cm}
-\setlength{\voffset}{0cm}
-\setlength{\oddsidemargin}{0cm}
+\setlength{\voffset}{-20mm}
+\setlength{\oddsidemargin}{5mm}
+\setlength{\evensidemargin}{25mm}
 %\setlength{\parindent}{0cm}
 \setlength{\parskip}{1.1ex plus 0.5ex minus 0.5ex}
 \setcounter{secnumdepth}{3}
@@ -136,9 +137,9 @@
 \stepcounter{nejemplo}%                        Se incremente el contador y
 \addcontentsline{lde}{section}{%               se añade una línea al índice
 \protect\numberline{\thechapter.\thenejemplo}\descripcion}%  de ejemplos
-\vspace{-15mm}%                				   Se ajustan espacios
+\vspace{-14mm}%                				   Se ajustan espacios
 \verbatiminput{\ejemplopath\source}%          Se incluye el fichero fuente
-\vspace{-6mm}%                				   Se ajustan espacios
+\vspace{-5mm}%                				   Se ajustan espacios
 \rule[1mm]{\textwidth}{1pt}\newline %          Se inserta un \n y otra regla
 \begin{tabular}{|p{0.97\textwidth}|}%          Se abre una tabla para la
 \hline%\rowcolor[gray]{0.9}%                   descripción del ejemplo, con
@@ -150,7 +151,7 @@
 %%% Así se  evita que salgan páginas  pares vacías con las  cabeceras al
 %%% final de los temas.
 %%%
-\newcommand{\incluir}[1]{\include{#1}\newpage\thispagestyle{empty}}
+\newcommand{\incluye}[1]{\include{#1}\newpage\thispagestyle{empty}}
 
 %%%
 %%%  Definicion de \part, modificación de la definición de \part de ull.sty
