@@ -2,17 +2,17 @@
 
 clear;
 hold off;
-T=0.1;                      # periodo de muestreo
+T=0.001;                      # periodo de muestreo
 N=100;                      # numero de muestras
-W=3*(2*pi/T);               # frecuencia de la senoidal
+F=200;                  # frecuencia de la senoidal
 A=20*T;                     # ancho del escalon
 
 t=T*[0:N];                  # escala temporal
-f=(2*pi/T)*[-N/2:N/2]/N;    # escala en frecuencias
+f=(1/T)*[-N/2:N/2]/N;    # escala en frecuencias
 
 # la primera es la fft de un seno de 20Hz
 title("Seno de 20Hz");
-x1=sin(2*pi*W*t);
+x1=sin(2*pi*F*t);
 y1=fft(x1)/length(t);
 y1=fftshift(y1);
 
@@ -26,7 +26,7 @@ subplot(3,1,3);
 clearplot;
 plot(f,arg(y1),';fase;');
 
-pause(5);
+pause;
 
 # la segunda es la de un escalon centrado de ancho A sg.
 x2=abs(t-T*N/2)<(A/2);
