@@ -228,6 +228,41 @@ $ ./holamundo2
 Hola Pepe
 \end{verbatim}
 
+En FreePascal para Linux, al contrario que la versión windows de deste
+mismo compilador, hacer trazas a los programas es algo más complejo, y
+requiere un programa adicional: GNU Debugger (GDB). Para utilizar este
+programa con nuestros programas en Pascal, debemos añadir un parámetro
+adicional en la línea de comandos:
+
+\begin{verbatim}
+
+ppc386 -g programa.pas programa
+
+\end{verbatim}
+
+Con esto, ``Incrustamos'' el código fuente de nuestro programa en el
+interior del ejecutable, de forma que si ejecutamos gdb pasando como
+argumento el nombre del programa, podremos hacerle una traza. El
+siguiente sería un ejemplo de ejecución de un programa pascal desde
+gdb.
+
+\begin{verbatim}
+$ gdb programa
+
+(mensajes de inicio de gdb omitidos)
+(gdb) list
+1        program programa;
+2        var variable:string;
+3
+4 	 begin
+5               for a:=1 to 10 do
+6		begin
+7			readln(variable);
+8		end;
+9
+10       end.
+
+
 Con esta  breve presentación  ya sabemos  lo suficiente  para compilar
 prácticas en  Pascal, sólo queda  aprender el lenguaje y  pasar muchas
 horas escribiendo programas para llegar a ser auténticos programadores
