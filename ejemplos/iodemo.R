@@ -1,3 +1,4 @@
+#!/usr/bin/R --no-save <
 sink ("salida.txt")
 hoja.datos = read.table ("muestra.dat")
 attach (hoja.datos)
