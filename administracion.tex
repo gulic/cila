@@ -2,43 +2,59 @@
 
 \chapter{Administración básica}
 
-\section{Paquetes}
+\section{Paquetes de instalación}
 
-Un paquetes es un archivo que contiene varios ficheros que permiten la
-instalación de un programa. En linux existen varios tipos de paquetes,
-los más  conocidos son los *.rpm,  el tipo de paquetes  que fue creada
-por Red Hat  y que utilizan todas las dristribuciones  que se basan en
-ellas, *.deb,  que fue  creada por  el grupo  Debian, y  los tarballs,
-estos  son ficheros  comprimidos que  contienen el  código fuente  del
-programa y pueden instalarse en cualquier distribución.
+Un paquete es un archivo que  contiene varios ficheros que permiten la
+instalación de un programa. En linux existen varios tipos de paquetes:
 
-Una parte importante  de un sistema de paquetes  son las dependencias.
-Cada  paquete  necesita que  esten  instalados  en el  sistemas  otros
-paquetes  que  son  necesariospara  su  funcionamiento,  los  paquetes
-necesarios para  su instalación  se llaman dependencias.  Esto permite
-dar estabilidad y fiabilidad al sistema GNU/Linux.
+\begin{description}
+
+\item[RPM:] es el  tipo de paquetes más popular. Creada  por Red Hat y
+que utilizan la mayoría de las las distribuciones.
+
+\item[DEB:] creada por  el grupo  Debian.
+
+\item[TARBALLS:]  éstos  son  ficheros comprimidos  que  contienen  el
+código  fuente   del  programa   y  pueden  instalarse   en  cualquier
+distribución.
+
+\end{description}
+
+Una parte importante y muy delicada  de un sistema de paquetes son las
+dependencias.  Cada  paquete  necesita  que  estén  instalados  en  el
+sistemas otros paquetes que son necesarios para su funcionamiento, los
+paquetes  necesarios para  su instalación  se llaman  dependencias. Si
+esto no funciona, no asegurar  que el sistema funcione con estabilidad
+y fiabilidad al sistema GNU/Linux.
 
 % Continuar con lo de dependencias.
 
-\subsection{Sistema de Paquetes Deb}
+
+%Esto es de Félix
+\subsection{Sistema de paquetes RPM}
+
+
+
+\subsection{Sistema de paquetes Deb}
 
 Todos los paquetes deb tienen el siguiente formato:
 {\tt nombre-del-paquete\_version(1.3.34-5).deb}  
 
-La distribución Debian tiene  diversas utilidades para la instalaciónn
-de  paquetes,  entre ellas,  el  APT,  que  permie la  instalación  de
+La distribución  Debian tiene diversas utilidades  para la instalación
+de  paquetes,  entre  ellas,  APT,   que  permite  la  instalación  de
 paquetes de  forma fácil y  rápida, advirtiendo de las  dependencias y
 recomendando  paquetes. El  sistema APT  engloba varios  comandos como
 apt-get, apt-cache, apt-cdrom,...
 
 \subsection{El fichero /etc/apt/sources.list}
 
-Este fichero es impresindible para la instalación de paquetes con APT.
-En el se guardan las direcciones  de donde la utilidad apt se descarga
-los paquetes. Los medios por los  que se pueden descargar los paquetes
-son  varios: file(podemos  elegir  un directorio  albitrario de  donde
-bajarnos los  paquetes, esto es  útil para mirrors locales  o carpetas
-NTFS),de un  cdrom,de un servidor  web(http), de un ftp,  por rsh/ssh.
+Este fichero  es imprescindible  para la  instalación de  paquetes con
+APT. En  él se guardan  las direcciones de  donde APT se  descarga los
+paquetes. Los medios por los que  se pueden descargar los paquetes son
+varios: file(podemos elegir un directorio albitrario de donde bajarnos
+los paquetes, esto es útil para mirrors locales o carpetas NTFS),de un
+cdrom,de un servidor web(http), de un ftp, por rsh/ssh.
+
 Vamos a ver un ejemplo:
 
 \begin{verbatim}
@@ -48,48 +64,68 @@ deb-src http://http.us.debian.org/debian woody main contrib non-free
 \end{verbatim}
 
 La  diferencia entre  {\tt  deb} y  {\tt deb-src}  es  que el  primero
-indica  la descarga  de paquetes  .deb,  mientras que  con el  segundo
+indica la  descarga de  paquetes .deb, que  son ficheros  binarios, es
+decir,  preparados  para  ejecutarse,  mientras  que  con  el  segundo
 podemos descargarnos  el código  fuente del paquete(usando  el comando
-apt-get  source). La  siguiente parte  de la  línea es  el {\tt  URI},
-es  decir,  el  tipo  de  sistema para  la  descarga,  recordemos  que
-existen  varios(file,cdrom,ftp,http,rsh/ssh). En  este caso  es de  un
-servidor  web.  Seguidamente  escribimos  la  {\tt  localización}  del
-mirror  de paquetes,  este caso  tenemos varias  líneas con  diferente
-localización,  esto  es  debido  a  que  en  USA  es  ilegal  utilizar
-aplicaciones de  encriptación, por lo  que para bajar  esos programas,
-existen líneas especiales que contienen  la palabra non-US. Despues de
-la localización, separado  por un espacio, se escribe  la {\tt version
-de debian}, es válido tanto el alias  de la version como en qué estado
-se encuentra  (stable, unstable,testing).  Por último se  escriben las
-{\tt  secciones de  software} que  usaremos(main, contrib,  non-free).
-Debian organiza los paquetes en  varias carpetas segun su licencia. La
-sección {\tt main}  agrupa los paquetes en los que  su licencia cumple
-con los criterios de la  DGFS(``Guías de Debian del Software libre'').
-La sección {\tt contrib} agrupa  paquetes que tiene una licencia libre
-pero que sin embargo dependen de  otros paquetes que no cumple con las
-normas del  DGFS. Y  por último, la  sección {\tt  non-free} contienen
-paquetes que son de libre distribución pero que sin embargo no cumplen
-las  directrices de  la DGFS(no  distribuye el  código, no  se permite
+apt-get  source).
+
+La  siguiente  parte   de  la  línea  es  el  {\tt   URI},  es  decir,
+el  tipo  de   sistema  para  la  descarga,   recordemos  que  existen
+varios(file,cdrom,ftp,http,rsh/ssh). En  este caso  es de  un servidor
+web.
+
+Seguidamente escribimos la {\tt  localización} del mirror de paquetes,
+este caso  tenemos varias líneas  con diferente localización,  esto se
+debe  a que  en los  Estados Unidoas  es ilegal  utilizar aplicaciones
+de  encriptación,   así  que   para  bajar  esos   programas,  existen
+líneas  especiales que  contienen  la palabra  non-US.  Después de  la
+localización, separado por  un espacio, se escribe la  {\tt versión de
+debian}, es válido tanto el alias de  la version como en qué estado se
+encuentra (stable, unstable,testing).
+
+Por último  se escriben las  {\tt secciones de software}  que usaremos
+(main,  contrib, non-free).  Debian  organiza los  paquetes en  varias
+carpetas segun su licencia.
+
+\begin{itemize}
+
+\item La sección {\tt main} agrupa los paquetes en los que su licencia
+cumple con  los criterios  de la DGFS(``Guías  de Debian  del Software
+libre'').
+
+\item La sección {\tt contrib}  agrupa paquetes que tiene una licencia
+libre pero  que sin embargo dependen  de otros paquetes que  no cumple
+con las normas del DGFS.
+
+\item Y por  último, la sección {\tt non-free}  contienen paquetes que
+son  de  libre  distribución  pero  que sin  embargo  no  cumplen  las
+directrices  de  la  DGFS (no  distribuye  el  código,  no  se  permite
 redistribuir el código,etc).
 
+\end{itemize}
 
 \subsection{Apt-get}
 
 El comando {\bf  apt-get} se utiliza para la  manipulación de paquetes
 deb. Permite la instalación de paquetes, borrado, \dots
 
-%probar ha hacer tabla 
+%probar a hacer tabla 
 
 \begin{table}[htbp]
 \centering
 \begin{tabular}{|c|p{0.88\textwidh}|}
 \hline
-{\tt apt-get install paquete1 paquete2 ...} & Instala paquetes \\
-{\tt apt-get remove paquete1 paquete2 ...} & Borra paquetes \\
-{\tt apt-get source paquete1 paquete2 ...} & Descarga el código fuente de los paquetes \\
-{\tt apt-get update } & Actualiza la lista de paquetes disponibles para instalar \\
-{\tt apt-get upgrade } & Instala las nuevas  versiones de los diferentes paquetes disponibles \\
-{\tt apt-get dist-upgrade} & Funcion adicional de la opción upgrade que modifica las dependencias por la de las nuevas versiones de los paquete \\
+{\tt apt-get install paquete1 paquete2 ...} & Instala paquetes. \\
+{\tt apt-get remove paquete1 paquete2 ...} & Borra paquetes. \\
+{\tt apt-get source paquete1 paquete2 ...} & Descarga el código fuente
+de los paquetes. \\
+{\tt apt-get update } & Actualiza la lista de paquetes disponibles
+para instalar. \\
+{\tt apt-get upgrade } & Instala las nuevas  versiones de los
+diferentes paquetes disponibles. \\
+{\tt apt-get dist-upgrade} & Función adicional de la opción upgrade
+que modifica las dependencias por la de las nuevas versiones de los
+paquete. \\
 {\tt apt-get build-dep paquete1 paquete2 ...} & Instala los paquetes necesarios para la compilación del código fuente de los paquetes.\\
 {\tt apt-get clean} & Elimina los ficheros que se encuentran en /var/cache/apt/archives y /var/cache/apt/archives/partial. Ahí se encuentran los paquetes que hemos descargado para instalar.
 \hline
@@ -101,10 +137,13 @@ deb. Permite la instalación de paquetes, borrado, \dots
 \centering
 \begin{tabular}{|c|p{0.88\textwidth}|}
 \hline
-{\tt -d,--download-only} & Solo descarga el paquete, no lo instala \\
-{\tt -f,--fix-broken} & Esta opción es imporatante, intenta arreglar problemas de dependencias que tengamos en el sistema\\
-{\tt -s,--simulate} & Nos muestra los resultados de la instalación de un paquete\\
-{\tt -b,--build} & Compila el paquete de código fuente que hayamos bajado\\
+{\tt -d,--download-only} & Sólo descarga el paquete, no lo instala. \\
+{\tt -f,--fix-broken} & Esta opción es importante, intenta arreglar
+problemas de dependencias que tengamos en el sistema. \\
+{\tt -s,--simulate} & Nos muestra los resultados de la instalación de
+un paquete. \\
+{\tt -b,--build} & Compila el paquete de código fuente que hayamos
+bajado. \\
 \hline
 \end{tabular}
 \caption{Otras opciones del apt-get}
@@ -112,69 +151,72 @@ deb. Permite la instalación de paquetes, borrado, \dots
 
 \subsection{Apt-cache}
 
-El comando apt-cache trabaja con la  cache de los paquetes. El comando
-no manipula  el estado  del sistema,  por lo que  puede ser  usado por
-usuarios normales. Es  un comando de gran utilidad ya  que nos muestra
-información valiosa sobre los paquetes.
+El  comando apt-cache  trabaja  con  la caché  de  los paquetes.  Este
+comando no  manipula el  estado del  sistema, así  que lo  pueden usar
+usuarios normales. Es de gran  utilidad ya que nos muestra información
+valiosa sobre los paquetes.
 
 Algunas opciones más importantes:
 
-\begin{itemize}
+\begin{description}
 
-\item apt-cache show paquete1: Este comando muestra la cabezera de los
-paquetes.  Muestra  el  desarrollador,  las  dependencias,  una  breve
+\item [apt-cache show  paquete1:] Este comando muestra  la cabecera de
+los paquetes.  Muestra el  desarrollador, las dependencias,  una breve
 descripción  del mismo,  su tamaño,  el  nombre del  fichero donde  se
 encuentra, entre otros.
 
-\item apt-cache search texto: Muestra una lista de todos los paquete y
+\item [apt-cache search texto:] Muestra una lista de todos los paquete y
 una breve descripción relacionado con el texto que hemos buscado.
 
-\item  apt-cache depends  paquete: Muestra  las dependencias  de dicho
+\item  [apt-cache depends  paquete:] Muestra  las dependencias  de dicho
 paquete.
 
-\item apt-cache stats: Muestra la estadística de el cache.
+\item [apt-cache stats:] Muestra la estadística de el cache.
 
-\end{itemize}
+\end{description}
 
 \subsection{El fichero {\tt /etc/apt/apt.conf}}
 
 El fichero apt.conf sirve para la configuración por defecto de APT. En
-el  fichero podemos  por  ejemplo darle  las órdenes  al  APT para  la
-utilización de un  proxy. Podemos encontrar un ejemplo  del fichero en
-{\tt /usr/share/doc/apt/examples/configure-index.gz}
+el fichero podemos, por ejemplo, darle  las órdenes al APT para el uso
+de  un  proxy.  Podemos  encontrar  un ejemplo  del  fichero  en  {\tt
+/usr/share/doc/apt/examples/configure-index.gz}
 
 \subsection{Apt-cdrom}
 
-El comando apt-cdrom permite añadir nuevos cdrom al sources.list. Para
-añadir un cdrom la orden es {\tt apt-cdrom add}
+El comando  apt-cdrom permite añadir nuevos  CD-ROM's al sources.list.
+Para añadir un cdrom la orden es {\tt apt-cdrom add}
 
 
-\section{Los procesos}
+\section{La gestión de los procesos.}
 
-Un  proceso es  cualquier comando  que se  está ejecutando  en nuestro
-sistema. Todo proceso  tiene un PID, un número que  le identifica y le
-diferencia de todos los demás.  Una característa importate es que todo
-proceso tiene un estado: corriendo, durmiendo, zombie o parado.
+Un proceso es  cualquier instrucción o programa que en  ese momento se
+está ejecutando en nuestro sistema. Todo proceso tiene un PID (Process
+IDentifier), es decir, un número que  le identifica y le diferencia de
+todos los demás. Una característa importante es que todo proceso tiene
+un estado: corriendo, durmiendo, zombie o parado.
 
 \subsection{El comando kill}
 
-El  comando  kill  nos  permiter  interactuar  con  cualquier  proceso
-mandando  señales(signal). Cuando  ejecutamos {\tt kill  pid} lo  que
-hacemos es  mandar la señal de  TERM(terminar) con lo cual  se termina
-ese  proceso. Podemos  usar cualquier  otro tipo  de señal,  para ello
-utilizamos  {\tt kill signal  pid}.  Podemos conseguir  una lista  de
-señales usando {\tt kill -l}. Una señal útil para alunas ocasiones es
-{\tt -9}, esta señal fuerza a terminarl cualquier proceso.
+El comando kill nos permite interactuar con cualquier proceso mandando
+señales (signal). Cuando  ejecutamos {\tt kill pid} lo  que hacemos es
+mandar la señal de TERM(terminar) con  lo cual se termina ese proceso.
+Podemos usar cualquier  otro tipo de señal, para  ello utilizamos {\tt
+kill signal pid}.  Podemos conseguir una lista de  señales usando {\tt
+kill -l}. Una señal útil para alunas ocasiones es {\tt -9}, esta señal
+fuerza a  terminar cualquier proceso.  Como su nombre  indica, estamos
+matando el proceso.
 
 También podemos utilizar el comando  {\tt killall} con el que podemos
 mandar señales a un proceso utilizando el nombre, en vez del PID.
 
-Entre los procesos diferenciamos los que  se estan ejecuntando en 1º o
-2º plano.  Los que se ejutan  en primer plano son  los que interactúan
-con el  usuario en ese momento,  mientras que los procesos  en segundo
-plano se ejecutan pero están ocultos.
+Entre  los procesos  diferenciamos  los que  se  están ejecuntando  en
+$1^{er}$ o 2º  plano. Los que se  ejecutan en primer plano  son los que
+interactúan con el  usuario en ese momento, mientras  que los procesos
+en segundo plano se ejecutan pero están ocultos, y muy posiblemente el
+usuario no tenga constancia de que se esté ejecutando.
 
-Solo puede haber un proceso en  primer plano por consola. Eso nos deja
+Sólo puede haber un proceso en  primer plano por consola. Eso nos deja
 las  manos atadas  si no  estamos en  el entorno  gráfico. Para  poder
 ejecutar  varios  comandos,  lo  que podemos  hacer  es  ejecutar  los
 comandos en segundo plano. Para  ello solo tenemos que añadir \verb.&.
@@ -197,28 +239,28 @@ $ls
 [1]+  Running                 ls --color -R / >/dev/null &
 \end{verbatim}
 
-Aquí vemos  que estamos  ejecutando el  comando anterior.  El elemento
-{\tt [1]} nos  indica el número del proceso que  se está ejecutando en
-segundo  plano  y cual  es  su  estado,  en  este caso  {\tt  Running}
-(corriendo).  Seguidamente nos  muestra  cual es  el proceso.  Podemos
-utilizar también el comando {\tt fg}  para mandar un proceso al primer
-plano y el comando {\tt bg} para mandar el proceso a segundo plano.
+Aquí estamos ejecutando el comando anterior. El elemento {\tt [1]} nos
+indica  el número  del  proceso  que se  están  ejecutando en  segundo
+plano  y cuál  es su  estado. En  este caso  {\tt Running}(corriendo).
+Seguidamente nos muestra  cuál es el proceso  Podemos utilizar también
+el  comando {\tt  fg} para  mandar  un proceso  al primer  plano y  el
+comando {\tt bg} para mandar el proceso al segundo plano.
 
 \begin{verbatim}
 $fg
 ls --color -R / >/dev/null
 \end{verbatim}
 
-{\tt fg} manda el proceso a primer plano y nos muestra el programa que
-ha mandado.  Sí tenemos varios  procesos en segundo plano  añadimos el
-número del proceso.
+{\tt fg}  manda el proceso al  primer plano y nos  muestra el programa
+que ha mandado.  Si tenemos varios procesos en  segundo plano añadimos
+el número del proceso.
 
-El comando  {\tt bg}  se utiliza cuando  tenemos por  ejemplo procesos
-suspendidos.  Los   procesos  suspendidos  son  programas   que  estan
-``parados'', es  decir, no consumen ni  CPU ni memoria, y  que podemos
-volver  a poner  en marcha  en  cualquier momento.  Para suspender  un
-proceso utilizamos  la combinación de  teclas {\tt C-z}, al  igual que
-para interrurmpir un proceso utilizamos {\tt C-c}.
+El comando {\tt  bg} se utiliza cuando tenemos,  por ejemplo, procesos
+suspendidos. Estos  procesos son  programas que están  ``parados'', es
+decir, no consumen ni CPU ni memoria,  y que podemos volver a poner en
+marcha en cualquier  momento. Para suspender un  proceso utilizamos la
+combinación de teclas {\tt Ctrl + Z}, al igual que para interrumpir un
+proceso utilizamos {\tt Ctrl + C}.
 
 \begin{verbatim}
 $jobs
@@ -230,8 +272,8 @@ Esta tarea está parada(Stopped).
 \subsection{El comando ps}
 
 El  comando {\tt  ps} permite  mostrar  todos los  procesos que  están
-corriendo  en nuestro  sistema. Veamos  una  parte de  una salide  del
-coamndo ps:
+corriendo  en nuestro  sistema. Veamos  una  parte de  una salida  del
+comando ps:
 
 \begin{verbatim}
 $ps -aux
@@ -247,9 +289,9 @@ faraox    1363  0.0  0.8  2740 1564 pts/2    S    18:57   0:00 -bash
 \end{verbatim}
 
 Los parámetros  xau nos permiten ver  todos los procesos que  se están
-ejecutando. El parámetro {\tt a} muestra lo que se está ejecutando en
-las tty conocidas, el parámetro {\tt x}  añade los procesos que no se
-conece la  tty en la  que se están  ejecutando y {\tt u}  muestra los
+ejecutando. El parámetro {\tt a} muestra  lo que se está ejecutando en
+las tty conocidas,  el parámetro {\tt x} añade los  procesos que no se
+conece la  tty en  la que se  están ejecutando y  {\tt u}  muestra los
 usuarios que están ejecutando esos procesos.
 
 Algunas partes  de la salida  le serán conocidas. La  columna ``USER''
@@ -258,12 +300,12 @@ de proceso, ``\%CPU''  es el porcentaje de CPU que  está utilizando al
 igual que  ``\%MEM'' es el  porcentaje de memoria. También  incluye la
 cantidad de  memoria en kylobytes  que ha utilizado dicho  proceso, se
 muestra en  la columan ``RSS''.La  columna ``TTY'' muestra  la consola
-desde  la que  se  está  ejecutando. ``STAT''  nos  muestra el  estado
-del proceso:S(drmiendo),R(corriendo),T(parado),Z(zombie). Las opciones
+desde la  que se está ejecutando.  ``STAT'' nos muestra el  estado del
+proceso:S(drmiendo), R(corriendo), T(parado),  Z(zombie). Las opciones
 ``W''  y ``N''  son especiales  para procesos  del kernel.  La columna
 ``START'' muestra  la hora a  la que empezó  el proceso, y  la columna
 ``TIME'' muestra el tiempo de CPU que ha usado el proceso desde que se
-inicio  y  ``COMMAND'' muestra  el  nombre  del  comando que  se  está
+inició  y  ``COMMAND'' muestra  el  nombre  del  comando que  se  está
 ejecutando.
 
 \subsection{El comando top}
@@ -307,72 +349,67 @@ PID USER     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME COMMAND
 
 \subsection*{Nice:prioridad en procesos}
 
-Una CPU tiene que comprartir su tiempo de cálculo con varios procesos.
+Una CPU tiene que compartir su  tiempo de cálculo con varios procesos.
 {\tt  Nice} es  un programa  que permite  cambiar la  prioridad de  un
 proceso en  nuestro sistema. La prioridad  tiene un rango desde  -20 a
 20.  Un usuario  normal  tiene prioridad  0  cuando ejecuta  cualquier
-comando desde la consola. Con el comando nice, ese usuario normal solo
-puede  bajar la  prioridad del  proceso, nunca  subirlo, solo  root es
-capaz de ello.
+comando desde la consola. Con el comando nice, ese usuario normal sólo
+puede  bajar la  prioridad del  proceso, nunca  subirlo, sólo  root es
+capaz de  ello. El  esquema de utilización  sería: {nice  -n prioridad
+comando}  o  también podemos  utilizar  el  comando {\tt  rnice}  para
+cambiar la prioridad de un proceso: {\tt renice prioridad PID}
 
-El esquema de utilización sería: {nice -n prioridad comando} o también
-podemos utilizar el  comando {\tt rnice} para cambiar  la prioridad de
-un proceso: {\tt renice prioridad PID}
-
-\section{Los servicios en debian}
+\section{Los servicios en Debian}
 
 Los servicios o demonios son  procesos que se ejecutan automáticamente
 al  arrancar  el  sistema  o  al llamarlos  y  que  esperan  cualquier
 petición.  Es el  caso por  ejemplo de  Apache, Qmail,  SSH, etc.  Los
 servicios normalmente se  inician al iniciar el  sistema, pero podemos
-iniciarlo(start),  pararlo(stop)  o  reiniciandolo,  sería  así:  {\tt
+iniciarlo(start),  pararlo(stop)  o  reiniciándolo,  sería  así:  {\tt
 /etc/init.d/servicio opción}.
 
 Para  que el  servicio  no  se inicie  cuando  arrancamos el  sistema,
-podemos usar el comando update-rc.d. Este comando lo que hace es crear
-enlaces  a los  diferentes directorios  de runlevels.  Para que  no se
-inicie  automáticamente: {\tt  update-rc.d -f  servicio remove}.  Para
-añadir un servicio, simplemente creamos  el script de nuestro servicio
-en Bourne  Shell Script y  lo copiamos al directorio  /etc/init.d/. Si
-queremos que  se inicie  automáticamente al arrancar  escribimos: {\tt
-update-rc.d servicio defaults}
-
+podemos  usar el  comando  update-rc.d. Este  comando  crea enlaces  a
+los  diferentes  directorios  de  runlevels. Para  que  no  se  inicie
+automáticamente: {\tt update-rc.d -f  servicio remove}. Para añadir un
+servicio, simplemente creamos el script  de nuestro servicio en Bourne
+Shell Script y lo copiamos al directorio /etc/init.d/. Si queremos que
+se  inicie automáticamente  al arrancar  escribimos: {\tt  update-rc.d
+servicio defaults}
 
 \section{Los archivos de registro }
 
-Los ficheros de registro(logging files)  se almecenan los resultados e
-información  util  de algunos  programas.  Estos  son muy  importantes
-para  conocer el  estado de  nuestra máquina.  Los ficheros  log's más
-importantes se encuentran en la carpeta {\tt /var/log/}. Normalmente,
-los ficheros log se pueden visualizar con cualquier editor de texto ya
+Los ficheros de registro (logging files) se almacenan los resultados e
+información útil de algunos programas.  Éstos son muy importantes para
+conocer el  estado de  nuestra máquina. Los  ficheros de  registro más
+importantes se encuentran en  la carpeta {\tt /var/log/}. Normalmente,
+estos ficheros se  pueden visualizar con cualquier editor  de texto ya
 que están guardados en un fichero ASCII.
 
-\begin{itemize}
+\begin{description}
 
-\item El  fichero syslog.  El fichero  syslog es  el resultado  de los
-mensajes  de el  demonio Syslogd.  Este de  demonio se  encarga de  la
-organización de los mensajes del kernel,  es por eso que en el fichero
-syslog podemos  enontrar toda  la información sobre  lo que  ocurre en
-nuestra máquina.
+\item [syslog:] El fichero syslog es  el resultado de los mensajes del
+demonio Syslogd.  Este demonio  se encarga de  la organización  de los
+mensajes del  kernel, así  que en el  fichero syslog  podemos enontrar
+toda la información sobre lo que ocurre en nuestra máquina.
 
-\item El  fichero messages. Este  fichero es  igual al syslog,  lo que
-muestra información más simple. En el podemos controlar por ejemplo la
+\item  [messages:]  Este fichero  es  igual  al syslog,  pero  muestra
+información  más simple.  En  el podemos  controlar,  por ejemplo,  la
 información del demonio pppd.
 
-\item  Los ficheros  \verb+~/.bash\_history+. Estos  ficheros muestran
-los  comandos  que han  sido  ejecutados  por  los usuarios  desde  la
-consola.
+\item [\verb+~/.bash\_history+:] Estos  ficheros muestran los comandos
+que han sido ejecutados por los usuarios desde la consola.
 
-\item El fichero  wtmp. En el hay un listado  de todas las conecciones
-que ha  tenido la máquinamientras  ha permanecido encendida.  Se puede
-visulizar con el comando last.
+\item [wtmp:]  En el  hay un  listado de todas  las conexiones  que ha
+tenido la máquina mientras ha permanecido encendida. Se puede leer con
+el comando {\tt last}.
 
-\end{itemsize}
+\end{description}
 
 
-Normalmente  cada  demonio  tiene  un fichero  de  registro  así  como
-muchos  programas   también  lo   tienen.  Solo   hay  que   mirar  la
-documentación. Los log's  de nuestro servidor de  correo se encuentran
+Normalmente cada  demonio tiene  un fichero de  registro al  igual que
+otros  muchos programas.  Sólo  hay que  mirar  la documentación.  Los
+ficheros  de registro  de  nuestro servidor  de  correo se  encuentran
 en  /var/log/mail.log,  así  como  los del  Apache  se  encuentran  en
 /var/log/apache,etc.
 
@@ -396,8 +433,7 @@ tiempos, 1,5 y 15 minutos.
 
 \subsection*{w}
 
-Muestra  los usuarios  que  se  encuentran en  el  sistema. Veamos  un
-ejemplo:
+Muestra los usuarios que se encuentran en el sistema. Veamos un ejemplo:
 
 \begin{verbatim}
 $w
@@ -410,15 +446,16 @@ faraox   pts/0    :0.0             16:02    9.00s 40.22s 40.16s  vi administraci
 La primera  línea que muestra  el comando {\tt w}  es la salida  de el
 comando  {\tt uptime}.  Por orden,  la información  que muestra  es el
 nombre de usuario,  la consola desde donde ha entrado,  desde donde se
-conecta, la  hora de entrada, el  idle, el tiempo usado  por todos los
-procesos  de  esa  consola(tty),  el tiempo  usado  por  los  procesos
-actuales y lo que está haciendo el usuario.
+conecta, la  hora de  entrada, el tiempo  que ha  permanecido inactivo
+(idle), el tiempo usado por todos los procesos de esa consola(tty), el
+tiempo  usado por  los procesos  actuales y  lo que  está haciendo  el
+usuario.
 
 \subsection*{free}
 
 El  comando {\tt  free}  muestra  información sobre  el  estado de  la
 memoria del  sistema. Muestran  tanto el estado  de la  memoria física
-como de  la swap. También muestra  el buffer utilizado por  el kernel.
+como de  la swap. También muestra  el búffer utilizado por  el kernel.
 Una salida del comando {\tt free}
 
 \begin{verbatim}
@@ -436,3 +473,23 @@ Este comando lee la información del fichero /proc/meninfo.
 Este comando  muestra los  mensajes del kernel  durante el  inicio del
 sistema.
 
+%%Esta parte es de -ese
+
+\section{Gestión de usuarios}
+
+\subsection*{Añadiendo nuevos usuarios}
+\subsection*{Modificando propiedades de usuarios}
+\subsection*{Eliminando usuarios}
+
+\section{Gestión de grupos}
+
+\subsection*{Añadiendo nuevos grupos}
+\subsection*{Añadiendo y eliminando usuarios de los grupos}
+\subsection*{Eliminando grupos}
+
+\section{El Kernel: configuración y manejo}
+
+\subsection*{Las fuentes del Kernel}
+\subsection*{Los módulos del Kernel}
+\subsection*{Configuración del Kernel}
+\subsection*{Compilación del Kernel}
