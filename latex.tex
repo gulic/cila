@@ -1,15 +1,18 @@
+%Author: tbd
+
+\chapter{\LaTeX}
 
 \section{Introducción preliminar}
 
-\LaTeX~\cite{manual}   es  un   sistema  de   composición  de   textos
+\LaTeX~\cite{llmanual}   es  un   sistema  de   composición  de   textos
 especialmente orientado  a la  creación de documentos  científicos que
 contengan fórmulas matemáticas. Además,  también se pueden crear otros
 tipos  de documentos,  que  pueden ser  desde  cartas sencillas  hasta
 libros completos. \LaTeX\ está organizado sobre \TeX~\cite{texbook}.
 
-Este  capítulo está  dedicado a  \LaTeX\  y pretende  versar sobre  lo
+Este  tema está  dedicado a  \LaTeX\  y pretende  versar sobre  lo
 básico que se debe poder emplear  en la mayoría de las aplicaciones de
-\LaTeX.  Existen  diversos manuales~\cite{manual,companion}  donde  se
+\LaTeX.  Existen  diversos manuales~\cite{llmanual,companion}  donde  se
 encuentra una descripción completa de \LaTeX.
 
 \LaTeX\  está  disponible  para  la  mayoría  de  los  miniordenadores
@@ -19,26 +22,26 @@ al instante. Normalmente existe  una \guialatex donde podrás averiguar
 cómo acceder a la  instalación de \LaTeX, cómo se opera  con ella y de
 qué complementos se dispone.
 
-El propósito  de este  capítulo \emph{no} es  indicar cómo  se instala
+El propósito  de este  tema \emph{no} es  indicar cómo  se instala
 y  se  mantiene un  sistema  de  \LaTeX,  sino mostrar  cómo  escribir
 documentos para poderlos procesar con \LaTeX.
 
 \bigskip
 \noindent Esta descripción se divide en cuatro apartados:
 \begin{description}
-\item[El 1$^\text{er}$ apartado] muestra la estructura básica de los
+\item[El primer apartado] muestra la estructura básica de los
   documentos de \LaTeXe. También se enseña un poco de la historia de
-  \LaTeX. Tras leer este capítulo deberías tener una visión muy
+  \LaTeX. Tras leer este tema deberías tener una visión muy
   escueta de \LaTeX. Esta visión consistirá sólo de un pequeño ``marco
   de trabajo'' en el que podrá integrar la información que se
   proporcionamos en los demás apartados y la que podrás hallar en
-  otras fuentes ---como los manuales~\cite{manual,companion}---.
-\item[El 2$^\text{o}$ apartado] incide en los detalles sobre la
+  otras fuentes ---como los manuales~\cite{llmanual,companion}---.
+\item[El segundo apartado] incide en los detalles sobre la
   composición de los documentos. En este aparatdos se explican la
   mayoría de las instrucciones y los entornos básicos de \LaTeX. Una
   vez leído este apartado serás capaz de escribir tus primeros
   documentos.
-\item[En el 3$^\text{er}$ apartado] se explican algunas nociones sobre
+\item[En el tercer apartado] se explican algunas nociones sobre
   cómo componer fórmulas matemáticas con \LaTeX. Aquí te presentamos
   varios ejemplos para ayudarte a entender una de las principales
   potencialidades de \LaTeX.
@@ -49,12 +52,12 @@ documentos para poderlos procesar con \LaTeX.
   de materias en su documento.
 \end{description}
 %
-\bigskip
+%\bigskip
 \noindent Es importante que leas estos apartados por orden. Por favor,
 lee cuidadosamente los ejemplos, ya que en ellos es donde se encuentra
 gran parte de la información útil.
 %
-\bigskip
+%\bigskip
 \noindent Si necesitas cualquier material relacionado con \LaTeX,
 puedes recurrir a cualquiera de los servidores de archivos de
 \texttt{CTAN}\@. En la República Federal de Alemania es
@@ -62,23 +65,23 @@ puedes recurrir a cualquiera de los servidores de archivos de
 También existen diversos espejos. Si no te encuentras en uno de estos
 países, por favor elije el servidor más cercano.
 
-\vspace{\stretch{1}}
+%\vspace{\stretch{1}}
 \noindent Si tienes ideas sobre algo que debería ser añadido o
 alterado en este documento, por favor hazlo saber. Estamos
 especialmente interesados en los principiantes con \LaTeX.
-\bigskip
-\begin{verse}
-\contrib{Tomás Bautista}{bautista@iuma.ulpgc.es}%
-{División de SICAD, Instituto Universitario de Microelectrónica
-  Aplicada, Universidad de Las Palmas de G.C.}
-\end{verse}
-\endinput
+%\bigskip
+%\begin{verse}
+%\contrib{Tomás Bautista}{bautista@iuma.ulpgc.es}%
+%{División de SICAD, Instituto Universitario de Microelectrónica
+%  Aplicada, Universidad de Las Palmas de G.C.}
+%\end{verse}
+%\endinput
 \section{Lo que es fundamental saber}
 \begin{intro}
   En la primera parte de este apartado te presentamos una visión
   general de la filosofía e historia de \textrm{\LaTeXe}. En la
   segunda parte se incide en las estructuras básicas de un documento
-  de \LaTeX. Tras leer este capítulo, podrás tener un conocimiento
+  de \LaTeX. Tras leer este tema, podrás tener un conocimiento
   básico del modo de funcionamiento de \LaTeX. Cuando continúes
   leyendo, la información de este apartado te ayudará a integrar toda
   la información adicional que puedas obtener sobre \LaTeX, tanto en
@@ -87,7 +90,7 @@ especialmente interesados en los principiantes con \LaTeX.
 
 \subsection{El nombre del juego}
 
-\subsubsubsection{\TeX}
+\paragraph{\TeX}
  
 \TeX\ es un programa de ordenador de Donald E.~Knuth~\cite{texbook}.
 Está orientado a la composición e impresión textos y fórmulas
@@ -103,12 +106,12 @@ alemana ``Buch'' o en la escocesa ``Loch''. Este es el sonido de una
 % es más utilizado que la clásica `j' castellana, que es bastante
 % más fuerte.
 
-\subsubsubsection{\LaTeX}
+\paragraph{\LaTeX}
  
 \LaTeX\ es un paquete de macros que te permite componer e imprimir más
 fácilmente un documento con la calidad tipográfica de \TeX, empleando
 para ello patrones definidos. Originalmente, \LaTeX{} lo escribió
-\index{Lamport, Leslie}Leslie Lamport~\cite{manual}. Utiliza el
+\index{Lamport, Leslie}Leslie Lamport~\cite{llmanual}. Utiliza el
 cajista \TeX{} como elemento de composición.
 
 Desde diciembre de 1994, el paquete \LaTeX{} está siendo actualizado
@@ -128,7 +131,7 @@ hispanohablantes se ha aceptado ``La-tegh''. Para referirnos a
 empeñamos en decir ``Lategh dos e''--- y se puede escribir
 \texttt{LaTeX2e}.
 
-\subsubsubsection{Conceptos básicos}
+\paragraph{Conceptos básicos}
  
 \paragraph{Autor, diseñador y cajista}
 
@@ -280,7 +283,7 @@ Contiene tanto el texto que se debe imprimir como las
 ``instrucciones'', con las cuales le puedes indicar a \LaTeX\ cómo
 debe disponer el texto.
 
-\subsubsubsection{Signos de espacio}
+\paragraph{Signos de espacio}
 
 Los caracteres ``invisibles'', como el espacio en blanco, el tabulador
 y el final de línea, son tratados por \LaTeX\ como signos de
@@ -305,7 +308,7 @@ Con una línea vacía se
 empieza un párrafo nuevo.
 \end{example}
  
-\subsubsubsection{Caracteres especiales}
+\paragraph{Caracteres especiales}
 
 Los símbolos siguientes son \wi{caracteres reservados} que tienen un
 significado especial para \LaTeX{} o que no están disponibles en todos
@@ -328,7 +331,7 @@ Los restantes símbolos y otros muchos caracteres especiales se pueden
 imprimir en fórmulas matemáticas o como acentos con órdenes
 específicas.
 
-\subsubsubsection{Las órdenes de \LaTeX{}}
+\paragraph{Las órdenes de \LaTeX{}}
 
 En las órdenes\index{ordenes@órdenes} de \LaTeX{} se distinguen las
 letras mayúsculas y las minúsculas. Toman uno de los dos formatos
@@ -386,7 +389,7 @@ línea justamente aquí!%
 \linebreak[3] Gracias.
 \end{example}
 
-\subsubsubsection{Comentarios}
+\paragraph{Comentarios}
 \index{comentarios}
 
 Cuando \LaTeX{} encuentra un carácter \verb|%| mientras procesa un
@@ -489,7 +492,7 @@ estupendo.
  
 \subsection{El formato del documento}
  
-\subsubsubsection{Clases de documentos}\label{sec:documentclass}
+\paragraph{Clases de documentos}\label{sec:documentclass}
 
 Cuando procesa un fichero de entrada, lo primero que necesita saber
 \LaTeX{} es el tipo de documento que quieres crear. Esto se
@@ -593,7 +596,7 @@ coloquiales, con fuente de 11 puntos--- y que produzca un formato para
 impresión a \emph{doble cara} en \emph{papel DIN-A4}.
 
 \pagebreak[2]
-\subsubsubsection{Paquetes}
+\paragraph{Paquetes}
 \index{paquete} Mientras escribes el documento, probablemente te
 encuentres en situaciones donde el \LaTeX{} básico no basta para
 realizar lo que buscas. Si deseas incluir \wi{gráficos}, \wi{texto en
@@ -664,7 +667,7 @@ propias extensiones a \LaTeXe.
 % Puntero a información de los paquetes
 %
 
-\subsubsubsection{Estilo de página}
+\paragraph{Estilo de página}
 
 Con \LaTeX{} existen tres combinaciones predefinidas de \wi{cabeceras}
 y \wi{pies de página}, a las que se llaman estilos de
@@ -750,8 +753,8 @@ hayan espacios entre los nombres de los ficheros y las comas.
 \section{Composición del texto}
 
 \begin{intro}
-  Tras leer este capítulo deberiás conocer los elementos básicos de
-  los que se compone un documento de \LaTeXe. En este capítulo
+  Tras leer este tema deberiás conocer los elementos básicos de
+  los que se compone un documento de \LaTeXe. En este tema
   completaremos la estructura sobre la que normalmente se trabaja
   para componer documentos reales.
 \end{intro}
@@ -995,7 +998,7 @@ Stra\ss e
 \index{acento!ortográfico}
 \index{oe@\oe}
 
-\bigskip
+%\bigskip
 \end{lined}
 \end{table}
  
@@ -1112,7 +1115,7 @@ seccionado:
 \begin{code}
 \ci{section}\verb|{...}           |\ci{paragraph}\verb|{...}|\\
 \ci{subsection}\verb|{...}        |\ci{subparagraph}\verb|{...} |\\
-\ci{subsubsubsection}\verb|{...}     |\ci{appendix}
+\ci{paragraph}\verb|{...}     |\ci{appendix}
 \end{code}
 
 Con las clases \texttt{report} y \texttt{book} puedes utilizar dos
@@ -1554,7 +1557,7 @@ documento.
  fuente de frustaciones porque \LaTeX{} nunca los pone donde
  quieres que vayan.
 
-\bigskip
+%\bigskip
 Primeramente, echemos un vistazo a las instrucciones que \LaTeX{}
 proporciona para objetos flotantes.
 
@@ -1633,7 +1636,7 @@ desplaza al resto de las figuras al final del documento. Por lo tanto:
   las dos colas de objetos flotantes.
 \end{quote}                 
 
-\bigskip
+%\bigskip
 \noindent Además, existen algunas cosas más que se deben indicar
 sobre los entornos \ei{table} y \ei{figure}. Con la instrucción
 \begin{command}
@@ -1735,7 +1738,7 @@ Los dos ejemplos siguientes deberían ayudarte a captar la idea. El
 primer ejemplo define una instrucción nueva llamada \verb|\udl|. Esta
 es una forma abreviada de introducir ``Una Descripción de \LaTeXe''.
 Una orden como ésta sería muy útil si tuviéramos que escribir el
-título de este capítulo una y otra vez.
+título de este tema una y otra vez.
 
 \begin{example}
 \newcommand{\udl}
@@ -1773,7 +1776,7 @@ ignora esta otra definición que acabaras de indicar.
 
 De modo análogo a la instrucción \verb|\newcommand| existe una orden
 para crear tus propios entornos. Cuando estábamos escribiendo este
-capítulo, hemos creado entornos especiales para estructuras que se
+tema, hemos creado entornos especiales para estructuras que se
 empleaban repetidamente en toda la descripción: ``ejemplos'',
 ``segmentos de código'' y ``cajas de definición de instrucciones''.
 La instrucción \ci{newenvironment} utiliza la siguiente sintaxis:
@@ -2373,7 +2376,7 @@ Si necesitas componer a menudo segmentos de texto como éste, ahora es
 el momento idóneo para practicar la instrucción
 \verb|\newenvironment|. Empléala para crear un entorno especializado
 para describir variables.\index{descripción de variables} Revisa la
-descripción al final del capítulo anterior.
+descripción al final del tema anterior.
 
 \subsection{Teoremas, leyes\ldots}
 
@@ -2825,7 +2828,7 @@ $\mathbb{ABC}$
 \begin{intro}
   Si ya te sientes lo sucifientemente seguro de tí mismo, entonces
   ahora ya puedes comenzar a escribir tus documentos en \LaTeX. El
-  propósito de este capítulo es añadir algunas `especias'\ a tus
+  propósito de este tema es añadir algunas `especias'\ a tus
   conocimientos de \LaTeX. En el {\normalfont\manual{}} y {\normalfont
     \companion} podrás encontrar una descripción más completa de las
   especialidades y de las posibles mejoras que puedes realizar con

@@ -73,13 +73,6 @@
 \newcommand{\TIL}{Taller de Iniciación a Linux}
 \newcommand{\TILA}{Taller de Iniciación a Linux para Alumnos}
 
-% Extraido del cila-latex.sty proporcionado por Tomás Bautista:
-\newcommand{\manual}{Manual de \emph{\LaTeX{}}~\cite{manual}} 
-\newcommand{\companion}{\emph{The \LaTeX{} Companion}~\cite{companion}} 
-\newcommand{\guialatex}{\emph{Gu\'{\i}a Local}~\cite{local}}
-\newcommand{\contrib}[3]{#1\quad$<$\texttt{#2}$>$%
-{\small\\\quad\textit{#3}}\\[1ex]}
-
 
 %%%
 %%% Anula la conversión a mayúsculas
@@ -160,6 +153,7 @@
 %%% final de los temas.
 %%%
 \newcommand{\incluye}[1]{\include{#1}\newpage\thispagestyle{empty}}
+
 
 %%%
 %%%  Definicion de \part, modificación de la definición de \part de ull.sty
@@ -335,5 +329,145 @@
     \vskip 40\p@
   }}
 
-\endinput
+%\endinput
 
+
+%%%
+%%%  Extraido de cila-latex.sty (de Tomás Bautista)
+%%%
+\newcommand{\manual}{Manual de \emph{\LaTeX{}}~\cite{manual}} 
+\newcommand{\companion}{\emph{The \LaTeX{} Companion}~\cite{companion}} 
+\newcommand{\guialatex}{\emph{Gu\'{\i}a Local}~\cite{local}}
+\newcommand{\contrib}[3]{#1\quad$<$\texttt{#2}$>$%
+{\small\\\quad\textit{#3}}\\[1ex]}
+%
+% Algunas instrucciones para ayudar a la creación del índice de
+% materias.
+%
+%\newcommand{\bs}{\symbol{'134}}%Print backslash
+\ifx\bs\undefined
+  \newcommand{\bs}{\symbol{92}}%Print backslash
+\else
+  \renewcommand{\bs}{\symbol{92}}%Print backslash
+\fi
+%\newcommand{\bs}{\ensuremath{\mathtt{\backslash}}}%Imprime barra invertida
+% Entrada en el índice para una orden
+\newcommand{\cih}[1]{%
+\index{\LaTeX!instrucciones!#1@\texttt{\bs#1}}%
+\index{\LaTeX!#1@\texttt{\hspace*{-1.2ex}\bs #1}}}
+\newcommand{\ci}[1]{\cih{#1}\texttt{\bs#1}}
+%Package
+\newcommand{\pai}[1]{%
+\index{\LaTeX!paquetes!#1@\textsf{#1}}%
+\index{\LaTeX!#1@\textsf{#1}}%
+\textsf{#1}}
+% Entrada en el índice de entorno
+\newcommand{\ei}[1]{%
+\index{\LaTeX!entornos!\texttt{#1}}%
+\index{\LaTeX!#1@\texttt{#1}}%
+\texttt{#1}}
+% Entrada en el índice para mensajes
+\newcommand{\wni}[1]{%
+\index{\LaTeX!mensaje!\texttt{#1}}%
+\texttt{#1}}
+% Entrada en el índice de una palabra
+\newcommand{\wi}[1]{\index{\LaTeX!#1}\LaTeX!#1}
+%
+% Instrucciones de composición
+%
+\newenvironment{command}%
+    {\nopagebreak\par\small\addvspace{3.2ex plus 0.8ex minus 0.2ex}%
+     \vskip -\parskip
+     \noindent%
+     \begin{tabular}{|l|}\hline\rule{0pt}{1em}\ignorespaces}%
+    {\\\hline\end{tabular}\par\nopagebreak\addvspace{3.2ex plus 0.8ex
+        minus 0.2ex}%
+     \vskip -\parskip}
+%
+% Composición de fragmentos de código
+%
+\newenvironment{code}{\begin{quote}}{\end{quote}}
+%
+% Entorno Intro
+\newenvironment{intro}{\sffamily}{\vspace*{2ex minus 1.5ex}}
+%
+%
+% Entrada de símbolo para la tabla de símbolos matemáticos
+%
+\newcommand{\X}[1]{$#1$&\texttt{\string#1}\hspace*{1ex}}
+% Text normal.... 
+\newcommand{\SC}[1]{#1&\texttt{\string#1}\hspace*{1ex}}
+% para los acentos en modo texto
+\newcommand{\A}[1]{#1&\texttt{\string#1}\hspace*{1ex}}
+\newcommand{\B}[2]{#1#2&\texttt{\string#1{} #2}\hspace*{1ex}}
+
+\newcommand{\W}[2]{$#1{#2}$&
+  \texttt{\string#1}\texttt{\string{\string#2\string}}\hspace*{1ex}}
+\newcommand{\Y}[1]{$\big#1$ &\texttt{\string#1}}  %
+% Tabla de símbolos matemáticos
+\newsavebox{\symbbox}
+\newenvironment{symbols}[1]%
+{\par\vspace*{2ex}
+\renewcommand{\arraystretch}{1.1}
+\begin{lrbox}{\symbbox}
+\hspace*{4ex}\begin{tabular}{@{}#1@{}}}%
+{\end{tabular}\end{lrbox}\makebox[\textwidth]{\usebox{\symbbox}}\par\medskip}
+%
+% Imprimir |--| para mostrar distancia
+%
+\newcommand{\demowidth}[1]{\rule{0.3pt}{1.3ex}%
+\rule{#1}{0.3pt}\rule{0.3pt}{1.3ex}}
+%
+%
+% --- ejemplo ----
+% Este es un entorno para mostrar ejemplso en LaTeX.
+% En la parte izquierda se muestra el texto fuente
+% y en la derecha la composición.
+%
+% \begin{example}
+% \Large Esto es grande
+% \end{example}
+%
+% Esta parte procede de verbaim.sty de FMi
+% 
+\newwrite\example@out
+\newenvironment{example}%
+ {\begingroup% Lets Keep the Changes Local
+  \@bsphack
+  \immediate\openout \example@out \jobname.exa
+  \let\do\@makeother\dospecials\catcode`\^^M\active
+  \def\verbatim@processline{%
+    \immediate\write\example@out{\the\verbatim@line}}%
+  \verbatim@start}%
+ {\immediate\closeout\example@out\@esphack\endgroup%
+%
+% Y aquí lo que se ha añadido
+%
+  \par\small\addvspace{3ex plus 1ex}\vskip -\parskip
+  \noindent
+  \makebox[0.45\linewidth][l]{%
+  \begin{minipage}[t]{0.45\linewidth}
+    \vspace*{-2ex}
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{1ex plus 0.4ex minus 0.2ex}
+    \begin{trivlist}
+      \item\input{\jobname.exa}
+    \end{trivlist}
+  \end{minipage}}%
+  \hfill%
+  \makebox[0.5\linewidth][l]{%
+  \begin{minipage}[t]{0.50\linewidth}
+    \vspace*{-1ex}
+    \verbatiminput{\jobname.exa}
+  \end{minipage}}
+  \par\addvspace{3ex plus 1ex}\vskip -\parskip
+}
+
+\newenvironment{lined}[1]%
+ {\begin{center}\begin{minipage}{#1}\hrule\medskip}
+ {\vspace{-1ex}\hrule \end{minipage}\end{center}}
+
+%%%
+%%%  Añadidos para poder compilar 
+%%%
+\newcommand{\guia}{Guía local}

@@ -82,6 +82,7 @@ EXAMPLES = 	ejemplos/HolaMundo.for 		\
 all: $(FILES) $(IMAGES) $(EJEMPLOS)
 	latex book
 	makeindex book.idx
+	latex book
 	bibtex book
 	latex book
 	dvips -o $(NAME).ps book.dvi
@@ -109,6 +110,6 @@ install: $(FILES) $(IMAGES) $(EJEMPLOS) $(NAME).ps
 
 clean:
 	rm -f *~ *.aux *.log *.dvi *.idx *.ilg *.ind *.toc *.bbl \
-	      *.blg *.lot *.lof *.lde
+	      *.blg *.lot *.lof *.lde *.exa
 	rm -rf main
 
