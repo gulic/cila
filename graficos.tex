@@ -4,8 +4,10 @@
 
 \section{The GIMP}
 
+\subsection{Introducción}
+
 {\sf The GIMP} es el Programa  de Manipulación de Imágenes de GNU (GNU
-Image Manipulation  Program). Es  un programa  libremente distribuible
+Image Manipulation  Program). Es  un programa libremente distribuible,
 útil  para  trabajos  como   retoques  de  fotografía,  composición  y
 publicación  de imágenes.  {\sf The  GIMP} ha  sido escrito  por Peter
 Mattis y Spencer Kimball, y liberado bajo  la Licencia General Pública
@@ -18,7 +20,7 @@ que realmente se refiere a la personalización (instalación de usuario)
 del programa. En  este diálogo nos preguntará acerca  de la resolución
 de  la pantalla,  que suele  ser  72 dpi  (dots per  inch, puntos  por
 pulgada). Dado  que el diálogo  está en  español resulta muy  fácil de
-seguir.
+seguir. Con aceptar la opción que nos ponga por defecto es suficiente.
 
 Cuando finalmente {\sf The GIMP} se presenta ante nosotros vemos cinco
 ventanas. La  que aparece en primer  plano es la ventana  de ``consejo
@@ -29,29 +31,147 @@ tendrá  la amabilidad  de enseñarnos.  Las  otras ventanas  son la  de
 principal contiene la barra de herramientas y los selectores de color,
 gradiente y brocha.
 
+\subsection{Los diferentes formatos de imágens}
+
+Del  formato  del  fichero  que utilices  para  guardar  tus  imágenes
+dependerá  la calidad  de  las  mismas (las  fotos  almacenadas en  un
+formato que permita bastante compresión normalmente lo hace a costa de
+su calidad)  y el espacio  que ocupe. Algunos además  pueden almacenar
+información relativa al  tamaño de la foto para la  impresión (TIFF) e
+información sobre su transparencia (GIF, PNG).
+
+Existen muchos tipos de formato, cada uno para su uso.
+The GIMP tiene soporte para estos:
+
+\begin{itemize}
+
+\item  BMP: desarrollado  e impulsado  por Microsoft,  propietario del
+mismo.  BMP es  una abreviatura  de Windows  BitMaP (Mapa  de Bits  de
+Windows).
+
+\item  CEL: este  formato es  originario del  Animator Studio.  Es muy
+utilizado para guardar {\em sprites},  o mejor dicho imágenes pequeñas
+para juegos.
+
+\item FITS: es el formato standard en Astronomía.
+
+\item FLI: el formato FLI fue originalmete creado por Autodesk para 
+la realizacion de animacines virtuales con ordenador.
+
+\item Fax G3: este formato se usa para poder procesar faxes.
+
+\item GBR: es el formato para las Brochas de GIMP (Gimp brush). 
+
+\item GIF: El  Formato de Intercambio de Gráficos  (GIF) fue inventado
+por CompuServe  y es uno estándares  de las imágenes en  la World Wide
+Web. Sin embargo, las patentes de Unisys e IBM que cubren el algoritmo
+de compresión LZW que es utilizado  para crear los archivos GIF, hacen
+imposible tener software libre que genere GIFs adecuados.
+
+\item  GIH: este  formato  lo usa  The GIMP  para  guardar las  brochas
+animadas que  aparecen en  las herramientas. GIH  es el  acróninimo de
+(GIMP Image Hose).
+
+\item GIcon:  este es el formato  nativo de los iconos  dThe GIMP. Este
+formato sólo permite escala de grises.
+
+\item HRZ: formato siempre a 256x240  pixels y es (o mejor, era) usado
+para edición de imágenes de TV. No tiene compresión.
+
+\item Jpeg:  es acrónimo  de Joint  Photographic Experts  Group (Unión
+de  Grupo  de  Expertos  en  Fotografía)  y  funciona  con  todas  las
+profundidades de color. La compresión  de la imagen es ajustable, pero
+altas compresiones dañarán la calidad final  de la foto, ya que es una
+compresión con pérdidas.
+
+\item  MPEG:  acrónimo  de  Motion Picture  Experts  Group  (Grupo  de
+Expertos  en  Animación). Es  un  bien  conocido  de los  formatos  de
+animación.
+
+\item PAT: es el formato nativo de Patrones (Patterns) dThe GIMP.
+
+\item PCX: este formato gráfico fue  creado por ZSoft y difundido por 
+la familia de programas de dibujo Paintbrush.                         
+
+\item PIX: este es el formato usado por el programa Alias/Wavefront en
+estaciones SGI  (Silicon Graphics). Sólo  permite imágenes a  color de
+24-bits e imágenes en escala de grises de 8-bits.
+
+\item PNG:  El formato PNG  (Portable Network Graphics) es  un formato
+gráfico que usa compresión sin  pérdidas (loseless compression). Es el
+formato actualmente  recomendado por  la organización W3C  (World Wide
+Web Consortium) para imágenes sin pérdida de calidad.
+
+\item PNM: Acrónimo de Portable  aNyMap. PNM permite paleta de colores
+indexada, escala de grises e imágenes a todo color.
+
+\item PSD:  formato usado por  el Adobe Photoshop (The  GIMP mantendrá
+las capas existentes).
+
+\item PSP: formato usado por el  PaintShop Pro (The GIMP mantendrá las
+capas existentes).
+
+\item PostScript (PS): PostScript fue creado por Adobe. Es un lenguaje
+para describir  páginas, y  es usado  principalmente por  impresoras y
+otros dispositivos de impresión. Es una manera estupenda de distribuir
+documentos.  También  podemos leer  ficheros  PDF  (Acrobat) con  esta
+opción.
+
+\item  SGI: es  el formato  originalmente usado  por las  aplicaciones
+gráficas de SGI.
+
+\item  SUNRAS:  acrónimo de  SUN  RASterfile.  Este formato  es  usado
+principalmente por las diferentes  aplicaciones de Sun. Permite escala
+de grises, color indexado y todo color.
+
+\item TGA:  este formato permite  compresión a 8,  16, 24, 32  bits de
+profundidad.
+
+\item TIFF:  acrónimo de  Tagged Image File  Format. Este  formato fué
+diseñado para ser un estandar. Este es un formato de alta calidad y es
+perfecto  cuando quieras  importar  imágenes de  otros programas  como
+FrameWork o Corel Draw.
+
+\item  URL:  acrónimo  de  Uniform Resource  Locator  (Localizador  de
+Recursos  Uniforme).  Podrás  descargar   una  imágen  desde  internet
+diréctamente  al GIMP.  El  formato  del nombre  del  fichero es  {\tt
+ftp://dirección/archivo} o {\tt http://dirección/archivo}.
+
+\item WMF: acrónimo de Windows Meta File (Meta Fichero de Windows). Es
+un  formato que  permite guardar  tanto gráficos  vectoriales como  en
+mapas de bits.
+
+\end{itemize}
+
+
 Para aprender  a manejar GIMP sólo  se necesitan ganas, osadía  y unos
 cuantos ratitos para sentarse y  ponerse a jugar con las herramientas,
 filtros  y  scripts  que  proporciona.  Si  quieres  sacarle  el  jugo
 puede  resultarte muy  útil  algún  libro sobre  {\sf  The GIMP}  como
 \cite{gimpref}.
 
-\section{DIA}
 
-% \section{QCad}
-% 
-% \index{QCad}
-% 
-% {\sf  QCad}  es un  programa  de  diseño  asistido por  ordenador  (en
-% inglés  CAD,  de  Computer  Aided Design)  para  trabajar  con  planos
-% bidimensionales.  No necesitas  conocimientos  de CAD  para empezar  a
-% trabajar  con {\sf  QCad}, sobretodo  si  ya has  trabajado con  otros
-% programas de CAD.
-% 
-% La siguiente  figura muestra {\sf  QCad} con  uno de los  ejemplos que
-% incluye,  el diseño  de  un tornillo  de banco.  Como  puedes ver,  la
-% prioridad en un plano no es la estetica sino la precisión.
-% 
-% \begin{figure}[hbt]
-% \centering\includegraphics[width=0.88\textwidth]{imagenes/qcad_main.eps}
-% \caption{Ventana principal de QCad}
-% \end{figure}
+%\section{DIA}
+
+\section{QCad}
+
+\index{QCad}
+
+{\sf  QCad}  es un  programa  de  diseño  asistido por  ordenador  (en
+inglés  CAD,  de  Computer  Aided Design)  para  trabajar  con  planos
+bidimensionales.  No necesitas  conocimientos  de CAD  para empezar  a
+trabajar  con {\sf  QCad}, sobretodo  si  ya has  trabajado con  otros
+programas de CAD. {\sf QCad} es realmente fácil de utilizar si prestas
+atención a la barra de estado de la parte inferior.
+
+La siguiente  figura muestra {\sf  QCad} con  uno de los  ejemplos que
+incluye,  el diseño  de  un tornillo  de banco.  Como  puedes ver,  la
+prioridad en un plano no es la estetica sino la precisión.
+
+\begin{figure}[hbt]
+\centering\includegraphics[width=0.88\textwidth]{imagenes/qcad_main.eps}
+\caption{Ventana principal de QCad}
+\end{figure}
+
+Mira el apéndice de la página \pageref{recursos} para ver la dirección
+de un tutorial para {\sf QCad}
