@@ -65,7 +65,7 @@
 \begin{document}
 
 % Se da la orden de poner las marcas de corte
-\crop[frame,axes,horigin=-0.5in,vorigin=-5mm]
+\crop[cam,info,horigin=-0.41in,vorigin=-5mm]
 
 % El  comando  \sloppy relaja  los  párrafos  y  evita muchos  de  los
 % desbordamientos  horizontales. Esto  se  logra  permitiendo que  los
@@ -75,7 +75,6 @@
 % Parte frontal
 % Portadas, nota de copyright y dedicatoria
 \frontmatter
-\crop{odd}
 \include{portada}
 
 % Presentación y Contribuciones
@@ -99,7 +98,6 @@
 
 % Parte principal
 \mainmatter
-\crop{odd}
 
 % Inclusión de los ficheros en el orden apropiado.
 \input{toc_includes.tex}
