@@ -369,9 +369,11 @@ usuario  que  pertenece ese  usuario,  y  el  tercero a  los  usuarios
 ``extraños`` o  ''ajenos'' al  usuario. Por  tanto, si
 leemos
 
-\begin{verbatim}
--rw-rw-r--
-\end{verbatim}
+
+\begin{center}
+$-\underbrace{rw-}_{u}\underbrace{rw-}_{g}\underbrace{r--}_{o}$
+\end{center}
+
 
 vemos que se trata de un  fichero (-) con permisos de lectura y
 escritura  para el  usuario y  el grupo  al que  pertenece, y  de sólo
@@ -381,9 +383,9 @@ lectura para un ``extraño''.
 El siguiente sería un fichero de lectura, escritura y ejecución
 únicamente para el usuario pro\-pie\-ta\-rio del fichero.
 
-\begin{verbatim}
--rwx------
-\end{verbatim}
+\begin{center}
+$-\underbrace{rwx}_{u}\underbrace{---}_{g}\underbrace{---}_{o}$
+\end{center}
 
 Este  último  ejemplo es  un  directorio  (d) con  permisos  de
 lectura,  escritura y  ejecución  para el  usuario y  el  grupo, y  de
@@ -391,9 +393,9 @@ lectura  y  ejecución  para  el ``extraño''.  En  el  caso  de
 directorios, el  permiso de  ejecución es  equivalente a  permiso para
 ``entrar'' en el directorio.
 
-\begin{verbatim}
-drwxrwxr-x
-\end{verbatim}
+\begin{center}
+$d\underbrace{rwx}_{u}\underbrace{rwx}_{g}\underbrace{r-x}_{o}$
+\end{center}
 
 En  el ejemplo  del  listado anterior  vemos dos  veces  el nombre  de
 ``felix''. El de la primera columna se refiere al usuario propietario,
@@ -421,7 +423,7 @@ físicamente.
 [felix@localhost apuntes]\$ mv pepe.txt juan.txt
 \end{verbatim}
 
-\rule{\linewidth}{.75pt}
+\noindent\rule{\linewidth}{.75pt}
 NOTA: El  intérprete de  comandos \textbf{SÍ}  distingue en  mayúsculas y
 minúsculas,  tanto en  el  caso de  los  comandos como  en  el de  los
 ficheros y directorios. Esto significa que el comando mv es totalmente
