@@ -9,98 +9,325 @@
 
 \index{Texto!Editores}
 
-\section{Joe}
+\section{VI \& VIM}
 
-\index{Joe}
+\index{VI}
+\index{VIM}
 
-El primer editor  que suele aprenderse en Linux es  {\sf Joe}, por ser
-muy sencillo  y rápido.  Puede usarse  para editar  cualquier fichero,
-pero  aquí trataremos  su uso  básico, lo  justo para  editar pequeños
-textos,  ficheros de  configuración, pequeños  programas. Todos  estos
-ficheros pueden editarse  con más comodidad con  editores más potentes
-como {\sf  Emacs} o {\sf VIM}  pero para ello es  necesario aprender a
-usarlos primero, lo cual puede  no resultar tan sencillo como aprender
-{\sf Joe}.
 
-Veremos sólo un par de comandos  de {\sf Joe}, simplemente como editar
-un fichero existente o nuevo, guardarlo sin salir, salir sin guardarlo
-y salir guardándolo. Para obtener más información sobre otras opciones
-del editor existe el comando de ayuda que explicaremos luego.
+{\sf VI} es un editor de texto visual, de pantalla completa, basado en
+el editor de  línea {\tt ex}. Es  un editor poco intuitivo  y con mala
+prensa entre los estudiantes que dan sus primeros pasos en Linux/UNIX,
+pero por otra parte es el  editor favorito de los usuarios avanzados y
+de muchos programadores. Es además un editor que se puede encontrar en
+cualquier sistema UNIX, desde antiguas  estaciones Sun Solaris o HP-UX
+hasta  las  más  recientes  distribuciones  de  GNU/Linux  o  FreeBSD,
+OpenBSD, etc.
 
-El manejo de {\tt Joe} se basa en combinaciones de teclas con la tecla
-{\tt Control}. Denotaremos por {\tt C-x  y} a la combinación de teclas
-que se  obtiene al  pulsar la tecla  {\tt Control},  seguidamente (sin
-soltar la  primera) pulsar la  tecla {\tt  x} y después  (soltando las
-teclas anteriores) pulsar  la tecla {\tt y}. Veamos  un rápido ejemplo
-del uso de este editor. En un terminal ejecuta:
+{\sf  VI}  es  además  un   editor  muy  potente,  que  permite  hacer
+complicadas operaciones  en grandes ficheros con  unos pocos comandos,
+por lo que su aprendizaje  puede ahorrarnos mucho tiempo. Otra ventaja
+de {\sf VI}  es que al ser tan corriente  suele encontrarse incluso en
+disquetes de rescate. Lógicamente poco se puede rescatar si no se sabe
+manejar el único editor disponible en un momento de emergencia.
 
-\begin{verbatim}
-$ joe prueba.txt
-\end{verbatim}
+Pero el manejo de {\sf VI}  es realmente incómodo si nos enfrentamos a
+la  versión clásica.  Por ejemplo  no podemos  usar los  cursores para
+movernos por el  texto, debemos pasar al llamado modo  {\em comando} y
+utilizar letras para movernos.
 
-Escribe una frase sencilla, tal como:
+En este  curso utilizaremos el  editor {\sf VIM}. {\sf  VIM} significa
+``{\bf V}i {\bf IM}proved'' (en español ``{\bf VI M}ejorado''), y como
+su nombre  indica es un  clon (muy)  mejorado del clásico  editor {\sf
+VI}. {\sf VIM}  es bastante más amigable que {\sf  VI}, ya que permite
+un uso más intuitivo (p.ej. los cursores y otras teclas para moverse).
+Además,  si  se compila  adecuadamente  (y  suele ser  así)  incorpora
+coloreado de sintaxis para casi  todos los lenguajes de programación y
+ficheros  de configuración  que puedas  encontrar en  Linux/UNIX. Otra
+característica  muy interesante  de  {\sf VIM}  es  la posibilidad  de
+utilizar un  interfaz gráfico, lo que  aumenta el confort y  mejora el
+rendimiento del programador.
 
-\begin{verbatim}
-Si algo funciona, no lo toques.
-\end{verbatim}
+Lo primero que hay que aprender con {\sf VI} es la filosofía de los dos
+modos de  trabajo: \index{VIM!modos} el  modo {\em comando} y  el modo
+{\em edición}. El  modo comando se utiliza solamente  para dar órdenes
+al editor,  decirle que haga  cosas como  borrar una línea,  buscar un
+patrón, ir a una determinada línea, guardar el fichero, salir, etc. El
+modo  {\em edición}  se utiliza  solamente para  escribir texto  en el
+fichero.  Es  muy  importante  familiarizarse con  esta  filosofía  de
+funcionamiento, ya que resulta imprescindible para cualquier operación
+que se quiera realizar con {\sf VIM}.
 
-Para guardar el  fichero utilizamos la combinación de  teclas {\tt C-k
-s} y  entonces {\tt Joe}  te preguntará el  nombre con el  que quieres
-guardar el fichero.
+En adelante  nos referiremos  al editor como  {\sf VI}  cuando digamos
+algo que sea común a todas las versiones de {\sf VI}, y como {\sf VIM}
+cuando se trate de extensiones propias de {\sf VIM}.
 
-\begin{verbatim}
-Name of file to save (^C to abort): hola.txt
-\end{verbatim}
+Para ejecutar este editor el comando  es {\tt vi}. Si tienes instalada
+otra  versión de  {\sf  VI} pero  quieres utilizar  {\sf  VIM} no  hay
+problema,  simplemente  ejecuta  {\tt  vim}. Si  quieres  utilizar  la
+interfaz gráfica de {\sf VIM} ejecuta {\tt gvim}.\index{GVIM}
 
-Si pulsamos ahora  ahora {\tt C-c} simplemente cancelamos  la orden de
-guardar el  fichero, pero  no perdemos su  contenido. Para  guardar el
-fichero pulsamos {\tt Enter}, modificando  el nombre del fichero si lo
-deseamos. Ahora añadimos otra línea:
-
-\begin{verbatim}
-Si algo funciona, no lo toques.
-Si algo funciona, y no sabes por qué, úsalo siempre.
-\end{verbatim}
-
-Ahora saldremos  del editor {\bf  guardando los cambios},  mediante la
-combinación de teclas {\tt C-k x}. De esta manera volveremos al prompt
-del sistema siendo informados de que el fichero ha sido guardado.
-
-\begin{verbatim}
-File prueba.txt saved.
-$
-\end{verbatim}
-
-Como última maniobra, abrimos de  nuevo el fichero, borramos la última
-línea y salimos sin guardar los cambios.
-
+Aunque  conserva el  nombre de  {\sf VI}  estamos trabajando  con {\sf
+VIM}. Este comando admite varias opciones  que se le pueden pasar como
+parámetros, p.ej. el nombre del fichero que queremos editar:
 
 \begin{verbatim}
-$ joe prueba.txt
+$ vi fichero
 \end{verbatim}
 
-Boramos la  última línea  usando las teclas  de borrado  habituales, y
-pulsamos {\tt C-c}  para salir sin guardar los cambios.  El editor nos
-pedirá confirmación antes de salir.  Podemos responder que sí queremos
-salir  pulsando {\tt  y},  o  por el  contrario  cancelar la  maniobra
-pulsando {\tt n} o  {\tt C-c}. Decimos que sí ({\tt  y}) y volvemos al
-prompt del sistema.
+También puedes especificar  la línea en la que quieres  empezar con el
+parámetro {\tt +n}. Por ejemplo para empezar en la línea 12:
 
 \begin{verbatim}
-Lose changes to this file (y,n,^C)? 
-File hola.txt not saved.
-$
+$ vi fichero +12
 \end{verbatim}
 
-Esto es  lo mínimo que  debes saber para editar  con {\tt Joe},  y con
-esto  será suficiente  aquí pues  en  lo sucesivo  aprenderás a  hacer
-operaciones más avanzadas con otros editores. Para conocer sobre otras
-opciones de este editor, se puede utilizar la opción {\tt C-k h}.
+{\tt  VIM} comienza  siempre  en modo  {\tt  comando}, preparado  para
+realizar operaciones  sobre el  fichero. Una  de estas  operaciones es
+pasar al modo {\tt edición}. Esta transición puede hacerse de 8 formas 
+diferentes.
 
+\begin{table}[htbp]
+\centering
+\index{VIM!insertar}
+\begin{tabular}{|c|p{0.88\textwidth}|}
+\hline
+{\tt i} & Comienza a insertar texto en la posición del cursor. \\
+{\tt a} & Comienza a insertar texto en la posición siguiente a la del cursor. \\
+{\tt o} & Comienza a insertar texto en una nueva línea debajo del cursor. \\
+{\tt s} & Borra el carácter en la  posición del cursor y comienza a insertar texto. \\ 
+\hline
+{\tt I} & Comienza a insertar texto al principio de la línea. \\
+{\tt A} & Comienza a insertar texto al final de la línea. \\
+{\tt O} & Comienza a insertar texto en una nueva línea encima del cursor. \\
+{\tt S} & Borra la línea en la  posición del cursor y comienza a insertar texto. \\
 
+\hline
+\end{tabular}
+\caption{Pasar el modo {\em edición} en {\sf VI}}
+\end{table}
+
+Para pasar  del modo  {\em edición}  al modo  {\em comando}  basta con
+pulsar {\tt  ESC}. A  continuación vamos a  editar un  pequeño fichero
+para familiarizarnos con sus comandos básicos. Comenzamos invocando al
+editor desde la  línea de comandos (suponemos que  estás utilizando la
+interfaz gráfica, aunque también puedes prescindir de ella):
+
+\begin{verbatim}
+$ gvim hola.c
+\end{verbatim}
+
+\begin{figura}{gvim1}{0.85}
+\caption{Interfaz gráfica de VIM con un fichero nuevo (vacío)}
+\end{figura}
+
+La última línea  de la interfaz (o de la  consola) debería parecerse a
+esto:
+
+\begin{verbatim}
+"hola.c" [New File]                                  0,0-1         All
+\end{verbatim}
+
+Esta  línea es  la {\em  barra de  estado} del  editor. Es  aquí donde
+teclearemos los comandos y donde  aparecerá cierta información como el
+modo en el que estamos (comando, edición, reemplazo, etc.), la línea y
+columna  en la  que estamos,  el porcentaje  del documento  en el  que
+estamos, si el fichero ha sido salvado y su tamaño.
+
+A  continuación pulsamos  la tecla  {\tt i}  para pasar  al modo  {\em
+edición}. Observamos que la barra de estado se muestra diferente:
+
+\begin{verbatim}
+-- INSERT --                                         0,1           All
+\end{verbatim}
+
+Ahora es el momento de teclear, escribe el siguiente código:
+
+\begin{verbatim}
+#include <stdio.h>
+
+int main()
+{
+    printf("Hola Mundo\n");
+}
+\end{verbatim}
+
+\begin{figura}{gvim2}{0.85}
+\caption{Interfaz gráfica de VIM con código C coloreado}
+\end{figura}
+
+Cuando tengas  esto escrito, pulsa {\tt  ESC} para pasar al  modo {\em
+comando}.  Entonces teclea  la orden  {\tt  :w} y  pulsa {\tt  Enter}.
+Veremos como la orden {\tt :w}  aparece en la barra de estado mientras
+la tecleamos,  y luego al  ejecutarla se muestra información  sobre el
+resultado, en este  caso información sobre el fichero  que acabamos de
+guardar.\index{VIM!guardar}
+
+\begin{verbatim}
+"hola.c" [New] 6L, 62C written                       6,1           All
+\end{verbatim}
+
+En esta  línea {\sf VI} nos  indica que ha escrito  el fichero hola.c,
+que es nuevo, que tiene un tamaño de 62 caracteres en 6 líneas. Además
+al terminar de escribirlo  estamos en la línea 6 y en  la columna 1, y
+podemos ver todo el fichero.
+
+Si tu  versión de {\sf VIM}  tiene soporte para coloreado  de sintaxis
+\index{VIM!coloreado de sintaxis}
+probalmente ya  estará funcionando  y verás las  palabras {\tt  int} e
+{\tt include}  de distinto color.  Sin aún  no estás viendo  el código
+coloreado prueba a pasar al modo  {\em comando} (pulsando {\tt ESC}) y
+ejecutar el comando  {\tt :syntax on} (para los  comandos que empiezan
+en {\tt  :} hay que  pulsar {\tt Enter} al  final). Si te  devuelve el
+mensaje  de que  esa función  no está  implementada es  que no  tienes
+disponible el coloreado de sintaxis. Si por el contrario funciona pero
+no te gusta y quieres quitarlo  ejecuta el comando {\tt :syntax off} y
+desaparecerán los colores. En la interfaz  gráfica de {\sf VIM} hay un
+menú {\sf Esquemas  de colores} dentro del menú  {\sf Editar}. También
+puedes cambiar el esquema de colores  desde la interfaz de consola del
+{\sf VIM} con el comando {\tt :colors esquema}. Por ejemplo, activa el
+coloreado de sintaxis y ejecuta {\tt :colors koehler}.
+
+% Ahora pensemos  que queremos  eliminar esas líneas  de tres  guiones y
+% cambiarlas  por  líneas  de  cinco asteriscos.  Pasamos  a  modo  {\tt
+% comando}, situamos el cursor en una de esas línas y pulsamos {\tt dd}.
+% Veremos como  la línea entera  desaparece. Repetimos lo mismo  con las
+% otras líneas. Ahora nos situamos en  la primera línea y pasamos a modo
+% {\tt  edición},  escribimos  cinco  asteriscos y  pulsamos  {\tt  \flq
+% Enter\frq }. Volvemos al modo {\tt comando}, colocamos el cursor en la
+% nueva línea de asteriscos y pulsamos  de nuevo {\tt dd}, vemos cómo la
+% línea desaparece.  Situamos el cursor  en el  principio de la  línea y
+% pulsamos {\tt P}, vemos cómo la  línea que habíamos borrado se inserta
+% {\em  antes} del  cursor. Si  situamos el  cursor al  principio de  la
+% tercera línea y  pulsamos {\tt p} vemos cómo la  línea se inserta {\em
+% después} del cursor. Añadimos las restantes líneas de asteriscos donde
+% estaban las de guiones.
+
+En adelante, el comando {\tt x} significará pulsar la tecla {\tt x} en
+modo {\em comando}, el comando  {\tt :letras} significará teclear {\tt
+:letras} en modo  comando y pulsar {\tt Enter}.  Cualquier comando del
+primer tipo puede  modificarse teclando un número, lo que  hará que se
+ejecute ese número de veces (el comando {\tt 4x} es equivalente a {\tt
+xxxx}). Si te equivocas  tecleando cualquier comando puedes cancelarlo
+pulsando {\tt Esc}.
+
+Para  deshacer cualquier  operación  realizada pulsamos  en modo  {\em
+comando} la tecla {\tt u}. Para  salir del editor {\bf sin} guardar el
+fichero utiliza  el comando  {\tt :q!}. Probablemente  realizarás esta
+operación con mucha  frecuencia al principio, cuando  se cometas algún
+error grave como teclear una palabra  sin pasar al modo {\em edición}.
+En el modo  {\em comando} cada tecla tiene su  función, y es diferente
+además si está en mayúsculas que  si está en minúsculas. Por lo tanto,
+una regla de oro con {\sf VI} es: {\bf cuando no sepas con qué comando
+hacer algo, no pruebes teclas al azar}. Tampoco es nada bueno utilizar
+la tecla. Y por supuesto, cuando estés editando algo importante guarda
+el fichero con  frecuencia con el comando {\tt :w},  sobre todo en las
+primeras semanas de  uso. Para salir de {\sf VI}  guardando el fichero
+utiliza el comando {\tt :x}.
+
+Una utilidad  que te puede  resultar interesante es  ejecutar comandos
+del sistema desde la misma consola en la que estamos trabajando con el
+{\sf  VIM}. En  modo  {\em comando}  escribimos  {\tt :!comando},  por
+ejemplo, si escribimos {\tt :!ls}  nos mostrará un listado de archivos
+del directorio  en el  que nos encontramos.  Esto te  permite compilar
+programas o  documentos mientras editas  uno o más ficheros  de código
+fuente,  incluso  puedes ejecutar  una  consola  de sistema  desde  el
+editor, con el comando {\tt :sh}
+
+Para buscar palabras dentro de un  documento es fácil, solo tienes que
+\index{VIM!búsqueda} escribir  en modo {\em comando}  {\tt /palabra} y
+si salen  varios resultados, pulsando  {\tt n} pasarás al  siguiente y
+pulsando {\tt N}  al anterior. Si prefieres que la  búsqueda sea hacia
+atrás (desde el  final hacia el principio del fichero)  el comando que
+necesitas es  {\tt ?palabra}.  También con esta  búsqueda pasas  de un
+resultado a otro pulsando {\tt n}.
+
+Si lo que  necesitas es desplazarte por un documento  muy grande (como
+por ejemplo el  código fuente de un programa) a  líneas concretas {\sf
+VIM} lo  soluciona. Para desplazarnos a  la línea 60 de  un documento,
+escribe en modo {\em comando} {\tt 60}  y luego pulsa {\tt S-g} o {\tt
+G}. Si  pulsas sólo  {\tt S-g}  o {\tt  G} te  desplazas al  final del
+fichero, y si  pulsas {\tt gg} (pulsas {\tt g}  dos veces seguidas) te
+desplazas al principio del fichero.
+
+Para desplazamientos  más cortos dispones  del comando {\tt  0} (cero)
+que te  sitúa el principio  de la línea, \verb.^.  que te sitúa  en el
+primer caracter no blanco (espacio  o tabulador) de la línea, \verb.$.
+que te sitúa al final de la línea, {\tt w} te sitúa al principio de la
+siguiente palabra, y {\tt b} hace lo mismo con la anterior palabra. El
+comando  \verb.).  te desplaza  a  la  siguiente frase,  mientras  que
+\verb.(. te  desplaza a  la anterior. Del  mismo modo  puedes utilizar
+\verb.{. y \verb.}. para saltar de párrafo en párrafo.
+
+Si en  lugar de desplazarte  por el fichero  lo que quieres  es borrar
+parte de su contenido estos mismos comandos, pulsando previamente {\tt
+d}, hacen lo siguiente: {\tt d0}  borra desde el principio de la línea
+hasta  justo antes  del cursor,  {\tt D}  o \verb.d$.  borra desde  el
+cursor hasta  el final  de la  línea, {\tt dw}  borra desde  el cursor
+hasta el principio de la siguiente palabra, {\tt db} borra desde justo
+antes  del cursor  hasta  el principio  de  la palabra  en  la que  se
+encuentre el cursor, {\tt dd} borra la línea en la que se encuentre el
+cursor, {\tt dj} borra la línea en  la que se encuentre el cursor y la
+que  estén justo  debajo,  {\tt 34dj}  borra  la línea  en  la que  se
+encuentre el cursor y las siguientes 34 líneas que estén justo debajo,
+\verb.d). borra  desde el  cursor hasta el  principio de  la siguiente
+frase, \verb.d(. borra desde el cursor  hasta el principio de la frase
+en la  que se  encuentre el  cursor, \verb.d}.  borra desde  el cursor
+hasta el final del párrafo en la que se encuentre el cursor, \verb.d{.
+borra desde el cursor hasta el final del párrafo anterior.
+
+A lo mejor  te interesa pegar en  otro sitio ese trozo  de fichero que
+has borrado,  o prefieres copiar y  pegar en lugar de  cortar y pegar.
+Claro que puedes  hacerlo con {\sf VI} y  seleccionando exactamente lo
+que  quieras. Para  seleccionar una  parte del  fichero sitúate  en un
+extremo  de  la  selección  (principio  o  final),  pulsa  {\tt  v}  y
+desplázate hasta  el otro  extremo de la  selección. Para  cancelar la
+selección pulsa  {\tt Esc}. Una  vez que tienes el  texto seleccionado
+puedes cortarlo pulsando {\tt d} o copiarlo pulsando {\tt y}.
+
+Para pegar lo que has copiado o  cortado has de situar el cursor en la
+posición  deseada  y contemplar  dos  opciones  para pegar  el  texto:
+pulsando {\tt p} el texto se insertará {\em justo después} del cursor,
+pulsando {\tt S-p}  o {\tt P} el texto se  insertará {\em justo antes}
+del cursor.
+
+Cuando cortas o copias una región de  texto ésta se guarda en una zona
+de memoria, lo que se denomina  un {\em buffer}. Mientras no salgas de
+{\sf VIM}  este buffer se  conserva completamente hasta que  vuelvas a
+cortar  o copiar  otra  región.  Ten cuidado  porque  borrar algo  con
+cualquier comando también se considera cortar, por lo que sobreescribe
+el buffer. Este  buffer se conserva además entre ficheros,  por lo que
+puedes cortar o copiar  en un fichero y pegar en  otro, siempre que no
+salgas del  editor para hacer  esta maniobra.  Si sales del  editor se
+conserva sólo una parte del buffer, suele ser suficiente para regiones
+no  muy  grandes,  pero  no  te  confíes\footnote{En  el  moomento  de
+esccribir  essto la  versión  de VIM  6.1-474 limita  el  buffer a  50
+líneas}.
+
+Si quieres  cortar o  copiar de un  fichero y pegar  en otro  lo mejor
+es  que  abras ambos  ficheros  con  el  mismo {\sf  VI},  simplemente
+ejecutando:
+
+\begin{verbatim}
+$ vi fichero1 fichero2
+\end{verbatim}
+
+Con esto tienes varios ficheros abiertos,  con un buffer para cada uno
+\index{VIM!buffers} (aquí entendemos  buffer en el sentido  con el que
+lo hacemos  al hablar  de Emacs  en la  sección \ref{emacs})  y puedes
+pasar de un buffer a otro con el comando {\tt :bN} donde {\tt N} es el
+número del  buffer (se numeran  empezando por  $1$). Para pasar  de un
+buffer a otro primero  debes guardar a fichero el buffer  en el que te
+encuentres (con el comando {\tt :w}).
+
+Otro comando que te ayudará si  tienes que programar es el comando \%.
+Si estás trabajando  con algunos lenguajes cuyas  sintaxis manejan con
+mucha frecuencia \verb.(., \verb.{. o  \verb.{. , {\sf VIM} te permite
+con pulsar la  tecla \% situarte sobre uno de  estos caracteres que te
+muestre  el  de cierre  o  apertura  que  le corresponda.  
 
 \section{GNU Emacs}
-
+\label{emacs}
 \index{Emacs}
 
 {\sf Emacs}, junto con {\sf VI},  ha sido uno de los primeros editores
@@ -266,506 +493,93 @@ emacs, aparecerá el directorio actual.
 Escribimos  la ruta  completa al  archivo y  aparecerá en  la posición
 actual del cursor.
 
-\section{VI \& VIM}
+\section{Joe}
 
-\index{VI}
-\index{VIM}
+\index{Joe}
 
-{\sf VI} es un editor de texto visual, de pantalla completa, basado en
-el editor de  línea {\tt ex}. Es  un editor poco intuitivo  y con mala
-prensa entre los estudiantes que dan sus primeros pasos en Linux/UNIX,
-pero por otra parte es el  editor favorito de los usuarios avanzados y
-de muchos programadores. Es además un editor que se puede encontrar en
-cualquier sistema UNIX, desde antiguas  estaciones Sun Solaris o HP-UX
-hasta  las  más  recientes  distribuciones  de  GNU/Linux  o  FreeBSD,
-OpenBSD, etc.
+El primer editor  que suele aprenderse en Linux es  {\sf Joe}, por ser
+muy sencillo  y rápido.  Puede usarse  para editar  cualquier fichero,
+pero  aquí trataremos  su uso  básico, lo  justo para  editar pequeños
+textos,  ficheros de  configuración, pequeños  programas. Todos  estos
+ficheros pueden editarse  con más comodidad con  editores más potentes
+como {\sf  Emacs} o {\sf VIM}  pero para ello es  necesario aprender a
+usarlos primero, lo cual puede  no resultar tan sencillo como aprender
+{\sf Joe}.
 
-{\sf  VI}  es  además  un   editor  muy  potente,  que  permite  hacer
-complicadas operaciones  en grandes ficheros con  unos pocos comandos,
-por lo que su aprendizaje  puede ahorrarnos mucho tiempo. Otra ventaja
-de {\sf VI}  es que al ser tan corriente  suele encontrarse incluso en
-disquetes de rescate. Lógicamente poco se puede rescatar si no se sabe
-manejar el único editor disponible en un momento de emergencia.
+Veremos sólo un par de comandos  de {\sf Joe}, simplemente como editar
+un fichero existente o nuevo, guardarlo sin salir, salir sin guardarlo
+y salir guardándolo. Para obtener más información sobre otras opciones
+del editor existe el comando de ayuda que explicaremos luego.
 
-Pero el manejo de {\sf VI}  es realmente incómodo si nos enfrentamos a
-la  versión clásica.  Por ejemplo  no podemos  usar los  cursores para
-movernos por el  texto, debemos pasar al llamado modo  {\em comando} y
-utilizar letras para movernos.
-
-En este  curso utilizaremos el  editor {\sf VIM}. {\sf  VIM} significa
-``{\bf V}i {\bf IM}proved'' (en español ``{\bf VI M}ejorado''), y como
-su nombre  indica es un  clon (muy)  mejorado del clásico  editor {\sf
-VI}. {\sf VIM}  es bastante más amigable que {\sf  VI}, ya que permite
-un uso más intuitivo (p.ej. los cursores y otras teclas para moverse).
-Además,  si  se compila  adecuadamente  (y  suele ser  así)  incorpora
-coloreado de sintaxis para casi  todos los lenguajes de programación y
-ficheros  de configuración  que puedas  encontrar en  Linux/UNIX. Otra
-característica  muy interesante  de  {\sf VIM}  es  la posibilidad  de
-utilizar un  interfaz gráfico, lo que  aumenta el confort y  mejora el
-rendimiento del programador.
-
-Lo primero que hay que aprender con {\sf VI} es la filosofía de los dos
-modos de  trabajo: \index{VIM!modos} el  modo {\em comando} y  el modo
-{\em edición}. El  modo comando se utiliza solamente  para dar órdenes
-al editor,  decirle que haga  cosas como  borrar una línea,  buscar un
-patrón, ir a una determinada línea, guardar el fichero, salir, etc. El
-modo  {\em edición}  se utiliza  solamente para  escribir texto  en el
-fichero.  Es  muy  importante  familiarizarse con  esta  filosofía  de
-funcionamiento, ya que resulta imprescindible para cualquier operación
-que se quiera realizar con {\sf VIM}.
-
-En adelante  nos referiremos  al editor como  {\sf VI}  cuando digamos
-algo que sea común a todas las versiones de {\sf VI}, y como {\sf VIM}
-cuando se trate de extensiones propias de {\sf VIM}.
-
-Para ejecutar este editor el comando  es {\tt vi}. Si tienes instalada
-otra  versión de  {\sf  VI} pero  quieres utilizar  {\sf  VIM} no  hay
-problema,  simplemente  ejecuta  {\tt  vim}. Si  quieres  utilizar  la
-interfaz gráfica de {\sf VIM} ejecuta {\tt gvim}.\index{GVIM}
-
-Aunque  conserva el  nombre de  {\sf VI}  estamos trabajando  con {\sf
-VIM}. Este comando admite varias opciones  que se le pueden pasar como
-parámetros, p.ej. el nombre del fichero que queremos editar:
+El manejo de {\tt Joe} se basa en combinaciones de teclas con la tecla
+{\tt Control}. Denotaremos por {\tt C-x  y} a la combinación de teclas
+que se  obtiene al  pulsar la tecla  {\tt Control},  seguidamente (sin
+soltar la  primera) pulsar la  tecla {\tt  x} y después  (soltando las
+teclas anteriores) pulsar  la tecla {\tt y}. Veamos  un rápido ejemplo
+del uso de este editor. En un terminal ejecuta:
 
 \begin{verbatim}
-$ vi fichero
+$ joe prueba.txt
 \end{verbatim}
 
-También puedes especificar  la línea en la que quieres  empezar con el
-parámetro {\tt +n}. Por ejemplo para empezar en la línea 12:
+Escribe una frase sencilla, tal como:
 
 \begin{verbatim}
-$ vi fichero +12
+Si algo funciona, no lo toques.
 \end{verbatim}
 
-{\tt  VIM} comienza  siempre  en modo  {\tt  comando}, preparado  para
-realizar operaciones  sobre el  fichero. Una  de estas  operaciones es
-pasar al modo {\tt edición}. Esta transición puede hacerse de 8 formas 
-diferentes.
-
-\begin{table}[htbp]
-\centering
-\index{VIM!insertar}
-\begin{tabular}{|c|p{0.88\textwidth}|}
-\hline
-{\tt i} & Comienza a insertar texto en la posición del cursor. \\
-{\tt a} & Comienza a insertar texto en la posición siguiente a la del cursor. \\
-{\tt o} & Comienza a insertar texto en una nueva línea debajo del cursor. \\
-{\tt s} & Borra el carácter en la  posición del cursor y comienza a insertar texto. \\ 
-\hline
-{\tt I} & Comienza a insertar texto al principio de la línea. \\
-{\tt A} & Comienza a insertar texto al final de la línea. \\
-{\tt O} & Comienza a insertar texto en una nueva línea encima del cursor. \\
-{\tt S} & Borra la línea en la  posición del cursor y comienza a insertar texto. \\
-
-\hline
-\end{tabular}
-\caption{Pasar el modo {\em edición} en {\sf VI}}
-\end{table}
-
-Para pasar  del modo  {\em edición}  al modo  {\em comando}  basta con
-pulsar {\tt  ESC}. A  continuación vamos a  editar un  pequeño fichero
-para familiarizarnos con sus comandos básicos. Comenzamos invocando al
-editor desde la  línea de comandos (suponemos que  estás utilizando la
-interfaz gráfica, aunque también puedes prescindir de ella):
+Para guardar el  fichero utilizamos la combinación de  teclas {\tt C-k
+s} y  entonces {\tt Joe}  te preguntará el  nombre con el  que quieres
+guardar el fichero.
 
 \begin{verbatim}
-$ gvim hola.c
+Name of file to save (^C to abort): hola.txt
 \end{verbatim}
 
-\begin{figure}[hbt]
-\centering\includegraphics[width=0.88\textwidth]{imagenes/gvim1.eps}
-\caption{Interfaz gráfica de VIM con un fichero nuevo (vacío)}
-\end{figure}
-
-La última línea  de la interfaz (o de la  consola) debería parecerse a
-esto:
+Si pulsamos ahora  ahora {\tt C-c} simplemente cancelamos  la orden de
+guardar el  fichero, pero  no perdemos su  contenido. Para  guardar el
+fichero pulsamos {\tt Enter}, modificando  el nombre del fichero si lo
+deseamos. Ahora añadimos otra línea:
 
 \begin{verbatim}
-"hola.c" [New File]                                  0,0-1         All
+Si algo funciona, no lo toques.
+Si algo funciona, y no sabes por qué, úsalo siempre.
 \end{verbatim}
 
-Esta  línea es  la {\em  barra de  estado} del  editor. Es  aquí donde
-teclearemos los comandos y donde  aparecerá cierta información como el
-modo en el que estamos (comando, edición, reemplazo, etc.), la línea y
-columna  en la  que estamos,  el porcentaje  del documento  en el  que
-estamos, si el fichero ha sido salvado y su tamaño.
-
-A  continuación pulsamos  la tecla  {\tt i}  para pasar  al modo  {\em
-edición}. Observamos que la barra de estado se muestra diferente:
+Ahora saldremos  del editor {\bf  guardando los cambios},  mediante la
+combinación de teclas {\tt C-k x}. De esta manera volveremos al prompt
+del sistema siendo informados de que el fichero ha sido guardado.
 
 \begin{verbatim}
--- INSERT --                                         0,1           All
+File prueba.txt saved.
+$
 \end{verbatim}
 
-Ahora es el momento de teclear, escribe el siguiente código:
+Como última maniobra, abrimos de  nuevo el fichero, borramos la última
+línea y salimos sin guardar los cambios.
+
 
 \begin{verbatim}
-#include <stdio.h>
-
-int main()
-{
-    printf("Hola Mundo\n");
-}
+$ joe prueba.txt
 \end{verbatim}
 
-\begin{figure}[hbt]
-\centering\includegraphics[width=0.88\textwidth]{imagenes/gvim2.eps}
-\caption{Interfaz gráfica de VIM con código C coloreado}
-\end{figure}
-
-Cuando tengas  esto escrito, pulsa {\tt  ESC} para pasar al  modo {\em
-comando}.  Entonces teclea  la orden  {\tt  :w} y  pulsa {\tt  Enter}.
-Veremos como la orden {\tt :w}  aparece en la barra de estado mientras
-la tecleamos,  y luego al  ejecutarla se muestra información  sobre el
-resultado, en este  caso información sobre el fichero  que acabamos de
-guardar.\index{VIM!guardar}
+Boramos la  última línea  usando las teclas  de borrado  habituales, y
+pulsamos {\tt C-c}  para salir sin guardar los cambios.  El editor nos
+pedirá confirmación antes de salir.  Podemos responder que sí queremos
+salir  pulsando {\tt  y},  o  por el  contrario  cancelar la  maniobra
+pulsando {\tt n} o  {\tt C-c}. Decimos que sí ({\tt  y}) y volvemos al
+prompt del sistema.
 
 \begin{verbatim}
-"hola.c" [New] 6L, 62C written                       6,1           All
+Lose changes to this file (y,n,^C)? 
+File hola.txt not saved.
+$
 \end{verbatim}
 
-En esta  línea {\sf VI} nos  indica que ha escrito  el fichero hola.c,
-que es nuevo, que tiene un tamaño de 62 caracteres en 6 líneas. Además
-al terminar de escribirlo  estamos en la línea 6 y en  la columna 1, y
-podemos ver todo el fichero.
-
-Si tu  versión de {\em VIM}  tiene soporte para coloreado  de sintaxis
-\index{VIM!coloreado de sintaxis}
-probalmente ya  estará funcionando  y verás las  palabras {\tt  int} e
-{\tt include}  de distinto color.  Sin aún  no estás viendo  el código
-coloreado prueba a pasar al modo  {\em comando} (pulsando {\tt ESC}) y
-ejecutar el comando  {\tt :syntax on} (para los  comandos que empiezan
-en {\tt  :} hay que  pulsar {\tt Enter} al  final). Si te  devuelve el
-mensaje  de que  esa función  no está  implementada es  que no  tienes
-disponible el coloreado de sintaxis. Si por el contrario funciona pero
-no te gusta y quieres quitarlo  ejecuta el comando {\tt :syntax off} y
-desaparecerán los colores. En la interfaz  gráfica de {\sf VIM} hay un
-menú {\sf Esquemas  de colores} dentro del menú  {\sf Editar}. También
-puedes cambiar el esquema de colores  desde la interfaz de consola del
-{\sf VIM} con el comando {\tt :colors esquema}. Por ejemplo, activa el
-coloreado de sintaxis y ejecuta {\tt :colors koehler}.
-
-Ahora pensemos  que queremos  eliminar esas líneas  de tres  guiones y
-cambiarlas  por  líneas  de  cinco asteriscos.  Pasamos  a  modo  {\tt
-comando}, situamos el cursor en una de esas línas y pulsamos {\tt dd}.
-Veremos como  la línea entera  desaparece. Repetimos lo mismo  con las
-otras líneas. Ahora nos situamos en  la primera línea y pasamos a modo
-{\tt  edición},  escribimos  cinco  asteriscos y  pulsamos  {\tt  \flq
-Enter\frq }. Volvemos al modo {\tt comando}, colocamos el cursor en la
-nueva línea de asteriscos y pulsamos  de nuevo {\tt dd}, vemos cómo la
-línea desaparece.  Situamos el cursor  en el  principio de la  línea y
-pulsamos {\tt P}, vemos cómo la  línea que habíamos borrado se inserta
-{\em  antes} del  cursor. Si  situamos el  cursor al  principio de  la
-tercera línea y  pulsamos {\tt p} vemos cómo la  línea se inserta {\em
-después} del cursor. Añadimos las restantes líneas de asteriscos donde
-estaban las de guiones.
-
-En adelante, el comando {\tt x} significará pulsar la tecla {\tt x} en
-modo {\em comando}, el comando  {\tt :letras} significará teclear {\tt
-:letras} en modo  comando y pulsar {\tt Enter}.  Cualquier comando del
-primer tipo puede  modificarse teclando un número, lo que  hará que se
-ejecute ese número de veces (el comando {\tt 4x} es equivalente a {\tt
-xxxx}). Si te equivocas  tecleando cualquier comando puedes cancelarlo
-pulsando {\tt Esc}.
-
-Para  deshacer cualquier  operación  realizada pulsamos  en modo  {\em
-comando} la tecla {\tt u}. Para  salir del editor {\bf sin} guardar el
-fichero utiliza  el comando  {\tt :q!}. Probablemente  realizarás esta
-operación con mucha  frecuencia al principio, cuando  se cometas algún
-error grave como teclear una palabra  sin pasar al modo {\em edición}.
-En el modo  {\em comando} cada tecla tiene su  función, y es diferente
-además si está en mayúsculas que  si está en minúsculas. Por lo tanto,
-una regla de oro con {\sf VI} es: {\bf cuando no sepas con qué comando
-hacer algo, no pruebes teclas al azar}. Tampoco es nada bueno utilizar
-la tecla. Y por supuesto, cuando estés editando algo importante guarda
-el fichero con  frecuencia con el comando {\tt :w},  sobre todo en las
-primeras semanas de  uso. Para salir de {\sf VI}  guardando el fichero
-utiliza el comando {\tt :x}.
-
-Una utilidad  que te puede  resultar interesante es  ejecutar comandos
-del sistema desde la misma consola en la que estamos trabajando con el
-{\sf  VIM}. En  modo  {\em comando}  escribimos  {\tt :!comando},  por
-ejemplo, si escribimos {\tt :!ls}  nos mostrará un listado de archivos
-del directorio  en el  que nos encontramos.  Esto te  permite compilar
-programas o  documentos mientras editas  uno o más ficheros  de código
-fuente,  incluso  puedes ejecutar  una  consola  de sistema  desde  el
-editor, con el comando {\tt :sh}
-
-Para buscar palabras dentro de un  documento es fácil, solo tienes que
-\index{VIM!búsqueda}
-escribir  en modo  {\em  comando}  {\tt /palabra}  y  si salen  varios
-resultados, pulsando  {\tt n} los  irá mostrando. Si prefieres  que la
-búsqueda  sea hacia  atrás  (desde  el final  hacia  el principio  del
-fichero) el comando que necesitas  es {\tt ?palabra}. También con esta
-búsqueda pasas de un resultado a otro pulsando {\tt n}.
-
-Si lo que  necesitas es desplazarte por un documento  muy grande (como
-por ejemplo el  código fuente de un programa) a  líneas concretas {\sf
-VIM} lo  soluciona. Para desplazarnos a  la línea 60 de  un documento,
-escribe en modo {\em comando} {\tt 60}  y luego pulsa {\tt S-g} o {\tt
-G}. Si  pulsas sólo  {\tt S-g}  o {\tt  G} te  desplazas al  final del
-fichero, y si  pulsas {\tt gg} (pulsas {\tt g}  dos veces seguidas) te
-desplazas al principio del fichero.
-
-Para desplazamientos  más cortos dispones  del comando {\tt  0} (cero)
-que te  sitúa el principio  de la línea, \verb.^.  que te sitúa  en el
-primer caracter no blanco (espacio  o tabulador) de la línea, \verb.$.
-que te sitúa al final de la línea, {\tt w} te sitúa al principio de la
-siguiente palabra, y {\tt b} hace lo mismo con la anterior palabra. El
-comando  \verb.).  te desplaza  a  la  siguiente frase,  mientras  que
-\verb.(. te  desplaza a  la anterior. Del  mismo modo  puedes utilizar
-\verb.{. y \verb.}. para saltar de párrafo en párrafo.
-
-Si en  lugar de desplazarte  por el fichero  lo que quieres  es borrar
-parte de su contenido estos mismos comandos, pulsando previamente {\tt
-d}, hacen lo siguiente: {\tt d0}  borra desde el principio de la línea
-hasta  justo antes  del cursor,  {\tt D}  o \verb.d$.  borra desde  el
-cursor hasta  el final  de la  línea, {\tt dw}  borra desde  el cursor
-hasta el principio de la siguiente palabra, {\tt db} borra desde justo
-antes  del cursor  hasta  el principio  de  la palabra  en  la que  se
-encuentre el cursor, {\tt dd} borra la línea en la que se encuentre el
-cursor, {\tt dj} borra la línea en  la que se encuentre el cursor y la
-que  estén justo  debajo,  {\tt 34dj}  borra  la línea  en  la que  se
-encuentre el cursor y las siguientes 34 líneas que estén justo debajo,
-\verb.d). borra  desde el  cursor hasta el  principio de  la siguiente
-frase, \verb.d(. borra desde el cursor  hasta el principio de la frase
-en la  que se  encuentre el  cursor, \verb.d}.  borra desde  el cursor
-hasta el final del párrafo en la que se encuentre el cursor, \verb.d{.
-borra desde el cursor hasta el final del párrafo anterior.
-
-A lo mejor  te interesa pegar en  otro sitio ese trozo  de fichero que
-has borrado,  o prefieres copiar y  pegar en lugar de  cortar y pegar.
-Claro que puedes  hacerlo con {\sf VI} y  seleccionando exactamente lo
-que  quieras. Para  seleccionar una  parte del  fichero sitúate  en un
-extremo  de  la  selección  (principio  o  final),  pulsa  {\tt  v}  y
-desplázate hasta  el otro  extremo de la  selección. Para  cancelar la
-selección pulsa  {\tt Esc}. Una  vez que tienes el  texto seleccionado
-puedes cortarlo pulsando {\tt d} o copiarlo pulsando {\tt y}.
-
-Para pegar lo que has copiado o  cortado has de situar el cursor en la
-posición  deseada  y contemplar  dos  opciones  para pegar  el  texto:
-pulsando {\tt p} el texto se insertará {\em justo después} del cursor,
-pulsando {\tt S-p}  o {\tt P} el texto se  insertará {\em justo antes}
-del cursor.
-
-Cuando cortas o copias una región de  texto ésta se guarda en una zona
-de memoria, lo que se denomina  un {\em buffer}. Mientras no salgas de
-{\sf VIM}  este buffer se  conserva completamente hasta que  vuelvas a
-cortar  o copiar  otra  región.  Ten cuidado  porque  borrar algo  con
-cualquier comando también se considera cortar, por lo que sobreescribe
-el buffer. Este  buffer se conserva además entre ficheros,  por lo que
-puedes cortar o copiar  en un fichero y pegar en  otro, siempre que no
-salgas del  editor para hacer  esta maniobra.  Si sales del  editor se
-conserva sólo una parte del buffer, suele ser suficiente para regiones
-no muy grandes, pero no te confíes.
-
-Si quieres  cortar o  copiar de un  fichero y pegar  en otro  lo mejor
-es  que  abras ambos  ficheros  con  el  mismo {\sf  VI},  simplemente
-ejecutando:
-
-\begin{verbatim}
-$ vi fichero1 fichero2
-\end{verbatim}
-
-Con esto tienes varios ficheros abiertos,  con un buffer para cada uno
-\index{VIM!buffers}
-(aquí entendemos buffer en el sentido con el que lo hacíamos al hablar
-de Emacs) y puedes pasar de un  buffer a otro con el comando {\tt :bN}
-donde {\tt N} es el número  del buffer (se numeran empezando por $1$).
-Para pasar  de un  buffer a  otro primero debes  guardar a  fichero el
-buffer en el que te encuentres (con el comando {\tt :w}).
-
-Otro comando que te ayudará si  tienes que programar es el comando \%.
-Si estás trabajando  con algunos lenguajes cuyas  sintaxis manejan con
-mucha frecuencia \verb.(., \verb.{. o  \verb.{. , {\sf VIM} te permite
-con pulsar la  tecla \% situarte sobre uno de  estos caracteres que te
-muestre  el  de cierre  o  apertura  que  le corresponda.  
-
-Una de las  funcionalidades más queridas de {\sf VI}  es la búsqueda y
-\index{VIM!búsqueda y substitución}
-sustitución de texto.  Para empezar pensemos en  simples palabras, por
-ejemplo en substituir  la palabra ``coche'' por  la palabra ``carro''.
-El  comando para  la substitución  es {\tt  :s} y  tiene el  siguiente
-esquema: \verb.:rangos/busca/sustituye/[gc].
-
-Lo que  pongas {\tt rango}  determina la  región del fichero  que será
-afectada por el  comando. Puedes poner dos números  de línea separados
-por  coma para  afectar  a  todas las  líneas  entre  esas dos  (ambas
-inclusive), o  bien substituir el  número de  la segunda línea  por un
-\verb.$. para extender la región  afectada hasta el final del fichero.
-Si en lugar de líneas poner \verb.%. afectará a todo el fichero.
-
-Las opciones  {\tt g} y  {\tt c} del  final son opcionales.  La opción
-{\tt g} hace  que se substituyan todas las ocurrencias  en cada línea,
-ya que si  no la especificas sólo se substituye  la primera ocurrencia
-de cada línea.  La opción {\tt c} hace que  {\tt VI} pida confirmación
-antes de substituir cada ocurrencia.
-
-La expresión {\tt busca} es el patrón que {\sf VIM} buscará. Puede ser
-una  palabra,  o  más  en  general una  {\em  expresión  regular}.  La
-expresión {\tt substituye}  es el patrón que {\sf  VIM} utilizará para
-substituir en las ocurrencias, y  también puede ser una {\em expresión
-regular}.
-
-Una {\em expresión regular} es un  tipo de expresiones de uso común en
-\index{expresiones regulares en VI}
-\index{VIM!expresiones regulares}
-programación.  Define  una  serie  de  reglas  que  debe  cumplir  una
-expresión para considerar  que {\em encaja} con  la expresión regular.
-Esto se  consigue utilizando  caracteres con  significados especiales,
-que en las expresiones regulares de {\sf VI} son:
-\verb_. * $ / [ ] \ * -_
-
-En  una expresión  regular,  \verb_._ encaja  con cualquier  caracter,
-\verb.^. con  el principio de  la línea, \verb.$.  con el final  de la
-línea, \verb.-., \verb.[. y \verb.]. permiten definir rangos, \verb.*.
-extiende el  significado de la  expresión que  le preceda a  ninguna o
-varias  ocurrencias de  la misma.  La barra  \verb./. se  utiliza para
-separar  los  patrones de  búsqueda.  Para  utilizar alguno  de  estos
-caracteres de forma que encajen consigo mismos (por ejemplo para busar
-un punto  en el  texto) hay que  {\em escaparlos}  anteponiéndoles una
-barra invertida (\verb.\.).
-
-Otros  caracteres   adquieren  un  significado  especial   cuando  son
-precedidos de la barra invertida.  Así \verb.\|. es el operador ``o'',
-es decir la  expresión \verb.casa\|coche. encaja con {\tt  casa} y con
-{\tt coche}.  Los símbolos de desigualdad  permiten delimitar palabras
-en un patrón, usando \verb.\<. que  encaja con el principio de palabra
-y \verb.\>. con  el final. Así podremos sustituir la  palabra {\tt vi}
-por {\tt vim} sin que cambien palabras del texto como vivir, etc.
-
-\begin{verbatim}
-:s/\<vi\>/vim
-\end{verbatim}
+Esto es  lo mínimo que  debes saber para editar  con {\tt Joe},  y con
+esto  será suficiente  aquí pues  en  lo sucesivo  aprenderás a  hacer
+operaciones más avanzadas con otros editores. Para conocer sobre otras
+opciones de este editor, se puede utilizar la opción {\tt C-k h}.
 
 
-Podemos utilizar el  carácter \verb.^. le indica al vim  que no exista
-ningun carácter antes  de la expresión regular  que queremos sustituir
-en  esa  línea,  y el  carácter  \verb.$.  le  indica  al vim  que  no
-exista ningun carácter  despuéas de la expresión  regular que queremos
-sustituir en usa línea. Vamos a ver unos ejemplos:
-
-\begin{verbatim}
-:s/^vi/vim/g
-\end{verbatim}
-
-En este  ejemplo, se cambia  la palabra {\tt vi}  por {\tt vim}  si no
-existe ningun carácter delante de la palabra {\tt vi}.
-
-\begin{verbatim}
-:s/vi$/vim
-\end{verbatim}
-
-En el anterior ejemplo, se sustituye la palabra {\tt vi} por {\tt vim}
-que se encuentre al final de una línea.
-
-\begin{verbatim}
-:s/^vi$/vim
-\end{verbatim}
-
-Los metacaracteres  nos permiten  una gran flexibilidad  a la  hora de
-trabajar con expresiones regulares.
-
-\begin{table}[htbp]
-\centering
-\index{VIM!metacaracteres}
-\begin{tabular}{|c|l|}
-\hline
-{\tt .}         & Cualquier caracter \\
-{\tt \verb.\s.} & Espacios en blanco \\
-{\tt \verb.\d.} & Digitos \\
-{\tt \verb.\h.} & Cualquier letra \\
-{\tt \verb.\w.} & Letras y digitos \\
-{\tt \verb.\l.} & Letras minúsculas \\
-{\tt \verb.\u.} & Letras mayúsculas \\
-\hline
-\end{tabular}
-\caption{Metacaracteres en las expresiones regulares de VI}
-\end{table}
-
-Vamos a poner un ejemplo con este tipo de comandos. Si queremos buscar
-en el texto fechas con el formato DD/MM/AAAA, lo que haríamos sería:
-
-\begin{verbatim}
-/\d\d/\d\d/\d\d\d\d
-\end{verbatim}
-
-O por ejemplo  si buscamos palabras que empiezen con  mayúsculas de un
-modo sencillo podemos hacer:
-
-\begin{verbatim}
-/\u\l
-\end{verbatim}
-
-Ahora vamos a  introducir unos elementos nuevos  para hacer reemplazos
-y  busquedas  más  ``profesionales''.  Uno   de  ellos  son  los  {\em
-cuantificadores}.\index{VIM!expresiones  regulares!cuantificadores} Si
-necesitamos  buscar   en  un  documento  grandes   grupos  de  números
-de  9  cifras  por  ejemplo  nos  resultaría  muy  trabajoso  escribir
-\verb./\d\d\d\d\d\d\d\d\d..    Los   cuantificadores    son   diversas
-expresiones que nos permiten definir  el número de veces que aparecerá
-el  tipo de  caracter que  queremos  buscar. Los  más importantes  son
-\verb.\+., relaciona  el caracter que aparece  una o más veces  en una
-palabra, \verb.\=., relaciona el caracter que aparece 0, 1 o más veces
-en  una  palabra.  Con  \verb.\{n,m}.  relaciona  el  caracter  si  se
-encuentra entre  n y  m veces. La  expresión \verb.\{n}.  relaciona el
-caracter si se  encutra n veces. Así en el  ejemplo anterior podríamos
-usar:
-
-\begin{verbatim}
-/\d\{9}
-\end{verbatim}
-
-y nos mostraría las expresiones que contengan 9 digitos.
-
-Podemos combinar los cuantificadores con los rangos de caracteres para
-conseguir mejores resultados. Los  rangos de expresiones regulares son
-definidos dentro  de \verb.[].. Por ejemplo,  \verb./[a-h]. buscará en
-el  texto  todos las  letras  entre  la a  y  la  h, ambas  inclusive,
-\verb./[A-H].  haría  lo  mismo   en  mayúsculas.  También  existe  un
-valor  negativo  en los  rangos,  es  el  {\tt \verb.^.}.  El  comando
-\verb./[^j-z]. mostrará todas las letras minúsculas anteriores a la j.
-
-Para   buscar   mayúsculas   o   minúsculas   hay   algo   mejor   que
-los   rangos   \verb.[a-z].  y   \verb.[A-Z].,   que   son  las   {\em
-clases}\index{VIM!expresiones   regulares!clases}.   Las   clases   se
-refieren mediante  palabras encerradas entre \verb.[[:.  y \verb.:]].,
-por  lo  que para  buscar  una  expresión  mediante clases  el  patrón
-de  búsqueda deberá  contener  \verb.[[:clase:]]. Las  clases que  nos
-interesan son:
-
-\begin{table}[htbp]
-\centering
-\begin{tabular}{|c|l|}
-\hline
-{\tt \verb.[[:lower:]].} & cualquier letra minúscula (incluida {\tt ñ}) \\
-{\tt \verb.[[:upper:]].} & cualquier letra mayúscula (incluida {\tt Ñ}) \\
-{\tt \verb.[[:alpha:]].} & cualquier letra \\
-{\tt \verb.[[:digit:]].} & cualquier dígito \\
-\hline
-\end{tabular}
-\caption{Metacaracteres en las expresiones regulares de VI}
-\end{table}
-
-Tambien   podemos   cambiar  el   orden   de   las  frases   de   todo
-un   texto    o   de   zonas   específicas,    utilizando   los   {\em
-agrupadores}\index{VIM!expresiones regulares!agrupadores}. Se trata de
-crear  grupos de  expresiones  que luego  para sustituir  utilizaremos
-expresiones  que  nos permitan  reordenarlos.  Para  definir un  grupo
-se  utiliza \verb.\(\).,  el  texto  que se  encuentre  entre esos  el
-paréntesis ``escapados''  será la expresion que  buscará. Por ejemplo,
-estamos usando  un archivo con  varios nombres de ciudades,  pero para
-poder utilizarlo necesitamos que todos esten al principio de la línea,
-sin ningun espacio, podemos utilizar el siguiente comando:
-
-\begin{verbatim}
-:%s/^\(\s\+\)\(\w\+\)/\2/g
-\end{verbatim}
-
-El anterior comando busca en todo el documento (\verb.%.) que contenga
-cualquier número espacios al principio de la línea (\verb.\(\s\+\).) y
-que detrás contenga algún texto(\verb.\(\w\+\)). y lo sustituye por la
-exresión(\verb.\2.), es  decir, solo  mantiene el grupo  \verb.\2., el
-que contiene la palabra.
 

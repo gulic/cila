@@ -1,0 +1,203 @@
+%Autor: miguev, faraox
+%miguev: 2 + 5
+%faraox: 3
+
+
+\chapter{Expresiones regulares}
+\label{regex.tex}
+
+\index{Expresiones regulares}
+
+Una {\em expresión regular} es un  tipo de expresiones de uso común en
+programación.  Define  una  serie  de  reglas  que  debe  cumplir  una
+expresión para considerar  que {\em encaja} con  la expresión regular.
+Esto se  consigue utilizando  caracteres con  significados especiales,
+que son \verb_. ^ $ [ ] \ * -_
+
+% ¿es / un caracter especial en las expresiones regulares en general?
+
+En  una expresión  regular,  \verb_._ encaja  con cualquier  caracter,
+\verb.$. con  el final de  la línea, \verb.^.  con el principio  de la
+línea cuando  es el primero en  la expresión regular, mientras  que en
+otro caso encaja con cualquier caracter  que no sea el que le preceda.
+Los caracteres \verb.-., \verb.[.  y \verb.]. permiten definir rangos,
+\verb.*.  extiende el  significado de  la expresión  que le  preceda a
+ninguna o varias ocurrencias de la misma.
+
+% La barra  \verb./. se  utiliza para separar  los  patrones de  búsqueda.
+Para utilizar alguno de estos  caracteres de forma que encajen consigo
+mismos (por  ejemplo para buscar  un punto en  el texto) hay  que {\em
+escaparlos} anteponiéndoles una barra invertida (\verb.\.).
+
+Otros  caracteres   adquieren  un  significado  especial   cuando  son
+precedidos de la barra invertida.  Así \verb.\|. es el operador ``o'',
+es decir la  expresión \verb.casa\|coche. encaja con {\tt  casa} y con
+{\tt coche}.  Los símbolos de desigualdad  permiten delimitar palabras
+en un patrón, usando \verb.\<. que  encaja con el principio de palabra
+y \verb.\>. con  el final. Así podremos sustituir la  palabra {\tt vi}
+por {\tt vim} sin que cambien palabras del texto como vivir, etc.
+
+% \begin{verbatim}
+% :s/\<vi\>/vim
+% \end{verbatim}
+
+Podemos utilizar el  carácter \verb.^. le indica al vim  que no exista
+ningun carácter antes  de la expresión regular  que queremos sustituir
+en  esa  línea,  y el  carácter  \verb.$.  le  indica  al vim  que  no
+exista ningun carácter  despuéas de la expresión  regular que queremos
+sustituir en usa línea. Vamos a ver unos ejemplos:
+
+\begin{verbatim}
+:s/^vi/vim/g
+\end{verbatim}
+
+En este  ejemplo, se cambia  la palabra {\tt vi}  por {\tt vim}  si no
+existe ningun carácter delante de la palabra {\tt vi}.
+
+\begin{verbatim}
+:s/vi$/vim
+\end{verbatim}
+
+En el anterior ejemplo, se sustituye la palabra {\tt vi} por {\tt vim}
+que se encuentre al final de una línea.
+
+\begin{verbatim}
+:s/^vi$/vim
+\end{verbatim}
+
+Los metacaracteres  nos permiten  una gran flexibilidad  a la  hora de
+trabajar con expresiones regulares.
+
+\begin{table}[htbp]
+\centering
+\index{VIM!metacaracteres}
+\begin{tabular}{|c|l|}
+\hline
+{\tt .}         & Cualquier caracter \\
+{\tt \verb.\s.} & Espacios en blanco \\
+{\tt \verb.\d.} & Digitos \\
+{\tt \verb.\h.} & Cualquier letra \\
+{\tt \verb.\w.} & Letras y digitos \\
+{\tt \verb.\l.} & Letras minúsculas \\
+{\tt \verb.\u.} & Letras mayúsculas \\
+\hline
+\end{tabular}
+\caption{Metacaracteres en las expresiones regulares de VI}
+\end{table}
+
+Vamos a poner un ejemplo con este tipo de comandos. Si queremos buscar
+en el texto fechas con el formato DD/MM/AAAA, lo que haríamos sería:
+
+\begin{verbatim}
+/\d\d/\d\d/\d\d\d\d
+\end{verbatim}
+
+O por ejemplo  si buscamos palabras que empiezen con  mayúsculas de un
+modo sencillo podemos hacer:
+
+\begin{verbatim}
+/\u\l
+\end{verbatim}
+
+Ahora vamos a  introducir unos elementos nuevos  para hacer reemplazos
+y  busquedas  más  ``profesionales''.  Uno   de  ellos  son  los  {\em
+cuantificadores}.\index{VIM!expresiones  regulares!cuantificadores} Si
+necesitamos  buscar   en  un  documento  grandes   grupos  de  números
+de  9  cifras  por  ejemplo  nos  resultaría  muy  trabajoso  escribir
+\verb./\d\d\d\d\d\d\d\d\d..    Los   cuantificadores    son   diversas
+expresiones que nos permiten definir  el número de veces que aparecerá
+el  tipo de  caracter que  queremos  buscar. Los  más importantes  son
+\verb.\+., relaciona  el caracter que aparece  una o más veces  en una
+palabra, \verb.\=., relaciona el caracter que aparece 0, 1 o más veces
+en  una  palabra.  Con  \verb.\{n,m}.  relaciona  el  caracter  si  se
+encuentra entre  n y  m veces. La  expresión \verb.\{n}.  relaciona el
+caracter si se  encutra n veces. Así en el  ejemplo anterior podríamos
+usar:
+
+\begin{verbatim}
+/\d\{9}
+\end{verbatim}
+
+y nos mostraría las expresiones que contengan 9 digitos.
+
+Podemos combinar los cuantificadores con los rangos de caracteres para
+conseguir mejores resultados. Los  rangos de expresiones regulares son
+definidos dentro  de \verb.[].. Por ejemplo,  \verb./[a-h]. buscará en
+el  texto  todos las  letras  entre  la a  y  la  h, ambas  inclusive,
+\verb./[A-H].  haría  lo  mismo   en  mayúsculas.  También  existe  un
+valor  negativo  en los  rangos,  es  el  {\tt \verb.^.}.  El  comando
+\verb./[^j-z]. mostrará todas las letras minúsculas anteriores a la j.
+
+Para   buscar   mayúsculas   o   minúsculas   hay   algo   mejor   que
+los   rangos   \verb.[a-z].  y   \verb.[A-Z].,   que   son  las   {\em
+clases}\index{VIM!expresiones   regulares!clases}.   Las   clases   se
+refieren mediante  palabras encerradas entre \verb.[[:.  y \verb.:]].,
+por  lo  que para  buscar  una  expresión  mediante clases  el  patrón
+de  búsqueda deberá  contener  \verb.[[:clase:]]. Las  clases que  nos
+interesan son:
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+{\tt \verb.[[:lower:]].} & cualquier letra minúscula (incluida {\tt ñ}) \\
+{\tt \verb.[[:upper:]].} & cualquier letra mayúscula (incluida {\tt Ñ}) \\
+{\tt \verb.[[:alpha:]].} & cualquier letra \\
+{\tt \verb.[[:digit:]].} & cualquier dígito \\
+\hline
+\end{tabular}
+\caption{Metacaracteres en las expresiones regulares de VI}
+\end{table}
+
+Tambien   podemos   cambiar  el   orden   de   las  frases   de   todo
+un   texto    o   de   zonas   específicas,    utilizando   los   {\em
+agrupadores}\index{VIM!expresiones regulares!agrupadores}. Se trata de
+crear  grupos de  expresiones  que luego  para sustituir  utilizaremos
+expresiones  que  nos permitan  reordenarlos.  Para  definir un  grupo
+se  utiliza \verb.\(\).,  el  texto  que se  encuentre  entre esos  el
+paréntesis ``escapados''  será la expresion que  buscará. Por ejemplo,
+estamos usando  un archivo con  varios nombres de ciudades,  pero para
+poder utilizarlo necesitamos que todos esten al principio de la línea,
+sin ningun espacio, podemos utilizar el siguiente comando:
+
+\begin{verbatim}
+:%s/^\(\s\+\)\(\w\+\)/\2/g
+\end{verbatim}
+
+El anterior comando busca en todo el documento (\verb.%.) que contenga
+cualquier número espacios al principio de la línea (\verb.\(\s\+\).) y
+que detrás contenga algún texto(\verb.\(\w\+\)). y lo sustituye por la
+exresión(\verb.\2.), es  decir, solo  mantiene el grupo  \verb.\2., el
+que contiene la palabra.
+
+
+\section{El nombre pa'luego}
+
+\section{Expresiones regulares con VI \& VIM}
+
+Una de las  funcionalidades más queridas de {\sf VI}  es la búsqueda y
+\index{VIM!búsqueda y substitución}
+sustitución de texto.  Para empezar pensemos en  simples palabras, por
+ejemplo en substituir  la palabra ``coche'' por  la palabra ``carro''.
+El  comando para  la substitución  es {\tt  :s} y  tiene el  siguiente
+esquema: \verb.:rangos/busca/sustituye/[gc].
+
+Lo que  pongas {\tt rango}  determina la  región del fichero  que será
+afectada por el  comando. Puedes poner dos números  de línea separados
+por  coma para  afectar  a  todas las  líneas  entre  esas dos  (ambas
+inclusive), o  bien substituir el  número de  la segunda línea  por un
+\verb.$. para extender la región  afectada hasta el final del fichero.
+Si en lugar de líneas poner \verb.%. afectará a todo el fichero.
+
+Las opciones  {\tt g} y  {\tt c} del  final son opcionales.  La opción
+{\tt g} hace  que se substituyan todas las ocurrencias  en cada línea,
+ya que si  no la especificas sólo se substituye  la primera ocurrencia
+de cada línea.  La opción {\tt c} hace que  {\tt VI} pida confirmación
+antes de substituir cada ocurrencia.
+
+La expresión {\tt busca} es el patrón que {\sf VIM} buscará. Puede ser
+una  palabra,  o  más  en  general una  {\em  expresión  regular}.  La
+expresión {\tt substituye}  es el patrón que {\sf  VIM} utilizará para
+substituir en las ocurrencias, y  también puede ser una {\em expresión
+regular}.
+
