@@ -1,5 +1,5 @@
 /* holafuncm.c .- Ejemplo de programa que require la biblioteca de
- *		funciones matemáticas. Definición de holafunc().
+ *        funciones matemáticas. Definición de holafunc().
  */
 
 #include <math.h>

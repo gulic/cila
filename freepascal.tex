@@ -20,15 +20,10 @@ Comenzaremos  escribiendo  un  ejemplo  muy sencillo  de  programa  en
 Pascal, el  típico ``Hola Mundo''.  En cualquier editor  escribimos el
 siguiente código y lo guardamos con el nombre {\tt HolaMundo.pas}
 
-\begin{verbatim}
-{ Ejemplo 1 de Pascal para CILA }
-
-Program HolaMundo;
-
-Begin
-  writeln ('Hola Mundo');
-End.
-\end{verbatim}
+\begin{ejemplo}{HolaMundo.pas}%
+{Ejemplo 1 de Pascal }
+Ejemplo 1 de Pascal 
+\end{ejemplo}
 
 Para  compilar un  programa escrito  en  Pascal con  el compilador  de
 FreePascal utilizamos el comando {\tt ppc386} del siguiente modo:
@@ -93,48 +88,16 @@ unidades.
 Tenemos para  este ejemplo  dos ficheros de  código fuente  en Pascal,
 {\tt HolaMundo2.pas} y {\tt saludos.pas}.
 
-\begin{verbatim}
-{ Ejemplo 2 de Pascal para CILA }
-{    Fichero: HolaMundo2.pas    }
+\begin{ejemplo}{HolaMundo2.pas}%
+{Ejemplo 2 de Pascal }
+Ejemplo 2 de Pascal 
+\end{ejemplo}
 
-Program HolaMundo2;
-Uses
-  Crt, Saludos ;
-Var
-  nombre : string ;
-Begin
-  TextColor(13) ;
-  write ('¿Cómo te llamas? ') ;
-  TextColor(15) ;
-  readln (nombre) ;
-  TextColor(14) ;
-  Saluda (nombre) ;
-  TextColor(7) ;
-End.
-\end{verbatim}
+\begin{ejemplo}{saludos.pas}%
+{Ejemplo 2 de Pascal }
+Ejemplo 2 de Pascal 
+\end{ejemplo}
 
-\begin{verbatim}
-{ Ejemplo 2 de Pascal para CILA }
-{    Fichero: saludos.pas       }
-
-Unit Saludos ;
-
-Interface
-
-Uses Crt ;
-
-Procedure Saluda ( mensaje : string ) ;
-
-Implementation
-
-Procedure Saluda ( mensaje : string ) ;
-Begin
-  writeln('Hola ', mensaje);
-End;
-
-Begin
-End.
-\end{verbatim}
 
 Debemos  tener cuidado  con un  detalle: Los  nombres de  las unidades
 deben coincidir  con el nombre del  fichero en el que  están escritas,

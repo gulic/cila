@@ -652,10 +652,10 @@ c++ en las  que no entraremos. Para compilar este  código, vayámonos a
 un shell y escribamos lo siguiente:
 
 \begin{verbatim}
-alberto@baifito:ejemplos\$ ls oregonator.*
+\ ls oregonator.*
 oregonator.cc
-alberto@baifito:ejemplos\$ mkoctfile oregonator.cc 
-alberto@baifito:ejemplos\$ ls oregonator.*
+$ mkoctfile oregonator.cc 
+$ ls oregonator.*
 oregonator.cc  oregonator.o  oregonator.oct
 \end{verbatim}
 
@@ -821,26 +821,31 @@ ans =
    0.31010  -1.38565
   -0.64096   0.58650
 
-octave:7> diff([1 2 4 5 7 9 11 14]) # resta cada elemento con su anterior
+octave:7> diff([1 2 4 5 7 9 11 14]) 
+# resta cada elemento con su anterior
 ans =
 
   1  2  1  2  2  2  3
 
-octave:8> find ([0 0 0 0 0 0 1 0 0 0 5 0]) # encuentra indices elementos no nulos
+octave:8> find ([0 0 0 0 0 0 1 0 0 0 5 0]) 
+# encuentra indices elementos no nulos
 ans =
 
    7  11
-octave:9> linspace (1, 10, 8) # subdivide linealmente el intervalo [1,10] en 8 puntos.
+octave:9> linspace (1, 10, 8) 
+# subdivide linealmente el intervalo [1,10] en 8 puntos.
 ans =
 
    1.0000   2.2857   3.5714   4.8571   6.1429   7.4286   8.7143  10.0000
 
-octave:13> logspace (0, 3, 6) # subdivide logarítmicamente el intervalo [10^0,10^3] en 6 puntos.
+octave:13> logspace (0, 3, 6) 
+# subdivide logarítmicamente el intervalo [10^0,10^3] en 6 puntos.
 ans =
 
      1.0000     3.9811    15.8489    63.0957   251.1886  1000.0000
 
-octave:26> [a,b,c]=lu([1,3,2;3,2,1;3,2,6]) # factorización lu de una matriz
+octave:26> [a,b,c]=lu([1,3,2;3,2,1;3,2,6]) 
+# factorización lu de una matriz
 a =
 
   1.00000  0.00000  0.00000
@@ -958,6 +963,7 @@ pulso. \end{ejemplo}
 
 % FALTA PARTE DE TRATAMIENTO DE IMAGENES.
 
-En la sección de Gnuplot veremos como salvar estas gráficas en un fichero.
+En  el tema  de  Gnuplot  veremos como  salvar  estas  gráficas en  un
+fichero.
 
 

@@ -88,16 +88,9 @@ Veamos cómo se generan programas  básicos en java mediante un ejemplo.
 En un  editor escribimos  el siguiente  código y  lo guardamos  con el
 nombre de fichero {\tt Prueba.java}.
 
-\begin{verbatim}
-// Ejemplo 1 de Java para CILA
-// Fichero: HolaMundo.java
-
-public class HolaMundo {
-       public static void main(String[] argv){
-	      System.out.println("Hola mundo");
-}
-}
-\end{verbatim}
+\begin{ejemplo}{HolaMundo.java}{Ejemplo mínimo de Java}
+Ejemplo mínimo de Java
+\end{ejemplo}
 
 Es de vital importancia que el  nombre del fichero coincida con lo que
 escribimos después  de ``{\tt  public class}''.  Asimismo, Java  es un
@@ -141,20 +134,9 @@ Exception in thread "main" java.lang.NoClassDefFoundError: HolaMundo/java
 Veamos ahora un ejemplo de {\em applet}. Tecleamos el siguiente código
 y lo guardamos como {\tt HolaMundo2.java}.
 
-\begin{verbatim}
-// Ejemplo 2 de Java para CILA
-// Fichero: HolaMundo2.java
-
-import java.applet.Applet;
-import java.awt.*;
-
-public class HolaMundo2 extends Applet {
-    public Button botonUno = new Button ("Hola Mundo");
-    public void init() {
-    add ( botonUno );
-    }
-}
-\end{verbatim}
+\begin{ejemplo}{HolaMundo2.java}{Applet mínimo de Java}
+Applet mínimo de Java
+\end{ejemplo}
 
 Compilamos  el  applet del  mismo  modo  que  hicimos con  el  ejemplo
 anterior:
@@ -167,18 +149,9 @@ Con esto generamos  el fichero {\tt HolaMundo2.class}  que contiene el
 applet. Ahora necesitamos una página  web que cargue el applet. Creamos
 el fichero {\tt HolaMundo2.html} con el siguiente código:
 
-\begin{verbatim}
-<html>
-<head>
-<title> Ejemplo 2 de Java para CILA </title>
-</head>
-<body>
-<center>
-<applet code="HolaMundo2.class" width="300" height="300" ></applet>
-</center>
-</body>
-</html>
-\end{verbatim}
+\begin{ejemplo}{HolaMundo2.html}{Página HTML para incluir el applet de Java}
+Página HTML para incluir el applet de Java
+\end{ejemplo}
 
 Para probar el applet utilizaremos  el método que utilizaría cualquier
 visitante, cargarlo desde la página web que hemos creado a tal efecto.

@@ -3,13 +3,13 @@
 1; # limpia memoria
 
 function configura
-	hold off;               # no superpone siguientes graficos
-	clearplot();            # limpiamos
-	axis("auto","normal");  # ejes automáticos
-	subplot(1,1,1);         # nos ponemos en una sola ventana
-	xlabel("eje x");        #
-	ylabel("eje y");        # ponemos etiquetas
-	zlabel("eje z");        #
+    hold off;               # no superpone siguientes graficos
+    clearplot();            # limpiamos
+    axis("auto","normal");  # ejes automáticos
+    subplot(1,1,1);         # nos ponemos en una sola ventana
+    xlabel("eje x");        #
+    ylabel("eje y");        # ponemos etiquetas
+    zlabel("eje z");        #
 endfunction
 
 x=[-10:0.5:10];         # vector del eje x

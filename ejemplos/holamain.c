@@ -1,5 +1,5 @@
 /* holamain.c .- Ejemplo de programa en varios archivos.
- * 		Punto de entrada a la aplicación.
+ *         Punto de entrada a la aplicación.
  */
 
 #include "holafunc.h"

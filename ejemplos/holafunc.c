@@ -1,5 +1,5 @@
 /* holafunc.c .- Ejemplo de programa en varios archivos.
- * 		Definición de holafunc().
+ *         Definición de holafunc().
  */
 
 #include <stdio.h>

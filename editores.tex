@@ -262,7 +262,7 @@ emacs, aparecerá el directorio actual.
 Escribimos  la ruta  completa al  archivo y  aparecerá en  la posición
 actual del cursor.
 
-\section{VI}
+\section{VI \& VIM}
 
 \index{VI}
 \index{VIM}
@@ -478,59 +478,6 @@ la tecla. Y por supuesto, cuando estés editando algo importante guarda
 el fichero con  frecuencia con el comando {\tt :w},  sobre todo en las
 primeras semanas de  uso. Para salir de {\sf VI}  guardando el fichero
 utiliza el comando {\tt :x}.
-
-\begin{table}
-\begin{tabular}{|c|p{12cm}|}
-\hline
-Comando & Descripción \\
-\hline
- {\tt x}    & Borra un carácter \\
-\hline
- {\tt r}    & Reemplaza un carácter \\
-\hline
- {\tt u}    & Deshace la última operación  realizada (se puede repetir para
- des\-ha\-cer varias operaciones)\\
-\hline
- {\tt U}    & Deshace los cambios efectuados sobre la línea actual \\
-\hline
- {\tt :q}   & Salir del editor \\
-\hline
- {\tt :x}   & Salir del editor {\bf guardando} el fichero \\
-\hline
- {\tt :q!}  & Salir del editor {\bf sin guardar} el fichero \\
-\hline
- {\tt :w}   & Guardar el fichero \\
-\hline
- {\tt :w nombrefichero}  & Guardar el fichero con nombre {\bf nombrefichero} \\
-\hline
- {\tt nG}   & Ir a la línea {\tt n} \\
-\hline
- {\tt \$G}   & Ir al final del fichero \\
-\hline
- {\tt v}    & Activa el modo de selección (utiliza los cursores para  
-              seleccionar texto\\
-\hline
- {\tt y}    & Copia en memoria (buffer) el texto seleccionado \\
-\hline
- {\tt d}    & Borra el texto seleccionado, y lo copia en memoria (buffer) \\
-\hline
- {\tt p}    & Pega el texto copiado en memoria, tras la posición del cursor \\
-\hline
- {\tt P}    & Pega el texto copiado en memoria, en la posición del cursor \\
-\hline
- {\tt :syntax on}  & Activa el coloreado de sintaxis \\
-\hline
- {\tt :syntax off}  & Desactiva el coloreado de sintaxis \\
-\hline
- {\tt /palabra}   & Busca la cadena {\tt palabra} hacia adelante \\
-\hline
- {\tt ?palabra}   & Busca la cadena {\tt palabra} hacia atrás \\
-\hline
- {\tt n}   & Muestra la  siguiente  coincidencia de  la última  búsqueda \\
-\hline
-\end{tabular}
-\caption{Comandos básicos del VI}
-\end{table}
 
 Una utilidad  que te puede  resultar interesante es  ejecutar comandos
 del sistema desde la misma consola en la que estamos trabajando con el
@@ -807,70 +754,3 @@ cualquier número espacios al principio de la línea (\verb.\(\s\+\).) y
 que detrás contenga algún texto(\verb.\(\w\+\)). y lo sustituye por la
 exresión(\verb.\2.), es  decir, solo  mantiene el grupo  \verb.\2., el
 que contiene la palabra.
-
-Borramos la última línea como haríamos en el {\tt edit} del {\tt DOS},
-y pulsamos {\tt  \flq Ctrl\frq c} para salir sin  guardar los cambios.
-El editor  nos pedirá confirmación  antes de salir.  Podemos responder
-que sí queremos salir pulsando {\tt y}, o por el contrario cancelar la
-maniobra pulsando  {\tt n}  o {\tt  \flq Ctrl\frq  c}. Decimos  que sí
-({\tt y}) y volvemos al prompt del sistema.
-
-\begin{verbatim}
-Lose changes to this file (y,n,^C)? 
-File hola.txt not saved.
-$
-\end{verbatim}
-
-
-\section{Otros editores}
-
-\subsection{Joe}
-
-El primer editor  que suele aprenderse en Linux es  {\tt Joe}, por ser
-muy sencillo  y rápido.  Puede usarse  para editar  cualquier fichero,
-pero  aquí  trataremos su  uso  básico  para editar  pequeños  textos,
-ficheros de  configuración, pequeños  programas. Todos  estos ficheros
-pueden editarse con más comodidad con editores más potentes como Emacs
-o VIM pero para ello es  necesario aprender a usarlos primero, lo cual
-puede no resultar tan sencillo como aprender {\tt Joe}.
-
-Veremos sólo un par de comandos  de {\tt Joe}, simplemente como editar
-un fichero existente o nuevo, guardarlo sin salir, salir sin guardarlo
-y salir guardándolo. Para obtener más información sobre otras opciones
-del editor existe el comando de ayuda que explicaremos luego.
-=
-Esto es lo mínimo  que debemos saber para editar con  {\tt Joe}, y con
-esto nos conformaremos  aquí pues en lo sucesivo  aprenderemos a hacer
-operaciones más avanzadas con otros editores. Para conocer sobre otras
-opciones  de  este editor,  se  puede  utilizar  la opción  {\tt  \flq
-Ctrl\frq k h}.
-
-\subsection{Kwrite}
-
-{\tt Kwrite}  es un potente editor  de textos para KDE  que cuenta con
-todo lo necesario para editar cualquier tipo de texto, es configurable
-en  todos los  aspectos, desde  el tipo  de letra  con la  que se  nos
-presentará el  texto editado hasta las  teclas de acceso rápido  a las
-funciones que implementa este editor.
-
-Entre las  características que tiene  destaca el reconocimiento  de la
-sintaxis de muchos lenguajes de programación (C, C++, PASCAL, FORTRAN,
-LATEX, etc  ...) el  indentado automático, deshacer,  rehacer, copiar,
-pegar, buscar, reemplazar  y un largo etcétera  de herramientas útiles
-para la edición.
-
-\subsection{gnotepad+}
-
-{\tt Gnotepad+} es un editor con prácticamentes las mismas capacidades
-que el kwrite de KDE sólo que en este caso es para el entorno de GNOME
-y  no tiene  tantas opciones  de  reconocimiento de  sintaxis como  el
-kwrite. En cambio tiene algunas herramientas para la edición de código
-HTML interesantes  para el desarrollo  de un  proyecto para la  web de
-poca  complejidad,  como son  la  posibilidad  de visualizar  como  va
-quedando  el código  que vamos  haciendo, botones  que simplifican  la
-inserción  de ciertos  elementos del  lenguaje  html, etc  ... Una  de
-las  capacidades  interesantes del  gnotepad  es  la de  poder  editar
-simultáneamente varios  ficheros fuente  con un  solo editor  y varias
-pestañas  de edición,  lo cual  resulta interesante  para no  tener el
-escritorio lleno de ventanas y la memoria del sistema desperdiciada en
-llevar cuatro procesos exactamente iguales.

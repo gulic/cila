@@ -2,13 +2,13 @@
 
 clear;
 hold off;
-T=0.1;                  # periodo de muestreo
-N=100;                  # numero de muestras
-W=3*(2*pi/T);		# frecuencia de la senoidal
-A=20*T;			# ancho del escalon
+T=0.1;                      # periodo de muestreo
+N=100;                      # numero de muestras
+W=3*(2*pi/T);               # frecuencia de la senoidal
+A=20*T;                     # ancho del escalon
 
-t=T*[0:N];		# escala temporal
-f=(2*pi/T)*[-N/2:N/2]/N;	# escala en frecuencias
+t=T*[0:N];                  # escala temporal
+f=(2*pi/T)*[-N/2:N/2]/N;    # escala en frecuencias
 
 # la primera es la fft de un seno de 20Hz
 title("Seno de 20Hz");
