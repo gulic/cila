@@ -45,9 +45,9 @@
  3. Edición de gráficos:
     - DIA                               (Miguel,   0.5)
     - QCad                              (Miguel,   0.5)
-    - The GIMP                          (Miguel,     1)
- 4. LyX                                 (Miguel,     1)
- 5. LaTeX                               (Miguel,     1)
+    - The GIMP                          (Miguel,   0.5)
+ 4. LyX                                 (Miguel,   0.5)
+ 5. LaTeX                               (Miguel,     2)
 
  Módulo IV:  Herramientas para matemáticas
  1. Octave y SciLab                     (Alberto, 1.25)

@@ -15,8 +15,8 @@
  1. Historia de GNU/Linux. [Félix]
  2. El entorno del intérprete de comandos, con mtools.                     <== Félix
  3. El entorno X-Window, Gnome, KDE.                                       <== Jesús y Carlos C.
- 4. Aplicaciones para Internet: Mozilla, Konqueror, Mutt, SSH <== ¿¿VOLUNTARIOS??
- 5. Otras aplicaciones: gnotepad, openoffice, GIMP, acroread               <== ¿¿VOLUNTARIOS??
+ 4. Aplicaciones para Internet: Mozilla, Konqueror, Mutt, SSH              <== ¿¿VOLUNTARIOS??
+ 5. Aplicaciones diversas: gnotepad, openoffice, GIMP, acroread            <== ¿¿VOLUNTARIOS??
  6. Sistemas de ayuda y documentación                                      <== ¿¿VOLUNTARIOS??
 
  Módulo II:  Instalación (Debian GNU/Linux 3.0, 8 CDs, 25 plazas)

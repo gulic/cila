@@ -14,22 +14,19 @@ ha  existido una  versión  del navegador  Netscape  para este  sistema
 operativo.
 
 
-{\em Netscape  Communicator 4} proporciona soporte  para navegación de
+{\sf Netscape  Communicator 4} proporciona soporte  para navegación de
 páginas web  con JavaScript y  Flash 5, permite  visualizar documentos
-PDF  dentro del  navegador  (mediante  un plugin  para  el {\em  Adobe
+PDF  dentro del  navegador  (mediante  un plugin  para  el {\sf  Adobe
 Acrobat Reader}). También nos  permite gestionar el correo electrónico
 y componer páginas web.
-
-
 
 Los  Linuxeros siempre  hemos  considerado que  el navegador  Netscape
 consumía  demasiados  recursos en  Linux,  además  de tener  bastantes
 problemas  de  estabilidad.   Debido  a  éste,  y   a  otros  factores
-importantes, como fueron la forma  de competir con las casa Microsoft,
+importantes, como fueron  la forma de competir con  la casa Microsoft,
 Netscape llegó a la sana conclusión de que la mejor manera de mantener
 su navegador en el mercado, era  liberando su código fuente. Así nació
-{\bf Mozilla}
-
+{\sf Mozilla}.
 
 Como debe ser,  dentro de la comunidad del Software  Libre, se alzaron
 voces  en  contra  de  ese desperdicio  de  recursos,  proponiendo  la
@@ -38,20 +35,17 @@ alternativas que podemos  encontrar en el área de  los navegadores web
 dentro del Software Libre:
 
 \begin{itemize}
-\item{\bf chimera2} - Navegador web para las X
-\item{\bf communicator} - Netscape Communicator 4.77
-\item{\bf dillo} - Navegador web basado en las GTK
-\item{\bf encompass} - Un navegador libre para GNOME
-\item{\bf galeon} - Navegador basado en Mozilla, con el aspecto y la
-apariencia de las aplicaciones GNOME
-\item{\bf konqueror} - El gestor de ficheros, navegador web y visor de
-documentos del KDE
-\item{\bf links} - Navegador web en modo cáracter
-\item{\bf lynx} - Navegador web en modo cáracter
-\item{\bf mozilla} - Un navegador Open Source para las X's. Es el heredero
-de Netscape.
-\item{\bf OpenOffice} - Suite ofimática que incluye un buen navegador web
-\item{\bf w3m} - Visor web con un excelente soporte para tablas y marcos
+\item{\sf chimera2} - Navegador web para las X
+\item{\sf communicator} - Netscape Communicator 4.77
+\item{\sf dillo} - Navegador web basado en las GTK
+\item{\sf encompass} - Un navegador libre para GNOME
+\item{\sf galeon} - Navegador basado en Mozilla, con el aspecto y la apariencia de las aplicaciones GNOME
+\item{\sf konqueror} - El gestor de ficheros, navegador web y visor de documentos del KDE
+\item{\sf links} - Navegador web en modo cáracter
+\item{\sf lynx} - Navegador web en modo cáracter
+\item{\sf mozilla} - Un navegador Open Source para las X's. Es el heredero de Netscape.
+\item{\sf OpenOffice} - Suite ofimática que incluye un buen navegador web
+\item{\sf w3m} - Visor web con un excelente soporte para tablas y marcos
 \end{itemize}
 
 Bueno, seguro que en el momento  de leer este apartado, habrán surgido
@@ -161,16 +155,16 @@ directorio en la máquina remota
 remota
 
 \item[delete  ficheros-remotos]  Para  borrar varios  ficheros  en  la
-máquina remot                                                        a
+máquina remota
 
 \item[rmdir directorio-remoto] Para borrar un directorio en la máquina
-remot                                                                a
+remota
 
 \item[mkdir directorio-remoto] Para crear  un directorio en la máquina
-remot                                                                a
+remota
 
 \item[pwd] Para saber  el directorio en el que se  está, en la máquina
-remot                                                                a
+remota
 
 \item[ascii] Para hacer la transferencia en formato ASCII (lo hace por
 defecto)
@@ -213,7 +207,7 @@ trasladarnos  a escribirlos  en  su teclado.  Este  tipo de  servicios
 existe desde  los orígenes de  Internet pero siempre ha  entrañado sus
 riesgos dado que  es necesaria la autentificación  remota del usuario.
 Para entender  de lo  que estamos  hablando sólo  es necesario que nos
-aproximemos  al servicio  de {\em  TELNET} (cuyo  cliente suele  estar
+aproximemos  al servicio  de {\tt  TELNET} (cuyo  cliente suele  estar
 disponible bajo el comando del mismo nombre).
 
 TELNET\index{TELNET} fue el primer  servicio de acceso remoto diseñado
@@ -263,7 +257,7 @@ casos, pero peligrosa si la usamos para acceso remoto.
 \end{itemize}
 
 La  cuestión  ahora  es  cómo podemos  resolver  estos  problemas.  La
-respuesta  es  utilizando  {\em Secure  Shell  (SSH\index{SSH})}. Este
+respuesta  es  utilizando  {\sf Secure  Shell  (SSH\index{SSH})}. Este
 programa trabaja de forma similar  a TELNET solo que encriptando tanto
 la información que  es transmitida a la máquina remota  como la que es
 enviada por ésta. El resultado es que aunque la comunicación pueda ser
@@ -374,7 +368,7 @@ TELNET/SSH para sistemas Microsoft® Windows®.
       ser poco  intuitivo al principio. Afortunadamente,  se encuentra
       traducido al castellano y eso ayuda bastante.
 
-       Vamos a usar mutt para familirizarnos  un poco él, verán que es
+       Vamos a usar mutt para familirizarnos  un poco él, verás que es
       simple. Abrimos una  ventana de emulador de  terminal y ejecutan
       el comando {\tt mutt}.
 
@@ -396,36 +390,36 @@ TELNET/SSH para sistemas Microsoft® Windows®.
 /var/spool/mail/miguev: No existe el fichero o el directorio (errno = 2)
 \end{verbatim}
 
-        Esto significa  que mutt  está buscando  el correo  del
-      usuario  en  {\tt /var/spool/mail/miguev}  (en  el  caso  del
-      usuario miguev).  No se asusten.  Lo que  pasa es que  el correo
-      está en esa carpeta pero no en el terminal donde están sentados,
-      sino en  el servidor de  correo. Para  poder usar el  correo con
-      Mutt hay que entrar primero en el servidor, lo que podemos hacer
-      rápidamente  con  lo que  ya  sabemos  de  SSH. Entramos  en  el
-      servidor y ejecutamos mutt allí: 
+        Esto significa que mutt está buscando el correo del usuario en
+      {\tt /var/spool/mail/miguev} (en el caso del usuario miguev). No
+      se asusten.  Lo que pasa  es que el  correo está en  esa carpeta
+      pero no en el terminal donde están sentados, sino en el servidor
+      de correo.  Para poder usar  el correo  con Mutt hay  que entrar
+      primero en el servidor, lo  que podemos hacer rápidamente con lo
+      que ya sabemos de SSH. Entramos en el servidor y ejecutamos mutt
+      allí:
 
 \begin{verbatim}
       $ ssh euler.fmat.ull.es
       miguev@10.0.1.2's password: 
 \end{verbatim}
 
-       Una vez  dentro del servidor podemos ya  ejecutar mutt y
-      utilizar  el correo  directamente  desde el  servidor. Esto  que
-      parece  inútil  tiene  su  utilidad. Imagina  que  estás  en  un
-      ordenador en cualquier  lugar del mundo (con  acceso a internet)
-      y  quieres  leer tu  correo  en  la  facultad, pero  no  quieres
-      bajártelo. Utilizas un programa cliente de SSH para entrar en el
-      servidor  y desde  dentro usas  el  correo como  si lo  tuvieras
-      delante, aunque estés dentro del servidor. El mayor problema que
-      esto  presenta  es  la  lentitud del  protocolo  SSH  cuando  la
-      conexión es a través de un módem de línea telefónica. 
+       Una vez dentro del servidor podemos ya ejecutar mutt y utilizar
+      el correo directamente desde el servidor. Esto que parece inútil
+      tiene  su  utilidad.  Imagina  que  estás  en  un  ordenador  en
+      cualquier lugar del mundo (con acceso a internet) y quieres leer
+      tu correo en la facultad, pero no quieres bajártelo. Utilizas un
+      programa  cliente de  SSH para  entrar  en el  servidor y  desde
+      dentro usas el correo como  si lo tuvieras delante, aunque estés
+      dentro del servidor.  El mayor problema que esto  presenta es la
+      lentitud del protocolo SSH cuando la  conexión es a través de un
+      módem de línea telefónica.
 
-       Ejecutamos el  comando {\tt mutt} y vemos  en el terminal
-      un programa casi todas las líneas vacías, salvo la primera y las
-      dos últimas.  Probablemente en el  momento de abrir  mutt por
+       Ejecutamos  el comando  {\tt mutt}  y vemos  en el  terminal un
+      programa casi  todas las líneas  vacías, salvo la primera  y las
+      dos  últimas. Probablemente  en  el momento  de  abrir mutt  por
       primera vez  no veamos  nada interestante,  pero aquí  tienen un
-      ejemplo de una lista de mensajes vista desde mutt. 
+      ejemplo de una lista de mensajes vista desde mutt.
 
 \begin{verbatim}
 q:Salir  d:Sup.  u:Recuperar  s:Guardar  m:Nuevo  r:Responder  g:Grupo  ?:Ayuda
@@ -454,34 +448,34 @@ q:Salir  d:Sup.  u:Recuperar  s:Guardar  m:Nuevo  r:Responder  g:Grupo  ?:Ayuda
 
 \end{verbatim}
 
- Vamos a enviar un email a  alguien que esté con nosotros en el
-aula, de esa forma cada uno  enviamos un correo y recibimos otro. Para
-ello pulsamos  la tecla {\tt m} y  veremos como en la  última línea nos
-pregunta por el destinatario  del mensaje ({\tt To:}>. Introducimos ahí
-la dirección de email a la que enviaremos el mensaje: 
+ Vamos a enviar un  email a alguien que esté con  nosotros en el aula,
+de esa forma  cada uno enviamos un correo y  recibimos otro. Para ello
+pulsamos  la tecla  {\tt m}  y  veremos como  en la  última línea  nos
+pregunta por el destinatario del mensaje ({\tt To:}>. Introducimos ahí
+la dirección de email a la que enviaremos el mensaje:
 
 \begin{verbatim}
 To: frodo@fmat.ull.es
 \end{verbatim}
 
- Seguidamante  mutt nos  preguntará por  el asunto  del mensaje
-({\tt Subject:}). Es importante poner un asunto al mensaje, para que el
+ Seguidamante  mutt nos  preguntará por  el asunto  del mensaje  ({\tt
+Subject:}).  Es importante  poner un  asunto al  mensaje, para  que el
 destinatario  pueda tener  una idea  de qué  es ese  mensaje antes  de
 abrirlo.  En  un  tiempo  en  que el  contagio  de  virus  por  correo
 eletrónico es preocupantemente frecuente,  resulta muy molesto recibir
-un mensaje de email sin asunto. 
+un mensaje de email sin asunto.
 
 \begin{verbatim}
 Subject: Hola pringao :-P
 \end{verbatim}
 
- Una  vez que  mutt ya  sabe el destinatario  del mensaje  y el
-asunto,  ejecuta el  editor que  tengamos  definido en  el fichero  de
-configuración {\tt \~/.muttrc}. Editamos el  mensaje que queramos y
-salimos del  editor {\bf guardando el mensaje},  importante esto último
-ya que si salimos del editor  sin guardar el mensaje mutt cancelará el
-envío. Una vez que salimos del  editor mutt está preparado para enviar
-el mensaje, pero nos ofrece la  posibilidad de hacer aún varias cosas.
+ Una vez  que mutt ya  sabe el destinatario  del mensaje y  el asunto,
+ejecuta el editor que tengamos definido en el fichero de configuración
+{\tt  \~/.muttrc}. Editamos  el  mensaje que  queramos  y salimos  del
+editor {\bf  guardando el mensaje},  importante esto último ya  que si
+salimos del editor sin guardar el mensaje mutt cancelará el envío. Una
+vez que salimos del editor mutt está preparado para enviar el mensaje,
+pero nos ofrece la posibilidad de hacer aún varias cosas.
 
 
 \begin{verbatim}
@@ -510,22 +504,21 @@ Reply-To: Miguel Ángel Vilela <miguev@fmat.ull.es>
 
 \end{verbatim}
 
- Como podemos  apreciar en el ejemplo,  tenemos varias opciones
-con  sus  teclas  asociadas  en  la primera  línea.  Para  cambiar  el
-destinatario  pulsaríamos  {\tt t}, para  enviar  una  copia a  alguien
-pulsaríamos  {\tt c},  para  editar  el mensaje  de  nuevo  pulsaríamos
-{\tt e}, etc. Para enviar el mensaje pulsamos {\tt y}. Entonces mutt nos
-devolverá a  la primera pantalla,  pero mostrando en la  primera línea
-información acerca del envío del mensaje. Debería aparecer
+ Como podemos apreciar en el  ejemplo, tenemos varias opciones con sus
+teclas asociadas  en la  primera línea.  Para cambiar  el destinatario
+pulsaríamos {\tt t}, para enviar  una copia a alguien pulsaríamos {\tt
+c}, para  editar el mensaje  de nuevo  pulsaríamos {\tt e},  etc. Para
+enviar el mensaje  pulsamos {\tt y}. Entonces mutt nos  devolverá a la
+primera  pantalla,  pero mostrando  en  la  primera línea  información
+acerca del envío del mensaje. Debería aparecer
 
 \begin{verbatim}
 Mensaje enviado.
 \end{verbatim}
 
- El resto del manejo  básico de {\tt mutt} es bastante intuitivo
-y  no   presenta  dificultades.  Si  en   cualquier  momento  deseamos
-información  más  detallada  hacerca   de  las  opciones  disponibles,
-pulsamos {\tt ?}. 
+ El resto del  manejo básico de {\tt mutt} es  bastante intuitivo y no
+presenta dificultades.  Si en  cualquier momento  deseamos información
+más detallada hacerca de las opciones disponibles, pulsamos {\tt ?}.
 
 \begin{verbatim}
 i:Salir  -:PágAnt  <Space>:PróxPág  ?:Ayuda 
