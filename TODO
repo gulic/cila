@@ -14,11 +14,16 @@ Prioritario
  - Tema de OpenOffice. Carlos Pérez (aka Sirma) tiene material valioso
    para este tema. Lo subirá tan pronto sea posible.
 
- - Tema  de   manipulación  de  gráficas.  Habría   que  dividirlo  en
+ - Tema  de   manipulación  de  gráficos.  Habría   que  dividirlo  en
    varios  temas, tratando  un programa  por tema.  Los programas  más
    interesantes que consideramos son: The  GIMP, DIA, Qcad y alguno de
    dibujo vectorial.  Si crecieran lo suficiente  podrían separarse en
    un módulo nuevo "Gráficos".
+
+ - Tema de GNU  Emacs. Abría que dejarlo  como el de VI,  salvo que en
+   lugar de enrollarse con las expresiones regulares se pueden mostrar
+   la cantidad de cosas que pueden hacerse desde Emacs. Imprescindible
+   el quakemacs ;-)
 
  - Administración básica.  Estaría bien  añadir unos  cuantos consejos
    para salvar problemas  en la compilación de  programas y librerías.
