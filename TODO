@@ -5,7 +5,7 @@ Lista de cosas que faltan por incorporar al libro
 Si se  te ocurren más apúntalas  al final, en la  parte "Sugerido". Si
 ganan la  consideración del equipo  o simplemente alguien  (que puedes
 ser tú) decide escribirlas entonces se borrarán de este fichero porque
-pasarán a ser WIP ("Work In Progress" ;-)
+pasarán a ser WIP ("Work In Progress")
 
 
 Prioritario
@@ -36,7 +36,7 @@ Sugerido
    (sugerencia de Pablo, elfo)
 
  - Compilación  del  kernel.   No  sé  si  meterlo  en   la  parte  de
-   administación  o  en  la  de   instalación.  Todo  sabemos  que  el
+   administación  o  en  la  de   instalación.  Todos sabemos  que  el
    kernel-howto  explica  todo esto  bien,  pero  si no  recuerdo  mal
    supone que  el lector tiene  una base  no mínima en  Linux. Estaría
    bien  explicar por  encima los  pasos y  luego dar  trucos para  la
@@ -48,7 +48,11 @@ Sugerido
 
  - Introducciones a  programación en  varios lenguajes  que o  bien no
    suelen  enseñarse  en  los  centros docentes  o  bien  se  explican
-   malamente. Por ejemplo: Python, PHP, Perl, MySQL, PostgreSQL.
+   malamente. Por  ejemplo: Python, PHP, Perl,  MySQL, PostgreSQL. Hay
+   algo hecho, pero se trata de la parte "menos prioritaria" ya que el
+   libro  está  dirigido  a  novatos,  y pocos  novatos  se  ponene  a
+   programar  por amor  al  arte en  un lenguaje  que  nadie les  haya
+   pedido.
 
  - Herramientas para diseño electrónico. Habría que buscar un software
    que realmente  pueda suplir las  necesidades de un  estudiante. Los
@@ -57,4 +61,8 @@ Sugerido
 
  - Diseño 3D ¿qué  tal blender o vertex? ¿Alguien con  CI 9078 que sea
    capaz de explicar esto a un estudiante novato? X-D
+
+ - Herramientas  para  química. Que  recuerde  ahora  mismo existe  un
+   software escrito en Python,  llamado PyMol, que permite representar
+   moléculas y no sé si también hacer simulaciones.
 
