@@ -20,7 +20,7 @@ demostrado  que  estaban  parcialmente equivocados.  Disponer  de  GUI
 facilita  el acceso  del gran  público  a la  informática, pero  resta
 mucha flexibilidad  a los profesionales y/o  usuarios avanzados, cuyas
 necesidades  siempre  van  un  paso  por  delante  de  las  soluciones
-aportadas por  el GUI. Prueba  ello es que algunos  sistemas netamente
+aportadas por el GUI. Prueba de ello es que algunos sistemas netamente
 gráficos  han  comenzado a  cuidar  su  interfaz  de comandos  con  el
 objetivo  de poder  introducirse en  el segmento  de los  servidores y
 estaciones de trabajo profesionales.
@@ -48,6 +48,7 @@ muchos criticada.
 
 \begin{figura}{xwindow}{1}
 \caption{Arquitectura cliente/servidor del sistema X-Window}
+\label{xwindow}
 \end{figura}
 
 La  arquitectura   de  las  {\sf   X}  se  divide  en   dos  elementos
@@ -68,7 +69,7 @@ sistema. Esto permite  que los clientes no tengan por  qué estar en la
 misma máquina que  el servidor. Eso quiere decir que  podemos tener un
 servidor {\sf X} en nuestra máquina local a través del que interactuar
 con clientes que se ejecutan de forma remota en otro ordenador,sin que
-por ello notemos  diferencia alguna. Aparte de todo esto  las, {\sf X}
+por ello  notemos diferencia alguna. Aparte  de todo esto las  {\sf X}
 realizan  ciertas optimizaciones  en los  casos en  los que  cliente y
 servidor se encuentran en la misma máquina. Por ejemplo, se permite el
 acceso directo al  hardware de vídeo ignorando  el protocolo descrito,
@@ -103,14 +104,14 @@ X-Window}.
 
 En una  distribución de  Linux pueden  haber cerca  de 40  gestores de
 ventanas  entre los  que un  usuario debe  elegir. Cada  uno de  ellos
-imprime  un {\em  feeling}  diferente a  nuestro  entorno de  trabajo.
-Tengamos en cuenta  que cada gestor dibuja los elementos  del marco de
-nuestras ventanas  de forma  diferente (e.j. la  barra de  título, los
-botones  de  control, los  bordes),  dotándolos  de un  comportamiento
-particular  y  característico según  las  preferencias  del equipo  de
-programadores  que  lo diseñó.  Empezando  por  los estéticamente  más
-valorados como {\sf  Window Maker} o {\sf  Enlightenment}; pasando por
-los  que imitan  a otros  sistemas como  {\sf AfterStep}  o {\sf  F(?)
+imprime  un {\em  feeling}  o  sabor diferente  a  nuestro entorno  de
+trabajo. Tengamos en  cuenta que cada gestor dibuja  los elementos del
+marco  de nuestras  ventanas  de  forma diferente  (e.j.  la barra  de
+título,  los  botones  de  control,  los  bordes),  dotándolos  de  un
+comportamiento particular y característico  según las preferencias del
+equipo de programadores que lo diseñó. Empezando por los estéticamente
+más valorados como  {\sf Window Maker} o  {\sf Enlightenment}; pasando
+por los que  imitan a otros sistemas como {\sf  AfterStep} o {\sf F(?)
 Virtual Window  Manager} (en una  de sus variantes nos  proporciona el
 look de Microsoft® Windows® 95); o los que permiten ser personalizados
 con  {\em temas}  diferentes  como  {\sf Ice  Window  Manager} o  {\sf
@@ -207,19 +208,24 @@ de los otros usuarios de la máquina.
 Antes  de continuar  es importante  destacar algunas  cosas. En  Linux
 existe lo que se  denomina {\em terminales virtuales}\index{terminal}.
 Si estamos  en modo texto podemos  usar la combinación de  teclas {\tt
-A-F?} para  pasar de un terminal  a otro. Eso se  comprueba fácilmente
+A-F*} para  pasar de un terminal  a otro. Eso se  comprueba fácilmente
 porque vemos  cómo cambia el contenido  de la pantalla. El  uso de los
 terminales virtuales  nos permite mantener varias  sesiones abiertas y
 trabajar de forma independiente en ellas. Cuando se inicia un servidor
-{\sf  X}  éste queda  asociado  a  uno  de esos  terminales  virtuales
+{\sf  X} éste,  queda  asociado  a uno  de  esos terminales  virtuales
 (podemos tener  varios servidores  asociados a  distintos terminales);
 normalmente al  {\tt F7}. Debido al  mecanismo por el que  las {\sf X}
 manejan el teclado,  en los terminales asociados a  servidores {\sf X}
-ya  no se  puede usar  {\tt A-F?}  sino que  para cambiar  de terminal
-debemos usar {\tt C-A-F?}. Usando  la primera combinación de teclas en
+ya  no se  puede usar  {\tt A-F*}  sino que  para cambiar  de terminal
+debemos usar {\tt C-A-F*}. Usando  la primera combinación de teclas en
 los terminales en modo texto, y la  última en los asociados a las {\sf
 X}, no  tendremos problemas para  movernos por  ellos y pasar  de modo
 gráfico a consola a nuestro antojo.
+
+\begin{figura}{terminales}{0.98}
+\caption{Diagrama de cómo se pasa de una terminal a otra.}
+\label{terminales}
+\end{figura}
 
 Otro punto  importante es que sólo  cuando veamos un mensaje  del tipo
 {\tt Kernel Panic}  podemos decir que nuestro Linux se  ha colgado. En
@@ -346,9 +352,10 @@ fantástico entorno de escritorio que es {\sf KDE}.
 Si  nuestro sistema  tiene  instalado el  entorno  de escritorio  {\sf
 GNOME} y permite la autentificación  desde el modo gráfico es probable
 que tengamos instalado el {\sf  GDM (GNOME Display Manager)} como {\em
-display manager}.  {\sf GDM}  dispone de algunas  opciones adicionales
-que podemos emplear antes de  iniciar el proceso de autentificación, y
-que no tienen porque estar presentes en otros display manager.
+display  manager}(Figura  \ref{gdm}).  {\sf GDM}  dispone  de  algunas
+opciones adicionales que  podemos emplear antes de  iniciar el proceso
+de autentificación,  y que no  tienen porque estar presentes  en otros
+display manager.
 
 \begin{description}
 
@@ -768,3 +775,6 @@ terráqueo  y  un  engranaje  situado  en  nuestro  panel  (ver  Figura
 \caption{Konqueror como gestor de archivos}
 \label{kde_konqueror_dir}
 \end{figura}
+
+Con eso, el amigo lector ya  tiene opciones gráficas a elegir. ¡Que lo
+disfrute!
