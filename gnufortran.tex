@@ -1,34 +1,49 @@
 %Autor: miguev
 
-\chapter{GNU Fortran 77}
+\chapter{GNU Fortran}
 
-El lenguaje  de programación {\tt Fortran}  estaba orientado puramente
-al  cálculo   matemático,  y  sigue  siendo   un  lenguaje  importante
-en  entornos  científicos.  Su  nombre viene  de  {\bf  For}mula  {\bf
-Tran}slator, ya que su mayor uso  era traducir las fórmulas de cálculo
-matemático  al lenguaje  de  las máquinas.  Desde  sus principios,  el
-lenguaje Fortran  ha tenido una  sintaxis particular, adaptada  al uso
-de  tarjetas  perforadas. En  la  actualidad,  Fortran se  utiliza  en
-asignaturas de Cálculo en carreras técnicas como Matemáticas, Física y
-algunas ingenierías.
+\section{¿Fortran?}
 
-Utilizaremos aquí el  compilador {\bf GNU Fortran  77}, compatible con
-la  mayoría del  lenguaje básico  de Fortran  77, suficiente  para las
-prácticas de  programación en  Fortran. Veamos una  vez más  el típico
-ejemplo de ``HolaMundo''. En el editor que más nos guste, escribiremos
-el siguiente código Fortran:
+{\tt Fortran} no  es un lenguaje muy popular, ni  tiene por qué serlo.
+Se  trata de  un lenguaje  para un  uso específico:  cálculo numérico.
+Fortran no es un lenguaje de  propósito general como C, Pascal, Python
+o Perl y por eso sólo  se utiliza en entornos científicos como centros
+de cálculo.
+
+El lenguaje de programación {\tt  Fortran} está orientado puramente al
+cálculo numérico, y es un lenguaje importante en entornos científicos.
+Su nombre viene de {\bf For}mula {\bf Tran}slator, ya que su mayor uso
+era traducir  las fórmulas  de cálculo matemático  al lenguaje  de las
+máquinas.  Desde sus  principios, el  lenguaje Fortran  ha tenido  una
+sintaxis muy peculiar,  adaptada al uso de tarjetas  perforadas. En la
+actualidad, Fortran se  utiliza en asignaturas de  Cálculo en carreras
+técnicas como Matemáticas, Física y algunas ingenierías.
+
+Utilizaremos aquí el  compilador {\bf GNU Fortran},  compatible con la
+mayoría  del  lenguaje básico  de  Fortran  77 y  algunas  extensiones
+propias de Fortran  90, suficiente para las  prácticas de programación
+en Fortran 77.  Para programación en Fortran 95 existe  un proyecto en
+marcha de compilador en {\tt http://g95.sourceforge.net}
+
+\section{Uso básico del compilador}
+
+El compilador de GNU  Fortran es muy similar al del  GNU C/C++, por lo
+que los detalles  de ambos serán abarcados en el  próximo tema. Veamos
+una vez más  el típico ejemplo de ``HolaMundo''. En  el editor que más
+te guste, escribe el siguiente código Fortran:
 
 \begin{ejemplo}%
 {HolaMundo.for}%
-{HolaMundo en Fortran}
-Programa básico de HolaMundo en Fortran 77, define un formato e imprime 
-un mensaje usándolo. También incluye una línea de comentario.
+{Primer "Hola Mundo" en Fortran}
+Programa básico de holamundo en Fortran 77, define un formato e imprime 
+un mensaje usándolo. también incluye una línea de comentario.
 \end{ejemplo}
 
-Para  compilar el  programa utilizamos  el comando  {\tt g77}  como si
-fuera el {\tt gcc}. El compilador  {\tt g77} también produce la salida
-por defecto en  un ejecutable llamado {\tt a.out},  opción que podemos
-modificar con la opción {\tt -o nombredelejecutable}.
+Para compilar el  programa utiliza el comando {\tt g77}  como si fuera
+el {\tt  gcc}. El compilador {\tt  g77} también produce la  salida por
+defecto  en un  ejecutable  llamado {\tt  a.out},  opción que  podemos
+modificar con  la opción  {\tt -o  nombredelejecutable}. De  hecho, el
+comando {\tt g77} admite muchas de las opciones que admite {\tt gcc}.
 
 \begin{verbatim}
 $ ls
@@ -51,46 +66,31 @@ $ ./HolaMundo
 
 \end{verbatim}
 
+\section{Dividiendo el código}
+
 Veamos  ahora  también como  podemos  dividir  un programa  en  varios
-ficheros  de código  fuente. En  el editor  escribimos los  siguientes
-códigos fuente  Fortran y  los guardamos  como {\tt  HolaMundo2.for} y
-{\tt Saludos.for} respectivamente.
+ficheros  de  código  fuente.  En el  editor  escribe  los  siguientes
+códigos fuente  Fortran y guárdalos  como {\tt HolaMundo2.for}  y {\tt
+Saludos.for} respectivamente.
 
-\begin{verbatim}
-* Ejemplo 2 de Fortran para CILA
-* Fichero: HolaMundo2.for
+\begin{ejemplo}%
+{HolaMundo2.for}%
+{Segundo "Hola Mundo" en Fortran}
+Segundo "Hola Mundo" en Fortran. Este fichero llama a una función {\tt
+saluda()} que no está definida en él, sino en otro fichero.
+\end{ejemplo}
 
-      Program HolaMundo2
-      character(10) saludo
+\begin{ejemplo}%
+{Saludos.for}%
+{Segundo "Hola Mundo" en Fortran}
+Segundo "Hola  Mundo" en Fortran.  Este fichero implementa  la función
+{\tt saluda()} que es llamada desde el fichero {\tt HolaMundo2.for}.
+\end{ejemplo}
 
-      saludo = 'Mundo'
-
-      call saluda (saludo)
-
-      stop
-      end
-\end{verbatim}
-
-\begin{verbatim}
-* Ejemplo 2 de Fortran para CILA
-* Fichero: saludos.for
-
-      Subroutine saluda(mensaje)
-      character(10) mensaje
-
-      print 5, 'Hola ', mensaje
-
- 5    format (//,2x,a,a,/)
-
-      return
-      end
-\end{verbatim}
-
-Para  generar ahora  el  ejecutable utilizamos  el  comando {\tt  g77}
-dándole ambos ficheros  como argumentos. En general,  para compilar un
-programa  Fortran  escrito en  varios  ficheros  bastará con  utilizar
-el  comando  de la  forma  {\tt  g77  -o ejecutable  fichero1.for  ...
-ficheroN.for}
+Para generar ahora el ejecutable  utiliza el comando {\tt g77} dándole
+ambos ficheros como argumentos. En  general, para compilar un programa
+Fortran escrito en varios ficheros  bastará con utilizar el comando de
+la forma {\tt g77 -o ejecutable fichero1.for ... ficheroN.for}
 
 \begin{verbatim}
 $ ls
@@ -113,4 +113,4 @@ prácticas de Fortran 77 que podamos  necesitar, pero no piensen que es
 verdad eso  de que  {\em ``Real  programers do  Artificial Inteligence
 programs in Fortran''}.
 
-
+\section{Mezclando Fortran con C}
