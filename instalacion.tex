@@ -13,11 +13,11 @@ que son comunes que aquí vamos a detallar. El orden en el que aparecen
 las  diferentes  etapas  comentadas  en este  capítulo  no  tiene  por
 que  ser necesariamente  de  forma  estricta a  seguir  por todas  las
 distribuciones, pero  es uno  de los  más usuales  en los  procesos de
-instalación.\\
+instalación.
 
 {\bf ¡Atención!} Antes de comenzar  con la instalación te recomendamos
 que leas la sección referente a las particiones que se puede encontrar
-en este mismo capítulo.\\
+en este mismo capítulo.
 
 \section{Arrancando}
 
@@ -27,7 +27,7 @@ CD-ROM no  tendremos problema  ya que simplemente  colocamos el  CD de
 nuestra distribución  preferida en el  CD-ROM, le indicamos a  la BIOS
 que lo primero  que intente arrancar sea el CD-ROM  y listo, tendremos
 nuestro sistema de instalación de nuestra distribución esperando a que
-le demos la orden de continuar.\\
+le demos la orden de continuar.
 
 \begin{figure}[hbtp]
 \centering
@@ -46,7 +46,7 @@ encontremos tendremos que copiar las  imágenes a los disketes. Esto se
 hace  con una  herramienta  que normalmente  traen  también todos  los
 CDs  de  las  distribuciones  que se  llama  rawrite.  Seguiremos  las
 indicaciones  que  nos  dé  el  rawrite para  hacer  los  disketes  de
-instalación y guardaremos con celo el trabajo realizado hasta ahora.\\
+instalación y guardaremos con celo el trabajo realizado hasta ahora.
 
 Una  vez  que  tenemos  esos discos en la mano tendremos que decirle a
 nuestra  BIOS  que  intente  arrancar  en primer desde la disketera, y
@@ -57,13 +57,13 @@ instalación de nuestra distribución listo para continuar.
 \section{Idioma y teclado}
 
 Normalmente después  de la bienvenida  tendremos que elegir  el idioma
-para la instalación y la distribución del teclado que usaremos.\\
+para la instalación y la distribución del teclado que usaremos.
 
-El idioma  es a  vuestro gusto,  elegid aquél con  el que  más comodos
-estéis  y  la distribución  de  teclado  se  recomienda que  uséis  la
-distribución  de  vuestro teclado,  ya  que  si  no lo  hacéis  podéis
-encontraros que  pulsando la  tecla ñ  aparezca una \verb.p. o  algún otro
-carácter. Los teclados españoles son del tipo qwerty-ES.
+El idioma es a tu gusto, elige aquél  con el que más cómodo estés y la
+distribución de teclado  se recomienda que uses la  distribución de tu
+teclado, ya  que si  no lo  haces podrás  encontrarte que  pulsando la
+tecla  ñ aparezca  una \verb.p.  o algún  otro carácter.  Los teclados
+españoles son del tipo qwerty-ES.
 
 \begin{figure}[hbtp]
 \centering
@@ -75,12 +75,12 @@ carácter. Los teclados españoles son del tipo qwerty-ES.
 
 Hemos llegado  a un punto  delicado de la instalación,  normalmente es
 peligroso porque  podemos dañar la información  almacenada en nuestros
-discos duros.\\
+discos duros.
 
 Lo primero que nos planteamos es si  vamos a tener un ordenador con un
 único  sistema operativo,  en nuestro  caso  Linux o  si serán  varios
 sistemas operativos,  cuyo caso  más generalizado  es Linux  y Windows
-conviviendo en el mismo ordenador.\\
+conviviendo en el mismo ordenador.
 
 
 \subsection{El caso más general: convivamos con Windows}
@@ -94,28 +94,29 @@ problemas. Los  pasos a  seguir para  no perder  la información  de la
 partición de nuestro Windows son los siguientes:
 
 \begin{enumerate}
-\item{Desfragmentar la partición de Windows.}
+\item Desfragmentar la partición de Windows.
 
-\item{Decidir  cuánto espacio  vamos a  dejar para  la instalación  de
-Linux. Esta  decisión corre  a cuenta del  usuario. Se  recomienda que
-para  una  instalación  completa  de las  distribuciones,  se  reserve
-alrededor de 2 Gb de espacio en disco.}
+\item  Decidir cuánto  espacio vamos  a dejar  para la  instalación de
+Linux.  Esta  decisión  al  final  corre  a  cuenta  del  usuario.  Se
+recomienda que para una instalación completa de las distribuciones, se
+reserve alrededor de 2 Gb de espacio en disco.
 
-\item{Reducir  el tamaño  de la  partición de  Windows. Para  llevar a
+\item Reducir  el tamaño  de la  partición de  Windows. Para  llevar a
 cabo  esta tarea  se  tienen varias  posibilidades. Podemos  encontrar
-sofware\footnote{Uno de los  paquetes de software más  usados en estos
+software\footnote{Uno de los paquetes de  software más usados en estos
 menesteres  es  el  \emph{PartitionMagic} de  \emph{PowerQuest}}  para
 Windows, que facilita la labor  permitiendo redimensionar el tamaño de
 la partición  de manera  gráfica. Ésta es  la opción  que recomendamos
 para los usuarios con poca experiencia en este tipo de prácticas. Para
 usuarios  con  algo  más  de conocimientos  tenemos  utilidades  menos
-amigables pero más  fáciles de conseguir como son el  fdisk de Linux y
-el  diskdruid.  Tened  cuidado  con  estas  dos  herramientas  porque,
-repetimos, pueden dañar el contenido de vuestros discos duros.}
+amigables pero más fáciles de conseguir  como son el fips sobre msdos,
+el fdisk y el parted de Linux  y el diskdruid. Tened cuidado con estas
+dos  herramientas  porque, repetimos,  pueden  dañar  el contenido  de
+vuestros discos duros.
 
-\item{Establecer   las  particiones   de   Linux. Se necesitarán   dos
+\item Establecer   las  particiones   de   Linux. Se necesitarán   dos
 particiones  en   lugar  de  una   como  se  piensa   inicialmente.  A
-continuación se detallará este paso.}
+continuación se detallará este paso.
 
 \end{enumerate}
 
@@ -132,30 +133,31 @@ Trataremos el  segundo supuesto: en  nuestro disco duro sólo  habrá un
 sistema operativo, Linux. Tendremos que hacer dos particiones, en este
 punto hay  mucho que explicar.  Empezaremos por comentar los  tipos de
 particiones que  normalmente se pueden  encontrar en un  PC doméstico.
-Hemos  de tener  claro lo  que  son particiones  primarias, lógicas  y
-extendidas.
+Hemos de  tener claro lo  que son particiones primarias,  extendidas y
+unidades lógicas.
 
 
 \subsection{Tipos de particiones}
 
 \begin{description}
 
-\item[Particiones  primarias:]{  es  el   tipo  básico  de  partición.
-Podremos  disponer como  máximo  de cuatro  particiones primarias.  Si
-hacemos uso  de todas las  particiones primarias ya no  podremos crear
-más particiones de ningún  otro tipo\footnote{Como observación diremos
-que en  Windows tendremos problemas a  la hora de trabajar  con más de
-una partición primaria en FAT16 o FAT32}.}
+\item[Particiones primarias:] es el tipo básico de partición. Podremos
+disponer  como  máximo de  cuatro  particiones  primarias. Si  hacemos
+uso  de todas  las  particiones  primarias ya  no  podremos crear  más
+particiones de ningún otro  tipo\footnote{Como observación diremos que
+en Windows  tendremos problemas a la  hora de trabajar con  más de una
+partición primaria en FAT16 o FAT32}.
 
-\item[Particiones  extendidas:]{   en  caso  de  querer   más  de  cuatro
-particiones deberemos usar particiones extendidas. Tendremos que eliminar
-al  menos una  partición  primaria para  crear  una partición  extendida.
-Desde este  momento podremos crear tantas  unidades lógicas como
-deseemos a partir de esta partición extendida.}
+\item[Particiones  extendidas:]  en  caso  de  querer  más  de  cuatro
+particiones  deberemos usar  unidades lógicas.  Para crear  una unidad
+lógica tendremos  que eliminar  al menos  una partición  primaria para
+crear  una  partición extendida.  Desde  este  momento podremos  crear
+tantas  unidades  lógicas  como  deseemos  dentro  de  esta  partición
+extendida.
 
-\item[Unidades lógicas:]{  este tipo de particiones  son las que
-se  crean  a partir  de  la  partición extendida, nunca  podremos  crear
-unidades lógicas desde una partición primaria.}
+\item[Unidades lógicas:] este tipo de particiones son las que se crean
+a  partir de  la partición  extendida, nunca  podremos crear  unidades
+lógicas dentro de una partición primaria.
 
 \end{description}
 
@@ -163,7 +165,7 @@ Una vez  aclarados los tipos  de particiones que  podemos encontrarnos
 vamos a determinar  la manera que tiene Linux de  asignarles un nombre
 de dispositivo. En Linux todos los dispositivos son ficheros, desde la
 pantalla  ({\tt  /dev/stdout})  hasta el  teclado  ({\tt  /dev/stdin})
-pasando por los discos duros, CD-ROM, etc\ldots.\\
+pasando por los discos duros, CD-ROM, etc\ldots.
 
 \subsection{Nomenclatura de particiones}
 
@@ -172,7 +174,8 @@ dos controladoras de disco  duro (IDE1 e IDE2) y en  cada una de estas
 controladoras podremos conectar  dos dispositivos físicos (dispositivo
 maestro  y  dispositivo  esclavo).  A  estas  controladoras  se  puede
 conectar todo lo que tenga una  interfaz hardware IDE, esto es, discos
-duros IDE, CD-ROM's IDE, DVD's IDE, y una larga lista de dispositivos.
+duros IDE,  CD-ROM's IDE, DVD's IDE,  unidades ZIP y DAT,  y una larga
+lista de dispositivos.
 
 La manera de nombrar los ficheros correspondientes a cada uno de estos
 elementos de hardware es la siguiente:
@@ -201,29 +204,28 @@ decir que {\tt /dev/hda} es el  equivalente a {\bf C:}, {\tt /dev/hdb}
 es el equivalente a {\bf D:} y así sucesivamente\dots
 
 Sigamos con  la nomenclatura de  las particiones utilizada  por Linux.
-Las particiones primarias y las lógicas se nombran añadiendo al nombre
-del dispositivo, ya detallado, un número que indica el órden lógico de
-la partición.  La primera  partición de  uno de  los discos  será {\tt
-/dev/hd{\bf x}1}, la seguda {\tt  /dev/hd{\bf x}2} donde la {\tt\bf x}
-es lo que va a determinar a  que disco nos estamos refiriendo según la
-tabla anterior.\\
+Las particiones  primarias y  las extendidas  se nombran  añadiendo al
+nombre del  dispositivo, ya detallado,  un número que indica  el orden
+lógico de la partición. La primera partición de uno de los discos será
+{\tt  /dev/hd{\bf x}1},  la  segunda {\tt  /dev/hd{\bf  x}2} donde  la
+{\tt\bf  x}  es  lo que  va  a  determinar  a  que disco  nos  estamos
+refiriendo según la tabla anterior.
 
-Las particiones extendidas  también se nombran utilizando  el orden en
-el que  se definen  pero teniendo  en cuenta  que los  cuatro primeros
-números están reservados para las particiones primarias, por lo tanto,
-las particiones extendidas  empezarán a numerarse a  partir del cinco.
-Tenemos un disco duro, con una  partición lógica, tres primarias, y en
-la  partición  lógica  tenemos tres  particiones  extendidas,  haremos
-referencia a  cada una de  las particiones de esta  manera. (Suponemos
-que el  disco está  conectado como maestro  a la  primera controladora
-IDE)\\
+Las unidades lógicas también se nombran  utilizando el orden en el que
+se definen  pero teniendo  en cuenta que  los cuatro  primeros números
+están reservados  para las  particiones primarias,  por lo  tanto, las
+unidades lógicas empezarán a numerarse  a partir del cinco. Tenemos un
+disco  duro, con  una partición  extendida,  tres primarias,  y en  la
+partición extendida tenemos tres  unidades lógicas, haremos referencia
+a cada una de las particiones  de esta manera (Suponemos que el disco
+está conectado como maestro a la primera controladora IDE).
 
 \begin{center}
 \begin{tabular}{rcl}
-partición lógica & $\Rightarrow$ & {\tt /dev/hda1} \\
-partición extendida 1 & $\Rightarrow$ & {\tt /dev/hda5} \\
-partición extendida 2 & $\Rightarrow$ & {\tt /dev/hda6} \\
-partición extendida 3 & $\Rightarrow$ & {\tt /dev/hda7} \\
+partición extendida & $\Rightarrow$ & {\tt /dev/hda1} \\
+unidad lógica 1 & $\Rightarrow$ & {\tt /dev/hda5} \\
+unidad lógica 2 & $\Rightarrow$ & {\tt /dev/hda6} \\
+unidad lógica 3 & $\Rightarrow$ & {\tt /dev/hda7} \\
 partición primaria 1 & $\Rightarrow$ & {\tt /dev/hda2} \\
 partición primaria 2 & $\Rightarrow$ & {\tt /dev/hda3} \\
 partición primaria 3 & $\Rightarrow$ & {\tt /dev/hda4} \\
@@ -232,7 +234,7 @@ partición primaria 3 & $\Rightarrow$ & {\tt /dev/hda4} \\
 
 Bien, sabemos  que esto es  bastante denso  al principio cuando  no se
 tiene práctica,  pero con el  uso nos  daremos cuenta que  tiene mucha
-lógica y que aprendiéndonos un par de reglas todo va sobre ruedas.\\
+lógica y que aprendiéndonos un par de reglas todo va sobre ruedas.
 
 
 \subsection{Esas dos particiones}
@@ -249,7 +251,7 @@ es que  esta partición es  muy pequeña, normalmente es  suficiente con
 dejar para la partición de swap 256 Mb de disco, no obstante puede ser
 todo lo grande que se quiera, siempre que haya sitio para el resto del
 sistema. El  tipo de sistema de  ficheros que tendremos que  asignar a
-esta partición no tiene duda, Linux Swap.\\
+esta partición no tiene duda, Linux Swap.
 
 La  segunda partición  es donde  vamos  a colocar  todos los  ficheros
 del  nuevo sistema  operativo,  en ella  encontraremos desde  nuestros
@@ -260,7 +262,6 @@ que dejarle  bastante sitio.  Como ya hemos  recomendado anteriormente
 entremos en el fantástico mundo de  los sistemas de ficheros, que como
 llevamos haciendo hasta el momento también daremos un breve repaso.
 
-
 \subsection{Tipos de sistemas de ficheros}
 
 Los  sistemas de  ficheros  se pueden  clasificar  de varias  maneras,
@@ -269,92 +270,110 @@ ficheros transaccionales  (journaling). El  journaling es  una técnica
 que  implementan  algunos  sistemas  de ficheros  muy  parecida  a  la
 utilizada  por las  transacciones en  las bases  de datos.  La técnica
 consiste en que todas las operaciones  que se han de realizar sobre el
-sistema de ficheros se guardan en  disco antes de realizarse que luego
+sistema de ficheros  se guardan en disco antes de  realizarse, y luego
 se van llevando a cabo y se van eliminando de la lista a medida que se
 concluye  su  ejecución. La  ventaja  que  nos  dan los  sistemas  con
-journaling es que si nuestro sistema se cae (por ejemplo se va la luz)
-todas las tareas que el disco tendría que haber hecho para mantener la
-estructura  lógica del  sistema  de ficheros  está  guardada y  cuando
-reestablecemos  el  sistema  tenemos  el  disco  en  perfecto  estado,
+journaling es  que si  nuestro sistema  se cae (por  ejemplo se  va la
+luz)  todas las  tareas  que el  disco tendría  que  haber hecho  para
+mantener la estructura lógica del  sistema de ficheros está guardada y
+cuando restablecemos el  sistema tenemos el disco  en perfecto estado,
 eliminando de esta  manera los famosos verificadores  de la estructura
-del disco, el más conocido es scandisk.\\
+del disco, el más conocido es scandisk.
 
 Comencemos con los sistemas de ficheros que no implementan journaling,
 éstos son:
+
 \begin{description}
-\item[FAT16:]{sistema de fichero nativo  de Windows95 (sin política de
-seguridad robusta).}
 
-\item[FAT32:]{sistema de  ficheros nativo de  Windows98-WindowsMe (sin
-política de seguridad robusta).}
+\item[FAT16:] sistema de fichero nativo  de Windows95 (sin política de
+seguridad robusta).
 
-\item[ext2:]{sistema de  ficheros nativo de  Linux 2.x y 4.x  (con una
-buena política de seguridad).}
+\item[FAT32:] sistema de  ficheros nativo de  Windows98-WindowsMe (sin
+política de seguridad robusta).
+
+\item[ext2:] sistema de  ficheros nativo de  Linux 2.x y 4.x  (con una
+buena política de seguridad).
 
 \end{description}
 
-Sistemas de ficheros que implementan journaling
+Sistemas de ficheros que implementan journaling:
+
 \begin{description}
 
-\item[ext3:]{Este sistema  de ficheros es  una evolución del  ext2 que
+\item[ext3:] Este sistema  de ficheros es  una evolución del  ext2 que
 implementa journaling  además de  la política  de seguridad  basada en
-permisos del ext2.}
+permisos del ext2.
 
-\item[ReiserFs:]{Sistema de  ficheros con  journaling que  obtiene muy
+\item[ReiserFs:] Sistema de  ficheros con  journaling que  obtiene muy
 buenos  resultados trabajando  con  ficheros de  gran tamaño,  también
-cuenta con una muy buena política de seguridad.}
+cuenta con una muy buena política de seguridad.
 
-\item[NTFS:]{Sistema de  ficheros nativo  de WindowsNT,  Windows2000 y
+\item[NTFS:] Sistema de  ficheros nativo  de WindowsNT,  Windows2000 y
 WindowsXP,  tiene un  sistema de  seguridad  basado en  ficheros y  en
 listas de control de acceso.  Desgraciadamente este tipo de sistema de
 ficheros no es abierto, está sometido a continuos cambios por parte de
 su dueño,  Microsoft, y por  lo tanto no se  tiene un buen  soporte en
 Linux, de tal modo que sólo está soportado de manera segura la lectura
-de este tipo de sistema de fichero.}
+de este tipo de sistema de fichero.
 
-\item[XFS:]{sistema de  ficheros que implementan las  máquinas silicon
-graphics.}
+\item[XFS:] sistema de  ficheros que implementan las  máquinas Silicon
+Graphics.
 
-\item[JFS:]{sistema de ficheros que implementan los main frame IBM.}
+\item[JFS:] sistema de ficheros que implementan los main frame IBM.
 
 \end{description}
 
-Con  esta   brevísima  descripción   de  los   tipos  de   sistema  de
-ficheros podréis  elegir vosotros  mismos cuál queréis  poner. Nuestra
-recomendación es la de poner ext2 ya que este sistema de ficheros está
-en todas  las distribuciones,  pero si vuestra  distribución os  da la
-posibilidad de utilizar un sistema  de ficheros con journaling escoged
-ext3 ya que en las comparativas obtiene mejores resultados en sistemas
-de propósito  general que los  otros tipos  de sistema de  fichero con
-journaling,  y  por  supuesto,  la  elección  entre  journaling  o  no
-journaling es la primera. No solo  por tener que estar esperando a que
-termine el proceso de fsck, sino  también por la robustez y eficiencia
-de este tipo de sistemas de ficheros.\\
+Con esta  brevísima descripción  de los tipos  de sistema  de ficheros
+podrás elegir tú mismo cuál quieres poner. Nuestra recomendación es la
+de  poner ext2  ya que  este  sistema de  ficheros está  en todas  las
+distribuciones,  pero  si tu  distribución  te  da la  posibilidad  de
+utilizar un sistema de ficheros con  journaling, escoge ext3 ya que en
+las comparativas  obtiene mejores resultados en  sistemas de propósito
+general que  los otros tipos de  sistema de fichero con  journaling, y
+por  supuesto, la  elección entre  journaling  o no  journaling es  la
+primera.  No solo  por  tener que  estar esperando  a  que termine  el
+proceso de  fsck, sino también  por la  robustez y eficiencia  de este
+tipo de sistemas de ficheros.
 
-Vamos  a dar  por último  la  respuesta a  la pregunta  que muchos  de
-vosotros os estaréis haciendo: ¿Podré utilizar la partición de Windows
-desde  Linux y  la  de  Linux desde  Windows?.  Hay varias  respuestas
-bastante claras y  tajantes. La respuesta a si se  podrán utilizar las
-particiones de  Linux desde Windows  es no. La otra  respuesta depende
-del tipo  de sistema  de ficheros  que tengamos  en Windows.  Para los
-sistemas de  ficheros del tipo  FAT16 o  FAT32 se podrán  utilizar sin
-problemas. Para los sistemas de  ficheros con NTFS lo más recomendable
-es utilizarlos en modo lectura, ya que es muy peligroso intentar hacer
-una operación de escritura en esa partición desde Linux.
+Vamos  a dar  por último  la  respuesta a  la pregunta  que muchos  se
+estarán haciendo: ¿Podré utilizar la  partición de Windows desde Linux
+y la de Linux desde Windows?.  Hay varias respuestas bastante claras y
+tajantes. Sobre si  se podrán utilizar las particiones  de Linux desde
+Windows,  la  respuesta  es  no de  escritura  (existen  problemas  de
+licencias en el desarrollo) pero  sí de lectura (mediante una utilidad
+llamada  {\em explore2fs}).  La  otra respuesta  depende  del tipo  de
+sistema  de ficheros  que tengamos  en Windows.  Para los  sistemas de
+ficheros del tipo FAT16 o FAT32 se podrán utilizar sin problemas. Para
+los sistemas de ficheros con  NTFS, lo más recomendable es utilizarlos
+en modo lectura, ya que la  parte de escritura no está completada, por
+tanto,  es muy  peligroso  hacer operaciones  de  escritura ahí  desde
+Linux. Esta limitación en ambos  sentidos es producto de la ocultación
+de  información  sobre  la  que  se  basan  los  sistemas  cerrados  y
+propietarios  y que  impide  que las  aplicaciones  abiertas y  libres
+permitan realizarse.
+
+% Para aclarar:  En un  caso (leer  linux desde win)  es porque  no se
+% puede programar  un driver  de sistema de  archivo para  windows sin
+% haber pagado una licencia (si  microsoft lo desarrollase tendría que
+% ser código  gpl o tendría que  hacerlo desde cero). En  el otro caso
+% (leer  ntfs  desde  linux),  las especificaciones  de  NTFS  no  son
+% abiertas  y  muchas  de  las estructuras  internas  se  conocen  por
+% documentos no  oficiales y  por mera prueba  y error.  Eso ralentiza
+% mucho el desarrollo.
 
 \section{Instalación del kernel y los módulos}
 
 En este momento ya le hemos dicho al sistema de instalación dónde va a
 tener que colocar  todos los ficheros. Ahora tendremos  que comenzar a
 tomar decisiones  para indicar qué es  lo que queremos instalar  y qué
-hardware tenemos en nuestra máquina.\\
+hardware tenemos en nuestra máquina.
 
 Lo  primero  que tendremos  que  hacer  es  elegir qué  kernel  poner.
-Normalmente podemos elegir entre unas  pocas opciones. Llegados a este
-punto si  no sabéis  por cuál  elegir, escoged  la recomendada  por la
+Normalmente  podemos  elegir entre  unas  pocas  opciones. Llegados  a
+este  punto si  no sabes  cuál elegir,  escoge la  recomendada por  la
 distribución. Ésta es  siempre una buena elección en caso  de duda. En
-cambio si sabéis el kernel que queréis poner entre todas las opciones,
-seleccionadlo y continuemos con la instalación.\\
+cambio si sabes el kernel que  quieres poner entre todas las opciones,
+selecciónalo y continuemos con la instalación.
 
 Una vez  decidido qué kernel  vamos a  usar tendremos que,  en algunas
 instalaciones,  decir qué  hardware  tenemos instalado  y qué  drivers
@@ -365,7 +384,7 @@ para  ver qué  es lo  que pasa.  Quienes  hayan  instalado un  sistema
 Linux previamente  y conozcan  el tipo  de hardware  que poseen  y los
 módulos  que  hacen falta  para  que  éste funcione  correctamente  es
 éste el  momento de  seleccionarlos y  configurarlos para  su correcta
-instalación.\\
+instalación.
 
 \begin{figure}[hbtp]
 \centering
@@ -375,7 +394,7 @@ instalación.\\
 
 
 Si hemos  instalado módulos  de hardware que  necesitan algún  tipo de
-configuración, por ejempo tarjetas de  red, tras haber seleccionado el
+configuración, por ejemplo tarjetas de red, tras haber seleccionado el
 módulo y  cargado con éxito  en el kernel, tendremos  que proporcionar
 la  información necesaria  al  sistema para  que  se pueda  configurar
 dicho hardware  correctamente, que  generalmente será  algún parámetro
@@ -383,15 +402,13 @@ adicional. En  el caso de la  tarjeta de red tendremos  que decirle si
 coge la configuración por dhcp o  si la especificamos nosotros a mano,
 etc\ldots
 
-
-
 \section{Estableciendo el arranque}
 
 Este es otro de los pasos delicados de la instalación, menos que el de
-particionar el disco duro pero tambien tendremos que tener cuidado con
+particionar el disco duro pero también tendremos que tener cuidado con
 lo  que hacemos.  Vamos a  seguir la  estructura del  apartado de  las
 particiones, es decir, vamos a separar los sistemas donde conviven dos
-sistemas operativos y los sistemas donde sólo tenemos Linux.\\
+sistemas operativos y los sistemas donde sólo tenemos Linux.
 
 Para aquellas máquinas con arranque dual  Windows y Linux lo normal es
 que no se disponga de un sistema gestor del arranque antes de instalar
@@ -399,33 +416,33 @@ Linux, por  lo tanto tendremos que  instalar el gestor de  arranque de
 nuestra distribución  (LILO o GRUB) en  el master boot record  MBR. Lo
 que lograremos de con esto es que nuestro cargador se ejecute antes de
 cualquiera de  los sistemas operativos  y nos permita decidir  cual de
-los dos quermos arrancar. No basta  con instalar el gestor de arranque
+los dos queremos arrancar. No basta con instalar el gestor de arranque
 en el  MBR, sino que,  tendremos que indicar que  particiones queremos
 que  arranque.  Normalmente  esto  se  hace  de  manera  automática  y
 simplemente tendremos que seleccionar las particiones a arrancar, pero
-si no sucede de manera  automática haremos uso de nuestro conocimoento
+si no sucede de manera  automática haremos uso de nuestro conocimiento
 en nomenclatura de  particiones para indicar que  arranque por ejemplo
-la primera partición de nuestro IDE1 maestro ({\tt /dev/hda}).\\
+la primera partición de nuestro IDE1 maestro ({\tt /dev/hda1}).
 
 En  las  máquinas  donde  no  convivan  los  dos  sistemas  operativos
-tendremos que instalar lilo en el master boot record pero no tendremos
+tendremos que instalar LILO en el master boot record pero no tendremos
 que tener tanto cuidado  a la hora de indicar que es  lo que tiene que
 arrancar  puesto que  el sistema  de instalación  configurará todo  él
-solo.\\
+solo.
 
 
 \section{Instalar el sistema base}
 
 En este momento las distribuciones  empiezan a diverger, en el sentido
-de que no en todas este paso  se realiza de la misma maner. En algunas
+de que no en todas este paso se realiza de la misma manera. En algunas
 primero se instala el sistema base  y luego se selecciona qué software
 extra se  quiere instalar. En  cambio hay otras distribuciones  en las
 que el sistema base y el  software adicional a instalar se seleccionan
-en un solo paso.\\
+en un solo paso.
 
-Si nuestra distribución decide instalar el sistema base siplemente
-haremos caso, en este paso normalmente no hay muchas cosas que
-decidir. Simplemente se instalan los programas básicos para que el
+Si nuestra  distribución decide  instalar el sistema  base simplemente
+haremos  caso,  en este  paso  normalmente  no  hay muchas  cosas  que
+decidir. Simplemente  se instalan  los programas  básicos para  que el
 sistema operativo pueda arrancar y poco más.
 
 \begin{figure}[h]
@@ -437,61 +454,53 @@ sistema operativo pueda arrancar y poco más.
 
 \section{Instalar el software}
 
-En este momento  las distribuciones empizan a diverger,  en el sentido
-que no en  todas este paso se  realiza de la misma  manera, en algunas
-primero se instala el sistema base  y luego se selecciona que software
-extra se  quiere instalar. En  cambio hay otras distribuciones  en las
-que el sistema base y el  software adicional a instalar se seleccionan
-en un solo paso.\\
-
 Hoy en día las distribuciones traen un sistema gráfico de selección de
-paquetes (software a instalar). Normalemente se encuentran organizados
+paquetes (software a instalar).  Normalmente se encuentran organizados
 en categorías o ramas según el fin para el cual se usará ese software.
-A continuación vamos a describir los más comunes:\\
+A continuación vamos a describir los más comunes:
 
 \begin {description}
 
-	\item{{\bf  Paquetes base} \\
- 		Tal y  como su  propio nombre  indica se  trata del
- 		sistema base  nombrado en el  parrafo anterior. Entre otros  incluye utilidades
- 		como  {\bf bash}  (un tipo  de consola,  shell), {\bf  adduser} (utilidad  para
- 		añadir y eliminar usuarios), {\bf gzip} (compresor de ficheros) \ldots
-	}
-	\item{{\bf Paquetes devel} \\
-		Esta sección de software está dedicada al desarrollo del mismo, es decir
-		que en esta rama es donde podremos encontrar herramientas de programación
-		tales como compiladores, librerías, depuradores, preprocesadores, etc.
-		Algunos de ellos son: {\bf g++} (compilador de C++),
-		{\bf g77} (compilador de Fortran77), {\bf ddd} (depurador de código), {\bf
-		cvs} (sistema de control de revisiones) \ldots
-	}
-	\item{{\bf Paquetes doc} \\
-		Aqui podemos encontrar todo tipo de documentación relacionada con los
-		programas instalados o el uso de librerías. Sin duda lo más destacable de
-		este apartado son las llamadas páginas man {\bf (manpages)}
-	}
-	\item{{\bf Paquetes math} \\
-		Software dedicado a realizar tareas matemáticas. Podremos encontrar
-		programas como {\bf GNUplot} (generador de gráficas), {\bf octave}
-		(programa estrella de esta sección, sirve para realizar todo tipo de
-		cálculos numéricos, simulaciones, representaciones etc; un clónico de
-		MathLab), {\bf gnumeric} (hoja de cálculo para GNOME) \ldots
-	}
-	\item{{\bf Paquetes X11} \\
-		Esta rama de paquetes proporciona la mayoría de los componentes del
-		sistema X - Window desarrolados por XFree86 Project, junto a otros
-		accesorios. Podremos encontrar el sistema base de las X, KDE, GNOME,
-		administradores de sesiones como xdm, gdm, kdm, distintos tipos de
-		fuentes, servidor de fuentes (xfs), etc.
-	}
+\item[Paquetes base] Tal  y como su propio nombre indica  se trata del
+sistema  base nombrado  en el  párrafo anterior.  Entre otros  incluye
+utilidades como {\bf bash} (un  tipo de consola, shell), {\bf adduser}
+(utilidad para añadir  y eliminar usuarios), {\bf  gzip} (compresor de
+ficheros) \ldots
+
+\item[Paquetes  devel]  Esta  sección  de software  está  dedicada  al
+desarrollo del  mismo, es  decir que  en esta  rama es  donde podremos
+encontrar  herramientas  de   programación  tales  como  compiladores,
+librerías, depuradores,  preprocesadores, etc.  Algunos de  ellos son:
+{\bf g++}  (compilador de C++),  {\bf g77} (compilador  de Fortran77),
+{\bf  ddd} (depurador  de código),  {\bf cvs}  (sistema de  control de
+revisiones) \ldots
+
+\item[Paquetes doc] Aquí podemos  encontrar todo tipo de documentación
+relacionada con  los programas instalados  o el uso de  librerías. Sin
+duda lo más  destacable de este apartado son las  llamadas páginas man
+{\bf (manpages)}.
+
+\item[Paquetes math] Software dedicado  a realizar tareas matemáticas.
+Podremos  encontrar   programas  como  {\bf  GNUplot}   (generador  de
+gráficas),  {\bf octave}  (programa  estrella de  esta sección,  sirve
+para  realizar   todo  tipo   de  cálculos   numéricos,  simulaciones,
+representaciones etc; un clónico de  MathLab), {\bf gnumeric} (hoja de
+cálculo para GNOME) \ldots
+
+\item[Paquetes X11]  Esta rama de  paquetes proporciona la  mayoría de
+los  componentes  del sistema  X  -  Window desarrolados  por  XFree86
+Project, junto a otros accesorios.  Podremos encontrar el sistema base
+de las X, KDE, GNOME, administradores  de sesiones como xdm, gdm, kdm,
+distintos tipos de fuentes, servidor de fuentes (xfs), etc.
+
 \end {description}
 
 Los  paquetes  nombrados  previamente  son solamente  algunos  de  los
-básicos.  Todas las  distribuciones  traen una  multidud de  programas
-adicionales los cuales podreís instalar  a vuestro gusto y dependiendo
-de sus necesidades. Casi todas las aplicaciones se pueden encontrar en
-los  CD's de  vuestra  distribución favorita,  pero  algunas de  ellas
-pueden no estar en esos CD's.\\
+básicos.  Todas las  distribuciones  traen una  multitud de  programas
+adicionales los cuales puedes instalar a tu gusto y dependiendo de tus
+necesidades. Casi  todas las aplicaciones  se pueden encontrar  en los
+CD's  de tu  distribución favorita,  pero algunas  de ellas  pueden no
+estar en esos CD's.
 
 \begin{figure}[hbtp]
 \centering\includegraphics[width=\textwidth]{imagenes/kpackage.eps}
@@ -502,15 +511,15 @@ Para instalar esos programas bastará con descargar los paquetes de esa
 aplicación e instalarlos. Hay que anotar que existen paquetes binarios
 (compilados) para  las distintas  distribuciones. Los más  famosos son
 los  paquetes  .RPM  (los  cuales  usan Red  Hat  y  Mandrake)  y  los
-paquetes  DEB (usados  en  las distribuciones  Debian).  En la  página
-www.rpmfind.net  podremos  encontrar  (casi) todos  los  paquetes  rpm
+paquetes DEB (usados en las  distribuciones Debian). En la página {\em
+www.rpmfind.net}  podremos encontrar  (casi)  todos  los paquetes  rpm
 existentes,  con  lo  cual  nos  bastará con  buscar  el  programa  en
-cuestión,  descargarlo  e  instalarlo  ejecutando el  comando  rpm  -i
-nombre-del-paquete.rpm. Los usuarios de  Debian lo tienen bastante más
-facil en  este aspecto gracias a  las herramientas APT. En  el caso de
+cuestión, descargarlo e  instalarlo ejecutando el comando  {\tt rpm -i
+nombre-del-paquete.rpm}. Los usuarios de Debian lo tienen bastante más
+fácil en  este aspecto gracias a  las herramientas APT. En  el caso de
 que un paquete no se pueda instalar mediante esas herramientas podemos
-descargar nuestro paquete .deb e instalarlo ejecutando el comando dpkg
--i nombre-del-paquete.deb. \\
+descargar nuestro paquete .deb e instalarlo ejecutando el comando {\tt
+dpkg -i nombre-del-paquete.deb}.
 
 Existen  más  tipos   de  paquetes  dependiendo  de   la  multitud  de
 distribuciones, pero  algunas veces no podremos  encontrar el software
@@ -520,18 +529,17 @@ Normalmente el código se encuentra en forma de paquetes .TGZ (paquetes
 comprimidos), con lo cual habrá  que descomprimirlos antes de nada. La
 secuencia de pasos para realizar lo anterior es la siguiente:
 
-\begin{itemize}
-	\item{tar zxvf nombre-del-paquete.tgz}
-	\item{cd directorio/del/programa}
-	\item{./configure}
-	\item{make}
-	\item{make install}
-\end{itemize}
-
+\begin{verbatim}
+$ tar zxvf nombre-del-paquete.tgz
+$ cd directorio-del-programa
+$ ./configure
+$ make
+$ make install
+\end{verbatim}
 
 Esta secuencia  es la más  usual, pero  (como siempre) no  funciona en
 todos  los casos,  para los  cuales  tendremos que  informarnos en  la
-documentación del programa. \\
+documentación del programa. 
 
 Por último cabe destacar que la  mayoría de software hace uso de otros
 programas o librerías  sin las cuales no se podrá  instalar o compilar
@@ -541,77 +549,73 @@ dependencias previamente y a continuación el programa.
 
 \section{Configuracion del servidor X}
 
-Dependiendo    de    la    distribución   que    estamos    instalando
-nos   encontraremos   con   distintas   utilidades   para   configurar
-X-Window-SystemDependiendo de  la distribución que  estamos instalando
-nos   encontraremos   con   distintas   utilidades   para   configurar
-X-Window-SystemDependiendo de  la distribución que  estamos instalando
-nos   encontraremos   con   distintas   utilidades   para   configurar
-X-Window-System.  Todas ellas  son  muy similares  entre  sí pero  con
-ligeras  diferencias. Para  no  conretar el  proceso de  configuración
-según  las  distintas  distribuciones  usaremos  la  herramienta  {\bf
-xf86config} la cual está presente en todas ellas. \\
+Dependiendo   de   la   distribución  que   estamos   instalando   nos
+encontraremos  con distintas  utilidades  para  configurar el  sistema
+X-Window.  Todas ellas  son muy  similares entre  sí pero  con ligeras
+diferencias. Para no  concretar el proceso de  configuración según las
+distintas distribuciones  usaremos la herramienta {\tt  xf86config} la
+cual está presente en todas ellas.
 
-El programa  xf86config es un  programa de  consola, en modo  texto, y
-modifica  los  ficheros  de  configuración del  servidor  X,  para  lo
+El programa {\tt xf86config} es un programa de consola, en modo texto,
+que modifica  los ficheros  de configuración del  servidor X,  para lo
 cual necesitaremos  los privilegios  de superusuario. Para  invocar el
 programa abrimos una  consola, accedemos como root  (usando el comando
-su  si  se procede)  y  tecleamos  xf86config. Nos  encontraremos  con
+su si se procede) y  tecleamos {\tt xf86config}. Nos encontraremos con
 una  pantalla  de descripción  de  la  aplicación. Cabe  destacar  que
 la  ejecución  del programa  se  podrá  abortar en  cualquier  momento
-presionando la combinación de teclas  CTRL-C. Así que no debemos temer
-a equivocarnos  ya que al  interrumpir esta herramienta no  se afectan
-los ficheros de configuración existentes.\\
+presionando la combinación  de teclas C-C. Así que no  debemos temer a
+equivocarnos ya que al interrumpir  esta herramienta no se afectan los
+ficheros de configuración existentes.
 
 \begin{figure}[hbtp]
 \centering\includegraphics[width=0.5\textwidth]{imagenes/xf86cfg.eps}
 \caption{xf86cfg. Utilidad para configurar el servidor X}
 \end{figure}
 
-Para  proceder  con  la  configuración pulsaremos  la  tecla  {\tt Enter},
+Para proceder  con la configuración  pulsaremos la tecla  {\tt Enter},
 apareciendo  la   pantalla  de  selección  del   protocolo  de  ratón.
 Introducimos el número de la opción elegida (normalmente es la 4. PS/2
-Mouse) seguida  de un  {\tt Enter}. Se nos  preguntará si  queremos emular
-el  tercer  botón  (para  aquellos  ratones  con  sólo  dos  botones).
-Si  respondemos  afirmativamente  al   pulsar  el  botón  izquierdo  y
-derecho  simultaneamente  obtendremos  el  mismo  efecto  como  cuando
-pulsamos el tercer botón.Respondemos con  y/n y apretamos {\tt Enter} para
+Mouse) seguida de un {\tt Enter}. Se nos preguntará si queremos emular
+el  tercer botón  (para aquellos  ratones  con sólo  dos botones).  Si
+respondemos  afirmativamente al  pulsar el  botón izquierdo  y derecho
+simultáneamente obtendremos  el mismo  efecto como cuando  pulsamos el
+tercer  botón.  Respondemos  con  y/n y  apretamos  {\tt  Enter}  para
 poder  llegar  a  introducir  el  nombre  del  dispositivo  del  ratón
 (por  defecto  /dev/mouse, y  en  mayoría  de  los casos  nos  servirá
 /dev/psaux). Posteriormente se nos  pedirá que introduzcamos el número
 correspondiente a nuestro teclado de entre los listados en la pantalla
 (los del tipo  generic en caso de duda). A  continuación tendremos que
 elegir el  país (España  - 42). Seguidamente  podremos poner  un alias
-para el idioma anteriormente elegido.  Pulsando a {\tt Enter} se pondrá la
-opción por defecto,  y el programa nos preguntará  si queremos activar
-las  opciones adicionales  del XKB  (en caso  de duda  {\tt n} seguido  de
-{\tt Enter}) \\
+para el idioma anteriormente elegido. Pulsando a {\tt Enter} se pondrá
+la  opción por  defecto,  y  el programa  nos  preguntará si  queremos
+activar las  opciones adicionales  del XKB  (en caso  de duda  {\tt n}
+seguido de {\tt Enter}).
 
 A  continuación accederemos  al apartado  de configuración  de nuestro
-monitor. Observando las opciones mostradas  en la pantalla y elegiendo
+monitor. Observando las opciones mostradas  en la pantalla y eligiendo
 las  adecuadas avanzaremos  dos apartados  y  en el  siguiente se  nos
-pedirá que escribamos  un identificador para el  monitor. Escribid una
-cadena con su  nombre, descripción o lo que queráis  y pulsad la tecla
-{\tt Enter} para poder elegir nuestra tarjeta de video\\
+pedirá que  escribamos un identificador  para el monitor.  Escribe una
+cadena con  su nombre, descripción o  lo que quieras y  pulsa la tecla
+{\tt Enter} para poder elegir nuestra tarjeta de vídeo.
 
-Si  leemos la  pantalla  averiguamos  que al  pulsar  {\tt y + Enter}  nos
-aparecerá  un  listado  de  tarjetas  soportadas  (al  pulsar  {\tt Enter}
+Si leemos  la pantalla averiguamos que  al pulsar {\tt y  + Enter} nos
+aparecerá un  listado de  tarjetas soportadas  (al pulsar  {\tt Enter}
 continúa  la  lista)  del  cual tendremos  que  introducir  el  número
 correspondiente  a  nuestro modelo  de  tarjeta.  Seguidamente se  nos
-pedirá el tamaño de  la memoria de la tarjeta de  video (4096K son 4M,
+pedirá el tamaño de  la memoria de la tarjeta de  vídeo (4096K son 4M,
 32768K son  16M \ldots). Al  igual que en el  caso del monitor  se nos
-pedirá una cadena para identificar  la tarjeta de video. Elegiremos la
+pedirá una cadena para identificar  la tarjeta de vídeo. Elegiremos la
 profundidad de color  que deseamos que sea por defecto  y estaremos en
 el último  paso que es el  de guardar el fichero  de configuración. Si
 estamos seguros de haber  elegido las opciones adecuadas responderemos
 afirmativamente  o en  el  caso contrario  abortaremos  el programa  y
-volveremos desde principio. \\
+volveremos desde principio.
 
 El proceso anterior  a simple vista parece  demasiado complicado, pero
 es sencillo con un poco de  paciencia. Destacar lo dicho al principio,
 que cada distribución tiene su propia herramienta de configuración del
 servidor  X,  las cuales  resultan  bastante  más sencillas  de  usar.
-Algunos fabricantes de tarjetas  de video como NVIDIA (www.nvidia.com)
+Algunos fabricantes de tarjetas  de vídeo como NVIDIA (www.nvidia.com)
 proporcionan drivers de sus tarjetas  para Linux, así como los drivers
 OpenGL y documentación sobre su instalación.
 
@@ -619,70 +623,71 @@ OpenGL y documentación sobre su instalación.
 
 Este apartado  lo vamos a  dividir en tres subbloques  dependiendo del
 tipo de nuestra conexión. Vamos a  hablar de como configurar el acceso
-a internet mediante  un modem (externo o interno), una  línea ADSL con
-router ADSL, y una conexión mediante un cable - modem.
+a internet mediante  un módem (externo o interno), una  línea ADSL con
+router ADSL, y una conexión mediante un cable - módem.
 
 \subsection{Acceso mediante modem}
 
 Casi  todos los  modems externos  están  soportados por  el kernel  de
-Linux; en  cambio hay  muy pocos  modem internos  para los  cuales hay
+Linux; en  cambio hay  muy pocos  módem internos  para los  cuales hay
 soporte en nuestro S.O. favorito.  Actualmente existe soporte para los
 siguientes:
 
 \begin{itemize}
-\item{Modems que hagan uso de los chipsets Lucent Apollo (ISA) y Lucent Mars (PCI)}
-\item{Modems Intel V90 HaM e Intel 536ep}
-\item{Modem IBM Mwave (usado en el Thinkpad 600E y posteriores)}
-\item{Modems Conexant que hagan uso de los chipsets Conexant HCF y HSF}
-\item{Modems ESS ISA}
+\item Modems que hagan uso de los chipsets Lucent Apollo (ISA) y Lucent Mars (PCI)
+\item Modems Intel V90 HaM e Intel 536ep
+\item Modem IBM Mwave (usado en el Thinkpad 600E y posteriores)
+\item Modems Conexant que hagan uso de los chipsets Conexant HCF y HSF
+\item Modems ESS ISA
 \end{itemize}
 
 Toda  la documentación  sobre la  instalación y  los drivers  para los
-modems an\-te\-rio\-res se pueden encontrar en la página www.linmodems.org.
+modems anteriores se pueden encontrar en la página www.linmodems.org.
 
-Antes de empezar con la configuración de nuestro modem nombrar como en
+Antes de empezar con la configuración de nuestro módem nombrar como en
 casos  anteriores que  existen herramientas  específicas de  distintas
-distribuciones, escritorios o aplicaciones (como es el caso de KPPP de
-KDE el cual es intuitivo y  bastante sencillo de configurar). Otra vez
-volveremos a usar una aplicación  incluida en todas las distribuciones
-llamada  {\bf  pppd}  y  la utilidad  de  configuración  del  programa
-anterior {\bf pppconfig}. También nombrar  que antes de empezar con el
-proceso debemos tener instalado el pppd  y activado el soporte para el
-protocolo  PPP  (Point  to  Point Protocol)  en  el  kernel,  apartado
-network  devices, el  cual suele  estar activado  al instalar  nuestra
-distribución.
+distribuciones, escritorios  o aplicaciones (como  es el caso  de {\em
+kppp} de KDE el cual es  intuitivo y bastante sencillo de configurar).
+Otra  vez volveremos  a  usar  una aplicación  incluida  en todas  las
+distribuciones llamada {\bf  pppd} y la utilidad  de configuración del
+programa  anterior  {\bf  pppconfig}.  También nombrar  que  antes  de
+empezar con el  proceso debemos tener instalado el pppd  y activado el
+soporte para  el protocolo PPP ({\em  Point to Point Protocol})  en el
+kernel, apartado {\em  Network devices}, el cual  suele estar activado
+al instalar nuestra distribución.
 
 \begin{figure}[hbtp]
 \centering\includegraphics[width=0.7\textwidth]{imagenes/kpp.eps}
 \caption{KPPP. Interfaz GUI de pppd para KDE}
 \end{figure}
 
-Gracias a una herramienta como  pppconfig la tarea de configuración es
-muy  sencilla,  basta con  ejecutar  el  programa e  ir  introduciendo
-los  datos  requeridos  por  el  mismo.  Esta  utilidad  modifica  los
-ficheros  de  configuiración, asi  que  antes  de empezar  necesitamos
-acceder como  root y a continuación  escribir en la línea  de comandos
-pppconfig. Seleccionamos la opcion  marcada (crear una conexión nueva)
-y posteriormente  introducimos un identificador para  nuestra conexión
-(como ejemplo usaremos 'nueva-conexion'). Elegimos nuestro tipo de DNS
-
-(casi siempre estático,  dependiendo de nuestro proveedor  de acceso a
-internet), seleccionamos $<$OK$>$ y seguidamente introducimos la dirección
-del servidor DNS  primario y secundario si  tenemos (ambas direcciones
-son proporcionadas por el proveedor de acceso).\\
+Gracias  a   una  herramienta  como   {\em  pppconfig}  la   tarea  de
+configuración es  muy sencilla,  basta con ejecutar  el programa  e ir
+introduciendo  los  datos  requeridos  por  el  mismo.  Esta  utilidad
+modifica  los ficheros  de  configuración, así  que  antes de  empezar
+necesitamos acceder como root y a continuación escribir en la línea de
+comandos {\tt  pppconfig}. Seleccionamos la opción  marcada (crear una
+conexión nueva)  y posteriormente  introducimos un  identificador para
+nuestra  conexión (como  ejemplo usaremos  'nueva-conexion'). Elegimos
+nuestro tipo  de DNS  (casi siempre  estático, dependiendo  de nuestro
+proveedor de acceso a internet), seleccionamos $<$OK$>$ y seguidamente
+introducimos la  dirección del servidor  DNS primario y  secundario si
+tenemos  (ambas direcciones  son  proporcionadas por  el proveedor  de
+acceso).
 
 En este  momento habrá que  seleccionar el método  de autentificación.
 PAP suele funcionar  y si no es así prueben  CHAT o CHAP. Introducimos
-el nombre  de usuario,  la contraseña, la  velocidad de  nuestro modem
-(dejad la  opción por  defecto en  caso de duda  - 115200),  método de
+el nombre  de usuario,  la contraseña, la  velocidad de  nuestro módem
+(deja  la opción  por defecto  en caso  de duda  - 115200),  método de
 marcación  (tonos o  pulsos)  y el  número de  teléfono  del acceso  a
-internet.\\
+internet.
 
-A continuación el programa intentará autodetectar el puerto de nuestro
-modem. En  el caso  de que  no lo  consiga tendremos  que introducirlo
-nosotros.  En  algunos casos  estará  en  /dev/modem. Si  lo  anterior
-tampoco funciona  debemos saber que  los puertos COM  son dispositivos
-que se encuentran en /dev y se relacionan mediante la siguiente tabla:
+Enciende  el módem  si es  externo porque  a continuación  el programa
+intentará autodetectar el  puerto de nuestro módem. En el  caso de que
+no lo  consiga tendremos que  introducirlo nosotros. En  algunos casos
+estará en  /dev/modem. Si lo  anterior tampoco funciona  debemos saber
+que los  puertos COM son dispositivos  que se encuentran en  /dev y se
+relacionan mediante la siguiente tabla:
 
 \begin{center}
 	\begin{tabular}{c|c}
@@ -707,7 +712,7 @@ Guardamos los cambios y abandonamos al asistente pppconfig.
 \end{figure}
 
 Los ficheros de configuración por  defecto se guardan en el directorio
-/etc/ppp. Buscamos la ruta del  fichero con el nombre 'nueva-conexion'
+/etc/ppp. Buscamos la ruta del  fichero con el nombre 'nueva-conexión'
 (u  otro introducido  como  identificador) y  ejecutamos el  siguiente
 comando:
 
@@ -729,7 +734,7 @@ $ tail -f /var/log/messages
 \end{verbatim}
 
 Podemos  finalizar nuestra  conexión matando  el proceso  pppd con  un
-comando kill.\\
+comando kill ({\tt killall pppd}).
 
 Por   último  recordar   que  existen   muchos  otros   asistentes  de
 configuración algunos de  los cuales pueden simplificar  el proceso de
@@ -740,7 +745,7 @@ configuración.
 La configuración de acceso usando una  línea ADSL que vamos a explicar
 en  este apartado  es usando  un  Router ADSL  el cual  debe de  estar
 previamente  configurado. También  necesitaremos una  tarjeta Ethernet
-que funcione en Linux.\\
+que funcione en Linux.
 
 Para poder  realizar el acceso  tenemos que configurar la  interfaz de
 red. Normalmente  usaremos el  programa {\bf  ifconfig} con  una orden
@@ -750,7 +755,7 @@ similar a la siguiente (root):
 $ ifconfig eth0 192.168.0.2 netmask 255.255.255.0 up
 \end{verbatim}
 
-Con  el comando  anterior estamos  counfigurando la  interfaz Ethernet
+Con  el comando  anterior  estamos configurando  la interfaz  Ethernet
 eth0, asignándole una dirección IP  192.168.0.2 y la máscara de subred
 255.255.255.0.  En internet  se pueden  encontrar varios  tutoriales y
 manuales de  configuración de  red, así  que no  nos vamos  a extender
@@ -761,14 +766,14 @@ defecto ({\bf gateway}). Lo haremos con este comando:
 $ route add default gw 192.168.0.1 eth0
 \end{verbatim}
 
-donde 192.168.0.1 es la dirección IP de nuestro router ADSL.\\
+donde 192.168.0.1 es la dirección IP de nuestro router ADSL.
 
 Para  no tener  que repetir  este proceso  cada vez  que iniciamos  el
-ordenador podemos poner la información sobre nuestra interfaz de red y
-el gateway en un fichero de  configuración que normalmente están en el
-directorio /etc y tienen nombres similares a network, networks \ldots;
-en la  distribución debian  se encuentra en  /etc/network/interfaces y
-cuyo aspecto es parecido al siguiente:
+ordenador  podemos  poner la  información  sobre  nuestra interfaz  de
+red  y el  gateway  en  un fichero  de  configuración que  normalmente
+están  en el  directorio /etc  y tienen  nombres similares  a network,
+networks  \ldots;  en la  distribución  Debian  se encuentra  en  {\em
+/etc/network/interfaces} y cuyo aspecto es parecido al siguiente:
 
 \begin{verbatim}
 	auto eth0
@@ -781,14 +786,14 @@ cuyo aspecto es parecido al siguiente:
 \end{verbatim}
 
 En  otras distribuciones  existen utilidades  de configuración  de red
-como netcfg (RedHat) o netconfig (Slackware).\\
+como netcfg (RedHat) o netconfig (Slackware).
 
-En un acceso  a internet através de un cable  modem la autentificación
+En un acceso a internet a  través de un cable módem la autentificación
 de usuario  y la dirección IP  se obtiene de manera  dinámica a través
-del servicio  DHCP. Además de  lo anterior  se obtendra la  máscara de
+del servicio  DHCP. Además de  lo anterior  se obtendrá la  máscara de
 subred, dirección de  gateway y las direcciones DNS; es  decir todo se
 configura por si  mismo. Para su uso tendremos que  tener instalado un
-cliente  DHCP,  por  ejemplo  dhcp-client. En  el  fichero  interfaces
+cliente DHCP, por ejemplo dhcp-client.  En el fichero {\em interfaces}
 bastará poner:
 
 \begin{verbatim}
@@ -799,28 +804,28 @@ bastará poner:
 para  poder  usar  este  servicio.  En  los  distintos  asistentes  de
 configuración  seleccionaremos el  uso  de DHCP  y  con esa  operación
 tendremos configurada  la interfaz de red  y por lo tanto  el acceso a
-internet através de un cable modem.
+internet a través de un cable módem.
 
 
 \section{Configuración de la impresora: CUPS}
 
-En  Linux podemos  utilizar varios  sitemas de  impresión y  nos sería
+En Linux  podemos utilizar  varios sistemas de  impresión y  nos sería
 imposible explicarte como se configuran  todos ellos, aquí nos vamos a
-centrar en uno en concreto, CUPS, Common Unix Printing System.\\
+centrar en uno en concreto, CUPS, {\em Common Unix Printing System}.
 
 Una de las  ventajas que tiene este  sistema frente a los  otros es su
 facilidad  de configuración  ya que  podemos configurar  completamente
-nuestras impresoras desde un navegador.\\
+nuestras impresoras desde un navegador.
 
 El cups está diseñado para que  podamos utilizar una misma impresora o
-un grupo de éstas desde cualquier pc que esté en la red, es decir, que
+un grupo de éstas desde cualquier PC que esté en la red, es decir, que
 un amigo  siempre que tu le  des permiso y estés  conectado a internet
 podrá utilizar tu impresora para sacar  a tiempo ese trabajo que tiene
 que entregar mañana y no le ha  dado tiempo de ir a comprar tinta para
-la impresora o se ha quedado sin papel o mil cosas que suelen pasar.\\
+la impresora o se ha quedado sin papel o mil cosas que suelen pasar.
 
-Para   configurar  el   sistema   simplemente   tendremos  que   abrir
-un   navegador   y  en   la   barra   de  dirección   colocaremos:{\tt
+Para  configurar  el  sistema   simplemente  tendremos  que  abrir  un
+navegador   y   en   la   barra   de   dirección   colocaremos:   {\tt
 http://localhost:631}, en ese momento,  si nosotros no tenemos permiso
 para  configurar el  sistema  de  impresión nos  saldrá  un cuadro  de
 diálogo en el  que tendremos que introducir el nombre  de usuario y el
@@ -830,19 +835,19 @@ CUPS en el navegador aparecerá una página web como esta:
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=\textwidth]{imagenes/cups_inicio.eps}
+\includegraphics[width=0.7\textwidth]{imagenes/cups_inicio.eps}
 \caption{Página web que CUPS sirve en el puerto 631}
 \end{figure}
 
 Para  comenzar   con  la   configuración  pulsaremos  sobre   {\tt  Do
 Administration Tasks}  en ese  momento nos aparecerán  tres categorías
-sobre las que podemos operar: clases, jobs, printers.\\
+sobre las que podemos operar: clases, jobs, printers.
 
 Las   clases  son   grupos   de  impresoras   con  unas   determinadas
-caracteristicas que  se unen para  hacer más  facil la gestión  de los
+características que  se unen para  hacer más  fácil la gestión  de los
 documentos.  Por ejemplo,  si en  una oficina  se tienen  3 impresoras
-laser, 2 chorro de tinta a color y 5 matriciales, podríamos hacer tres
-grupos:  grupo laser,  donde  meteríamos las  impresoras láser;  grupo
+láser, 2 chorro de tinta a color y 5 matriciales, podríamos hacer tres
+grupos:  grupo láser,  donde  meteríamos las  impresoras láser;  grupo
 tinta  donde colocaríamos  las impresoras  a chorro  de tinta  y grupo
 matricial donde estarían las  impresoras matriciales. Con estos grupos
 confeccionados  cuando quisiéramos  imprimir un  documento simplemente
@@ -853,12 +858,12 @@ seleccionado.
 Los jobs o trabajos son los trabajos  que hay en este instante en cola
 para imprimir,  podremos eliminarlos,  detener su impresión,  etc. Los
 trabajos que  ya han  sido terminados  también podremos  reanudarlos y
-conocer varios datos sobre ellos.\\
+conocer varios datos sobre ellos.
 
 Las  impresoras  son los  dispositivos  de  impresión que  tenemos  en
 nuestro sistema podremos añadir impresoras  nuevas o gestionar las que
 tenemos. Como nosotros vamos a  instalar nuestra impresora por primera
-vez pulsaremos sobre {\tt Add Printer}.\\
+vez pulsaremos sobre {\tt Add Printer}.
 
 Tendremos  que ir  facilitando  los  datos que  se  nos solicitan,  lo
 primero es asignarle un nombre, decir  donde se encuentra y añadir una
@@ -866,7 +871,7 @@ breve descripción al nombre.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=\textwidth]{imagenes/cups_instalando1.eps}
+\includegraphics[width=0.7\textwidth]{imagenes/cups_instalando1.eps}
 \caption{Configuración de una nueva impresora}
 \end{figure}
 
@@ -889,7 +894,7 @@ nuestra impresora.
 \caption{Selección del fabricante de la impresora}
 \end{figure}
 
-A continuación elegiremos el modelo de impresora
+A continuación elegiremos el modelo de impresora.
 
 \begin{figure}[h!]
 \centering
