@@ -4,7 +4,7 @@
 
 \index{R}
 
-\section{Introducción a R}
+\section{Introducción}
 
 %%%%%% Traducido de la web de R en http://www.r-project.org
 
@@ -259,7 +259,9 @@ donde escribiste los comandos:
 \index{R!source@{\tt source()}}
 
 \begin{verbatim}
+
 > source ("script.R")
+
 \end{verbatim}
 
 Del  mismo modo  que puedes  tomar la  entrada de  un fichero  también
@@ -271,24 +273,29 @@ ejecuta el comando:
 \index{R!sink@{\tt sink()}}
 
 \begin{verbatim}
+
 > sink ("salida.txt")
+
 \end{verbatim}
 
 Para devolver  la salida al  intérprete utiliza la misma  función {\tt
 sink  ()}  pero sin  pasarle  ningún  parámetro.  En el  fichero  {\tt
-iodemo.R}  tienes un  ejemplo de  esto. Entra  en el  directorio donde
-tengas el fichero y ejecuta en el entorno {\sf R}
+iodemo.R}  tienes un  ejemplo de  esto. 
+
+\begin{ejemplo}{iodemo.R}{Uso de {\tt sink()}}
+Este script lee  una tabla que está almacenada en  un fichero de texto
+llano ({\tt muestra.dat}, que usaremos para los ejemplos) y extrae dos
+variables  de ella.  Para  ambas variables  muestra  un breve  resumen
+estadístico, pero guarda uno en el  fichero {\tt salida.txt} y el otro
+lo muestra en el entorno {\sf R}.
+\end{ejemplo}
+
+Entra en el directorio donde tengas el fichero y ejecuta en el entorno
+{\sf R}
 
 \begin{verbatim}
 > source ("iodemo.R")
 \end{verbatim}
-
-Este guión (serie de comandos) lee una tabla que está almacenada en un
-fichero  de texto  llano  ({\tt muestra.dat},  que  usaremos para  los
-ejemplos) y extrae dos variables de ella. Para ambas variables muestra
-un  breve resumen  estadístico, pero  guarda  uno en  el fichero  {\tt
-salida.txt} y el otro lo muestra en el entorno {\sf R}.
-
 
 \section{Vectores}
 
@@ -577,7 +584,7 @@ Para multiplicar  matrices (o arrays  en general) utiliza  el operador
      [,1] [,2]
 [1,]    1    1
 [2,]    2    2
- %*% b
+> a %*% b
      [,1] [,2]
 [1,]    7    7
 [2,]   10   10
@@ -651,8 +658,8 @@ lo siguiente:
 [9] "hombre" "mujer"
 \end{verbatim}
 
-Ahora tienes  una variable {\tt  Edad} que  contiene las edades  de 10
-personas, y  una variable {\tt  Sexo} que define  el sexo de  cada una
+Ahora tienes  una variable {\tt  edad} que  contiene las edades  de 10
+personas, y  una variable {\tt  sexo} que define  el sexo de  cada una
 de  las  10  personas  anteriores  (en el  mismo  orden)  y  que  toma
 únicamente  los  valores  \verb|"hombre"| y  \verb|"mujer"|.  Vamos  a
 calcular  la media  y  la  varianza muestrales  de  la  edad de  estas
@@ -664,7 +671,7 @@ según los valores que toma el  vector {\tt sexo}. Para esto utilizamos
 un factor.  El factor  en realidad  es como  el vector  original, pero
 tiene un atributo  añadido llamado {\tt levels} (niveles)  que son los
 distintos  valores que  toman los  elementos del  vector original.  En
-el  caso del  vector  {\tt  edad} los  niveles  son \verb|"hombre"|  y
+el  caso del  vector  {\tt  sexo} los  niveles  son \verb|"hombre"|  y
 \verb|"mujer"|. La función  {\tt levels} devuelve la  lista de niveles
 que tenga el factor que le pases como parámetro.
 
@@ -774,8 +781,8 @@ y mantenla en una variable:
 \index{R!read.table@{\tt read.table()}}
 
 \begin{verbatim}
-> hoja.datos = read.table ("muestra.dat") 
-> names (hoja.datos)
+> hoja.de.datos = read.table ("muestra.dat") 
+> names (hoja.de.datos)
 [1] "Sexo"     "Edad"     "Habitat"  "Ingresos" "Lectura"  "TV"
 \end{verbatim}
 
@@ -785,14 +792,14 @@ mensuales),  el número  de libros  leidos  anualmente y  sus horas  de
 televisión diarias.
 
 Normalmente para  acceder al  vector {\tt  Edad} de  la hoja  de datos
-utilizaríamos la expresión {\tt  hoja.datos\$Edad}, pero hay una forma
+utilizaríamos la expresión {\tt  hoja.de.datos\$Edad}, pero hay una forma
 más cómoda. Consiste en ``conectar'' la hoja de datos para que puedas
 referirte a sus vectores directamente por su nombre:
 
 \index{R!hojas de datos!conectar}
 
 \begin{verbatim}
-> attach (hoja.datos)
+> attach (hoja.de.datos)
 > summary (Edad)
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   12.00   15.00   16.00   15.64   17.00   20.00
@@ -803,7 +810,7 @@ hoja, no para modificarlos. Si quieres  modificar un vector de la hoja
 de datos tienes que usar la notación normal:
 
 \begin{verbatim}
-> hoja.datos$Edad <- Edad + 10
+> hoja.de.datos$Edad <- Edad + 10
 \end{verbatim}
 
 De hecho, esto modifica  el vector en la hoja de  datos, pero no verás
@@ -866,8 +873,8 @@ muestra:
 +      ( (3 * (n - 1)^2) / ( (n - 2) * (n - 3) ) )
 + c 
 + }
-> hoja.datos = read.table ("muestra.dat")
-> attach (hoja.datos)
+> hoja.de.datos = read.table ("muestra.dat")
+> attach (hoja.de.datos)
 > curtosis (Edad)
 [1] -2.921993
 > curtosis (Lectura)
@@ -888,12 +895,18 @@ Así por ejemplo tienes escrita la función {\tt curtosis} en el fichero
 {\tt curtosis.R}. Si quieres modificarla  y volver a usarla después de
 modificada no  hay problema.  Edita el  fichero {\tt  curtosis.R} para
 modificar la función  y luego vuelve a importarlo con  la función {\tt
-curtosis}. Recuerda que la función {\tt curtosis} ejecuta los comandos
+curtosis}. Recuerda que la función {\tt source()} ejecuta los comandos
 que encuentra en el fichero que le digas, por lo que las funciones que
 tengas escritas en  el fichero serán redefinidas y  estarán lista para
 usar al instante.
 
-% NO TE OLVIDES DE ESTO
+\begin{ejemplo}{curtosis.R}{Fichero de funciones}
+Este fichero contiene la definición de  una función, y cada vez que lo
+leas con  la función {\tt source()}  será ejecutado. Por lo  tanto las
+funciones que  contiene son redefinidas,  lo que te  permite modificar
+las funciones  y hacer efectivos los  cambios sin tener que  salir del
+entorno.
+\end{ejemplo}
 
 \subsection{Control de flujo}
 
@@ -1174,6 +1187,11 @@ ks.test(ctest)          Kolmogorov-Smirnov Tests
 shapiro.test(ctest)     Shapiro-Wilk Normality Test
 \end{verbatim}
 
+Las funciones que necesitas no se encuentran en el paquete {\tt base},
+por lo que tendrás que cargar el paquete en el que se encuentran. Para
+ello utiliza la función {\tt library()} como verás más adelante.
+\index{R!library@{\tt library()}}
+
 Para  el   test  de   Kolmogorov-Smirnov  necesitas   estimadores  los
 parámetros de la distribución con  la que quieras comparar la muestra.
 En esta  caso has de  estimar la media y  la desviación típica,  y una
@@ -1185,8 +1203,9 @@ como ejercicio  substituirla por  la cuasi-desviación  típica muestral
 definiendo tu propia función que la calcule.
 
 \begin{verbatim}
-> hoja.datos = read.table ("muestra.dat")
-> attach (hoja.datos)
+> hoja.de.datos = read.table ("muestra.dat")
+> attach (hoja.de.datos)
+> library (ctest)
 > shapiro.test (Lectura)
 
 	Shapiro-Wilk normality test
@@ -1314,26 +1333,19 @@ independientes.
 
 \index{R!gráficas}
 
-La función más frecuentemente usada para crear gráficas nuevas es {\tt
+La  función  más frecuentemente  usada  para  crear gráficas  es  {\tt
 plot()}. Esta función representa uno o dos vectores numéricos como una
-nube de punto,  un factor mediante un diagrama de  barras, un factor y
-un vector  numérico con un  diagrama de cajas  (boxplot), y un  par de
-factores como un histograma con cada barras dividida según el factor.
+nube  de  puntos, un  factor  mediante  un  diagrama de  barras  ({\tt
+barplot}), un  factor y un  vector numérico  con un diagrama  de cajas
+({\tt boxplot}),  y un  par de  factores como  un histograma  con cada
+barras dividida según el factor.
 
 Para verlo más claro ejecuta la función {\tt plot()} con las variables
 de  la tabla  del  fichero {\tt  muestra.dat}.  Prueba las  siguientes
-combinaciones:
+combinaciones: {\tt  plot (Lectura)},  {\tt plot (Lectura,  TV)}, {\tt
+plot (Ingresos)}, {\tt plot (Ingresos, Habitat)}
 
 \index{R!gráficas!plot@{\tt plot()}}
-
-\begin{verbatim}
-> hoja.datos = read.table ("muestra.dat")
-> attach (hoja.datos)
-> plot (Lectura)
-> plot (Lectura, TV)
-> plot (Ingresos)
-> plot (Ingresos, Habitat)
-\end{verbatim}
 
 \index{R!gráficas!hist@{\tt hist()}}
 
@@ -1341,29 +1353,10 @@ Para  representar   vectores  numéricos   agrupando  sus   valores  en
 intervalos  utilizamos un  histograma.  La función  {\tt hist()}  hace
 exactamente eso.
 
-\index{R!gráficas!qqplot@{\tt qqplot()}}
-
-Otras gráficas interesantes son  las de comparación de distribuciones,
-basadas en  los cuantiles. La función  {\tt qqnorm ()} toma  un vector
-numérico y  lo representa comparando  sus cuantiles con  los cuantiles
-teóricos  (los que  se  esperarían  en una  muestra  que siguiera  una
-distribución normal). La función {\tt  qqline()} añade a la gráfica la
-recta que pasa por los cuartiles de los datos y la distribución.
-
-%\begin{figure}[hbtp]
-%\centering
-%\includegraphics[width=0.5\textwidth]{imagenes/r_hist.eps}
-%\caption{Histograma obtenido con {\tt hist (TV)}}
-%\end{figure}
-
 \begin{figure}[hbtp]
 \centering
-\subfigure[Gráfico Q-Q para {\tt Lectura}]{%
-\includegraphics[width=0.49\textwidth]{imagenes/r_qqplot_1.eps}}
-\subfigure[Gráfico Q-Q para {\tt TV}]{%
-\includegraphics[width=0.49\textwidth]{imagenes/r_qqplot_2.eps}}
-\caption{Gráficos Q-Q para dos variables, una que se comporta como una
-normal y otra que no}
+\includegraphics[width=0.5\textwidth]{imagenes/r_hist.eps}
+\caption{Histograma obtenido con {\tt hist (TV)}}
 \end{figure}
 
 % Esta figura  múltiple ocupará toda una  página, así que no  la pongo
@@ -1381,6 +1374,25 @@ normal y otra que no}
 \caption{Las distintas formas de la función {\tt plot()}}
 \end{figure}
 
+\index{R!gráficas!qqplot@{\tt qqplot()}}
+
+Otras gráficas interesantes son  las de comparación de distribuciones,
+basadas en  los cuantiles. La función  {\tt qqnorm ()} toma  un vector
+numérico y  lo representa comparando  sus cuantiles con  los cuantiles
+teóricos  (los que  se  esperarían  en una  muestra  que siguiera  una
+distribución normal). La función {\tt  qqline()} añade a la gráfica la
+recta que pasa por los cuartiles de los datos y la distribución.
+
+\begin{figure}[hbtp]
+\centering
+\subfigure[Gráfico Q-Q para {\tt Lectura}]{%
+\includegraphics[width=0.49\textwidth]{imagenes/r_qqplot_1.eps}}
+\subfigure[Gráfico Q-Q para {\tt TV}]{%
+\includegraphics[width=0.49\textwidth]{imagenes/r_qqplot_2.eps}}
+\caption{Gráficos Q-Q para dos variables, una que se comporta como una
+normal y otra que no}
+\end{figure}
+
 \index{R!gráficas!image@{\tt image()}}
 \index{R!gráficas!contour@{\tt contour()}}
 \index{R!gráficas!persp@{\tt persp()}}
@@ -1394,11 +1406,13 @@ verlo en perspectiva utiliza {\tt persp()}.
 \begin{figure}[htbp]
 \centering
 \subfigure[{\tt image(volcano)}]{%
-\includegraphics[width=0.3\textwidth]{imagenes/r_image.eps}}
+\includegraphics[width=0.49\textwidth]{imagenes/r_image.eps}}
 \subfigure[{\tt contour(volcano)}]{%
-\includegraphics[width=0.3\textwidth]{imagenes/r_contour.eps}}
+\includegraphics[width=0.49\textwidth]{imagenes/r_contour.eps}}
 \subfigure[{\tt persp(volcano)}]{%
-\includegraphics[width=0.3\textwidth]{imagenes/r_persp.eps}}
+\includegraphics[width=0.49\textwidth]{imagenes/r_persp.eps}}
+\subfigure[{\tt Gráfica de sectores}]{%
+\includegraphics[width=0.49\textwidth]{imagenes/r_pie.eps}}
 \caption{Gráficas para  representar matrices. El objeto  {\tt volcano}
 lo obtenemos al ejecutar {\tt data(volcano)}}
 \end{figure}
@@ -1418,10 +1432,10 @@ sería:
 
 \index{R!gráficas!pie@{\tt pie()}}
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/r_pie.eps}
-\caption{Diagrama de sectores para la {\tt Edad}}
-\end{figure}
+% \begin{figure}[hbtp]
+% \centering
+% \includegraphics[width=0.7\textwidth]{imagenes/r_pie.eps}
+% \caption{Diagrama de sectores para la {\tt Edad}}
+% \end{figure}
 
 
