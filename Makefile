@@ -63,22 +63,22 @@ EXAMPLES = 	ejemplos/HolaMundo.for 		\
 			ejemplos/HolaMundo2.html	\
 			ejemplos/HolaMundo2.java	\
 			ejemplos/HolaMundo2.pas		\
-			ejemplos/Makefile			\
+			ejemplos/Makefile		\
 			ejemplos/Saludos.for		\
 			ejemplos/ejemplo.tex		\
 			ejemplos/gnuplot-fit.dat	\
 			ejemplos/gnuplot-fit.demo	\
 			ejemplos/gnuplot.dat		\
 			ejemplos/gnuplot.demo		\
-			ejemplos/holafunc.c			\
-			ejemplos/holafunc.h			\
-			ejemplos/holafunc3.c		\
+			ejemplos/holafunc.c		\
+			ejemplos/holafunc.h		\
+			ejemplos/holafuncm.c		\
 			ejemplos/holamundo.c		\
-			ejemplos/main.c				\
-			ejemplos/main.cc			\
-			ejemplos/octave.m			\
-			ejemplos/saludo.cc			\
-			ejemplos/saludo.h			\
+			ejemplos/holamain.c		\
+			ejemplos/holamain.cc		\
+			ejemplos/octave.m		\
+			ejemplos/saludo.cc		\
+			ejemplos/saludo.h		\
 			ejemplos/saludos.pas
 
 		
