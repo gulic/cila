@@ -33,7 +33,7 @@ le demos la orden de continuar.\\
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=7cm]{imagenes/bootsplash.eps}
+\includegraphics[width=\textwidth]{imagenes/bootsplash.eps}
 \caption{Instalación 1}
 \end{figure}
 
@@ -69,7 +69,7 @@ carácter. Los teclados españoles son del tipo qwerty-ES.
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=7cm]{imagenes/mandrake_idioma.eps}
+\includegraphics[width=\textwidth]{imagenes/mandrake_idioma.eps}
 \caption{Instalación 2}
 \end{figure}
 
@@ -118,7 +118,7 @@ partición de nuestro windows son los siguientes:
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=7cm]{imagenes/redhat_particiones.eps}
+\includegraphics[width=\textwidth]{imagenes/redhat_particiones.eps}
 \caption{Instalación 3}
 \end{figure}
 
@@ -141,22 +141,24 @@ extendidas.
 \subsection{Tipos de particiones}
 
 \begin{description}
-	\item[Particiones primarias:]{ es el tipo básico de partición.
-	Podremos disponer como máximo de cuatro particiones primarias.
-	Si hacemos uso de todas las particiones primarias ya no podremos crear más
-	particiones de ningún otro tipo\footnote{Como observación diremos que en windows tendremos
-	problemas a la hora de trabajar con más de una partición primaria
-	en FAT16 o FAT32}.}
 
-	\item[Particiones lógicas:]{ en caso de querer más de cuatro
-	particiones deberemos usar particiones lógicas. Tendremos que eliminar
-	al menos una partición primaria para crear una partición lógica.
-	Desde este momento podremos crear tantas particiones extendidas
-	como deseemos a partir de esta partición lógica.}
+\item[Particiones  primarias:]{  es  el   tipo  básico  de  partición.
+Podremos  disponer como  máximo  de cuatro  particiones primarias.  Si
+hacemos uso  de todas las  particiones primarias ya no  podremos crear
+más particiones de ningún  otro tipo\footnote{Como observación diremos
+que en  windows tendremos problemas a  la hora de trabajar  con más de
+una partición primaria en FAT16 o FAT32}.}
 
-	\item[Particiones extendidas:]{ este tipo de particiones son las
-	que se crean a partir de la partición lógica, nunca podremos crear
-	particiones extendidas desde una partición primaria.}
+\item[Particiones  lógicas:]{   en  caso  de  querer   más  de  cuatro
+particiones deberemos usar particiones lógicas. Tendremos que eliminar
+al  menos una  partición  primaria para  crear  una partición  lógica.
+Desde este  momento podremos crear tantas  particiones extendidas como
+deseemos a partir de esta partición lógica.}
+
+\item[Particiones extendidas:]{  este tipo de particiones  son las que
+se  crean  a partir  de  la  partición  lógica, nunca  podremos  crear
+particiones extendidas desde una partición primaria.}
+
 \end{description}
 
 Una  vez aclarados  los tipos  de partición  que podemos  encontrarnos
@@ -178,21 +180,21 @@ manera de  nombrar los ficheros  correspondientes a cada uno  de estos
 elementos de hardware es la siguiente:
 
 \begin{center}
-	Controladora IDE1 $\left\{
-		\begin{tabular}{lcr}
-			Maestro & $\Rightarrow$ & {\tt /dev/hda} \\
-			Esclavo & $\Rightarrow$ & {\tt /dev/hdb} \\
-		\end{tabular}
-		\right.$
+Controladora IDE1 $\left\{
+\begin{tabular}{lcr}
+Maestro & $\Rightarrow$ & {\tt /dev/hda} \\
+Esclavo & $\Rightarrow$ & {\tt /dev/hdb} \\
+\end{tabular}
+\right.$
 \end{center}
 
 \begin{center}
-	Controladora IDE2 $\left\{
-		\begin{tabular}{lcr}
-			Maestro & $\Rightarrow$ & {\tt /dev/hdc} \\
-			Esclavo & $\Rightarrow$ & {\tt /dev/hdd} \\
-		\end{tabular}
-		\right.$
+Controladora IDE2 $\left\{
+\begin{tabular}{lcr}
+Maestro & $\Rightarrow$ & {\tt /dev/hdc} \\
+Esclavo & $\Rightarrow$ & {\tt /dev/hdd} \\
+\end{tabular}
+\right.$
 \end{center}
 
 Sigamos con  la nomenclatura de  las particiones utilizada  por linux.
@@ -215,13 +217,13 @@ ide)\\
 
 \begin{center}
 \begin{tabular}{rcl}
-	partición lógica & $\Rightarrow$ & {\tt /dev/hda1} \\
-	partición extendida 1 & $\rightarrow$ & {\tt /dev/hda5} \\
-	partición extendida 2 & $\rightarrow$ & {\tt /dev/hda6} \\
-	partición extendida 3 & $\rightarrow$ & {\tt /dev/hda7} \\
-	partición primaria 1 & $\Rightarrow$ & {\tt /dev/hda2} \\
-	partición primaria 2 & $\Rightarrow$ & {\tt /dev/hda3} \\
-	partición primaria 3 & $\Rightarrow$ & {\tt /dev/hda4} \\
+partición lógica & $\Rightarrow$ & {\tt /dev/hda1} \\
+partición extendida 1 & $\rightarrow$ & {\tt /dev/hda5} \\
+partición extendida 2 & $\rightarrow$ & {\tt /dev/hda6} \\
+partición extendida 3 & $\rightarrow$ & {\tt /dev/hda7} \\
+partición primaria 1 & $\Rightarrow$ & {\tt /dev/hda2} \\
+partición primaria 2 & $\Rightarrow$ & {\tt /dev/hda3} \\
+partición primaria 3 & $\Rightarrow$ & {\tt /dev/hda4} \\
 \end{tabular}\\
 \end{center}
 
@@ -355,7 +357,7 @@ instalación.\\
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=7cm]{imagenes/lycoris_ethernet.eps}
+\includegraphics[width=\textwidth]{imagenes/lycoris_ethernet.eps}
 \caption{Instalación 4}
 \end{figure}
 
@@ -416,7 +418,7 @@ sistema operativo pueda arrancar y poco más.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=7cm]{imagenes/lycoris_usuario.eps}
+\includegraphics[width=\textwidth]{imagenes/lycoris_usuario.eps}
 \caption{Instalación 5}
 \end{figure}
 
@@ -472,37 +474,40 @@ A continuación vamos a describir los más comunes:\\
 	}
 \end {description}
 
-Los paquetes nombrados  previamente son solamente algunos de  los básicos. Todas
-las  distribuciones  traen una  multidud  de  programas adicionales  los  cuales
-podreís instalar  a vuestro gusto y  dependiendo de sus necesidades.  Casi todas
-las  aplicaciones  se pueden  encontrar  en  los  CD's de  vuestra  distribución
-favorita, pero  algunas de ellas pueden  no estar en esos  CD's.\\
+Los  paquetes  nombrados  previamente  son solamente  algunos  de  los
+básicos.  Todas las  distribuciones  traen una  multidud de  programas
+adicionales los cuales podreís instalar  a vuestro gusto y dependiendo
+de sus necesidades. Casi todas las aplicaciones se pueden encontrar en
+los  CD's de  vuestra  distribución favorita,  pero  algunas de  ellas
+pueden no estar en esos CD's.\\
 
-\begin{center}
-	\begin{figure}
-		\includegraphics[width=10cm]{./imagenes/kpackage.eps}
-		\caption{KPackage. Gestor de paquetes RPM y DEB para KDE}
-	\end{figure}
-\end{center}
+\begin{figure}[hbtp]
+\centering\includegraphics[width=\textwidth]{imagenes/kpackage.eps}
+\caption{KPackage. Gestor de paquetes RPM y DEB para KDE}
+\end{figure}
 
-Para  instalar  esos  programas  bastará  con  descargar  los  paquetes  de  esa
-aplicación  e  instalarlos.  Hay  que   anotar  que  existen  paquetes  binarios
-(compilados) para las distintas distribuciones. Los más famosos son los paquetes
-.RPM (los  cuales usan Red  Hat y  Mandrake) y los  paquetes DEB (usados  en las
-distribuciones Debian).  En la página www.rpmfind.net  podremos encontrar (casi)
-todos  los paquetes  rpm  existentes, con  lo  cual nos  bastará  con buscar  el
-programa  en cuestión,  descargarlo e  instalarlo ejecutando  el comando  rpm -i
-nombre-del-paquete.rpm. Los usuarios  de Debian lo tienen bastante  más facil en
-este aspecto gracias a las herramientas APT. En  el caso de que un paquete no se
-pueda instalar mediante esas herramientas podemos descargar nuestro paquete .deb
-e instalarlo ejecutando el comando dpkg -i nombre-del-paquete.deb. \\
+Para instalar esos programas bastará con descargar los paquetes de esa
+aplicación e instalarlos. Hay que anotar que existen paquetes binarios
+(compilados) para  las distintas  distribuciones. Los más  famosos son
+los  paquetes  .RPM  (los  cuales  usan Red  Hat  y  Mandrake)  y  los
+paquetes  DEB (usados  en  las distribuciones  Debian).  En la  página
+www.rpmfind.net  podremos  encontrar  (casi) todos  los  paquetes  rpm
+existentes,  con  lo  cual  nos  bastará con  buscar  el  programa  en
+cuestión,  descargarlo  e  instalarlo  ejecutando el  comando  rpm  -i
+nombre-del-paquete.rpm. Los usuarios de  Debian lo tienen bastante más
+facil en  este aspecto gracias a  las herramientas APT. En  el caso de
+que un paquete no se pueda instalar mediante esas herramientas podemos
+descargar nuestro paquete .deb e instalarlo ejecutando el comando dpkg
+-i nombre-del-paquete.deb. \\
 
-Existen más tipos de paquetes dependiendo de la multitud de distribuciones, pero
-algunas veces no podremos encontrar el software deseado en forma de paquete
-binario. En ese caso tendremos que descargar el código fuente del programa,
-compilarlo e instalarlo. Normalmente el código se encuentra en forma de paquetes
-.TGZ  (paquetes comprimidos), con lo cual habrá que descomprimirlos antes de nada.
-La secuencia de pasos para realizar lo anterior es la siguiente:
+Existen  más  tipos   de  paquetes  dependiendo  de   la  multitud  de
+distribuciones, pero  algunas veces no podremos  encontrar el software
+deseado  en  forma de  paquete  binario.  En  ese caso  tendremos  que
+descargar  el código  fuente  del programa,  compilarlo e  instalarlo.
+Normalmente el código se encuentra en forma de paquetes .TGZ (paquetes
+comprimidos), con lo cual habrá  que descomprimirlos antes de nada. La
+secuencia de pasos para realizar lo anterior es la siguiente:
+
 \begin{itemize}
 	\item{tar zxvf nombre-del-paquete.tgz}
 	\item{cd directorio/del/programa}
@@ -512,151 +517,159 @@ La secuencia de pasos para realizar lo anterior es la siguiente:
 \end{itemize}
 
 
-Esta secuencia  es la más  usual, pero (como siempre)  no funciona en  todos los
-casos,  para  los cuales  tendremos  que  informarnos  en la  documentación  del
-programa. \\
+Esta secuencia  es la más  usual, pero  (como siempre) no  funciona en
+todos  los casos,  para los  cuales  tendremos que  informarnos en  la
+documentación del programa. \\
 
-Por último cabe destacar que la mayoría  de software hace uso de otros programas
-o librerías  sin las  cuales no se  podrá instalar o  compilar la  aplicación en
-cuestión.  La solución  pasa  por  instalar esas  dependencias  previamente y  a
-continuación el programa.
+Por último cabe destacar que la  mayoría de software hace uso de otros
+programas o librerías  sin las cuales no se podrá  instalar o compilar
+la  aplicación  en  cuestión.  La  solución  pasa  por  instalar  esas
+dependencias previamente y a continuación el programa.
 
 
 \section{Configuracion del servidor X}
 
-Dependiendo  de  la  distribución   que  estamos  instalando  nos  encontraremos
-con  distintas  utilidades  para  configurar  X-Window-SystemDependiendo  de  la
-distribución que  estamos instalando nos encontraremos  con distintas utilidades
-para  configurar  X-Window-SystemDependiendo  de  la  distribución  que  estamos
-instalando   nos  encontraremos   con  distintas   utilidades  para   configurar
-X-Window-System.  Todas  ellas son  muy  similares  entre  sí pero  con  ligeras
-diferencias. Para  no conretar el  proceso de configuración según  las distintas
-distribuciones usaremos la herramienta {\bf xf86config} la cual está presente en
-todas ellas. \\
+Dependiendo    de    la    distribución   que    estamos    instalando
+nos   encontraremos   con   distintas   utilidades   para   configurar
+X-Window-SystemDependiendo de  la distribución que  estamos instalando
+nos   encontraremos   con   distintas   utilidades   para   configurar
+X-Window-SystemDependiendo de  la distribución que  estamos instalando
+nos   encontraremos   con   distintas   utilidades   para   configurar
+X-Window-System.  Todas ellas  son  muy similares  entre  sí pero  con
+ligeras  diferencias. Para  no  conretar el  proceso de  configuración
+según  las  distintas  distribuciones  usaremos  la  herramienta  {\bf
+xf86config} la cual está presente en todas ellas. \\
 
-El programa xf86config es un programa de  consola, en modo texto, y modifica los
-ficheros  de  configuración del  servidor  X,  para  lo cual  necesitaremos  los
-privilegios  de superusuario.  Para  invocar el  programa  abrimos una  consola,
-accedemos como root (usando el comando su si se procede) y tecleamos xf86config.
-Nos  encontraremos  con una  pantalla  de  descripción  de la  aplicación.  Cabe
-destacar que  la ejecución del  programa se  podrá abortar en  cualquier momento
-presionando  la  combinación de  teclas  CTRL-C.  Así  que  no debemos  temer  a
-equivocarnos ya que  al interrumpir esta herramienta no se  afectan los ficheros
-de configuración existentes.\\
+El programa  xf86config es un  programa de  consola, en modo  texto, y
+modifica  los  ficheros  de  configuración del  servidor  X,  para  lo
+cual necesitaremos  los privilegios  de superusuario. Para  invocar el
+programa abrimos una  consola, accedemos como root  (usando el comando
+su  si  se procede)  y  tecleamos  xf86config. Nos  encontraremos  con
+una  pantalla  de descripción  de  la  aplicación. Cabe  destacar  que
+la  ejecución  del programa  se  podrá  abortar en  cualquier  momento
+presionando la combinación de teclas  CTRL-C. Así que no debemos temer
+a equivocarnos  ya que al  interrumpir esta herramienta no  se afectan
+los ficheros de configuración existentes.\\
 
-\begin{center}
-	\begin{figure}
-		\includegraphics[height=7cm]{./imagenes/xf86cfg.eps}
-		\caption{xf86cfg. Utilidad para configurar el servidor X}
-	\end{figure}
-\end{center}
+\begin{figure}[hbtp]
+\centering\includegraphics[height=\textwidth]{imagenes/xf86cfg.eps}
+\caption{xf86cfg. Utilidad para configurar el servidor X}
+\end{figure}
 
-Para proceder con  la configuración pulsaremos la tecla  <enter>, apareciendo la
-pantalla  de selección  del protocolo  de ratón.  Introducimos el  número de  la
-opción elegida (normalmente es  la 4. PS/2 Mouse) seguida de  un <enter>. Se nos
-preguntará si  queremos emular el tercer  botón (para aquellos ratones  con sólo
-dos  botones). Si  respondemos afirmativamente  al pulsar  el botón  izquierdo y
-derecho  simultaneamente obtendremos  el mismo  efecto como  cuando pulsamos  el
-tercer  botón.Respondemos  con y/n  y  apretamos  <enter>  para poder  llegar  a
-introducir el  nombre del dispositivo  del ratón  (por defecto /dev/mouse,  y en
-mayoría de los  casos nos servirá /dev/psaux). Posteriormente se  nos pedirá que
-introduzcamos el número correspondiente a  nuestro teclado de entre los listados
-en la pantalla (los del tipo generic  en caso de duda). A continuación tendremos
-que elegir el país  (España - 42). Seguidamente podremos poner  un alias para el
-idioma  anteriormente  elegido. Pulsando  a  <enter>  se  pondrá la  opción  por
-defecto,  y  el  programa  nos  preguntará  si  queremos  activar  las  opciones
-adicionales del XKB (en caso de duda 'n' seguido de <enter>) \\
+Para  proceder  con  la  configuración pulsaremos  la  tecla  <enter>,
+apareciendo  la   pantalla  de  selección  del   protocolo  de  ratón.
+Introducimos el número de la opción elegida (normalmente es la 4. PS/2
+Mouse) seguida  de un  <enter>. Se nos  preguntará si  queremos emular
+el  tercer  botón  (para  aquellos  ratones  con  sólo  dos  botones).
+Si  respondemos  afirmativamente  al   pulsar  el  botón  izquierdo  y
+derecho  simultaneamente  obtendremos  el  mismo  efecto  como  cuando
+pulsamos el tercer botón.Respondemos con  y/n y apretamos <enter> para
+poder  llegar  a  introducir  el  nombre  del  dispositivo  del  ratón
+(por  defecto  /dev/mouse, y  en  mayoría  de  los casos  nos  servirá
+/dev/psaux). Posteriormente se nos  pedirá que introduzcamos el número
+correspondiente a nuestro teclado de entre los listados en la pantalla
+(los del tipo  generic en caso de duda). A  continuación tendremos que
+elegir el  país (España  - 42). Seguidamente  podremos poner  un alias
+para el idioma anteriormente elegido.  Pulsando a <enter> se pondrá la
+opción por defecto,  y el programa nos preguntará  si queremos activar
+las  opciones adicionales  del XKB  (en caso  de duda  'n' seguido  de
+<enter>) \\
 
-A  continuación accederemos  al apartado  de configuración  de nuestro  monitor.
-Observando  las opciones  mostradas en  la  pantalla y  elegiendo las  adecuadas
-avanzaremos dos  apartados y  en el  siguiente se nos  pedirá que  escribamos un
-identificador para el monitor. Escribid una  cadena con su nombre, descripción o
-lo que queráis  y pulsad la tecla  <enter> para poder elegir  nuestra tarjeta de
-video\\
+A  continuación accederemos  al apartado  de configuración  de nuestro
+monitor. Observando las opciones mostradas  en la pantalla y elegiendo
+las  adecuadas avanzaremos  dos apartados  y  en el  siguiente se  nos
+pedirá que escribamos  un identificador para el  monitor. Escribid una
+cadena con su  nombre, descripción o lo que queráis  y pulsad la tecla
+<enter> para poder elegir nuestra tarjeta de video\\
 
-Si leemos  la pantalla averiguamos  que al pulsar  'y' <enter> nos  aparecerá un
-listado de  tarjetas soportadas (al pulsar  <enter> continúa la lista)  del cual
-tendremos que introducir el número  correspondiente a nuestro modelo de tarjeta.
-Seguidamente se nos pedirá el tamaño de la memoria de la tarjeta de video (4096K
-son  4M, 32768K  son  16M  \ldots). Al  igual  que en  el  caso  del monitor  se
-nos  pedirá una  cadena  para identificar  la tarjeta  de  video. Elegiremos  la
-profundidad de color que  deseamos que sea por defecto y  estaremos en el último
-paso que  es el de  guardar el fichero de  configuración. Si estamos  seguros de
-haber elegido las opciones adecuadas  responderemos afirmativamente o en el caso
-contrario abortaremos el programa y volveremos desde principio. \\
+Si  leemos la  pantalla  averiguamos  que al  pulsar  'y' <enter>  nos
+aparecerá  un  listado  de  tarjetas  soportadas  (al  pulsar  <enter>
+continúa  la  lista)  del  cual tendremos  que  introducir  el  número
+correspondiente  a  nuestro modelo  de  tarjeta.  Seguidamente se  nos
+pedirá el tamaño de  la memoria de la tarjeta de  video (4096K son 4M,
+32768K son  16M \ldots). Al  igual que en el  caso del monitor  se nos
+pedirá una cadena para identificar  la tarjeta de video. Elegiremos la
+profundidad de color  que deseamos que sea por defecto  y estaremos en
+el último  paso que es el  de guardar el fichero  de configuración. Si
+estamos seguros de haber  elegido las opciones adecuadas responderemos
+afirmativamente  o en  el  caso contrario  abortaremos  el programa  y
+volveremos desde principio. \\
 
-El proceso anterior a simple vista parece demasiado complicado, pero es sencillo
-con un poco de paciencia. Destacar  lo dicho al principio, que cada distribución
-tiene su propia herramienta de configuración del servidor X, las cuales resultan
-bastante más  sencillas de usar. Algunos  fabricantes de tarjetas de  video como
-NVIDIA (www.nvidia.com)  proporcionan drivers  de sus  tarjetas para  Linux, así
-como los drivers OpenGL y documentación sobre su instalación.
+El proceso anterior  a simple vista parece  demasiado complicado, pero
+es sencillo con un poco de  paciencia. Destacar lo dicho al principio,
+que cada distribución tiene su propia herramienta de configuración del
+servidor  X,  las cuales  resultan  bastante  más sencillas  de  usar.
+Algunos fabricantes de tarjetas  de video como NVIDIA (www.nvidia.com)
+proporcionan drivers de sus tarjetas  para Linux, así como los drivers
+OpenGL y documentación sobre su instalación.
 
 \section{Configuración del acceso a internet}
 
-Este apartado  lo vamos  a dividir  en tres subbloques  dependiendo del  tipo de
-nuestra  conexión. Vamos  a  hablar  de como  configurar  el  acceso a  internet
-mediante un  modem (externo o  interno), una línea ADSL  con router ADSL,  y una
-conexión mediante un cable - modem.
+Este apartado  lo vamos a  dividir en tres subbloques  dependiendo del
+tipo de nuestra conexión. Vamos a  hablar de como configurar el acceso
+a internet mediante  un modem (externo o interno), una  línea ADSL con
+router ADSL, y una conexión mediante un cable - modem.
 
 \subsection{Acceso mediante modem}
 
-Casi  todos los  modems externos  están soportados  por el  kernel de  linux; en
-cambio hay muy pocos modem internos para  los cuales hay soporte en nuestro S.O.
-favorito. Actualmente existe soporte para los siguientes:
+Casi  todos los  modems externos  están  soportados por  el kernel  de
+linux; en  cambio hay  muy pocos  modem internos  para los  cuales hay
+soporte en nuestro S.O. favorito.  Actualmente existe soporte para los
+siguientes:
 
 \begin{itemize}
-	\item{Modems que hagan uso de los chipsets Lucent Apollo (ISA) y Lucent Mars
-	(PCI)}
-	\item{Modems Intel V90 HaM e Intel 536ep}
-	\item{Modem IBM Mwave (usado en el Thinkpad 600E y posteriores)}
-	\item{Modems Conexant que hagan uso de los chipsets Conexant HCF y HSF}
-	\item{Modems ESS ISA}
+\item{Modems que hagan uso de los chipsets Lucent Apollo (ISA) y Lucent Mars (PCI)}
+\item{Modems Intel V90 HaM e Intel 536ep}
+\item{Modem IBM Mwave (usado en el Thinkpad 600E y posteriores)}
+\item{Modems Conexant que hagan uso de los chipsets Conexant HCF y HSF}
+\item{Modems ESS ISA}
 \end{itemize}
 
-Toda  la documentación  sobre  la  instalación y  los  drivers  para los  modems
-anteriores se pueden encontrar en la página www.linmodems.org.
+Toda  la documentación  sobre la  instalación y  los drivers  para los
+modems anteriores se pueden encontrar en la página www.linmodems.org.
 
-Antes de  empezar con la  configuración de nuestro  modem nombrar como  en casos
-anteriores  que existen  herramientas específicas  de distintas  distribuciones,
-escritorios o aplicaciones (como es el caso  de KPPP de KDE el cual es intuitivo
-y bastante  sencillo de configurar). Otra  vez volveremos a usar  una aplicación
-incluida  en todas  las  distribuciones  llamada {\bf  pppd}  y  la utilidad  de
-configuración del programa  anterior {\bf pppconfig}. También  nombrar que antes
-de empezar con el proceso debemos tener  instalado el pppd y activado el soporte
-para el protocolo  PPP (Point to Point Protocol) en  el kernel, apartado network
-devices, el cual suele estar activado al instalar nuestra distribución.
+Antes de empezar con la configuración de nuestro modem nombrar como en
+casos  anteriores que  existen herramientas  específicas de  distintas
+distribuciones, escritorios o aplicaciones (como es el caso de KPPP de
+KDE el cual es intuitivo y  bastante sencillo de configurar). Otra vez
+volveremos a usar una aplicación  incluida en todas las distribuciones
+llamada  {\bf  pppd}  y  la utilidad  de  configuración  del  programa
+anterior {\bf pppconfig}. También nombrar  que antes de empezar con el
+proceso debemos tener instalado el pppd  y activado el soporte para el
+protocolo  PPP  (Point  to  Point Protocol)  en  el  kernel,  apartado
+network  devices, el  cual suele  estar activado  al instalar  nuestra
+distribución.
 
-\begin{center}
-	\begin{figure}
-		\includegraphics[width=10cm]{./imagenes/kpp.eps}
-		\caption{KPPP. Interfaz GUI de pppd para KDE}
-	\end{figure}
-\end{center}
+\begin{figure}[hbtp]
+\centering\includegraphics[width=\textwidth]{imagenes/kpp.eps}
+\caption{KPPP. Interfaz GUI de pppd para KDE}
+\end{figure}
 
-Gracias  a una  herramienta  como pppconfig  la tarea  de  configuración es  muy
-sencilla, basta con ejecutar el programa e ir introduciendo los datos requeridos
-por el  mismo. Esta utilidad  modifica los  ficheros de configuiración,  asi que
-antes de empezar  necesitamos acceder como root y a  continuación escribir en la
-línea de comandos pppconfig. Seleccionamos la opcion marcada (crear una conexión
-nueva)  y posteriormente  introducimos  un identificador  para nuestra  conexión
-(como ejemplo  usaremos 'nueva-conexion').  Elejimos nuestro  tipo de  DNS (casi
-siempre  estático,  dependiendo de  nuestro  proveedor  de acceso  a  internet),
-seleccionamos <OK>  y seguidamente  introducimos la  dirección del  servidor DNS
-primario y  secundario si tenemos  (ambas direcciones son proporcionadas  por el
-proveedor de acceso).\\
+Gracias a una herramienta como  pppconfig la tarea de configuración es
+muy  sencilla,  basta con  ejecutar  el  programa e  ir  introduciendo
+los  datos  requeridos  por  el  mismo.  Esta  utilidad  modifica  los
+ficheros  de  configuiración, asi  que  antes  de empezar  necesitamos
+acceder como  root y a continuación  escribir en la línea  de comandos
+pppconfig. Seleccionamos la opcion  marcada (crear una conexión nueva)
+y posteriormente  introducimos un identificador para  nuestra conexión
+(como ejemplo usaremos 'nueva-conexion'). Elejimos nuestro tipo de DNS
+(casi siempre estático,  dependiendo de nuestro proveedor  de acceso a
+internet), seleccionamos <OK> y seguidamente introducimos la dirección
+del servidor DNS  primario y secundario si  tenemos (ambas direcciones
+son proporcionadas por el proveedor de acceso).\\
 
-En este  momento habrá que seleccionar  el método de autentificación.  PAP suele
-funcionar y si no es así prueben CHAT o CHAP. Introducimos el nombre de usuario,
-la contraseña,  la velocidad de  nuestro modem (dejad  la opción por  defecto en
-caso de  duda - 115200),  método de  marcación (tonos o  pulsos) y el  número de
-teléfono del acceso a internet.\\
+En este  momento habrá que  seleccionar el método  de autentificación.
+PAP suele funcionar  y si no es así prueben  CHAT o CHAP. Introducimos
+el nombre  de usuario,  la contraseña, la  velocidad de  nuestro modem
+(dejad la  opción por  defecto en  caso de duda  - 115200),  método de
+marcación  (tonos o  pulsos)  y el  número de  teléfono  del acceso  a
+internet.\\
 
-A continuación el programa intentará autodetectar el puerto de nuestro modem. En
-el caso  de que no  lo consiga tendremos  que introducirlo nosotros.  En algunos
-casos estará  en /dev/modem. Si lo  anterior tampoco funciona debemos  saber que
-los  puertos COM  son dispositivos  que se  encuentran en  /dev y  se relacionan
-mediante la siguiente tabla:
+A continuación el programa intentará autodetectar el puerto de nuestro
+modem. En  el caso  de que  no lo  consiga tendremos  que introducirlo
+nosotros.  En  algunos casos  estará  en  /dev/modem. Si  lo  anterior
+tampoco funciona  debemos saber que  los puertos COM  son dispositivos
+que se encuentran en /dev y se relacionan mediante la siguiente tabla:
 
 \begin{center}
 	\begin{tabular}{c|c}
@@ -669,74 +682,80 @@ mediante la siguiente tabla:
 	\end{tabular}
 \end{center}
 
-Normalmente los  modems externos usan el  COM1 o el COM2,  mientras los internos
-usan el COM3 o el COM4. Anotar  que /dev/modem es simplemente un enlace a alguno
-de los /dev/ttySx. Introduciremos  el dispositivo correspondiente (/dev/ttySx) y
-habrémos  acabado  con  el  proceso.  Guardamos los  cambios  y  abandonamos  al
-asistente pppconfig.
+Normalmente los modems  externos usan el COM1 o el  COM2, mientras los
+internos usan el COM3 o el  COM4. Anotar que /dev/modem es simplemente
+un enlace  a alguno de  los /dev/ttySx. Introduciremos  el dispositivo
+correspondiente  (/dev/ttySx)  y  habrémos  acabado  con  el  proceso.
+Guardamos los cambios y abandonamos al asistente pppconfig.
 
-\begin{center}
-	\begin{figure}
-		\includegraphics[width=10cm]{./imagenes/pppconfig.eps}
-		\caption{PPPConfig}
-	\end{figure}
-\end{center}
+\begin{figure}[hbtp]
+\centering\includegraphics[width=\textwidth]{imagenes/pppconfig.eps}
+\caption{PPPConfig}
+\end{figure}
 
-Los ficheros de configuración por defecto  se guardan en el directorio /etc/ppp.
-Buscamos la ruta del fichero con  el nombre 'nueva-conexion' (u otro introducido
-como identificador) y ejecutamos el siguiente comando:
+Los ficheros de configuración por  defecto se guardan en el directorio
+/etc/ppp. Buscamos la ruta del  fichero con el nombre 'nueva-conexion'
+(u  otro introducido  como  identificador) y  ejecutamos el  siguiente
+comando:
 
 \begin{center}
 	{\bf cila\$ pppd file /ruta/del/fichero/nueva-conexion}
 \end{center}
+
 Lo cual normalmente corresponde a lo siguiente:
+
 \begin{center}
 	{\bf cila\$ pppd file /etc/ppp/peers/nueva-conexion}
 \end{center}
-Podremos observar que es lo que está sucediendo en el fichero /var/log/messages
-con el comando:
+
+Podremos  observar  que  es  lo  que está  sucediendo  en  el  fichero
+{\tt /var/log/messages} con el comando:
 
 \begin{center}
 	{\bf cila\$ tail -f /var/log/messages}
 \end{center}
 
-Podemos  finalizar nuestra  conexión  matando  el proceso  pppd  con un  comando
-kill.\\
+Podemos  finalizar nuestra  conexión matando  el proceso  pppd con  un
+comando kill.\\
 
-Por último recordar que existen muchos otros asistentes de configuración algunos
-de los cuales pueden simplificar el proceso de configuración.
+Por   último  recordar   que  existen   muchos  otros   asistentes  de
+configuración algunos de  los cuales pueden simplificar  el proceso de
+configuración.
 
 \subsection{Acceso mediante ADSL y cable modem}
 
-La configuración de  acceso usando una línea  ADSL que vamos a  explicar en este
-apartado es usando un Router ADSL el cual debe de estar previamente configurado.
-También necesitaremos una tarjeta Ethernet que funcione en linux.\\
+La configuración de acceso usando una  línea ADSL que vamos a explicar
+en  este apartado  es usando  un  Router ADSL  el cual  debe de  estar
+previamente  configurado. También  necesitaremos una  tarjeta Ethernet
+que funcione en linux.\\
 
-Para  poder realizar  el  acceso  tenemos que  configurar  la  interfaz de  red.
-Normalmente  usaremos el  programa {\bf  ifconfig} con  una orden  similar a  la
-siguiente (root):
+Para poder  realizar el acceso  tenemos que configurar la  interfaz de
+red. Normalmente  usaremos el  programa {\bf  ifconfig} con  una orden
+similar a la siguiente (root):
 
 \begin{center}
 	{\bf cila\$ ifconfig eth0 192.168.0.2 netmask 255.255.255.0 up}
 \end{center}
 
-Con  el  comando  anterior  estamos counfigurando  la  interfaz  Ethernet  eth0,
-asignándole una dirección  IP 192.168.0.2 y la máscara  de subred 255.255.255.0.
-En internet se pueden encontrar varios tutoriales y manuales de configuración de
-red, así que no nos vamos a  extender demasiado en este punto. El paso siguiente
-es  establecer un  camino  por  defecto ({\bf  gateway}).  Lo  haremos con  este
-comando:
+Con  el comando  anterior estamos  counfigurando la  interfaz Ethernet
+eth0, asignándole una dirección IP  192.168.0.2 y la máscara de subred
+255.255.255.0.  En internet  se pueden  encontrar varios  tutoriales y
+manuales de  configuración de  red, así  que no  nos vamos  a extender
+demasiado en este punto. El paso siguiente es establecer un camino por
+defecto ({\bf gateway}). Lo haremos con este comando:
 
 \begin{center}
 	{\bf cila\$ route add default gw 192.168.0.1 eth0}
 \end{center}
+
 donde 192.168.0.1 es la dirección IP de nuestro router ADSL.\\
 
-Para  no tener  que repetir  este proceso  cada vez  que iniciamos  el ordenador
-podemos poner la  información sobre nuestra interfaz  de red y el  gateway en un
-fichero de  configuración que normalmente están  en el directorio /etc  y tienen
-nombres  similares a  network, networks  \ldots;  en la  distribución debian  se
-encuentra en /etc/network/interfaces y cuyo aspecto es parecido al siguiente:
+Para  no tener  que repetir  este proceso  cada vez  que iniciamos  el
+ordenador podemos poner la información sobre nuestra interfaz de red y
+el gateway en un fichero de  configuración que normalmente están en el
+directorio /etc y tienen nombres similares a network, networks \ldots;
+en la  distribución debian  se encuentra en  /etc/network/interfaces y
+cuyo aspecto es parecido al siguiente:
 
 \begin{verbatim}
 	auto eth0
@@ -748,59 +767,59 @@ encuentra en /etc/network/interfaces y cuyo aspecto es parecido al siguiente:
 	   gateway 192.168.1.1
 \end{verbatim}
 
-En otras distribuciones existen utilidades de configuración de red como netcfg
-(RedHat) o netconfig (Slackware).\\
+En  otras distribuciones  existen utilidades  de configuración  de red
+como netcfg (RedHat) o netconfig (Slackware).\\
 
-En un  acceso a  internet através  de un  cable modem  la la  autentificación de
-usuario y la  dirección IP se obtiene  de manera dinámica a  través del servicio
-DHCP.  Además de  lo anterior  se obtendra  la máscara  de subred,  dirección de
-gateway y las direcciones DNS; es decir  todo se configura por si mismo. Para su
-uso tendremos que  tener instalado un cliente DHCP, por  ejemplo dhcp-client. En
-el fichero interfaces bastará poner:
+En un acceso  a internet através de un cable  modem la autentificación
+de usuario  y la dirección IP  se obtiene de manera  dinámica a través
+del servicio  DHCP. Además de  lo anterior  se obtendra la  máscara de
+subred, dirección de  gateway y las direcciones DNS; es  decir todo se
+configura por si  mismo. Para su uso tendremos que  tener instalado un
+cliente  DHCP,  por  ejemplo  dhcp-client. En  el  fichero  interfaces
+bastará poner:
 
 \begin{verbatim}
 	auto eth0
 	iface eth0 inet dhcp
 \end{verbatim}
 
-para  poder usar  este servicio.  En los  distintos asistentes  de configuración
-seleccionaremos el  uso de  DHCP y  con esa  operación tendremos  configurada la
-interfaz de red y por lo tanto el acceso a internet através de un cable modem.
+para  poder  usar  este  servicio.  En  los  distintos  asistentes  de
+configuración  seleccionaremos el  uso  de DHCP  y  con esa  operación
+tendremos configurada  la interfaz de red  y por lo tanto  el acceso a
+internet através de un cable modem.
 
 
 \section{Configuración de la impresora: CUPS}
 
-En linux podemos utilizar varios sitemas de impresión y nos sería
-imposible explicarte como se configuran todos ellos, aquí nos vamos a
+En  linux podemos  utilizar varios  sitemas de  impresión y  nos sería
+imposible explicarte como se configuran  todos ellos, aquí nos vamos a
 centrar en uno en concreto, CUPS, Common Unix Printing System.\\
 
-Una de las ventajas que tiene este sistema frente a los otros es su facilidad
-de configuración ya que podemos configurar completamente nuestras
-impresoras desde un navegador.\\
+Una de las  ventajas que tiene este  sistema frente a los  otros es su
+facilidad  de configuración  ya que  podemos configurar  completamente
+nuestras impresoras desde un navegador.\\
 
-El cups está diseñado para que podamos utilizar una misma impresora o
+El cups está diseñado para que  podamos utilizar una misma impresora o
 un grupo de éstas desde cualquier pc que esté en la red, es decir, que
-un amigo siempre que tu le des permiso y estés conectado a internet
-podrá utilizar tu impresora para sacar a tiempo ese trabajo que tiene
-que entregar mañana y no le ha dado tiempo de ir a comprar tinta para
+un amigo  siempre que tu le  des permiso y estés  conectado a internet
+podrá utilizar tu impresora para sacar  a tiempo ese trabajo que tiene
+que entregar mañana y no le ha  dado tiempo de ir a comprar tinta para
 la impresora o se ha quedado sin papel o mil cosas que suelen pasar.\\
 
-Para configurar el sistema simplemente tendremos que abrir un
-navegador y en la barra de dirección colocaremos:{\tt
-http://localhost:631}, en ese momento, si nosotros no tenemos permiso
-para configurar el sistema de impresión nos saldrá un cuadro de
-diálogo en el que tendremos que introducir el nombre de usuario y el
-password de un usuario del sistema con permiso para configurar el
-CUPS, por ejemplo root. Una vez obtenido acceso a la configuración de
+Para   configurar  el   sistema   simplemente   tendremos  que   abrir
+un   navegador   y  en   la   barra   de  dirección   colocaremos:{\tt
+http://localhost:631}, en ese momento,  si nosotros no tenemos permiso
+para  configurar el  sistema  de  impresión nos  saldrá  un cuadro  de
+diálogo en el  que tendremos que introducir el nombre  de usuario y el
+password  de un  usuario del  sistema con  permiso para  configurar el
+CUPS, por ejemplo root. Una vez  obtenido acceso a la configuración de
 CUPS en el navegador aparecerá una página web como esta:
 
-\begin{figure}[h!]
+\begin{figure}[hbtp]
 \centering
-\includegraphics[width=7cm]{imagenes/cups_inicio.eps}
+\includegraphics[width=\textwidth]{imagenes/cups_inicio.eps}
 \caption{CUPS 1}
 \end{figure}
-
-% aqui va el cups_inicio.eps
 
 Para  comenzar   con  la   configuración  pulsaremos  sobre   {\tt  Do
 Administration Tasks}  en ese  momento nos aparecerán  tres categorías
@@ -818,18 +837,18 @@ tendríamos que  elegir uno de los  tres grupos y nuestro  documento se
 imprimirá en la  impresora que antes quede libre de  trabajo del grupo
 seleccionado.
 
-Los jobs o trabajos son los trabajos que hay en este instante en cola
-para imprimir, podremos eliminarlos, detener su impresión, etc. Los
-trabajos que ya han sido terminados también podremos reanudarlos y
+Los jobs o trabajos son los trabajos  que hay en este instante en cola
+para imprimir,  podremos eliminarlos,  detener su impresión,  etc. Los
+trabajos que  ya han  sido terminados  también podremos  reanudarlos y
 conocer varios datos sobre ellos.\\
 
-Las impresoras son los dispositivos de impresión que tenemos en
-nuestro sistema podremos añadir impresoras nuevas o gestionar las que
-tenemos. Como nosotros vamos a instalar nuestra impresora por primera
+Las  impresoras  son los  dispositivos  de  impresión que  tenemos  en
+nuestro sistema podremos añadir impresoras  nuevas o gestionar las que
+tenemos. Como nosotros vamos a  instalar nuestra impresora por primera
 vez pulsaremos sobre {\tt Add Printer}.\\
 
-Tendremos que ir facilitando los datos que se nos solicitan, lo
-primero es asignarle un nombre, decir donde se encuentra y añadir una
+Tendremos  que ir  facilitando  los  datos que  se  nos solicitan,  lo
+primero es asignarle un nombre, decir  donde se encuentra y añadir una
 breve descripción al nombre.
 
 \begin{figure}[h!]
@@ -838,8 +857,8 @@ breve descripción al nombre.
 \caption{CUPS 2}
 \end{figure}
 
-Lo siguiente es seleccionar donde tendremos conectada nuestra
-impresora, normalmente tendremos conectada la impresora al puerto
+Lo  siguiente   es  seleccionar  donde  tendremos   conectada  nuestra
+impresora,  normalmente tendremos  conectada  la  impresora al  puerto
 paralelo ({\tt Parallel Port \#1})
 
 \begin{figure}[h!]
@@ -848,7 +867,7 @@ paralelo ({\tt Parallel Port \#1})
 \caption{CUPS 3}
 \end{figure}
 
-En la siguiente página tendremos que seleccionar el fabricante de
+En  la siguiente  página tendremos  que seleccionar  el fabricante  de
 nuestra impresora.
 
 \begin{figure}[h!]
