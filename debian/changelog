@@ -1,4 +1,13 @@
+cila-libro (1.2-1) unstable; urgency=low
+
+  * Release 1.2-1
+
+  Incluye la mejora  propuesta por Jose Miguel  Espaldero para mejorar
+  la visualización del libro en formato PDF.
+
+ -- Miguel Ángel Vilela García (miguev) <miguev@gulic.org>  Wed, 24 Jul 2002 21:05:54 +0100
 cila-libro (1.1-1) unstable; urgency=low
+
 
   * Initial Release.
 
