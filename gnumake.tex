@@ -2,91 +2,275 @@
 
 \chapter{GNU Make}\label{make}
 
-\section{Introducción al Make}
+A la hora de compilar un programa, resulta evidente que utilizar la
+línea de comandos resulta molesto incluso cuando se dispone de unos
+pocos archivos de código fuente. Para ayudar en dicho proceso se utiliza
+el comando {\tt make}.
 
+GNU Make puede usarse con cualquier lenguaje de programación cuyas
+tareas puedan lanzarse mediante la línea de comandos. En realidad, puede
+usarse para manejar cualquier conjunto de archivos en los cuales haya
+archivos que deban actualizarse toda vez que cambien ciertos otros.
 
-Es evidente que utilizar la  línea de comandos resulta molesto incluso
-cuando se dispone de unos pocos archivos de código fuente. Para ayudar
-en dichas tareas se utiliza el  comando {\tt make}. Con el objetivo de
-que  funcione es  necesario  disponer  de un  archivo  de nombre  {\tt
-Makefile} en el  directorio de nuestro código fuente.  El archivo debe
-contener  reglas  que  le  indiquen  al {\tt  make}  cómo  generar  la
-aplicación. Un ejemplo de {\tt Makefile} puede ser el siguiente:
+Las reglas para la compilación se escriben en un archivo de texto de
+nombre {\tt Makefile} en el directorio de nuestro código fuente. El
+comando {\tt make}, al ser invocado desde dicho directorio, ejecuta las
+reglas del archivo {\tt Makefile} recompilando sólo las partes que han
+sido modificadas desde la última compilación, y enlazada los archivos en
+código objeto construyendo el ejecutable.
+
+\section{Makefile sencillo}
+
+Tomaremos como ejemplo uno de los programas del tema de GNU C/C++ (véase
+tema \ref{gnuc}). Concretamente utilizaremos el programa compilado y
+ejecutado en la página \pageref{holafuncm}. Un ejemplo de {\tt
+Makefile}, para compilar y enlazar dicho programa, puede ser el
+siguiente:
+
+\begin{ejemplo}{makefile1.mak}{Makefile sencillo}
+Makefile sencillo para compilar y enlazar el programa ejecutado en la
+página \pageref{holafuncm}.
+\end{ejemplo}
+
+Las líneas que comienzan con {\tt \#} son comentarios, no se ejecutan. El
+resto son reglas que definen como se general el programa {\tt
+holamundo}. Cada regla empieza con un nombre seguido de {\tt :}. A
+continuación de cada regla pueden haber una o más líneas iniciadas con
+tabulador, que especifican que comandos deben ser ejecutados para
+cumplir con las reglas.
+
+Si guardamos {\tt makefile1.mak} con el nombre {\tt Makefile} en el
+directorio donde está guardado el código fuente del programa, podemos
+generar y probar nuestro programa de la siguiente manera:
 
 \begin{verbatim}
-  # Makefile .- Ejemplo para el CILA 2001.
-
-  CC = gcc
-  CFLAGS = -g -Wall
-  LFLAGS = -lm
-
-  OBJECTS = main.o holafunc3.o
-  INCLUDES = holafunc.h
-
-  holamundo: $(OBJECTS)
-	$(CC) $(LFLAGS) -o $@ $^
-
-  $(OBJECTS): %.o : %.c $(INCLUDES)
-	$(CC) -c $(CFLAGS) -o $@ $<
-	
-  clean:
-	rm -f *~ $(OBJECTS)
-
-  clean_all: clean
-  	rm -f holamundo
+$ make
+$ ./holamundo
+El que a buen árbol se arrima, buena sombra lo cobija,
+y el coseno de 0.500000 es 0.877583.
 \end{verbatim}
 
-Las  primeras líneas  se  utilizan para  definir  variables que  serán
-utilizadas en el resto de  nuestro programa. Por ejemplo, definimos en
+Como podemos apreciar, {\tt make} simplifica notablemente el proceso de
+compilación y enlazado de nuestra aplicación.
+
+\section{Reglas en los {\tt Makefile}}
+
+Las reglas descritas en los {\tt Makefile} siempre tienen el siguiente
+formato:
+
+\begin{verbatim}
+destino: requisito ...
+        comando
+        ...
+\end{verbatim}
+
+\begin{description}
+
+\item[Destino] Es el nombre de un archivo a crear. Normalmente un
+ejecutable o un archivo de código objeto ({\tt *.o}). También puede ser
+en nombre de una regla a realizar. Por ejemplo, es habitual utilizar
+{\em clean} como el {\em destino} de una regla que ejecuta los comandos
+necesarios para eliminar los archivos de código objeto y otros archivos
+de uso intermedio.
+
+\item[Requisito] Es el nombre de un archivo del cual depende el {\em
+destino} a crear. Un destino suele depender de varios archivos
+requisito. Cuando el destino define el nombre de una tarea, no se
+definen requisitos.
+
+\item[Comando] Define una acción a realizar para generar un {\em
+destino}. Puesto que la creación de un destino puede requerir varios
+comandos, estos deben ser indicados en línea sucesivas, cada una de las
+cuales debe comenzar con un tabulador (no sirven los espacios). Los
+comandos son pasados al intérprete de comandos, el cual se encarga
+de interpretarlos y ejecutarlos.
+
+\end{description}
+
+En el ejemplo anterior vemos un elemento adicional que no hemos
+comentado. {\tt \\} es el caracter de continuación de línea. Colocado al
+final de una línea, une dos líneas consecutivas como si fueran una sola.
+Se usa sólo para facilitar la lectura.
+
+Cuando ejecutamos {\tt make} es necesario indicar el {\em destino} que
+queremos que sea generado. De lo contrario, se generará el {\em destino}
+por defecto, que es el definido en la primera regla del {\tt Makefile}.
+Por ejemplo, si utilizamos el {\tt Makefile} anterior y ejecutamos {\tt
+make} de la siguiente manera:
+
+\begin{verbatim}
+$ make clean
+rm holamundo \
+   holamain.o holafuncm.o
+\end{verbatim}
+
+Tanto el ejectuable como los archivos de código objeto de nuestra
+aplicación serán borrados. Sin embargo, si lo hacemos así:
+
+\begin{verbatim}
+$ make
+gcc -c holamain.c
+gcc -c holafuncm.c
+gcc -lm -o holamundo holamain.o holafuncm.o
+\end{verbatim}
+
+El comando {\tt make} toma {\tt holamundo} como destino por defecto y
+ejecuta los comandos adecuados para generarlo conforme a las reglas
+descritas por el {\tt Makefile}. Evidentemente, se consigue el mismo
+efecto si ejectuamos {\tt make holamundo}.
+
+Una de las funcionalidades más importantes de {\tt make} es que evita
+generar los {\em destinos} ya existentes, o cuyos archivos de {\em
+requerimiento} no hayan cambiado. Para ello, {\tt make} estudia las
+dependencias entre {\em destinos}. Por ejemplo, si ejectuamos {\tt make}
+con nuestro sencillo {\tt Makefile} de pruebas, el programa detectará, a
+partir de las reglas, una dependencia entre el ejecutable {\tt
+holamundo} y los archivos de código objeto {\tt holamain.o} y {\tt
+holafuncm.o}. Y que estos a su vez dependen de  {\tt holamain.c} y {\tt
+holafunc.h}, y {\tt holafuncm.c} y {\tt holafunc.h} respectivamente. El
+programa  {\tt make} es capaz de detectar si alguno de los archivos de
+código fuente ({\tt holamain.c}, {\tt holafuncm.c} o {\tt holafunc.h})
+fue modificado después de la última ejecución. En caso de ser así,
+{\tt make} invoca los {\em comandos} de la regla o reglas a decuadas
+para garantizar que {\tt holamain.o} y {\tt holafuncm.o} existen y están
+actualizados con respecto a los archivos de código fuente de los que dependen.
+Hecho esto, pasa a verificar si el ejectuable {\tt
+holamundo} existe y está actualizado con respecto a los archivos de
+código objeto de los que depende. De no ser así se ejecutan los {\em
+comandos} definidos en su regla, con el fin de actualizar el ejecutable.
+POr lo tanto, {\tt garantiza} que tengamos nuestro binario actualizado
+empleando el mínimo número de pasos posible.
+
+\section{Macros o variables}
+
+Las macros nos permiten definir constantes. Al utilizarlas hacemos los
+archivos {\tt Makefiles} máse sencillos de modificar. La definición de
+una macro tiene la siguiente forma.
+
+\begin{verbatim}
+MACRO1 = cadena de texto
+MACRO2 = otra cadena de texto
+\end{verbatim}
+
+Las macros pueden ser referenciadas indicando el nombre entre
+parentecis ({\tt ()}) o llaves ({\tt \{\}}) precedidas por el signo del
+dolar ({\tt \$}). Por ejemplo, las macros anteriores serían
+referenciadas como:
+
+\begin{verbatim}
+$(MACRO1)
+${MACRO2}
+\end{verbatim}
+
+Algunas definiciones de macros válidas podrían ser:
+
+\begin{verbatim}
+LIBS = -lm
+OBJECTS = holamain.o holafuncm.o
+INCLUDES = holafunc.h
+DEBUG_FLAG =		# pon -g para depurar
+\end{verbatim}
+
+Los nombres de las macros pueden usar cualquier combinación de letras,
+números y subrayado. Por convenio los nombres de las macros suelen
+definirse en mayúscuas. Los valores pueden ser nulos como en la
+definición anterior de {\tt DEBUG\_FLAG}, que además nos muestra como un
+comentario puede ir a continuación de una definiciñon. La propia
+definción de una macro puede contener referencias a otras macros
+definidas anterior o posteriormente.
+
+\subsection{Macros especiales}
+
+GNU Make define algunas macros internas para simplificar nuestro
+trabajo. Podemos invocar {\tt make} con la opción {\tt -p} para obtener
+una lista de todas las macros, reglas y destinos que intervinieron en la
+ejecución de {\tt make}.
+
+Además, hay unas pocas macros internas especiales que se definen en cada
+regla. Algunas de ellas son especialmente utiles a la hora de crear
+nuestro {\tt Makefile} por lo que estudiaremos las que resultan más
+prácticas.
+
+The macro @ evaluates to the name of the current target. In the following example the target name is prog1 which is also needed in the command line to name the executable file. In this example -o @ evaluates to -o prog1.
+
+     prog1 : ${objs}
+        ${CXX} -o $@ ${objs}
+
+Command line macros
+
+Macros can be defined on the command line. From the previous example the debug flag, which was null, could be set from the command line with the command
+
+      % make prog1 DEBUG_FLAG=-g
+
+Definitions comprised of several words must be enclosed in single or double quotes so that the shell will pass them as a single argument. For example
+
+      % make prog1 "LIBS= -lm -lX11"
+
+could be used to link an executable using the math and X Windows libraries.
+
+Shell variables that have been defined as part of the environment are available to make as macros within a descriptor file. C shell users can see the environment variables they have defined from the command line with the command
+
+      % env
+
+These variables can be set within the .login file or from the command line with a command like:
+
+      % setenv DIR /usr/bin
+
+si el ejecutable {\tt holamundo} existe. Tanto si no existe, como si los
+archivos de requerimiento, {\tt holamain.o} y {\tt holamain.o}, han
+cambiado desde la última vez que se enlazó el programa,
+
+Las primeras líneas se utilizan para definir variables que serán
+utilizadas en el resto de nuestro programa. Por ejemplo, definimos en
 {\tt CC} el compilador a utilizar, es decir el {\tt gcc}, mientras que
-las variables  {\tt CFLAGS}  y {\tt  LFLAGS} especifican  las opciones
-para el  compilador y  el enlazador  respectivamente. En  nuestro caso
-indicamos con {\tt  -lm} que queremos enlazar la  biblioteca libm, con
+las variables {\tt CFLAGS} y {\tt LFLAGS} especifican las opciones
+para el compilador y el enlazador respectivamente. En nuestro caso
+indicamos con {\tt -lm} que queremos enlazar la biblioteca libm, con
 {\tt -g} que deseamos incluir el código de depuración en el ejecutable
 de nuestro programa y con {\tt -Wall} que el compilador debe avisarnos
-a  la más  mínima sospecha  de un  posible error  en el  programa. Por
-último se listan en {\tt OBJECTS}  el nombre de los archivos de código
-objeto {\tt (*.o)} que formarán  nuestra aplicación y en {\tt INCLUDE}
-los  includes {\tt  (*.h)} de  nuestro código  fuente. Las  siguientes
+a la más mínima sospecha de un posible error en el programa. Por
+último se listan en {\tt OBJECTS} el nombre de los archivos de código
+objeto {\tt (*.o)} que formarán nuestra aplicación y en {\tt INCLUDE}
+los includes {\tt (*.h)} de nuestro código fuente. Las siguientes
 líneas del {\tt Makefile} especifican los {\em targets} u objetivos de
 la ejecución del {\tt make}.
 
 \begin{verbatim}
-  holamundo: $(OBJECTS)
+ holamundo: $(OBJECTS)
 	$(CC) $(LFLAGS) -o $@ $^
 \end{verbatim}
 
-Indica  que el  programa {\tt  holamundo} depende  de disponer  de los
-archivos  de  código objeto  listados  en  {\tt  OBJECTS} y  que  para
-generarlo debemos enlazarlos con el  programa especificado en {\tt CC}
+Indica que el programa {\tt holamundo} depende de disponer de los
+archivos de código objeto listados en {\tt OBJECTS} y que para
+generarlo debemos enlazarlos con el programa especificado en {\tt CC}
 y con las opciones de {\tt LFLAGS}. Para generar {\tt holamundo} basta
 con ejecutar:
 
 \begin{verbatim}
-  $ make holamundo
+ $ make holamundo
 \end{verbatim}
 
-Puesto  que {\tt  holamundo} es  el primer  target del  {\tt Makefile}
-también  es el  target por  defecto. Así  que se  obtienen los  mismos
+Puesto que {\tt holamundo} es el primer target del {\tt Makefile}
+también es el target por defecto. Así que se obtienen los mismos
 resultados si ejecutamos:
 
 \begin{verbatim}
-  $ make
+ $ make
 \end{verbatim}
 
-Aunque  ya  hemos  especificado  la  dependencia  de  {\tt  holamundo}
-respecto de  los archivos de  código objeto se hace  necesario indicar
-cómo  se obtienen  dichos  archivos. El  siguiente  target indica  ese
+Aunque ya hemos especificado la dependencia de {\tt holamundo}
+respecto de los archivos de código objeto se hace necesario indicar
+cómo se obtienen dichos archivos. El siguiente target indica ese
 proceso.
 
 \begin{verbatim}
-  $(OBJECTS): %.o : %.c $(INCLUDES)
+ $(OBJECTS): %.o : %.c $(INCLUDES)
 	$(CC) -c $(CFLAGS) -o $@ $<
 \end{verbatim}
 
-El  último  target  permite  borrar  todos  los  archivos  intermedios
-presentes  en el  directorio. Eso  incluye  a los  archivos de  código
-objeto que,  una vez creada  la aplicación,  ya no tiene  utilidad, así
+El último target permite borrar todos los archivos intermedios
+presentes en el directorio. Eso incluye a los archivos de código
+objeto que, una vez creada la aplicación, ya no tiene utilidad, así
 como los archivos temporales que dejan algunos editores. Se ejecuta de
 la siguiente manera:
 
@@ -94,17 +278,17 @@ la siguiente manera:
 $ make clean
 \end{verbatim}
 
-También podemos borrar  todos los archivos generados  por nuestro {\tt
+También podemos borrar todos los archivos generados por nuestro {\tt
 Makefile}, incluida la aplicación.
 
 \begin{verbatim}
 $ make clean_all
 \end{verbatim}
 
-Evidentemente este {\tt Makefile}  puede extenderse con nuevos targets
-que se  encarguen de  generar la documentación  de ayuda,  que generen
+Evidentemente este {\tt Makefile} puede extenderse con nuevos targets
+que se encarguen de generar la documentación de ayuda, que generen
 bibliotecas de enlace dinámico con las funciones de uso más frecuente,
-que  generen otros  ejecutables que  formen parte  de la  aplicación e
-incluso  que empaqueten  nuestro programa  y  lo dejen  listo para  su
+que generen otros ejecutables que formen parte de la aplicación e
+incluso que empaqueten nuestro programa y lo dejen listo para su
 instalación en cualquier sistema.
 
