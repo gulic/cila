@@ -1,6 +1,6 @@
 %Autor: Félix J. Marcelo Wirnitzer
 %email: fmarcelo@mencey.neuroomante.com
-%chat: _ese
+%chat: _ese en #gulic/irc.hispano.org
 
 \chapter{El lenguaje HTML}
 \newcommand{\com}{``}
@@ -18,44 +18,51 @@ A  lo  largo del  tiempo,  la  demanda  de  los usuarios  ha  motivado
 la  inclusión  de  elementos  relativos   a  la  presentación  en  las
 especificaciones  de  HTML, a  pesar  de  que  cada  vez se  veía  más
 claro  que la  idea  original de  HTML era  definir  estructuras y  no
-presentaciones.
+presentaciones. Tratemos de explicarlo mejor:  la idea original es que
+cuando hacemos  una página  web con HTML,  deberíamos disponer  de dos
+ficheros:  la propia  página web  con  el contenido  que nos  interesa
+mostrar  y  un  fichero  de estilos.  Combinando  estos  dos  ficheros
+tendremos  nuestra página  web.  Ahora  bien, con  el  tiempo, se  han
+fundido estos dos ficheros en uno sólo creando un gran problema que es
+de no seguir  los estándares que inicialmente se crearon.  Y ése es el
+principal  problema de  ver páginas  webs desde  distintos navegadores
+\footnote{No hay  más que  recordar cuando leemos  ``Página optimizada
+por Internet Explorer'' o lo mismo para el Nestcape}
 
 \section{Definición de la estructura de un documento}
 
 Todos los documentos HTML están formados por cuatro partes:
 
-\begin{itemize}
+\begin{enumerate}
 
-\item Una línea declarando qué versión de HTML se ha usado para
-      crear el documento. Esta parte es simplemente esta línea
-      \begin{verbatim}
-<!DOCTYPE HTML PUBLIC = "-//W3C//DTD HTML 4.0 Transitional//EN"
-"http://www.w3c.org/TR/REC-html40/loose.DTD">
-      \end{verbatim}
+\item Una línea declarando qué versión  de HTML se ha usado para crear
+el documento.  Esta parte  es simplemente esta  línea \begin{verbatim}
+<!DOCTYPE  HTML  PUBLIC  =  "-//W3C//DTD  HTML  4.0  Transitional//EN"
+"http://www.w3c.org/TR/REC-html40/loose.DTD"> \end{verbatim}
 
-\item Un elemento HTML que describe el documento como un
-      documento HTML. Todos  los contenidos de un  documento HTML, con
-      la  excepción de  la  declaración del  tipo de  do\-cu\-men\-to,
-      \textbf{deben  encerrarse  entre  las  etiquetas  \elto{HTML}  y
-      \elto{/HTML}}. El  resto del  documento se encontrará  entre las
-      etiquetas de apertura y cierre de HTML.
+\item Un  elemento HTML  que describe el  documento como  un documento
+HTML. Todos los  contenidos de un documento HTML, con  la excepción de
+la declaración  del tipo de do\-cu\-men\-to,  \textbf{deben encerrarse
+entre  las  etiquetas  \elto{HTML}   y  \elto{/HTML}}.  El  resto  del
+documento se  encontrará entre las  etiquetas de apertura y  cierre de
+HTML.
 
-\item Una sección que declara el encabezado, con las etiquetas
-      \elto{HEAD}    y    \elto{/HEAD}.   Esta    sección    contendrá
-      \textit{metadatos}, que  son datos  que describen otros  datos e
-      incluyen información  tal como  palabras claves  o descripciones
-      cortas que usarán las herramientas  de búsqueda de la Red, autor
-      del documento, información del  control de versiones y cualquier
-      otro  dato  que no  pueda  ser  considerado como  contenido  del
-      documento.
+\item  Una  sección  que  declara el  encabezado,  con  las  etiquetas
+\elto{HEAD} y \elto{/HEAD}. Esta sección contendrá \textit{metadatos},
+que  son  datos  que  describen otros  datos  e  incluyen  información
+tal  como  palabras  claves  o descripciones  cortas  que  usarán  las
+herramientas de búsqueda  de la Red, autor  del documento, información
+del  control de  versiones  y cualquier  otro dato  que  no pueda  ser
+considerado como contenido del documento.
 
-\item El cuerpo principal, donde se encuentra el contenido del
- documento. Para ello se pueden utilizar las etiquetas
- \elto{BODY} o \elto{FRAMESET}.
-\end{itemize}
+\item  El  cuerpo  principal,  donde se  encuentra  el  contenido  del
+documento. Para  ello se pueden  utilizar las etiquetas  \elto{BODY} o
+\elto{FRAMESET}.
 
-Por tanto, un documento HTML y un encabezado con un título tendría
-el siguiente aspecto:
+\end{enumerate}
+
+Por tanto, un  documento muy básico HTML que  contuviera un encabezado
+con un título tendría el siguiente aspecto:
 
 \begin{verbatim}
 <!DOCTYPE HTML PUBLIC = "-//W3C//DTD HTML 4.0 Transitional//EN"
@@ -71,25 +78,24 @@ el siguiente aspecto:
 
 Con  este somero  ejemplo lo  que  se debe  hacer es  guardarlo en  un
 fichero de texto con la extensión {\tt  .htm} o {\tt .html} y desde un
-navegador (Konqueror,  Netscape o Galeon, según  se prefiera) abrirlo.
+navegador (Konqueror,  Netscape o Galeon, según  se prefiera) abrir el
+fichero con el nombre con que lo hemos guardado.
 Desde ese momento ya podemos ver resultados.
 
-Cada vez  que cambiemos algo, lo  guardamos y le decimos  al navegador
-que refresque la información.
+Cada vez que cambiemos algo, lo guardamos e indicamos al navegador que
+refresque la información.
 
 
 \section{El cuerpo del documento}
 
 Como su  propio nombre indica, en  el cuerpo, del documento  se sitúan
 los contenidos del documento. Es  lo que normalmente se considera como
-el \com  contenido" del propio  documento o el  texto de un  libro sin
+el ``contenido" del propio  documento o el  texto de un  libro sin
 pensar en las cubiertas o tapas del libro.
 
 Estos contenidos  deben encerrarse  entre las etiquetas  \elto{BODY} y
-\elto{/BODY}, que deben estar situados \textbf{inmediatamente} después
-de \elto{/HEAD}.
-
-\newpage
+\elto{/BODY}, que deben estar situados {\bf inmediatamente} después de
+\elto{/HEAD}.
 
 \begin{verbatim}
 <!DOCTYPE HTML PUBLIC = "-//W3C//DTD HTML 4.0 Transitional//EN"
@@ -109,17 +115,23 @@ Cuando  abrimos  el  cuerpo  (\elto{BODY}),  podemos  establecer  unos
 atributos o propiedades, que pueden ser los siguientes:
 
 \begin{description}
+
 \item[ALINK] Especifica el color de un enlace cuando se activa.
-\item[BACKGROUND="imagen"] Especifica un gráfico que se usará como
+
+\item[BACKGROUND="imagen"]  Especifica un  gráfico que  se usará  como
 fondo a modo de mosaico para el documento.
-\item[BGCOLOR="nombrecolor"] Especifica el color de fondo del
+
+\item[BGCOLOR="nombrecolor"]   Especifica  el   color  de   fondo  del
 documento.
-\item[LINK="nombrecolor"] Especifica el color de los enlaces del
+
+\item[LINK="nombrecolor"]  Especifica  el  color de  los  enlaces  del
 documento.
-\item[TEXT="nombrecolor"] Especifica el color del texto del
-documento.
-\item[VLINK="nombrecolor"] Especifica el color de los enlaces del
+
+\item[TEXT="nombrecolor"] Especifica el color del texto del documento.
+
+\item[VLINK="nombrecolor"]  Especifica el  color  de  los enlaces  del
 documento que han sido visitados.
+
 \end{description}
 
 Los colores que se pueden usar son:
@@ -163,7 +175,10 @@ documento consta de cinco bloques diferentes.
 
 Para  ello, echamos  mano de  los encabezados.  Éstos constan  de seis
 niveles, desde \elto{H1}  hasta \elto{H6}, es decir, de  mayor a menor
-importancia.
+importancia.  Lo que  entendemos por  nivel de  importancia no  es más
+que  resaltar un  texto variando  su tamaño.  Evidentemente, un  texto
+resaltará con un gran tamaño frente a otro de menor tamaño. Por tanto,
+con \elto{H1} obtendremos el mayor tamaño y con \elto{H6} el menor.
 
 \begin{verbatim}
 <H1>
@@ -227,9 +242,8 @@ Las listas en HTML se dividen en tres categorías básicas:
 Las dos primeras son similares.  Una \textit{lista numerada} usará los
 elementos  \elto{OL} y  \elto{/OL} mientras  que una  \textit{lista no
 numerada} hará uso de los  elementos \elto{UL} y \elto{/UL}. Dentro de
-estos  elementos, para  marcar cada  miembro de  la lista,  se utiliza
-\elto{LI}.
-
+estos elementos, para  marcar cada miembro de la lista,  se utiliza la
+etiqueta común \elto{LI}.
 
 \subsubsection*{Listas no numeradas}
 
@@ -238,7 +252,6 @@ muestran en el orden en el que se escriban en el archivo fuente.
 
 Para crear una lista no numerada, se usa la etiqueta \elto{UL} seguido
 de una colección de elementos con \elto{LI}:
-
 
 \begin{verbatim}
 <P>Coches que he tenido</P>
@@ -259,7 +272,6 @@ instrucciones para montar en bicicleta.
 Para crear una lista numerada, se usa la etiqueta \elto{OL} seguido de
 una colección de elementos con \elto{LI}:
 
-
 \begin{verbatim}
 <P>Cosas que tengo que hacer hoy</P>
   <UL>
@@ -273,8 +285,8 @@ una colección de elementos con \elto{LI}:
 
 Estas listas se  diferencian de las anteriores en que  cada entrada de
 la lista  consta de dos partes:  el término definido, \elto{DT},  y la
-descripción  de la  definición, \elto{DD}.  La lista  comienza con  la
-etiqueta  de las  listas de  definiciones, \elto{DL}.  Cada definición
+propia descripción de la definición,  \elto{DD}. La lista comienza con
+la etiqueta de las listas  de definiciones, \elto{DL}. Cada definición
 debe tener obligatoriamente un término  y una descripción, tal como se
 ve en este ejemplo:
 
@@ -287,9 +299,8 @@ ve en este ejemplo:
      <DT>BIOS
        <DD>Sistema de entrada y salida básico</DD>
      </DT>
-  </UL>
+  </DL>
 \end{verbatim}
-
 
 \subsection{Tablas}
 
@@ -304,14 +315,14 @@ estructura de la tabla.
 \item [WIDTH:] Valor que  indica la anchura que se le  quiere dar a la
 tabla en proporción con la anchura total de la tabla del navegador (es
 decir, una valor de 100 indica que  la tabla debe ocupar todo el ancho
-disponible  de la  ventana, lo  cual no  equivale al  término de  \com
-pantalla completa").
+disponible de la ventana, lo cual no equivale al término de ``pantalla
+completa").
 
 \item [BORDER:] Determina la anchura del  borde de la tabla, medido en
 píxels. Un valor de 0 (cero) hace que no se ponga borde.
 
 \item [FRAME:]  También se  posible colocar un  marco alrededor  de la
-tabla. El valor predeterminado es  \com \textit{void}" (vacío), lo que
+tabla. El  valor predeterminado es  `` \textit{void}" (vacío),  lo que
 significa que no existe ningún  marco. Se admiten valores alternativos
 para indicar cada uno de los lados  o una combinación de los lados del
 marco.
@@ -319,9 +330,9 @@ marco.
 \item [RULES:] Son separadores visuales entre filas, columnas o grupos
 de celdas en el interior de la tabla. De este modo se puede incluir un
 separador  vertical entre  las columnas  pero ninguno  que separe  las
-filas  entre  sí.  El  valor  predeterminado  es  \com  \textit{none}"
-(ninguno),  que significa  que no  se mostrará  ningún separador.  Los
-separadores son elementos visuales distintos a los bordes.
+filas entre sí. El valor predeterminado es ``\textit{none}" (ninguno),
+que significa que no se mostrará ningún separador. Los separadores son
+elementos visuales distintos a los bordes.
 
 \item [CELLSPACING:] Espacio  entre las celdas, de la  tabla medido en
 píxels, cuyo valor predeterminado es 0 (cero).
@@ -365,8 +376,12 @@ ponemos \elto{TD}\elto{/TD}
 
 \subsection{Enlaces}
 
-Un enlace tiene el siguiente aspecto:
-
+Antes que  nada, pasemos a  definir lo que  es un enlace.  Todos hemos
+visto que cuando navegamos por una  página web, hay ciertas palabras o
+gráficos que en el momento de  pasar el puntero del ratón se convierte
+en  una mano  indicándonos que  si pinchamos  ahí nos  enviará a  otra
+página web.  Pues bien, eso  es un enlace y  en el momento  de crearlo
+dentro de un documento HTML tendrá el siguiente aspecto:
 
 \begin{verbatim}
 <A HREF="http://www.google.com">Este enlace nos lleva a la página del

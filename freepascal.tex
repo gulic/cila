@@ -5,7 +5,7 @@
 
 El lenguaje de  programación Pascal es sencillo  y bastante didáctico,
 por  lo que  se suele  enseñar en  el primer  año de  algunas carreras
-técnicas  como Matemáticas,  Física o  Informática. Normalmente  estos
+técnicas como  Matemáticas, Física  o Informática.  Normalmente, estos
 cursos o asignaturas  de programación tratan de  enseñar al estudiante
 los conceptos  básicos de la  programación de computadores  sin entrar
 en  demasiados  detalles  acerca  del funcionamiento  interno  de  los
@@ -68,8 +68,8 @@ $ ls
 HolaMundo    HolaMundo2.pas  holamundo2.o
 \end{verbatim}
 
-Para ejecutar el programa resultante,  recordar que debemos poner {\tt
-./} delante del nombre del ejecutable:
+Para ejecutar  el programa resultante,  hemos de recordar  que debemos
+poner {\tt ./} delante del nombre del ejecutable:
 
 \begin{verbatim}
 $ HolaMundo
@@ -79,7 +79,7 @@ Hola Mundo
 \end{verbatim}
 
 Veamos ahora  un ejemplo  del uso  de las  ``unidades'' en  Pascal. El
-concepto de unidades en Pascal es equivalente al de librerías en C, se
+concepto de unidades en Pascal es equivalente al de librerías en C. Se
 trata de  ficheros binarios  que obtenemos a  partir de  código fuente
 separado y  luego enlazamos  con el  programa principal.  Esto permite
 dividir el código de un programa  en varios ficheros y evita tener que
@@ -90,10 +90,8 @@ del Borland  Pascal, el  compilador Free  Pascal utiliza  la extensión
 {\tt  ppu} (en  lugar  de {\tt  tpu}) para  los  ficheros binarios  de
 unidades.
 
-
 Tenemos para  este ejemplo  dos ficheros de  código fuente  en Pascal,
 {\tt HolaMundo2.pas} y {\tt saludos.pas}.
-
 
 \begin{verbatim}
 { Ejemplo 2 de Pascal para CILA }
@@ -138,14 +136,14 @@ Begin
 End.
 \end{verbatim}
 
-Cuidado con  un detalle: Los  nombres de las unidades  deben coincidir
-con el  nombre del fichero  en el que  están escritas, i.e.  la unidad
-{\tt  Saludos}  no  se  puede  escribir en  un  fichero  llamado  {\tt
-Otronombre.pas}.  Además,  los  ficheros  en los  que  se  implementan
-las  unidades conviene  que  tengan el  nombre  completamente en  {\bf
-minúsculas}. De lo contrario el compilador FreePascal no encontrará la
-unidad  al  compilar  un  programa  que  la  use,  pero  podremos  aún
-compilarla manualmente. El siguiente ejemplo ilustra la situación:
+Debemos  tener cuidado  con un  detalle: Los  nombres de  las unidades
+deben coincidir  con el nombre del  fichero en el que  están escritas,
+i.e.  la unidad  {\tt  Saludos} no  se puede  escribir  en un  fichero
+llamado  {\tt Otronombre.pas}.  Además,  los ficheros  en  los que  se
+implementan las  unidades conviene que tengan  el nombre completamente
+en  {\bf minúsculas}.  De lo  contrario, el  compilador FreePascal  no
+encontrará la unidad al compilar un programa que la use, pero podremos
+aún compilarla manualmente. El siguiente ejemplo ilustra la situación:
 
 \begin{verbatim}
 $ ls
@@ -272,5 +270,3 @@ Con esta  breve presentación  ya sabemos  lo suficiente  para compilar
 prácticas  en  Pascal,  sólo  queda   aprender  el  lenguaje  y  pasar
 muchas  horas  escribiendo  programas  para llegar  a  ser  auténticos
 programadores.
-
-
