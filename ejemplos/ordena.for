@@ -12,6 +12,6 @@
       write (*,*) 'Al abandonar el menú el vector contiene:'
       write (*,10) ('a(', i, ') = ', a(i), i = 1, n)
  10   format (2x,a,i2,a,f10.3)
-
+      
       stop
       end

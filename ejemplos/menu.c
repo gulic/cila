@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void sort__ (float *a, int *m);
+void mysort_ (float *a, int *m);
 
 void menu_ (float *a, int *n)
 {
@@ -45,7 +45,7 @@ void menu_ (float *a, int *n)
 				m++;
 				break;
 			case 3:
-				sort__ (a, &m);
+				mysort_ (a, &m);
 				printf ("El vector ha sido ordenado\n");
 				break;
 			case 4:

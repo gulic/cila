@@ -1,4 +1,4 @@
-      subroutine sort (a, m)
+      subroutine mysort (a, m)
       real a(1:m), aux
       integer m, i, j
       do 20 i = 1, m - 1
