@@ -55,10 +55,10 @@ Yacas  tiene  un  intérprete  de comandos  que  nos  permite  ejecutar
 funciones para probar  lo que queremos programar,  para luego escribir
 un script  (un fichero de  comandos a modo  de guión). Para  entrar al
 intérprete de Yacas  basta con ejecutar el comando {\tt  yacas} en una
-consola o terminal. Para salir  del intérprete puedes pulsar {\tt C-c}
-o bien ejecutar  la función \verb+Exit();+. Pulstar  {\tt C-c} también
-es útil  para detener  inmediatamente la  ejecución del  intérprete de
-Yacas (o de un script escrito para Yacas).
+consola  o terminal.  Para  salir del  intérprete  puedes pulsar  {\tt
+Control-C}  o bien  ejecutar la  función \verb+Exit();+.  Pulsar  {\tt
+Control-C} también  es útil  para detener inmediatamente  la ejecución
+del intérprete de Yacas (o de un script escrito para Yacas).
 
 \begin{verbatim}
 $ yacas
@@ -74,8 +74,8 @@ In>
 
 También  existe una  interfaz gráfica  llamada Proteus.  Si la  tienes
 instalada  deberías   poder  iniciarla  ejecutando  el   comando  {\tt
-proteusworksheet}. Esta utilidad te proporcioa un entorno más cómodo e
-integrado  en el  que  puedes  probar código  en  el  intérprete e  ir
+proteusworksheet}. Esta utilidad te proporciona un entorno  más cómodo
+e integrado  en el  que  puedes  probar código  en  el intérprete e ir
 escribiendo un script en el editor que incluye.
 
 \begin{figure}[hbt]
@@ -209,7 +209,7 @@ La función \verb+CForm()+ devuelve la expresión escrita en lenguaje C,
 de forma que  podemos incluirla en el  código de un programa  en C. La
 función \verb+TeXForm()+ devuelve la  expresión escrita en el lenguaje
 tipográfico  \TeX, de  forma  que podemos  incluirla  en un  documento
-escrito en  \TeX~ o \LaTeX.  Por ejemplo,  este libro está  escrito el
+escrito en  \TeX~ o \LaTeX.  Por ejemplo,  este libro está  escrito en
 \LaTeX, lo  que me  permite incluir la  salida de  \verb+TeXForm()+ en
 este  mismo párrafo  con  sólo copiar  y pegar.  De  esta forma  puedo
 escribir $\int (x-y)^3 \, dx = \frac{x ^{4}}{4} - \frac{x ^{3} 3 y}{3}
@@ -491,7 +491,7 @@ la  función \verb+Prog()+  pasándole las  instrucciones separadas  por
 \verb+;+.
 
 Para  los  bucles  disponemos  de  las  funciones  \verb+ForEach()+  y
-\verb+While()+. La  función \verb+ForEach (x, list) body+  ejecuta el
+\verb+While()+. La  función \verb+ForEach (x, list) body+  ejecuta  el
 bloque de  instrucciones \verb+body+  para cada  elemento de  la lista
 \verb+list+ asignando el valor de cada elemento a la variable \verb+x+
 en cada interación. La función \verb+While (predicate) body+ repite el
@@ -737,7 +737,7 @@ aceptó con  curiosidad. El programa  aproxima las raíces reales  de un
 polinomio utilizando el  algoritmo de Sturm para aislar  las raíces en
 intervalos y aproximándolas  con el método de la  bisección (raíces de
 multiplicidad  impar)  o  con  el método  de  cristalización  simulada
-(raíces de multiplicidad par). El trabajo fué expuesto en clase y tuvo
+(raíces de multiplicidad par). El trabajo fue expuesto en clase y tuvo
 la calificación de sobresaliente, el código y las transparencias están
 disponibles en {\tt http://www.fmat.ull.es/\~{}miguev/algcomp}
 
