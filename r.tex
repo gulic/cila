@@ -1068,6 +1068,9 @@ Error in rchisq(5) : Argument "df" is missing, with no default
 
 \section{Estadística descriptiva}
 
+\index{estadística descriptiva}
+\index{R!estadística descriptiva}
+
 {\sf R} te proporciona todas las funciones que necesites para hacer un
 estudio estadístico,  empezando por  una descripción  de la  muestra a
 base de medidas de posisición  centrales, no centrales, de dispersióin
@@ -1082,32 +1085,37 @@ son:
 \begin{description}
 
 \item[{\tt mean(x)}] Calcula la media  aritmética de los valores de un
-vector numérico {\tt x}.
+vector numérico {\tt x}. \index{R!media}\index{R!mean@{\tt mean()}}
 
-\item[{\tt median(x)}] Calcula  la mediana de los valores  de un vector
-numérico {\tt x}.
+\item[{\tt median(x)}] Calcula la mediana  de los valores de un vector
+numérico {\tt x}.\index{R!mediana}\index{R!median@{\tt median()}}
 
-\item[{\tt var(x)}] Calcula  la varianza de los valores {\tt x}, que 
-puede ser un vector o una matriz.
+\item[{\tt var(x)}]  Calcula la varianza  de los valores {\tt  x}, que
+puede ser un vector  o una matriz.\index{R!varianza} 
+\index{R!var@{\tt var()}}
 
-\item[{\tt cov(x,y)}] Calcula la covarianza de  {\tt x} y {\tt y}, que
-pueden ser dos vectores o dos matrices.
+\item[{\tt   cov(x,y)}]   Calcula  la   covarianza   de   {\tt  x}   y
+{\tt   y},   que   pueden   ser   dos   vectores   o   dos   matrices.
+\index{R!covarianza}\index{R!cov@{\tt cov()}}
 
 \item[{\tt cor(x,y)}] Calcula  la correlación entre de {\tt  x} y {\tt
 y}, que pueden ser dos vectores o dos matrices.
+\index{R!correlación}\index{R!cor@{\tt cor()}}
 
-\item[{\tt sd(x)}] Calcula la desviación  estándar de los valores {\tt
-x}, que puede ser un vector o una matriz. Su cuadrado
+\item[{\tt   sd(x)}]   Calcula   la   desviación   estándar   de   los
+valores   {\tt  x},   que  puede   ser   un  vector   o  una   matriz.
+\index{R!desviación típica}\index{R!sd@{\tt sd()}}
 
 \item[{\tt  range(x)}] Devuelve  un vector  con los  valores mínimo  y
-máximo encontrados en {\tt x}, que puede ser un vector o una matriz.
+máximo encontrados en  {\tt x}, que puede ser un  vector o una matriz.
+\index{R!rango}\index{R!range@{\tt range()}}
 
 \item[{\tt fivenum(x)}] Devuelve un vector  con el mínimo, el máximo y
-los cuartiles del vector {\tt x}.
+los cuartiles del vector {\tt x}.\index{R!fivenum@{\tt fivenum()}}
 
 \item[{\tt summary(x)}]  Como {\tt  fivenum()} pero insertar  la media
 ({\tt mean()} entre la mediana y  el tercer cuartil. Además define los
-nombres de los resultados.
+nombres de los resultados.\index{R!summary@{\tt summary()}}
 
 \end{description}
 
@@ -1132,6 +1140,9 @@ nombres de los resultados.
 
 \section{Inferencia estadística}
 
+\index{inferencia estadística}
+\index{R!inferencia estadística}
+
 Si no tienes conocimientos de inferencia estadística será mejor que te
 saltes  este  apartado.  Vamos  a  ver  que  también  para  tareas  de
 inferencia estadística {\sf R} cuenta con multitud de funciones.
@@ -1142,7 +1153,9 @@ te vamos  a dar una  referencia amplia  ni profunda, pero  debería ser
 suficiente para que aprendas cómo debes buscar las funcionalidades que
 necesites para tus problemas.
 
-\subsection*{Test de normalidad}
+\subsection*{Tests de normalidad}
+
+\index{R!tests de normalidad}
 
 % Test para la normalidad de la variable Lectura utilizando 
 % los tests de normalidad de Kolmogorov-Smirnov y Shapiro-Wilk
@@ -1197,6 +1210,8 @@ libros leidos anualmente se distribuye según una normal.
 
 \subsection*{Contraste de hipótesis}
 
+\index{R!contraste de hipótesis}
+
 % Contraste de hipótesis para la media de la Lectura.
 
 Una vez  comprobada la  normalidad de  una variable  hay una  serie de
@@ -1242,6 +1257,8 @@ libros leidos anualmente es 15, con un nivel de confiaza del $99\%$.
 
 \subsection*{Independencia de variables}
 
+\index{R!independencia de variables}
+
 Considera ahora la dos variables {\tt Ingresos} y {\tt Habitat}. Ambas
 son vectores  de caracteres  y por lo  tanto al estar  en una  hoja de
 datos han  sido convertidas  a factores. Vamos  a contrastar  si estas
@@ -1264,6 +1281,8 @@ chisq.test(ctest)       Pearson's Chi-squared Test for Count Data
 
 Aplicamos  el  test  $\chi^2$  a  la  tabla  de  contingencia  de  las
 variables {\tt Ingresos} y {\tt Habitat}:
+
+\index{R!tabla de contingendia}
 
 \begin{verbatim}
 > t = ftable(Ingresos, Habitat)
@@ -1293,6 +1312,8 @@ independientes.
 
 \section{Gráficas}
 
+\index{R!gráficas}
+
 La función más frecuentemente usada para crear gráficas nuevas es {\tt
 plot()}. Esta función representa uno o dos vectores numéricos como una
 nube de punto,  un factor mediante un diagrama de  barras, un factor y
@@ -1303,6 +1324,8 @@ Para verlo más claro ejecuta la función {\tt plot()} con las variables
 de  la tabla  del  fichero {\tt  muestra.dat}.  Prueba las  siguientes
 combinaciones:
 
+\index{R!gráficas!plot@{\tt plot()}}
+
 \begin{verbatim}
 > hoja.datos = read.table ("muestra.dat")
 > attach (hoja.datos)
@@ -1312,9 +1335,13 @@ combinaciones:
 > plot (Ingresos, Habitat)
 \end{verbatim}
 
+\index{R!gráficas!hist@{\tt hist()}}
+
 Para  representar   vectores  numéricos   agrupando  sus   valores  en
 intervalos  utilizamos un  histograma.  La función  {\tt hist()}  hace
 exactamente eso.
+
+\index{R!gráficas!qqplot@{\tt qqplot()}}
 
 Otras gráficas interesantes son  las de comparación de distribuciones,
 basadas en  los cuantiles. La función  {\tt qqnorm ()} toma  un vector
@@ -1354,6 +1381,10 @@ normal y otra que no}
 \caption{Las distintas formas de la función {\tt plot()}}
 \end{figure}
 
+\index{R!gráficas!image@{\tt image()}}
+\index{R!gráficas!contour@{\tt contour()}}
+\index{R!gráficas!persp@{\tt persp()}}
+
 Para  representar  matrices puedes  optar  por  ver sus  valores  como
 imágenes. La  función {\tt image()} lo  hace a modo de  una rejilla de
 rectángulos de  diferentes colores  para representar  el valor  de las
@@ -1379,9 +1410,13 @@ edades representamos en un gráfico de sectores el número de individuos
 que tiene cada edad. Una forma de hacerlo (seguramente no es la mejor)
 sería:
 
+\index{R!gráficas!de sectores}
+
 \begin{verbatim}
 > pie (tapply (Edad, fedad, length))
 \end{verbatim}
+
+\index{R!gráficas!pie@{\tt pie()}}
 
 \begin{figure}[hbtp]
 \centering
