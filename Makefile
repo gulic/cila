@@ -27,11 +27,11 @@ all: $(FILES) $(EPSS) $(EXAMPLES) book.ind book.bbl
 images: $(EPSS) 
 	echo listo
 
-%.jpg: %.png
-	pngtopnm $< | pnmtojpeg > $@
+%.eps: %.png
+	mogrify -format eps $<
 
 %.eps: %.jpg
-	jpeg2ps -o $@ $<
+	mogrify -format eps $<
 		
 %.dvi: %.tex
 	$(LATEX) $<
