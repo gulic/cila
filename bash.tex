@@ -368,7 +368,7 @@ sólo en el caso de las comillas dobles, de {\tt \$} y {\tt `}.
 
 \section{Ficheros de comandos interactivos}
 
-A parte de ejecutar una  secuencia predeterminada de comandos nuestros
+Aparte de ejecutar una  secuencia predeterminada de comandos nuestros
 scripts  pueden ser  interactivos.  Es decir  solicitar  y leer  datos
 desde la  consola de  usuario. Para  ello se  utiliza el  comando {\tt
 read}\index{read} seguido por uno o más nombres de variable.
@@ -410,18 +410,18 @@ fi
 
 \end{description}
 
-Existen múltiples alternativas  a la hora de  establecer una condición
-para el control del flujo. Una  de ellas es la verificación del código
+Existen múltiples alternativas a la hora de establecer una condición
+para el control del flujo. Una de ellas es la verificación del código
 de error devuelto por un comando o programa al final su ejecución. Por
-definición el código de error de  un comando que ha terminado de forma
-satisfactoria es 0, lo cual es  considerado por el intérprete como que
-la  condición se  cumple. En  caso contrario  el comando  devolverá un
-código distinto de  0 y el intérprete considerará que  la condición no
-se cumple. Para conocer en qué situaciones se devuelven los diferentes
-códigos de error se hace necesario  consultar la ayuda de cada comando
-en  particular. Por  ejemplo  en  el siguiente  código  se utiliza  el
-programa {\tt grep}\index{grep} para buscar un nombre de usuario en el
-archivo de contraseñas del sistema ({\tt /etc/passwd}).
+definición el código de error de un comando que ha terminado de forma
+satisfactoria es 0, lo cual es considerado por el intérprete como
+cumplimiento de la condición. En caso contrario el comando devolverá
+un código distinto de 0 y el intérprete considerará que la condición
+no se cumple. Para conocer en qué situaciones se devuelven los
+diferentes códigos de error se hace necesario consultar la ayuda de
+cada comando en particular. Por ejemplo en el siguiente código se
+utiliza el programa {\tt grep}\index{grep} para buscar un nombre de
+usuario en el archivo de contraseñas del sistema ({\tt /etc/passwd}).
 
 \begin{ejemplo}{finduser.sh}{Utilización de la sentencia ``if''}
 Ejemplo del uso de la sentencia {\tt if} para el control del flujo de

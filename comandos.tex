@@ -28,9 +28,9 @@ consola. Estos comandos pueden ser de diferentes clases:
 \begin{itemize}
 \item Programas ejecutables.
 
-\item Scripts del intérprete.
+\item Scripts (guiones) del intérprete.
 
-\item Scripts  de lenguajes de  script como {\sf Python},  {\sf Perl},
+\item Scripts (guiones) de lenguajes de  script como {\sf Python},  {\sf Perl},
 {\sf Tcl}, etc.
 
 \item Macros del intérprete.
@@ -86,25 +86,25 @@ mismo tiempo.
 Para alternar  entre estas  consolas virtuales,  basta con  pulsar las
 combinaciones de  la teclas  {\tt A-F1} a  {\tt A-F6}.
 
-% \begin{nota}
-% En lo sucesivo usaremos esta nomenclatura:\\
-% \vspace{-1cm}
-% \begin{itemize}
-% \setlength{\itemsep}{-15pt}
-% \item {\tt A-F1} $\Rightarrow$ {\tt Alt} y {\tt  F1}.\\
-% \item {\tt C-F1} $\Rightarrow$ {\tt Control} y {\tt F1}.\\
-% \item {\tt S-F1} $\Rightarrow$ {\tt Shift}  y {\tt F1}.\\
-% \end{itemize}
-% \vspace{-1cm}
-% Donde {\tt Shift} es la tecla de las mayúsculas.
-% \end{nota}
+\begin{nota}
+En lo sucesivo usaremos esta nomenclatura:\\
+\vspace{-1cm}
+\begin{itemize}
+\setlength{\itemsep}{-15pt}
+\item {\tt A-F1} $\Rightarrow$ {\tt Alt} y {\tt  F1}.\\
+\item {\tt C-F1} $\Rightarrow$ {\tt Control} y {\tt F1}.\\
+\item {\tt S-F1} $\Rightarrow$ {\tt Shift}  y {\tt F1}.\\
+\end{itemize}
+\vspace{-1cm}
+Donde {\tt Shift} es la tecla de las mayúsculas.
+\end{nota}
 
 Si se quiere acceder a una  consola desde un entorno gráfico, entonces
 se pulsan las combinaciones {\tt C-A-F1} a {\tt C-A-F6}
 
 \section{Directorios y nombres de ficheros}
 
-\subsection{Trabajando con directorios.}
+\subsection{Trabajar con directorios.}
 
 \subsubsection{Estructura del árbol de directorios}
 
@@ -195,7 +195,7 @@ Es decir, nos vamos al directorio {\tt /etc}
 
 Si  simplemente escribimos  {\tt  cd} sin  especificar  el nombre  del
 directorio, esto será  igual que escribir {\tt cd  /home/cila} o {\tt
-cd}, es decir,  me manda a {\bf mi propio  directorio de trabajo} (que
+cd}, es decir,  me envía a {\bf mi propio  directorio de trabajo} (que
 es como irse a casa).
 
 ¿Cómo sé  yo en  qué directorio  me encuentro?  Basta con  escribir el
@@ -357,11 +357,10 @@ los códigos de color si la salida estándar está conectada a un terminal (tty).
 Comunicar bichos a <bug-fileutils@gnu.org>.
 \end{verbatim}
 
-Disculpe el  lector semejante ejemplo, pero  era para que se  viera la
-información que se  puede obtener de primera mano.  Para consultar con
-detenimiento esta  ayuda, el  autor recomienda usar  {\tt ls  --help |
-more}, y  que según se  avanza con la  información, se pulsa  la barra
-espaciadora, y para salir, se pulsa la tecla {\tt q}.
+
+Para consultar con detenimiento esta ayuda, el autor recomienda usar
+{\tt ls --help | more}, y que según se avanza con la información, se
+pulsa la barra espaciadora, y para salir, se pulsa la tecla {\tt q}.
 
 Obsérvese que  se pueden  escribir los parámetros  de dos  formas: una
 corta ({\tt -l, -a}) y otra larga ({\tt --all, --help}).
@@ -448,12 +447,12 @@ emplear el comando {\tt rm nombre\_fichero}.
 
 \subsubsection{Utilización de comodines}
 
-En ocasiones el  nombre de los directorios y/o ficheros  sobre los que
+En ocasiones el  nombre de los directorios o ficheros  sobre los que
 estamos trabajando  contienen partes comunes que  podemos utilizar con
 ayuda  de  comodines  para  facilitarnos  el uso  de  la  interfaz  de
 comandos.
 
-En general el caracter {\tt *} al  indicar el nombre de un fichero y/o
+En general el carácter {\tt *} al  indicar el nombre de un fichero o
 directorio  es sustituido  por  un número  indeterminado de  cualquier
 combinación de caracteres. Por ejemplo,
 
@@ -471,7 +470,7 @@ directorio actual. Mientras que,
 \noindent copiará los ficheros que contengan la cadena {\tt txt} en el
 nombre al directorio {\tt tmp}.
 
-El caracter {\tt ?} al indicar el nombre de un fichero sólo representa
+El carácter {\tt ?} al indicar el nombre de un fichero sólo representa
 a {\em un} carácter cualquiera.
 
 \begin{verbatim}
@@ -681,14 +680,14 @@ especificados y los imprime por pantalla uno detrás de otro.
 [cila@gulic]$ cat pepe.txt juan.txt
 \end{verbatim}
 
-En realidad  los comandos de la  consola de GNU/Linux no  entienden la
-salida por pantalla y la entrada por  teclado de la misma forma que la
+En realidad los comandos de la consola de GNU/Linux no entienden la
+salida por pantalla y la entrada por teclado de la misma forma que la
 entendemos nosotros. La mayor parte de los comandos toman toda o parte
-de la información que necesitan para  realizar su trabajo de lo que se
-denomina la  {\em entrada estándar}.  De la misma manera,  utilizan la
-{\em salida estándar}  para mostrar los resultado de su  trabajo, y la
-{\em salida de error estándar} para mostrar los mensajes de lo errores
-producidos durante la realización de la misma.
+de la información que necesitan para realizar su trabajo de lo que se
+denomina la {\em entrada estándar}.  De la misma manera, utilizan la
+{\em salida estándar} para mostrar los resultado de su trabajo, y la
+{\em salida de error estándar} para mostrar los mensajes de los
+errores producidos durante la realización de la misma.
 
 En general la {\em entrada estándar} suele estar asociada a la entrada
 por teclado, mientras que la {\em salida estándar} y la {\em salida de
@@ -738,9 +737,10 @@ características de {\tt less}, aunque  nos conformaremos con saber que
 con {\tt  h} podemos consultar la  ayuda del comando mientras  que con
 {\tt q} salimos del mismo.
 
-En general los  comandos que hemos estudiado son  programas de consola
-como otros cualquiera. Por lo  tanto pueden ser llamados directamente,
-e incluso en muchos casos disponen de opciones de línea de comandos.
+En general los comandos que hemos estudiado son programas de consola
+como otros cualesquiera. Por lo tanto pueden ser llamados
+directamente, e incluso en muchos casos disponen de opciones de línea
+de comandos.
 
 \begin{verbatim}
 [cila@gulic]$ sort -r pepe.txt
@@ -816,7 +816,7 @@ pedazos concretos del árbol de directorios de nuestro sistema.
 
 Para crear  un archivo {\sf  TAR} basta  con que utilicemos  la opción
 {\tt -c} seguida por la lista de ficheros y/o directorios que queremos
-empaquetar. En general el archivo {\sf TAR} resultante es volcado a la
+empaquetar. En general el archivo {\sf TAR} resultante se vuelca  a la
 {\em  salida  estándar}.  Puesto  que eso  resulta  poco  práctico  es
 habitual utilizar la opción {\tt -f} seguida del nombre del fichero de
 destino.
@@ -870,7 +870,7 @@ directorio actual.
 
 En  general {\tt  grep}  es  sensible a  mayúsculas  y minúsculas.  Si
 queremos eliminar dicho comportamiento  podemos emplear la opción {\tt
--i}.  También  podemos pedir  que  nos  indique  donde {\bf  NO}  está
+-i}.  También  podemos pedir  que  nos  indique  dónde {\bf  NO}  está
 la  cadena indicada  utilizando  la  opción {\tt  -v}.  Por otro  lado
 las  búsquedas  pueden  extenderse por  directorios  y  subdirectorios
 utilizando la opción {\tt -r}.
@@ -881,8 +881,8 @@ nos permite utilizar {\em expresiones  regulares}. Es decir, dentro de
 nuestra cadena de texto podemos utilizar caracteres con un significado
 especial con los  que podemos buscar casi cualquier  tipo de expresión
 entre nuestros archivos. Puesto que las expresiones regulares se salen
-completamente  del  alcance de  este  tema  recomendamos consultar  la
-página correspondiente del manual.
+completamente  del  alcance de  este  tema  recomendamos consultar  el
+tema correspondiente.
 
 \begin{verbatim}
 [cila@gulic]$ man grep
@@ -932,7 +932,7 @@ Por  ejemplo,  podemos asignar  a  la  disquetera el  directorio  {\tt
 el  directorio {\tt  /grabata}.  Normalmente los  directorios para  la
 disquetera y el  lector de CD-ROM están ya asignados  desde el momento
 de instalar el  sistema, aunque se puede cambiar a  voluntad (si somos
-{\tt root} ;-).
+{\tt root}).
 
 Para    montar     un    disco    utilizamos    el     comando    {\tt
 mount}\index{Montar!mount} indicándole como  parámetros el dispositivo
@@ -1017,9 +1017,9 @@ el directorio {\tt /floppy}.
 
 \section{Unidades de disco con mtools}
 
-En general,  la mayor parte  de los  disquetes que solemos  usar están
-en  formato  DOS/Windows.  Cuando  disponemos de  uno  esos  disquetes
-podemos  acceder  a  su  contenido  de forma  sencilla  con  las  {\sf
+En general, la mayor parte de los disquetes que usamos están en
+formato DOS/Windows.  Cuando disponemos de uno esos disquetes podemos
+acceder a su contenido de forma sencilla con las {\sf
 mtools}\index{mtools}.
 
 {\sf mtools} es  una colección de herramientas de  dominio público que
@@ -1029,7 +1029,7 @@ dar acceso  a sistemas de  archivos DOS/Windows. Por  ejemplo, órdenes
 como  {\tt mdir  a:}  funcionan en  el disquete  {\tt  A:} sin  ningún
 montaje preliminar ni otro procedimiento  de inicio (suponiendo que el
 {\tt /etc/mtools.conf}  sea correcto). Gracias  a todo ello,  con {\sf
-mtools} uno puede cambiar disquetes sin tener que desmontar y montar.
+mtools} se puede cambiar de disquete sin tener que desmontar y montar.
 
 \subsection{Nombres de ficheros}
 
@@ -1070,7 +1070,7 @@ En cuanto a  las letras de dispositivo, comúnmente la  unidad {\tt A:}
 es la  primera unidad de  disquete, la unidad  {\tt B:} es  la segunda
 unidad de disquete,  la unidad {\tt J:}  es una unidad {\em  Jaz} y la
 unidad  {\tt Z:}  es  una  unidad {\em  Zip}.  Sin  embargo todo  esto
-puede  ser  configurado  mediante  el fichero  de  configuración  {\tt
+puede   configurarse  mediante  el fichero  de  configuración  {\tt
 /etc/mtools.conf}.
 
 \subsection {Lista de comandos}
@@ -1124,8 +1124,8 @@ $ mcopy fichero_fuente_dos
 El comando copia el {\tt fichero\_fuente} al {\tt fichero\_destino}, o
 copia múltiples ficheros  al directorio de destino  indicado. Fuente y
 destino pueden ser ficheros de DOS o de Linux. La presencia, o no, del
-indicador de  letra del dispositivo  es el que determina  que ficheros
-son de DOS y cuales de Linux.
+indicador de  letra del dispositivo  es el que determina  qué ficheros
+son de DOS y cuáles de Linux.
 
 Si sólo  se suministra uno  de los  parámetros fuente, se  supone como
 destino el directorio actual de trabajo en el sistema Linux.
@@ -1227,7 +1227,7 @@ especificado, en la pantalla o en la salida estándar.
 $ mtype fichero_dos
 \end{verbatim}
 
-Con  este capítulo,  quedan  bastante explicados  los rudimentos  para
-saber moverse por Linux.
+Con este capítulo quedan explicados los rudimentos para saber moverse
+por Linux.
 \\
 ¡Feliz exploración!

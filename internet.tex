@@ -223,7 +223,7 @@ de cookies frente a posibles peticiones futuras.
 \item[Seguridad] Es  importante recordar que  todo lo que  recibimos o
 enviamos desde o hacia la  World Wide Web es fácilmente interceptarle.
 Cuando accedemos a páginas donde la seguridad de las comunicaciones es
-de vital importancia dicha comunicación se hace encriptando los datos.
+de vital importancia dicha comunicación se hace cifrando los datos.
 Si disponemos de un icono con  un candado abierto en nuestro navegador
 significa que todo lo que hagamos  en Internet puede ser observado por
 otros.  Sin embargo,  si  dicho  candado está  cerrado  es porque  las
@@ -315,7 +315,7 @@ marcadores y copiarlos o pegarlos  con ayuda de ratón. También podemos
 alterar  sus  propiedades  utilizando  el  menú  de  contexto  que  se
 despliega con el uso del botón derecho de nuestro ratón.
 
-\begin{figura}{web_mozilla_adm}{0.8}
+\begin{figura}{web_mozilla_adm}{0.9}
 \caption{Cuadro de diálogo {\tt ADMINISTRAR MARCADORES}}
 \label{web_mozilla_adm}
 \end{figura}
@@ -373,7 +373,7 @@ ventana  las  opciones  de configuración  relacionadas.  Además,  cada
 categoría puede  contener subcategorías cuya  lista se despliega  o se
 pliega con una pulsación simple del ratón sobre dicha categoría.
 
-\begin{figura}{web_mozilla_prefs}{0.7}
+\begin{figura}{web_mozilla_prefs}{0.9}
 \caption{Cuadro de diálogo de preferencias de Mozilla}
 \label{web_mozilla_prefs}
 \end{figura}
@@ -481,10 +481,10 @@ FTP como  usuario anónimo se  utiliza el  nombre {\tt anonymous}  y se
 proporciona la dirección de correo electrónico como contraseña.
 
 Una vez introducido el nombre y la contraseña el servidor nos recibirá
-y el programa cliente de FTP  nos mostrará un prompt, manifestando así
-que está preparado para ejecutar las órdenes que le demos. A partir de
-aquí se realizan las tareas deseadas  mediante los comandos de FTP que
-veremos más adelante.
+y el programa cliente de FTP nos mostrará un prompt (indicador de
+órdenes), manifestando así que está preparado para ejecutar las
+órdenes que le demos. A partir de aquí se realizan las tareas deseadas
+mediante los comandos de FTP que veremos más adelante.
 
 \begin{verbatim}
 $ ftp euler
@@ -502,9 +502,9 @@ ftz>
 
 \subsubsection{Comandos del FTP}
 
-El  protocolo  FTP dispone  de  unos  comandos estándares  suficientes
+El  protocolo  FTP dispone  de  unos  comandos estándar  suficientes
 para  las operaciones  de  transferencia de  ficheros. A  continuación
-presentamos un resumen de las mismas.
+presentamos un resumen de las mismas:
 
 \begin{description}
 
@@ -604,7 +604,7 @@ gráfico nos permite  olvidarnos de los comandos del  protocolo FTP. En
 su lugar todas  las operaciones se reducen a  sencillas acciones sobre
 la interfaz gráfica.
 
-\begin{figura}{ftp_gftp}{0.8}
+\begin{figura}{ftp_gftp}{0.9}
 \caption{Ventana de gFTP en una conexión a {\tt ftp.es.debian.org}}
 \label{ftp_gftp}
 \end{figura}
@@ -847,7 +847,7 @@ copia el  fichero {\tt /tmp/mi\_archivo}  (ruta absoluta) en  el mismo
 servidor.
 
 \begin{verbatim}
-$ scp gulic.org:/temp/mi_archivo .
+$ scp gulic.org:/tmp/mi_archivo .
 \end{verbatim}
 
 Otro comando interesante es {\tt sftp}\index{sftp} que nos proporciona
@@ -860,7 +860,8 @@ otro  sistema operativo.  La  respuesta  es que  SSH  es un  protocolo
 estándar por  lo que todo depende  de la disponibilidad de  un cliente
 para su plataforma. En la  actualidad existen versiones libres para la
 mayor  parte  de  sistemas  operativos. De  entre  ellas  destacaremos
-{\em  PUTTY}[pag. \pageref{putty}]  como uno  de los  mejores clientes
+{\em  PUTTY} %[pag. \pageref{putty}]  
+como uno  de los  mejores clientes
 TELNET/SSH para sistemas Microsoft® Windows®.
 
 

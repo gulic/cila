@@ -20,7 +20,7 @@ sistemas jóvenes, desarrollados recientemente, con la clara convicción
 de  que  el  entorno  gráfico  era  la  gran  panacea.  El  tiempo  ha
 demostrado  que  estaban  parcialmente equivocados.  Disponer  de  GUI
 facilita  el acceso  del gran  público  a la  informática, pero  resta
-mucha flexibilidad  a los profesionales y/o  usuarios avanzados, cuyas
+mucha flexibilidad  a los profesionales o  usuarios avanzados, cuyas
 necesidades  siempre  van  un  paso  por  delante  de  las  soluciones
 aportadas por el GUI. Prueba de ello es que algunos sistemas netamente
 gráficos  han  comenzado a  cuidar  su  interfaz  de comandos  con  el
@@ -53,30 +53,30 @@ muchos criticada.
 \label{xwindow}
 \end{figura}
 
-La  arquitectura   de  las  {\sf   X}  se  divide  en   dos  elementos
-fundamentales.  Por  un lado  el  {\em  servidor X}\index{servidor  X}
-encargado de  gestionar el uso de  los dispositivos de salida  (p. ej.
-tarjetas gráficas) y de los  dispositivos de entrada (p. ej. teclados,
-ratones, tabletas  digitalizadoras, etc). Por  el otro lado,  los {\em
+La arquitectura de las {\sf X} se divide en dos elementos
+fundamentales.  Por un lado el {\em servidor X}\index{servidor X}
+encargado de gestionar el uso de los dispositivos de salida (p. ej.
+tarjetas gráficas) y de los dispositivos de entrada (p. ej. teclados,
+ratones, tabletas digitalizadoras, etc.) Por el otro lado, los {\em
 clientes X}\index{cliente X} nombre con el que se conoce a cada una de
 las aplicaciones que hacen uso del sistema {\sf X}. Las pulsaciones de
-tecla, el movimiento del ratón o  cualquier otra acción del usuario en
-los dispositivos de entrada es  detectada por servidor y transferida a
-los clientes. De la misma  manera los clientes transfieren al servidor
-las  peticiones de  operaciones  a realizar  sobre  el dispositivo  de
-salida (p. ej.  trazar un línea en pantalla, dibujar  un punto, volcar
-un bitmap,  etc). La  comunicación entre cliente  y servidor  sigue un
-protocolo  estandarizado que  corre  sobre los  servicios  de red  del
-sistema. Esto permite  que los clientes no tengan por  qué estar en la
-misma máquina que  el servidor. Eso quiere decir que  podemos tener un
+tecla, el movimiento del ratón o cualquier otra acción del usuario en
+los dispositivos de entrada es detectada por servidor y transferida a
+los clientes. De la misma manera los clientes transfieren al servidor
+las peticiones de operaciones a realizar sobre el dispositivo de
+salida (p. ej.  trazar un línea en pantalla, dibujar un punto, volcar
+un bitmap, etc). La comunicación entre cliente y servidor sigue un
+protocolo estandarizado que corre sobre los servicios de red del
+sistema. Esto permite que los clientes no tengan por qué estar en la
+misma máquina que el servidor. Eso quiere decir que podemos tener un
 servidor {\sf X} en nuestra máquina local a través del que interactuar
-con clientes que se ejecutan de forma remota en otro ordenador,sin que
-por ello  notemos diferencia alguna. Aparte  de todo esto las  {\sf X}
-realizan  ciertas optimizaciones  en los  casos en  los que  cliente y
+con clientes que se ejecutan de forma remota en otro ordenador, sin
+que por ello notemos diferencia alguna. Aparte de todo esto las {\sf
+X} realizan ciertas optimizaciones en los casos en los que cliente y
 servidor se encuentran en la misma máquina. Por ejemplo, se permite el
-acceso directo al  hardware de vídeo ignorando  el protocolo descrito,
-con  lo que  se aprovechan  las características  de aceleración  3D de
-muchas tarjetas  modernas. Con ello las  {\sf X} se convierten  en una
+acceso directo al hardware de vídeo ignorando el protocolo descrito,
+con lo que se aprovechan las características de aceleración 3D de
+muchas tarjetas modernas. Con ello las {\sf X} se convierten en una
 plataforma potente para ejecutar aplicaciones exigentes desde un punto
 de vista gráfico sin por ello perder su flexibilidad.
 
@@ -84,7 +84,7 @@ Otra característica  interesante del  sistema {\sf  X} es  que podemos
 tener varios  servidores en una  misma máquina,  donde cada uno  es un
 {\em  ente}  independiente que  utiliza  sus  propios dispositivos  de
 entrada y salida.  Evidentemente no es habitual disponer de  más de un
-monitor y/o  teclado pero en  ocasiones se pueden  utilizar servidores
+monitor o  teclado pero en  ocasiones se pueden  utilizar servidores
 sin  salida gráfica.  También es  posible  que todos  usen los  mismos
 dispositivos  y  que se  habilite  algún  mecanismo para  que  podamos
 conmutar entre ellos a voluntad.
@@ -104,7 +104,7 @@ de  ventanas}\index{gestor de  ventanas}. En  la Figura  \ref{xwindow}
 podemos  ver  su situación  dentro  de  la  arquitectura de  las  {\sf
 X-Window}.
 
-En una  distribución de  Linux pueden  haber cerca  de 40  gestores de
+En una  distribución de  Linux puede  haber cerca  de  40  gestores de
 ventanas  entre los  que un  usuario debe  elegir. Cada  uno de  ellos
 imprime  un {\em  feeling}  o  sabor diferente  a  nuestro entorno  de
 trabajo. Tengamos en  cuenta que cada gestor dibuja  los elementos del
@@ -243,21 +243,21 @@ que  cierra  el servidor  {\sf  X}  abortando todas  las  aplicaciones
 gráficas. Evidentemente los datos no guardados se perderán.
 
 En Linux, cuando queremos ejecutar aplicaciones de modo consola dentro
-de una ventana  {\sf X} se utilizan los {\em  emuladores de terminal}.
-El  más  básico  es  el  {\tt xterm}\index{xterm}  que  viene  con  la
-instalación estándar de las {\sf X},  pero existen muchos otros y cada
-entorno suele  venir con uno  propio. El de  {\sf GNOME} está  en {\tt
-MENÚ PRINCIPAL  $\rightarrow$ SISTEMA  $\rightarrow$ TERMINAL  UNIX DE
-GNOME}, mientras  que al de {\sf  KDE} podemos acceder pulsando  en el
-icono con  un terminal y  una concha disponible  en el panel  de dicho
-entorno  de  escritorio  (Figura  \ref{kde_panel}).  En  ocasiones  es
-posible  que intentemos  ejecutar  una aplicación  que  nunca llega  a
-mostrar su  ventana principal o que  da algún tipo de  error grave. En
-esos casos es  recomendable ejecutar el programa desde  un emulador de
-terminal. Como ya hemos comentado las aplicaciones para {\sf X} no son
-diferentes de otras aplicaciones por lo que suelen mostrar información
-por la  consola, si  esta está disponible.  Esa información  puede ser
-vital para resolver nuestro problema.
+de una ventana {\sf X} se utilizan los {\em emuladores de terminal}.
+El más básico es el {\tt xterm}\index{xterm} que viene con la
+instalación estándar de las {\sf X}, pero existen muchos otros y cada
+entorno suele venir con uno propio. El de {\sf GNOME} está en {\tt
+MENÚ PRINCIPAL $\rightarrow$ SISTEMA $\rightarrow$ TERMINAL UNIX DE
+GNOME}, mientras que al de {\sf KDE} podemos acceder pulsando en el
+icono con un terminal y una concha disponible en el panel de dicho
+entorno de escritorio (Figura \ref{kde_panel}).  En ocasiones es
+posible que intentemos ejecutar una aplicación que nunca llega a
+mostrar su ventana principal o que da algún tipo de error grave. En
+esos casos es recomendable ejecutar el programa desde un emulador de
+terminal. Como ya hemos comentado, las aplicaciones para {\sf X} no
+son diferentes de otras, por lo que suelen mostrar información por la
+consola, si esta está disponible.  Esa información puede ser vital
+para resolver nuestro problema.
 
 Cuando ejecutamos una aplicación {\sf X} desde el emulador de terminal
 (p. ej. {\tt xclock}) vemos que éste se queda bloqueado a la espera de
@@ -287,7 +287,7 @@ veremos como nuestra aplicación de edición terminará sin advertir nada
 de la pérdida de datos, y el terminal se cerrará sin indicarnos que se
 encuentra esperando por el editor.
 
-\begin{figura}{btitulo}{0.6}
+\begin{figura}{btitulo}{0.9}
 \caption{Barra de título del gestor de ventanas Sawfish}\label{btitulo}
 \end{figura}
 
@@ -333,7 +333,7 @@ marcar el texto a copiar.
 
 \section{El escritorio de GNOME}\index{GNOME}
 
-Debido a la sencillez de los  entornos de escritorio resulta absurdo e
+Debido a la sencillez de los  entornos de escritorio resulta 
 inútil intentar explicar  detalladamente su manejo. La  mejor forma de
 aprender es  sentarnos delante de uno  de ellos, ser un  poco osado, y
 ante todo tener la buena  costumbre de leer detenidamente todo aquello
@@ -346,7 +346,7 @@ de escritorio  {\sf GNOME}\index{GNOME}.  Sin embargo, los  devotos de
 {\sf  KDE} no  deben  preocuparse puesto  que  conociendo uno  resulta
 extremadamente sencillo  llegar a dominar  el otro. Aun así,  al final
 del  capitulo,  comentaremos  algunos  aspectos de  interés  sobre  el
-fantástico entorno de escritorio que es {\sf KDE}.
+fantástico entorno de escritorio de {\sf KDE}.
 
 \subsection{GNOME Display Manager}
 \index{GNOME!Display Manager,GNOME!gdm,Display manager!gdm}
@@ -414,7 +414,7 @@ ejecutar  cualquiera  de las  aplicaciones  sin  importar que  estemos
 trabajando en un  entorno de escritorio diferente a aquel  para el que
 fueron diseñadas.
 
-\begin{figura}{gnome_menu_principal}{0.55}
+\begin{figura}{gnome_menu_principal}{0.6}
 \caption{Panel alineado de {\sf GNOME} y menú principal}
 \label{gnome_menu_principal}
 \end{figura}
@@ -607,7 +607,7 @@ una ventana similar  a la de la Figura \ref{gnome_gmc}.  En el área de
 las izquierda  de dicha  ventana disponemos  de una  representación de
 todo el  árbol de directorios  de nuestro sistema, lo  cual simplifica
 notablemente  la navegación.  Mientras que  en el  área de  la derecha
-podemos ver los archivos y/o subdirectorio de directorio seleccionado.
+podemos ver los archivos o subdirectorios del directorio seleccionado.
 {\sf GMC} nos permite seleccionar  diferentes tipos de vistas para los
 archivos, así  como manipularlos a nuestra  conveniencia utilizando el
 ratón. Nuevamente podemos arrastrar y soltar para mover archivos entre
@@ -622,9 +622,9 @@ su  desarrollo está  prácticamente  abandonado. En  su  lugar se  está
 imponiendo el uso  de una aplicación mucho más  potente, y visualmente
 más  atractiva,  denominada  {\sf  Nautilus}. Aun  así  es  importante
 destacar  que {\sf  Nautilus} es  una aplicación  excesivamente pesada
-para ordenadores un tanto antiguos y/o escasos de recursos.
+para ordenadores un tanto antiguos o escasos de recursos.
 
-\begin{figura}{gnome_nautilus}{0.8}
+\begin{figura}{gnome_nautilus}{0.85}
 \caption{Administrador de archivos Nautilus}
 \label{gnome_nautilus}
 \end{figura}
@@ -646,7 +646,7 @@ control} (Figura \ref{gnome_control}). Para acceder al mismo basta con
 seleccionar  {\tt CONFIGURACIÓN  $\rightarrow$  CENTRO  DE CONTROL  DE
 GNOME} en el menú principal del entorno.
 
-\begin{figura}{gnome_control}{0.8}
+\begin{figura}{gnome_control}{0.85}
 \caption{Centro de control GNOME}
 \label{gnome_control}
 \end{figura}
@@ -765,7 +765,7 @@ con  otros programas  de la  misma categoría  pero no  tan comunes,  y
 categoría  instaladas en  la distribución,  independientemente de  que
 estén integradas en {\sf KDE} o no.
 
-\begin{figura}{kde_menuk}{0.5}
+\begin{figura}{kde_menuk}{0.6}
 \caption{Menú K de {\sf KDE}}
 \label{kde_menuk}
 \end{figura}
@@ -866,7 +866,7 @@ podamos ver su contenido. En la Figura \ref{kde_konqueror_dir} podemos
 ver  una  ventana  de  {\sf  Konqueror} donde  se  puede  explorar  el
 directorio {\tt /etc}.
 
-\begin{figura}{kde_konqueror_dir}{0.7}
+\begin{figura}{kde_konqueror_dir}{0.86}
 \caption{Konqueror como administrador de archivos}
 \label{kde_konqueror_dir}
 \end{figura}
@@ -916,7 +916,7 @@ podemos ver el ejemplo de un ventana de {\sf Konqueror} con una pagina
 web cargada.  La forma  de manejo del  mismo no dista  de la  forma de
 manejo de cualquier otro navegador que hayamos utilizado.
 
-\begin{figura}{kde_konqueror_web}{0.7}
+\begin{figura}{kde_konqueror_web}{0.86}
 \caption{Konqueror como navegador web}
 \label{kde_konqueror_web}
 \end{figura}
