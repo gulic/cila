@@ -1,0 +1,16 @@
+Source: cila-libro
+Section: unknown
+Priority: optional
+Maintainer: Miguel Angel Vilela <miguev@gulic.org>
+Build-Depends: debhelper (>> 3.0.0)
+Standards-Version: 3.5.2
+
+Package: cila-libro
+Architecture: all
+Depends: ${shlibs:Depends}
+Suggests: cila-modules cila-mod1 cila-mod2 cila-mod3 cila-mod4 cila-mod5 cila-mod6
+Description: Libro del Curso de Introducción a Linux para Alumnos
+Libro del Curso de Introducción a Linux para Alumnos
+.
+Este libro constituye  los apuntes de un curso de  Linux diseñado para
+alumnos (estudiantes) de universidad y secundaria.

@@ -1,7 +1,11 @@
+DESTDIR=
+DOCSDIR=$(DESTDIR)/usr/share/doc
+PACKAGE=cila-libro
+VERSION=1.1
+DISTDIR=$(PACKAGE)-$(VERSION)
+
 LATEX = latex
-
 DVIPS = dvips
-
 NAME = Libro_CILA
 
 FILES = book.tex			\
@@ -87,13 +91,17 @@ html: $(FILES)
 
 
 dist: $(FILES) $(IMAGES) $(EJEMPLOS)
-	mkdir $(NAME)
-	cp Makefile LEEME *.tex *.sty *.bib $(NAME)
-	cp -r imagenes $(NAME)
-	cp -r ejemplos $(NAME)
-	cd $(NAME); make clean; cd ..
-	tar cfz $(NAME).tar.gz $(NAME)
-	rm -f $(NAME)
+	mkdir $(DISTDIR)
+	cp Makefile LEEME *.tex *.sty *.bib $(DISTDIR)
+	cp -r imagenes $(DISTDIR)
+	cp -r ejemplos $(DISTDIR)
+	cd $(DISTDIR); make clean; cd ..
+	tar cfz $(DISTDIR).tar.gz $(DISTDIR)
+	rm -rf $(DISTDIR)
+
+install: $(FILES) $(IMAGES) $(EJEMPLOS) $(NAME).ps
+	install -d $(DOCSDIR)/$(PACKAGE)
+
 
 clean:
 	rm -f *~ *.aux *.log *.dvi *.idx *.ilg *.ind *.toc *.bbl \
