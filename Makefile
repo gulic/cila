@@ -8,6 +8,18 @@ LATEX = latex
 DVIPS = dvips
 NAME = Libro_CILA
 
+.PHONY: clean
+JPGS=$(wildcard imagenes/*.jpg)
+EPSS=$(JPGS:.jpg=.eps)
+
+all: $(EPSS) 
+
+%.eps: %.jpg
+	jpeg2ps -o $@ $<
+
+clean:
+	rm -f *.dvi *.ps *.log *.aux $(EPSS)
+
 FILES = book.tex			\
 		main.tex			\
 		cila.sty			\
@@ -79,7 +91,7 @@ EXAMPLES = 	ejemplos/HolaMundo.for 		\
 %.pdf: %.ps
 	ps2pdf $@
 
-all: $(FILES) $(IMAGES) $(EJEMPLOS)
+all: $(FILES) $(EPSS) $(EJEMPLOS)
 	latex book
 	makeindex book.idx
 	latex book
@@ -112,4 +124,4 @@ clean:
 	rm -f *~ *.aux *.log *.dvi *.idx *.ilg *.ind *.toc *.bbl \
 	      *.blg *.lot *.lof *.lde *.exa
 	rm -rf main
-
+	rm -f $(EPSS)
