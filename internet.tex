@@ -1,4 +1,10 @@
-%Autor: aplatanad, amd77, faraox
+%Autor: iCorrecam, aplatanad, wizard, amd77, miguev, faraox
+%iCorrecam: 2
+%aplatanad: 8 + 2
+%wizard--: 3
+%amd77: 3
+%miguev: 3
+%faraox: 2
 
 \chapter{Aplicaciones para Internet}
 \label{internet.tex}
@@ -771,14 +777,14 @@ el  programa de  acceso  remoto  del cual  la  forma  más sencilla  de
 utilizarlo es:
 
 \begin{verbatim} 
-$ ssh <usuario>@máquina_remota 
+$ ssh usuario@máquina_remota 
 \end{verbatim}
 
-Por  ejemplo si el  usuario {\tt miquev} quiere  acceder al servidor
-{\tt euler.fmat.ull.es} ejecutaría lo siguiente: 
+Por  ejemplo si el  usuario {\tt cila} quiere  acceder al servidor
+{\tt gulic.org} ejecutaría lo siguiente: 
 
 \begin{verbatim} 
-$ ssh miguev@euler.fmat.ull.es 
+$ ssh cila@gulic.org
 \end{verbatim}
 
 La primera vez que accedamos a una máquina el programa nos mostrará su
@@ -795,7 +801,7 @@ la que probablemente estemos ante una posible suplantación. Si todo va
 bien {\tt  ssh} nos  pedirá la  password del usuario.  En caso  de ser
 autentificados dispondremos de  acceso remoto sobre el  sistema. Si al
 ejecutar el  comando no especificamos  el nombre de usuario  ({\tt ssh
-euler.fmat.ull.es}) el  programa utilizará por defecto  nuestro nombre
+gulic.org}) el  programa utilizará por defecto  nuestro nombre
 en la máquina local.
 
 A la  hora de trabajar  con {\tt ssh}  debemos tener algunas  cosas en
@@ -811,7 +817,8 @@ sí solo la  transferencia segura de archivos. Para ello  se utiliza el
 comando {\tt scp}\index{scp} que tiene la siguiente forma:
 
 \begin{verbatim}
-$ scp <usuario>@<máquina_origen>:<archivo_origen> <usuario>@<máquina_destino>:<archivo_destino>
+$ scp usuario@máquina_origen:archivo_origen \
+> usuario@máquina_destino:archivo_destino
 \end{verbatim}
 
 El  cual copia  {\tt archivo\_origen}  desde la  {\tt máquina\_origen}
@@ -819,28 +826,28 @@ hasta el {\tt archivo\_destino} en la {\tt máquina\_destino}. Si no se
 especifica alguno  de los nombres de  máquina, el {\tt scp}  asume que
 estamos  hablando  del  sistema  local.  El  siguiente  comando  copia
 el  archivo  {\tt  mi\_archivo}  desde la  máquina  local  hasta  {\tt
-euler.fmat.ull.es}:
+gulic.org}:
 
 \begin{verbatim}
-$ scp mi_archivo euler.fmat.ull.es:
+$ scp mi_archivo gulic.org:
 \end{verbatim}
 
 Mientras que el siguiente comando hace lo contrario:
       
 \begin{verbatim}
-$ scp euler.fmat.ull.es:mi_archivo .
+$ scp gulic.org:mi_archivo .
 \end{verbatim}
 
 Si al especificar  la ruta de archivo en la  máquina remota lo hacemos
 de forma  relativa (o sea  sin usar {\tt /})  la ruta será  relativa a
 nuestro directorio personal  en la maquina remota.  Esto significa que
 el comando  anterior copia {\tt mi\_archivo}  desde nuestro directorio
-personal en {\tt euler.fmat.ull.es}. Sin embargo, el siguiente comando
+personal en {\tt gulic.org}. Sin embargo, el siguiente comando
 copia el  fichero {\tt /tmp/mi\_archivo}  (ruta absoluta) en  el mismo
 servidor.
 
 \begin{verbatim}
-$ scp euler.fmat.ull.es:/temp/mi_archivo .
+$ scp gulic.org:/temp/mi_archivo .
 \end{verbatim}
 
 Otro comando interesante es {\tt sftp}\index{sftp} que nos proporciona
