@@ -52,6 +52,7 @@
 %%%   que se limita a imprimir la cadena "Hola Mundo" en la salida estandar.
 %%% \end{ejemplo}
 %%%
+\usepackage{moreverb}
 \newcommand{\listadeejemplos}{%
 \cleardoublepage\chapter*{Índice de ejemplos}% Creamos el índice de ejemplos
 \label{IndiceDeEjemplos}\@starttoc{lde}}%      y lo etiquetamos 
@@ -68,7 +69,7 @@
 \addcontentsline{lde}{section}{%               se añade una línea al índice
 \protect\numberline{\thechapter.\thenejemplo}\descripcion}%  de ejemplos
 \vspace{-15mm}%                				   Se ajustan espacios
-\verbatiminput{\ejemplopath\source}%          Se incluye el fichero fuente
+\verbatimtabinput[8]{\ejemplopath\source}%     Se incluye el fichero fuente
 \vspace{-6mm}%                				   Se ajustan espacios
 \rule[1mm]{\textwidth}{1pt}\newline %          Se inserta un \n y otra regla
 \begin{tabular}{|p{0.97\textwidth}|}%          Se abre una tabla para la
