@@ -35,7 +35,7 @@ all: $(EPSS)
 	$(DVIPS) -o $@ $<
 
 %.pdf: %.ps
-	ps2pdf $@
+	ps2pdf $< $@
 
 CJPGS = $(wildcard cubierta/*.jpg)
 CEPSS = $(CJPGS:.jpg=.eps)
