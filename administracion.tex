@@ -71,7 +71,92 @@ El fichero apt.conf sirve para la configuración por defecto de APT. En el ficher
 \subsection{APT-CDROM}
 El comando apt-cdrom permite añadir nuevos cdrom al sources.list. Para añadir un cdrom la orden es \verb.apt-cdrom add..
 
+
+\section{Los procesos}
+
+Un proceso es cualquier comando que se está ejecutando en nuestro sistema. Todo proceso tiene un PID, un número que le identifica y le diferencia de todos los demás. Una característa importate es que todo proceso tiene un estado: corriendo, durmiendo, zombie o parado.
+
+\subsection{El comando kill}
+
+El comando kill nos permiter interactuar con cualquier proceso mandando señales(signal). Cuando ejecutamos \verb.kill pid. lo que hacemos es mandar la señal de TERM(terminar) con lo cual se termina ese proceso. Podemos usar cualquier otro tipo de señal, para ello utilizamos \verb.kill signal pid.. Podemos conseguir una lista de señales usando \verb.kill -l.. Una señal útil para alunas ocasiones es \verb.-9., esta señal fuerza a terminarl cualquier proceso. 
+
+También podemos utilizar el comando \verb.killall. con el que podemos mandar señales a un proceso utilizando el nombre, en vez del PID.
+
+Entre los procesos diferenciamos los que se estan ejecuntando en 1º o 2º plano. Los que se ejutan en primer plano son los que interactúan con el usuario en ese momento, mientras que los procesos en segundo plano se ejecutan pero están ocultos.
+
+Solo puede haber un proceso en primer plano por consola. Eso nos deja las manos atadas si no estamos en el entorno gráfico. Para poder ejecutar varios comandos, lo que podemos hacer es ejecutar los comandos en segundo plano. Para ello solo tenemos que añadir \verb.&. al final del comando. Vamos a poner un ejemplo:
+
+\begin{verbatim}
+$ls -R / > /dev/null &
+\end{verbatim}
+
+En el anterior ejemplo listamos todos los ficheros de todos los directorios del sistema. Enviamos la salida a /dev/null para que su salida no nos moleste. El carácter \verb.&. manda el proceso a segundo plano.
+
+El comando {\tt jobs} nos muestra los procesos que se están ejecutando en segundo plano:
+
+\begin{verbatim}
+$ls
+[1]+  Running                 ls --color -R / >/dev/null &
+\end{verbatim}
+
+Aquí vemos que estamos ejecutando el comando anterior. El elemento \verb.[1]. nos indica el número del proceso que se está ejecutando en segundo plano y cual es su estado, en este caso \verb.Running.(corriendo). Seguidamente nos muestra cual es el proceso.
+Podemos utilizar también el comando \verb.fg. para mandar un proceso a el primer plano y el comando \verb.bg. para mandar el proceso a segundo plano.
+
+\begin{verbatim}
+$fg
+ls --color -R / >/dev/null
+\end{verbatim}
+
+\verb.fg. manda el proceso a primer plano y nos muestra el programa que ha mandado. Sí tenemos varios procesos en segundo plano añadimos el número del proceso.
+
+El comando \verb.bg. se utiliza cuando tenemos por ejemplo procesos suspendidos. Los procesos suspendidos son programas que estan ''parados'', es decir, no consumen ni CPU ni memoria, y que podemos volver a poner en marcha en cualquier momento. Para suspender un proceso utilizamos la combinación de teclas {\tt Ctrl + Z}, al igual que para interrurmpir un proceso utilizamos {\tt Ctrl + C}.
+
+\begin{verbatim}
+$jobs
+[1]+  Stopped                 ls --color -R / >/dev/null
+\end{verbatim}
+
+Esta tarea está parada(Stopped).
+
+\subsection{El comando ps}
+El comando \verb.ps. permite mostrar todos los procesos que están corriendo en nuestro sistema. Veamos una parte de una salide del coamndo ps:
+
+\begin{verbatim}
+$ps -aux
+faraox@menut:~/doc/glup_0.6-1.1-html-1.1$ ps xau
+USER       PID %CPU %MEM   VSZ  RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.2  1272  436 ?        S    16:00   0:04 init [2] 
+root         2  0.0  0.0     0    0 ?        SW   16:00   0:01 [keventd]
+root         3  0.0  0.0     0    0 ?        SW   16:00   0:00 [kapmd]
+root         4  0.0  0.0     0    0 ?        SWN  16:00   0:00 [ksoftirqd_CPU0]
+faraox     613  0.0 15.4 46636 28308 ?       S    17:22   0:00 /usr/bin/galeon-bin
+faraox    1360  0.0  2.0  6416 3728 ?        S    18:57   0:00 Eterm -F -misc-fixed-mediu
+faraox    1363  0.0  0.8  2740 1564 pts/2    S    18:57   0:00 -bash
+\end{verbatim}
+
+Los parámetros xau nos permiten ver todos los procesos que se están ejecutando. El parámetro \verb.a. muestra lo que se está ejecutando en las tty conocidas, el parámetro \verb.x. añade los procesos que no se conece la tty en la que se están ejecutando y \verb.u. muestra los usuarios que están ejecutando esos procesos.
+Algunas partes de la salida le serán conocidas. La columna ''USER'' nos dice que usuario está ejecutando el proceso,''PID'' es su número de proceso, ''\%CPU'' es el porcentaje de CPU que está utilizando al igual que ''\%MEM'' es el porcentaje de memoria. También incluye la cantidad de memoria en kylobytes que ha utilizado dicho proceso, se muestra en la columan ''RSS''.La columna ''TTY'' muestra la consola desde la que se está ejecutando. ''STAT'' nos muestra el estado del proceso:S(drmiendo),R(corriendo),T(parado),Z(zombie). Las opciones ''W'' y ''N'' son especiales para procesos del kernel. La columna ''START'' muestra la hora a la que empezó el proceso, y la columna ''TIME'' muestra el tiempo de CPU que ha usado el proceso desde que se inicio y ''COMMAND'' muestra el nombre del comando que se está ejecutando.
+
+\subsection{El comando top}
+
+El comando top es una utilidad que permite la monitorización de los procesos de la CPU. También muestra el estado de la memoria. Es una mezcla del comando uptime, free y ps.
+
+\begin{verbatim}
+20:07:54 up  4:07,  5 users,  load average: 0.07, 0.05, 0.05
+60 processes: 58 sleeping, 1 running, 0 zombie, 1 stopped
+CPU states:   0.4% user,   0.6% system,   0.0% nice,  99.0% idle
+Mem:    182900K total,   172404K used,    10496K free,    35064K buffers
+Swap:    96352K total,    14284K used,    82068K free,    43228K cached
+
+PID USER     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME COMMAND
+1565 faraox    14   0  1040 1040   820 R     0.5  0.5   0:00 top
+300 root       9 -10 24736 9.9M  1524 S <   0.1  5.5   2:47 XFree86
+1541 faraox    10   0  3148 3148  2184 S     0.1  1.7   0:00 Eterm
+1 root       8   0   480  436   416 S     0.0  0.2   0:04 init
+\end{verbatim}
+
 \section{Los archivos de registro }
+
 Los ficheros de registro(logging files) se almecenan los resultados e información util de algunos programas. Estos son muy importantes para conocer el estado de nuestra máquina. Los ficheros log's más importantes se encuentran en la carpeta \verb./var/log/.. Normalmente, los ficheros log se pueden visualizar con cualquier editor de texto ya que están guardados en un fichero ASCII.
 
 \begin{itemize}
