@@ -4,7 +4,6 @@
 
 \section{Depurando la aplicación}
 
-
 Se suele decir que el 10\% del  tiempo de desarrollo de un programa se
 dedica a la codificación y el 90\% restante a la depuración. Al margen
 de  que sea  cierto o  no la  verdad es  que es  de vital  importancia
@@ -21,25 +20,26 @@ gcc}  realizar  ciertas optimizaciones  que  mejoran  su velocidad  de
 compilación.
 
 \begin{verbatim}
-  $ lclint main.c holafunc.c
+$ lclint main.c holafunc.c
 \end{verbatim}
 
 Si disponemos de nuestro programa perfectamente compilado y observamos
-que  presenta algún  error del  que no  sabemos determinar  su origen,
-significa que ha llegado la  hora del depurador. GNU/Linux dispone del
-GNU Debugger  bajo el comando  {\tt gdb}\label{gdb}. Para  usarlo sólo
-debemos ejecutarlo especificando el nombre del programa en la línea de
-comandos; y haber compilado nuestro programa con la opción {\tt -g}.
+que presenta algún  error del  que no  sabemos determinar  su origen,
+significa que ha llegado la  hora utilizar el depurador. GNU/Linux
+dispone del GNU Debugger bajo el comando  {\tt gdb}\label{gdb}. Para
+usarlo sólo debemos ejecutarlo especificando el nombre del programa en
+la línea de comandos; y haber compilado nuestro programa con la opción
+{\tt -g}.
 
 \begin{verbatim}
 $ gdb holamundo
-GNU gdb 19990928
-Copyright 1998 Free Software Foundation, Inc.
+GNU gdb 2002-04-01-cvs
+Copyright 2002 Free Software Foundation, Inc.
 GDB is free software, covered by the GNU General Public License, and you are
 welcome to change it and/or distribute copies of it under certain conditions.
 Type "show copying" to see the conditions.
 There is absolutely no warranty for GDB.  Type "show warranty" for details.
-This GDB was configured as "i686-pc-linux-gnu"...
+This GDB was configured as "i386-linux"...
 (gdb) 
 \end{verbatim}
 
