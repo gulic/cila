@@ -8,6 +8,7 @@ DVIPS = dvips
 NAME = Libro_CILA
 
 .PHONY: clean
+PNGS = $(wildcard imagenes/*.png)
 JPGS = $(wildcard imagenes/*.jpg)
 EPSS = $(JPGS:.jpg=.eps)
 
@@ -20,6 +21,9 @@ IMAGES = $(wilcard imagenes/*.eps)
 EXAMPLES = 	$(wilcard ejemplos/*.*)
 
 all: $(EPSS) 
+
+%.jpg: %.png
+	pngtopnm $< | pnmtojpeg > $@
 
 %.eps: %.jpg
 	jpeg2ps -o $@ $<
