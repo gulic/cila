@@ -85,8 +85,6 @@ Aún así, la mejor  manera de trabajar con R es  en un entorno gráfico,
 con un sistema de ventanas como  X-Window, de forma que puedas ver las
 gráficas en el momento de generarlas.
 
-%\section{Primer contacto con R}
-
 Veamos cómo se trabaja con {\sf  R} usándolo. En primer lugar conviene
 crear un  directorio y entrar en  él antes de comenzar  una sesión con
 {\sf  R}, que  en  éste almacena  siempre en  el  directorio donde  se
@@ -197,9 +195,13 @@ demostraciones con gráficos e imágenes:
 \end{figure}
 
 
-\section{El lenguaje de {\sf R}}
+\section{El lenguaje {\sf R}}
 
 \index{R!lenguaje}
+
+{\sf R} es también lenguaje de  programación en toda regla, con el que
+puedes escribir  programas que  procesen ficheros  de datos  y generen
+análisis y representaciones de los datos.
 
 Al igual que  la mayoría de lenguajes basados en  UNIX, el lenguaje de
 {\sf R} distingue entre mayúsculas y minúsculas. Esto es, {\tt esto} y
@@ -227,3 +229,631 @@ R}.
 Si dejas  un comando a medias  {\sf R} se  dará cuenta, y en  lugar de
 mostrarte el prompt  $>$ te mostará {\tt +} para  avisarte de que está
 esperando por el final del comando.
+
+Otra característica  interesante de {\sf  R} (al menos  en plataformas
+Linux/UNIX) es  la posibilidad  de editar la  línea de  comandos. Esto
+incluye el  típico historial de  comandos, que te permite  repetir los
+comandos  sin tener  que volver  a  teclearlos. Tan  solo utiliza  los
+cursores  arriba  y  abajo  para  recuperar  los  comandos  que  hayas
+tecleado.  Además este  historial de  comando queda  almacenado en  la
+sesión cuando sales del entorno {\sf R}.
+
+Pero si necesitas usar una serie un poco larga de comandos seguramente
+te canses de tener  que darle a los cursores. Para  estos casos lo que
+necesitas  es un  script en  el que  escribes los  comandos a  modo de
+programa. Luego para ejecutar los  comandos escritos en él utilizas la
+función {\tt  source ()} del  entorno pasándole el nombre  del fichero
+donde escribiste los comandos:
+
+\begin{verbatim}
+> source ("script.R")
+\end{verbatim}
+
+Del  mismo modo  que puedes  tomar la  entrada de  un fichero  también
+puedes redireccionar la salida hacia otro fichero, con la función {\tt
+sink()}. Para almacenar la salida en el fichero {\tt salida.txt} 
+ejecuta el comando:
+
+\begin{verbatim}
+> sink ("salida.txt")
+\end{verbatim}
+
+Para devolver  la salida al  intérprete utiliza la misma  función {\tt
+sink  ()}  pero sin  pasarle  ningún  parámetro.  En el  fichero  {\tt
+iodemo.R}  tienes un  ejemplo de  esto. Entra  en el  directorio donde
+tengas el fichero y ejecuta en el entorno {\sf R}
+
+\begin{verbatim}
+> source ("iodemo.R")
+\end{verbatim}
+
+Este guión (serie de comandos) lee una tabla que está almacenada en un
+fichero  de texto  llano  ({\tt muestra.dat},  que  usaremos para  los
+ejemplos) y extrae dos variables de ella. Para ambas variables muestra
+un  breve resumen  estadístico, pero  guarda  uno en  el fichero  {\tt
+salida.txt} y el otro lo muestra en el entorno {\sf R}.
+
+
+\section{Vectores}
+
+{\sf R} realiza las operaciones sobre las llamadas {\em estructuras de
+datos}, de las cuales la más  simple es el vector numérico. Para crear
+un vector con  los 5 primeros números enteros  positivos utilizamos la
+función {\tt  c()} que  combina los objetos  recibidos para  formas un
+vector:
+
+\begin{verbatim}
+> x <- c (1, 2, 3, 4, 5)
+> x
+[1] 1 2 3 4 5
+\end{verbatim}
+
+En efecto, el operador de asignación no se parece para nada a un signo
+de igualdad. De  hecho es una flecha, que está  indicando que el valor
+de lo que hay a su derecha debe asignarse a lo que hay a su izquierda.
+Si le das la vuelta a la flecha funciona al revés:
+
+\begin{verbatim}
+> c (6, 7, 8, 9, 10) -> y
+> y
+[1]  6  7  8  9 10
+\end{verbatim}
+
+Cuando  ejecutas  el  nombre  de  un  objeto  como  comando,  {\sf  R}
+interpreta que deseas  ver su contenido y entonces  ejecuta la función
+{\tt print()} sobre  el objeto en cuestión. Esto  funciona sólo cuando
+estás  dentro del  entorno {\sf  R} y  tecleas el  nombre del  objeto.
+Cuando quieras imprimir  el objeto desde un fichero  de comandos (como
+hacemos en {\tt iodemo.R}) has de utilizar la función {\tt print()}.
+
+Dado que la función {\tt c()} combina objetos para formar vectores, 
+también puede combinar varios vectores para formar un nuevo vector
+que es el resultado de concatenar los anteriores:
+
+\begin{verbatim}
+> z <- c (x, y)
+> z
+ [1]  1  2  3  4  5  6  7  8  9 10
+\end{verbatim}
+
+Las  operaciones  usuales  entre  vectores  se  definen  ``elemento  a
+elemento'':
+
+\begin{verbatim}
+> x + 2
+[1] 3 4 5 6 7
+> 2 * x
+[1]  2  4  6  8 10
+> x + y
+[1]  7  9 11 13 15
+> x - y
+[1] -5 -5 -5 -5 -5
+> x * y
+[1]  6 14 24 36 50
+> x / y
+[1] 0.1666667 0.2857143 0.3750000 0.4444444 0.5000000
+> y / x
+[1] 6.000000 3.500000 2.666667 2.250000 2.000000
+> x ^ y
+[1]       1     128    6561  262144 9765625
+> y ^ x
+[1]      6     49    512   6561 100000
+\end{verbatim}
+
+Pero  entonces ¿cómo  se multiplican  escalarmente dos  vectores? Para
+esto hay una función llamada  {\tt crossprod}, que permite multiplicar
+dos  vectores  (o  matrices).  El operador  \verb|%*%|  es  una  forma
+abreviada  de  este  producto.  Formalmente  {\tt  crossprod(x,y)}  es
+equivalente a  {\tt t(x) \%*\%  y}, pero  más rápido. La  función {\tt
+t()} es la trasposición de matrices:
+
+\begin{verbatim}
+> x
+[1] 1 2 3 4
+> y
+[1] 4 5 6 7
+> crossprod(x,y)
+     [,1]
+[1,]   60
+> x %*% y
+     [,1]
+[1,]   60
+\end{verbatim}
+
+Además de para guardar datos,  los vectores suelen usarse para definir
+series o  secuencias. Para  definir una  secuencia de  números enteros
+consecutivos basta  con poner el primer  y el último separados  por un
+caracter de dos puntos:
+
+\begin{verbatim}
+> x <- 1:10
+> x   
+ [1]  1  2  3  4  5  6  7  8  9 10
+\end{verbatim}
+
+Pero  para  generar   secuencias  la  mejor  manera   es  utilizar  la
+función {\tt  seq()}. Si  le pasas tres  valores numéricos  le estarás
+especificando el  primer y el  último elemento  de la secuencia,  y la
+diferencia que debe haber entre cada dos elementos consecutivos:
+
+\begin{verbatim}
+> y <- seq (-1, 1, .2)
+> y
+ [1] -1.0 -0.8 -0.6 -0.4 -0.2  0.0  0.2  0.4  0.6  0.8  1.0
+\end{verbatim}
+
+Para replicar  un objeto  varias veces, por  ejemplo para  generar una
+secuencia  periódica,  utiliza la  función  {\tt  rep()} pasándole  el
+objeto y el número de veces que quieres replicarlo:
+
+\begin{verbatim}
+> z <- rep (seq (-1, 1, 1), 5)
+> z
+ [1] -1  0  1 -1  0  1 -1  0  1 -1  0  1 -1  0  1
+\end{verbatim}
+
+Además de vectores numéricos, {\sf R} permite operar con vectores {\em
+lógicos}.  Los valores  válidos  para los  elementos  de los  vectores
+lógicos son los de la lógica  {\em triestada}: {\tt TRUE}, {\tt FALSE}
+y {\tt NA} (``Not Available'',  no disponible). Los operadores lógicos
+para manejar  estos valores son  {\tt \&}  para ``and'', {\tt  |} para
+``or'' y {\tt !} para ``not''.
+
+Una forma  de generar  un vector  de valores  lógicos es  efectuar una
+comparación entre un vector numérico y un valor numérico:
+
+\begin{verbatim}
+> z <- rep (seq (-1, 1, 1), 3)
+> z
+[1] -1  0  1 -1  0  1 -1  0  1
+> z > 0
+[1] FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE
+\end{verbatim}
+
+Al contrario que  en la mayoría de lenguajes de  programación, en {\sf
+R}  los vectores  se indexan  comenzando por  $1$. Para  acceder a  un
+elemento  de un  vector utiliza  la notación  usual de  los corchetes.
+También puedes acceder a un  subconjunto del vector especificando como
+índice un vector con las posiciones de los elemenos:
+
+\begin{verbatim}
+> x <- 1:10
+> x
+ [1]  1  2  3  4  5  6  7  8  9 10
+> x[2:5]
+[1] 2 3 4 5
+> x[8:2]
+[1] 8 7 6 5 4 3 2
+\end{verbatim}
+
+También puedes  acceder a  un subconjunto de  un vector  utilizando un
+vector lógico:
+
+\begin{verbatim}
+> x[x > 4]
+[1]  5  6  7  8  9 10
+\end{verbatim}
+
+Incluso puedes indexar  un vector no palabras, poniendo  nombres a las
+posiciones dentro del vector mediante  la función {\tt names()}. Luego
+puedes acceder a los elementos mediante los nombres de las posiciones:
+
+\begin{verbatim}
+fruta = c (5, 10, 1, 20)
+> fruta <- c (5, 10, 1, 20)
+> names (fruta) <- c ("naranja", "plátano", "manzana", "ñame")
+> fruta[c ("manzana", "naranja")]
+manzana naranja 
+      1       5 
+> fruta
+naranja plátano manzana    ñame 
+      5      10       1      20 
+\end{verbatim}
+
+\section{Arrays y matrices}
+
+Un  {\em   array}\footnote{a  veces  traducido  por   ``arreglo''}  es
+una  variable  indexada  multidimensional.   Un  vector  es  un  array
+unidimensional  y  una  matriz  es un  array  bidimensional.  {\sf  R}
+proporciona un buen manejo de arrays, sobretodo para matrices.
+
+La dimensión de un array es un vector cuya longitud es la dimesión del
+array,  y  cada uno  de  sus  elementos  es  la ``longitud''  de  cada
+dimensión en el array. Por  ejemplo, un array con dimesión $(3,5,100)$
+sería como un cubo de $1500$ elementos con $3$ celdas de largo, $5$ de
+ancho y $100$ de alto.
+
+En la  mayoría de  lenguajes los  elementos de  un array  se almacenan
+``por filas'', lo que significa que el índice que avanza más rápido es
+el último. Sin embargo, en {\sf R}  la ordenación se hace al estilo de
+FORTRAN, ordenando  los elementos  ``por columnas'', lo  que significa
+que el índice que avanza más rápido es el primero.
+
+Es importante tener esto en cuenta porque a la hora de crear una 
+matriz hay que proporcionar los elementos agrupados por columnas, no 
+por filas. Por ejemplo:
+
+\begin{verbatim}
+> a <- array (c (1:3,-3:-1), dim = c (3,2)) 
+> a
+     [,1] [,2]
+[1,]    1   -3
+[2,]    2   -2
+[3,]    3   -1
+\end{verbatim}
+
+Para  acceder a  los elementos  de una  matriz (o  array) ponemos  los
+subíndices  entre corchetes  y  separados por  comas.  Si omitimos  el
+subíndice de las filas (el  primero) obtenemos la columna señalada por
+el segundo subíndice, y análogamente  obtenemos las filas omitiendo el
+segundo suníndice.
+
+\begin{verbatim}
+> a[1,2]
+[1] -3
+> a[,2]
+[1] -3 -2 -1
+> a[1,]
+[1]  1 -3
+\end{verbatim}
+
+De la misma forma que podemos extraer elementos, filas o columnas de
+una matriz también podemos asignarles valores:
+
+\begin{verbatim}
+> a[,2] <- 3:5
+> a[,2]
+[1] 3 4 5
+> a
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+[3,]    3    5
+\end{verbatim}
+
+Para multiplicar  matrices (o arrays  en general) utiliza  el operador
+\verb|%*%| que vimos antes:
+
+\begin{verbatim}
+> a
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+[3,]    3    5
+> b = array (1:2, 2:1, dim = c (2,2))
+> b
+     [,1] [,2]
+[1,]    1    1
+[2,]    2    2
+ %*% b
+     [,1] [,2]
+[1,]    7    7
+[2,]   10   10
+[3,]   13   13
+\end{verbatim}
+
+Vimos antes  que si multiplicamos dos  vectores {\tt x} y  {\tt y} (de
+igual longitud) utilizando el operador  {\tt \%*\%} el resultado es el
+producto  escalar de  los vectores.  En realidad  la operación  {\tt x
+\%*\%  y}  es ambigua,  porque  podría  significar  $x'  x$ o  $x  x'$
+(considerando $x$ un vector columna).  En estos casos de ambigûedad se
+considera implícitamente  que la interpretación deseada  es aquella de
+la  que resulte  la  matriz más  paqueña,  por lo  que  se obtiene  el
+producto escalar $x' x$.
+
+Para  calcular la  matriz $x  x'$ puedes  utilizar las  funciones {\tt
+cbind()} y {\tt rbind()}, ya que éstas siempre devuelven matrices. Las
+funciones {\tt  cbind} y  {\tt rbind}  toman una  serie de  vectores o
+números y los agrupan por columnas o filas en una matriz.
+
+\begin{verbatim}
+> x
+[1] 1 2 3 4
+> y
+[1] 4 5 6 7
+> x %*% y
+     [,1]
+[1,]   60
+> cbind(x,y)
+     x y
+[1,] 1 4
+[2,] 2 5
+[3,] 3 6
+[4,] 4 7
+> rbind(x,y)
+  [,1] [,2] [,3] [,4]
+x    1    2    3    4
+y    4    5    6    7
+> cbind(x) %*% rbind(y)
+      
+       [,1] [,2] [,3] [,4]
+  [1,]    4    5    6    7
+  [2,]    8   10   12   14
+  [3,]   12   15   18   21
+  [4,]   16   20   24   28
+\end{verbatim}
+
+%\subsection{Sistemas lineales}
+
+%\subsection{Autovalores y autovectores}
+
+
+\section{Factores: clasifición de datos}
+
+Un  {\em factor}  es un  vector  que utilizamos  para especificar  una
+clasificación  discreta (agrupamiento)  de  los  componentes de  otros
+vectores del mismo tamaño. Para entender  lo que son los factores nada
+mejor que un ejemplo claro y sencillo. En el entorno {\sf R} y ejecuta
+lo siguiente:
+
+\begin{verbatim}
+> edad <- c (13, 16, 15, 17, 17, 18, 16, 16, 15, 16)
+> sexo <- c ("hombre", "hombre", "mujer", "hombre", "mujer", "mujer",         
++            "hombre", "mujer", "hombre", "mujer") 
+> edad
+ [1] 13 16 15 17 17 18 16 16 15 16
+> sexo
+[1] "hombre" "hombre" "mujer"  "hombre" "mujer"  "mujer"  "hombre" "mujer" 
+[9] "hombre" "mujer"
+\end{verbatim}
+
+Ahora tienes  una variable {\tt  Edad} que  contiene las edades  de 10
+personas, y  una variable {\tt  Sexo} que define  el sexo de  cada una
+de  las  10  personas  anteriores  (en el  mismo  orden)  y  que  toma
+únicamente  los  valores  \verb|"hombre"| y  \verb|"mujer"|.  Vamos  a
+calcular  la media  y  la  varianza muestrales  de  la  edad de  estas
+personas  clasificándolas según  el sexo,  i.e. la  edad media  de los
+hombres por un lado y la de las mujeres por otro.
+
+Necesitamos  separar (agrupar)  los  elementos del  vector {\tt  edad}
+según los valores que toma el  vector {\tt sexo}. Para esto utilizamos
+un factor.  El factor  en realidad  es como  el vector  original, pero
+tiene un atributo  añadido llamado {\tt levels} (niveles)  que son los
+distintos  valores que  toman los  elementos del  vector original.  En
+el  caso del  vector  {\tt  edad} los  niveles  son \verb|"hombre"|  y
+\verb|"mujer"|. La función  {\tt levels} devuelve la  lista de niveles
+que tenga el factor que le pases como parámetro.
+
+\begin{verbatim}
+> sexo.factor = factor (sexo)
+> sexo.factor
+[1] hombre hombre mujer  hombre mujer  mujer  hombre mujer  hombre
+Levels:  hombre mujer 
+> levels (sexo.factor)
+[1] "hombre" "mujer"
+\end{verbatim}
+
+Ahora queremos  aplicar unas  funciones, en este  caso {\tt  mean()} y
+{\tt  var()}, a  un  vector de  datos  de manera  que  los datos  sean
+separados según  un factor.  La función apropiada  para esta  tarea es
+{\tt tapply}, y se usa del siguiente modo:
+
+\begin{verbatim}
+> tapply (edad, sexo.factor, mean)
+hombre  mujer 
+  15.4   16.4 
+> tapply (edad, sexo.factor, var)
+hombre  mujer 
+   2.3    1.3
+\end{verbatim}
+
+Así obtenemos que dentro de esta muestra de 10 personas, la edad media
+de los hombres es $15.4$ y  la de las mujeres $16.4$. Volveremos sobre
+los factores más adelante, así que asegúrate de entender al menos este
+uso de los mismos. Para mayores detalles consulta la ayuda de {\sf R}.
+
+\section{Listas}
+
+En un  array todos  los elementos  deben ser del  mismo tipo,  i.e. no
+puede  ser que  un array  contenga a  la vez  números y  palabras. Sin
+embargo la  mayoría de muestras  contienen datos de  diferentes tipos:
+números, palabras, valores lógicos, intervalos, etc.
+
+Una {\em  lista} en {\sf  R} es una  colección ordenada de  objetos de
+cualquier tipo. Es  como un vector, pero con la  diferencia de que sus
+elementos pueden ser de distintos tipos. 
+
+Los elementos de una lista están  siempre numerados por un subíndice y
+puedes referirte  a ellos  como con un  vector, pero  usando corquetes
+dobles.  Así  si {\tt  L}  es  una lista  {\tt  L[[1]]}  es su  primer
+elemento. Pero también,  al igual que en los  vectores, puedes indexar
+los elementos  de una lista dándoles  nombres. En caso de  nombrar los
+elementos de una lista hay una  forma más cómoda de referirse a ellos:
+en lugar de {\tt L[["nombre"]]} puedes usar {\tt L\$nombre}.
+
+\begin{verbatim}
+> L = list (nombre = "Pepe", esposa = "Pepa", hijos = 3,
++     edades.hijos = c (34,6,12))
+> L
+$nombre
+[1] "Pepe"
+
+$esposa
+[1] "Pepa"
+
+$hijos
+[1] 3
+
+$edades.hijos
+[1] 34  6 12
+
+> L[["nombre"]]
+[1] "Pepe"
+> L$nombre
+[1] "Pepe"
+\end{verbatim}
+
+Para concatenar  listas recuerda que  la función {\tt c()}  sirve para
+ello.
+
+\section{Hojas de datos}
+
+Una ``hoja  de datos'' (en  inglés ``data frame'') es  básicamente una
+lista  de  vectores.  Los  vectores de  palabras  son  convertidos  en
+factores.
+
+Piensa en una hoja  de datos como su nombre sugiere:  una hoja o tabla
+en la que tienes varios datos sobre varios individuos. Las columnas de
+la hoja de  datos son los vectores  que la format, y cada  fila es una
+lista.
+
+En el  fichero {\tt  muestra.dat} tienes una  hoja de  datos preparada
+para ser leida con la función  {\tt read.table()}. La primera fila son
+los nombres  de los vectores columna,  y luego cada línea  del fichero
+introduce  una lista  de  valores,  un valor  para  cada vector.  Para
+entender esto con claridad lee  la tabla del fichero {\tt muestra.dat}
+y mantenla en una variable:
+
+\begin{verbatim}
+> hoja.datos = read.table ("muestra.dat") 
+> names (hoja.datos)
+[1] "Sexo"     "Edad"     "Habitat"  "Ingresos" "Lectura"  "TV"
+\end{verbatim}
+
+Esta tabla contiene  los datos (ficticios) de 50 jóvenes:  su sexo, su
+edad,  su  hábidat,  sus  ingresos familiares  (en  miles  de  pesetas
+mensuales), sus horas  de lectura semanales y sus  horas de televisión
+diarias.
+
+Normalmente para  acceder al  vector {\tt  Edad} de  la hoja  de datos
+utilizaríamos la expresión {\tt  hoja.datos\$Edad}, pero hay una forma
+más cómoda. Consiste en ``conectar'' la hoja de datos para que puedas
+referirte a sus vectores directamente por su nombre:
+
+\begin{verbatim}
+> attach (hoja.datos)
+> summary (Edad)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  12.00   15.00   16.00   15.64   17.00   20.00
+\end{verbatim}
+
+Ten en cuenta que  este atajo es sólo para {\em leer}  los datos de la
+hoja, no para modificarlos. Si quieres  modificar un vector de la hoja
+de datos tienes que usar la notación normal:
+
+\begin{verbatim}
+> hoja.datos$Edad <- Edad + 10
+\end{verbatim}
+
+De hecho, esto modifica  el vector en la hoja de  datos, pero no verás
+los cambios en los atajos hasta que  desconectes la hoja de datos y la
+vuelvas  a conectar.  Para desconectar  una hoja  de datos  utiliza la
+función {\tt detach()}.
+
+Cuando quieras  almacenar una hoja de  datos en un fichero  utiliza la
+función {\tt write.table()}. Su uso básico es darle la hoja de datos y
+el nombre del  fichero, pero admite varias  opciones para personalizar
+la  forma en  la  que escribirá  los  datos en  el  fichero. Para  ver
+estos  detalles consulta  la ayuda  sobre la  función ejecutando  {\tt
+?write.table}.
+
+\subsection{Valores perdidos}
+
+En ocasiones  te encontrarás  con hojas de datos  en las  que alguna
+celda no tiene el dato. Esto puede suceder porque no haya sido posible
+averiguar el dato,  o porque éste no tenga sentido.  En estos casos se
+utiliza para esa  celda el valor {\tt NA}, que  significa que el valor
+``no está disponible'' (NA es abreviatura de ``Not Available'').
+
+En otros casos sucede que tras efectuar una serie de operaciones sobre
+un  conjunto de  datos algunos  de  los resultados  no tengan  sentido
+matemático, como  por ejemplo una  división por cero (recuerda  que la
+precisión  de los  procesadores es  limitada).  En caso  de hacer  una
+operación así {\sf R} no se quejará en absoluto, sino que devolverá el
+valor {\tt  NaN} que  significa que  eso ``no es  un número''  (NaN es
+abreviatura de ``Not a Number'').
+
+\section{Funciones}
+
+Como todo  buen lenguaje de  programación, {\sf R} te  permite definir
+funciones  para tu  uso propio.  Para definir  una función  asignas al
+objeto (que  será tu función)  el valor  devuelto por la  función {\tt
+function}.  Esta función  particular recibe  los mismo  parámetros que
+recibirá tu  función, y  a continuación la  secuencia de  comandos que
+debe ejecutar encerrada  entre llaves. Si tu función  debe devolver un
+valor simplemente ejecuta la expresión  correspondiente al final de su
+definición.
+
+Por ejemplo  si quieres  una función  que calcule  la curtosis  de una
+muestra:
+
+\begin{verbatim}
+> curtosis <- function (x) {
++ n <- length (x)
++ c <- ( (n * (n - 1) * sum((x - mean(x))^4) ) /
++      ( (n - 1) * (n - 2) * (n - 3) * (var(x))^4 ) ) -
++      ( (3 * (n - 1)^2) / ( (n - 2) * (n - 3) ) )
++ c 
++ }
+> hoja.datos = read.table ("muestra.dat")
+> attach (hoja.datos)
+> curtosis (Edad)
+[1] -2.921993
+> curtosis (Lectura)
+[1] -3.191575
+> curtosis (TV)
+[1] -3.192770
+\end{verbatim}
+
+Normalmente las funciones no quedan bien escritas a la primera, por lo
+que tendrás que corregirlas una y  otra vez. O tal vez quieras definir
+más funciones,  modificar las que  ya tengas escritas, etc.  Todo esto
+puedes hacerlo más cómodamente si escribes las funciones en un fichero
+y lo importas con la función {\tt source()} que vimos antes.
+
+Así por ejemplo tienes escrita la función {\tt curtosis} en el fichero
+{\tt curtosis.R}. Si quieres modificarla  y volver a usarla después de
+modificada no  hay problema.  Edita el  fichero {\tt  curtosis.R} para
+modificar la función  y luego vuelve a importarlo con  la función {\tt
+curtosis}. Recuerda que la función {\tt curtosis} ejecuta los comandos
+que encuentra en el fichero que le digas, por lo que las funciones que
+tengas escritas en  el fichero serán redefinidas y  estarán lista para
+usar al instante.
+
+\subsection{Control de flujo}
+
+% NO TE OLVIDES DE ESTO
+
+\section{Distribuciones de probabilidad}
+
+{\sf R} tiene  un conjunto de funciones para evaluar  las funciones de
+distribución, densidad y probabilidad  de las distribudiones que están
+tabuladas.  Para cada  distribución  la función  que  lleva su  nombre
+devuelve  el valor  de  su  función de  distribución,  i.e. $P(X  \leq
+x)$\footnote{En algunas tablas encontrarás que los valores son para la
+probabilidad complementaria  a esta,  i.e. $P(X  > x) =  1 -  P(X \leq
+x)$}.
+
+Las distribuciones  para las que  {\sf R} proporciona  estas funciones
+son, con  sus nombres en  {\sf R}:  beta ({\tt beta}),  binomial ({\tt
+binom}), Cauchy  ({\tt cauchy}),  $\chi^2$ ({\tt  chisq}), exponencial
+({\tt exp}),  F de Fisher  ({\tt f}), gamma ({\tt  gamma}), geométrica
+({\tt geom}), hipergeométrica ({\tt hyper}), log-normal ({\tt lnorm}),
+logística  ({\tt logis}),  binomial  negativa  ({\tt nbinom}),  normal
+({\tt norm}), Poisson  ({\tt pois}), t de Student  ({\tt t}), uniforme
+({\tt unif}), Weibull ({\tt weibull}) y Wilcoxon ({\tt wilcox}).
+
+Cada  una   de  estas  distribuciones  tabuladas   proporciona  cuatro
+funciones, cuyos nombres  se obtienen precediendo las  letras {\tt d},
+{\tt p}, {\tt q} o {\tt r} al  nombre en {\sf R} de la distriburión, y
+que  son  respectivamente  las funciones  de  densidad,  distribución,
+quantiles y simulación (generadoras aleatorias).
+
+Cada una de  estas funciones requiere argumentos  para especificar los
+parámetros de la distribución .  Por ejemplo, {\tt rnorm(n)} genera un
+vector  de {\tt  n}  números aleatorios  que  siguen una  distribución
+normal  con  media  0  y  varianza 1,  pero  estos  parámetros  pueden
+modificarse con las opciones oportunas:
+
+\begin{verbatim}
+> rnorm(5)
+[1]  0.5849966  2.6217292 -0.9060517  1.1373629  1.4008370
+> rnorm(5, mean = 100, sd = 10)
+[1] 109.8315 106.1667  94.7198 116.6163 109.8492
+\end{verbatim}
+
+\section{Estadística descriptiva}
+
+\section{Inferencia estadística}
+
+\section{Gráficas}
