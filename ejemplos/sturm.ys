@@ -8,11 +8,11 @@ Sturm (P, x) := [
     /* El número de términos en la sucesión de Sturm asociada a P(x)
      * es siempre no superior al grado del polinomio P(x) */
     For ( i := 3 , i <= Degree(P(x)) , i++ )
-        L := Append (L, - Mod ( L[i-2] , L[i-1] ) );
+      L := Append (L, - Mod ( L[i-2] , L[i-1] ) );
 
     m := 0;
     While ( m < Length (L) And 
-	        Not IsZero (L[m+1]) ) m++;
+      Not IsZero (L[m+1]) ) m++;
     
     S := List ();
     For (i := 1, i <= m, i++)

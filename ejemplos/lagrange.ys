@@ -3,7 +3,7 @@ xl := {-5, -2, 0, 3, 5};
 yl := {};
 n := Length (xl);
 For ( i := 1 , i <= n , i++ ) [
-	yl := Append (yl, Eval (f (xl[i])));
+  yl := Append (yl, Eval (f (xl[i])));
 ];
 pol (x) := Eval (LagrangeInterpolant (xl, yl, x));
 GnuPlot (xl[1], xl[n], 50, {f(x), pol(x)});

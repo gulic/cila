@@ -26,7 +26,7 @@ fácilmente  nuevos  algoritmos.  Además, incorpora  una  documentación
 extensa sobre las funcionalidades que  implementa y los métodos usados
 para implementarlas.
 
-Entre las características que  Yacas implementan encontramos precisión
+Entre las  características que Yacas implementa  encontramos precisión
 arbitraria, números racionales,  vectores, números complejos, cálculos
 con  matrices  (incluyendo  inversas, determinantes  y  resolución  de
 sistemas lineales), derivación, series  de Taylor, resolución numérica
@@ -167,11 +167,11 @@ x    x  * 3 * y   x  * 3 * y     3
 Out> True;
 \end{verbatim}
 
-El signo  \verb+%+ es una referencia  que se apunta siempre  al último
-valor  devuelto por  el  intérprete, es  decir lo  que  aparezca a  la
-derecha del  último \verb+Out>+. Esta referencia  sólo está disponible
-cuando usamos Yacas como intérprete  interactivo, no se puede utilizar
-desde un script.
+El signo \verb+%+ es una referencia que apunta siempre al último valor
+devuelto por el intérprete, es decir  lo que aparezca a la derecha del
+último \verb+Out>+. Esta referencia sólo está disponible cuando usamos
+Yacas  como intérprete  interactivo,  no se  puede  utilizar desde  un
+script.
 
 Otras  formas  de mostrar  una  expresión  son  las utilizadas  en  el
 lenguaje  de  programación  C  y  en  el  lenguaje  tipográfico  \TeX.
@@ -399,6 +399,7 @@ Yacas puede multiplicar vectores, matrices y números del modo usual en
 álgebra lineal:
 
 \begin{verbatim}
+
 In> v := {1, 0, 0, 0}
 Out> {1,0,0,0};
 In> E4 := { {0, u1, 0,  0}, \
@@ -474,7 +475,7 @@ bloque \verb+body+  hasta que  la condición  \verb+predicate+ devuelva
 Para   los  condicionales   está  la   función  
 \verb+If (predicate, body1, body2)+,
 en la  que  se  ejecuta  el bloque  \verb+body1+  si
-\verb+predicate+ devuelve \verb+True+ o ejecuta el bloque \verb+body1+
+\verb+predicate+ devuelve \verb+True+ o ejecuta el bloque \verb+body2+
 si \verb+predicate+  devuelve \verb+False+, y en  ambos casos devuelve
 el  valor devuelto  por  el  bloque ejecutado.  El  segundo bloque  es
 opcional.  Si  llamas  a  \verb+If (predicate,  body1)+  se  ejecutará
@@ -525,7 +526,7 @@ Una  barra  invertida  \verb+\+  al  final  de  una  línea  indica  al
 intérprete de Yacas que la línea  no está terminada, sino que continúa
 después  del salto  de carro.  En  este ejemplo  hemos utilizado  esto
 descaradamente. Esto se puede utilizar en el intérprete para hacer que
-nuestros comandos  sean más cómodos de  leer. Esto no es  necesario al
+nuestros comandos  sean más cómodos de  leer, pero no es  necesario al
 escribir un script.
 
 
@@ -670,10 +671,10 @@ Script en Yacas que implementa el algoritmo de Sturm.
 \end{ejemplo}
 
 En  el  script  escribimos  esta   función  y  añadimos  los  comandos
-necesarios para ejecutar un  test. La función \verb+RandomPoly+ genera
-un polinomio aleatorio, lo mostramos con \verb+PrettyForm+, calculamos
-su sucesión de Sturm y la mostramos con \verb+PrettyForm+ de nuevo. El
-resultado de ejecutar el script es el siguiente:
+necesarios  para  ejecutar  un test.  La  función  \verb+RandomPoly()+
+genera un  polinomio aleatorio, lo mostramos  con \verb+PrettyForm()+,
+calculamos su sucesión de Sturm y la mostramos con \verb+PrettyForm()+
+de nuevo. El resultado de ejecutar el script es el siguiente:
 
 \begin{verbatim}
      3         2            
