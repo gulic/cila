@@ -32,13 +32,13 @@ consola. Estos comandos pueden ser de diferentes clases:
 \begin{itemize}
 \item Programas ejecutables.
 \item Scripts del intérprete.
-\item Scripts de lenguajes de script como Perl, Tcl, etc.
+\item Scripts de lenguajes de script como Python, Perl, Tcl, etc.
 \item Macros del intérprete.
 \end{itemize}
 
-Todos tienen en  común que son ficheros: al  cargar un programa
-en Linux, se ordena al intérprete  que busque el fichero con el nombre
-del programa y una vez encontrado,  lo ejecute, si éste da permisos de
+Todos  tienen en  común que  son ficheros:  al cargar  un programa  en
+Linux, se ordena al intérprete que busque el fichero con el nombre del
+programa y  una vez  encontrado, lo  ejecute, si  éste da  permisos de
 ejecución al usuario.
 
 Los comandos tienen el siguiente aspecto:
@@ -169,8 +169,8 @@ comandos.sgml           graficos.sgml  matematicas.sgml   sobre.sgml
 compila*                internet.sgml  presentacion.sgml  temario.estado
 \end{verbatim}
 
-Si  escribimos {\tt  ls} (a secas) entonces  se  nos mostrará  el
-contenido  del directorio en el que nos encontramos actualmente.
+Si escribimos {\tt ls} (a secas) entonces se nos mostrará el contenido
+del directorio en el que nos encontramos actualmente.
 
 El comando {\tt ls} admite parámetros tales como {\tt -a, -l}
 
@@ -182,8 +182,8 @@ El comando {\tt ls} admite parámetros tales como {\tt -a, -l}
 
 Obsérvese que ambas  formas de escribir los  parámetros son igualmente
 válidas.  Como anotación,  si queremos  ver que  parámetros se  pueden
-utilizar en  un comando, normalmente  basta con escribir  {\tt Nombre
-del comando --help}.
+utilizar en un comando, normalmente basta con escribir {\tt Nombre del
+comando --help}.
 
 \begin{verbatim}
 [felix@localhost apuntes]\$ ls --help
@@ -322,9 +322,9 @@ desde cualquier directorio.
 
 \subsection{Trabajando con ficheros}
 
-Antes que nada, hay que entender  el sistema de permisos de los
-ficheros y directorios. Si  escribimos {\tt ls -l}, nos encontramos
-con la siguiente salida:
+Antes  que nada,  hay  que  entender el  sistema  de  permisos de  los
+ficheros y directorios. Si escribimos {\tt ls -l}, nos encontramos con
+la siguiente salida:
 
 \begin{verbatim}
 [felix@localhost apuntes]\$ ls -l
@@ -354,20 +354,17 @@ drwxrwxr-x    2 felix    felix        4096 oct 28 23:20 CVS/
 -rw-rw-r--    1 felix    felix        7417 oct 27 23:10 xwindow.sgml
 \end{verbatim}
 
-La  primera letra  a  la  izquierda de  cada  línea nos  indica
-si  se   trata  de  un   fichero  (``-'')  o   un  directorio
-(``d'').
+La primera letra a  la izquierda de cada línea nos  indica si se trata
+de un fichero (``-'') o un directorio (``d'').
 
-Después  nos  encontramos  con   tres  grupos  de  tres  letras
-(``rwx''), que según estén  activados (la propia letra, r,w,x)
-o  desactivados  (un guión,  -)  nos  concede  o deniega  permisos  de
-lectura ({\tt r}), escritura ({\tt w}) y ejecución ({\tt x}).
-  ¿Y  por   qué  son  tres  grupos?   Pues  porque  las
-tres  primeras  letras  se  refieren  al  propio  usuario  que  es  el
-dueño  de esos  ficheros,  el segundo  grupo se  refiere  al grupo  de
+Después nos encontramos con tres  grupos de tres letras (``rwx''), que
+según  estén activados  (la propia  letra, r,w,x)  o desactivados  (un
+guión,  -)  nos concede  o  deniega  permisos  de lectura  ({\tt  r}),
+escritura ({\tt w}) y ejecución ({\tt x}). ¿Y por qué son tres grupos?
+Pues porque las tres primeras letras se refieren al propio usuario que
+es el dueño de esos ficheros, el  segundo grupo se refiere al grupo de
 usuario  que  pertenece ese  usuario,  y  el  tercero a  los  usuarios
-``extraños`` o  ''ajenos'' al  usuario. Por  tanto, si
-leemos
+``extraños`` o ''ajenos'' al usuario. Por tanto, si leemos
 
 
 \begin{center}
@@ -375,23 +372,23 @@ $-\underbrace{rw-}_{u}\underbrace{rw-}_{g}\underbrace{r--}_{o}$
 \end{center}
 
 
-vemos que se trata de un  fichero (-) con permisos de lectura y
+vemos  que se  trata  de un  fichero  (-) con  permisos  de lectura  y
 escritura  para el  usuario y  el grupo  al que  pertenece, y  de sólo
 lectura para un ``extraño''.
 
 
-El siguiente sería un fichero de lectura, escritura y ejecución
+El  siguiente  sería un  fichero  de  lectura, escritura  y  ejecución
 únicamente para el usuario pro\-pie\-ta\-rio del fichero.
 
 \begin{center}
 $-\underbrace{rwx}_{u}\underbrace{---}_{g}\underbrace{---}_{o}$
 \end{center}
 
-Este  último  ejemplo es  un  directorio  (d) con  permisos  de
-lectura,  escritura y  ejecución  para el  usuario y  el  grupo, y  de
-lectura  y  ejecución  para  el ``extraño''.  En  el  caso  de
-directorios, el  permiso de  ejecución es  equivalente a  permiso para
-``entrar'' en el directorio.
+Este  último ejemplo  es un  directorio (d)  con permisos  de lectura,
+escritura  y ejecución  para  el  usuario y  el  grupo,  y de  lectura
+y  ejecución  para el  ``extraño''.  En  el  caso de  directorios,  el
+permiso de  ejecución es equivalente  a permiso para ``entrar''  en el
+directorio.
 
 \begin{center}
 $d\underbrace{rwx}_{u}\underbrace{rwx}_{g}\underbrace{r-x}_{o}$
@@ -405,9 +402,9 @@ tener  en  cuenta  que  {\bf  jamás podremos  eliminar  un  fichero  o
 retocarlo  si no  tenemos permisos  de  escritura sobre  él}. Esto  es
 impensable en algunas versiones de {\tt Windows}.
 
-El comando para copiar un fichero es {\tt cp [fichero de origen] [fichero
-de destino]}, es decir, que copiamos  el fichero {\bf pepe.txt} en {\bf
-juan.txt}.
+El  comando para  copiar un  fichero es  {\tt cp  [fichero de  origen]
+[fichero  de  destino]},  es  decir,  que  copiamos  el  fichero  {\bf
+pepe.txt} en {\bf juan.txt}.
 
 \begin{verbatim}
 [felix@localhost apuntes]\$ cp pepe.txt juan.txt
@@ -424,7 +421,7 @@ físicamente.
 \end{verbatim}
 
 \noindent\rule{\linewidth}{.75pt}
-NOTA: El  intérprete de  comandos \textbf{SÍ}  distingue en  mayúsculas y
+NOTA: El intérprete de comandos  \textbf{SÍ} distingue en mayúsculas y
 minúsculas,  tanto en  el  caso de  los  comandos como  en  el de  los
 ficheros y directorios. Esto significa que el comando mv es totalmente
 diferente a Mv, mV y MV. Asimismo,  el fichero pepe.txt no es el mismo
@@ -439,8 +436,8 @@ propietario, lo haremos, con {\tt chown}:
 [felix@localhost apuntes]\$ chown miguel pepe.txt
 \end{verbatim}
 
-si antes, {\bf pepe.txt} era de {\tt felix}, ahora pasa a
-ser de {\tt miguel}.
+si antes, {\bf pepe.txt} era de {\tt  felix}, ahora pasa a ser de {\tt
+miguel}.
 
 De igual forma, para cambiarlo de grupo, usaremos {\tt chgrp}. Si {\bf
 pepe.txt} era  del grupo  de los  profesores, y  queremos que  sea del
@@ -449,6 +446,23 @@ grupo de los estudiantes, sólo habrá que escribir lo siguiente:
 \begin{verbatim}
 [felix@localhost apuntes]\$ chgrp estudiantes pepe.txt
 \end{verbatim}
+
+En algunos sistemas  no se puede cambiar el propietario  de un fichero
+bajo ciertas condiciones:
+
+\begin{verbatim}
+$ ls -l hola
+-rw-r--r--    1 miguev   108             0 ago 10 20:27 hola
+$ chown frodo hola
+chown: hola: Operación no permitida
+\end{verbatim}
+
+Esto es normal en sistemas donde hay cuotas de usuario. Las cuotas son
+un mecanismo de limitación para que  los usuarios no puedan ocupar más
+de un  determinado volumen (su cuota)  en el disco. Si  este mecanismo
+está activo  no se permite  a los  usuarios cambiar el  propietario de
+ningún fichero, ya que podría usarse  este cambio para ocupar la cuota
+de otro usuario.
 
 Finalmente, para  cambiar los permisos  de un fichero, lo  haremos con
 {\tt chmod},  indicando a  que tipo de  usuario queremos  asignarlos y
