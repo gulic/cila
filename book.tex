@@ -43,11 +43,11 @@
 \usepackage{color}
 \usepackage{colortbl}
 
-% Paquete para imprimir las marcas de cortado 
-\usepackage[a4,center]{crop}
-
 % Paquete para vieguerías con verbatim
 \usepackage{verbatim}
+
+% Paquete para las marcas de corte, para imprenta
+\usepackage{crop}
 
 % Estilo para los apuntes del TILA, 
 % tomando código de los paquetes fncychap y ull.
@@ -65,7 +65,7 @@
 \begin{document}
 
 % Se da la orden de poner las marcas de corte
-{\crop}
+\crop[frame,axes,horigin=-0.5in,vorigin=-5mm]
 
 % El  comando  \sloppy relaja  los  párrafos  y  evita muchos  de  los
 % desbordamientos  horizontales. Esto  se  logra  permitiendo que  los
@@ -75,8 +75,8 @@
 % Parte frontal
 % Portadas, nota de copyright y dedicatoria
 \frontmatter
+\crop{odd}
 \include{portada}
-
 
 % Presentación y Contribuciones
 \pagestyle{plain}
@@ -97,15 +97,15 @@
 \listoftables\newpage\thispagestyle{empty}
 \listadeejemplos\newpage\thispagestyle{empty}
 
-
 % Parte principal
 \mainmatter
+\crop{odd}
 
 % Inclusión de los ficheros en el orden apropiado.
 \input{toc_includes.tex}
 
 % Parte posterior
-%\backmatter
+\backmatter
 
 % Índice terminológico
 \printindex\newpage\thispagestyle{empty}
