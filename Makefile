@@ -38,8 +38,7 @@ FILES = book.tex			\
 		recursos.tex		\
 		fdles.tex			
 
-IMAGES =	imagenes/gulic.ps		 \
-			imagenes/xwindow.eps
+IMAGES = $(wilcard imagenes/*.eps)
 
 EXAMPLES = 	ejemplos/HolaMundo.for 		\
 			ejemplos/HolaMundo.java		\
@@ -80,7 +79,7 @@ all: $(FILES) $(IMAGES) $(EJEMPLOS)
 	#latex book
 	#makeindex book.tex
 	#latex book
-	bibtex book
+	#bibtex book
 	latex book
 	dvips -o $(NAME).ps book.dvi
 
