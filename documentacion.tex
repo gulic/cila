@@ -1,3 +1,397 @@
-%Autor: rvr
+%Autor: amd77
 
-\chapter{Documentación y ayuda}
+\chapter{Documentacion y ayuda}
+\index{Documentacion}
+\index{Ayuda}
+
+El primer contacto con un entorno nuevo como Linux siempre se suele
+hacer junto a alguien que te orienta (al que de ahora en adelante
+me referiré con el término {\em gurú de turno}). Cuando ese gurú
+vuelve a sus tareas cotidianas normalmente te quedas solo y te toca
+buscarte la vida. En este capítulo veremos diferentes formas con las
+que conseguir el conocimiento suficiente para poderse buscar la vida
+solo y hasta convertirte en un gurú también, pues eso es lo que él
+ha hecho para saber lo que sabe. Veremos que una gran parte ya lo
+tienes almacenado en tu disco duro tras instalar Linux, y te diremos
+cómo conseguirlo, mientras que el que te falte lo podrás encontrar
+en la red, y te diremos dónde buscarlo.
+
+\section{Pasos para encontrar ayuda}
+
+Estos pasos  son para cuando  no sabes  como funciona un  programa. Si
+realmente lo  que pasa  es que  no entiendes  nada, deberías  pasar al
+siguiente punto, Recursos, donde se detallan guías y tutoriales. Estos
+pasos que aquí se detallan están en orden de dificultad creciente.
+
+\subsection{Información en línea de comandos}
+\index{Ayuda!--help}
+
+Cada comando en Linux siempre está documentado, ya sea de una forma
+u otra. Cuando conocemos un comando y no sabemos lo que hace nuestra
+primera opcion puede ser llamar al comando con el argumento {\tt --help}
+o {\tt -h}, con lo que en la mayoría de los casos se nos mostrará
+un pequeño resumen de su uso y de la forma de llamarlo, con lo que
+nuestras dudas comenzarán a disiparse. Esto es un estandar de facto
+bastante extendido.
+
+\subsection{Páginas man}
+\index{Documentacion!man}
+
+Si aún así seguimos con dudas, o si queremos ver una descripción más
+pormenorizada de lo que hace cada uno de los parámetros de que dispone
+el comando, probaremos si el comando dispone de {\em página de manual}
+tecleando {\tt man comando}. En caso afirmativo, nos aparecerá
+una descripción más detallada del comando, comenzando por un resumen,
+la descripción de la sintaxis, del funcionamiento, de las opciones
+y por último información de bugs, ficheros relacionados y referencias
+cruzadas. Desde los primeros UNIX las páginas de manual han sido el
+principal medio de documentación sobre comandos concretos y todas
+coinciden en los mismos contenidos mencionados anteriormente.
+
+Algo que debemos tener en cuenta es que debido también a la herencia
+UNIX, el primer idioma en que se escriben todos estos documentos técnicos
+suele ser el inglés, por ser el idioma de mayor difusión en el mundo
+de la informática. Cuando el documento es un documento muy usado,
+entonces voluntarios lo traducen a su idioma nativo. El caso es que
+las páginas de manual de los comandos más usados seguro que están
+ya traducidos al español. Si nada en el sistema, ni siquiera aplicaciones,
+aparecen en español, entonces es posible que haya algún problema con
+las variables de entorno del idioma (para más información consultar
+{\tt man setlocale}). Si hay aplicaciones que sí aparecen en español,
+entonces puede ser que estas páginas de manual no estén instaladas
+y tengas que hacerlo (depende de la distribución, en Debian el paquete
+se llama {\sf manpages-es}).
+
+Relacionados con el comando man existen dos comandos. El primero es
+que {\tt apropos}, que busca la palabra que le decimos en los resúmenes
+de las páginas de manual instaladas y nos muestra las páginas que
+coinciden. El segundo es de menor utilidad, se llama {\tt whatis},
+y simplemente muestra la línea de descripción del comando, no la ayuda
+completa.
+
+Con la llegada de los entornos gráficos, las páginas man se han modernizado
+también y se han integrado en los entornos más populares. En el caso
+del entorno de escritorio KDE, abriendo un konqueror y tecleando en
+la barra de dirección {\tt man:} obtenemos un listado de
+todas las páginas de manual organizadas en categorías, o bien seguido
+de una barra y el nombre del comando nos aparece directamente su página,
+por ejemplo, {\tt man:/ls}. En caso de tener varios idiomas
+también aparecen allí. En el caso del escritorio Gnome 1.2, todo lo
+tenemos en la aplicación {\sf Gnome-help-browser} (sistema integral de ayuda).
+
+\subsection{Páginas info}
+\index{Documentacion!info}
+
+Las páginas man para escribirse utilizan un preprocesador llamado
+{\sf troff}. Con la llegada de nuevos y más versatiles preprocesadores,
+las páginas man tuvieron se vieron en la necesidad de vincularse unas
+con otras, es decir, disponer de un índice del que se va a otras páginas
+y sobre estas, a su vez, puede irse a otras, etc: organizarlas como
+una obra de consulta más que como páginas aisladas. El primer fruto
+de esto fueron las páginas info, que son un sistema de ayuda navegable.
+Actualmente los preprocesadores como {\sf sgmltools} permiten producir
+formatos de salida info, html, y otros, a partir de un único texto
+de ayuda escrito por el programador de la aplicación, y cualquier
+ahorro de tiempo es una ventaja.
+
+El visualizador de páginas info, igual que man, ha evolucionado con
+los entornos gráficos. El visualizador con interfaz en modo texto
+se ejecuta teclando con {\tt info} o bien {\tt info comando}
+si ya sabemos lo que deseamos ver. Una vez dentro, con
+tabulador vamos recorriendo cada uno de los enlaces. Cuando queremos
+entrar en uno pulsamos {\tt enter}. La estructura es jerárquica,
+en forma de arbol, y podemos movernos a los nodos de arriba ({\tt u}),
+siguiente ({\tt n}) y anterior ({\tt p}).
+
+En modo gráfico, en el escritorio KDE, al igual que las páginas man,
+simplemente tecleamos en la barra de direcciones de konqueror {\tt info:}
+para verlo todo, o bien seguido de una barra y el nombre de un tema
+concreto, como por ejemplo, {\bf info:/libc}. Para Gnome
+1.2, la aplicación {\sf Gnome-help-browser} (Sistema integral de ayuda)
+nos permite visualizarlo también.
+
+\subsection{Documentación dvi/ps/pdf/html}
+\index{Documentacion!dvi}
+\index{Documentacion!ps}
+\index{Documentacion!pdf}
+\index{Documentacion!html}
+
+El siguiente paso en documentación se dió con {\sf Latex} y con la evolución
+del {\sf sgmltools} hacia {\sf docbook}. Con ambos sistemas, escribir manuales
+y documentos se facilita enormemente, y a partir de un único documento
+se pueden conseguir versiones en diferentes formatos:
+
+\begin{itemize}
+\item {\sf DVI (DeVice Independent file)}: Es el formato de salida del procesador
+Latex. Sólo se usa en documentos sin imágenes. Se visualiza, entre
+otros, con el programa xdvi.
+
+\item {\sf PS (PostScript)}: Es un formato de impresión para impresoras de calidad
+profesional y resulta muy interesante pues se ve perfecto tanto en
+impresoras profesionales como en impresoras normales. La visualización
+en pantalla aparece tal cual va a salir por impresora. Se puede visualizar
+con {\sf gs}, {\sf gv}, {\sf Gnome-gv} ({\sf ggv}, para Gnome) y {\sf kghostview} (para KDE).
+
+\item {\sf PDF (Portable Document Format)}: Es un formato reciente similar al
+PostScript, con la desventaja de que no se imprime directamente en
+las impresoras, sino que es necesario instalar un visor. Como visualizadores
+libres tenemos el {\sf xpdf} y todos los anteriores visores de PostScript. También
+existe el {\em Acrobat Reader} ({\sf acroread}) que no es libre pero sí gratuito.
+
+\item {\sf HTML (HyperText Meta Language)}: El formato de archivos de la www resulta
+interesante para manuales, pues se puede publicar en internet y al
+mismo tiempo lo puedes tener como paquete instalado en un directorio
+de documentación de tu disco duro para poder verlo sin conexión. Suele
+contener vínculos que te permiten navegar por dentro de todas las
+relaciones en el documento. Se puede ver con cualquier navegador de
+las docenas de ellos que existen para Linux, tanto en modo gráfico
+como en modo texto. Aparte, los sistemas de ayuda de Gnome y KDE,
+así como {\sf devhelp} (un sistema de ayuda para programadores),
+aunque todos tengan una interfaz integrada con el escritorio, resulta
+que usan HTML, por lo que también se pueden ver en cualquier navegador.
+
+\item {\sf Texto plano}: Este formato puede parecer obsoleto, pero sigue usándose
+pues no hace falta ningun visor para verlo. En especial, es interesante
+cuando no tienes entorno gráfico, o cuando no tienes navegadores con
+los que visualizar el resto de formatos, o simplemente por ahorrar
+espacio, pues al carecer de todos los códigos de formato ocupa notablemente
+menos. Se visualiza con un simple editor, o bien con {\tt less}
+o {\tt zless} si tiene sufijo {\em .gz} (compresión {\sf gzip}).
+
+\end{itemize}
+
+\subsection{Documentación del paquete}
+\index{Documentacion!del paquete}
+
+Normalmente usamos Linux despues de haber instalado una de las distribuciones
+existentes. Sea cual sea la distribución, una cosa en la que se coincide
+es organizar las aplicaciones en paquetes individuales. Cuando alguien
+instala uno de esos paquetes, se instalan los ejecutables y resto
+de archivos necesarios para el funcionamiento de la aplicación, y
+también las páginas de manual y de info y también suele ser común
+tener un directorio con el resto de documentación del paquete.
+
+Recordemos que el software en Linux es código abierto, eso significa
+que el programador distribuye libremente el código fuente de las aplicaciones,
+con el deseo de que sea útil para más gente. Y para que esto sea posible
+para el máximo número de personas, el programador siempre suele acompañar
+junto al código fuente de su programa instrucciones de instalación
+y de uso, así como manuales que no estén en formato man o info. Cuando
+la gente de la distribución crea el ejecutable a partir del código
+fuente, éste ya no es necesario, pero como los archivos de ayuda del
+programador tienen información util pasan a colocarse en un directorio,
+que suele ser {\tt /usr/share/doc/nombredelpaquete}. Cuando no conseguimos
+ayuda de otras formas, no debemos olvidarnos de mirar aquí.
+
+En la distribución Debian existe un paquete llamado {\sf dhelp}
+que busca documentos utiles para el usuario por todos los directorios
+de documentación de paquete y te los indexa y muestra de forma organizada
+para un fácil acceso a todos ellos.
+
+
+\subsection{Recursos internet de la distribución}
+\index{Documentacion!de la distribucion}
+
+Cada distribución de Linux construye los ejecutables a partir de las
+fuentes a su manera, y ordena los archivos de configuración y archivos
+de ayudas según su criterio. Posiblemente las ayudas estén ahí y no
+seamos capaces de encontrarlas. Simplemente pidiendo ayuda a usuarios
+más veteranos de nuestra misma distribución consigamos resolver nuestro
+problema o duda. Para esto, solo tenemos que buscar foros en internet
+sobre nuestra distribución, o bien sobre Linux en general. Si lo que
+queremos realizar es algo común, muy probablemente otra persona lo
+haya preguntado y ya ha sido contestado, así que buscando previamente
+en los archivos de las listas nuestra pregunta nos ahorraremos preguntarlo
+y evitaremos hacer a la gente preguntas que ya han sido tratadas y
+contestadas. A veces, cuando los usuarios veteranos están cansados
+de responder siempre a las mismas preguntas, se crean los {\em FAQ - Frequently
+Asked Questions} (traducido por {\em PUF - Preguntas de Uso Frecuente}), que son colecciones
+de preguntas/respuestas muy típicas y útiles para cualquiera.
+
+Por ejemplo, para la distribución Debian, el sitio donde ponerse en
+contacto con usuarios veteranos es via lista de correo (una dirección
+de email a la que se pueden suscribir muchas personas) {\tt debian-user-spanish@lists.debian.org}
+o bien en el siguiente foro: {\tt http://www.esdebian.org/}. Para obtener
+FAQ's y otros documentos en: {\tt http://www.debian.org/doc/index.es.html}
+
+
+\subsection{Recursos internet del programa}
+\index{Documentacion!del programa}
+
+En caso que nuestras pretensiones de conocer el programa sean mayores,
+o que las anteriores búsquedas hayan sido infructuosas, siempre nos
+queda la opción de buscar la página web de la aplicación. Como las
+aplicaciones libres viven de su difusión, el programador siempre intenta
+disponer de una página web donde se anuncie su programa, las nuevas
+versiones, su dirección de correo donde comunicar bugs, enlaces con
+ayudas y tutoriales, listas de correo donde ser notificado sobre las
+actualizaciones o donde los usuarios de su programa pueden discutir,
+ayudarse unos a los otros o proponer mejoras al programa. Mirando
+en el directorio de documentación del programa o tecleando el nombre
+de la aplicación en un buscador nos puede llevar a esta página.
+
+
+\subsection{Código fuente}
+\index{Documentacion!codigo fuente}
+
+Una lectura del código fuente puede a veces sacarnos de ciertos problemas.
+A lo mejor no está a tu alcance, pero cuando los pasos anteriores
+son infructuosos, éste es el último paso que te queda, y el que te
+convertirá en un gurú. Por ejemplo, si nuestra aplicación no funciona
+y acaba con un mensaje de error extraño, y ni en los buscadores ni
+otros sitios obtenemos respuesta, siempre podemos buscar la cadena
+del mensaje en el código fuente y una vez lo encontremos, mirando
+el entorno del mensaje, aunque no conozcamos el lenguaje de programación,
+a lo mejor podemos intuir que debe estar pasando para que nuestro
+programa no funcione. También, si el programa tiene aún partes en
+desarrollo o partes que no han sido probadas, el programador puede
+indicarlo poniendo un texto con una advertencia en medio del código.
+Si vemos que el programa falla en algo inacabado, ya vemos no es problema
+nuestro. Este es el poder de la fuente abierta. {\em ¡Usa la fuente Luke!}
+Esto es lo que distingue a los verdaderos {\em Jedi} de Linux.
+
+
+\section{Recursos:}
+
+\subsection{Linux Documentation Proyect}
+\index{Ayuda!ldp}
+\index{Ayuda!howtos}
+\index{Ayuda!comos}
+\index{Ayuda!faqs}
+\index{Ayuda!pufs}
+
+Este proyecto centraliza mucha información. Por su grado de elaboración,
+se pueden subdividir en:
+
+\begin{itemize}
+\item Guides (Manuales/Tutoriales/Cursos): Explicación exhaustiva sobre
+un conjunto de temas.
+\item Howtos (Comos): Explicación exhaustiva sobre un tema concreto.
+\item Faqs (Pufs): Preguntas y respuestas sueltas sobre un determinado tema.
+\end{itemize}
+Si no están instalados ya en nuestra distribución, los sitios donde
+podemos conseguirlos son los siguientes:
+
+\begin{itemize}
+\item Original, en inglés: http://www.tldp.org/docs.html 
+\item En español: http://es.tldp.org/ (proyecto Lucas). 
+\end{itemize}
+No todos los documentos están traducidos, y la fuente más oficial
+es en inglés, así que si no encuentras lo que buscas en español, intenta
+buscarlo en inglés.
+
+En la distribución Debian existen los siguientes paquetes con información
+en castellano que puedes instalar:
+
+\begin{description}
+
+\item [{\tt ldp-es-lipp}] Linux Instalación y Primeros Pasos, 239 páginas, se encuentra en {\tt /usr/share/doc/ldp-es/lipp/lipp-1.1.ps.gz}
+
+\item [{\tt ldp-es-garl}] Guía de Administración de Redes con Linux, 352 páginas, se encuentra en {\tt /usr/share/doc/ldp-es/garl/nag.ps.gz}
+
+\item [{\tt ldp-es-gulp}] Linux Programming Guide, 151 páginas, se encuentra en {\tt /usr/share/doc/ldp-es/gulp/lpg.ps.gz}
+
+\item [{\tt ldp-es-glpu}] Guia de Linux para el Usuario, 169 páginas (bash, editores,
+xwindows, etc), se encuentra en {\tt  /usr/share/doc/ldp-es/glup/guide.ps.gz}
+
+\item [{\tt linux-tutorial-es}] Tutorial de Linux, se encuentra en {\tt /usr/share/doc/linux-tutorial-es/index.html}
+
+\item [{\tt lucas-novato}] De novato a novato, 81 páginas (instalaciones debian
+1.3 y 2.0, comandos básicos, trucos...), se encuentra en {\tt /usr/share/doc/lucas/novato/novato-a-novato.ps.gz}
+
+\item [{\tt doc-linux-es}] Howtos traducidos al castellano, 117 comos diferentes para multitud de temas, se encuentran en {\tt /usr/share/doc/HOWTO/es/HOWTO/}
+
+\item [{\tt doc-es-misc}] Faq de es.comp.os.linux, 142 páginas, se encuentra en {\tt /usr/share/doc/doc-es-misc/linux-faq.es.ps.gz}
+
+\end{description}
+
+\subsection{Buscadores: Google}
+\index{Ayuda!buscadores}
+
+Cada proyecto dispone de su web donde ver información de actualizaciones,
+ultimas versiones, etc. Para encontrarla puedes usar cualquiera de
+los buscadores de internet, por ejemplo, {\tt www.google.com}. En navegadores
+como {\sf mozilla}, las búsquedas en internet están integradas y
+facilitadas con un botón que dice Buscar en el propio navegador. En
+{\sf konqueror}, para buscar en google solo tienes que escribir en
+la barra de direcciones {\tt google:} y las palabras que quieras
+buscar separadas por espacios.
+
+
+\subsection{Listas de correo (en inglés {\em mailing list})}
+\index{Ayuda!listas de correo}
+
+Una lista de correo es una direccion de correo (email) ficticia a
+la que te suscribes y que si envías un mensaje a esta dirección es
+recibido por todas las personas que se hayan suscrito. Las listas
+de correo se crean con una temática en mente, y hay multitudes para
+casi cualquier tema, y linux no va a ser menos en este aspecto. Como
+ejemplo, las siguientes (la lista podría ser interminable):
+
+\begin{itemize}
+
+\item Conjunto de listas sobre el proyecto Debian, donde los usuarios y
+los desarrolladores se organizan: {\tt http://lists.debian.org/}
+
+\item Listas para el proyecto de escritorio Gnome: {\tt http://mail.gnome.org/}
+
+\item Listas para el proyecto de escritorio KDE: {\tt http://lists.kde.org/} 
+
+\end{itemize}
+
+\subsection{Grupos de news (del ingles {\em news}, o la red {\sf usenet})}
+\index{Ayuda!grupos de news}
+
+Los grupos de news o usenet son lo mismo que las listas de correo
+pero usando un protocolo específico llamado {\sf nntp} ({\em News Network Transfer Protocol})
+Para verlas necesitas usar un cliente especial, por ejemplo:
+{\sf Mozilla News}, luego {\sf knews} o {\sf knode} para KDE, {\sf sylpheed} o {\sf pan} para Gnome, {\sf lynx} y {\sf trn} para consola, y muchos más. Aquí
+tienes más información:
+
+\begin{itemize}
+
+\item Buscador dentro de grupos de noticias: {\tt http://groups.google.com/}
+
+\item Los faqs de muchos grupos de news españoles:  {\tt http://www.faqs.es.org/}
+
+\item Página web de la jerarquia de grupos de news es.comp.os.linux.{*}:
+{\tt http://www.escomposlinux.org/}
+
+\end{itemize}
+
+\subsection{Páginas de bugs}
+\index{Ayuda!reporte de bugs}
+
+Cuando llevas un tiempo usando un programa y te das cuenta que haciendo
+una secuencia de acciones consigues colgarlo, y cada vez que repites
+esta secuencia lo cuelgas, resulta que has conseguido un bug del programa
+(fallo, errata). Es raro encontrar estos fallos de forma tan determinista
+ya que normalmente los fallos suelen ser aleatorios lo que dificulta
+su localización y obliga a usar herramientas de programador para descubrirlo
+(depuradores, core-dumps, trazas, etc), pero si lo encuentras le habrás
+hecho un gran favor al programador. Ahora solo tienes que decirle
+lo que has descubierto. Busca en la página de su programa el listado
+de bugs, comprueba que el tuyo ya no esté (lo siento ;-), y si no
+está, comunícalo. Para éllo suele existir un formulario web donde
+escribes tu email, el bug y se le asigna un número. Luego, por ese
+número, podrás volver a la web y encontar los comentarios del programador
+o de otros usuarios con respecto a ese bug. En caso de que no disponga
+de este sistema, simplemente suscribiéndote a su lista de correo o
+enviándole un email te servirá. 
+
+Ejemplos de sitios solo para notificar y hacer seguimiento de bugs
+son los siguientes:
+
+\begin{itemize}
+
+\item Para la distribución Debian: {\tt http://www.debian.org/Bugs/}
+
+\item Para el navegador Mozilla: {\tt http://bugzilla.mozilla.org/}
+
+\item Para el entorno de escritorio Gnome: {\tt http://bugzilla.gnome.org/}
+
+\item Para el entorno de escritorio KDE: {\tt http://bugs.kde.org/}
+
+\end{itemize}
+
+\end{document}
