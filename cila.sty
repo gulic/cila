@@ -483,9 +483,25 @@
  {\vspace{-1ex}\hrule \end{minipage}\end{center}}
 
 %%%
-%%%  Añadidos para poder compilar 
+%%%  Añadidos para poder compilar el tema de LaTeX
 %%%
 \newcommand{\guia}{Guía local}
+
+% No se tienen versiones PS de los tipos rsfs.
+% Por ello, esto no no se puede hacer para pdf
+\ifx\pdfoutput\undefined % No estamos corriendo pdftex
+\IfFileExists{mathrsfs.sty}
+  {\RequirePackage{mathrsfs}\let\MathRSFS\mathscr\let\mathscr\relax}{}
+\fi
+\IfFileExists{amssymb.sty}
+  {\let\noAMS\relax \RequirePackage{amssymb}}
+  {\def\noAMS{\endinput}\RequirePackage{latexsym}}
+
+\IfFileExists{euscript.sty}
+  {\RequirePackage{euscript}}{}
+%\IfFileExists{eufrak.sty}
+%  {\RequirePackage{eufrak}}{}
+
 
 %%
 %% Añadido para el tema de OpenOffice, basado en el curso
