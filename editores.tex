@@ -507,6 +507,69 @@ Otros  caracteres   adquieren  un  significado  especial   cuando  son
 precedidos de la barra invertida.  Así \verb.\|. es el operador ``o'',
 es decir la  expresión \verb.casa\|coche. encaja con {\tt  casa} y con
 {\tt coche}.
+En {\tt VIM} se pueden usar las expresiones de {\tt VI} tales como \verb.$. pero también utiliza el carácter \verb.^. que encaja con el principio de la línea. El carácter \verb.\<. se utiliza para hacer erferencia el principio de palabra y \verb.\>. hace referencia al final de palabra. Así podremos sustituir la palabra {\tt vi} por {\tt vim} sin que cambien palabras del texto como vivir, etc.
+\begin{verbatim}
+$ :s/\<vi\>/vim
+\end{verbatim}
+y si queremos sustituir solo la palabra vi que se encuentre en una sola línea por vim, podremos utilizar:
+\begin{verbatim}
+$ :s/^vi$/vim
+\end{verbatim}
+
+Los metacaracteres nos permiten una gran flexibilidad a la hora de
+trabajar con expresiones regulares.
+\begin{table}[htbp]
+\begin{tabular}{|c|p{0.88\textwidth}|}
+\hline
+{\tt .} & Cualquier caracter \\
+{\tt \verb.\.s} & Espacios en blanco \\
+{\tt \verb.\.d} & Digitos \\
+{\tt \verb.\.h} & Cualquier letra \\
+{\tt \verb.\.w} & Letras y digitos \\
+{\tt \verb.\.l} & Letras minúsculas \\
+\tt \verb.\.u} & Letras mayúsculas \\
+\hline
+\end{tabular}
+\caption{Metacaracteres}
+\end{table}
+
+Vamos a poner un ejemplo con este tipo de comandos. Si queremos buscar en el texto fechas con el formato DD/MM/AAAA, lo que haríamos sería: 
+\begin{verbatim}
+$ /\d\d/\d\d/\d\d\d\d
+\end{verbatim}
+
+O por ejemplo si buscamos palabras que empiezen con mayúsculas de un modo sencillo podemos hacer:
+\begin{verbatim}
+$ /\u\l
+\end{verbatim}
+Ahora vamos a introducir unos elementos nuevos para hacer nuestros reemplazos y nuestra busquedas más \verb. "profesionales".. Uno de ellos son los \verb."Cuantificadores".. Si necesitamos buscar en un documento grandes grupos de números de 9 cifras por ejemplo nos resultaría muy trabajoso escribir \verb./\d\d\d\d\d\d\d\d\d.. Los cuantificadores son diversas expresiones que nos permiten definir el número de veces que aparecerá el tipo de caracter que queremos buscar. Los más importantes son \verb.\+., relaciona el caracter que aparece una o más veces en una palabra, \verb.\=., relaciona el caracter que aparece 0, 1 o más veces en una palabra. Con \verb.\{n,m}. relaciona el caracter si se encuentra entre n y m veces. La expresión \verb.\{n}. relaciona el caracter si se encutra n veces. Así en el ejemplo anterior podríamos usar:
+\begin{verbatim}
+$/\d\{9}
+\end{verbatim}
+y nos mostraría las expresiones que contengan 9 digitos.
+Podemos convinar los cuantificadores con los rangos de caracteres para conseguir mejores resultados. Los rangos de expresiones regulares son definidos dentro de \verb.[].. Por ejemplo, \verb./[a-z]. buscará en el texto todos las letras minúsculas, \verb./[A-Z]. todas las letras mayúsculas. También existe un valor negativo en los rangos, es el {\tt \verb.^.}. El comando \verb./[^a-z]. mostrará todas las letras mayúsculas.
+Tambien podemos cambiar el orden de las frases de todo un texto o de zonas específicas. Se utilizan los \verb."agrupadores".. Se trata de crear grupos de expresiones que luego para sustituir utilizaremos expresiones que nos permitan reordenarlos. Para definir un grupo se utiliza \verb.\(\)., el texto que se encuentre entre esos el paréntesis y la barra invertida será la expresion que buscará. Por ejemplo, estamos usando un archivo con varios nombres de ciudades, pero para poder utilizarlo necesitamos que todos esten al principio de la línea, sin ningun espacio, podemos utilizar el siguiente comando: 
+\begin{verbatim}
+:1,$s/\(\s\+\)\(\w\+\)/\2/g.
+\end{verbatim}
+el anterior comando busca en todo el documento(\verb.1,$.)que conetenga cualquier número espacios delante(\verb.\(\s\+\).) y que detrás contenga alun texto(\verb.\(\w\+\).) y lo sustituye por la exresión(\verb.\2.), es decir, solo mantiene el grupo \verb.\2., el que contiene la palabra. 
+
+\begin{table}[htbp]
+\begin{tabular}{|c|p{0.88\textwidth}|}
+\hline
+{\tt \verb.\1.} & Hace referencia al primer grupo \\
+{\tt \verb.\2.} & Hace referencia al segundo grupo \\
+{\tt ...} & ... \\
+{\tt \verb.\U.} & Todos los siguientes carateres se cambirán en mayúsculas \\
+{\tt \verb.\L.} & Todos los siguiente caracteres se cambiarán a minúsculas \\
+{\tt \verb.\E.} & Finaliza el parámetro \verb.\U. y \verb.\L. \\
+{\tt \verb.\u.} & El siguiente carácter se cambiará a mayúscula \\
+{\tt \verb.\l.} & El siguiente carácter se cambiará a minúscula \\
+{\tt \verb.\r.} & Parte la línea en dos en ese punto \\
+\hline
+\end{tabular}
+\caption{Opciones de los agrupadores}
+\end{table}
 
 \section{Joe}
 
