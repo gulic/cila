@@ -2,7 +2,7 @@ Source: cila-libro
 Section: doc
 Priority: optional
 Maintainer: Miguel Ángel Vilela García (miguev) <miguev@gulic.org>
-Build-Depends: debhelper (>> 3.0.0), make, tetex-extra, tetex-eurosym, ps2pdf, dvips
+Build-Depends: debhelper (>> 3.0.0), make, tetex-extra, tetex-eurosym, dvips, gs-common
 Standards-Version: 3.5.2
 
 Package: cila-libro
