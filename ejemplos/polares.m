@@ -11,4 +11,3 @@ subplot(2,2,3);   # cuadrante 3 de 4
 polar(x,cos(2*x));# rosa de cuatro petalos
 subplot(2,2,4);   # cuadrante 4 de 4
 polar(x,cos(3*x));# rosa de tres petalos
-

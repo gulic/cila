@@ -11,4 +11,3 @@ function [max, idx] = vmax (v)
     endif
   endfor
 endfunction
-

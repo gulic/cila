@@ -9,4 +9,3 @@ plot(y,'*');      # plotea los datos aleatorios con *
 subplot(1,2,2);   # cuadrante 2 de 2
 title("histograma");
 hist(y,20,1);     # histograma de 20 barras normalizado a 1
-

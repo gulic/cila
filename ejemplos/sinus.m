@@ -8,4 +8,3 @@ plot(x, +sin(2*pi*x), ';+sin;')
 plot(x, +cos(2*pi*x), ';+cos;')
 plot(x, -sin(2*pi*x), ';-sin;')
 plot(x, -cos(2*pi*x), ';-cos;')
-

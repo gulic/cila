@@ -740,7 +740,7 @@ on} y se pueden añadir titulos  a las graficas con un tercer parametro
 a la funcion plot. Veamos un ejemplo:
 
 \begin{figure}[hbtp]
-\centering\includegraphics[width=0.7\textwidth]{imagenes/sinus.m.eps}
+\centering\includegraphics[width=\textwidth]{imagenes/sinus.m.eps}
 \caption{Múltiples líneas por grafica.}
 \end{figure}
 
@@ -748,30 +748,31 @@ a la funcion plot. Veamos un ejemplo:
 Mostramos graficas sobreimpresas entre ellas y les asignamos titulos.
 \end{ejemplo}
 
-Octave+Gnuplot permiten diferentes estilos en las gráficas. Por
+Octave  y Gnuplot  permiten diferentes  estilos en  las gráficas.  Por
 ejemplo, en polares, de la forma {\tt polar($\theta$,$\rho$)}:
+
+\begin{figure}[hbtp]
+\centering\includegraphics[width=\textwidth]{imagenes/polares.m.eps}
+\caption{Diagramas en coordenadas polares}
+\end{figure}
 
 \begin{ejemplo}{polares.m}{Presentacion grafica en polares.}
 Mostramos cuatro graficas diferentes en polares en cuatro cuadrantes.
 \end{ejemplo}
 
-\begin{figure}[hbtp]
-\centering\includegraphics[width=0.7\textwidth]{imagenes/polares.m.eps}
-\caption{Diagramas en polares}
-\end{figure}
-
 Tambien en forma de histograma, adornando las graficas con titulos.
 
-\begin{ejemplo}{histo.m}{Presentacion histograma.}
-Mostramos un histograma y sus  datos de partida, con titulos
-sobre las graficas. \end{ejemplo}
-
 \begin{figure}[hbtp]
-\centering\includegraphics[width=0.7\textwidth]{imagenes/histo.m.eps}
+\centering\includegraphics[width=0.9\textwidth]{imagenes/histo.m.eps}
 \caption{Representación de histogramas}
 \end{figure}
 
-\subsection*{Representación en dos  dimensiones}
+\begin{ejemplo}{histo.m}{Presentacion histograma.}
+Mostramos un histograma y sus  datos de partida, con titulos
+sobre las graficas. 
+\end{ejemplo}
+
+\subsection*{Representación en 3D}
 
 La  función {\tt  mesh(x,y,z)} hace  una representación  3D dados  dos
 vectores {\tt  x} e {\tt y}  para los ejes y  una matriz bidimensional
@@ -783,10 +784,11 @@ vez tenemos la matriz y los ejes, las dos llamadas son directas.
 
 \begin{ejemplo}{meshplot.m}{Grafica en tres dimensiones.}
 Mostramos una  sinc en  3 dimensiones,  asi como  los planos
-usados para generarla. \end{ejemplo}
+usados para generarla. 
+\end{ejemplo}
 
 \begin{figure}[hbtp]
-\centering\includegraphics[width=\textwidth]{imagenes/meshplot.m.eps}
+\centering\includegraphics[width=0.8\textwidth]{imagenes/meshplot.m.eps}
 \caption{Gráficas en tres dimensiones}
 \end{figure}
 
@@ -845,26 +847,31 @@ ans =
    0.31010  -1.38565
   -0.64096   0.58650
 
-octave:7> diff([1 2 4 5 7 9 11 14]) # resta cada elemento con su anterior
+# resta cada elemento con su anterior
+octave:7> diff([1 2 4 5 7 9 11 14]) 
 ans =
 
   1  2  1  2  2  2  3
 
-octave:8> find ([0 0 0 0 0 0 1 0 0 0 5 0]) # encuentra indices elementos no nulos
+# encuentra indices elementos no nulos
+octave:8> find ([0 0 0 0 0 0 1 0 0 0 5 0]) 
 ans =
 
    7  11
-octave:9> linspace (1, 10, 8) # subdivide linealmente el intervalo [1,10] en 8 puntos.
+# subdivide linealmente el intervalo [1,10] en 8 puntos.
+octave:9> linspace (1, 10, 8) 
 ans =
 
-   1.0000   2.2857   3.5714   4.8571   6.1429   7.4286   8.7143  10.0000
+  1.0000  2.2857  3.5714  4.8571  6.1429  7.4286  8.7143 10.0000
 
-octave:13> logspace (0, 3, 6) # subdivide logarítmicamente el intervalo [10^0,10^3] en 6 puntos.
+# subdivide logarítmicamente el intervalo [10^0,10^3] en 6 puntos.
+octave:13> logspace (0, 3, 6) 
 ans =
 
-     1.0000     3.9811    15.8489    63.0957   251.1886  1000.0000
+   1.0000   3.9811  15.8489  63.0957  251.1886 1000.0000
 
-octave:26> [a,b,c]=lu([1,3,2;3,2,1;3,2,6]) # factorización lu de una matriz
+# factorización lu de una matriz
+octave:26> [a,b,c]=lu([1,3,2;3,2,1;3,2,6]) 
 a =
 
   1.00000  0.00000  0.00000
@@ -906,11 +913,13 @@ c =
 \end{verbatim}
 
 
-\section{Resolución numérica de ecuaciones diferenciales}
+\section{Ecuaciones diferenciales}
+
 \index{Octave!ecuaciones diferenciales}
+
 \begin{ejemplo}{ode.m}{Resuelve una EDO ordinaria}
 Resuelve una EDO ordinaria de tercer orden y muestra por pantalla
-la evolucion de los x(t).
+la evolucion de los {\tt x(t)}.
 \end{ejemplo}
 
 \begin{figure}[hbtp]
@@ -919,9 +928,11 @@ la evolucion de los x(t).
 \end{figure}
 
 \section{Polinomios}
+
 \index{Octave!polinomios}
-Un polinomio de grado r en octave se presenta como un vector de
-dimensiones r+1. A partir de el se pueden realizar operaciones.
+
+Un  polinomio de  grado r  en  octave se  presenta como  un vector  de
+dimensiones $r+1$. A partir de el se pueden realizar operaciones.
 
 \begin{verbatim}
 octave:10> a=[1,2,3]; # a(x)=x^2+2x+3
@@ -950,7 +961,9 @@ ans = 40
 % Funciones financieras: no tengo ni idea.
 
 \section{Teoría de control}
+
 \index{Octave!teoría de control}
+
 La versión 2.1 de octave incorpora  una Toolbox de Control. El control
 es una rama de la ingeniería  dedicada a modelar sistemas mediante las
 ecuaciones diferenciales  que relacionan  su salida  con su  entrada y
@@ -961,14 +974,16 @@ función de transferencia de un sistema.
 % no se si no completar esto porque es muy aburrido y poco vistoso.
 
 \section{Procesamiento de señales}
+
 \index{Octave!procesamiento de señales}
+
 En esta categoría  están todas las funciones dedicadas  a trabajar con
 espectros de señales. Tanto la  {\em FFT}, como filtros digitales {\em
 FIR} e {\em  IIR}, diferentes tipos de ventanas, o  calculo de modelos
 ARMA.
 
-% Estaría bien que alguien comprobase los valores de las escalas, porque
-% no me suenan nada que en la fft quedara así (jesus?)
+% Estaría  bien que  alguien comprobase  los valores  de las  escalas,
+% porque no me suenan nada que en la fft quedara así (jesus?)
 
 La transformada de Fourier discreta, más conocida por el nombre de su
 algoritmo FFT ({\bf Fast Fourier Transform}), es la versión discreta
@@ -978,18 +993,17 @@ función para la ingeniería por antonomasia, y en este ejemplo veremos
 qué sencillo resulta obtener la transformada de Fourier discreta de
 una senoidal y un pulso.
 
-\begin{ejemplo}{fftview.m}{Muestra  la FFT  de dos  funciones} Muestra
-por pantalla el módulo  y la fase de dos funciones:  una sinusoidal y un
-pulso. \end{ejemplo}
+\begin{ejemplo}{fftview.m}{Muestra  la FFT  de dos  funciones}
+Muestra  por pantalla  el  módulo  y la  fase  de  dos funciones:  una
+sinusoidal y un pulso.
+\end{ejemplo}
 
 \begin{figure}[hbtp]
-\centering\includegraphics[width=\textwidth]{imagenes/fftview1.m.eps}
-\caption{Ejemplo de FFT aplicado a una sinusoidal}
-\end{figure}
-
-\begin{figure}[hbtp]
-\centering\includegraphics[width=\textwidth]{imagenes/fftview2.m.eps}
-\caption{Ejemplo de FFT aplicado a una función escalón}
+\centering
+\subfigure[Ejemplo de FFT aplicado a una sinusoidal]{%
+\includegraphics[width=0.8\textwidth]{imagenes/fftview1.m.eps}}
+\subfigure[Ejemplo de FFT aplicado a una función escalón]{%
+\includegraphics[width=0.8\textwidth]{imagenes/fftview2.m.eps}}
 \end{figure}
 
 % estaría bien poner un filtro de ejemplo, antes y despues de pasar
@@ -997,6 +1011,6 @@ pulso. \end{ejemplo}
 
 % FALTA PARTE DE TRATAMIENTO DE IMAGENES.
 
-En la sección de Gnuplot veremos como salvar estas gráficas en un fichero.
+% En la sección de Gnuplot veremos como salvar estas gráficas en un fichero.
 
 
