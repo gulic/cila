@@ -162,7 +162,54 @@ entero)  o  {\tt no},  y  a  continuación  nos pregunta  si  realmente
 queremos salir,  a lo cual ahora  sí, responderemos {\tt y}  para {\tt
 sí} o {\tt n} para {\tt no}.
 
-Una función  muy básica también  es la  de buscar y  reemplazar texto.
+
+Desplazándonos por el texto:
+
+Emacs es famoso por sus innumerables combinaciones de teclas para realizar
+cualquiera de las operaciones que nos ofrece. Algunas de las combinaciones
+de teclas para movernos cómodamente por nuestros documentos son:
+\begin{verbatim}
+
+Alt + f : Sitúa el cursor al principio de la palabra siguiente.
+Alt + b : Sitúa el cursor al principio de la palabra anterior.
+Ctrl + a : Sitúa el cursor al principio de la línea actual.
+Ctrl + e : Sitúa el cursor al final de la línea actual.
+Alt + a : Retrocede el cursor hasta el principio de la frase.
+Alt + e : Avanza el cursor hasta el final de la frase.
+Home(Inicio): Nos permite situarnos al principio del "buffer".
+End(Fin): Nos permite situarnos al final del "buffer".
+Ctrl + l: Sitúa el cursor justo al principio de la línea del medio de la
+	  pantalla
+
+\end{verbatim}
+
+Algunas teclas para eliminar texto:
+
+\begin{verbatim}
+
+Alt + d : Elimina la palabra que sigue al cursor.
+Alt + delete(supr) : Elimina la palabra anterior al cursor.
+Ctrl + k : Elimina la línea actual entera.
+Alt + k : Elimina la frase siguiente
+Ctrl x + BackSpace : Elimina la frase anterior
+
+\end{verbatim}
+
+
+
+
+
+Hay que añadir un truco bastante útil que es la combinación de teclas
+Ctrl + u, la cual nos permite repetir cualquier comando n veces.
+
+Por ejemplo, si quisiéramos avanzar 24 palabras, utilizaríamos la secuencia
+de teclas:
+
+"Ctrl U" "24" "Alt + f"
+
+
+
+Otra función  muy básica también  es la  de buscar y  reemplazar texto.
 Esto puede hacerse  cómodamente con la combinación  {\tt \flq Ctrl\frq
 -s}, dejando  pulsado la  tecla {\tt \flq  Control}\frq y  pulsando la
 {\tt s}, y a continuación poniendo que queremos buscar y pulsando {\tt
@@ -210,7 +257,21 @@ inglés), esto es,  ``todas las palabras que empiecen por  c y terminen
 por j''  o ``todas  las mayúsculas cambiarlas  por minúsculas''  en el
 caso de {\tt query replace regexp}.
 
-      
+Insertando un fichero de texto en nuestro documento:
+
+Para los amantes del Cut & Pasting (un deporte muy extendido en algunos
+círculos de programadores), aquí va un comando que nos permite introducir
+un documento de texto dentro de otro:
+
+Pulsamos las teclas "Ctrl x", seguidas de la letra "i", para insertar un
+fichero en la posición actual del cursor. Entonces, en la línea de comandos
+de emacs, aparecerá el directorio actual. 
+
+Escribimos la ruta completa al archivo y aparecerá en la posición actual
+del cursor.
+
+
+
 
 \section{VI y VIM}
 
