@@ -40,11 +40,15 @@ cubierta: cubierta.tex $(CEPSS)
 	latex cubierta
 	dvips -o cubierta.ps cubierta.dvi
 
-all: $(FILES) $(EPSS) $(EJEMPLOS)
+book.ind: $(FILES)
 	latex book
 	makeindex book.idx
+
+book.bbl: $(FILES)
 	latex book
 	bibtex book
+
+all: $(FILES) $(EPSS) $(EJEMPLOS) book.ind book.bbl
 	latex book
 	dvips -o $(NAME).ps book.dvi
 
