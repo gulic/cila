@@ -15,21 +15,7 @@
 
 	Convenciones
 	============
-	- Escribiremos tuteando al lector.
-	- Los diferentes tipos de letra tienen finalidades específicas,
-	  por favor no busquen nuevas maneras de resaltar texto, sigamos
-	  las siguientes pautas:
-	  - Sin adornos (\sf): 
-	    nombres de  programas, paquetes, protocolos, lenguajes, etc.
-	  - Máquina de escribir (\tt):
-	    comandos, código fuente, pulsasiones y/o combinaciones de teclas;
-		todo aquello  que haya que teclear o leer de la pantalla.
-	  - Itálica (\em):
-	    términos nuevos o que haya que resaltar.
-	  - Negrita (\bf): elementos  de  una  descripción o  aquello  que 
-	    necesite especial atención. Úsenlo con moderación.
-	  - Versalita (\sc): 
-	    para nombres de personas, organizaciones y entidades en general.
+	Lee el fichero presentacion.tex, líneas 218 a 294. SÍ, AHORA.
 
 
 	Este directorio debería contener (al menos) los ficheros
@@ -59,7 +45,7 @@
 	- MAKEINDEX			compilador LaTeX de índices terminológicos
 	- dvips				convertidor de DVI a PostScript
 	- ps2pdf			convertidor de PostScript a PDF
-	- latex2html		convertidor de LaTeX a HTML
+	- latex2html		convertidor de LaTeX a HTML (prescindible)
 
 
 
@@ -188,10 +174,6 @@
 		Comienza un entorno en el que se incrementan los márgenes
 		laterales, lo usaremos para citas textuales y similares.
 		Se cierra con \end{quote}
-
-	\htmlurl{URL}
-		Introduce una referencia al URL, en el caso de páginas web
-		inserta un enlace en el documento traducido a HTML
 
 	\begin{center}
 		Comienza un entorno en el que el texto está centrado y sin 
