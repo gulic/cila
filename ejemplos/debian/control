@@ -1,0 +1,16 @@
+Source: cila-ejemplos
+Section: doc
+Priority: optional
+Maintainer: Miguel Ángel Vilela García (miguev) <miguev@gulic.org>
+Build-Depends: debhelper (>> 3.0.0), make, tetex-extra, tetex-eurosym, dvips, gs-common
+Standards-Version: 3.5.2
+
+Package: cila-ejemplos
+Architecture: all
+Depends: ${shlibs:Depends}
+Recommends: cila-base, cila-libro
+Suggests: cila-extra, cila-libro-src
+Description: Ejemplos de código del Curso de Introducción a Linux para Alumnos
+ Libro del Curso de Introducción a Linux para Alumnos
+ .
+ Este paquete contiene los ejemplos de código utilizados en el CILA
