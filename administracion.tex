@@ -631,7 +631,7 @@ llamará igual que el usuario y añadirá una serie de ficheros de
 configuración al directorio de trabajo del nuevo usuario:
 
 \begin{verbatim}
-root@tejita:/home# adduser pepe
+root@cila:/home# adduser pepe
 Adding user pepe...
 Adding new group pepe (1000).
 Adding new user pepe (1000) with group pepe.
@@ -660,7 +660,7 @@ Para  eliminar  la  cuenta  de  un  usuario,  emplearemos  el  comando
 automáticamente el directorio de trabajo del usuario.
 
 \begin{verbatim}
-root@tejita:/home# deluser pepe
+root@cila:/home# deluser pepe
 Removing user pepe...
 done.
 \end{verbatim}
@@ -672,7 +672,7 @@ Si tratáramos  de eliminar  un usuario  que no  existe en  el sistema,
 recibiremos el siguiente aviso:
 
 \begin{verbatim}
-root@tejita:/home# deluser pepe
+root@cila:/home# deluser pepe
 /usr/sbin/deluser: `pepe' does not exist.
 \end{verbatim}
 
@@ -687,7 +687,7 @@ de trabajo, ya sea el suyo propio o bien, en uno común.
 La forma de hacerlo es bien fácil:
 
 \begin{verbatim}
-root@tejita:/home# addgroup usuarios
+root@cila:/home# addgroup usuarios
 Adding group usuarios (105)...
 Done.
 \end{verbatim}
@@ -699,7 +699,7 @@ le asigna al nuevo grupo en el momento de su creación.
 De forma similar, la eliminación de un grupo se hace de esta forma:
 
 \begin{verbatim}
-root@tejita:/home# delgroup usuarios
+root@cila:/home# delgroup usuarios
 Removing group usuarios...
 done.
 \end{verbatim}
@@ -708,7 +708,7 @@ done.
 sistema nos avisará con el siguiente mensaje:
 
 \begin{verbatim}
-root@tejita:/home# delgroup usuarios
+root@cila:/home# delgroup usuarios
 /usr/sbin/delgroup: `usuarios' does not exist.
 \end{verbatim}
 
@@ -717,7 +717,7 @@ root@tejita:/home# delgroup usuarios
 Para añadir un usuario {\bf pepe} a un grupo {\bf usuarios} haremos:
 
 \begin{verbatim}
-root@tejita:/home# adduser pepe usuarios
+root@cila:/home# adduser pepe usuarios
 Adding user pepe to group usuarios...
 Done.
 \end{verbatim}
@@ -725,7 +725,7 @@ Done.
 Y para eliminarlo de ese grupo:
 
 \begin{verbatim}
-root@tejita:/home# deluser pepe usuarios
+root@cila:/home# deluser pepe usuarios
 Removing user pepe from group usuarios...
 done.
 \end{verbatim}
