@@ -1,0 +1,123 @@
+%Autor: MojoPiKon
+
+\chapter{Perl}
+
+\section{Que es PERL}
+
+PERL es un lenguaje de scripts o guiones creado por Larry Wall en 1988, que, a pesar de haber tenido su máxima difusión con la aparición de internet y el web, viene siendo utilizado desde hace varios años por administradores de sistemas para la automatización de tareas rutinarias, como pueden ser gestión de grandes volúmenes de usuarios, búsqueda de patrones de texto mediante expresiones regulares, realización de copias selectivas de seguridad, etc.
+
+% Existen una enorme variedad de módulos para PERL (baste decir el listado de ellos en texto plano ocupa varios megabytes). Tanto este listado como estos módulos pueden encontrarse en la web de recursos para perl http://www.cpan.org
+
+Como lenguaje interpretado, su potencia radica en su gran portabilidad siempre que los módulos que se empleen se encuentren en la plataforma en que el script vaya a ser utilizado.
+
+Pese a la creencia popular, PERL sirve para desarrollar casi cualquier tipo de programa, pues entre sus módulos se encuentran, por poner algunos ejemplos, módulos de OpenGL (Especificación para la creación de gráficos 3D),para el tratamiento de audio digital, o para la creación de interfaces gráficas, ya sea bajo plataformas corriendo sistemas GNU/Linux,Variantes de UNIX,Apple MacOs, Microsoft Windows, etc.
+
+\section{Donde conseguir PERL}
+
+La versión oficial de PERL está disponible de forma gratuita en la web oficial del proyecto PERL (http://www.perl.org) para las distintas plataformas anteriormente citadas.
+
+Por otro lado, hay distribuciones empaquetadas por empresas, con algunos módulos más que la versión oficial ``base''.
+
+Destaca por su comodidad de instalación y la cantidad de módulos disponibles ``activeperl'', de activestate (http://www.activestate.com).
+
+Activeperl está disponible para Linux y para Windows, y puede ser descargado también de forma gratuita.
+
+\section{Primeros pasos}
+
+PERL lee los scripts a partir de ficheros de texto plano. Para ejecutarlos, suele procederse de la siguiente manera:
+
+\begin{verbatim}
+
+14:16:14 wd:~ u:frodo> perl fichero.pl
+
+\end{verbatim}
+
+Esto ejecuta el guión contenido en el fichero ``fichero.pl''. Esto no resulta muy sorprendente, desde luego.
+
+Para ejecutar scripts PERL en GNU/Linux o UNIX, podemos recurrir a colocar al principio del guión una línea como esta:
+
+\begin{verbatim}
+
+#!/usr/bin/perl
+
+\end{verbatim}
+
+Con esto conseguiremos, tras dar permisos de ejecución al script mediante chmod 755 fichero.pl, poder ejecutarlo poniendo desde el shell:
+
+\begin {verbatim}
+
+./programa.pl
+
+\end{verbatim}
+
+Para probar que realmente nuestro intérprete PERL funciona correctamente, probemos un apasionante y a la vez complejo programa:
+
+\begin {verbatim}
+
+#!/usr/bin/perl / 
+print ``Hola mundo!\n'';
+
+\end{verbatim}
+
+\section{Entrada,salida y sintáxis básica}
+
+La sintáxis de PERL a muchos programadores nos recuerda a la de C, por que emplea llaves ``{ }'', puntos y comas al final de las líneas, e incluso gran parte
+de las estructuras de control de C, las cuales se manejan de forma casi idéntica en ambos lenguajes, y que veremos en el siguiente apartado. 
+
+Para insertar comentarios en nuestro código, emplearemos el caracter de ``almohadilla''.
+
+\begin{verbatim}
+# Esto es un comentario en PERL. Esta línea no hace nada, pero tampoco
+# provoca errores de compilación en nuestro programa.
+\end{verbatim}
+
+Las variables en PERL son de tres tipos: arrays, escalares y estructuras ``hash''. Estas serán descritas en profundidad en la sección ``Estructuras de datos, de control y operadores''. De momento, nos contentaremos con saber que los escalares son variables que sólo almacenan UN dato y que pueden contener datos numéricos, cadenas ascii, etc y que se denotan anteponiendo a su nombre un signo de dolar. Se aplican las normas estandar de otros lenguajes para nombrar estas variables, como son no utilizar números al principio del identificador, no utilizar espacios y no utilizar palabras reservadas como identificadores.
+Cualquier omisión en el cumplimiento de estas normas provocará irremisiblemente un error de interpretación.
+
+
+Se puede hacer corresponder a una variable de tipo escalar una cadena mediante el uso de el igual y las comillas simples. Para los valores numéricos se pone símplemente el igual y el valor, sin comillas. Ejemplo:
+
+\begin{verbatim}
+
+$nombre = 'Fernando';
+$edad = 19;
+$numero_de_piso = '5';
+
+
+\end{verbatim}
+
+Nótese que si pusieramos las comillas para asignar un valor numérico a una variable escalar, PERL interpretaría dicha variable como una cadena de caracteres ASCII, por lo que no podríamos, por ejemplo, sumar o restar dichos números.
+
+Es importante conocer que podemos utilizar tanto comillas simples como comillas dobles para asignar cadenas a escalares. Pero existe una diferencia.
+
+\begin{verbatim}
+$nombre = ``Carlos'';
+
+print''Me llamo $nombre\n''; # Imprime: Me llamo Carlos
+print 'Me llamo $nombre''; # Imprime: Me llamo $nombre\n
+
+\end{verbatim}
+
+
+Ahora que ya sabemos lo básico de las reglas del juego, veamos algo más sobre la función print.
+
+
+
+
+
+\section{Estructuras de control, de datos y operadores}
+
+
+
+
+
+\section{Manejo de Cadenas}
+
+\section{Ficheros}
+
+\section{Automatización de tareas y ejecución de comandos externos}
+
+\section{Interfaces básicas de usuario en modo texto}
+
+\section{Bibliografía recomendada}
+

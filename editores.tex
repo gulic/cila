@@ -1,0 +1,482 @@
+%Autor: miguev && Carlos de la Cruz (frodo@fmat.ull.es)
+
+
+\chapter{Editores de texto}
+
+
+
+\section{Joe}
+
+
+El primer editor  que suele aprenderse en Linux es  {\tt Joe}, por ser
+muy sencillo  y rápido.  Puede usarse  para editar  cualquier fichero,
+pero  aquí  trataremos su  uso  básico  para editar  pequeños  textos,
+ficheros de  configuración, pequeños  programas. Todos  estos ficheros
+pueden editarse con más comodidad con editores más potentes como Emacs
+o VIM pero para ello es  necesario aprender a usarlos primero, lo cual
+puede no resultar tan sencillo como aprender {\tt Joe}.
+
+Veremos sólo un par de comandos  de {\tt Joe}, simplemente como editar
+un fichero existente o nuevo, guardarlo sin salir, salir sin guardarlo
+y salir guardándolo. Para obtener más información sobre otras opciones
+del editor existe el comando de ayuda que explicaremos luego.
+
+El  manejo de  {\tt Joe}  se basa  en combinaciones  de teclas  con la
+tecla {\tt  Control}. Denotaremos  por {\tt  \flq Ctrl\frq  x y}  a la
+combinación de teclas que se obtiene al pulsar la tecla {\tt Control},
+seguidamente (sin soltar la primera) pulsar la tecla {\tt x} y después
+(soltando las  teclas anteriores) pulsar  la tecla {\tt y}.  Veamos un
+rápido ejemplo del uso de este editor. En un terminal ejecutamos:
+
+\begin{verbatim}
+$ joe prueba.txt
+\end{verbatim}
+
+
+Escribimos una frase sencilla, tal como:
+
+
+\begin{verbatim}
+Si algo funciona, no lo toques.
+\end{verbatim}
+
+Para guardar el fichero utilizamos la combinación de teclas {\tt \flq
+Ctrl\frq k s} y entonces {\tt Joe} nos preguntará el nombre con el que
+queremos guardar el fichero.
+
+\begin{verbatim}
+Name of file to save (^C to abort): hola.txt
+\end{verbatim}
+
+Si pulsamos ahora  ahora {\tt \flq Ctrl\frq  c} simplemente cancelamos
+la orden  de guardar el fichero,  pero no perdemos su  contenido. Para
+guardar el  fichero pulsamos  {\tt Enter},  modificando el  nombre del
+fichero si lo deseamos. Ahora añadimos otra línea:
+
+\begin{verbatim}
+Si algo funciona, no lo toques.
+Si algo funciona, y no sabes por qué, úsalo siempre.
+\end{verbatim}
+
+Ahora saldremos  del editor {\bf  guardando los cambios},  mediante la
+combinación  de  teclas  {\tt  \flq  Ctrl\frq k  x}.  De  esta  manera
+volveremos al prompt  del sistema siendo informados de  que el fichero
+ha sido guardado.
+
+\begin{verbatim}
+File prueba.txt saved.
+$
+\end{verbatim}
+
+Como última maniobra, abrimos de  nuevo el fichero, borramos la última
+línea y salimos sin guardar los cambios.
+
+
+\begin{verbatim}
+$ joe prueba.txt
+\end{verbatim}
+
+Boramos la última línea como haríamos  en el {\tt edit} del {\tt DOS},
+y pulsamos {\tt  \flq Ctrl\frq c} para salir sin  guardar los cambios.
+El editor  nos pedirá confirmación  antes de salir.  Podemos responder
+que sí queremos salir pulsando {\tt y}, o por el contrario cancelar la
+maniobra pulsando  {\tt n}  o {\tt  \flq Ctrl\frq  c}. Decimos  que sí
+({\tt y}) y volvemos al prompt del sistema.
+
+\begin{verbatim}
+Lose changes to this file (y,n,^C)? 
+File hola.txt not saved.
+$
+\end{verbatim}
+
+Esto es lo mínimo  que debemos saber para editar con  {\tt Joe}, y con
+esto nos conformaremos  aquí pues en lo sucesivo  aprenderemos a hacer
+operaciones más avanzadas con otros editores. Para conocer sobre otras
+opciones  de  este editor,  se  puede  utilizar  la opción  {\tt  \flq
+Ctrl\frq k h}.
+
+      
+
+\section{Emacs }
+
+
+{\tt Emacs}, junto con {\tt VI},  ha sido uno de los primeros editores
+de  texto para  UNIX. A  pesar  de visualmente  presentar un  interfaz
+similar al  de un  editor de  texto corriernte,  como podría  ser {\tt
+joe},  el {\tt  edit} de  MS-DOS, o  similar, lo  cierto es  que tiene
+muchísimas posibilidades que uno no atribuiría a un editor de texto en
+modo consola. Por  ejemplo, el indentado automático  de código Pascal,
+Java, C, o cualquier lenguaje para  el que haya escrito un módulo para
+Emacs de  asistencia a  la programación,  nos ofrece  posibilidades de
+trabajar con  CVS, enviar correo  electrónico, y un largo  etcétera de
+posibilidades. Como anécdota cabe contar,  para que se hagan una idea,
+el manual de GNU Emacs, en formato ASCII ocupa cerca de 1.1 MB.
+
+
+Hablemos de cómo manejarse con los  menús de Emacs. Existen cientos de
+combinaciones de teclas en Emacs que nos permiten hacer cualquier cosa
+sin  ver  un  menú.  Los  usuarios  expertos  de  Emacs  valoran  esta
+posibilidad, pues a la hora de  escribir con prisas, un menú puede ser
+algo muy incómodo.  Pero para ustedes que  están empezando, recuerden:
+la tecla {\tt \flq F10\frq } es su amiga.
+
+La tecla {\tt \flq F10\frq } nos da acceso a todos los menús de Emacs,
+menu archivo, edición, cambio entre  las distintas ventanas de edición
+de texto, etc.
+
+Empezemos viendo como editar un fichero de texto básico. En la consola
+ponemos:
+
+\begin{verbatim}
+$ emacs prueba.c
+\end{verbatim}
+
+y escribimos un programa común y corto:
+
+\begin{verbatim}
+#include <stdio.h>
+int
+main()
+{
+  printf("\nHola Mundo\n\n");
+}
+\end{verbatim}
+
+Como podemos apreciar,  Emacs hace retroceder el cursor  al cerrar los
+corchetes y los paréntesis, para  indicarnos dónde los abrimos y tener
+una  referencia de  cuáles quedan  aún  por cerrar.  Probemos ahora  a
+guardar  nuestro pequeño  programa  C. Para  ello  pulsamos {\tt  \flq
+F10\frq }  y una vez  pulsada {\tt \flq F10\frq  } vemos que  la tecla
+{\tt B} nos daría acceso al menú buffers (que no son otra cosa que las
+distintas ventanas que tenemos abiertas),  la {\tt F} nos daría acceso
+al menú {\tt  files} (el cual hace prácticamente lo  mismo que el menú
+archivo de  cualquier editor de texto,  etc... y la tecla  {\tt C} nos
+daría  acceso, si  las  tenemos instaladas,  a  las posibilidades  que
+ofrece  emacs para  la  edición de  código en  C.  Como sólo  queremos
+guardar,  pulsamos después  de {\tt  \flq F10\frq  }, {\tt  S}. Ya  lo
+tendríamos guardado.  Otra cosa muy importante,  en cualquier programa
+es saber  salir. Esto se  hace con  {\tt \flq F10\frq  }, {\tt F}  y a
+continuación la tecla {\tt S}. Nos  pregunta, si no lo hemos hecho ya,
+que  si deseamos  guardar. Escribimos  {\tt yes}  (hay que  escribirlo
+entero)  o  {\tt no},  y  a  continuación  nos pregunta  si  realmente
+queremos salir,  a lo cual ahora  sí, responderemos {\tt y}  para {\tt
+sí} o {\tt n} para {\tt no}.
+
+Una función  muy básica también  es la  de buscar y  reemplazar texto.
+Esto puede hacerse  cómodamente con la combinación  {\tt \flq Ctrl\frq
+-s}, dejando  pulsado la  tecla {\tt \flq  Control}\frq y  pulsando la
+{\tt s}, y a continuación poniendo que queremos buscar y pulsando {\tt
+Enter}.  Una  vez  encuentre  la primera  coin\-ci\-den\-cia,   puede
+seguir buscándose el  mismo patrón  pulsando de  nuevo simplemente  {\tt \flq
+Ctrl\frq -s}.
+
+Podemos saber  en todo momento  qué estamos haciendo fijándonos  en la
+línea inferior de la pantalla de Emacs.
+
+Para  reemplazar  trozos  de  texto, cosa  también  de  supervivencia,
+podemos hacerlo fácilmente de la siguiente forma:
+
+\begin{enumerate}
+\item Pulsamos \flq F10\frq .
+\item Pulsamos la S, que corresponde al menú Search.
+\item Nos sale el siguiente menú:
+\end{enumerate}
+
+\begin{verbatim}
+Possible completions are:
+S==\frq Search...                      R==\frq Regexp Search...
+B==\frq Search Backwards...            0==\frq Regexp Search Backwards...
+1==\frq Repeat Search                  2==\frq Repeat Regexp
+3==\frq Repeat Backwards               4==\frq Repeat Regexp Backwards
+5==\frq Bookmarks                      F==\frq Find Tag...  (M-.)
+Q==\frq Query Replace...  (M-%)        6==\frq Query Replace Regexp...
+\end{verbatim}
+
+Pulsamos {\tt Q} y nos dice:
+
+{\tt Query  replace:} donde escribiremos  lo que queremos  buscar para
+ser reemplazado, y pulsamos {\tt Enter}.
+
+Luego,  emacs  nos   pregunta:  {\tt  query  replace   with:  }  donde
+escribiremos el  texto con  el cual  queremos sustituir,  y pulsaremos
+enter.
+
+En este  menú, encontramos  también una serie  de comandos,  como {\tt
+query  regexp},  {\tt  query  replace regexp},  etc.,  que  aunque  no
+entraremos en ellos,  son muy interesantes, pues  nos permiten buscar,
+no  ya patrones  de  texto concretos,  sino un  tipo  de búsqueda  más
+avanzada por  medio de  expresiones regulares (regular  expressions en
+inglés), esto es,  ``todas las palabras que empiecen por  c y terminen
+por j''  o ``todas  las mayúsculas cambiarlas  por minúsculas''  en el
+caso de {\tt query replace regexp}.
+
+      
+
+\section{VI y VIM}
+
+
+{\tt VI} es un editor de texto visual, de pantalla completa, basado en
+el editor de  línea {\tt ex}. Es  un editor poco intuitivo  y con mala
+prensa entre los estudiantes que dan sus primeros pasos en UNIX/Linux,
+pero por otra parte es el  editor favorito de los usuarios avanzados y
+de muchos programadores. Es además un editor que se puede encontrar en
+cualquier sistema UNIX, desde antiguas  estaciones Sun Solaris o HP-UX
+hasta  las  más  recientes  distribuciones  de  GNU/Linux  o  FreeBSD,
+OpenBSD, etc.  {\tt VI} es además  un editor muy potente,  que permite
+hacer  complicadas  operaciones en  grandes  ficheros  con unos  pocos
+comandos, por  lo que  su aprendizaje  puede ahorrarnos  mucho tiempo.
+Otra ventaja de {\tt VI} es que al ser tan corriente suele encontrarse
+incluso en disquetes de rescate. Lógicamente poco se puede rescatar si
+no  se sabe  manejar  el  único editor  disponible  en  un momento  de
+emergencia. Pero  el manejo de {\tt  VI} es realmente incómodo  si nos
+enfrentamos  a la  versión clásica.  Por ejemplo  no podemos  usar los
+cursores  para  movernos  por  el  texto,  debemos  pasar  al  llamado
+``modo comando'' y utilizar letras para movernos.
+
+En este  curso utilizaremos el  editor {\tt VIM}. {\tt  VIM} significa
+``{\bf V}i {\bf IM}proved''  (``{\bf VI M}ejorado''), y como
+su nombre  indica es un  clon (muy)  mejorado del clásico  editor {\tt
+VI}. {\tt VIM}  es bastante más amigable que {\tt  VI}, ya que permite
+un uso más intuitivo (p.ej. los cursores y otras teclas para moverse).
+
+
+Lo primero  que debe aprenderse con  {\tt VIM} es la  filosofía de los
+dos modos de  trabajo: el modo {\tt comando} y  el modo {\tt edición}.
+El  modo comando  se utiliza  sólamente  para dar  órdenes al  editor,
+decirles que haga cosas como borrar  una línea, buscar un patrón, ir a
+una determinada  línea, guardar el  fichero, salir, etc. El  modo {\tt
+edición} se  utiliza sólamente para  escribir texto en el  fichero. Es
+muy importante familiarizarse con esta filosofía de funcionamiento, ya
+que  resulta imprescindible  para  cualquier operación  que se  quiera
+realizar con {\tt VIM}.
+
+Para ejecutar este editor el comando es: 
+
+\begin{verbatim}
+$ vi
+\end{verbatim}
+
+Aunque  conserva el  nombre de  {\tt VI}  estamos trabajando  con {\tt
+VIM}. Este comando admite varias opciones  que se le pueden pasar como
+parámetros, p.ej. el nombre del fichero que queremos editar:
+
+
+\begin{verbatim}
+$ vi fichero
+\end{verbatim}
+
+{\tt  VIM} comienza  siempre  en modo  {\tt  comando}, preparado  para
+realizar operaciones  sobre el  fichero. Una  de estas  operaciones es
+pasar al modo {\tt edición} pulsando la tecla {\tt i} (Insertar). Para
+pasar del modo {\tt edición} al como {\tt comando} basta con pulsar la
+tecla de  escape, que llamaremos  {\tt \flq ESC\frq }.  A continuación
+vamos a editar  un pequeño fichero de prueba  para familiarizarnos con
+sus comandos básicos.
+
+Comenzamos invocando al editor desde la línea de comandos:
+
+
+\begin{verbatim}
+$ vi prueba.txt
+\end{verbatim}
+
+Veremos que en la última línea de la consola aparece lo siguiente:
+
+\begin{verbatim}
+"prueba.txt" [New File]                                        0,0-1 All
+\end{verbatim}
+
+Esta  línea es  la {\tt  barra de  estado} del  editor. Es  aquí donde
+teclearemos  algunos comandos  y  donde  aparecerá cierta  información
+como el modo en el  que estamos, la  línea y columna en la que estamos,
+el porcentaje del documento en el que estamos, etc.
+
+
+A  continuación pulsamos  la tecla  {\tt i}  para pasar  al modo  {\tt
+edición}. Observamos que la barra de estado se muestra diferente:
+
+
+\begin{verbatim}
+-- INSERT --                                                     0,1 All
+\end{verbatim}
+
+ Tecleamos por ejemplo lo siguiente: 
+
+\begin{verbatim} Lo pequeño es bello.  \end{verbatim}
+
+Cuando tenemos algo  escrito, pulsamos {\tt \flq ESC\frq  } para pasar
+al modo {\tt comando}. Entonces tecleamos la orden {\tt :w} y pulsamos
+{\tt \flq  Enter\frq }. Veremos como  la orden {\tt :w}  aparece en la
+barra  de estado  mientras  la  tecleamos, y  luego  al ejecutarla  se
+muestra información sobre el resultado, en este caso información sobre
+el fichero que acabamos de guardar.
+
+\begin{verbatim}
+"prueba.txt" [New] 1L, 21C written                              1,20 All
+\end{verbatim}
+
+Pasamos nuevamente al modo {\tt  edición} pulsando {\tt a} (observamos
+la diferencia con pulsar {\tt i}) y continuamos escribiendo:
+
+\begin{verbatim}
+   ---
+   Lo pequeño es bello.
+   ---
+   La  medida de programar es programar sin medida.
+   ---
+   Software is like sex, it's better when it's free.
+   ---
+\end{verbatim}
+
+Observamos como podemos movernos libremente  por el texto en modo {\tt
+edición} utilizando los cursores, las  teclas de Inicio, Fin, Av. Pag,
+Re. Pag., etc. Esto no puede  hacerse en el {\tt VI} clásico. Volvemos
+a guardar el fichero con la orden {\tt :w}.
+
+Ahora pensemos  que queremos  eliminar esas líneas  de tres  guiones y
+cambiarlas  por  líneas  de  cinco asteriscos.  Pasamos  a  modo  {\tt
+comando}, situamos el cursor en una de esas línas y pulsamos {\tt dd}.
+Veremos como  la línea entera  desaparece. Repetimos lo mismo  con las
+otras líneas. Ahora nos situamos en  la primera línea y pasamos a modo
+{\tt  edición},  escribimos  cinco  asteriscos y  pulsamos  {\tt  \flq
+Enter\frq }. Volvemos al modo {\tt  comando}, situamos el cursor en la
+nueva línea de asteriscos y pulsamos  de nuevo {\tt dd}, vemos cómo la
+línea desaparece.  Situamos el cursor  en el  principio de la  línea y
+pulsamos {\tt P}, vemos cómo la  línea que habíamos borrado se inserta
+{\em antes}  del cursor.  Si  situamos  el cursor  al  principio de  la
+tercera  línea y  pulsamos  {\tt p}  vemos cómo  la  línea se  inserta
+{\em después} del  cursor. Añadimos las restantes  líneas de asteriscos
+donde estaban las de guiones.
+
+Para  deshacer cualquier  operación  realizada pulsamos  en modo  {\tt
+comando} la tecla  {\tt u}. Para salir del editor  {\em sin} guardar el
+fichero se  usa la orden {\tt  :q!}. Esta operación se  suele realizar
+con mucha frecuencia al principio,  cuando se comete algún error grave
+como teclear una  palabra sin pasar al modo {\tt  edición}. En el modo
+{\tt comando}  cada tecla tiene su  función, y es diferente  además si
+está en  mayúsculas que si  está en minúsculas.  Una regla de  oro con
+{\tt VIM}  es: cuando  no se  sabe con  qué comando  se hace  algo, no
+probar teclas  al azar. Y por  supuesto, cuando se está  editando algo
+importante guardar  el fichero cada  con frecuencia con la  orden {\tt
+:w}, sobre todo en las primeras semanas de uso.
+
+
+Con  estos pocos  comandos es  suficiente  para la  edición básica  de
+textos y programas. En la tabla 1 se resumen estos y otros comandos:
+
+\begin{table}
+\begin{tabular}{|c|p{12cm}|}
+\hline
+Comando & Descripción \\
+\hline
+ {\tt \flq ESC\frq }  & Mientras se teclea un comando, lo cancela \\
+ {\tt i}    & Inserta en la posición del cursor (pasa a modo comando) \\
+\hline
+ {\tt a}    & Inserta tras la posición del cursor (pasa a modo comando) \\
+\hline
+ {\tt I}    & Inserta al inicio de la línea (pasa a modo comando) \\
+\hline
+ {\tt A}    & Inserta al final de la línea (pasa a modo comando) \\
+\hline
+ {\tt x}    & Borra un carácter \\
+\hline
+ {\tt r}    & Reemplaza un carácter \\
+\hline
+ {\tt u}    & Deshace la última operación  realizada (se puede repetir para
+ des\-ha\-cer varias operaciones)\\
+\hline
+ {\tt U}    & Deshace los cambios efectuados sobre la línea actual \\
+\hline
+ {\tt :q}   & Salir del editor \\
+\hline
+ {\tt :x}   & Salir del editor {\bf guardando} el fichero \\
+\hline
+ {\tt :q!}  & Salir del editor {\bf sin guardar} el fichero \\
+\hline
+ {\tt :w}   & Guardar el fichero \\
+\hline
+ {\tt :w nombrefichero}  & Guardar el fichero con nombre {\bf nombrefichero} \\
+\hline
+ {\tt nG}   & Ir a la línea {\tt n} \\
+\hline
+ {\tt \$G}   & Ir al final del fichero \\
+\hline
+ {\tt v}    & Activa el modo de selección (utiliza los cursores para  
+              seleccionar texto\\
+\hline
+ {\tt y}    & Copia en memoria (buffer) el texto seleccionado \\
+\hline
+ {\tt d}    & Borra el texto seleccionado, y lo copia en memoria (buffer) \\
+\hline
+ {\tt p}    & Pega el texto copiado en memoria, tras la posición del cursor \\
+\hline
+ {\tt P}    & Pega el texto copiado en memoria, en la posición del cursor \\
+\hline
+ {\tt :syntax on}  & Activa el coloreado de sintaxis \\
+\hline
+ {\tt :syntax off}  & Desactiva el coloreado de sintaxis \\
+\hline
+ {\tt /palabra}   & Busca la cadena {\tt palabra} hacia adelante \\
+\hline
+ {\tt ?palabra}   & Busca la cadena {\tt palabra} hacia atrás \\
+\hline
+ {\tt n}   & Muestra la  siguiente  coincidencia de  la última  búsqueda \\
+\hline
+\end{tabular}
+\caption{Comandos básicos del VI}
+\end{table}
+
+
+\section{Otros editores}
+
+Los tres  editores de texto  que hemos  visto hasta ahora  trabajan en
+modo consola, sin entorno gráfico ni ventanas, ni siquiera utilizan el
+ratón.  Obviamente hay  disponibles muchos  más editores  de texto  en
+Linux, tanto de consola como de entornos gráficos. Veamos dos editores
+de entorno gráfico que vale la pena presentar.
+
+%Habría que indicar que actualmente su última versión muy mejorada
+%es el kate
+\subsection{Kwrite}
+
+{\tt Kwrite}  es un potente editor  de textos para KDE  que cuenta con
+todo lo necesario para editar cualquier tipo de texto, es configurable
+en  todos los  aspectos, desde  el tipo  de letra  con la  que se  nos
+presentará el  texto editado hasta las  teclas de acceso rápido  a las
+funciones que implementa este editor.
+
+Entre las  características que tiene  destaca el reconocimiento  de la
+sintaxis de muchos lenguajes de programación (C, C++, PASCAL, FORTRAN,
+LATEX, etc  ...) el  indentado automático, deshacer,  rehacer, copiar,
+pegar, buscar, reemplazar  y un largo etcétera  de herramientas útiles
+para la edición.
+
+%Miguel: por alguna razón, aquí entre estas dos subsecciones espacio se
+%está insertando una tabla que no debería aparecer hasta más adelante o
+%que ya se debería haber mostrado.
+
+\subsection{gnotepad+}
+
+{\tt Gnotepad+} es un editor con prácticamentes las mismas capacidades
+que el kwrite de KDE solo que en este caso es para el entorno de GNOME
+y  no tiene  tantas opciones  de  reconocimiento de  sintaxis como  el
+kwrite, en cambio tiene algunas herramientas para la edición de código
+HTML interesantes  para el desarrollo  de un  proyecto para la  web de
+poca  complejidad,  como son  la  posibilidad  de visualizar  como  va
+quedando  el código  que vamos  haciendo, botones  que simplifican  la
+inserción  de ciertos  elementos del  lenguaje  html, etc  ... Una  de
+las  capacidades  interesantes del  gnotepad  es  la de  poder  editar
+simutáneamente  varios ficheros  fuente con  un solo  editor y  varias
+pestañas  de edición,  lo cual  resulta interesante  para no  tener el
+escritorio lleno de ventanas y la memoria del sistema desperdiciada en
+llevar cuatro procesos exactamente iguales.
+
+	  
+
+      
+
+  
+
+
+
+

@@ -1,0 +1,103 @@
+% Define el  tipo de documento  como "article" (artículo)  y especifica
+% las opciones "a4paper" (tamaño de  papel A4), "12pt" (tamaño de letra
+% a 12 puntos) y "twoside" (para imprimir a doble cara)
+\documentclass[a4paper,12pt,twoside]{article}
+
+% Utiliza  el paquete  "inputenc"  con la  opción  "latin1", esto  nos
+% permite teclear las  "ñ" y las tildes sin tener  que preocuparnos de
+% nada, porque el charset que estamos usando el latin1 y se lo decimos
+% a LaTeX. Nota: Latin1 se refiere al estándar ISO-8859-1
+\usepackage[latin1]{inputenc}
+
+% Utiliza  el  paquete  "babel"  con   la  opción  "spanish",  lo  que
+% incluye  entre  otras  cosas   traducción  de  elementos  insertados
+% automáticamente, como "Índice general" en lugar de "Contents"
+\usepackage[spanish]{babel}
+
+% Utiliza el  paquete amssymb,  American Mathematical  Society SYMbols,
+% (símbolos de  la Sociedad Matemática  Americana). Es este  paquete se
+% encuentra  por ejemplo  el símbolo  de "isomorfo  a" utilizado  en el
+% Teorema de Isomorfía.
+\usepackage{amssymb}
+
+% Utiliza el paquete  "eurosym" para proporcionar el  símbolo del euro.
+% Con este  paquete podemos escribir el  símbolo del euro con  la orden
+% \euro
+\usepackage{eurosym}
+
+% Ordenamos a LaTeX que no numere  las páginas, ya que tenemos una sóla
+% página y un "1" solitario no queda muy bien.
+\pagestyle{empty}
+
+% Evita que  LaTeX introduzca  espacios mayores de  lo normal  tras los
+% finales de las oraciones.
+\frenchspacing
+
+\begin{document} % Comienza el documento
+
+% Esta frase estará centrada y con un tamaño de letra mayor
+\begin{center}
+{\large Taller de Iniciación a Linux para Alumnos}
+\end{center}
+
+Esto es un  pequeño ejemplo de {\LaTeX}, el más  potente procesador de
+textos. La mayoría  de apuntes y exámenes de Matemáticas  que vemos en
+la  Facultad están  escritos  en {\LaTeX}.  Por  cierto, con  {\LaTeX}
+también estamos preparados para la llegada del {\euro}uro
+
+A continuación algunos ejemplos de fórmulas matemáticas:
+
+% Comenzamos una descripción de varios "items"
+\begin{description}
+
+\item [Definición de límite (Análisis Matemático I)]
+$$
+\lim_{x \longrightarrow a} = l \iff 
+\forall \, \varepsilon > 0 \,
+\, \exists \, \delta > 0 \, / \,
+\, 0 < \| x - a \| < \delta \,
+\Longrightarrow \, \| f(x) - l \| < \varepsilon
+$$
+
+\item [Teorema Generalizado de Cauchy (Análisis Matemático I)]
+Si $f$ y $g$ tienen derivadas contínuas hasta el orden $n(n-1)$ en 
+el intervalo $\lbrack a , b \rbrack$ y además $\forall \, x \in (a,b)
+\, \, \exists \, f^{n)}(x), g^{n)}(x)$, entonces
+$\exists \, c \in (a,b) \, /$
+$$
+\bigg( f(b) - \sum_{k=0}^{n-1} \frac{f^{k)}(a)}{k!}(b-a)^k \bigg) g^{n)}(x) =
+f^{n)}(x) \bigg( g(b) - \sum_{k=0}^{n-1} \frac{g^{k)}(a)}{k!}(b-a)^k \bigg) 
+$$
+
+\item [$1^{er}$ Teorema de Isomorfía (Álgebra I)]
+Sean $G$, $G'$ grupos, $f : G \longrightarrow G'$
+homomorfismo de grupos. Entonces
+$$
+\frac{G}{Ker(G)} \, \thickapprox \, Im f
+$$
+
+\item [Funciones Eulerianas: Gamma y Beta (Análisis Matemático II)]
+$$
+\Gamma(p) = \int_{0}^{+\infty} e^{-x} x^{p-1} dx \quad \forall \, p > 0
+$$
+$$
+\beta(p,q) = \int_{0}^{1} x^{p-1} (1-x)^{q-1} dx
+$$
+
+\item [Y por último, un ejemplo denso]
+$$ \sum \limits_{n = 0}^{\infty} 
+\left( \frac{\int \limits_{-\infty}^{+\infty}
+{\left\lceil \frac{\sin \left[8 \frac{\pi}{3}^3 \right]}
+{\arctan \left( \sqrt[3]{ 2 \cdot \sin {(x)} } \right)} \right\rceil dx} }
+{\lim \limits_{x \to n^2} \left( \vert{ \frac{\log{\frac{\pi}{x^4}}}
+{e^{\frac{n + 1}{n - 1}}} \vert} \right) } \right) =
+\left| \begin{array}{cccc}
+m_{(i,j)}   & m_{(i,j+1)}       & \ldots   & m_{(i,n)}     \\
+m_{(i+1,j)} & m_{(i+1,j+1)}     & \ldots   & m_{(i+1,n)}   \\
+\vdots        & \vdots              & \ddots & \vdots          \\
+m_{(n,j)}   & m_{(i + n,j + 1)} & \ldots   & m_{(n,n)}
+\end{array} \right| $$
+
+\end{description}
+
+\end{document} % Termina el documento

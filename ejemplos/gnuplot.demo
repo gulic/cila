@@ -1,0 +1,21 @@
+# Ejemplo para la monitorización de carga de un servidor en el tiempo
+
+set title "Convex     November 1-7 1989    Circadian"
+set key left box
+set xrange[-1:24]
+plot 'gnuplot.dat' using 2:4 title "Logged in" with impulses,\
+     'gnuplot.dat' using 2:4 title "Logged in" with points
+pause -1 "Hit return to continue"
+
+set xrange [1:8]
+#set xdtic
+set title "Convex     November 1-7 1989"
+set key below
+set label "(Weekend)" at 5,25 center
+plot 'gnuplot.dat' using 3:4 title "Logged in" with impulses,\
+     'gnuplot.dat' using 3:5 t "Load average" with points,\
+     'gnuplot.dat' using 3:6 t "%CPU used" with lines
+set nolabel
+pause -1 "Hit return to continue"
+reset
+

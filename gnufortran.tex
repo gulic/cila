@@ -1,0 +1,116 @@
+%Autor: miguev
+
+\chapter{GNU Fortran 77}
+
+El lenguaje  de programación {\tt Fortran}  estaba orientado puramente
+al  cálculo   matemático,  y  sigue  siendo   un  lenguaje  importante
+en  entornos  científicos.  Su  nombre viene  de  {\bf  For}mula  {\bf
+Tran}slator, ya que su mayor uso  era traducir las fórmulas de cálculo
+matemático  al lenguaje  de  las máquinas.  Desde  sus principios,  el
+lenguaje Fortran  ha tenido una  sintaxis particular, adaptada  al uso
+de  tarjetas  perforadas. En  la  actualidad,  Fortran se  utiliza  en
+asignaturas de Cálculo en carreras técnicas como Matemáticas, Física y
+algunas ingenierías.
+
+Utilizaremos aquí el  compilador {\bf GNU Fortran  77}, compatible con
+la  mayoría del  lenguaje básico  de Fortran  77, suficiente  para las
+prácticas de  programación en  Fortran. Veamos una  vez más  el típico
+ejemplo de ``HolaMundo''. En el editor que más nos guste, escribiremos
+el siguiente código Fortran:
+
+\begin{ejemplo}%
+{HolaMundo.for}%
+{HolaMundo en Fortran}
+Programa básico de HolaMundo en Fortran 77, define un formato e imprime 
+un mensaje usándolo. También incluye una línea de comentario.
+\end{ejemplo}
+
+Para  compilar el  programa utilizamos  el comando  {\tt g77}  como si
+fuera el {\tt gcc}. El compilador  {\tt g77} también produce la salida
+por defecto en  un ejecutable llamado {\tt a.out},  opción que podemos
+modificar con la opción {\tt -o nombredelejecutable}.
+
+\begin{verbatim}
+$ ls
+HolaMundo.for
+
+$ g77 HolaMundo.for
+
+$ ls
+a.out  HolaMundo.for
+
+$ g77 -o HolaMundo HolaMundo.for
+
+$ ls
+HolaMundo  HolaMundo.for
+
+$ ./HolaMundo
+
+
+  Hola Mundo
+
+\end{verbatim}
+
+Veamos  ahora  también como  podemos  dividir  un programa  en  varios
+ficheros  de código  fuente. En  el editor  escribimos los  siguientes
+códigos fuente  Fortran y  los guardamos  como {\tt  HolaMundo2.for} y
+{\tt Saludos.for} respectivamente.
+
+\begin{verbatim}
+* Ejemplo 2 de Fortran para CILA
+* Fichero: HolaMundo2.for
+
+      Program HolaMundo2
+      character(10) saludo
+
+      saludo = 'Mundo'
+
+      call saluda (saludo)
+
+      stop
+      end
+\end{verbatim}
+
+\begin{verbatim}
+* Ejemplo 2 de Fortran para CILA
+* Fichero: saludos.for
+
+      Subroutine saluda(mensaje)
+      character(10) mensaje
+
+      print 5, 'Hola ', mensaje
+
+ 5    format (//,2x,a,a,/)
+
+      return
+      end
+\end{verbatim}
+
+Para  generar ahora  el  ejecutable utilizamos  el  comando {\tt  g77}
+dándole ambos ficheros  como argumentos. En general,  para compilar un
+programa  Fortran  escrito en  varios  ficheros  bastará con  utilizar
+el  comando  de la  forma  {\tt  g77  -o ejecutable  fichero1.for  ...
+ficheroN.for}
+
+\begin{verbatim}
+$ ls
+HolaMundo2.for  Saludos.for
+
+$ g77 -o HolaMundo2 HolaMundo2.for Saludos.for
+
+$ ls
+HolaMundo2  HolaMundo2.for  Saludos.for
+
+$ ./HolaMundo2
+
+
+  Hola Mundo
+
+\end{verbatim}
+
+Estos pocos  comandos serán suficientes  para compilar y  ejecutar las
+prácticas de Fortran 77 que podamos  necesitar, pero no piensen que es
+verdad eso  de que  {\em ``Real  programers do  Artificial Inteligence
+programs in Fortran''}.
+
+

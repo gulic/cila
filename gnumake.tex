@@ -1,0 +1,110 @@
+%Autor: aplatanad
+
+\chapter{GNU Make}
+
+\section{Introducción al Make}
+
+
+Es evidente que utilizar la  línea de comandos resulta molesto incluso
+cuando se dispone de unos pocos archivos de código fuente. Para ayudar
+en dichas tareas se utiliza el  comando {\tt make}. Con el objetivo de
+que  funcione es  necesario  disponer  de un  archivo  de nombre  {\tt
+Makefile} en el  directorio de nuestro código fuente.  El archivo debe
+contener  reglas  que  le  indiquen  al {\tt  make}  cómo  generar  la
+aplicación. Un ejemplo de {\tt Makefile} puede ser el siguiente:
+
+\begin{verbatim}
+  # Makefile .- Ejemplo para el CILA 2001.
+
+  CC = gcc
+  CFLAGS = -g -Wall
+  LFLAGS = -lm
+
+  OBJECTS = main.o holafunc3.o
+  INCLUDES = holafunc.h
+
+  holamundo: $(OBJECTS)
+	$(CC) $(LFLAGS) -o $@ $^
+
+  $(OBJECTS): %.o : %.c $(INCLUDES)
+	$(CC) -c $(CFLAGS) -o $@ $<
+	
+  clean:
+	rm -f *~ $(OBJECTS)
+
+  clean_all: clean
+  	rm -f holamundo
+\end{verbatim}
+
+Las  primeras líneas  se  utilizan para  definir  variables que  serán
+utilizadas en el resto de  nuestro programa. Por ejemplo, definimos en
+{\tt CC} el compilador a utilizar, es decir el {\tt gcc}, mientras que
+las variables  {\tt CFLAGS}  y {\tt  LFLAGS} especifican  las opciones
+para el  compilador y  el enlazador  respectivamente. En  nuestro caso
+indicamos con {\tt  -lm} que queremos enlazar la  biblioteca libm, con
+{\tt -g} que deseamos incluir el código de depuración en el ejecutable
+de nuestro programa y con {\tt -Wall} que el compilador debe avisarnos
+a  la más  mínima sospecha  de un  posible error  en el  programa. Por
+último se listan en {\tt OBJECTS}  el nombre de los archivos de código
+objeto {\tt (*.o)} que formarán  nuestra aplicación y en {\tt INCLUDE}
+los  includes {\tt  (*.h)} de  nuestro código  fuente. Las  siguientes
+líneas del {\tt Makefile} especifican los {\em targets} u objetivos de
+la ejecución del {\tt make}.
+
+\begin{verbatim}
+  holamundo: $(OBJECTS)
+	$(CC) $(LFLAGS) -o $@ $^
+\end{verbatim}
+
+Indica  que el  programa {\tt  holamundo} depende  de disponer  de los
+archivos  de  código objeto  listados  en  {\tt  OBJECTS} y  que  para
+generarlo debemos enlazarlos con el  programa especificado en {\tt CC}
+y con las opciones de {\tt LFLAGS}. Para generar {\tt holamundo} basta
+con ejecutar:
+
+\begin{verbatim}
+  $ make holamundo
+\end{verbatim}
+
+Puesto  que {\tt  holamundo} es  el primer  target del  {\tt Makefile}
+también  es el  target por  defecto. Así  que se  obtienen los  mismos
+resultados si ejecutamos:
+
+\begin{verbatim}
+  $ make
+\end{verbatim}
+
+Aunque  ya  hemos  especificado  la  dependencia  de  {\tt  holamundo}
+respecto de  los archivos de  código objeto se hace  necesario indicar
+cómo  se obtienen  dichos  archivos. El  siguiente  target indica  ese
+proceso.
+
+\begin{verbatim}
+  $(OBJECTS): %.o : %.c $(INCLUDES)
+	$(CC) -c $(CFLAGS) -o $@ $<
+\end{verbatim}
+
+El  último  target  permite  borrar  todos  los  archivos  intermedios
+presentes  en el  directorio. Eso  incluye  a los  archivos de  código
+objeto que,  una vez creada  la aplicación,  ya no tiene  utilidad, así
+como los archivos temporales que dejan algunos editores. Se ejecuta de
+la siguiente manera:
+
+\begin{verbatim}
+$ make clean
+\end{verbatim}
+
+También podemos borrar  todos los archivos generados  por nuestro {\tt
+Makefile}, incluida la aplicación.
+
+\begin{verbatim}
+$ make clean_all
+\end{verbatim}
+
+Evidentemente este {\tt Makefile}  puede extenderse con nuevos targets
+que se  encarguen de  generar la documentación  de ayuda,  que generen
+bibliotecas de enlace dinámico con las funciones de uso más frecuente,
+que  generen otros  ejecutables que  formen parte  de la  aplicación e
+incluso  que empaqueten  nuestro programa  y  lo dejen  listo para  su
+instalación en cualquier sistema.
+

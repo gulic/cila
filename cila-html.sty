@@ -1,0 +1,77 @@
+%%% Copyright   Miguel Ángel Vilela
+%%%             Facultad de Matemáticas
+%%%             Universidad de La Laguna
+%%%             C/ Astrofísico Francisco Sánchez
+%%%             E-mail miguev@fmat.ull.es
+%%%
+%%% With code from: fncychap.sty, written by Ulf A. Lindgren <lindgren@ae.chalmers.se>
+%%%                 ull.sty,      written by Manolo G. Román <mroman@ull.es>
+%%%
+%%%
+%%% Note        Premission is granted to modify this file under
+%%%             the condition that it is saved using another
+%%%             file and package name.
+%%%
+%%% Revision    0.1
+%%%
+%%%             Feb. 22th Started package.
+%%%
+%%% Last modified    February 22th 2002
+
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{tila}
+             [2002/02/22 v0.1
+                 LaTeX package (Estilo para los apuntes del TILA)]
+%%
+%%% Implementación en  TeX del  "Índice de  ejemplos" Crea  el entorno
+%%% "ejemplo" y el contador "nejemplo" Su uso es:
+%%%
+%%% En el lugar donde se desee  poner el "Índice de ejemplos" utilizar
+%%% el comando \listadeejemplos
+%%%
+%%% Para poner  un ejemplo  en el documento:  (Los dos  argumentos son
+%%% obligatorios)
+%%%
+%%% \begin{ejemplo}{Nombre del fichero de ejemplo}{Descripción corta del ejemplo}
+%%%   Descripción y comentarios del ejemplo.
+%%% \end{ejemplo}
+%%%
+%%% El nombre  del fichero titulará  el ejemplo en la  parte superior,
+%%% con una etiqueta de "Fichero <nombrefichero>"
+%%%
+%%% La descripcion corta será la referencia que aparecerá en el Índice
+%%% de ejemplos.
+%%%
+%%% La descripción (mas larga) del ejemplo aparecera recuadrada debajo
+%%% del mismo.
+%%%
+%%% Ejemplo de uso:
+%%%
+%%% \begin{ejemplo}{hola.c}{HolaMundo en ANSI C}
+%%%   Este codigo en ANSI C muestra un programa basico de HolaMundo,
+%%%   que se limita a imprimir la cadena "Hola Mundo" en la salida estandar.
+%%% \end{ejemplo}
+%%%
+\newcommand{\listadeejemplos}{%
+\cleardoublepage\chapter*{Índice de ejemplos}% Creamos el índice de ejemplos
+\label{IndiceDeEjemplos}\@starttoc{lde}}%      y lo etiquetamos 
+\newcounter{nejemplo}[chapter]%                Contador subordinado al chapter
+\newcommand{\ejemploname}{Ejemplo }%           Nombre de la etiqueta
+\newcommand{\ejemplopath}{ejemplos/}%          Directorio de ejemplos
+\newenvironment{ejemplo}[2]{%                  Entorno "ejemplo", 2 argumentos
+\newcommand{\source}{#1} %                     Descripción corta del ejemplo
+\newcommand{\descripcion}{{\tt[#1]} #2} %      Descripción larga del ejemplo
+\vspace*{2mm}%                                 Pequeño margen superior 
+\fbox{\sf Fichero \tt \source}\newline%        Nombre del fichero del ejemplo
+\rule[5mm]{\textwidth}{1pt} %                  Regla separadora al principio
+\stepcounter{nejemplo}%                        Se incremente el contador y
+\addcontentsline{lde}{section}{%               se añade una línea al índice
+\protect\numberline{\thechapter.\thenejemplo}\descripcion}%  de ejemplos
+\vspace{-15mm}%                				   Se ajustan espacios
+\verbatiminput{\ejemplopath\source}%          Se incluye el fichero fuente
+\vspace{-6mm}%                				   Se ajustan espacios
+\rule[1mm]{\textwidth}{1pt}\newline %          Se inserta un \n y otra regla
+\begin{tabular}{|p{0.97\textwidth}|}%          Se abre una tabla para la
+\hline%\rowcolor[gray]{0.9}%                   descripción del ejemplo, con
+\sf\ejemploname\thechapter.\thenejemplo:}{\\ % color gris claro de fondo
+\hline\end{tabular}\vspace{4mm}}%              Se deja un espacio vertical 

@@ -1,0 +1,574 @@
+%Autor: Sin asignar
+
+\chapter{Usando Internet}
+
+\section{Navegadores web}
+
+\subsection{Netscape Communicator 4 }
+      
+
+Durante   algunos  años,   Netscape   ha  sido   el  único   navegador
+multiplataforma real, dando  cobertura a muchos de  los distintos Unix
+comerciales existentes.  Casi desde que Linux  tiene interfaz gráfico,
+ha  existido una  versión  del navegador  Netscape  para este  sistema
+operativo.
+
+
+{\em Netscape  Communicator 4} proporciona soporte  para navegación de
+páginas web  con JavaScript y  Flash 5, permite  visualizar documentos
+PDF  dentro del  navegador  (mediante  un plugin  para  el {\em  Adobe
+Acrobat Reader}). También nos  permite gestionar el correo electrónico
+y componer páginas web.
+
+
+
+Los  Linuxeros siempre  hemos  considerado que  el navegador  Netscape
+consumía  demasiados  recursos en  Linux,  además  de tener  bastantes
+problemas  de  estabilidad.   Debido  a  éste,  y   a  otros  factores
+importantes, como fueron la forma  de competir con las casa Microsoft,
+Netscape llegó a la sana conclusión de que la mejor manera de mantener
+su navegador en el mercado, era  liberando su código fuente. Así nació
+{\bf Mozilla}
+
+
+Como debe ser,  dentro de la comunidad del Software  Libre, se alzaron
+voces  en  contra  de  ese desperdicio  de  recursos,  proponiendo  la
+creación  de navegadores  alternativos. Aquí  listamos algunas  de las
+alternativas que podemos  encontrar en el área de  los navegadores web
+dentro del Software Libre:
+
+\begin{itemize}
+\item{\bf chimera2} - Navegador web para las X
+\item{\bf communicator} - Netscape Communicator 4.77
+\item{\bf dillo} - Navegador web basado en las GTK
+\item{\bf encompass} - Un navegador libre para GNOME
+\item{\bf galeon} - Navegador basado en Mozilla, con el aspecto y la
+apariencia de las aplicaciones GNOME
+\item{\bf konqueror} - El gestor de ficheros, navegador web y visor de
+documentos del KDE
+\item{\bf links} - Navegador web en modo cáracter
+\item{\bf lynx} - Navegador web en modo cáracter
+\item{\bf mozilla} - Un navegador Open Source para las X's. Es el heredero
+de Netscape.
+\item{\bf OpenOffice} - Suite ofimática que incluye un buen navegador web
+\item{\bf w3m} - Visor web con un excelente soporte para tablas y marcos
+\end{itemize}
+
+Bueno, seguro que en el momento  de leer este apartado, habrán surgido
+nuevos navegadores web dentro del mundillo del Software Libre
+
+
+
+\section{Transferencia de ficheros (FTP)}
+
+
+FTP  (File Transfer  Protocol) es  un  protocolo que  se utiliza  para
+transferir información, almacenada en  ficheros, de una máquina remota
+a  otra local,  o viceversa.  Para  poder realizar  esta operación  es
+necesario conocer la {\em dirección IP} (o el ``nombre'') de la
+máquina a  la que nos  queremos conectar  para realizar algún  tipo de
+transferencia. Es fundamental distinguir entre máquina local y máquina
+remota:
+
+\begin{description}
+
+\item[Máquina local]  Es  aquélla desde donde nos  conectamos para hacer
+la transferencia, es decir, donde ejecutamos ftp.
+
+\item[Máquina  remota]   Es  aquella  a   la  que  nos  conectamos  para
+transferir información.
+
+\end{description}
+
+\subsection{ Inicio de sesión FTP}
+
+Para realizar  transferencias  de ficheros  por protocolo  FTP
+se  establecen  conexiones (sesiones)  entre  la  máquina local  y  la
+remota. Estas sesiones comienzan por  la autentificación del usuario y
+prosiguen  con las  transferencias.  Finalmente la  sesión se  cierra.
+Veamos un breve ejemplo. 
+
+\begin{verbatim}
+$ ftp euler
+Connected to euler.fmat.ull.es.
+220 ProFTPD 1.2.0pre10 Server (Debian) [euler.fmat.ull.es]
+Name (euler:miguev): 
+\end{verbatim}
+
+  El   servidor  nos  preguntará   un  nombre  de   usuario,  y
+seguidamente la contraseña. El nombre  que daremos debe ser una cuenta
+de  usuario válida  en el  servidor al  que intentamos  acceder, y  la
+contraseña  lógicamente debe  ser  correspondiente a  ese  usuario. En
+servidores públicos  suele  existir una cuenta de  acceso anónima sólo
+para leer (o tal vez una carpeta donde poner cosas pero no leer). Para
+acceder a un FTP  como usuario  anónimo se  utiliza el  nombre {\em anonymous}
+y se proporciona  la  dirección  de  correo  electrónico  como  contraseña.
+
+
+ Una vez introducido el nombre  y la contraseña el servidor nos
+recibirá  y  el  programa  cliente  de FTP  nos  mostrará  un  prompt,
+manifestando así que  está preparado para ejecutar las  órdenes que le
+demos. A  partir de aquí  se realizan las maniobras  posibles mediante
+los comándos de FTP que veremos más adelante. 
+
+\begin{verbatim}
+$ ftp euler
+Connected to euler.fmat.ull.es.
+220 ProFTPD 1.2.0pre10 Server (Debian) [euler.fmat.ull.es]
+Name (euler:miguev): miguev
+331 Password required for miguev.
+Password:
+230 User miguev logged in.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp&gt;
+\end{verbatim}
+
+
+
+\subsection{ Comandos del FTP}
+
+
+El protocolo FTP dispone de unos comandos estándares suficientes 
+para las operaciones de transferencia de ficheros, de los cuales
+vemos a continuación un resumen.
+
+
+\begin{description}
+
+\item[help]  Proporciona una lista de los comandos del FTP de la máquina
+local
+
+\item[help   comando]    Proporciona   información  sobre   el   comando
+especificado, correspondeinte a la máquina local
+
+\item[lcd directorio-local]  Para moverse de  un directorio a otro en la
+máquina local
+
+\item[lcd unidad:]   Para cambiar de una  unidad de disco a  otra, en el
+caso particular de que la máquina local esa un PC con Windows o MS-DOS
+
+\item[cd directorio-remoto]  Para moverse de un directorio a otro en la máquina remota
+
+\item[lls directorio-local]   Para listar el contenido  de un directorio
+en la máquina local
+
+\item[[ls|dir] directorio-remoto] 
+Para listar el contenido de un directorio en la máquina remota
+
+\item[! comando]  Para ejecutar un comando en la máquina local
+
+\item[delete fichero-remoto]  Para borrar un fichero en la máquina remota
+
+\item[delete  ficheros-remotos]   Para  borrar  varios  ficheros  en  la
+máquina remota
+
+\item[rmdir directorio-remoto]  Para borrar  un directorio en la máquina
+remota
+
+\item[mkdir directorio-remoto]   Para crear un directorio  en la máquina
+remota
+
+\item[pwd]  Para  saber el directorio en  el que se está,  en la máquina
+remota
+
+\item[ascii]  Para hacer la transferencia  en formato ASCII (lo hace por
+defecto)
+
+\item[binary]   Para  hacer  la  transferencia en  formato  binario,  se
+utiliza el comando:
+
+\item[get      fichero-remoto     fichero-local]       Transfiere     el
+{\tt fichero-remoto}  desde  la  máquina  remota a  la  máquina  local,
+guardándolo con el nombre {\tt fichero-local} en la máquina local
+
+\item[mget lista-ficheros-remotos]  Transfiere los ficheros listados desde
+la máquina remota a la máquina local.
+
+\item[prompt]  (Des)activa el modo  interactivo de las transferencias de
+ficheros múltiples.
+
+\item[put      fichero-local     fichero-remoto]       Transfiere     el
+{\tt fichero-local}  desde  la  máquina  local  a  la  máquina  remota,
+guardándolo con el nombre {\tt fichero-remoto} en la máquina remota
+
+\item[mput  lista-ficheros-locales]   Transfiere los  ficheros  listados
+desde la máquina local a la máquina remota.
+
+\end{description}
+
+Obviamente, el comando {\tt ftp} no es el único programa cliente
+de  FTP disponible.  Existen multitud  de programas  clientes de  FTP,
+tanto para GNU/Linux como para  otras plataformas, como p.ej. el gFTP.
+
+
+
+\section{Acceso remoto (SSH)}
+
+
+En muchas ocaciones resulta interesante acceder a una máquina remota y
+trabajar como  si estuviéramos  físicamente frente  a ella.  Es decir,
+hablamos de  poder ejecutar  comandos en dicha  máquina sin  tener que
+trasladarnos  a escribirlos  en  su teclado.  Este  tipo de  servicios
+existe desde  los orígenes de  Internet pero siempre ha  entrañado sus
+riesgos dado que  es necesaria la autentificación  remota del usuario.
+Para entender  de lo  que estamos  hablando sólo  es necesario que nos
+aproximemos  al servicio  de {\em  TELNET} (cuyo  cliente suele  estar
+disponible bajo el comando del mismo nombre).
+
+TELNET\index{TELNET} fue el primer  servicio de acceso remoto diseñado
+para  Internet.  Básicamente el  comando  {\tt  telnet} toma  nuestras
+pulsaciones de  teclado y las trasnmite  por la red hasta  el servidor
+TELNET de la máquina remota a  la que estamos conectados. Éste toma la
+salida  a terminal  de la  aplicaciones que  vayamos ejecutando  y las
+envía  a  nuestro cliente  en  la  máquina  local. Ese  mecanismo  tan
+sencillo  resuelve  el problema  del  acceso  remoto; excepto  por  un
+pequeño  problema. Toda  la comunicación  se realiza  en texto  plano.
+Es  decir,  el texto  se  envía  tal  cual,  sin mecanismo  alguno  de
+compresión  y/o encriptación  que altere  las cadenas  de texto.  Todo
+lo  que  escribimos (p.ej.  comandos  del  intérprete de  comandos)  y
+recibimos (p.ej. correo, informes, cartas) puede ser visto por quienes
+intercepten nuestros  paquetes. Esto es especialmente  crítico durante
+el  proceso de  conexión, momento  en  el que  debemos enviar  nuestro
+nombre de usuario y contraseña para realizar la autentificación remota
+a la que aludimos anteriormente. Es  evidente que en esa etapa nuestra
+password, y  con ella  el acceso  al servidor  bajo nuestro  nombre de
+usuario, queda al descubierto.
+
+A   efectos  prácticos   la   mayor  parte   de   los  protocolos   de
+Internet  se  fundamentan en  TELNET.  Servicios  como la  World  Wide
+Web  (HTTP\index{HTTP}),  el   correo  electrónico  (SMTP\index{SMTP},
+POP\index{POP},  IMAP\index{IMAP}),  las  transferencias  de  ficheros
+(FTP\index{FTP}), la administración de la red (SMNP\index{SMNP}), etc.
+utilizan  protocolos  cuyas  especificaciones  indican  claramente  su
+vínculo con TELNET. Si ya resulta  grave que en todas esas situaciones
+nuestros datos queden al descubierto, más lo es aun cuando hablamos de
+permitir o  denegar el  acceso a  un servicio tan  crítico como  es el
+acceso remoto. Éste suele poner las  cosas más faciles que ningún otro
+para quien desee atacar el sistema.
+
+Dos son las cosas que debemos recordar de todo lo anterior:
+
+\begin{itemize}
+
+\item {\bf  En condiciones normales  la mayor  parte de los  datos que
+enviamos y/o  recibimos de Internet  están al descubierto.}  Es decir,
+una  vez interceptados  pueden  ser leídos  directamente sin  requerir
+ningún proceso intermedio.
+
+\item  {\bf  No debemos  utilizar  TELNET  bajo ningún  concepto.}  El
+comando {\tt telnet} puede ser una herramienta muy práctica en algunos
+casos, pero peligrosa si la usamos para acceso remoto.
+
+\end{itemize}
+
+La  cuestión  ahora  es  cómo podemos  resolver  estos  problemas.  La
+respuesta  es  utilizando  {\em Secure  Shell  (SSH\index{SSH})}. Este
+programa trabaja de forma similar  a TELNET solo que encriptando tanto
+la información que  es transmitida a la máquina remota  como la que es
+enviada por ésta. El resultado es que aunque la comunicación pueda ser
+interceptada los  datos resultarán ininteligibles. En  realidad SSH es
+un  paquete de  comandos  relacionados con  las transacciones  seguras
+de  información en  la  red, que  utiliza  diferentes mecanismos  para
+garantizar esa seguridad. De todos  ellos el comando {\tt ssh} esconde
+el  programa de  acceso  remoto  del cual  la  forma  más sencilla  de
+utilizarlo es:
+
+\begin{verbatim} 
+$ ssh <usuario>@máquina_remota 
+\end{verbatim}
+
+Por  ejemplo si el  usuario {\tt miquev} quiere  acceder al servidor
+{\tt euler.fmat.ull.es} ejecutaría lo siguiente: 
+
+\begin{verbatim} 
+$ ssh miguev@euler.fmat.ull.es 
+\end{verbatim}
+
+La primera vez que accedamos a una máquina el programa nos mostrará su
+{\em huella dactilar} y pedirá que confirmemos que queremos establecer
+la conexión. Esto  permite utilizar políticas de seguridad  en las que
+podamos  verificar  la  autenticidad  de  la  máquina  a  la  que  nos
+conectamos,  evitando  que  pueda  haber  sido  suplantada  por  otra.
+Si  estamos seguros  de  la autenticidad  del  sistema remoto  debemos
+contestar que  sí. La huella dactilar  es almacenada y vinculada  a la
+dirección de la  maquina remota, por lo que nunca  más recibiremos una
+mensaje de verificación  como el anterior. Exceptuando el  caso en que
+la máquina haya cambiado, y con  ello su huella dactilar, situación en
+la que probablemente estemos ante una posible suplantación. Si todo va
+bien {\tt  ssh} nos  pedirá la  password del usuario.  En caso  de ser
+autentificados dispondremos de  acceso remoto sobre el  sistema. Si al
+ejecutar el  comando no especificamos  el nombre de usuario  ({\tt ssh
+euler.fmat.ull.es}) el  programa utilizará por defecto  nuestro nombre
+en la máquina local.
+
+A la  hora de trabajar  con {\tt ssh}  debemos tener algunas  cosas en
+cuenta. En  caso de  duda podemos  recurrir a  las páginas  del manual
+({\tt  man ssh})  donde encontraremos  detallada información  así como
+referencias  a  las  otras  herramientas del  paquete  SSH.  Si  acaso
+destacar que debido a que el carácter {\tt \~{} } tiene un significado
+especial  para el  {\tt ssh},  si  queremos escribirlo  en la  máquina
+remota tendremos que pulsar {\tt \~{}\~{} } en nuestro teclado.
+
+Aunque {\tt ssh} garantiza el  acceso remoto seguro no proporciona por
+sí solo la  transferencia segura de archivos. Para ello  se utiliza el
+comando {\tt scp}\index{scp} que tiene la siguiente forma:
+
+\begin{verbatim}
+$ scp <usuario>@<máquina_origen>:<archivo_origen>;
+      <usuario>@<máquina_destino>:<archivo_destino>;
+\end{verbatim}
+
+El  cual copia  {\tt archivo\_origen}  desde la  {\tt máquina\_origen}
+hasta el {\tt archivo\_destino} en la {\tt máquina\_destino}. Si no se
+especifica alguno  de los nombres de  máquina, el {\tt scp}  asume que
+estamos  hablando  del  sistema  local.  El  siguiente  comando  copia
+el  archivo  {\tt  mi\_archivo}  desde la  máquina  local  hasta  {\tt
+euler.fmat.ull.es}:
+
+\begin{verbatim}
+$ scp mi_archivo euler.fmat.ull.es:
+\end{verbatim}
+
+Mientras que el siguiente comando hace lo contrario:
+      
+\begin{verbatim}
+$ scp euler.fmat.ull.es:mi_archivo .
+\end{verbatim}
+
+Si al especificar  la ruta de archivo en la  máquina remota lo hacemos
+de forma  relativa (o sea  sin usar {\tt /})  la ruta será  relativa a
+nuestro directorio personal en la maquina remota. O sea que el comando
+anterior copia {\tt mi\_archivo}  desde nuestro directorio personal en
+{\tt  euler.fmat.ull.es}. Sin  embargo, el  siguiente comando  copia el
+fichero {\tt /tmp/mi\_archivo} (ruta absoluta) en el mismo servidor.
+
+\begin{verbatim}
+$ scp euler.fmat.ull.es:/temp/mi_archivo .
+\end{verbatim}
+
+Otro comando interesante es {\tt sftp}\index{sftp} que nos proporciona
+los  mismos servicios  que {\tt  ftp} solo  que de  forma segura.  Sin
+embargo aún no está disponible en todos los sistemas.
+
+Una de  las preguntas  más habitules  de los usuarios  de Linux  es si
+pueden acceder a  su servidor SSH en Linux desde  una máquina local en
+otro  sistema operativo.  La  respuesta  es que  SSH  es un  protocolo
+estándar por  lo que todo  depende de  la disponiblidad de  un cliente
+para su plataforma. En la  actualidad existen versiones libres para la
+mayor  parte  de  sistemas  operativos. De  entre  ellas  destacaremos
+{\em  PUTTY}[pag. \pageref{putty}]  como uno  de los  mejores clientes
+TELNET/SSH para sistemas Microsoft® Windows®.
+
+
+\section{Correo electrónico}
+
+\subsection{Mutt }
+
+
+       Mutt  es un programa  cliente de correo  electrónico, lo
+      que en  inglés se denomina  un MUA  (Mail User Agent,  agente de
+      correo del  usuario). Es un programa  ``de consola'', lo
+      que  significa  que no  necesita  un  entorno de  ventanas  para
+      ejecutarse. Al igual que  otros programas basados en pulsasiones
+      de  teclas,  Mutt  resulta  ser  poco  intuitivo  al  principio.
+      Afortunadamente,  se encuentra  traducido  al  castellano y  eso
+      ayuda bastante. 
+
+       Vamos a usar mutt  para familirizarnos un poco él, verán
+      que es  simple. Abrimos  una ventana de  emulador de  terminal y
+      ejecutan el comando {\tt mutt}. 
+
+\begin{verbatim}
+      $ mutt
+\end{verbatim}
+
+       Si nos fijamos en la  primera línea de la pantalla vemos
+      que  aparecen listadas  una  serie de  teclas  con sus  acciones
+      asociadas, {\tt q:Salir}, para salir, {\tt d:Sup} para suprimir un
+      mensaje, etc. Vemos un ejemplo de  uso para hacernos una idea de
+      las funciones básicas. 
+
+       El  que se haya fijado  en las dos últimas  líneas habrá
+      visto que aparece lo siguiente: 
+
+\begin{verbatim}
+---Mutt: (ningún buzón) [Msgs:0]---(threads/date)-----------------------(all)---
+/var/spool/mail/miguev: No existe el fichero o el directorio (errno = 2)
+\end{verbatim}
+
+        Esto significa  que mutt  está buscando  el correo  del
+      usuario  en  {\tt /var/spool/mail/miguev}  (en  el  caso  del
+      usuario miguev).  No se asusten.  Lo que  pasa es que  el correo
+      está en esa carpeta pero no en el terminal donde están sentados,
+      sino en  el servidor de  correo. Para  poder usar el  correo con
+      Mutt hay que entrar primero en el servidor, lo que podemos hacer
+      rápidamente  con  lo que  ya  sabemos  de  SSH. Entramos  en  el
+      servidor y ejecutamos mutt allí: 
+
+\begin{verbatim}
+      $ ssh euler.fmat.ull.es
+      miguev@10.0.1.2's password: 
+\end{verbatim}
+
+       Una vez  dentro del servidor podemos ya  ejecutar mutt y
+      utilizar  el correo  directamente  desde el  servidor. Esto  que
+      parece  inútil  tiene  su  utilidad. Imagina  que  estás  en  un
+      ordenador en cualquier  lugar del mundo (con  acceso a internet)
+      y  quieres  leer tu  correo  en  la  facultad, pero  no  quieres
+      bajártelo. Utilizas un programa cliente de SSH para entrar en el
+      servidor  y desde  dentro usas  el  correo como  si lo  tuvieras
+      delante, aunque estés dentro del servidor. El mayor problema que
+      esto  presenta  es  la  lentitud del  protocolo  SSH  cuando  la
+      conexión es a través de un módem de línea telefónica. 
+
+       Ejecutamos el  comando {\tt mutt} y vemos  en el terminal
+      un programa casi todas las líneas vacías, salvo la primera y las
+      dos últimas.  Probablemente en el  momento de abrir  mutt por
+      primera vez  no veamos  nada interestante,  pero aquí  tienen un
+      ejemplo de una lista de mensajes vista desde mutt. 
+
+\begin{verbatim}
+q:Salir  d:Sup.  u:Recuperar  s:Guardar  m:Nuevo  r:Responder  g:Grupo  ?:Ayuda
+  43     Oct 27 Teresa Gonzalez (   0)  *>Re: [l-gulic] CILA LLENO
+  44     Oct 27 Lucas Gonzalez  (   0)   >cvs
+  45     Oct 27 Miguel Ángel Vi (   0) Bienvenido al calendario de la Universida
+  46     Oct 28 Teresa Gonzalez (   0) Re: [l-gulic] Cambios en el CVS de CILA
+  47     Oct 28 Pedro Gonzalez  (   0)  *>
+  48     Oct 28 Carlos de la Cr (   0) La pu~etera introduccion :-)
+  49     Oct 28 carlos de       (   0) maldito texto sobre java
+  50     Oct 28 frodo@fmat.ull. (   0) MUY IMPORTANTE!!
+  51     Oct 28 frodo@fmat.ull. (   0) ahora te llega?
+  52     Oct 28 frodo@fmat.ull. (   0) ¡como no te llegue! ..grrr
+  53     Oct 28 Administrador d (   0) Re: instala esto
+
+
+
+
+
+
+
+
+
+
+---Mutt: /var/spool/mail/miguev [Msgs:53 425K]---(threads/date)---------(end)---
+
+\end{verbatim}
+
+ Vamos a enviar un email a  alguien que esté con nosotros en el
+aula, de esa forma cada uno  enviamos un correo y recibimos otro. Para
+ello pulsamos  la tecla {\tt m} y  veremos como en la  última línea nos
+pregunta por el destinatario  del mensaje ({\tt To:}>. Introducimos ahí
+la dirección de email a la que enviaremos el mensaje: 
+
+\begin{verbatim}
+To: frodo@fmat.ull.es
+\end{verbatim}
+
+ Seguidamante  mutt nos  preguntará por  el asunto  del mensaje
+({\tt Subject:}). Es importante poner un asunto al mensaje, para que el
+destinatario  pueda tener  una idea  de qué  es ese  mensaje antes  de
+abrirlo.  En  un  tiempo  en  que el  contagio  de  virus  por  correo
+eletrónico es preocupantemente frecuente,  resulta muy molesto recibir
+un mensaje de email sin asunto. 
+
+\begin{verbatim}
+Subject: Hola pringao :-P
+\end{verbatim}
+
+ Una  vez que  mutt ya  sabe el destinatario  del mensaje  y el
+asunto,  ejecuta el  editor que  tengamos  definido en  el fichero  de
+configuración {\tt \~/.muttrc}. Editamos el  mensaje que queramos y
+salimos del  editor {\bf guardando el mensaje},  importante esto último
+ya que si salimos del editor  sin guardar el mensaje mutt cancelará el
+envío. Una vez que salimos del  editor mutt está preparado para enviar
+el mensaje, pero nos ofrece la  posibilidad de hacer aún varias cosas.
+
+
+\begin{verbatim}
+y:Mandar  q:Abortar  t:To  c:CC  s:Subj  a:Adjuntar archivo  d:Descrip  ?:Ayuda
+    From: Miguel Ángel Vilela <miguev@fmat.ull.es>
+      To: frodo@fmat.ull.es
+      Cc:
+     Bcc:
+ Subject: Hola pringao
+Reply-To: Miguel Ángel Vilela <miguev@fmat.ull.es>
+     Fcc:
+     Mix: <no chain defined>
+     PGP: En claro
+
+-- Archivos adjuntos
+- I     1 /tmp/mutt-euler-19795-2          [text/plain, 8bit, iso-8859-1, 0,1K] 
+
+
+
+
+
+
+
+
+-- Mutt: Crear mensaje
+
+\end{verbatim}
+
+ Como podemos  apreciar en el ejemplo,  tenemos varias opciones
+con  sus  teclas  asociadas  en  la primera  línea.  Para  cambiar  el
+destinatario  pulsaríamos  {\tt t}, para  enviar  una  copia a  alguien
+pulsaríamos  {\tt c},  para  editar  el mensaje  de  nuevo  pulsaríamos
+{\tt e}, etc. Para enviar el mensaje pulsamos {\tt y}. Entonces mutt nos
+devolverá a  la primera pantalla,  pero mostrando en la  primera línea
+información acerca del envío del mensaje. Debería aparecer
+
+\begin{verbatim}
+Mensaje enviado.
+\end{verbatim}
+
+ El resto del manejo  básico de {\tt mutt} es bastante intuitivo
+y  no   presenta  dificultades.  Si  en   cualquier  momento  deseamos
+información  más  detallada  hacerca   de  las  opciones  disponibles,
+pulsamos {\tt ?}. 
+
+\begin{verbatim}
+i:Salir  -:PágAnt  <Space>:PróxPág  ?:Ayuda 
+^B          M |urlview\n           call urlview to extract URLs out of a message
+^D          delete-thread          suprimir todos los mensajes en este hilo
+^E          edit-type              editar el tipo de archivo adjunto
+^F          forget-passphrase      borrar contraseña PGP de la memoria
+<Tab>       next-new               saltar al próximo mensaje nuevo
+<Return>    display-message        mostrar el mensaje
+^K          extract-keys           extraer claves PGP públicas 
+^N          next-thread            saltar al próximo hilo
+^P          previous-thread        saltar al hilo anterior
+^R          read-thread            marcar el hilo actual como leído
+^T          untag-pattern          quitar marca de los mensajes que coincidan   +                                  con un patrón
+^U          undelete-thread        restaurar todos los mensajes del hilo
+<Esc><Tab>  previous-new           saltar al mensaje nuevo anterior
+<Esc>C      decode-copy            crear copia decodificada (text/plain)
+<Esc>V      collapse-all           colapsar/expander todos los hilos
+<Esc>b      M /~b                  search in message bodies
+<Esc>c      change-folder-readonly abrir otro buzón en modo de sólo lectura
+<Esc>d      delete-subthread       suprimir todos los mensajes en este subhilo
+<Esc>e      resend-message         usar el mensaje actual como base para uno
++                                  nuevo
+Ayuda para index                                                       -- (15%) 
+
+\end{verbatim}
+
+
+
+\subsection{Kmail }
+
+
+ Kmail es el programa cliente de correo para KDE, fácil de usar
+y a la vez muy versátil y  configurable. Dada su facilidad de manejo y
+la premura  de tiempo en  el curso  actual, no entraremos  en detalles
+sobre su manejo y configuración. Sólo les animaremos a que sean osados
+y exploren libremente sus opciones de configuración. 
+
+
+
+
+
+
+
+

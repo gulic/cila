@@ -1,0 +1,104 @@
+%Autor: miguev
+
+% Documento de clase 'book', papel A4 a doble cara con letra de 12 puntos.
+\documentclass[a4paper,10pt,twoside,final]{book}
+
+% Paquetes
+% ========
+
+% Paquete para poder escribir los caracteres especiales sin necesidad de
+% comandos. La opción 'latin1' se corresponde con el standar ISO-8859-1
+% (también es válido para ISO-8859-15, aunque no reconoce el ¤)
+\usepackage[latin1]{inputenc}
+
+% Paquete para castellanizar las variables del documento.
+\usepackage[spanish]{babel}
+
+% Paquete de símbolos de la AMS (American Mathematical Society)
+\usepackage{amssymb}
+
+% Estilo de cabeceras y piés de página.
+\usepackage{fancyhdr}
+
+% Paquetes para inclusión de gráficos Encapsulados PostScript
+\usepackage{graphicx}
+\usepackage{psfig}
+
+% Paquete para el símbolo oficial del ¤uro
+\usepackage{eurosym}
+
+% Paquete para construir los índices con makeindex.
+\usepackage{makeidx}
+
+% Paquete para hiperenlaces HTML
+\usepackage{html}
+
+% Paquete para filas múltiples (para tablas)
+\usepackage{multirow}
+
+% Paquete para usar colores, en las páginas y en las tablas
+\usepackage{color}
+\usepackage{colortbl}
+
+% Paquete para imprimir las marcas de cortado 
+\usepackage[a4,center]{crop}
+
+% Paquete para vieguerías con verbatim
+\usepackage{verbatim}
+
+% Estilo para los apuntes del TILA, 
+% tomando código de los paquetes fncychap y ull.
+% Este paquete debe ser el último en ser incluido, 
+% ya que sobreescribe definiciones de otros paquetes
+% (p.ej. babel)
+\usepackage{cila}
+
+\frenchspacing
+
+% COMIENZO DEL DOCUMENTO
+\begin{document}
+
+% Se da la orden de poner las marcas de corte
+{\crop}
+
+% El  comando  \sloppy relaja  los  párrafos  y  evita muchos  de  los
+% desbordamientos  horizontales. Esto  se  logra  permitiendo que  los
+% espacios entre palabras lleguen a ser más grandes.
+\sloppy
+
+% Parte frontal
+% Portadas, nota de copyright y dedicatoria
+\frontmatter
+\include{portada}
+
+% Modificación de algunas variables para adaptarlas a nuestro uso particular
+\renewcommand{\partname}{MÓDULO}
+\renewcommand{\chaptername}{TEMA}
+\renewcommand{\listtablename}{Índice de tablas}
+\renewcommand{\tablename}{Tabla}
+
+% Índices general, de tablas, de figuras y de ejemplos
+\tableofcontents\newpage\thispagestyle{empty}
+\listoffigures\newpage\thispagestyle{empty}
+\listoftables\newpage\thispagestyle{empty}
+\listadeejemplos\newpage\thispagestyle{empty}
+
+
+% Parte principal
+\mainmatter
+
+% Inclusión de los ficheros en el orden apropiado.
+\input{toc_includes.tex}
+
+% Parte posterior
+\backmatter
+
+% Bibliografía, generado por BIBTeX
+\bibliographystyle{plain}
+\bibliography{biblio}
+
+% Índice terminológico
+\printindex
+
+\end{document}
+% FIN DEL DOCUMENTO

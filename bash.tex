@@ -1,0 +1,624 @@
+%Autor: aplatanad
+
+
+\chapter{Bash}
+
+En capítulos anteriores hemos visto algunos aspectos del intérprete de
+comandos  (o shell  en la  literatura inglesa).  Como en  muchos otros
+casos la variedad de intérpretes  de comandos existente es muy amplia.
+Sin embargo  existe uno que ha  destacado sobre los demás,  o al menos
+que  ha sabido  ocupar el  puesto  de estándar  de facto  en el  mundo
+GNU/Linux. Estamos hablando  del Bourne Shell, más  conocido como {\tt
+bash}\index{bash}, que  suele ser el intérprete  de comandos instalado
+por defecto en nuestro sistema.
+
+En  general esto  no  desmerece  en nada  las  posibilidades de  otros
+intérpretes de comandos  como pueden ser el {\tt  tsh}\index{tsh} o el
+{\tt ash}\index{ash}.  Todo lo contrario, los  intérpretes de comandos
+del mundo  UNIX presentan una potencia  sin igual, en especial  si los
+comparamos con sus equivalentes en Microsoft® Windows® (o sea el viejo
+{\tt  COMMAND.COM} o  el  nuevo  {\tt CMD.EXE}).  Esto  es natural  si
+tenemos en cuenta  que por la consola de los  sistemas UNIX han pasado
+millones de  profesionales que han  contribuido con sus  comentarios o
+con su esfuerzo a  que haya ido ganando en potencia a  lo largo de los
+años. Cada usuario  puede tener su propio intérprete  de comando, pero
+por sencillez,  y puesto que  es el  intérprete por defecto  en muchos
+sistema GNU/Linux, no centraremos exclusivamente en el {\tt bash}.
+
+En  realidad ya  hemos pasado  por  un capítulo  donde aprendimos  los
+principios básicos del uso del  intérprete de comandos, ahora se trata
+de utilizarlo  para generar  pequeños programas que  nos ayuden  en el
+trabajo  diario. El {\tt  bash} no  sólo  permite la  ejecución de las
+aplicaciones instaladas en el sistema;  sino que proporciona una serie
+de comandos  internos así como  estructuras sintácticas de  control de
+flujo semejantes a las existentes  en muchos lenguajes de programación
+(p.ej: {\tt for}, {\tt case}, {\tt while}, {\tt until}).
+
+\vfill
+
+\section{Ficheros de comandos}
+
+Todas   las  características   que  veremos   pueden  ser   utilizados
+interactivamente  introduciendo  los  comandos directamente  desde  la
+consola. Esto es práctico para realizar tareas sencillas. Sin embargo,
+para desarrollar  programas extensos o rutinas  ampliamente utilizadas
+suele ser  más interesante escribir  nuestro programa en un  archivo a
+modo  de {\em  script}. En  este último  caso podemos  invocar nuestro
+programa escribiendo el comando:
+
+\begin{verbatim}
+$ bash mi_programa
+\end{verbatim}
+
+De esa  manera se iniciará  la ejecución de  una nueva copia  del {\tt
+bash} que abrirá el script y lo ejecutará. En los sistemas Linux suele
+haber  un  comando llamado  {\tt  sh}\index{sh}.  Dicho comando  suele
+corresponderse con  el intérprete de  comandos por defecto  de nuestro
+sistema. Por  lo tanto, podemos sustituir  {\tt bash} por {\tt  sh} si
+estamos seguros de que el {\tt bash} es nuestro intérprete por defecto
+o  de  que  nuestro  script  utiliza  características  estándar  entre
+los  diferentes intérpretes  disponibles. Si  queremos garantizar  que
+la  interpretación de  nuestro  script  la realice  el  {\tt bash}  es
+conveniente indicarlo explícitamente en lugar de utilizar el {\tt sh}.
+Resumiendo, podemos invocar nuestro programa de la siguiente manera:
+
+\begin{verbatim}
+$ sh mi_programa
+\end{verbatim}
+
+La verdad es que resulta mucho  más profesional y sencillo que nuestro
+script se ejecute de forma semejante  a la de cualquier otro programa.
+Es  decir, escribiendo  directamente  su nombre  en  el intérprete  de
+comandos. Para ello sólo es necesario  que la primera línea de nuestro
+script sea así:
+
+\begin{verbatim}
+#!/bin/bash
+\end{verbatim}
+
+O  sustituimos {\tt  bash}  por {\tt  sh} si  se  dan las  condiciones
+comentadas anteriormente. El último paso  es habilitar los permisos de
+ejecución y ya podemos utilizar nuestro script.
+
+\begin{verbatim}
+$ chmod u+x mi_programa
+$ ./mi_programa
+\end{verbatim}
+
+Cada línea de  nuestro script debe contener un comando  a ejecutar por
+el intérprete.  Si deseamos poner  varios comandos en una  misma línea
+debemos  usar {\tt  ';'} para  separarlos. Por  lo tanto  la siguiente
+secuencia de comandos:
+
+\begin{verbatim}
+whoami
+pwd
+date
+\end{verbatim}
+
+Es equivalente a:
+
+\begin{verbatim}
+whoami; pwd; date
+\end{verbatim}
+
+A la  hora de mostrar  texto por pantalla  se utiliza el  comando {\tt
+echo}. Veamos el siguiente script:
+
+\begin{ejemplo}{whoami.sh}{Ejemplo sencillo de programación en BASH}
+Este código se limita a mostrar la información referente al usuario
+en la máquina local, el directorio de trabajo y la fecha actual
+del sistema.
+\end{ejemplo}
+
+Varios son  los elementos nuevos que  podemos ver en este  programa,
+aparte del uso del {\tt echo}\index{echo}:
+
+\begin{enumerate}
+
+\item  Cuando el  intérprete  encuentra  un {\tt  \#}  ignora todo  el
+contenido de la línea a partir de ese punto.
+
+\item El  comando {\tt  who}\index{who} muestra información  sobre los
+usuarios autentificados en el sistema.  Al añadir las opciones {\tt am
+I}  estamos  indicando  que  queremos  que  sólo  muestre  información
+referente a nosotros como usuarios.
+
+\item El comando {\tt pwd}\index{pwd} informa del directorio actual de trabajo.
+
+\item El comando {\tt date}\index{date} muestra la fecha y hora actual del
+sistema.
+
+\end{enumerate}
+
+\begin{table}[hbtp]
+\begin{tabular}{|c|l|}
+\hline
+Variable		&	Contenido \\
+\hline
+\hline
+{\tt \$0}		&	Nombre del fichero de comandos \\
+\hline
+{\tt \$1-\$9}		&	Argumentos del 1º al 9º. El primero es \$1, el segundo \$2, etc. \\
+\hline
+{\tt \$*}		&	Línea de comandos completa exceptuando \$0 \\
+\hline
+\end{tabular}
+\caption{Variables de la línea de comandos}\label{cmdline}
+\end{table}
+
+Existen una serie  de variables que el propio intérprete  define en el
+momento de  ejecutar el  script y que  contienen información  sobre la
+línea de comandos  que se le ha pasado. Una  breve descripción de esas
+variables la podemos ver en el Cuadro \ref{cmdline}. Veamos un ejemplo
+sencillo:
+
+\begin{ejemplo}{yorecuerdo.sh}{Argumentos de la línea de comandos}
+Ejemplo de acceso a los argumentos de la línea de comandos especificados
+al iniciar la ejecución de un script.
+\end{ejemplo}
+
+Al ejecutarlo obtenemos:
+
+\begin{verbatim}
+$ ./yorecuerdo A B C
+El comando es ./yorecuerdo
+El primer argumento es A
+El tercer argumento es C
+Todos los argumentos son A B C
+\end{verbatim}
+      
+
+\section{Variables de entorno}
+
+El  intérprete de  comandos  permite la  definición  de variables  que
+puedan ser  utilizadas en nuestros  script. Algunas de  esas variables
+tienen un significado particular en  nuestro sistema. Para conocer las
+variables  actualmente  definidas  podemos utilizar  el  comando  {\tt
+set}\index{set}. Si  lo usásemos  seguramente veríamos  variables como
+{\tt \$HOME}\index{HOME},  que define  nuestro directorio  personal de
+usuario (la  ruta {\tt  $\sim$/} tiene el  mismo significado),  o {\tt
+\$PATH}\index{PATH},  que contiene  la lista  de directorios  donde el
+intérprete buscará los  ejecutables cuando le indiquemos  el nombre de
+alguno.
+
+Definir nuevas variables es tan sencillo como realizar una asignación:
+
+\begin{verbatim}
+$ EDAD=24;
+\end{verbatim}
+
+Mientras que  acceder a su valor  se hace precediendo al  nombre de la
+variable con el caracter {\tt \$}.
+
+\begin{verbatim} 
+$ echo Mi edad es $EDAD 
+\end{verbatim}
+
+Toda variable definida en un {\tt bash}  es local a esa copia del {\tt
+bash} y por  tanto invisible para el resto de  programa. Si tenemos en
+cuenta que cada  vez que ejecutamos un script se  inicia un {\tt bash}
+nuevo, resulta evidente que todas las variables definidas en el script
+serán destruidas cuando éste termine. Además si un script ejecuta otro
+script,  uno no  podrá  ver  las variables  del  otro.  Para que  esté
+garantizado  que una  variable pueda  ser vista  fuera del  {\tt bash}
+donde fue definida es necesario {\em exportarla}.
+
+\begin{verbatim}
+$ EDAD=65
+$ export EDAD
+\end{verbatim}
+
+A continuación vamos a añadir una nueva ruta al {\tt \$PATH}:
+
+\begin{verbatim}
+$ PATH=$HOME/bin:$PATH
+\end{verbatim}
+
+O a modificar nuestro prompt:
+
+\begin{verbatim}
+$ PS1='Le obedezco amo: '
+\end{verbatim}
+
+Como se puede apreciar hemos puesto  la frase entre comillas. Si no lo
+hubiéramos hecho  así obtendríamos un  error a causa de  los espacios.
+Esto nos lleva a intentar conocer  algunos caracteres que en el entono
+del {\tt bash} tienen un significado especial.
+
+
+\section{Metacaracteres}
+
+A esos caracteres se los de nomina metacaracteres:
+
+\subsection{Sustitución: {\tt * ?}}
+
+El  primero  puede  ser  sustituido por  un  número  indeterminado  de
+cualquier combinación de caracteres. El segundo sólo representa a {\em
+un}  carácter  cualquiera. Se  explican  por  sí  mismos si  vemos  el
+siguiente código de ejemplo en el que se listan todos los archivos del
+directorio actual:
+
+\begin{verbatim}
+$ echo Introduzca un *
+\end{verbatim}
+
+O todos los que empiecen por {\tt a} y terminen por {\tt b}:
+
+\begin{verbatim}
+$ echo Introduzca un a*b
+\end{verbatim}
+
+O sencillamente todos los que empiecen por {\tt a} y terminen por {\tt
+b} pero que sólo tengan tres letras:
+
+\begin{verbatim}
+$ echo Introduzca un a?b
+\end{verbatim}
+        
+
+\subsection{Redirección: {\tt $>$ $>$$>$ $<$ \textbar}}
+
+Podemos volcar  la salida  de un  comando a  un archivo,  borrándolo y
+creándolo de nuevo si éste existe.
+
+\begin{verbatim}
+$ ls > lista_archivos
+\end{verbatim}
+
+O bien  si preferimos  añadir la  salida del comando  a un  fichero ya
+existente:
+
+\begin{verbatim}
+$ ls -al >> lista_archivos
+\end{verbatim}
+
+O pasar dicha salida como entrada a otro comando:
+
+\begin{verbatim}
+$ ls | less
+\end{verbatim}
+
+O usar como entrada de un comando el contenido de un archivo:
+
+\begin{verbatim}
+$ less < lista_archivos
+\end{verbatim}
+        
+
+\subsection{Ejecutar en segundo plano: {\tt \&}}
+
+Si  al final  de un  comando añadimos  {\tt \&},  éste se  ejecutará en
+segundo plano.  Es decir, el {\tt  bash} no esperará a  que el comando
+termine,  permitiéndonos seguir  ejecutando nuevos  programas mientras
+este se ejecuta en paralelo. Evidentemente resulta muy práctico cuando
+suponemos  que un  comando  va  a  llevar un  tiempo  de de  ejecución
+prolongado y nosotros deseamos poder seguir utilizando el sistema.
+
+
+\subsection{Separación de comando: {\tt ;}}
+
+Como  ya hemos  visto, permite  indicar varios  comandos en  una misma
+línea.
+
+
+\subsection{Continuación de línea: {\tt $\backslash$}}
+
+Permite dividir  una línea en  varias si  por algún motivo  no podemos
+escribirla de una sola vez.
+
+\begin{verbatim}
+$ echo Quiero vivir en \
+> canarias
+\end{verbatim}
+        
+
+\subsection{Valor de una variable: {\tt \$}}
+
+Como ya hemos visto, debe preceder  al nombre de una variable para que
+el intérprete sepa que debe sustituir su valor.
+
+
+\subsection{Otros: {\tt ( ) [ ] `}}
+
+Los   corchetes  se   utilizan   en  la   evaluación  de   expresiones
+condicionales  y  los  paréntesis  en  la  evaluación  de  expresiones
+artiméticas. Veremos unos ejemplos más adelante.
+
+En cuanto  al último  metacarácter, al ejecutar  un comando  entre las
+comillas invertidas (tildes  francesas) se sustituye la  cadena por la
+salida de dicho comando. Por ejemplo, si ejecutamos:
+
+\begin{verbatim}
+$ echo date
+date
+\end{verbatim}
+
+Pero si ejecutamos:
+
+\begin{verbatim}
+$ echo `date`
+mar oct 30 23:51:08 WET 2001
+\end{verbatim}
+
+Si deseamos  escribir estos metacaracteres  de forma literal  deben ir
+precedidos de {\tt $\backslash$}.
+
+\begin{verbatim}
+$ echo \* \\ \[
+* \ [
+\end{verbatim}
+
+También podemos evitar la sustitución si los escribimos entre comillas
+simples o dobles:
+
+\begin{verbatim}
+$ echo "Enviar $100?"
+Enviar $100?
+
+$ echo "`minombre` es dulce"
+`minombre` es dulce
+\end{verbatim}
+
+La diferencia  entre las comillas  simples y  las dobles es  que ambas
+eliminan el significado  de todos lo metacaracteres  con la excepción,
+sólo en el caso de las comillas dobles, de {\tt \$} y {\tt `}.
+
+
+\section{Ficheros de comandos interactivos}
+
+A parte de ejecutar una  secuencia predeterminada de comandos nuestros
+scripts  pueden ser  interactivos.  Es decir  solicitar  y leer  datos
+desde la  consola de  usuario. Para  ello se  utiliza el  comando {\tt
+read}\index{read} seguido por uno o más nombres de variable.
+
+\begin{verbatim}
+$ read NAME1 NAME2 NAME3
+$ echo $NAME1
+$ echo $NAME2
+$ echo $NAME3
+\end{verbatim}
+
+El comando {\tt read} lee desde la entrada estándar hasta encontrar un
+espacio  y  almacena lo  leído  en  la  primera variable  indicada.  A
+continuación sigue  leyendo hasta el  siguiente espacio y  almacena la
+nueva lectura en  la segunda variable. Así  sucesivamente, excepto que
+la última variable siempre almacena  desde el último espacio alcanzado
+con variable anterior hasta el final de la línea.
+
+
+\section{Control de flujo del programa}
+
+Al igual que en muchos  otros lenguajes de programación, disponemos de
+sentencias de control de flujo del programa. Algunos ejemplos son:
+
+\begin{description}
+
+\item[{\bf if}\index{if}]
+\begin{verbatim}
+if condicion1; then 
+elif condicion2; then comando;
+[ ... ]
+else comando;
+fi
+\end{verbatim}
+
+\item[{\bf while}\index{while}] {\tt while condicion; do comando; done}
+
+\item[{\bf until}\index{until}] {\tt until condicion; do comando; done}
+
+\end{description}
+
+Existen múltiples alternativas  a la hora de  establecer una condición
+para el control del flujo. Una  de ellas es la verificación del código
+de error devuelto por un comando o programa al final su ejecución. Por
+definición el código de error de  un comando que ha terminado de forma
+satisfactoria es 0, lo cual es  considerado por el intérprete como que
+la  condición se  cumple. En  caso contrario  el comando  devolverá un
+código distinto de  0 y el intérprete considerará que  la condición no
+se cumple. Para conocer en qué situaciones se devuelven los diferentes
+códigos de error se hace necesario  consultar la ayuda de cada comando
+en  particular. Por  ejemplo  en  el siguiente  código  se utiliza  el
+programa {\tt grep}\index{grep} para buscar un nombre de usuario en el
+archivo de contraseñas del sistema ({\tt /etc/passwd}).
+
+\begin{ejemplo}{finduser.sh}{Utilización de la sentencia ``if''}
+Ejemplo del uso de la sentencia {\tt if} para el control del flujo de
+un programa diseñado para buscar un nombre de usuario en el archivo de
+contraseñas del sistema.
+\end{ejemplo}
+
+Si  {\tt grep}  encuentra al  usuario en  {\tt /etc/passwd}  saldrá de
+forma correcta,  por lo  que se  cumple la condición  y se  ejecuta el
+comando que está dentro del cuerpo del {\tt if}.
+
+Otras     sentencias     son      {\tt     case}\index{case},     {\tt
+select}\index{select} y {\tt for}\index{for}. Una forma interesante de
+esta última es:
+
+{\tt for variable in lista; do comando; done}
+
+Por ejemplo:
+
+\begin{verbatim}
+$ for a in pato gallo perro
+> do
+>   echo yo tenía un $a
+> done
+\end{verbatim}
+
+Veamos algunos casos  más interesantes. Para ello vamos  a empezar por
+el siguiente programa:
+
+\begin{ejemplo}{minusculas1.sh}{Utilización de la sentencia ``for''}
+Ejemplo del uso de la sentencia {\tt for} para el control del flujo de
+un programa diseñado para renombrar todos los archivos de un
+directorio. Esto se hace de forma que se sustituyen los caracteres en
+mayúsculas por sus equivalentes en minúsculas.
+\end{ejemplo}
+
+Resulta sencillo apreciar  que debemos pasar como  primer argumento de
+nuestro programa  un nombre de  directorio. Ese nombre se  almacena en
+{\tt \$DIR}  para su uso posterior.  En la sentencia del  {\tt for} se
+ejecuta el comando {\tt ls \$DIR}  que listará el contenido del citado
+directorio. Al rodear el comando por comillas invertidas la salida del
+mismo no va a la consola sino que  se almacena para su uso por el {\tt
+for}. Éste  toma esa salida  como una lista  de elementos por  los que
+tiene que pasar la variable {\tt  \$a} en cada iteración. Por tanto, en
+cada interación {\tt  \$a} contedrán el nombre de uno  de los archivos
+del directorio {\tt \$DIR}.
+
+Dentro del  bucle se usa  {\tt echo} para que  envíe el valor  de {\tt
+\$a}  a la  salida estándar.  Pero  como usamos  el metacarácter  {\tt
+\textbar}  en  realidad  pasa  a la  entrada  del  siguiente  comando,
+es  decir  a  {\tt  tr}\index{tr}.  Éste  realiza  una  traducción  de
+dicha  entrada  sustituyendo  los  caractéres  en  mayúscula  por  los
+correspondientes en minúscula (o sea de {\tt A-Z} a {\tt a-z}) y envía
+el resultado a la salida. Nuevamente el uso de las comillas invertidas
+provoca que  la salida  se almacene  en la  variable {\tt  \$fname}. A
+continuación se utiliza el comando  {\tt mv} para renombrar el archivo
+{\tt \$a} a  {\tt \$fname}. Al finalizar el  bucle habremos renombrado
+todos los archivos de {\tt \$DIR} pasando los caracteres de mayúsculas
+a minúsculas.
+
+El programa  finaliza con {\tt  exit 0}.  Ese comando no  es necesario
+para finalizar un programa, pues éste termina cuando se llega al final
+del archivo, pero resulta interesante para  fijar el código de error a
+la salida.  En este caso se  indica que la ejecución  fue sin errores,
+pues valores distintos de 0 se suelen usar para indicar condiciones de
+error. Si no  se utiliza {\tt exit}\index{exit}  el programa terminará
+con el código de error devuelto por el último comando ejecutado dentro
+del programa.
+
+El script anterior no funcionará si no pasamos en la línea de comandos
+un nombre de  directorio válido. Para comprobar el  no cumplimiento de
+una expresión podemos utilizar {\tt !}.  Por ejemplo, vamos a añadir a
+nuestro programa la comprobación de que {\tt \$1} no esté vacío:
+
+\begin{ejemplo}{minusculas2.sh}{Mejora del programa ``minusculas1''}
+Mejora del programa {\tt minusculas1} para que se compruebe
+que se haya pasado un nombre de directorio como argumento de la
+línea de comandos.
+\end{ejemplo}
+
+Para aquéllos  que conozcan  C/C++ todo esto  resultará extremadamente
+sencillo. Hemos utilizado los corchetes para encerrar la expresión que
+debe ser  evaluada de forma  condicional. Al añadir {\tt  !} indicamos
+que queremos comprobar el no cumplimiento de dicha expresión.
+
+\begin{table}[hbtp]
+\begin{tabular}{|c|l|}
+\hline
+Operador		&	Comprobación \\
+\hline
+\hline
+{\tt -b fichero}	&	Comprueba si {\em fichero} es un dispositivo
+orientado a bloques \\
+\hline
+{\tt -c fichero}	&	Comprueba si {\em fichero} es un dispositivo
+orientado a caracteres \\
+\hline
+{\tt -d fichero}	&	Comprueba si {\em fichero} es un directorio \\
+\hline
+{\tt -f fichero}	&	Comprueba si {\em fichero} es un fichero
+ordinario \\
+\hline
+{\tt -r fichero}	&	Comprueba si {\em fichero} es legible por el
+proceso \\
+\hline
+{\tt -w fichero}	&	Comprueba si {\em fichero} es escribible por el
+proceso \\
+\hline
+{\tt -x fichero}	&	Comprueba si {\em fichero} es ejecutable \\
+\hline
+\end{tabular}
+\caption{Operadores de comprobación de {\tt[ ]}}\label{corchetes}
+\end{table}
+
+Aun así no somos capaces de comprobar  que se haya pasado un nombre de
+directorio válido a nuestro programa.  Para ello se utilizan una serie
+de operadores junto con  los {\tt [ ]}, de los  cuales podemos ver los
+más empleados en el Cuadro \ref{corchetes}.
+
+\begin{ejemplo}{minusculas3.sh}{Mejora del programa ``minusculas2''}
+Mejora del programa {\tt minusculas2} para que compruebe
+que el argumento pasado sea un nombre de directorio válido.
+\end{ejemplo}
+
+Puesto que las  modificaciones se explican por sí  mismas no estaremos
+más en ellas. Un característica  interesante de nuestro programa sería
+que comprobara la existencia del  archivo de destino antes de ejecutar
+{\tt mv}. En  el estado actual si  el archivo de destino  ya existe el
+programa muestra un  error. Esta modificación es sencilla  a partir de
+nuestros conocimientos actuales.
+
+\begin{table}[hbtp]
+\begin{tabular}{|c|l|}
+\hline
+Operador		&	Acción \\
+\hline
+\hline
+{\tt int1 -eq int2}	&	Verdadero si {\em int1} es igual a {\em int2} \\
+\hline
+{\tt int1 -ge int2}	&	Verdadero si {\em int1} es mayor o igual a {\em int2} \\
+\hline
+{\tt int1 -gt int2}	&	Verdadero si {\em int1} es mayor que {\em int2} \\
+\hline
+{\tt int1 -le int2}	&	Verdadero si {\em int1} es menor o igual a {\em int2} \\
+\hline
+{\tt int1 -lt int2}	&	Verdadero si {\em int1} es menor que {\em int2} \\
+\hline
+{\tt int1 -ne int2}	&	Verdadero si {\em int1} no es igual a {\em int2} \\
+\hline
+\end{tabular}
+\caption{Operadores de comparación de enteros}\label{enteros}
+\end{table}
+
+Otra  característica  sería que  admitiera  poder  pasarle más  de  un
+directorio  a  través  de  la  línea de  comandos.  Este  problema  es
+ligeramente  más  complejo  puesto  que  necesitamos  conocer  cuántos
+argumentos ha indicado  el usuario. Para averiguarlo  debemos usar una
+variable especial del  intérprete, que éste prepara  para nosotros. Se
+trata de {\tt \$\#} que contiene  el número de argumentos presentes en
+la línea de comandos. Conocido el número de argumentos debemos  iterar
+sobre  ellos utilizando la sentencia {\tt while}\index{while}. También
+necesitamos  saber  como  comparar  números  enteros,   debido   a  la
+necesidad de conocer el número de veces que hemos iterado en el bucle,
+para así determinar  cuándo salir. En el  Cuadro \ref{enteros} podemos
+ver algunos operadores de comparación de enteros.
+
+\begin{ejemplo}{minusculas4.sh}{Mejora del programa ``minusculas3''}
+Mejora del programa {\tt minusculas3} para que admita el paso
+de más de un directorio como argumento de la línea de comandos.
+\end{ejemplo}
+
+Quizás el  único aspecto difícil de  comprender es el uso  del comando
+{\tt shift}\index{shift}.  La forma general  de dicho comando  es {\tt
+shift [n]}  donde, si no se  especifica, {\tt n} vale  1. Este comando
+desplaza los argumentos de forma que el {\tt n+1} estará en {\tt \$1},
+el  {\tt  n+2}  en  {\tt  \$2} y  así  sucesivamente.  Los  argumentos
+anteriormente en  {\tt \$1}, {\tt  \$2}, etc se pierden.  Sabiendo eso
+comprender el programa anterior es realmente sencillo.
+
+
+\section{Funciones}
+
+El {\tt bash}  también permite crear funciones. En este  caso el valor
+de retorno de  la función será el valor de  retorno del último comando
+ejecutado:
+
+\begin{ejemplo}{funcsh.sh}{Ejemplo del uso de funciones}
+Este programa define una función que muestra la fecha actual por la
+salida estándar, y realizar la llamada a dicha función.
+\end{ejemplo}
+
+En general  el {\tt bash} es  un programa demasiado potente  como para
+poder  ser  explicado  en  unas pocas  líneas.  Probablemente  con  lo
+que  hemos  comentado  sea  posible  crear  nuestros  pequeños  script
+para  automatizar algunas  tareas  tediosas, pero  en  caso de  querer
+profundizar más lo mejor es recurrir  a la propia ayuda del intérprete
+({\tt  man bash}).  Un tema  interesante a  consulta es  sobre el  uso
+de  los  archivos {\tt  .bash\_profile}  y  {\tt .bashrc}  de  nuestro
+directorio personal,  y sobre  cómo usarlos para  personalizar nuestro
+entorno de trabajo.
+

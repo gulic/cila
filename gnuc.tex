@@ -1,0 +1,330 @@
+%Autor: aplatanad
+
+\chapter{GNU C/C++}
+
+\section{Compilado y enlazado}
+
+
+A la hora de generar un programa en C se suele pasar por dos fases:
+
+\begin{description}
+
+\item[Compilar]  Traduce cada  archivo  de C  {\tt  (*.c)} de  nuestro
+programa a lenguaje máquina almacenando  la traducción en los archivos
+de código  objeto {\tt  (*.o)}. Para  ello usamos el  {\bf GCC  (GNU C
+Compiler)} a través del comando {\tt gcc}
+
+\item[Enlazar] Une todos los archivos  de código objeto para fundirlos
+en el ejecutable de la aplicación. Se usa el comando {\tt ld}.
+
+\end{description}
+
+Por  fortuna para  nosotros {\tt  gcc} llama  por defecto  a {\tt  ld}
+ahorrándonos  tener que  realizar los  dos  pasos a  mano. Tomemos  el
+siguiente programa:
+
+\begin{verbatim}
+  /* holamundo.c .- Ejemplo 1 para el CILA 2001 */
+
+  #include <stdio.h>
+
+  int
+  main (void)
+  {
+    puts ("El que a buen árbol se arrima, buena sombra lo cobija.\n");
+    return 0;
+  }
+\end{verbatim}
+
+Y ejecutemos el comando: 
+
+\begin{verbatim} 
+  $ gcc holamundo.c 
+\end{verbatim}
+
+Si listásemos el  contenido del directorio actual con  el comando {\tt
+ls}  veríamos un  nuevo  archivo con  el nombre  de  {\tt a.out}.  Ese
+archivo contiene nuestro programa y puede ser fácilmente ejecutado.
+
+\begin{verbatim}
+  $ ./a.out
+  El que a buen árbol se arrima, buena sombra lo cobija.
+\end{verbatim}
+
+Es probable  que pocos  programadores consideren  que {\tt  a.out} sea
+un  nombre apropiado  para  el  ejecutable de  su  aplicación. Con  el
+fin  de cambiar  dicho  nombre se  puede utilizar  la  opción {\tt  -o
+nombre\_ejecutable}.
+
+\begin{verbatim}
+  $ gcc -o holamundo holamundo.c
+  $ ./holamundo
+  El que a buen árbol se arrima, buena sombra lo cobija.
+\end{verbatim}
+
+Como podemos  apreciar el  ejecutable de  nuestra aplicación  ahora se
+denomina {\tt holamundo}.
+
+Una práctica muy habitual en la programación es dividir nuestro código
+en varios  archivos, cada uno  especializado en un  tarea determinada.
+Supongamos que disponemos del siguiente programa:
+
+\begin{verbatim}
+  /* main.c .- Ejemplo 2 para el CILA 2001 */
+
+  #include "holafunc.h"
+
+  int
+  main (void)
+  {
+    holafunc ("buena sombra lo cobija");
+    return 0;
+  }
+\end{verbatim}
+
+\begin{verbatim}
+  /* holafunc.h .- Ejemplo 2 para el CILA 2001 */
+
+  int holafunc (const char *str);
+\end{verbatim}
+
+\begin{verbatim}
+  /* holafunc.c .- Ejemplo 2 para el CILA 2001 */
+
+  #include <stdio.h>
+  #include "holafunc.h"
+
+  int
+  holafunc (const char *str)
+  {
+    return printf ("El que a buen árbol se arrima, %s.\n\n";, str);
+  }
+\end{verbatim}
+
+Para generar nuestro programa sólo  debemos listar los archivos que lo
+forman en la línea de comandos del {\tt gcc}.
+
+\begin{verbatim}
+  $ gcc -o holamundo main.c holafunc.c
+  $ ./holamundo
+  El que a buen árbol se arrima, buena sombra lo cobija.
+\end{verbatim}
+
+Cuando {\tt gcc} llama a {\tt ld} no solo se están enlazando a nuestro
+programa el código objeto de {\tt main.c} y el de {\tt holafunc.c}. El
+compilador sabe  que para que  nuestro programa funcione  es necesario
+que esté enlazado a una serie de bibliotecas estándar del sistema, así
+que las  incluye automáticamente. Una  de esas bibliotecas es  la {\tt
+libc} cuya documentación podemos obtener con el comando:
+
+\begin{verbatim}
+  $ info libc
+\end{verbatim}
+
+Funciones como  {\tt fopen}, {\tt  malloc}, {\tt printf} y  en general
+todas las  del C estándar  y muchas más se  definen en la  {\tt libc}.
+Evidentemente en  nuestro sistema existen bibliotecas  para toda clase
+de tareas cuya  documentación se puede obtener recurriendo  a la ayuda
+del sistema.  Sin embargo, la  mayor parte  de esas bibliotecas  no se
+enlazan automáticamente,  así que nos  queda la duda de  cómo resolver
+este problema. Por ejemplo vamos a modificar {\tt holafunc.c}:
+
+\begin{verbatim}
+  /* holafunc3.c .- Ejemplo 3 para el CILA 2001 */
+  #include <math.h>
+  #include <stdio.h>
+  #include "holafunc.h"
+
+  int
+  holafunc (const char *str)
+  {
+    float a, b;
+
+    printf ("El que a buen árbol se arrima, %s,\n", str);
+
+    a = 0.5;
+    b = cos (a);
+    return printf ("y el coseno de %f es %f.\n\n", a, b);
+  }
+\end{verbatim}
+
+Si generamos {\tt holamundo} veremos el siguiente mensaje de error:
+
+\begin{verbatim}
+  $ gcc -o holamundo main.c holafunc3.c
+  /tmp/ccKSzM6q.o: In function `holafunc':
+  /tmp/ccKSzM6q.o(.text+0x30): undefined reference to `cos'
+  collect2: ld returned 1 exit status
+\end{verbatim}
+
+Ese mensaje nos  indica que la función {\tt cos()}  llamada desde {\tt
+holafunc()} no está definida puesto que se encuentra en una biblioteca
+que no está siendo enlazada al  programa. Para resolverlo se emplea la
+opción {\tt -lnombre\_biblioteca}  con la que se  indica la biblioteca
+adicional que debe ser enlazada al programa.
+
+\begin{verbatim}
+  $ gcc -lm -o holamundo main.c holafunc3.c
+  $ ./holamundo
+  El que a buen árbol se arrima, buena sombra lo cobija,
+  y el coseno de 0.500000 es 0.877583.
+\end{verbatim}
+
+Al  especificar {\tt  -lm} se  enlaza la  biblioteca {\tt  libm} (como
+vemos no hace falta  poner el {\tt lib} cuando se  indica el nombre de
+la biblioteca) que contiene la defunción de {\tt cos()}. Es importante
+destacar  que el  enlazador sólo  busca  bibliotecas en  una serie  de
+directorios estándar  de nuestro  sistema. Por  ejemplo {\tt  libm} se
+encuentra  en  {\tt  /usr/lib/}  que es  un  directorio  estándar.  Si
+deseamos  enlazar  bibliotecas  situadas en  otros  directorios,  como
+por  ejemplo  el  directorio  actual,  debemos  usar  la  opción  {\tt
+-Lruta\_biblioteca}. Por ejemplo el siguiente comando enlaza a nuestro
+programa una biblioteca de nombre  {\tt libpropia} que se encuentra en
+el directorio actual:
+
+\begin{verbatim}
+  $ gcc -L. -lm -lpropia -o holamundo main.c holafunc3.c
+\end{verbatim}
+
+En caso de que prefiramos  utilizar el enlazador {\tt ld} directamente
+se utiliza  la opción  {\tt -c}  con el compilador  {\tt gcc}.  De esa
+manera le informamos de que sólo queremos que genere el código objeto.
+Probemos a generar el código objeto para cada archivo:
+
+\begin{verbatim}
+  $ gcc -c main.c
+  $ gcc -c holafunc3.c
+\end{verbatim}
+
+Ahora  tenemos dos  nuevos archivos  denominados {\tt  main.o} y  {\tt
+holafunc3.o} que se corresponden con  el código objeto de {\tt main.c}
+y {\tt holafunc3.c} respectivamente. La  parte positiva de esto es que
+ahora  podemos enlazar  en nuestra  aplicación código  objeto generado
+por  otros  lenguajes como  {\tt  Fortran}  o  {\tt Pascal}.  El  lado
+complicado es  que debemos indicarle a  mano al {\tt ld}  que enlace a
+nuestro  programa las  bibliotecas  estándar del  sistema, puesto  que
+él  no lo  hace  automáticamente.  Dado que  se  trata  de un  aspecto
+avanzado  del  uso del  compilador  nos  quedaremos  en saber  que  si
+generamos  la  primera  aplicación  de ejemplo  de  este  capítulo,  o
+cualquier otra aplicación  sencilla, añadiendo {\tt -v} a  la línea de
+comandos  del  {\tt gcc}  dispondremos,  al  final  de la  salida  por
+pantalla  del  programa,  de  la lista  de  bibliotecas  estándar.  En
+cualquier  caso  el  proceso  está  perfectamente  explicado  en  {\tt
+http://www.chiralcomp.com/support/mixing\_f77\_c\_cpp/}.
+
+Otro uso  interesante del  {\tt ld} es  para generar  nuestras propias
+bibliotecas de  enlace dinámico.  Ahora que  disponemos de  un archivo
+{\tt holafunc.o} ejecutemos lo siguiente:
+
+\begin{verbatim}
+  $ ld -shared -lm -o libholafunc.so holafunc3.o
+\end{verbatim}
+
+Si listamos el contenido del  directorio observaremos un nuevo archivo
+denominado  {\tt libholafunc.so}  que  es nuestra  librería de  enlace
+dinámico. Dicha biblioteca puede ser utilizada por cualquier aplicación
+del sistema si la enlazamos como hemos aprendido.
+
+\begin{verbatim}
+  $ gcc -L. -lholafunc -o holamundo main.c
+\end{verbatim}
+
+A diferencia  de ejemplos  anteriores, nuestro programa  no funcionará
+si  no  disponemos  de  {\tt libholafunc.so}.  Sin  embargo  cualquier
+programa futuro podrá utilizar las funciones de nuestra biblioteca. El
+inconveniente  de crear  bibliotecas  de enlace  dinámico  es que  hay
+que  instalarlas en  algún  directorio  donde {\tt  ld}  sepa que  hay
+bibliotecas  (p.ej.  {\tt /usr/lib}),  pero  la  labor de  instalar  o
+desinstalar bibliotecas en el sistema,  así como la de configurar {\tt
+ld} para  que las  busque es  del Sr. root.  Por ello  si ejecutáramos
+ahora nuestro programa,  éste no funcionaría puesto  que sería incapaz
+de encontrar  {\tt libholafunc.so}. Para  que esto no sea  así debemos
+definir  la variable  de entorno  \$LD\_LIBRARY\_PATH con  la ruta  de
+nuestra biblioteca.
+
+\begin{verbatim}
+  $ export LD_LIBRARY_PATH=./
+  $ ./holamundo
+  El que a buen árbol se arrima, buena sombra lo cobija,
+  y el coseno de 0.500000 es 0.877583.
+\end{verbatim}
+
+
+\section{¿Y que pasa con el C++?}
+      
+
+A la  hora de compilar  código en C++  {\tt (*.C, *.cc,  *.cpp, *.c++,
+*.cp, *.cxx)} se utiliza el  comando {\tt g++}. Básicamente se encarga
+de ejecutar el {\tt gcc} habilitando  el C++ como lenguaje por defecto
+y añadiendo las  bibliotecas estándar del C++ en la  fase de enlazado.
+Por tanto todo  lo explicado para {\tt gcc} es  aplicable para el {\tt
+g++}. Y si no, veamos el siguiente código de ejemplo:
+
+\begin{verbatim}
+  // main.cc .- Ejemplo 5 para el CILA 2001
+
+  #include "saludo.h"
+
+  int
+  main (void)
+  {
+    saludo hola ("El que a buen árbol se arrima, buena sombra lo cobija.\n\n");
+  
+    hola.print ();
+    return 0;
+  }
+\end{verbatim}
+
+\begin{verbatim}
+  // saludo.h .- Ejemplo 5 para el CILA 2001
+
+  class saludo
+  {
+  public:
+    saludo (const char *str);
+     ñsaludo ();
+
+    void print (void);
+
+  private:
+    const char *msg;
+  };
+\end{verbatim}
+
+\begin{verbatim}
+  // saludo.cc .- Ejemplo 5 para el CILA 2001
+
+  #include <iostream.h>
+  #include "saludo.h"
+
+  saludo::saludo (const char *str):
+  msg (str)
+  {
+  }
+
+  saludo::ñsaludo ()
+  {
+  }
+
+  void
+  saludo::print (void)
+  {
+    cout << msg;
+  }
+\end{verbatim}
+
+El cual se genera de forma semejante al caso de trabajar en leguaje C.
+
+\begin{verbatim}
+  $ g++ -o holamundo main.cc saludo.cc
+  $ ./holamundo
+  El que a buen árbol se arrima, buena sombra lo cobija.
+\end{verbatim}
+
+Con todo  esto se puede  decir que ya  estamos hechos unos  {\em Linux
+Programmers} por  lo que sólo queda  navegar un poco, escoger  el {\em
+proyecto  de software  libre}  que  más nos  guste,  o  disguste, y  a
+colaborar {\tt :D}
+
+      
+

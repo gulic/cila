@@ -1,0 +1,236 @@
+%Autor: miguev
+
+\chapter{FreePascal}
+
+
+El lenguaje de  programación Pascal es sencillo  y bastante didáctico,
+por  lo que  se suele  enseñar en  el primer  año de  algunas carreras
+técnicas  como Matemáticas,  Física o  Informática. Normalmente  estos
+cursos o asignaturas  de programación tratan de  enseñar al estudiante
+los conceptos  básicos de la  programación de computadores  sin entrar
+en  demasiados  detalles  acerca  del funcionamiento  interno  de  los
+mismos. En este capítulo aprenderemos  las herramientas básicas que se
+encuentran  disponibles  en GNU/Linux  para  programar  en Pascal.  El
+compilador que  utilizaremos está siendo desarrollado  por el proyecto
+{\bf Free Pascal},  que proporciona un buen compilador  de Pascal para
+múltiples  plataformas, entre  éstas  GNU/Linux,  MS-DOS, MS  Windows,
+Amiga, MaC OS y otras.
+
+Comenzaremos  escribiendo  un  ejemplo  muy sencillo  de  programa  en
+Pascal, el  típico ``Hola Mundo''.  En cualquier editor  escribimos el
+siguiente código y lo guardamos con el nombre {\tt HolaMundo.pas}
+
+\begin{verbatim}
+{ Ejemplo 1 de Pascal para CILA }
+
+Program HolaMundo;
+
+Begin
+  writeln ('Hola Mundo');
+End.
+\end{verbatim}
+
+Para  compilar un  programa escrito  en  Pascal con  el compilador  de
+FreePascal utilizamos el comando {\tt ppc386} del siguiente modo:
+
+
+\begin{verbatim}
+$ ppc386 HolaMundo.pas
+Free Pascal Compiler version 1.0.4 [2001/08/31] for i386
+Copyright (c) 1993-2000 by Florian Klaempfl
+Target OS: Linux for i386
+Compiling HolaMundo.pas
+Assembling holamundo
+Linking holamundo
+7 Lines compiled, 0.3 sec
+
+$ ls
+holamundo2    HolaMundo2.pas  holamundo2.o
+\end{verbatim}
+
+Como  podemos apreciar  en los  mensajes del  compilador, él  mismo se
+encarga de compilar,  ensamblar y enlazar el programa  para generar el
+fichero  ejecutable  {\tt  holamundo}.  Para  cambiar  el  nombre  del
+ejecutable resultante se utiliza la opción {\tt -onombredelejecutable}
+(sin dejar espacio entre la {\tt o} y el nombre del ejecutable.
+
+\begin{verbatim}
+$ ppc386 -oHolaMundo HolaMundo.pas
+Free Pascal Compiler version 1.0.4 [2001/08/31] for i386
+Copyright (c) 1993-2000 by Florian Klaempfl
+Target OS: Linux for i386
+Compiling HolaMundo.pas
+Assembling HolaMundo
+Linking HolaMundo
+7 Lines compiled, 0.3 sec
+
+$ ls
+HolaMundo    HolaMundo2.pas  holamundo2.o
+\end{verbatim}
+
+Para ejecutar el programa resultante,  recordar que debemos poner {\tt
+./} delante del nombre del ejecutable:
+
+\begin{verbatim}
+$ HolaMundo
+bash: HolaMundo: command not found
+$ ./HolaMundo
+Hola Mundo
+\end{verbatim}
+
+Veamos ahora  un ejemplo  del uso  de las  ``unidades'' en  Pascal. El
+concepto de unidades en Pascal es equivalente al de librerías en C, se
+trata de  ficheros binarios  que obtenemos a  partir de  código fuente
+separado y  luego enlazamos  con el  programa principal.  Esto permite
+dividir el código de un programa  en varios ficheros y evita tener que
+compilar todo el programa cada vez que se modifica una función. Con el
+uso de unidades  basta con recompilar la unidad en  la que se modifica
+el código  fuente y volverla a  enlazar con el programa.  A diferencia
+del Borland  Pascal, el  compilador Free  Pascal utiliza  la extensión
+{\tt  ppu} (en  lugar  de {\tt  tpu}) para  los  ficheros binarios  de
+unidades.
+
+
+Tenemos para  este ejemplo  dos ficheros de  código fuente  en Pascal,
+{\tt HolaMundo2.pas} y {\tt saludos.pas}.
+
+
+\begin{verbatim}
+{ Ejemplo 2 de Pascal para CILA }
+{    Fichero: HolaMundo2.pas    }
+
+Program HolaMundo2;
+Uses
+  Crt, Saludos ;
+Var
+  nombre : string ;
+Begin
+  TextColor(13) ;
+  write ('¿Cómo te llamas? ') ;
+  TextColor(15) ;
+  readln (nombre) ;
+  TextColor(14) ;
+  Saluda (nombre) ;
+  TextColor(7) ;
+End.
+\end{verbatim}
+
+\begin{verbatim}
+{ Ejemplo 2 de Pascal para CILA }
+{    Fichero: saludos.pas       }
+
+Unit Saludos ;
+
+Interface
+
+Uses Crt ;
+
+Procedure Saluda ( mensaje : string ) ;
+
+Implementation
+
+Procedure Saluda ( mensaje : string ) ;
+Begin
+  writeln('Hola ', mensaje);
+End;
+
+Begin
+End.
+\end{verbatim}
+
+Cuidado con  un detalle: Los  nombres de las unidades  deben coincidir
+con el  nombre del fichero  en el que  están escritas, i.e.  la unidad
+{\tt  Saludos}  no  se  puede  escribir en  un  fichero  llamado  {\tt
+Otronombre.pas}.  Además,  los  ficheros  en los  que  se  implementan
+las  unidades conviene  que  tengan el  nombre  completamente en  {\bf
+minúsculas}. De lo contrario el compilador FreePascal no encontrará la
+unidad  al  compilar  un  programa  que  la  use,  pero  podremos  aún
+compilarla manualmente. El siguiente ejemplo ilustra la situación:
+
+\begin{verbatim}
+$ ls
+HolaMundo2.pas  saludos.pas
+
+$ mv saludos.pas otronombre.pas
+
+$ ls
+HolaMundo2.pas  otronombre.pas
+
+$ ppc386 otronombre.pas
+Free Pascal Compiler version 1.0.4 [2001/08/31] for i386
+Copyright (c) 1993-2000 by Florian Klaempfl
+Target OS: Linux for i386
+Compiling otro.pas
+otro.pas(4,6) Error: Illegal unit name: SALUDOS
+otro.pas(10,1) Fatal: There were 1 errors compiling module, stopping
+
+$ mv otronombre.pas Saludos.pas
+
+$ rm *.o *.ppu
+
+$ ls
+HolaMundo2.pas  Saludos.pas
+
+$ ppc386 HolaMundo2.pas
+Free Pascal Compiler version 1.0.4 [2001/08/31] for i386
+Copyright (c) 1993-2000 by Florian Klaempfl
+Target OS: Linux for i386
+Compiling HolaMundo2.pas
+HolaMundo2.pas(6,16) Fatal: Can't find unit SALUDOS
+
+$ ppc386 Saludos.pas 
+Free Pascal Compiler version 1.0.4 [2001/08/31] for i386
+Copyright (c) 1993-2000 by Florian Klaempfl
+Target OS: Linux for i386
+Compiling Saludos.pas
+Assembling saludos
+18 Lines compiled, 0.0 sec
+
+$ ppc386 HolaMundo2.pas
+Free Pascal Compiler version 1.0.4 [2001/08/31] for i386
+Copyright (c) 1993-2000 by Florian Klaempfl
+Target OS: Linux for i386
+Compiling HolaMundo2.pas
+Assembling holamundo2
+Linking holamundo2
+17 Lines compiled, 0.0 sec
+
+$ ls
+holamundo2    HolaMundo2.pas  Saludos.pas
+holamundo2.o  saludos.o       saludos.ppu
+
+$ ./holamundo2
+¿Cómo te llamas? Pepe
+Hola Pepe
+
+$ mv Saludos.pas saludos.pas
+
+$ rm *.o *.ppu
+
+$ ls
+HolaMundo2.pas  saludos.pas
+
+$ ppc386 HolaMundo2.pas 
+Free Pascal Compiler version 1.0.4 [2001/08/31] for i386
+Copyright (c) 1993-2000 by Florian Klaempfl
+Target OS: Linux for i386
+Compiling HolaMundo2.pas
+Assembling holamundo2
+Linking holamundo2
+18 Lines compiled, 0.0 sec
+
+$ ls
+holamundo2    HolaMundo2.pas  Saludos.pas
+holamundo2.o  saludos.o       saludos.ppu
+
+$ ./holamundo2
+¿Cómo te llamas? Pepe
+Hola Pepe
+\end{verbatim}
+
+Con esta  breve presentación  ya sabemos  lo suficiente  para compilar
+prácticas en  Pascal, sólo queda  aprender el lenguaje y  pasar muchas
+horas escribiendo programas para llegar a ser auténticos programadores
+;-)
+
+

@@ -1,0 +1,101 @@
+%Autor: aplatanad
+
+\chapter{Depuradores}
+
+\section{Depurando la aplicación}
+
+
+Se suele decir que el 10\% del  tiempo de desarrollo de un programa se
+dedica a la codificación y el 90\% restante a la depuración. Al margen
+de  que sea  cierto o  no la  verdad es  que es  de vital  importancia
+disponer de las  herramientas adecuadas para corregir  los errores del
+software en un tiempo razonable.
+
+La primera  recomendación es  dejar que  {\tt lclint}  analice nuestro
+código  para  que  busque  y notifique  cualquier  inconsistencia.  Es
+importante destacar que dicho programa es mucho más potente detectando
+posibles errores que  el analizador sintáctico del {\tt  gcc} debido a
+que  el  compilador asume  que  ya  hemos  pasado nuestro  código  por
+un  programa  como  {\tt  lclint}.  Esa  suposición  permite  al  {\tt
+gcc}  realizar  ciertas optimizaciones  que  mejoran  su velocidad  de
+compilación.
+
+\begin{verbatim}
+  $ lclint main.c holafunc.c
+\end{verbatim}
+
+Si disponemos de nuestro programa perfectamente compilado y observamos
+que  presenta algún  error del  que no  sabemos determinar  su origen,
+significa que ha llegado la  hora del depurador. GNU/Linux dispone del
+GNU  Debugger bajo  el comando  {\tt  gdb}. Para  usarlo sólo  debemos
+ejecutarlo  especificando  el  nombre  del programa  en  la  línea  de
+comandos; y haber compilado nuestro programa con la opción {\tt -g}.
+
+\begin{verbatim}
+  $ gdb holamundo
+  GNU gdb 19990928
+  Copyright 1998 Free Software Foundation, Inc.
+  GDB is free software, covered by the GNU General Public License, and you are
+  welcome to change it and/or distribute copies of it under certain conditions.
+  Type "show copying" to see the conditions.
+  There is absolutely no warranty for GDB.  Type "show warranty" for details.
+  This GDB was configured as "i686-pc-linux-gnu"...
+  (gdb) 
+\end{verbatim}
+
+En ese momento tendremos al {\tt gdb} esperando alguno de los comandos
+de depuración. A con\-ti\-nua\-ción disponemos de una lista de los comandos
+más básicos.
+
+\begin{description}
+
+\item[{\tt break}]  Sitúa un punto  de ruptura  en la línea  o función
+indicada como argumento.
+
+\item[{\tt continue}]  Continúa la ejecución  de un programa  que está
+siendo depurado y se encuentra detenido en un punto de ruptura.
+
+\item[{\tt display  exp}] Muestra el  valor de la expresión  {\tt exp}
+cada vez que el programa se detiene.
+
+\item[{\tt  help}] Lista  las clases  de comandos  disponibles. Si  el
+comando va  seguido por un nombre  de clase se listan  los comandos de
+dicha clase.  Si va seguido  por un nombre  de comando se  muestra una
+ayuda completa del comando indicado.
+
+\item[{\tt  list}]  Lista una  línea  o  función especificada.  Si  el
+comando  va seguido  del nombre  de  una función,  el comando  muestra
+dicha  función. Si  va  seguido de  un número  de  línea, muestra  esa
+línea.  En  programas  de  varios  archivos  se  puede  utilizar  {\tt
+nombre\_archivo:nombre\_funcion} o {\tt nombre\_archivo:numero\_línea}
+para  listar  los  contenidos  de  un archivo  particular.  Si  no  se
+especifican argumentos se  lista desde la última línea  mostrada; y si
+se  especifican  dos números  de  línea  separados  por una  coma,  se
+muestran las líneas comprendidas en el intervalo.
+
+\item[{\tt next}] Ejecución paso a  paso pero ignorando las llamadas a
+funciones.
+
+\item[{\tt print exp}]  Muestra el valor de la expresión  {\tt exp} en
+el punto actual.
+
+\item[{\tt quit}] Salir del {\tt gdb}.
+
+\item[{\tt run}] Inicia la ejecución  del programa. Los argumentos del
+comando son los argumentos que se le pasan al programa.
+
+\item[{\tt  step}] Ejecución  paso  a paso  incluso  de las  funciones
+llamadas por el programa.
+
+\item[{\tt undisplay  exp}] Deja de  mostrar el valor de  la expresión
+{\tt exp} cada vez que el programa se detiene.
+
+\end{description}
+
+El  número  de  comandos  es  mucho más  grande  pero  basta  con  los
+anteriores para agilizar enormemente  nuestro trabajo. Una alternativa
+a todo  esto es  usar el {\tt  ddd} que se  puede considerar  como una
+interfaz gráfica para el  {\tt gdb}. Funciona sobre las X  y su uso es
+semejante a de los depuradores existentes en otras plataformas.
+
+ 

@@ -1,0 +1,52 @@
+%Autor: Carlos de la Cruz (frodo@fmat.ull.es)
+
+\chapter{PHP}
+
+\section{Introducción}
+PHP es un lenguaje diseñado para la generación dinámica de páginas web.
+Los ficheros de PHP se almacenan en el servidor y se ejecutan cuando un usuario introduce en su navegador la direccion de una de estas páginas. Estas, a su vez, contienen código a partir del cual se generan páginas estáticas en formato HTML.
+
+La utilidad de esto es que podemos crear automáticamente páginas web que se actualicen solas, basándose en una fuente de datos.
+
+Por ejemplo, si quisiéramos que cada vez que el usuario accede a nuestra página, en esta apareciera la fecha y la hora, sería imposible conseguirlo a partir de ficheros estáticos ``html''.
+
+Por tanto, la solución sería tener en el servidor un fichero ``hora.php'', mediante el cual, cuando alguien accediera a: http://miservidor.com/hora.php, tuviera la hora del instante en que se ejecutó el código php.
+
+Cada vez que alguien le diera a ``recargar'' en el navegador, vería la hora actual.
+
+Pero como podremos comprobar,si se hace clic en el botón ``ver código fuente'' del navegador, sólo veremos, por ejemplo ``12:02:12''.
+
+
+
+\section{Primeros Pasos}
+
+\section{Estructuras de datos}
+
+Básicamente, existen los escalares, los hash y los arrays.
+
+
+\section{Estructuras de control}
+
+\subsection{Condicionales: IF, Switch}
+
+
+\subsection{Repetitivas: While}
+
+\section{Como estructurar nuestro código en php}
+
+Las funciones. function chona($lalala,$otroparametro)
+
+\section{Manejo de formularios}
+
+
+\section{Utilización de bases de datos}
+Aunque PHP soporta varias clases de servidores de base de datos, debido a que cada uno usa un interfaz distinto, resulta bastante incómodo tener que aprender las funciones de PHP para cada uno de ellos. Es por ello que suelen utilizarse librerías adicionales (no incluidas con PHP, pero sí con la mayoría de las distribuciones Linux), como la que utilizaremos en este texto/curso: AdoDB.
+
+AdoDB nos permite cambiar de sistema de bases de datos simplemente cambiando un parámetro al realizar la conexión a la Base de datos (BDD de ahora en adelante) , de forma que una aplicación PHP diseñada para correr con Oracle, puede ser portada para funcionar en MySql, Informix, etc. con tan sólo cambiar una línea de código.
+
+
+\section{Creación de imágenes dinámicamente}
+
+\section {Bibliografía recomendada}
+
+

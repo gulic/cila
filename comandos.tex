@@ -1,0 +1,606 @@
+%Autor: _ese
+
+
+\chapter{El intérprete de comandos}
+
+
+
+\section{¿Qué es un intérprete de comandos?}
+
+
+
+Si  bien  manejarse en  Linux  es  cada vez  más  fácil,  debido a  la
+proliferación  de escritorios,  los  comienzos no  siempre fueron  así
+de  fáciles. De  hecho,  puede  ocurrir que  nos  encontremos con  una
+emergencia  en el  que  no  nos quede  más  remedio  que trabajar  con
+comandos.
+
+Un intérprete  de comandos tiene el  aspecto de una pantalla  llena de
+letras, generalmente  con fondo negro  y letras  blancas, y que  en la
+última línea inferior, se suele ver lo siguiente:
+
+
+\begin{verbatim}
+[felix@localhost Comandos]\$
+\end{verbatim}
+
+
+En  este entorno  es donde  introduciremos  los comandos  con los  que
+trabajaremos, y  coloquialmente diremos que estamos  trabajando en una
+consola. Estos comandos pueden ser de diferentes clases:
+
+\begin{itemize}
+\item Programas ejecutables.
+\item Scripts del intérprete.
+\item Scripts de lenguajes de script como Perl, Tcl, etc.
+\item Macros del intérprete.
+\end{itemize}
+
+Todos tienen en  común que son ficheros: al  cargar un programa
+en Linux, se ordena al intérprete  que busque el fichero con el nombre
+del programa y una vez encontrado,  lo ejecute, si éste da permisos de
+ejecución al usuario.
+
+Los comandos tienen el siguiente aspecto:
+
+\begin{verbatim}
+[felix@localhost Comandos]\$ fdisk
+[felix@localhost Comandos]\$ lsmod
+[felix@localhost Comandos]\$ ls
+\end{verbatim}
+
+También funcionan con opciones:
+
+\begin{verbatim}
+[felix@localhost Comandos]\$ fdisk -v
+[felix@localhost Comandos]\$ ls -a -l
+[felix@localhost Comandos]\$ ls -al
+\end{verbatim}
+
+Y con parámetros:
+
+\begin{verbatim}
+[felix@localhost Comandos]\$ fdisk /dev/hda
+[felix@localhost Comandos]\$ ls /tmp
+[felix@localhost Comandos]\$ ls *.txt
+\end{verbatim}
+
+Con opciones y parámetros:
+
+\begin{verbatim}
+[felix@localhost Comandos]\$ rpm -qpl joe-1.0.3.rpm
+[felix@localhost Comandos]\$ gcc -o suma suma.c
+[felix@localhost Comandos]\$ ls -al /tmp
+\end{verbatim}
+
+Al  ser Linux  un sistema  {\tt multitarea}  y {\tt  multiusuario}, se
+aportan  ventajas que  se  agradecen  incluso en  un  sistema PC  {\tt
+monousuario}. Una de estas ventajas es  que se puede trabajar con seis
+consolas  virtuales, que  es como  si pudiéramos  trabajar con  varias
+sesiones  simultáneas, entendiendo  por  sesión el  tiempo de  trabajo
+desde que  el usuario entra  tras identificarse  en el {\tt  login} de
+entrada hasta que abandona el  sistema. Lo que significa realmente que
+el mismo usuario puede entrar varias veces al mismo tiempo.
+
+Para alternar  entre estas  consolas virtuales,  basta con  pulsar las
+cobinaciones de la teclas {\bf Alt + F1} a {\bf Alt + F6}
+
+Si se quiere acceder a una  consola desde un entorno gráfico, entonces
+se pulsan las combinaciones {\bf Ctrl + Alt  + F1} a {\bf Ctrl + Alt +
+F6}
+
+
+\section{Directorios y nombres de ficheros}
+
+
+\subsection{Trabajando con directorios.}
+
+
+Toda  la  información  (ya  sean  textos,  imágenes,  bases  de  datos
+o  información  para la  configuración  del  sistema) se  almacena  en
+``ficheros'', que  a su vez  se guardan en ``directorios''.  Con todas
+las  herramientas y  programas  existentes se  puede  acceder a  estos
+ficheros para ver su contenido o modificarlo.
+
+A diferencia del los sistemas  MS-DOS/Windows, en los sistemas UNIX no
+se dividen los  directorios entre las distintas  unidades físicas (C:,
+D:, etc.). Al  contrario, para UNIX todos son  ficheros y directorios.
+Éste  considerará un  disco duro,  un  scanner o  una disquetera  como
+directorios.  Por  tanto, no  tiene  sentido  escribir en  la  consola
+``C:'', sino que nos iremos al directorio asociado a esa partición que
+para MS-DOS es ``C:''.
+
+Todos los  ficheros y  directorios de  un sistema  UNIX cuelgan  de un
+directorio principal llamado ``raíz'', que se representa como ``/''.
+
+Hay que  destacar que  cuando el  usuario accede  a una  sesión, Linux
+``envía'' al usuario a su directorio de trabajo. Es decir, si yo entro
+como el usuario {\tt felix}, en  el momento de entrar me encontraré en
+el directorio {\tt /home/felix}. Éste  será mi directorio personal, en
+donde  tengo  libertad absoluta  para  hacer  lo  que quiera  con  mis
+ficheros y directorios  ubicados ahí. Sin embargo no  podré hacer todo
+lo que quiera en el directorio  {\tt /home/miguel}. ¿Por qué? Pues por
+la  sencilla razón  de  que Linux  tiene un  sistema  de permisos  que
+concede o  restringe libertades sobre  los directorios y  ficheros que
+hay en Linux. ¿Significa eso que  puede existir un usuario ``dios'' en
+Linux que puede  hacer totalmente cualquier cosa en Linux?  Sí, ése es
+el usuario {\tt root}. Sin embargo, para los propósitos de este curso,
+sólo nos remitiremos a la cuenta de trabajo del propio lector ;-)
+
+¿Cómo sé  yo en  qué directorio  me encuentro?  Basta con  escribir el
+comando {\tt pwd} (Print Work Directory).
+
+\begin{verbatim}
+[felix@localhost felix]\$ pwd
+/home/felix/
+\end{verbatim}
+
+Y la salida que obtendré es:
+
+\begin{verbatim}
+/home/felix
+\end{verbatim}
+
+Para cambiar de directorio,  emplearemos el comando {\tt cd}
+(Change Directory)
+
+\begin{verbatim}
+[felix@localhost Comandos]\$ cd /etc
+\end{verbatim}
+
+Es decir, nos vamos al directorio {\tt /etc}
+
+Si  simplemente escribimos  {\tt  cd} sin  especificar  el nombre  del
+directorio, esto será  igual que escribir {\tt cd  /home/felix} o {\tt
+cd}, es decir, me manda a {\bf mi propio directorio de trabajo} (que es
+como irse a casa).
+
+¿Cómo veo los ficheros y directorios de un directorio? Escribimos {\tt
+ls Nombre del directorio}.
+
+\begin{verbatim}
+[felix@localhost apuntes]\$ ls /home/felix/apuntes/apuntes/
+Apuntes_CILA_2001.dvi   CVS/           introduccion.sgml  programando.sgml
+ xwindow.sgml
+Apuntes_CILA_2001.sgml  editores.sgml  LEEME              recursos.sgml
+cabecera.sgml           final.sgml     Makefile
+ resumen_temario.txt
+comandos.sgml           graficos.sgml  matematicas.sgml   sobre.sgml
+compila*                internet.sgml  presentacion.sgml  temario.estado
+\end{verbatim}
+
+Si  escribimos {\tt  ls} (a secas) entonces  se  nos mostrará  el
+contenido  del directorio en el que nos encontramos actualmente.
+
+El comando {\tt ls} admite parámetros tales como {\tt -a, -l}
+
+\begin{verbatim}
+[felix@localhost Comandos]\$ ls -a -l
+[felix@localhost Comandos]\$ ls -al
+[felix@localhost Comandos]\$ ls -la
+\end{verbatim}
+
+Obsérvese que ambas  formas de escribir los  parámetros son igualmente
+válidas.  Como anotación,  si queremos  ver que  parámetros se  pueden
+utilizar en  un comando, normalmente  basta con escribir  {\tt Nombre
+del comando --help}.
+
+\begin{verbatim}
+[felix@localhost apuntes]\$ ls --help
+Modo de empleo: ls [OPCIÓN]... [FICHERO]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuSUX nor --sort.
+
+  -a, --all                  do not hide entries starting with .
+  -A, --almost-all           do not list implied . and ..
+  -b, --escape               print octal escapes for nongraphic characters
+      --block-size=SIZE      use SIZE-byte blocks
+  -B, --ignore-backups       do not list implied entries ending with ~
+  -c                         with -lt: sort by, and show, ctime (time of
+ last
+                               modification of file status information)
+                               with -l: show ctime and sort by name
+                               otherwise: sort by ctime
+  -C                         list entries by columns
+      --color[=WHEN]         control whether color is used to distinguish
+ file
+                               types.  WHEN may be `never', `always', or
+ `auto'
+  -d, --directory            list directory entries instead of contents
+  -D, --dired                generate output designed for Emacs' dired mode
+  -f                         do not sort, enable -aU, disable -lst
+  -F, --classify             append indicator (one of */=@|) to entries
+      --format=WORD          across -x, commas -m, horizontal -x, long -l,
+                               single-column -1, verbose -l, vertical -C
+      --full-time            list both full date and full time
+  -g                         (ignored)
+  -G, --no-group             inhibit display of group information
+  -h, --human-readable  print sizes in human readable format (e.g., 1K 234M
+ 2G)
+      --si                   likewise, but use powers of 1000 not 1024
+  -H                         same as `--si' for now; soon to change
+                               to conform to POSIX
+      --indicator-style=WORD append indicator with style WORD to entry
+ names:
+                               none (default), classify (-F), file-type
+ (-p)
+  -i, --inode                print index number of each file
+  -I, --ignore=PATTERN       do not list implied entries matching shell
+ PATTERN
+  -k, --kilobytes            like --block-size=1024
+  -l                         use a long listing format
+  -L, --dereference          list entries pointed to by symbolic links
+  -m                         fill width with a comma separated list of
+ entries
+  -n, --numeric-uid-gid      list numeric UIDs and GIDs instead of names
+  -N, --literal              print raw entry names (don't treat e.g.
+ control
+                               characters specially)
+  -o                         use long listing format without group info
+  -p, --file-type            append indicator (one of /=@|) to entries
+  -q, --hide-control-chars   print ? instead of non graphic characters
+      --show-control-chars   show non graphic characters as-is (default
+                             unless program is `ls' and output is a
+ terminal)
+  -Q, --quote-name           enclose entry names in double quotes
+      --quoting-style=WORD   use quoting style WORD for entry names:
+                               literal, locale, shell, shell-always, c,
+ escape
+  -r, --reverse              reverse order while sorting
+  -R, --recursive            list subdirectories recursively
+  -s, --size                 print size of each file, in blocks
+  -S                         sort by file size
+      --sort=WORD            extension -X, none -U, size -S, time -t,
+                               version -v
+                             status -c, time -t, atime -u, access -u, use
+ -u
+      --time=WORD            show time as WORD instead of modification
+ time:
+                               atime, access, use, ctime or status; use
+                               specified time as sort key if --sort=time
+  -t                         sort by modification time
+  -T, --tabsize=COLS         assume tab stops at each COLS instead of 8
+  -u                         with -lt: sort by, and show, access time
+                               with -l: show access time and sort by name
+                               otherwise: sort by access time
+  -U                         do not sort; list entries in directory order
+  -v                         sort by version
+  -w, --width=COLS           assume screen width instead of current value
+  -x                         list entries by lines instead of by columns
+  -X                         sort alphabetically by entry extension
+  -1                         list one file per line
+      --help                 display this help and exit
+      --version              output version information and exit
+
+By default, color is not used to distinguish types of files.  That is
+equivalent to using --color=none.  Using the --color option without the
+optional WHEN argument is equivalent to using --color=always.  With
+--color=auto, color codes are output only if standard output is connected
+to a terminal (tty).
+
+Comunicar `bugs' a bug-fileutils@gnu.org.
+\end{verbatim}
+
+Disculpe el  lector semejante ejemplo, pero  era para que se  viera la
+información que se  puede obtener de primera mano.  Para consultar con
+detenimiento esta  ayuda, el  autor recomienda usar  {\tt ls  --help |
+more}, y  que según se  avanza con la  información, se pulsa  la barra
+espaciadora, y para salir, se pulsa la tecla {\tt q}.
+
+
+Obsérvese que  se pueden  escribir los parámetros  de dos  formas: una
+corta ({\tt -l, -a}) y otra larga ({\tt --all, --help}).
+
+Para  crear  un  directorio,  usaremos {\tt  mkdir  nombre  del  nuevo
+directorio},  y para  eliminarlo {\tt  rmdir nombre  del directorio  a
+eliminar}. {\bf ¡Atención!  El directorio que se  quiere eliminar debe
+estar vacío  y no debe haber  nadie trabajando en él  en ese momento.}
+Evidentemente, podemos  crear y destruir  un directorio dando  su ruta
+completa o sólo  su nombre si nos encontramos en  el directorio que lo
+contiene. En  caso de querer borrar  de un sólo golpe  un directorio y
+todo su  contenido disponemos  del comando {\tt  rm} con  las opciones
+{\tt  -rf}. {\bf  Mucho  cuidado con  borrar  directorios enteros  sin
+comprobar lo que se hace, pues no hay marcha atrás}
+
+
+\begin{verbatim}
+[felix@localhost apuntes]\$ mkdir pepe
+[felix@localhost apuntes]\$ mkdir tmp
+[felix@localhost apuntes]\$ rmdir pepe
+[felix@localhost apuntes]\$ rm -rf tmp
+\end{verbatim}
+
+en el directorio actual, o también,
+
+\begin{verbatim}
+[felix@localhost apuntes]\$ mkdir /home/felix/pepe
+[felix@localhost apuntes]\$ rmdir /home/felix/pepe
+\end{verbatim}
+
+desde cualquier directorio.
+
+
+\subsection{Trabajando con ficheros}
+
+Antes que nada, hay que entender  el sistema de permisos de los
+ficheros y directorios. Si  escribimos {\tt ls -l}, nos encontramos
+con la siguiente salida:
+
+\begin{verbatim}
+[felix@localhost apuntes]\$ ls -l
+total 468
+-rw-rw-r--    1 felix    felix      163004 oct 29 10:05
+ Apuntes_CILA_2001.dvi
+-rw-rw-r--    1 felix    felix      119151 oct 29 10:05
+ Apuntes_CILA_2001.sgml
+-rw-rw-r--    1 felix    felix        1617 oct 28 22:15 cabecera.sgml
+-rw-rw-r--    1 felix    felix       13329 oct 29 10:05 comandos.sgml
+-rwx------    1 felix    felix          33 oct 29 00:32 compila*
+drwxrwxr-x    2 felix    felix        4096 oct 28 23:20 CVS/
+-rw-rw-r--    1 felix    felix       17250 oct 28 12:11 editores.sgml
+-rw-rw-r--    1 felix    felix          12 oct 27 23:10 final.sgml
+-rw-rw-r--    1 felix    felix         157 oct 27 23:10 graficos.sgml
+-rw-rw-r--    1 felix    felix        2816 oct 28 21:51 internet.sgml
+-rw-rw-r--    1 felix    felix       23308 oct 28 23:05 introduccion.sgml
+-rw-rw-r--    1 felix    felix         402 oct 27 23:10 LEEME
+-rw-rw-r--    1 felix    felix        2295 oct 28 22:19 Makefile
+-rw-rw-r--    1 felix    felix       13087 oct 28 17:30 matematicas.sgml
+-rw-rw-r--    1 felix    felix         652 oct 28 21:56 presentacion.sgml
+-rw-rw-r--    1 felix    felix       34797 oct 28 21:56 programando.sgml
+-rw-rw-r--    1 felix    felix          47 oct 28 21:56 recursos.sgml
+-rw-rw-r--    1 felix    felix        1320 oct 25 13:35 resumen_temario.txt
+-rw-rw-r--    1 felix    felix        4662 oct 28 22:17 sobre.sgml
+-rw-rw-r--    1 felix    felix        5247 oct 28 22:19 temario.estado
+-rw-rw-r--    1 felix    felix        7417 oct 27 23:10 xwindow.sgml
+\end{verbatim}
+
+La  primera letra  a  la  izquierda de  cada  línea nos  indica
+si  se   trata  de  un   fichero  (``-'')  o   un  directorio
+(``d'').
+
+Después  nos  encontramos  con   tres  grupos  de  tres  letras
+(``rwx''), que según estén  activados (la propia letra, r,w,x)
+o  desactivados  (un guión,  -)  nos  concede  o deniega  permisos  de
+lectura ({\tt r}), escritura ({\tt w}) y ejecución ({\tt x}).
+  ¿Y  por   qué  son  tres  grupos?   Pues  porque  las
+tres  primeras  letras  se  refieren  al  propio  usuario  que  es  el
+dueño  de esos  ficheros,  el segundo  grupo se  refiere  al grupo  de
+usuario  que  pertenece ese  usuario,  y  el  tercero a  los  usuarios
+``extraños`` o  ''ajenos'' al  usuario. Por  tanto, si
+leemos
+
+\begin{verbatim}
+-rw-rw-r--
+\end{verbatim}
+
+vemos que se trata de un  fichero (-) con permisos de lectura y
+escritura  para el  usuario y  el grupo  al que  pertenece, y  de sólo
+lectura para un ``extraño''.
+
+
+El siguiente sería un fichero de lectura, escritura y ejecución
+únicamente para el usuario pro\-pie\-ta\-rio del fichero.
+
+\begin{verbatim}
+-rwx------
+\end{verbatim}
+
+Este  último  ejemplo es  un  directorio  (d) con  permisos  de
+lectura,  escritura y  ejecución  para el  usuario y  el  grupo, y  de
+lectura  y  ejecución  para  el ``extraño''.  En  el  caso  de
+directorios, el  permiso de  ejecución es  equivalente a  permiso para
+``entrar'' en el directorio.
+
+\begin{verbatim}
+drwxrwxr-x
+\end{verbatim}
+
+En  el ejemplo  del  listado anterior  vemos dos  veces  el nombre  de
+``felix''. El de la primera columna se refiere al usuario propietario,
+y el segundo  es el nombre del grupo, que  casualmente coincide con el
+nombre  del usuario.  Esto  es importante  recordarlo, porque  debemos
+tener  en  cuenta  que  {\bf  jamás podremos  eliminar  un  fichero  o
+retocarlo  si no  tenemos permisos  de  escritura sobre  él}. Esto  es
+impensable en algunas versiones de {\tt Windows}.
+
+El comando para copiar un fichero es {\tt cp [fichero de origen] [fichero
+de destino]}, es decir, que copiamos  el fichero {\bf pepe.txt} en {\bf
+juan.txt}.
+
+\begin{verbatim}
+[felix@localhost apuntes]\$ cp pepe.txt juan.txt
+\end{verbatim}
+
+
+El comando  para mover o  renombrar un fichero  es {\tt mv  fichero de
+origen fichero  de destino},  es decir, que  copiamos el  fichero {\bf
+pepe.txt}  en {\bf  juan.txt},  pero {\bf  pepe.txt}  deja de  existir
+físicamente.
+
+\begin{verbatim}
+[felix@localhost apuntes]\$ mv pepe.txt juan.txt
+\end{verbatim}
+
+\rule{\linewidth}{.75pt}
+NOTA: El  intérprete de  comandos \textbf{SÍ}  distingue en  mayúsculas y
+minúsculas,  tanto en  el  caso de  los  comandos como  en  el de  los
+ficheros y directorios. Esto significa que el comando mv es totalmente
+diferente a Mv, mV y MV. Asimismo,  el fichero pepe.txt no es el mismo
+fichero que Pepe.txt, ni que PEPE.TXT, etc.
+\rule{\linewidth}{.75pt}
+\vspace{1pt}
+
+Un último punto  a esta sección. Si queremos que  un fichero cambie de
+propietario, lo haremos, con {\tt chown}:
+
+\begin{verbatim}
+[felix@localhost apuntes]\$ chown miguel pepe.txt
+\end{verbatim}
+
+si antes, {\bf pepe.txt} era de {\tt felix}, ahora pasa a
+ser de {\tt miguel}.
+
+De igual forma, para cambiarlo de grupo, usaremos {\tt chgrp}. Si {\bf
+pepe.txt} era  del grupo  de los  profesores, y  queremos que  sea del
+grupo de los estudiantes, sólo habrá que escribir lo siguiente:
+
+\begin{verbatim}
+[felix@localhost apuntes]\$ chgrp estudiantes pepe.txt
+\end{verbatim}
+
+Finalmente, para  cambiar los permisos  de un fichero, lo  haremos con
+{\tt chmod},  indicando a  que tipo de  usuario queremos  asignarlos y
+sobre qué permisos.  Para indicar el usuario  propietario, usaremos el
+parámetro {\tt u}, el  de grupo será {\tt g} y el  ajeno será {\tt o},
+(de {\tt otros}). Para indicar el tipo de permiso, usaremos las letras
+{\tt  r},  {\tt w},  {\tt  x},  según  sean  de lectura,  escritura  o
+ejecución  respectivamente. Y  para conceder  o denegar,  usaremos los
+símbolos ``+'' y ``-'':
+
+\begin{verbatim}
+[felix@localhost apuntes]\$ chmod u+rwx pepe.txt
+\end{verbatim}
+
+Este ejemplo sirve para dar todos los permisos al usuario.
+
+En el  siquiente ejemplo  daremos permisos de  lectura y  ejecución al
+usuario  y al  grupo,  pero  no de  escritura  sobre  el fichero  {\bf
+compila}.
+
+
+\begin{verbatim}
+[felix@localhost apuntes]\$ chmod ug+r-x compila
+\end{verbatim}
+
+O quitar el permiso de ejecución a  todos los usuarios sin que se vean
+afectados los otros tipos de permisos:
+
+\begin{verbatim}
+[felix@localhost apuntes]\$ chmod -x probar
+\end{verbatim}
+
+
+
+\section{Comandos básicos para sobrevivir}
+
+\begin{description}
+
+
+\item [clear:] limpia la pantalla de la consola (teclas CTRL+L)
+
+\item [top:] muestra los procesos  que se ejecutan en ese momento,
+sabiendo los recursos que se están consumiendo.
+
+\item [locate:] es la orden de búsqueda más rápida y sencilla para
+localizar un archivo.
+
+\item [whoami:] de (Who am  I?, ¿Quién soy?), que  indica con qué
+nombre de usuario se entró en esa consola. Puede parecer una tontería,
+pero si una persona entra en dos  sesiones, en una como root y en otra
+como usuario  normal, si no se  sabe quién es en  ese momento, podrían
+ocurrir accidentes catastróficos.
+
+\item [reset:] si observamos  que  escribimos en  pantalla y  no
+aparece  el  texto  pero  al  pulsar {\tt  enter}  realmente  se  está
+escribiendo,  o  que  los  colores  o los  textos  de  la  consola  se
+corrompen,  puede  ser  que  alguna  aplicación  en  modo  texto  haya
+finalizado  bruscamente  no restaurando  los  valores  estándar de  la
+consola  al  salir.  Con  esto  forzamos  unos  valores  por  defecto,
+regenerando la pantalla.
+
+
+\end{description}
+
+
+\section{El comando {\tt man}}
+
+
+Este comando es  muy útil, ya que nos dará  mucha información sobre la
+mayoría de los comandos con los que vamos a trabajar.
+
+
+\begin{verbatim}
+[felix@localhost apuntes]\$ man bash
+\end{verbatim}
+
+Omitimos la información de salida ya que puede ser muy extensa e invita
+al lector a que lo pruebe él mismo.
+
+
+\section{Unidades de disco}
+
+Como hemos dicho anteriormente, en  Linux no existen las unidades {\tt
+A}:  ni {\tt  C:}  sino  que todos  los  dispositivos ``cuelgan''  del
+directorio raíz {\tt /}. Para acceder  a un disco es necesario primero
+{\em  montarlo},  esto es  asignarle  un  lugar  dentro del  árbol  de
+directorios del sistema.
+
+Por ejemplo, podemos asignar  a la disquetera
+el directorio {\tt /floppy}, al CD-ROM  el directorio {\tt /cdrom} o a
+la  grabadora de  CDs el  directorio {\tt  /grabata}. Normalmente  los
+directorios  para  la  disquetera  y  el lector  de  CD-ROM  están  ya
+asignados desde  el momento  de instalar el  sistema, aunque  se puede
+cambiar a voluntad (si somos root ;-).
+
+
+Para montar  un disco  utilizamos el  comando {\tt  mount} indicándole
+como parámetros el dispositivo al que queremos acceder y el directorio
+en el que lo queremos montar. Sin embargo estas precisiones suelen ser
+responsabilidad  del administrador  (root) y  los usuarios  tienen que
+conformarse montar lo  que root les permita. En nuestro  caso el señor
+root ha determinado que los usuarios sólo podemos montar la disquetera
+en el directorio {\tt /floppy}.
+
+
+\begin{verbatim}
+[miguev@euler apuntes]\$ mount /dev/fd0 /floppy
+mount: only root can do that
+[miguev@euler apuntes]\$ mount /floppy
+\end{verbatim}
+
+Una vez montado el disquete en  el directorio {\tt /floppy} ya podemos
+acceder a él y  trajinar sus ficheros como nos dé  la gana. Y ahora
+viene el pero: pobre de quien  saque el disquete sin desmontarlo. ¿Por
+qué? Pues por tres razones:
+
+\begin{enumerate}
+
+\item  Existe el  riesgo de  que perdamos  la información  que hayamos
+grabado en el disquete.
+
+\item  Ningún otro  usuario  podrá  usar la  disquetera  hasta que  se
+reinicie el ordenador, lo cual no le hará gracia a nadie.
+
+\item El  Sr. root puede  mosquearse con quien lo  haga, y a  nadie le
+conviene que el tiener mosqueado al Sr. root.
+
+\end{enumerate}
+
+Para desmontar el disquete simplemente utilizamos el sencillo comando:
+
+\begin{verbatim}
+[miguev@euler apuntes]\$ umount /floppy
+\end{verbatim}
+
+Para comprobar en un momento dado  si el disquete está montado podemos
+usar el  comando {\tt  df}, que  nos informa  sobre los  ``sistemas de
+ficheros'' que están montados y su estado de almacenamiento. La opción
+{\tt -h} nos muestra las cantidades en cifras ``{\bf h}umanas''.
+
+\begin{verbatim}
+[miguev@euler apuntes]\$ df -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/hda2             1.9G  1.8G   80M  96% /
+euler:/home            20G  3.2G   16G  17% /home
+euler:/usr/soft       3.9G  5.4M  3.7G   0% /usr/soft
+/dev/fd0              1.4M  758k  665k  53% /floppy
+\end{verbatim}
+
+Aquí  vemos  que la  segunda  partición  del  primer disco  duro  {\tt
+/dev/hda2} está montada en el directorio {\tt /}, los directorios {\tt
+/home} y  {\tt /usr/soft} del  servidor {\tt euler} están  montados en
+sus equivalente locales, y el  disquete {\tt /dev/fd0} está montado en
+el directorio {\tt /floppy}.
+
+
+

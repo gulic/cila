@@ -1,0 +1,210 @@
+%Autor: Carlos de la Cruz (frodo@fmat.ull.es)
+
+\chapter{Java}
+
+
+Java es un lenguaje de alto nivel y de propósito general. Al principio
+fue desarrollado  en los laboratorios  de {\em Sun  Microsystems} para
+servir en aparatos de electrónica de consumo, como videoteléfonos, set
+boxes (descodificadores), o aparatos similares, pues pretendía hacerse
+un lenguaje  lo más independiente posible  de la plataforma en  la que
+fueran a ser ejecutados los programas hechos con él.
+
+A  diferencia  de otros  muchos  lenguajes  compilados, el  compilador
+de  java no  genera  ficheros ejecutables.  Genera  unos ficheros  con
+extensión  {\tt  .class}  llamados  {\em  bytecodes}.  Estos  ficheros
+posteriormente podrán ser ejecutados  mediante la {\em Máquina Virtual
+Java} (JVM en  inglés), que es la encargada de  ejecutar los programas
+de java.
+
+Esto, que a primera vista puede  parecer tedioso e inútil, es una gran
+ventaja para la portabilidad del código, pues cada plataforma tiene su
+propia Máquina Virtual Java: Apple Mac OS tiene una, Linux tiene otra,
+Windows otra, Amiga OS también, etc. Esto implica que si desarrollamos
+un  programa en  un iMac  con  Linux, el  amigo que  tenga un  potente
+servidor SUN podrá ejecutar nuestra aplicación hecha en Java, al igual
+que nosotros  podremos utilizar el  complicado programa de  cálculo de
+estructuras que otra  persona ha desarrollado en su Pc  con Windows en
+el trabajo.
+
+Realmente, Java no es tan bonito  como lo estamos pintando. Uno de sus
+principales  puntos  débiles es  que  no  es  demasiado rápido,  y  es
+bastante  caprichoso en  cuestiones de  recursos de  hardware. Además,
+existen  dos máquinas  virtuales Java,  la de  Microsoft y  la de  SUN
+Microsystems, que presentan algunas incompatibilidades.
+
+Pero su principal  ventaja es la impresionante  portabilidad, así como
+su utilidad en campos como Internet (donde principalmente se usa en la
+actualidad), en servidores web.
+
+Los  programas   java  podemos   clasificarlos  básicamente   en  tres
+categorías: {\em  applets}, {\em  servlets} y aplicaciones  {\em stand
+alone}.
+
+\begin{itemize}
+
+\item  Los {\em  applets}  son pequeñas  aplicaciones  creadas con  el
+propósito de ser incluidas en páginas web. Cuando el cliente, desde su
+navegador web con  java incorporado pide esa página web,  el applet se
+descarga  a su  ordenador donde  comienza su  ejecución. El  navegador
+tiene la maquina virtual java incorporada.  Los applets son el tipo de
+aplicaciones  java que  más restricciones  de seguridad  presentan. No
+pueden acceder  al sistema de  archivos local fuera del  directorio en
+que se  ejecutan, no pueden  abrir ventanas adicionales sin  que éstas
+aparezcan señalizadas  con el indicativo: ``Warning:  applet window'',
+ni  hacer muchas  cosas  que podrían  ser  perjudiciales para  nuestro
+ordenador.
+
+\item  Las  aplicaciones  que  a   nivel  de  seguridad  permiten  más
+libertades que los applets.
+
+\item Los  {\em servlets} son una  especie de applets que  se ejecutan
+sólo en  el servidor  web cuando  uno pide una  página, y  que generan
+dinámicamente  páginas  a  partir  de fuentes  como  bases  de  datos,
+terceros programas que recopilan información, etcétera.
+
+\end{itemize}
+
+ A nivel visual,  java tiene dos grupos de controles,  widgets, o como
+prefiramos  llamarlos (no  son  otra  cosa que  los  campos de  texto,
+formularios, botones, etc.):
+
+\begin{itemize}
+
+\item El  Java AWT,  (Advanced Window  Toolkit), obsoleto  y mantenido
+sólo por compatibilidad en versiones actuales de java.
+
+\item  El conjunto  de widgets  {\bf  Java Swing},  que presenta  unos
+controles mucho más estéticos y es mucho más flexible.
+
+\end{itemize}
+
+Ambos  conjuntos de  widgets  proporcionan  una presentación  uniforme
+independiente de la plataforma en que sean ejecutados. Además, otro de
+los principales atractivos de java es  que el compilador no nos cuesta
+nada.  Se  encuentra  disponible  para bajarlo  de  java.sun.com  para
+cualquiera de las plataformas más comunes en el mercado.
+
+Veamos cómo se generan programas  básicos en java mediante un ejemplo.
+En un  editor escribimos  el siguiente  código y  lo guardamos  con el
+nombre de fichero {\tt Prueba.java}.
+
+
+\begin{verbatim}
+// Ejemplo 1 de Java para CILA
+// Fichero: HolaMundo.java
+
+public class HolaMundo {
+       public static void main(String[] argv){
+	      System.out.println("Hola mundo");
+}
+}
+\end{verbatim}
+
+Es de vital importancia que el  nombre del fichero coincida con lo que
+escribimos después  de ``{\tt public  class}''. Asimismo, Java  es un
+lenguaje muy exigente  en materia de mayúsculas y  minúsculas, como de
+de espacios y  tabuladores. Para compilar este  programa utilizamos el
+siguiente comando:
+
+\begin{verbatim}
+$ ls
+HolaMundo.java
+
+$ javac HolaMundo.java
+
+$ ls
+HolaMundo.java  HolaMundo.class
+
+\end{verbatim}
+
+
+Obtendremos  un fichero  con extensión  {\tt  .class} que  es el  {\em
+bytecode}, el fichero que ejecutaremos con el siguiente comando:
+
+
+\begin{verbatim}
+$ java HolaMundo
+Hola Mundo
+\end{verbatim}
+
+Lo que no tiene sentido es poner ``{\tt  java  Prueba.class}'', pues no
+funcionaría, devolviendo el siguiente error:
+
+\begin{verbatim}
+$ java HolaMundo.class
+Can't find class HolaMundo.class
+\end{verbatim}
+
+\begin{verbatim}
+$ java HolaMunco.class
+Exception in thread "main" java.lang.NoClassDefFoundError: HolaMundo/java
+\end{verbatim}
+
+Veamos ahora un ejemplo de {\em applet}. Tecleamos el siguiente código
+y lo guardamos como {\tt HolaMundo2.java}.
+
+\begin{verbatim}
+// Ejemplo 2 de Java para CILA
+// Fichero: HolaMundo2.java
+
+import java.applet.Applet;
+import java.awt.*;
+
+public class HolaMundo2 extends Applet {
+    public Button botonUno = new Button ("Hola Mundo");
+    public void init() {
+    add ( botonUno );
+    }
+}
+\end{verbatim}
+
+Compilamos  el  applet del  mismo  modo  que  hicimos con  el  ejemplo
+anterior:
+
+\begin{verbatim}
+$ javac HolaMundo.java
+\end{verbatim}
+
+Con esto generamos  el fichero {\tt HolaMundo2.class}  que contiene el
+applet. Ahora necesitamos una página  web que cargue el applet. Creamos
+el fichero {\tt HolaMundo2.html} con el siguiente código:
+
+\begin{verbatim}
+<html>
+<head>
+<title> Ejemplo 2 de Java para CILA </title>
+</head>
+<body>
+<center>
+<applet code="HolaMundo2.class" width="300" height="300" ></applet>
+</center>
+</body>
+</html>
+\end{verbatim}
+
+Para probar el applet utilizaremos  el método que utilizaría cualquier
+visitante, cargarlo desde la página web que hemos creado a tal efecto.
+Esto lo hacemos  con cualquier navegador que soporte,  Java, entre los
+que recomendamos Netscape.
+
+\begin{verbatim}
+$ netscape HolaMundo2.html
+\end{verbatim}
+
+Veremos como el applet se ejecuta  dentro de la página web. Otra forma
+de ejecutar un applet de  Java, por ejemplo cuando estamos programando
+y sólo  deseamos probarlo  pero no queremos  ejecutar netscape,  es el
+programa appletviewer que proporciona el JDK.
+
+\begin{verbatim}
+$ appletviewer HolaMundo2.html
+\end{verbatim}
+
+Podemos apreciar la  diferencia entre un {\em  applet}, cuya ejecución
+está controlada por el navegador y se  limita a la página web desde el
+que  es  cargado,  y  una  aplicación  intependiente  que  se  ejecuta
+directamente en  la consola del  sistema sin más intermediario  que la
+Máquina Virual Java.
+
+

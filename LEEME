@@ -1,0 +1,217 @@
+
+
+			APUNTES DEL TALLER DE INICIACIÓN A LINUX
+			========================================
+
+	Este fichero contiene información de lectura _obligada_ para los
+	colaboradores y recomendada para los curiosos. Los apartados son:
+
+	- Contenido:			Ficheros contenidos en este directorio/paquete
+	- Herramientas LaTeX:	Programas y utilidades LaTeX necesarias
+	- Paquetes LaTeX:		Paquetes del compilador LaTeX que utilizamos
+	- Comandos LaTeX:		Recordatorio de los comandos LaTeX que
+							utilizamos y para qué los utilizamos
+
+
+	Convenciones
+	============
+	- Escribiremos tuteando al lector.
+	- Los diferentes tipos de letra tienen finalidades específicas,
+	  por favor no busquen nuevas maneras de resaltar texto, sigamos
+	  las siguientes pautas:
+	  - Sin adornos (\sf): 
+	    nombres de  programas, paquetes, protocolos, lenguajes, etc.
+	  - Máquina de escribir (\tt):
+	    comandos, código fuente, pulsasiones y/o combinaciones de teclas;
+		todo aquello  que haya que teclear o leer de la pantalla.
+	  - Itálica (\em):
+	    términos nuevos o que haya que resaltar.
+	  - Negrita (\bf): elementos  de  una  descripción o  aquello  que 
+	    necesite especial atención. Úsenlo con moderación.
+	  - Versalita (\sc): 
+	    para nombres de personas, organizaciones y entidades en general.
+
+
+	Este directorio debería contener (al menos) los ficheros
+	========================================================
+
+	- LEEME				Este fichero
+	- tareas			Fichero donde apuntamos lo que vamos haciendo
+	- Makefile			Instrucciones para GNU Make
+	- main.tex			Fichero principal del códgido LaTeX
+	- tila.sty			Paquete LaTeX (basado en fncychap.sty)
+	- imagenes			Directorio donde pondremos todos los gráficos
+	- ejemplos			Directorio donde pondremos los ejemplos de código
+	- portada.tex		Portadas y notas de copyright
+	- presentacion.tex	Presentación de los apuntes
+	- contrib.tex		Lista de contribuciones
+	- introduccion.tex	Capítulo 'Introducción a GNU/Linux'
+	- fdles.tex			Apéndice con la GNU FDL en castellano
+	- biblio.bib		Base de datos bibliobráfica en formato BIBTeX
+	- *.tex				Temas de los apuntes, un fichero .tex por tema
+
+
+	Herramientas LaTeX
+	==================
+
+	- LaTeX				compilador LaTeX con sus fuentes y paquétes
+	- BIBTeX			compilador LaTeX de bibliografías
+	- MAKEINDEX			compilador LaTeX de índices terminológicos
+	- dvips				convertidor de DVI a PostScript
+	- ps2pdf			convertidor de PostScript a PDF
+	- latex2html		convertidor de LaTeX a HTML
+
+
+
+	Paquetes LaTeX
+	==============
+	
+	- inputenc			convierte los caracteres especiales a los comandos
+						LaTex apropiados, lo usaremos con la opción 'latin1'
+						para ISO-8859-1 e ISO-8859-15
+	- babel				convierte los nombres de variables al castellano,
+						usándolo con la opción 'spanish'
+	- fancyheadings		facilita el uso de cabeceras y pies de página
+						personalizados
+	- graphicx			facilita la inclusión de gráficos, con más opciones
+						que el paquete 'graphics'
+	- psfig				facilita la manipulación de gráficos PostScript
+	- eurosym			permite el uso del símbolo del ¤uro
+	- makeidx			combinado con MAKEINDEX lo usaremos para construir
+						el índice terminológico
+	- html				permite introducir referencias a páginas web (URLs)
+						que al traducir a HTML resultan en enláces
+	- color             Permite usar colores en los formatos PostScript y PDF.
+						Úsenlo con precaución.
+	- colortbl			Permite colorear columnas y filas de tablas (PS, PDF).
+						Úsenlo con precaución.
+	- verbatim			proporciona potentes usos de entornos verbatim
+	- tila				mejora el aspecto de las páginas que abren partes
+						o capítulos (basándose en el paquete FancChapter),
+						demás de definir algunas siglas, longitudes, y 
+						constantes. Implementa el entorno para ejemplos y 
+						el Índice de ejemplos. Debe ser el último.
+
+
+	Chuleta de comandos LaTex utilizados
+	====================================
+	
+	{\sf TextoSinAdornos}
+		Cambia el texto al tipo de 'sin adornos'
+	
+	{\tt TextoEnMáquinaDeEscribir}
+		Cambia el texto al tipo de 'maquina de escribir'
+
+	{\bf TextoEnNegrita}
+		Cambia el texto al tipo en 'negrita'
+
+	{\em TextoEnItálica}
+		Cambia el texto al tipo 'itálica'
+	
+	{\sc TextoEnVersalita}
+		Cambia el texto al tipo 'versalita'
+	
+	\GULiC
+		Introduce el texto 'Grupo de Usuarios de Linux de Canarias'
+	
+	\CILA
+		Introduce el texto 'Curso de Introducción a Linux para Alumnos'
+	
+	\PILA
+		Introduce el texto 'Party de Instalación de Linux para Alumnos'
+	
+	\TIL
+		Introduce el texto 'Taller de Iniciación a Linux'
+	
+	\TILA
+		Introduce el texto 'Taller de Iniciación a Linux para Alumnos'
+	
+	\LaTeX
+		Introduce el logotipo de LaTeX
+	
+	\TeX
+		Introduce el logotipo de TeX
+	
+	\LyX
+		Introduce el logotipo de LyX
+
+	\chapter{NombreCapítulo}
+		Comienza un capítulo, no se cierra
+	
+	\chapter*{NombreCapítulo}
+		Igual que el anterior, pero no numera el capítulo ni incrementa
+		el contador de capítulo
+
+	\section{NombreSección}
+		Comienza una sección, no se cierra
+
+	\section*{NombreSección}
+		Igual que el anterior, pero no numera el capítulo ni incrementa
+		el contador de capítulo
+
+	\subsection{NombreSubsección}
+		Comienza una subsección, no se cierra
+
+	\begin{verbatim}
+		Comienza un entorno en el que el texto se mostrará cal cual
+		sea tecleado. Lo usaremos para código fuente, salidas de un
+		terminal, contenido de ficheros de ejemplo, etc. 
+		Se cierra con \end{verbatim}
+
+	\begin{ejemplo}{Nombre del fichero}{Descripción corta del ejemplo}
+		Comienza un entorno destinado a mostrar ejemplos, sólo para
+		código fuente de programas. Para usarlo léanse los comentarios
+		del fichero tila.sty (líneas 77 a 104)
+	
+	\begin{itemize}
+		Comienza una lista desordenada (sin números). Los elementos 
+		de la lista se indican con \item y la lista se cierra con 
+		\end{itemize}
+
+	\begin{enumerate}
+		Igual que la anterior, pero los elementos se muestran numerados.
+		Se cierra con \end{enumerate}
+
+	\label{NombreEtiqueta}
+		Etiqueta una posición en el documento, la cual se podrá referenciar
+		con \ref o \pageref
+	
+	\ref{NombreEtiqueta}
+		Introduce una referencia al punto del documento donde se encuentre
+		\label{NombreEtiqueta}
+
+	\pageref{NombreEtiqueta}
+		Introduce una referencia a la página del documento donde se
+		encuentre \label{NombreEtiqueta}
+
+	\index{NombreEtiqueta}
+		Introduce una referencia para usar en el índice terminológico.
+	
+	\cite{NombreObra}
+		Introduce una referencia a una obra de la bibliografía
+
+	\begin{quote}
+		Comienza un entorno en el que se incrementan los márgenes
+		laterales, lo usaremos para citas textuales y similares.
+		Se cierra con \end{quote}
+
+	\htmlurl{URL}
+		Introduce una referencia al URL, en el caso de páginas web
+		inserta un enlace en el documento traducido a HTML
+
+	\begin{center}
+		Comienza un entorno en el que el texto está centrado y sin 
+		ajustar la longitud de las líneas, se cierra con \end{center}
+	
+	\begin{flushright}
+		Comienza un entorno en el que el texto está ajustado a la
+		derecha, y sin ajustar la longitud de las líneas, se cierra
+		con \end{flushright}
+
+	\begin{flushleft}
+		Comienza un entorno en el que el texto está ajustado a la
+		izquierda, y sin ajustar la longitud de las líneas, se cierra
+		con \end{flushleft}
+
+
+

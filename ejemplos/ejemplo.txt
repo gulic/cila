@@ -1,0 +1,10 @@
+
+	Este fichero contiene el ejemplo de ejemplo
+
+	Su contenido se muestra tal como es el fichero original,
+		incluyendo ta	bu	la	do	res
+		y
+		saltos
+		de
+		línea
+

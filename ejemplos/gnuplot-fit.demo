@@ -1,0 +1,25 @@
+# ajustes por mínimos cuadrados en gnuplot 
+
+y(x) = a*x + b   # funcion a la que se ajustará
+a = 0.0          # valores iniciales
+b = 0.0          # de los parámetros
+
+fit y(x) 'gnuplot-fit.dat' via a, b
+set title 'Ajuste sin pesar'
+plot 'gnuplot-fit.dat', y(x)
+pause -1 "Pulsa enter para continuar"
+
+fit y(x) 'gnuplot-fit.dat' using 1:2:3 via a, b
+set title 'Ajuste con mayor peso en bajas temperaturas'
+plot 'gnuplot-fit.dat', y(x)
+pause -1 "Pulsa enter para continuar"
+
+fit y(x) 'gnuplot-fit.dat' using 1:2:4 via a, b
+set title 'Ajuste con mayor peso a altas temperaturas'
+plot 'gnuplot-fit.dat', y(x)
+pause -1 "Pulsa enter para continuar"
+
+fit y(x) 'gnuplot-fit.dat' using 1:2:5 via a, b
+set title 'Ajuste con peso correspondiente a error experimental'
+plot 'gnuplot-fit.dat' using 1:2:5 with errorbars, y(x)
+pause -1 "Pulsa enter para continuar"

@@ -1,0 +1,63 @@
+
+ Módulos
+ I.   Entorno GNU/Linux  (3 días, 12 horas)
+ II.  Instalación        (2 días, 20 horas en jornadas de 10 horas)
+ III. Documentación      (2 días)
+ IV.  Matemáticas        (1 días)
+ V.   Programación       (2 días)
+ VI.  Programación avanzada (?? días)
+
+ Módulo I:   Entorno GNU/Linux
+ 1. Historia de GNU/Linux.                               (_ese, 0.5)
+ 2. El entorno del intérprete de comandos, con mtools.   (_ese, 1)
+ 3. El entorno X-Window, Gnome, KDE.              (aplatanad + mojopikon, 0.5 + 1 + 1)
+ 4. Aplicaciones para Internet: Mozilla, Konqueror, Kmail, gFTP, Mutt, SSH      (amd77, 4)
+ 5. Aplicaciones misceláneas: gnotepad, scite, abiword, openoffice, ETC. (¿_ese?, 4)
+ 6. Sistemas de ayuda y documentación                                (¿?, ¿?)
+
+ Módulo II:  Instalación (Debian GNU/Linux 3.0, 8 CDs, 25 plazas)
+ 1. Sistema base (particiones)
+ 2. Hardware y kernel (make [menu|x]config && make-kpkg)
+ 3. Administración básica (adduser, floppy, cdrom, APT, Fundamentos de PERL
+    para automatización de tareas) MojoPiKon
+ 4. Paquetes en fuentes (bajar, compilar, instalar (mplayer+aalib) 
+
+Nota by Mojo: Xine ahora no permite ver dvd's codificados, esto es, casi ninguno.
+Nota by miguev: pues les mandamos MPlayer
+
+ 5. Software para los módulos del TILA.
+ 6. Software adicional (a gusto del consumidor)
+
+ Módulo III: Edición de gráficos y documentos
+ 1. Edición de gráficos:
+    - DIA,                              (pedro o miguev,  0.75)
+    - QCad,                             (miguev,          0.75)
+    - The GIMP,                         (pedro o miguev,  1.5)
+ 2. OpenOffice                          (sirma,           1)
+ 3. HTML: lenguaje, ¿bluefish, quanta?  (_ese,            1)
+ 4. LyX                                 (miguev,          0.5)
+ 5. LaTeX                               (miguev,          2.5)
+
+ Módulo IV:  Herramientas para matemáticas
+ 1. Octave y SciLab                     (amd77,  1.25)
+ 2. GNUplot                             (amd77,  0.75)
+ 3. R                                   (miguev, 1)
+ 4. Yacas                               (miguev, 1)
+
+ Módulo V:   Herramientas de programación
+ 1. Editores: gvim, emacs.     (miguev, mojopikon, 1.5 + 1)
+ 2. FreePascal                          (mojopikon    0.5)
+ 3. GNU Fortran                         (miguev,      0.5)
+ 4. Java                                (mojopikon,   0.5)
+ 5. Bash.                               (aplatanad,   1)
+ 6. GNU C/C++                           (aplatanad,   1)
+ 7. GNU Make                            (aplatanad,   0.5)
+ 8. Depuradores: gdb y ddd.             (aplatanad,   1.5)
+
+ Módulo VI:  Programación avanzada (no preocuparse por este)
+ 1. PHP + [My|Postgre]SQL
+ 2. Perl
+ 3. Python (NumPy, python-stats, python-scientist)
+ 4. GUIs toolkits: Tk, QT, Wx, Gtk, Glade
+ 5. XML
+ 
