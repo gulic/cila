@@ -61,7 +61,10 @@
      \normalfont\ttfamily}%
     \item[]}
    {\end{list}}
+%% Bold symbol macro for standard LaTeX users
+\renewcommand{\boldsymbol}[1]{\mbox{\boldmath $#1$}}
 \newcommand{\noun}[1]{\textsc{#1}}
+\providecommand{\tabularnewline}{\\}
 
 %%%
 %%% Comandos para siglas
@@ -168,6 +171,7 @@
 \begin{figure}[hbtp]
 \centering\includegraphics[width=\factor\textwidth]{imagenes/\source.eps}
 }{
+\label{\source}
 \end{figure}}
 
 
