@@ -1,4 +1,5 @@
 %Autor: _ese
+
 \chapter{El intérprete de comandos}
 \label{comandos.tex}
 \index{Comandos, intérprete}
@@ -11,11 +12,12 @@ emergencia  en el  que  no  nos quede  más  remedio  que trabajar  con
 comandos.
 
 Un intérprete  de comandos tiene el  aspecto de una pantalla  llena de
-letras, generalmente  con fondo negro  y letras  blancas, y que  en la
-última línea inferior, se suele ver lo siguiente:
+letras, generalmente con fondo  negro y letras blancas\footnote{Aunque
+inicialmente  eran  de fondo  negro  con  letras  de color  naranja  o
+verde.}, y que en la última línea inferior, se suele ver lo siguiente:
 
 \begin{verbatim}
-[felix@localhost Comandos]$
+[cila@gulic]$
 \end{verbatim}
 
 En  este entorno  es donde  introduciremos  los comandos  con los  que
@@ -35,39 +37,39 @@ consola. Estos comandos pueden ser de diferentes clases:
 
 Todos  tienen en  común que  son ficheros:  al cargar  un programa  en
 Linux, se ordena al intérprete que busque el fichero con el nombre del
-programa y  una vez  encontrado, lo  ejecute, si  éste da  permisos de
-ejecución al usuario.
+programa y una vez encontrado, lo ejecute si el usuario tiene permisos
+de ejecución.
 
 Los comandos tienen el siguiente aspecto:
 
 \begin{verbatim}
-[felix@localhost Comandos]$ fdisk
-[felix@localhost Comandos]$ lsmod
-[felix@localhost Comandos]$ ls
+[cila@gulic]$ fdisk
+[cila@gulic]$ lsmod
+[cila@gulic]$ ls
 \end{verbatim}
 
 También funcionan con opciones:
 
 \begin{verbatim}
-[felix@localhost Comandos]$ fdisk -v
-[felix@localhost Comandos]$ ls -a -l
-[felix@localhost Comandos]$ ls -al
+[cila@gulic]$ fdisk -v
+[cila@gulic]$ ls -a -l
+[cila@gulic]$ ls -al
 \end{verbatim}
 
 Y con parámetros:
 
 \begin{verbatim}
-[felix@localhost Comandos]$ fdisk /dev/hda
-[felix@localhost Comandos]$ ls /tmp
-[felix@localhost Comandos]$ ls *.txt
+[cila@gulic]$ fdisk /dev/hda
+[cila@gulic]$ ls /tmp
+[cila@gulic]$ ls *.txt
 \end{verbatim}
 
 Con opciones y parámetros:
 
 \begin{verbatim}
-[felix@localhost Comandos]$ rpm -qpl joe-1.0.3.rpm
-[felix@localhost Comandos]$ gcc -o suma suma.c
-[felix@localhost Comandos]$ ls -al /tmp
+[cila@gulic]$ rpm -qpl joe-1.0.3.rpm
+[cila@gulic]$ gcc -o suma suma.c
+[cila@gulic]$ ls -al /tmp
 \end{verbatim}
 
 Al  ser Linux  un sistema  {\em multitarea}  y {\em  multiusuario}, se
@@ -81,7 +83,20 @@ significa realmente que el mismo  usuario puede entrar varias veces al
 mismo tiempo.
 
 Para alternar  entre estas  consolas virtuales,  basta con  pulsar las
-combinaciones de la teclas {\tt A-F1} a {\tt A-F6}
+combinaciones de  la teclas  {\tt A-F1} a  {\tt A-F6}.
+
+\begin{nota}
+En lo sucesivo usaremos esta nomenclatura:\\
+\vspace{-1cm}
+\begin{itemize}
+\setlength{\itemsep}{-15pt}
+\item {\tt A-F1} $\Rightarrow$ {\tt Alt} y {\tt  F1}.\\
+\item {\tt C-F1} $\Rightarrow$ {\tt Control} y {\tt F1}.\\
+\item {\tt S-F1} $\Rightarrow$ {\tt Shift}  y {\tt F1}.\\
+\end{itemize}
+\vspace{-1cm}
+Donde {\tt Shift} es la tecla de las mayúsculas.
+\end{nota}
 
 Si se quiere acceder a una  consola desde un entorno gráfico, entonces
 se pulsan las combinaciones {\tt C-A-F1} a {\tt C-A-F6}
@@ -99,8 +114,9 @@ herramientas y programas existentes se  puede acceder a estos ficheros
 para ver su contenido o  modificarlo. En la Figura \ref{arbol} podemos
 ver una ejemplo de dicha estructura en árbol.
 
-\begin{figura}{arbol}{0.6}
-\caption{Estructura en árbol de directorios en sistemas UNIX}\label{arbol}
+\begin{figura}{arbol}{0.7}
+\caption{Estructura    en   árbol    de   directorios    en   sistemas
+UNIX}\label{arbol}
 \end{figura}
 
 Todos los  ficheros y  directorios de  un sistema  UNIX cuelgan  de un
@@ -110,17 +126,17 @@ observar como del  directorio raíz {\tt /}  cuelgan otros directorios,
 como {\tt etc} o {\tt home}.
 
 En  dicho  esquema  diferenciamos  los directorios  de  los  ficheros,
-complementando el  final del  nombre de los  primeros con  el caracter
+complementando el  final del  nombre de los  primeros con  el carácter
 {\tt /}.  En el  mismo esquema vemos  como algunos  directorios pueden
 contener otros directorios,  como es el caso de {\tt  home}, que es el
 {\em padre} de los directorios {\tt usr1} y {\tt usr2}. También pueden
 contener algunos  ficheros, como es  el caso de  {\tt dev}, que  es el
 padre de {\tt  dsp}; o el propio  {\tt usr2}, que es el  padre de {\tt
-trabajo.txt}. Éste  último fichero tiene  la {\em ruta  absoluta} {\tt
+trabajo.txt}. Este  último fichero tiene  la {\em ruta  absoluta} {\tt
 /home/usr2/trabajo.txt}, que  define su localización dentro  del árbol
 de directorios.
 
-Todos  los  directorios  de  un sistema  UNIX  contienen  almenos  dos
+Todos  los directorios  de  un  sistema UNIX  contienen  al menos  dos
 subdirectorios.  El  primero es  {\tt  ./}  que representa  al  propio
 directorio,  mientras que  el segundo  es  {\tt ../}  y representa  al
 directorio padre. Por  ejemplo, el directorio {\tt ./}  dentro de {\tt
@@ -136,33 +152,34 @@ con la tarjeta de sonido instalada en el sistema.
 
 A diferencia de  los sistemas MS-DOS/Windows, en los  sistemas UNIX no
 se  reparten los  directorios en  función de  si están  en una  unidad
-física o en otra (C:, D:, etc.). Durante el arranque del sistema, cada
-uno  los  archivos representativos  de  los  diferentes discos  duros,
-particiones y  demás elementos de  almacenamientos son asociados  a un
-directorio  del  directorio  raíz.  A  este  proceso  se  lo  denomina
-{\em  montaje}\index{Montar},  y no  sólo  es  revesible sino  que  es
-completamente configurable.  Por ejemplo, en la  Figura \ref{arbol} el
-directorio {\tt /home}  podría estar en una partición  diferente en un
-disco duro distinto al que contiene a  {\tt /} o a {\tt /etc}. Nada en
-el esquema  o en  el trabajo  con el sistema  nos permite  apreciar la
+física o en  otra ({\tt C:}, {\tt D:}, etc.).  Durante el arranque del
+sistema,  cada  uno los  archivos  representativos  de los  diferentes
+discos  duros, particiones  y demás  elementos de  almacenamientos son
+asociados a  un directorio del directorio  raíz. A este proceso  se lo
+denomina {\em montaje}\index{Montar}, y no  sólo es revesible sino que
+es completamente  configurable. Por ejemplo, en  la Figura \ref{arbol}
+el directorio {\tt  /home} podría estar en una  partición diferente en
+un disco duro distinto al que contiene  a {\tt /} o a {\tt /etc}. Nada
+en el esquema o  en el trabajo con el sistema  nos permite apreciar la
 diferencia. Por  tanto, no tiene  sentido escribir en la  consola {\tt
 C:}, tal  y como haríamos  en MS-DOS. Solamente debemos  dirigirnos al
 directorio asociado a esa partición que para MS-DOS es {\tt C:}.
 
 Hay que  destacar que  cuando el  usuario accede  a una  sesión, Linux
-``envía'' al usuario a su directorio de trabajo. Es decir, si yo entro
-como el usuario {\tt felix}, en  el momento de entrar me encontraré en
-el directorio {\tt /home/felix}. Éste  será mi directorio personal, en
+``envía'' al usuario a su directorio  de trabajo. Cuando entro como el
+usuario  {\tt cila},  en  el momento  de entrar  me  encontraré en  el
+directorio  {\tt /home/cila}.  Éste  será mi  directorio personal,  en
 donde  tengo  libertad absoluta  para  hacer  lo  que quiera  con  mis
 ficheros y directorios  ubicados ahí. Sin embargo no  podré hacer todo
-lo que quiera en el directorio  {\tt /home/miguel}. ¿Por qué? Pues por
-la  sencilla razón  de  que Linux  tiene un  sistema  de permisos  que
-concede o  restringe libertades sobre  los directorios y  ficheros que
-hay en Linux. ¿Significa eso que  puede existir un usuario ``dios'' en
-Linux que puede  hacer totalmente cualquier cosa en Linux?  Sí, ése es
-el usuario {\tt root}\index{root}. Sin embargo, para los propósitos de
-este curso,  sólo nos remitiremos  a la  cuenta de trabajo  del propio
-lector ;-)
+lo que quiera en el directorio {\tt /home/pepe}. ¿Por qué? Pues por la
+sencilla razón de que Linux tiene un sistema de permisos que concede o
+restringe  libertades sobre  los  directorios y  ficheros  que hay  en
+Linux. ¿Significa eso  que puede existir un usuario  ``dios'' en Linux
+que puede  hacer totalmente  cualquier cosa  en Linux?  Sí, ése  es el
+usuario {\tt  root}\index{root}. Sin  embargo, para los  propósitos de
+este curso,  sólo nos remitiremos a  la cuenta de trabajo  del usuario
+{\em cila}.
+
 
 \subsubsection{Comandos sobre el árbol de directorios}
 
@@ -170,28 +187,29 @@ Para movernos por el árbol  de directorios emplearemos el comando {\tt
 cd} ({\sf Change Directory}) \index{Comandos!cd}
 
 \begin{verbatim}
-[felix@localhost Comandos]$ cd /etc
+[cila@gulic]$ cd /etc
 \end{verbatim}
 
 Es decir, nos vamos al directorio {\tt /etc}
 
 Si  simplemente escribimos  {\tt  cd} sin  especificar  el nombre  del
-directorio, esto será  igual que escribir {\tt cd  /home/felix} o {\tt
+directorio, esto será  igual que escribir {\tt cd  /home/cila} o {\tt
 cd}, es decir,  me manda a {\bf mi propio  directorio de trabajo} (que
 es como irse a casa).
 
 ¿Cómo sé  yo en  qué directorio  me encuentro?  Basta con  escribir el
 comando {\tt pwd} ({\sf Print Work Directory}).
 \index{Comandos!pwd}
+
 \begin{verbatim}
-[felix@localhost felix]$ pwd
-/home/felix/
+[cila@gulic cila]$ pwd
+/home/cila/
 \end{verbatim}
 
 Y la salida que obtendré es:
 
 \begin{verbatim}
-/home/felix
+/home/cila
 \end{verbatim}
 
 En  caso   de  querer   listar  los   ficheros  y   subdirectorios  de
@@ -199,22 +217,22 @@ un   directorio   dado   escribimos   {\tt   ls   nombre\_directorio}.
 \index{Comandos!ls}
 
 \begin{verbatim}
-[felix@localhost apuntes]$ ls /home/felix/apuntes/apuntes/
-Apuntes_CILA_2001.dvi   CVS/    introduccion.sgml  programando.sgml
- xwindow.sgml
-Apuntes_CILA_2001.sgml  editores.sgml  LEEME             recursos.sgml
-cabecera.sgml           final.sgml     Makefile
- resumen_temario.txt
-comandos.sgml           graficos.sgml  matematicas.sgml  sobre.sgml
-compila*                internet.sgml  presentacion.sgml temario.estado
+[cila@gulic]$ ls /home/cila/apuntes/apuntes/
+Apuntes_CILA_2001.dvi   CVS/                 introduccion.sgml 
+programando.sgml        xwindow.sgml         Apuntes_CILA_2001.sgml     
+editores.sgml           LEEME                recursos.sgml              
+cabecera.sgml           final.sgml           Makefile                   
+resumen_temario.txt     comandos.sgml        graficos.sgml
+matematicas.sgml        sobre.sgml           compila*                
+internet.sgml           presentacion.sgml    temario.estado
 \end{verbatim}
 
 El comando {\tt ls} admite parámetros tales como {\tt -a, -l}
 
 \begin{verbatim}
-[felix@localhost Comandos]$ ls -a -l
-[felix@localhost Comandos]$ ls -al
-[felix@localhost Comandos]$ ls -la
+[cila@gulic]$ ls -a -l
+[cila@gulic]$ ls -al
+[cila@gulic]$ ls -la
 \end{verbatim}
 
 Obsérvese que ambas  formas de escribir los  parámetros son igualmente
@@ -223,7 +241,7 @@ utilizar  en   un  comando,   normalmente  basta  con   escribir  {\tt
 nombre\_comando --help}.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ ls --help
+[cila@gulic]$ ls --help
 Modo de empleo: ls [OPCIÓN]... [FICHERO]...
 Muestra información acerca de los FICHEROs (del directorio actual por defecto).
 Ordena las entradas alfabéticamente si no se especifica ninguna de las
@@ -350,23 +368,34 @@ corta ({\tt -l, -a}) y otra larga ({\tt --all, --help}).
 Para crear  un directorio, usaremos {\tt  mkdir nombre\_directorio}.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ mkdir pepe
-[felix@localhost apuntes]$ mkdir tmp
+[cila@gulic]$ mkdir pepe
+[cila@gulic]$ mkdir tmp
 \end{verbatim}
 
 Mientras que para eliminarlo  usaremos {\tt rmdir nombre\_directorio}.
-{\bf ¡Atención! El directorio que  se quiere eliminar debe estar vacío
-y no debe haber nadie trabajando en él en ese momento.} Evidentemente,
-podemos crear y  destruir un directorio dando su ruta  completa o sólo
-su nombre si nos encontramos en el directorio que lo contiene. En caso
-de querer  borrar de un sólo  golpe un directorio y  todo su contenido
-disponemos del comando {\tt rm} con las opciones {\tt -rf}. {\bf Mucho
-cuidado con borrar  directorios enteros sin comprobar lo  que se hace,
-pues no sueñe haber forma de recuperar los archivos borrados}
+\newpage
+
+\begin{nota}
+El directorio que se quiere eliminar  debe estar vacío y no debe haber
+nadie  trabajando en  él en  ese  momento. En  caso de  que haya  otro
+usuario dentro, el sistema avisará con un mensaje de error y desistirá
+todo intento de eliminación.
+\end{nota}
+
+Evidentemente, podemos  crear y destruir  un directorio dando  su ruta
+completa o sólo  su nombre si nos encontramos en  el directorio que lo
+contiene. En  caso de querer borrar  de un sólo golpe  un directorio y
+todo su  contenido disponemos  del comando {\tt  rm} con  las opciones
+{\tt  -rf}.
+
+\begin{nota}
+Mucho cuidado con  borrar directorios enteros sin comprobar  lo que se
+hace, porque ésta es una operación irreversible.\\
+\end{nota}
 
 \begin{verbatim}
-[felix@localhost apuntes]$ rmdir pepe
-[felix@localhost apuntes]$ rm -rf tmp
+[cila@gulic]$ rmdir pepe
+[cila@gulic]$ rm -rf tmp
 \end{verbatim}
 
 Obsérvese que los comandos  anteriores borran los subdirectorios {\tt
@@ -375,8 +404,8 @@ emplear rutas absolutas  para crear o borrar  un directorio cualquiera
 del árbol de directorios.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ mkdir /home/felix/pepe
-[felix@localhost apuntes]$ rmdir /home/felix/pepe
+[cila@gulic]$ mkdir /home/cila/pepe
+[cila@gulic]$ rmdir /home/cila/pepe
 \end{verbatim}
 
 \subsection{Trabajando con ficheros}
@@ -388,7 +417,7 @@ fichero\_destino}, es decir, que copiamos el fichero {\tt pepe.txt} en
 {\tt juan.txt}.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ cp pepe.txt juan.txt
+[cila@gulic]$ cp pepe.txt juan.txt
 \end{verbatim}
 
 El   comando  para   mover  o   renombrar  un   fichero  es   {\tt  mv
@@ -397,28 +426,28 @@ fichero\_origen fichero\_destino},  es decir, que copiamos  el fichero
 físicamente.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ mv pepe.txt juan.txt
+[cila@gulic]$ mv pepe.txt juan.txt
 \end{verbatim}
 
-\noindent\rule{\linewidth}{.75pt}  NOTA:  El  intérprete  de  comandos
-\textbf{SÍ} distingue en mayúsculas y  minúsculas, tanto en el caso de
-los comandos como en el de  los ficheros y directorios. Esto significa
-que el comando mv es totalmente diferente  a {\tt Mv}, {\tt mV} y {\tt
-MV}. Asimismo,  el fichero {\tt pepe.txt}  no es el mismo  fichero que
-{\tt Pepe.txt}, ni que {\tt PEPE.TXT}, etc.
-\rule{\linewidth}{.75pt}
-\vspace{1pt}
+\begin{nota}
+El  intérprete  de  comandos  \textbf{SÍ} distingue  en  mayúsculas  y
+minúsculas,  tanto en  el  caso de  los  comandos como  en  el de  los
+ficheros y directorios. Esto significa que el comando mv es totalmente
+diferente a {\tt  Mv}, {\tt mV} y {\tt MV}.  Asimismo, el fichero {\tt
+pepe.txt}  no es  el mismo  fichero que  {\tt Pepe.txt},  ni que  {\tt
+PEPE.TXT}, etc.
+\end{nota}
 
 En  caso de  que  deseemos borrar  definitivamente  un fichero  podemos
 emplear el comando {\tt rm nombre\_fichero}.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ rm pepe.txt juan.txt
+[cila@gulic]$ rm pepe.txt juan.txt
 \end{verbatim}
 
 \subsubsection{Utilización de comodines}
 
-En ocaciones el  nombre de los directorios y/o ficheros  sobre los que
+En ocasiones el  nombre de los directorios y/o ficheros  sobre los que
 estamos trabajando  contienen partes comunes que  podemos utilizar con
 ayuda  de  comodines  para  facilitarnos  el uso  de  la  interfaz  de
 comandos.
@@ -428,14 +457,14 @@ directorio  es sustituido  por  un número  indeterminado de  cualquier
 combinación de caracteres. Por ejemplo,
 
 \begin{verbatim}
-[felix@localhost apuntes]$ rm pe*
+[cila@gulic]$ rm pe*
 \end{verbatim}
 
 \noindent borrará cualquier  ficheros que empiecen por {\tt  pe} en el
 directorio actual. Mientras que,
 
 \begin{verbatim}
-[felix@localhost apuntes]$ cp *txt* tmp/
+[cila@gulic]$ cp *txt* tmp/
 \end{verbatim}
 
 \noindent copiará los ficheros que contengan la cadena {\tt txt} en el
@@ -445,7 +474,7 @@ El caracter {\tt ?} al indicar el nombre de un fichero sólo representa
 a {\em un} carácter cualquiera.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ mv pepe?.txt tmp/
+[cila@gulic]$ mv pepe?.txt tmp/
 \end{verbatim}
 
 El  ejemplo  anterior  moverá  archivos como  {\tt  pepe.txt}  o  {\tt
@@ -459,52 +488,52 @@ de  permisos de  los ficheros  y  directorios. Si  escribimos {\tt  ls
 nos encontramos con la siguiente salida: \index{Fichero!permisos}
 
 \begin{verbatim}
-[felix@localhost apuntes]$ ls -l
+[cila@gulic]$ ls -l
 total 468
--rw-rw-r--    1 felix    felix      163004 oct 29 10:05
+-rw-rw-r--    1 cila    cila      163004 oct 29 10:05
  Apuntes_CILA_2001.dvi
--rw-rw-r--    1 felix    felix      119151 oct 29 10:05
+-rw-rw-r--    1 cila    cila      119151 oct 29 10:05
  Apuntes_CILA_2001.sgml
--rw-rw-r--  1 felix  felix    1617 oct 28 22:15 cabecera.sgml
--rw-rw-r--  1 felix  felix   13329 oct 29 10:05 comandos.sgml
--rwx------  1 felix  felix      33 oct 29 00:32 compila*
-drwxrwxr-x  2 felix  felix    4096 oct 28 23:20 CVS/
--rw-rw-r--  1 felix  felix   17250 oct 28 12:11 editores.sgml
--rw-rw-r--  1 felix  felix      12 oct 27 23:10 final.sgml
--rw-rw-r--  1 felix  felix     157 oct 27 23:10 graficos.sgml
--rw-rw-r--  1 felix  felix    2816 oct 28 21:51 internet.sgml
--rw-rw-r--  1 felix  felix   23308 oct 28 23:05 introduccion.sgml
--rw-rw-r--  1 felix  felix     402 oct 27 23:10 LEEME
--rw-rw-r--  1 felix  felix    2295 oct 28 22:19 Makefile
--rw-rw-r--  1 felix  felix   13087 oct 28 17:30 matematicas.sgml
--rw-rw-r--  1 felix  felix     652 oct 28 21:56 presentacion.sgml
--rw-rw-r--  1 felix  felix    34797 oct 28 21:56 programando.sgml
--rw-rw-r--  1 felix  felix      47 oct 28 21:56 recursos.sgml
--rw-rw-r--  1 felix  felix    1320 oct 25 13:35 resumen_temario.txt
--rw-rw-r--  1 felix  felix    4662 oct 28 22:17 sobre.sgml
--rw-rw-r--  1 felix  felix    5247 oct 28 22:19 temario.estado
--rw-rw-r--  1 felix  felix    7417 oct 27 23:10 xwindow.sgml
+-rw-rw-r--  1 cila  cila    1617 oct 28 22:15 cabecera.sgml
+-rw-rw-r--  1 cila  cila   13329 oct 29 10:05 comandos.sgml
+-rwx------  1 cila  cila      33 oct 29 00:32 compila*
+drwxrwxr-x  2 cila  cila    4096 oct 28 23:20 CVS/
+-rw-rw-r--  1 cila  cila   17250 oct 28 12:11 editores.sgml
+-rw-rw-r--  1 cila  cila      12 oct 27 23:10 final.sgml
+-rw-rw-r--  1 cila  cila     157 oct 27 23:10 graficos.sgml
+-rw-rw-r--  1 cila  cila    2816 oct 28 21:51 internet.sgml
+-rw-rw-r--  1 cila  cila   23308 oct 28 23:05 introduccion.sgml
+-rw-rw-r--  1 cila  cila     402 oct 27 23:10 LEEME
+-rw-rw-r--  1 cila  cila    2295 oct 28 22:19 Makefile
+-rw-rw-r--  1 cila  cila   13087 oct 28 17:30 matematicas.sgml
+-rw-rw-r--  1 cila  cila     652 oct 28 21:56 presentacion.sgml
+-rw-rw-r--  1 cila  cila    34797 oct 28 21:56 programando.sgml
+-rw-rw-r--  1 cila  cila      47 oct 28 21:56 recursos.sgml
+-rw-rw-r--  1 cila  cila    1320 oct 25 13:35 resumen_temario.txt
+-rw-rw-r--  1 cila  cila    4662 oct 28 22:17 sobre.sgml
+-rw-rw-r--  1 cila  cila    5247 oct 28 22:19 temario.estado
+-rw-rw-r--  1 cila  cila    7417 oct 27 23:10 xwindow.sgml
 \end{verbatim}
 
 La primera letra a  la izquierda de cada línea nos  indica si se trata
 de un fichero (``-'') o un directorio (``d'').
 
-Después nos encontramos con tres  grupos de tres letras (``rwx''), que
-según  estén activados  (la propia  letra, r,w,x)  o desactivados  (un
-guión,  -)  nos concede  o  deniega  permisos  de lectura  ({\tt  r}),
-escritura ({\tt w}) y ejecución ({\tt x}). ¿Y por qué son tres grupos?
-Pues porque las tres primeras letras se refieren al propio usuario que
-es el dueño de esos ficheros, el  segundo grupo se refiere al grupo de
-usuario  que  pertenece ese  usuario,  y  el  tercero a  los  usuarios
-``extraños`` o ''ajenos'' al usuario. Por tanto, si leemos
-
+Después nos  encontramos con tres  grupos de tres letras  ({\tt rwx}),
+que según estén activados (la propia letra, {\tt r},{\tt w},{\tt x}) o
+desactivados (un guión,  -) nos concede o deniega  permisos de lectura
+({\tt r}), escritura  ({\tt w}) y ejecución ({\tt x}).  ¿Y por qué son
+tres  grupos? Pues  porque las  tres  primeras letras  se refieren  al
+propio usuario que  es el dueño de esos ficheros,  el segundo grupo se
+refiere al grupo de usuario que  pertenece ese usuario, y el tercero a
+los  usuarios ``extraños``  o  ''ajenos'' al  usuario.  Por tanto,  si
+leemos:
 
 \begin{center}
 $-\underbrace{rw-}_{u}\underbrace{rw-}_{g}\underbrace{r--}_{o}$
 \end{center}
 
-vemos  que se  trata  de un  fichero  (-) con  permisos  de lectura  y
-escritura  para el  usuario y  el grupo  al que  pertenece, y  de sólo
+\noindent vemos que se trata de un fichero (-) con permisos de lectura
+y escritura  para el usuario  y el grupo al  que pertenece, y  de sólo
 lectura para un ``extraño''.
 
 El  siguiente  sería un  fichero  de  lectura, escritura  y  ejecución
@@ -514,32 +543,34 @@ El  siguiente  sería un  fichero  de  lectura, escritura  y  ejecución
 $-\underbrace{rwx}_{u}\underbrace{---}_{g}\underbrace{---}_{o}$
 \end{center}
 
-Este  último ejemplo  es un  directorio (d)  con permisos  de lectura,
-escritura  y ejecución  para  el  usuario y  el  grupo,  y de  lectura
-y  ejecución  para el  ``extraño''.  En  el  caso de  directorios,  el
-permiso de  ejecución es equivalente  a permiso para ``entrar''  en el
-directorio.
+Este  último  ejemplo es  un  directorio  ({\tt  d}) con  permisos  de
+lectura,  escritura y  ejecución  para el  usuario y  el  grupo, y  de
+lectura y ejecución para el ``extraño''. En el caso de directorios, el
+permiso de  ejecución es equivalente  a permiso para  ``ejecutar'' los
+programas que hay en el directorio.
 
 \begin{center}
 $d\underbrace{rwx}_{u}\underbrace{rwx}_{g}\underbrace{r-x}_{o}$
 \end{center}
 
 En  el ejemplo  del  listado anterior  vemos dos  veces  el nombre  de
-``felix''. El de la primera columna se refiere al usuario propietario,
+``cila''. El de la primera columna se refiere al usuario propietario,
 y el segundo  es el nombre del grupo, que  casualmente coincide con el
-nombre  del usuario.  Esto  es importante  recordarlo, porque  debemos
-tener  en  cuenta  que  {\bf  jamás podremos  eliminar  un  fichero  o
-retocarlo  si no  tenemos permisos  de  escritura sobre  él}. Esto  es
-impensable en algunas versiones de Microsoft® Windows®.
+nombre  del usuario.
+
+\begin{nota}
+Debemos tener en cuenta que {\bf  jamás podremos eliminar un fichero o
+retocarlo  si no  tenemos permisos  de  escritura sobre  él}.
+\end{nota}
 
 Si queremos que un fichero cambie de propietario, lo haremos, con {\tt
 chown}: \index{Comandos!chown, Ficheros!propietario}
 
 \begin{verbatim}
-[felix@localhost apuntes]$ chown miguel pepe.txt
+[cila@gulic]$ chown miguel pepe.txt
 \end{verbatim}
 
-si antes, {\tt pepe.txt} era de {\tt  felix}, ahora pasa a ser de {\tt
+si antes, {\tt pepe.txt} era de {\tt  cila}, ahora pasa a ser de {\tt
 miguel}.
 
 De   igual   forma,   para   cambiarlo   de   grupo,   usaremos   {\tt
@@ -548,7 +579,7 @@ profesores,  y queremos  que sea  del grupo  de los  estudiantes, sólo
 habrá que escribir lo siguiente:
 
 \begin{verbatim}
-[felix@localhost apuntes]$ chgrp estudiantes pepe.txt
+[cila@gulic]$ chgrp estudiantes pepe.txt
 \end{verbatim}
 
 En algunos sistemas  no se puede cambiar el propietario  de un fichero
@@ -579,7 +610,7 @@ ejecución  respectivamente. Y  para conceder  o denegar,  usaremos los
 símbolos ``+'' y ``-'':
 
 \begin{verbatim}
-[felix@localhost apuntes]$ chmod u+rwx pepe.txt
+[cila@gulic]$ chmod u+rwx pepe.txt
 \end{verbatim}
 
 Este ejemplo sirve para dar todos los permisos al usuario.
@@ -589,14 +620,14 @@ usuario  y al  grupo,  pero  no de  escritura  sobre  el fichero  {\tt
 compila}.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ chmod ug+r-x compila
+[cila@gulic]$ chmod ug+r-x compila
 \end{verbatim}
 
 O quitar el permiso de ejecución a  todos los usuarios sin que se vean
 afectados los otros tipos de permisos:
 
 \begin{verbatim}
-[felix@localhost apuntes]$ chmod -x probar
+[cila@gulic]$ chmod -x probar
 \end{verbatim}
 
 \section{Comandos básicos para sobrevivir}
@@ -609,7 +640,7 @@ notablemente nuestro quehacer diario.
 
 La interfaz de comandos está llena de atajos de teclado diseñados para
 facilitarnos  la vida.  La  mayor parte  se  apoyan en  el  uso de  un
-historial de los últimos comandos ejecutados. Estos son algunos de los
+historial de los últimos comandos ejecutados. Éstos son algunos de los
 atajos más importantes:
 
 \begin{description}
@@ -628,10 +659,10 @@ varias soluciones  disponibles podemos pulsar nuevamente  para que nos
 muestre  una lista  de  las mismas.  La interfaz  de  comandos nos  lo
 indicará con una señal sonora si no hay ninguna solución posible.
 
-\item[{\tt S-Re. Pag. y S-Av. Pag.}] Nos  permiten movernos por el búffer de
-pantalla de la  consola para ver texto que en  condiciones normales no
-podemos observar  puesto que el  desplazamiento vertical lo  ha dejado
-fuera de la misma.
+\item[{\tt  S-Re. Pag.  y S-Av.  Pag.}] Nos  permiten movernos  por el
+búffer de  pantalla de la  consola para  ver texto que  en condiciones
+normales no podemos observar puesto  que el desplazamiento vertical lo
+ha dejado fuera de la misma.
 
 \item[{\tt C-l}] Limpiar la pantalla de la consola.
 
@@ -646,7 +677,7 @@ cat}\index{Comandos!cat}.   Dicho   comando  encadena   los   archivos
 especificados y los imprime por pantalla uno detrás de otro.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ cat pepe.txt juan.txt
+[cila@gulic]$ cat pepe.txt juan.txt
 \end{verbatim}
 
 En realidad  los comandos de la  consola de GNU/Linux no  entienden la
@@ -672,11 +703,11 @@ interesa es aquella que permite  redirigir la {\em salida estándar} de
 un comando a la {\em entrada estándar} de otro.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ cat pepe.txt | sort
-[felix@localhost apuntes]$ ls -l | more
+[cila@gulic]$ cat pepe.txt | sort
+[cila@gulic]$ ls -l | more
 \end{verbatim}
 
-En el ejemplo  anterior utilizamos el {\em metacaracter}  {\tt |} para
+En el ejemplo  anterior utilizamos el {\em metacarácter}  {\tt |} para
 redirigir la salida del comando {\tt  cat} (es decir, el contenido del
 fichero  {\tt pepe.txt})  a  la  entrada del  comando  {\tt sort}.  El
 comando {\tt  sort}\index{Comandos!sort} toma las líneas  de texto que
@@ -685,44 +716,44 @@ su  {\em  salida estándar}.  Por  lo  tanto,  el ejemplo  muestra  por
 pantalla el contenido de {\tt pepe.txt} ordenado alfabéticamente.
 
 En el mismo ejemplo redirigimos la  salida de {\tt ls} al comando {\tt
-more}.  El comando  {\tt more}\index{Comandos!more}  resulta muy  util
-cuando el  contenido de  un fichero o  la salida de  un comando  es lo
-suficientemente grande como para no  caber completa en la pantalla. En
-esos casos  {\tt more} nos permite  ver el texto pantalla  a pantalla,
-utilizando la barra espaciadora para avanzar por el mismo.
+more}.  El comando  {\tt more}\index{Comandos!more}  resulta muy  útil
+cuando  el contenido  de  un fichero  o  la salida  de  un comando  es
+lo  suficientemente grande  como  para no  caber  completamente en  la
+pantalla. En esos casos {\tt more} nos permite ver el texto pantalla a
+pantalla, utilizando la barra espaciadora para avanzar por el mismo.
 
 Un comando  mucho más  potente pero  con una  utilidad similar  a {\tt
 more} es {\tt less}\index{Comandos!less}.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ ls -l | less
+[cila@gulic]$ ls -l | less
 \end{verbatim}
 
 El comando {\tt less} nos permite utilizar las teclas del cursor, {\tt
 Re. Pag.}  y {\tt Av.  Pag.} para avanzar  y retroceder por  el texto.
-También  podemos iniciar  una búsqueda,  o continuar  una búsqueda  ya
-iniciada, con las teclas {\tt /} y {\tt n} respectivamente. Muchas son
-las características de {\tt less},  aunque nos conformaremos con saber
-que con  {\tt h} podemos consultar  la ayuda del comando  mientras que
-con {\tt q} salimos del mismo.
+También podemos iniciar una búsqueda, o continuar una ya iniciada, con
+las  teclas  {\tt  /}  y  {\tt  n}  respectivamente.  Muchas  son  las
+características de {\tt less}, aunque  nos conformaremos con saber que
+con {\tt  h} podemos consultar la  ayuda del comando mientras  que con
+{\tt q} salimos del mismo.
 
 En general los  comandos que hemos estudiado son  programas de consola
 como otros cualquiera. Por lo  tanto pueden ser llamados directamente,
 e incluso en muchos casos disponen de opciones de línea de comandos.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ sort -r pepe.txt
-[felix@localhost apuntes]$ less pepe.txt
+[cila@gulic]$ sort -r pepe.txt
+[cila@gulic]$ less pepe.txt
 \end{verbatim}
 
 \subsection{El comando {\tt man}}
 \index{Comandos!man}
 
-El comando {\tt  man} es muy útil, ya que  nos dará mucha información
+El comando  {\tt man} es muy  útil, ya que nos  dará mucha información
 sobre la mayoría de los comandos con los que vamos a trabajar.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ man bash
+[cila@gulic]$ man bash
 \end{verbatim}
 
 Omitimos  la información  de salida  ya que  puede ser  muy extensa  e
@@ -738,8 +769,8 @@ El comando  {\tt gzip nombre\_fichero} comprime  un fichero utilizando
 el algoritmo {\sf Lempel-Ziv}.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ gzip pepe.txt
-\end{verbatim}
+[cila@gulic]$ gzip pepe.txt
+búsqueda  \end{verbatim}
 
 Por regla  general el fichero  desaparece y en  su lugar se  crea otro
 comprimido y con el mismo nombre más el sufijo {\tt .gz}.
@@ -749,7 +780,7 @@ importante destacar  que, al  igual que  antes, el  archivo comprimido
 desaparece para dejar en su lugar la versión descomprimida.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ gzip -d pepe.txt.gz
+[cila@gulic]$ gzip -d pepe.txt.gz
 \end{verbatim}
 
 Debido a la incomodidad de tener que comprimir/descomprimir para poder
@@ -790,7 +821,7 @@ habitual utilizar la opción {\tt -f} seguida del nombre del fichero de
 destino.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ tar -cf fichero.tar pepe.txt juan.txt /bin
+[cila@gulic]$ tar -cf fichero.tar pepe.txt juan.txt /bin
 \end{verbatim}
 
 En el ejemplo  anterior {\tt fichero.tar} almacena  tanto los ficheros
@@ -803,7 +834,7 @@ para  que {\tt  tar} pase  el  fichero por  {\tt gzip}  o {\tt  bzip2}
 respectivamente, cuando termine de empaquetar los ficheros.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ tar -zcf fichero.tar.gz pepe.txt /bin
+[cila@gulic]$ tar -zcf fichero.tar.gz pepe.txt /bin
 \end{verbatim}
 
 Para recuperar los ficheros originales se sustituye la opción {\tt -c}
@@ -811,9 +842,9 @@ por {\tt  -x}, mientras que  para verificar la integridad  del archivo
 sin tener que desempaquetarlo se utiliza la opción {\tt -t}.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ tar -xf fichero.tar
-[felix@localhost apuntes]$ tar -zxf fichero.tar.gz
-[felix@localhost apuntes]$ tar -ztf fichero.tar.gz
+[cila@gulic]$ tar -xf fichero.tar
+[cila@gulic]$ tar -zxf fichero.tar.gz
+[cila@gulic]$ tar -ztf fichero.tar.gz
 \end{verbatim}
 
 \subsection{El comando {\tt grep}}
@@ -828,12 +859,12 @@ algún significado especial  para la interfaz de  comandos dicha cadena
 suele ir entrecomillada.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ grep 'felix' *
-[felix@localhost apuntes]$ grep 'CaSa' pepe.txt
+[cila@gulic]$ grep 'cila' *
+[cila@gulic]$ grep 'CaSa' pepe.txt
 \end{verbatim}
 
 Como  se puede  observar, en  el  primer ejemplo  estamos buscando  la
-cadena  de  texto \verb|'felix'|  dentro  de  todos los  ficheros  del
+cadena  de  texto \verb|'cila'|  dentro  de  todos los  ficheros  del
 directorio actual.
 
 En  general {\tt  grep}  es  sensible a  mayúsculas  y minúsculas.  Si
@@ -853,7 +884,7 @@ completamente  del  alcance de  este  tema  recomendamos consultar  la
 página correspondiente del manual.
 
 \begin{verbatim}
-[felix@localhost apuntes]$ man grep
+[cila@gulic]$ man grep
 \end{verbatim}
 
 \subsection{Otros comandos}
@@ -913,9 +944,9 @@ señor {\tt root}  ha determinado que los usuarios  sólo podemos montar
 la disquetera en el directorio {\tt /floppy}.
 
 \begin{verbatim}
-[miguev@euler apuntes]$ mount /dev/fd0 /floppy
+[cila@gulic]$ mount /dev/fd0 /floppy
 mount: only root can do that
-[miguev@euler apuntes]$ mount /floppy
+[cila@gulic]$ mount /floppy
 \end{verbatim}
 
 Una vez montado el disquete en  el directorio {\tt /floppy} ya podemos
@@ -958,7 +989,7 @@ $ umount /floppy
 ¿Verdad que no funciona? Esto se debe a que en el momento de desmontar
 la  disketera, {\bf  no debe  haber NADIE  dentro} de  ese directorio.
 Recordemos que estamos en un  sistema multiusuario y puede ocurrir que
-más  de  una persona  acceda  a  la  disketera  o a  otro  dispositivo
+más  de una  persona  acceda  a la  disquetera  o  a otro  dispositivo
 desmontable, como  el CD-ROM. Por  tanto, hemos de asegurarnos  que no
 hay nadie.
 
@@ -969,7 +1000,7 @@ almacenamiento.  La opción  {\tt  -h} nos  muestra  las cantidades  en
 cifras {\em humanas}.
 
 \begin{verbatim}
-[miguev@euler apuntes]$ df -h
+[cila@gulic]$ df -h
 Filesystem            Size  Used Avail Use% Mounted on
 /dev/hda2             1.9G  1.8G   80M  96% /
 euler:/home            20G  3.2G   16G  17% /home
@@ -983,25 +1014,25 @@ Aquí  vemos  que la  segunda  partición  del  primer disco  duro  {\tt
 sus equivalente locales, y el  disquete {\tt /dev/fd0} está montado en
 el directorio {\tt /floppy}.
 
-\section{Unidades de disco con Mtools}
+\section{Unidades de disco con mtools}
 
 En general,  la mayor parte  de los  disquetes que solemos  usar están
 en  formato  DOS/Windows.  Cuando  disponemos de  uno  esos  disquetes
 podemos  acceder  a  su  contenido  de forma  sencilla  con  las  {\sf
-Mtools}\index{Mtools}.
+mtools}\index{mtools}.
 
-{\sf Mtools} es  una colección de herramientas de  dominio público que
+{\sf mtools} es  una colección de herramientas de  dominio público que
 permite a sistemas  UNIX manipular ficheros en un  sistema de archivos
-DOS/Windows (típicamente un disquete). {\sf Mtools} es suficiente para
+DOS/Windows (típicamente un disquete). {\sf mtools} es suficiente para
 dar acceso  a sistemas de  archivos DOS/Windows. Por  ejemplo, órdenes
 como  {\tt mdir  a:}  funcionan en  el disquete  {\tt  A:} sin  ningún
 montaje preliminar ni otro procedimiento  de inicio (suponiendo que el
 {\tt /etc/mtools.conf}  sea correcto). Gracias  a todo ello,  con {\sf
-Mtools} uno puede cambiar disquetes sin tener que desmontar y montar.
+mtools} uno puede cambiar disquetes sin tener que desmontar y montar.
 
 \subsection{Nombres de ficheros}
 
-Muchas  de  las   herramientas  de  {\sf  Mtools}   requieren  que  se
+Muchas  de  las   herramientas  de  {\sf  mtools}   requieren  que  se
 especifiquen nombres de archivo en  el sistema de archivos DOS/Windows
 al que  estamos accediendo.  Las rutas  de ficheros  en el  sistema de
 archivos DOS/Windows  se componen de:  una {\em letra  de dispositivo}
@@ -1028,7 +1059,7 @@ que es completamente equivalente a:
 $ mcopy a:/TEST/TEST1.TXT test2.txt
 \end{verbatim}
 
-Como  es obvio  las  {\sf  Mtools} no  distinguen  entre mayúsculas  y
+Como  es obvio  las  {\sf  mtools} no  distinguen  entre mayúsculas  y
 minúsculas  en  el acceso  al  sistema  de archivos  DOS/Windows.  Sin
 embargo, si permiten la utilización de  comodines (como {\tt *} o {\tt
 ?}) tanto cuando especificamos un nombre de archivo Linux, como cuando
@@ -1044,17 +1075,17 @@ puede  ser  configurado  mediante  el fichero  de  configuración  {\tt
 \subsection {Lista de comandos}
 
 A continuación presentamos  algunos de los comandos  más utilizados de
-las {\sf Mtools}.
+las {\sf mtools}.
 
-\subsubsection{mattrib}\index{Mtools!mattrib}
+\subsubsection{mattrib}\index{mtools!mattrib}
 
 Se emplea para cambiar los  atributos de ficheros DOS/Windows de forma
 semejante a como lo hace el comando {\tt ATTRIB} del MS-DOS.
 
-\subsubsection{mcd}\index{Mtools!mcd}
+\subsubsection{mcd}\index{mtools!mcd}
 
 El comando {\tt mcd } se  emplea para cambiar el directorio de trabajo
-actual de {\sf Mtools} en los discos DOS/Windows.
+actual de {\sf mtools} en los discos DOS/Windows.
 
 \begin{verbatim}
 $ mcd <directorio_dos>
@@ -1074,11 +1105,11 @@ $ mcopy a:TEST1.TXT test2.txt
 Copiaríamos  el  archivo  {\tt  TEST1.TXT}   tal  y  como  lo  hicimos
 anteriormente (página \pageref{mcopyej}).
 
-A diferencia de los sistemas DOS/Windows, con {\sf Mtools} sólo hay un
+A diferencia de los sistemas DOS/Windows, con {\sf mtools} sólo hay un
 directorio  de  trabajo  actual  para  todas las  unidades,  y  no  un
 directorio de trabajo diferente para cada unidad.
 
-\subsubsection{mcopy}\index{Mtools!mcopy}
+\subsubsection{mcopy}\index{mtools!mcopy}
 
 El comando {\tt mcopy} permite  copiar ficheros desde o hacia sistemas
 de archivos DOS/Windows. Las formas de uso son:
@@ -1098,7 +1129,7 @@ son de DOS y cuales de Linux.
 Si sólo  se suministra uno  de los  parámetros fuente, se  supone como
 destino el directorio actual de trabajo en el sistema Linux.
 
-\subsubsection{mdel}\index{Mtools!mdel}
+\subsubsection{mdel}\index{mtools!mdel}
 
 El comando {\tt mdel} se emplea para borrar ficheros.
 
@@ -1112,7 +1143,7 @@ Por ejemplo:
 $ mdel a:/TEST2.TXT
 \end{verbatim}
 
-\subsubsection{mdeltree}\index{Mtools!mdeltree}
+\subsubsection{mdeltree}\index{mtools!mdeltree}
 
 El  comando  {\tt  mdeltree}  se utiliza  para  borrar  un  directorio
 DOS/Windows y todos sus archivos y subdirectorios.
@@ -1121,7 +1152,7 @@ DOS/Windows y todos sus archivos y subdirectorios.
 $ mdeltree directorio_dos
 \end{verbatim}
 
-\subsubsection{mdir}\index{Mtools!mdir}
+\subsubsection{mdir}\index{mtools!mdir}
 
 El  comando {\tt  mdir}  se emplea  para mostrar  el  contenido de  un
 directorio DOS/Windows.
@@ -1145,7 +1176,7 @@ TEST         <DIR>     12-14-2002  22:13
                           1 174 528 bytes free
 \end{verbatim}
 
-\subsubsection{mformat}\index{Mtools!mformat}
+\subsubsection{mformat}\index{mtools!mformat}
 
 El comando {\tt mformat} se utiliza  para crear un sistema de archivos
 DOS/Windows vacio en la unidad indicada.
@@ -1154,7 +1185,7 @@ DOS/Windows vacio en la unidad indicada.
 $ mformat <unidad:>
 \end{verbatim}
 
-\subsubsection{mmd}\index{Mtools!mmd}
+\subsubsection{mmd}\index{mtools!mmd}
 
 El comando  {\tt mmd} se emplea  para crear un nuevo  directorio en un
 sistema  de archivos  DOS.  El comando  informará de  un  error si  el
@@ -1164,7 +1195,7 @@ directorio ya existe.
 $ mmd directorio_dos
 \end{verbatim}
 
-\subsubsection{mmove}\index{Mtools!mmove}
+\subsubsection{mmove}\index{mtools!mmove}
 
 El comando {\tt  mmove} se utiliza para mover o  renombra un fichero o
 subdirectorio  existente en  un sistema  de archivos  DOS/Windows. Las
@@ -1176,7 +1207,7 @@ $ mmove fichero_fuente <fichero_fuente> directorio_destino
 $ mmove directorio_fuente directorio_destino
 \end{verbatim}
 
-\subsubsection{mrd}\index{Mtools!mrd}
+\subsubsection{mrd}\index{mtools!mrd}
 
 El comando {\tt mrd} se emplea para borrar un directorio de un sistema
 de  archivos  DOS/Windows. El  comando  volverá  con  un error  si  el
@@ -1186,7 +1217,7 @@ directorio no existe o no está vacío.
 $ mrd directorio_dos
 \end{verbatim}
 
-\subsubsection{mtype}\index{Mtools!mtype}
+\subsubsection{mtype}\index{mtools!mtype}
 
 El  comando  {\tt mtype}  muestra  el fichero  DOS/Windows
 especificado, en la pantalla o en la salida estándar.
@@ -1194,3 +1225,8 @@ especificado, en la pantalla o en la salida estándar.
 \begin{verbatim}
 $ mtype fichero_dos
 \end{verbatim}
+
+Con  este capítulo,  quedan  bastante explicados  los rudimentos  para
+saber moverse por Linux.
+\\
+¡Feliz exploración!

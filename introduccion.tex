@@ -1,5 +1,5 @@
 %Autor: _ese
-
+\newcommand{\windows}{\mbox{Microsoft Windows}}
 \chapter{Introducción a GNU/Linux}
 \label{introduccion.tex}
 
@@ -16,7 +16,7 @@ UNIX  es  un  sistema  operativo  real.  Por  sistema  operativo  real
 se  entiende   que  debe   tener  como  mínimo   dos  características:
 más   de   una   persona   puede    acceder   al   mismo   tiempo   al
 ordenador   y,  mientras   lo   hacen,  cada   una   de  ellas   puede
-ejecutar   múltiples    aplicaciones.   Esto    se   llama    ser   un
+ejecutar  múltiples   aplicaciones.  A  esto   se  le  llama   ser  un
 sistema  operativo   {\em  multiusuario}\index{multiusuario}   y  {\em
 multitarea}\index{multitarea}.  UNIX fue  diseñado originalmente  para
 ser  ese tipo  de sistema  multitarea,  allá en  los años  70, y  para
@@ -31,7 +31,7 @@ de  los usuarios  a los  ordenadores, algo  especialmente útil  cuando
 éstos están  conectados en  red. Dicho  proceso de  autentificación es
 conocido coloquialmente como {\tt  login}\index{login}, puesto que ese
 es el nombre del programa  que tradicionalmente se encarga del trabajo
-de permitir, o denegar, el acceso a un usuario.
+de permitir o denegar el acceso a un usuario.
 
 UNIX  funciona prácticamente  en  cualquier plataforma  que haya  sido
 construida. Muchos  fabricantes han  adquirido el código  fuente (IBM;
@@ -55,7 +55,7 @@ de  aplicaciones, puesto  que  garantiza la  compatibilidad entre  las
 diferentes implementaciones de UNIX.
 
 El mayor inconveniente de UNIX es  que es muy grande. También es caro,
-especialmente en sus  versiones para PC. Aquí es  donde aparece Linux,
+especialmente en sus versiones para PC. Y aquí es donde aparece Linux,
 pues, como se explica con más  detalle un poco más adelante, se diseñó
 para ser  pequeño, rápido  y barato. Hasta  ahora los  diseñadores han
 tenido éxito.
@@ -107,12 +107,13 @@ saber cómo  funciona ni,  mucho menos, a  copiarlo o  modificarlo; una
 prerrogativa que corresponde en exclusiva a la empresa fabricante.
 
 Stallman, convencido de que a la sociedad se le había robado un debate
-importante sobre la evolución de la  tecnología (la frase ``es como si
-te vendieran un coche  con el capó sellado, para que  no puedas ver el
-motor'' es una de las analogías más usadas para explicar esta realidad
-mercantil), decidió dejar  su trabajo y emprender una  tarea mucho más
-altruista: responder al  modelo propietario con un  {\em software} del
-que nadie pudiera apropiarse, con un {\em software} libre.
+importante sobre  la evolución  de la tecnología  (la frase  ``{\it es
+como si te vendieran un coche con  el capó sellado, para que no puedas
+ver el motor}'' es una de  las analogías más usadas para explicar esta
+realidad mercantil),  decidió dejar su  trabajo y emprender  una tarea
+mucho  más altruista:  responder  al modelo  propietario  con un  {\em
+software}  del que  nadie pudiera  apropiarse, con  un {\em  software}
+libre.
 
 Se trataba,  según su promotor, de  poner en marcha un  nuevo contrato
 por el que los usuarios recibieran siempre el código fuente y, además,
@@ -137,7 +138,7 @@ había establecido la industria del {\em software}.
 Con ideología o sin  ella, el movimiento GNU se extendió  por la Red y
 empezó a dar sus frutos, y así  nació Linux. Línea a línea, programa a
 programa, el sistema operativo del  pingüino (la mascota de Linux que,
-por cierto, responde al nombre es  Tux) se convirtió en poco tiempo en
+por cierto, responde al nombre de  Tux) se convirtió en poco tiempo en
 el producto  más famoso del  código abierto y, paradójicamente,  en la
 apuesta de más de una multinacional en el sector informático.
 
@@ -156,7 +157,7 @@ una de estas  agrupaciones particulares de software  entorno al núcleo
 de  Linux es  lo que  denominamos distribuciones.  En general,  cuando
 hablamos  de  Linux,  nos  estamos  refiriendo  a  cualquiera  de  sus
 distribuciones. Las  más conocidas  son {\em  Debian}, {\em  Red Hat},
-{\em  SuSE}, {\em  Mandrake}. De  todas,  la que  más se  acerca a  la
+{\em SuSE}, {\em Mandrake}. De todas ellas,  la que más se acerca a la
 filosofía del movimiento GNU es Debian  ya que es fruto del trabajo de
 un gran grupo de voluntarios repartidos por el mundo, mientras que las
 otras pertenecen a empresas privadas dedicadas al desarrollo de Linux.
@@ -166,8 +167,8 @@ otras pertenecen a empresas privadas dedicadas al desarrollo de Linux.
 Lo que vulgarmente conocemos como Linux, debiera llamarse oficialmente
 como GNU/Linux. El motivo no es otro sino que el corazón de un sistema
 Linux está formado por un núcleo (Linux)  al que se le han añadido las
-utilidades desarrolladas por  la gente de la  Free Software Foundation
-(GNU), o al menos así era en los primeros momentos.
+utilidades  desarrolladas  por  la  gente de  la  {\em  Free  Software
+Foundation (GNU)}, o al menos así era en los primeros momentos.
 
 Hoy en  día, la lista  de colaboradores en  el desarrollo de  Linux es
 inmensa, estando  formada tanto  por personas como  usted, o  como yo,
@@ -179,11 +180,13 @@ C de GNU), pero no hacía mucho más.
 
 En ese anuncio, puso frases como éstas:
 
-[...]``¿Suspiráis al  recordar aquellos días de  Minix-1.1, cuando los
+\begin{quotation}
+``{\em [\dots]¿Suspiráis al  recordar aquellos días de  Minix-1.1, cuando los
 hombres eran hombres  y escribían sus propios drivers?  ¿Os sentís sin
 ningún proyecto interesante y os  gustaría tener un verdadero S.O. que
 pudierais modificar a  placer? ¿Os resulta frustrante el  tener sólo a
-Minix? Entonces, este artículo es para vosotros.''[...]
+Minix? Entonces, este artículo es para vosotros.[\dots]}''
+\end{quotation} 
 
 Hoy día, a partir de esas frases (y de lo que implicaban), han surgido
 distribuciones de  Linux para todos  los gustos. Algunas de  ellas son
@@ -270,9 +273,9 @@ tan potente que se ha extendido a otros elementos, tales como galerías
 de fondos de escritorio, documentación, scripts, etc.
 
 Los criterios  bajo los  cuales un determinado  grupo de  programas se
-agrupa  en  un  mismo  paquete,  o un  único  software  monolítico  es
-repartido entre varios, son particulares  de cada distribución. Lo que
-si es común  a todas ellas es que  la gestión de los mismos  se hace a
+agrupa en un mismo paquete, o  un único software monolítico se reparte
+entre  varios, son  particulares de  cada distribución.  Lo que  sí es
+común  a todas  ellas  es que  la  gestión  de los  mismos  se hace  a
 través  de una  compleja base  de datos.  Utilizando las  herramientas
 adecuadas  podemos consultar  que paquetes  están instalados  o cuales
 están  disponibles para  su  instalación. Con  la mismas  herramientas
@@ -280,14 +283,14 @@ podemos instalar, desinstalar o  actualizar un paquete garantizando la
 integridad de nuestro  sistema. La base de  datos mantiene información
 de las dependencia entre paquetes, por lo que podemos estar informados
 en todo momento de que paquetes se necesitan para instalar uno dado, o
-que paquetes no podemos desinstalar porque son requeridos por otro que
+qué paquetes no podemos desinstalar porque son requeridos por otro que
 si lo está.
 
-Los formatos de  paquetes más extendidos son los  RPM\index{RPM} y los
-DEB\index{DEB}.  Los primeros  son utilizado  mayoritariamente por  la
-distribución {\em Red Hat} y  sus derivadas (como {\em Mandrake}). Los
-segundos  son  empleados  por  la  distribución  {\em  Debian}  y  sus
-derivadas.
+Los formatos de paquetes más extendidos son los {\tt rpm}\index{rpm} y
+los {\tt deb}\index{deb}. Los  primeros son utilizado mayoritariamente
+por la distribución {\em Red Hat} y sus derivadas (como {\em Mandrake}
+y {\em  SuSE}). Los  segundos son empleados  por la  distribución {\em
+Debian} y sus derivadas.
 
 El empaquetado  del software y  la gestión de  paquetes es una  de las
 grandes ventajas que presentan las distribuciones Linux frente a otros
@@ -297,8 +300,8 @@ muy difícil vivir sin ellas.
 Bueno, para terminar este rápido  repaso, comentar que en este listado
 no se  encuentran, ni muchísimo menos,  todas las opciones de  las que
 puede disfrutar  con Linux. Basta  dar una vuelta por  los principales
-buscadores de Internet, y se darán cuenta de hasta donde se ha llegado
-actualmente.
+buscadores de  Internet, y  se dará  cuenta uno de  hasta dónde  se ha
+llegado actualmente.
 
 \section{GNU/Linux: cara y cruz}
 
@@ -330,46 +333,44 @@ y los programadores de todo  el mundo, han desarrollado {\em software}
 para Linux.
 
 \item {\bf Soporte mediante {\em  software} GNU}. Linux puede ejecutar
-una amplia variedad de {\em  software}, disponible gracias al proyecto
-GNU.  Este  {\em  software}  incluye  de  todo,  desde  desarrollo  de
+una amplia  variedad de  {\em \mbox{software}}, disponible  gracias al
+proyecto GNU. Este {\em software} incluye de todo, desde desarrollo de
 aplicaciones (GNU C y GNU C++)  a la administración del sistema (gawk,
 groff, etc.) y juegos (GNU Chess, GnuGo, y NetHack).
 
 \item  {\bf  Estabilidad}.  Linux  presenta una  gran  estabilidad  en
 la  gestión de  sus  procesos  internos del  sistema.  Es muy  difícil
 conseguir que Linux  se ``cuelgue'' y, por supuesto, jamás  se verá un
-``pantallazo azul'' tipo Microsoft® Windows®.
+``pantallazo azul'' de los conocidos por \windows.
 
 \item {\bf Gran oferta de software}.  Aunque Linux no sea tan conocido
-por el público como lo es Microsoft® Windows®, eso no quiere decir que
-no  existan aplicaciones  para  el usuario  medio.  Por el  contrario,
-cuando uno utiliza Linux, según pasan  los días, se tiene la sensación
-de que  no necesita para nada  Microsoft® Windows® porque todo  lo que
-éste ofrece ya lo  tiene Linux. Llega un momento en que  no se echa de
-menos a Microsoft® Windows®.
+por el público como lo es \windows, eso no quiere decir que no existan
+aplicaciones  para el  usuario  medio. Por  el  contrario, cuando  uno
+utiliza Linux, según  pasan los días, se tiene la  sensación de que no
+necesita para  nada \windows\  porque todo  lo que  éste ofrece  ya lo
+tiene Linux. Llega un momento en que no se echa de menos a \windows.
 
 \item {\bf  Defensa contra los  virus}. Aunque  la mayor parte  de los
-virus  que  rondan  por  Internet son  desarrollados  para  Microsoft®
-Windows®,  es cierto  que existen  algunos  para Linux,  pero son  más
-difíciles de  crear debido a que  Linux emplea un sistema  de permisos
-sobre los ficheros previniendo los posibles desastres que se ven todos
-los días en los entornos de Microsoft® Windows®. Si a eso añadimos que
-los  virus para  Microsoft® Windows®  no se  pueden ejecutar  en Linux
-salvo  contadísimos casos,  nos podemos  hacer una  idea del  grado de
-seguridad con que cuenta Linux.
+virus  que rondan  por Internet  son desarrollados  para \windows,  es
+cierto que existen algunos para Linux, pero son más difíciles de crear
+debido a  que Linux emplea un  sistema de permisos sobre  los ficheros
+previniendo los  posibles desastres que se  ven todos los días  en los
+entornos de \windows.  Si a eso añadimos que los  virus para \windows\
+no se pueden  ejecutar en Linux salvo contadísimos  casos, nos podemos
+hacer una idea del grado de seguridad con que cuenta Linux.
 
 \item {\bf Relación con Internet}. Debido a que Linux creció gracias a
 Internet, digamos que  ambos hablan en el mismo lenguaje  y por tanto,
 se ve claramente que navegar por  Internet con Linux es más rápido que
-con Microsoft® Windows®. Obviamente, ésta  es una opinión personal del
+con Microsoft  Windows. Obviamente, ésta  es una opinión  personal del
 autor de este documento.
 
 \item {\bf Entornos gráficos}. Hasta hace unos años, trabajar en Linux
 sólo  era posible  desde  consola, ese  entorno  negro con  caracteres
 blancos  (similar al  MS-DOS, pero  más  potente). Con  la llegada  de
-Microsoft® Windows®,  la comunidad  Linux se vio  de forma  obligada a
+Microsoft  Windows, la  comunidad Linux  se  vio de  forma obligada  a
 desarrollar  nuevos  entornos gráficos  para  no  perder el  tren.  La
-gran  diferencia con  Microsoft® Windows®  es que  mientras éste  sólo
+gran  diferencia  con Microsoft  Windows  es  que mientras  éste  sólo
 dispone de un  escritorio, en Linux podemos elegir  con qué escritorio
 queremos trabajar. Los más conocidos  son {\sf KDE}, {\sf GNOME}, {\sf
 AfterStep}, {\sf  Enlightenment} y {\sf  Window Maker}; donde  los dos
@@ -382,11 +383,11 @@ decidir con cuál se siente más cómodo.
 tener un servidor  web, o un servidor FTP con  nuestro Linux. Sólo hay
 que leer la documentación de cómo hay que hacerlo.
 
-\item {\bf La  comunidad Linux}. A diferencia  de Microsoft® Windows®,
-Linux tiene una comunidad de voluntarios con ganas de ayudar a los que
-les cuesta adentrarse  en este mundo. Y todo por  afán de colaborar en
-este  proyecto.  Podemos  decir  que  esta  comunidad  tiene  un  gran
-sentimiento de solidaridad.
+\item {\bf La comunidad Linux}.  A diferencia de \windows, Linux tiene
+una comunidad de voluntarios con ganas  de ayudar a los que les cuesta
+adentrarse  en este  mundo.  Y  todo por  afán  de  colaborar en  este
+proyecto. Podemos decir  que esta comunidad tiene  un gran sentimiento
+de solidaridad.
 
 \end{itemize}
 
@@ -399,29 +400,29 @@ desventajas, como vemos aquí:
 
 \item {\bf Entorno  árido}. Aunque en los últimos años  el panorama ha
 mejorado considerablemente,  no podemos olvidar que  para trabajar con
-Linux, sobre todo si se viene de Microsoft® Windows®, hay que aprender
-unas cuantas  nociones si no  se quiere tener  la sensación de  que se
-está perdido. Todo  ello radica en que Linux no  es tan intuitivo como
-Microsoft®  Windows®, pero  afortunadamente  las diferentes  compañías
+Linux,  sobre todo  si se  viene de  \windows, hay  que aprender  unas
+cuantas nociones  si no se  quiere tener la  sensación de que  se está
+perdido.  Todo ello  radica  en que  Linux no  es  tan intuitivo  como
+Microsoft  Windows,  pero  afortunadamente  las  diferentes  compañías
 comerciales  han aportado  herramientas que  facilitan esas  tareas al
 usuario. Sólo hay que cambiar un poco el ``chip''.
 
 \item {\bf Soporte de hardware}. Por desgracia, como se ve claramente,
 el mercado de los sistemas informáticos de escritorio está orientado a
-Microsoft®  Windows®. Prueba  de ellos  es que  el 90\%  de los  PC lo
-tienen instalado sin  usar otro. Así que, los  fabricantes de hardware
-sólo  se han  preocupado  de crear  los  controladores de  dispositivo
-compatibles  con  Microsoft®  Windows®  sin pensar  en  los  restantes
-sistemas  como Linux,  Mac,  BeOS  y otros.  Ello  ha  obligado a  que
-fueran los  propios usuarios  programadores los que  desarrollaran sus
-propios controladores de  dispositivo. Con el tiempo,  dada la demanda
-creciente de  usuarios decididos a utilizar  Linux algunos fabricantes
-ha comenzado a acceder a las demandas de estos últimos.
+\windows. Prueba de ellos es que el 90\% de los PC lo tienen instalado
+sin  usar otro.  Así  que, los  fabricantes de  hardware  sólo se  han
+preocupado de  crear los controladores de  dispositivo compatibles con
+\windows\  sin  pensar en  los  restantes  sistemas como  Linux,  Mac,
+BeOS  y otros.  Ello ha  obligado a  que fueran  los propios  usuarios
+programadores  los  que  desarrollaran sus  propios  controladores  de
+dispositivo.  Con el  tiempo, dada  la demanda  creciente de  usuarios
+decididos a utilizar Linux algunos  fabricantes ha comenzado a acceder
+a las demandas de estos últimos.
 
 \item {\bf Configuración del sistema operativo}. Hasta hace bien poco,
 instalar y  configurar Linux en su  casa en condiciones era  una tarea
 ardua y bastante complicada. Ello hacía  que mucha gente se rindiera y
-siguiera con  Microsoft® Windows®.  Las diferentes  distribuciones han
+siguiera  con Microsoft  Windows.  Las  diferentes distribuciones  han
 tenido  en cuenta  estos  problemas y  han  aportado herramientas  que
 ayudan al  sufrido usuario  a hacerlo  todo de  forma más  intuitiva y
 automática. Entre estas herramientas están  las encargadas de la parte
@@ -430,15 +431,15 @@ de la instalación del {\em hardware} y {\em software}.
 \item {\bf No todo el software necesario está presente}. Es cierto que
 casi todo el software que un usuario necesita ya lo aporta Linux. Pero
 hay  situaciones  en  las  que una  persona  necesita  una  aplicación
-concreta  y ve  que debe  utilizar Microsoft®  Windows® para  usar esa
+concreta  y ve  que  debe  utilizar Microsoft  Windows  para usar  esa
 aplicación. De  todas formas, siempre surgen  desarrolladores con afán
 de ayudar que terminan desarrollando esas aplicaciones.
 
 \item  {\bf  Administración  de  Linux}.   Como  todo,  si  se  quiere
 administrar Linux  de forma profunda,  ya no vale usar  los asistentes
-gráficos  como en  Microsoft® Windows®,  sino que  hay que  leer mucha
-documentación y experimentar. A cambio  se gana una experiencia que en
-Microsoft® Windows® es difícil de conseguir.
+gráficos como en \windows, sino que hay que leer mucha documentación y
+experimentar. A  cambio se  gana una experiencia  que en  \windows\ es
+difícil de conseguir.
 
 \end{itemize}
 
@@ -457,18 +458,21 @@ y {\sf VariCAD} (éstos dos últimos  son aplicaciones que aspiran a ser
 serias alternativas  a {\sf AutoCAD}  aplicadas a los  entornos UNIX),
 etc.
 
-Si el usuario proviene del  entorno Microsoft® Windows®, tal vez pueda
-tener la sensación de que ``Sí, trabaja como Windows, pero no es igual
-que Windows\dots'',  y le gustaría  encontrar las herramientas  con el
-mismo  aspecto que  este  sistema operativo.  Los desarrolladores  han
-optado por tres caminos: \begin{itemize} \item El primero es el de dar
-las mismas  funcionalidades que las  que tienen esas  aplicaciones que
-existen en  Microsoft® Windows®,  aunque su  aspecto externo  no tenga
-nada que ver con el Windows.
+Si el  usuario proviene del entorno  \windows, tal vez pueda  tener la
+sensación de que ``{\em Sí, trabaja como Windows, pero no es igual que
+Windows\dots}'', y le gustaría encontrar las herramientas con el mismo
+aspecto que este sistema operativo. Los desarrolladores han optado por
+tres caminos:
+
+\begin{itemize}
+
+\item El primero  es el de dar las mismas  funcionalidades que las que
+tienen esas  aplicaciones que existen  en \windows, aunque  su aspecto
+externo no tenga nada que ver con el \windows.
 
 \item El segundo camino añade además el aspecto externo original de la
-aplicación que  funciona en Microsoft® Windows®  con el fin de  que el
-usuario se encuentre en un entorno familiar.
+aplicación que  funciona en \windows con  el fin de que  el usuario se
+encuentre en un entorno familiar.
 
 \item El tercero  es el más drástico ya que  se crean herramientas con
 aspectos y funcionalidades totalmente  diferentes a esas aplicaciones,
@@ -476,21 +480,20 @@ pero igualmente eficientes e inclusos superiores en algunos casos.
 
 \end{itemize}
 
-Para  plasmar  en un  ejemplo  de  lo que  se  acaba  de decir,  basta
-con  nombrar una  de las  aplicaciones  más utilizadas  en el  entorno
-Microsoft®  Windows® que  es {\sf  MS  Word}. Del  primer ejemplo  nos
-encontramos con {\sf KWord}, desarrollado  por el equipo que creó {\sf
-KDE}.
+Para plasmar  en un  ejemplo de lo  que se acaba  de decir,  basta con
+nombrar una de las aplicaciones más utilizadas en el entorno Microsoft
+Windows que es  {\sf MS Word}. Del primer ejemplo  nos encontramos con
+{\sf KWord}, desarrollado por el equipo que creó {\sf KDE}.
 
 El  segundo es  {\sf  AbiWord}. El  autor reconoce  que  es casi  como
 utilizar  el {\sf  MS  Word}, aunque  es evidente  que  aún le  faltan
 bastantes opciones por desarrollar.
 
-Y el tercero es el \LaTeX, una herramienta muy potente, pero que
+Y  el tercero  es el  \LaTeX, una  herramienta muy  potente, pero  que
 quizás desconcierte  a los usuarios  noveles debido a  su complejidad.
-Como anécdota aclarativa, el libro que tiene ahora en sus manos y está
-leyendo se  ha escrito usando  precisamente \LaTeX. Al  final la
-elección depende del propio usuario.
+Como anécdota  aclarativa, el libro que  el lector tiene ahora  en sus
+manos  y está  leyendo se  ha escrito  usando precisamente  \LaTeX. Al
+final la elección depende del propio usuario.
 
 Una cosa está  clara: {\bf Hay software más que  suficiente para Linux
 como para detener un tren}.
