@@ -64,6 +64,8 @@ Como has  visto, el formato  de salida es  x11 (visualizar en  las X).
 Para ver un listado de los  diferentes tipos de salida disponibles usa
 {\tt set terminal}.
 
+\section{Representación de expresiones analíticas}
+
 La  parte  más sencilla  y  práctica  de  Gnuplot es  la  presentación
 de  funciones  continuas, tanto  en  forma  explícita {\tt  y=f(x)}  o
 {\tt  z=f(x,y)},  como  puede  ser en  forma  paramétrica:  curvas  2D
@@ -101,9 +103,11 @@ gnuplot> set parametric                # modo paramétrico
 gnuplot> set samples 500                   # mejor resolución (+lento)
 gnuplot> plot sin(7*t),cos(5*t)            # lissajous en 2D
 gnuplot> splot sin(5*u),sin(6*u),sin(7*u)  # lissajous en 3D
-gnuplot> set samples 100                   # menor resolución (+rapido)
+gnuplot> set samples 100                   # menor resolución (+rápido)
 gnuplot> splot cos(u)*cos(v),cos(u)*sin(v),sin(u)  # esfera en 3D
 \end{verbatim}
+
+\section{Representación de archivos de datos}
 
  Gnuplot  también tiene un  modo para trabajar con  archivos de
 datos con múltiples columnas. Cuando los  archivos de datos tienen 1 ó
