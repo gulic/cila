@@ -1,0 +1,60 @@
+
+ Módulos
+ I.   Entorno GNU/Linux  (3 días, 15 horas en 3 clases de  5 horas)
+ II.  Instalación        (2 días, 20 horas en 2 clases de 10 horas)
+ III. Documentación      (2 días,  8 horas en 2 clases de  4 horas)
+ IV.  Matemáticas        (1 día,   4 horas en 1 clase)
+ V.   Programación       (2 días,  8 horas en 2 clases de  4 horas)
+
+ Módulo I:   Entorno GNU/Linux
+ 1. Historia de GNU/Linux.                               (Félix,   0.5)
+ 2. El entorno del intérprete de comandos, con mtools.   (Félix,     1)
+ 3. El entorno X-Window, Gnome, KDE.                     
+    - X-Window                                           (Jesús,   0.5)
+	- GNOME                                              (Jesús,     1)
+	- KDE                                                (Félix,     1)
+ 4. Sistemas de ayuda y documentación                    (Félix,     1)
+ 5. Aplicaciones para Internet: 
+    - Navegadores: Netscape, Mozilla, Konqueror, Galeon  (Jesús,     3)
+	- Correo: Mutt, Evolution                            (Alberto,   1)
+	- FTP, gFTP                                          (Alberto, 0.5)
+	- SSH                                                (Alberto, 0.5)
+ 6. Aplicaciones diversas: 
+    - gnotepad, scite, abiword, openoffice
+
+ Módulo II:  Instalación (Debian GNU/Linux 3.0, 8 CDs, 25 plazas)
+ 1. Sistema base (particiones y Lilo)
+ 2. Hardware y kernel (kernel-package)
+ 3. Administración básica (adduser, floppy, cdrom, APT)
+ 4. Software para los módulos del TILA.
+ 5. Paquetes en fuentes (bajar, compilar e instalar videolan y xine con aalib) 
+ 6. Software adicional (a gusto del consumidor)
+
+ Módulo III: Edición de gráficos y documentos
+ 1. Edición de gráficos:
+    - DIA,                              (Miguel,  0.75)
+    - QCad,                             (Miguel,  0.75)
+    - The GIMP,                         (Miguel,   1.5)
+ 2. OpenOffice                          (¿¿¿???,     1)
+ 3. HTML: lenguaje, ¿bluefish, quanta?  (Félix,    1.5)
+ 4. LyX                                 (Miguel,     1)
+ 5. LaTeX                               (Miguel,   1.5)
+
+ Módulo IV:  Herramientas para matemáticas
+ 1. Octave y SciLab                     (Alberto, 1.25)
+ 2. GNUplot                             (Alberto, 0.75)
+ 3. R                                   (Miguev,   0.5)
+ 4. Yacas                               (Miguev,   0.5)
+ 5. Python                              (Miguel,     1)
+
+ Módulo V:   Herramientas de programación
+ 1. Editores: 
+    - VI, VIM, GVIM                     (Miguel,   1)
+	- GNU Emacs                         (Miguel,   1)
+ 2. FreePascal                          (Miguel, 0.5)
+ 3. GNU Fortran                         (Miguel, 0.5)
+ 4. GNU C/C++                           (Jesús,    1)
+ 5. GNU Make                            (Jesús,    1)
+ 6. Depuradores: gdb y ddd.             (Jesús,  1.5)
+ 7. Java                                (Jesús,  0.5)
+ 8. Bash.                               (Jesús,    1)
