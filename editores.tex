@@ -442,7 +442,6 @@ puedes cambiar el esquema de colores  desde la interfaz de consola del
 {\sf VIM} con el comando {\tt :colors esquema}. Por ejemplo, activa el
 coloreado de sintaxis y ejecuta {\tt :colors koehler}.
 
-<<<<<<< editores.tex
 Ahora pensemos  que queremos  eliminar esas líneas  de tres  guiones y
 cambiarlas  por  líneas  de  cinco asteriscos.  Pasamos  a  modo  {\tt
 comando}, situamos el cursor en una de esas línas y pulsamos {\tt dd}.
@@ -457,7 +456,7 @@ pulsamos {\tt P}, vemos cómo la  línea que habíamos borrado se inserta
 tercera línea y  pulsamos {\tt p} vemos cómo la  línea se inserta {\em
 después} del cursor. Añadimos las restantes líneas de asteriscos donde
 estaban las de guiones.
-=======
+
 En adelante, el comando {\tt x} significará pulsar la tecla {\tt x} en
 modo {\em comando}, el comando  {\tt :letras} significará teclear {\tt
 :letras} en modo  comando y pulsar {\tt Enter}.  Cualquier comando del
@@ -465,10 +464,8 @@ primer tipo puede  modificarse teclando un número, lo que  hará que se
 ejecute ese número de veces (el comando {\tt 4x} es equivalente a {\tt
 xxxx}). Si te equivocas  tecleando cualquier comando puedes cancelarlo
 pulsando {\tt Esc}.
->>>>>>> 1.14
 
 Para  deshacer cualquier  operación  realizada pulsamos  en modo  {\em
-<<<<<<< editores.tex
 comando} la tecla {\tt u}. Para  salir del editor {\bf sin} guardar el
 fichero utiliza  el comando  {\tt :q!}. Probablemente  realizarás esta
 operación con mucha  frecuencia al principio, cuando  se cometas algún
@@ -535,43 +532,6 @@ Comando & Descripción \\
 \caption{Comandos básicos del VI}
 \end{table}
 
-
-
-\section{Otros editores}
-
-
-\subsection{Joe}
-
-
-El primer editor  que suele aprenderse en Linux es  {\tt Joe}, por ser
-muy sencillo  y rápido.  Puede usarse  para editar  cualquier fichero,
-pero  aquí  trataremos su  uso  básico  para editar  pequeños  textos,
-ficheros de  configuración, pequeños  programas. Todos  estos ficheros
-pueden editarse con más comodidad con editores más potentes como Emacs
-o VIM pero para ello es  necesario aprender a usarlos primero, lo cual
-puede no resultar tan sencillo como aprender {\tt Joe}.
-
-Veremos sólo un par de comandos  de {\tt Joe}, simplemente como editar
-un fichero existente o nuevo, guardarlo sin salir, salir sin guardarlo
-y salir guardándolo. Para obtener más información sobre otras opciones
-del editor existe el comando de ayuda que explicaremos luego.
-=======
-comando} la tecla  {\tt u}, para rehacer la  última operación deshecha
-pulsa {\tt C-r}.  Para repetir la última operación  realizada pulsa un
-simple punto {\tt .} solitario en modo {\em comando}.
-
-Para  salir  del  editor  {\bf  sin} guardar  el  fichero  utiliza  el
-comando {\tt  :q!}. Probablemente realizarás esta  operación con mucha
-frecuencia al principio, cuando cometas algún error grave como teclear
-una palabra sin pasar al modo  {\em edición}. En el modo {\em comando}
-cada  tecla  tiene su  función,  y  es  diferente  además si  está  en
-mayúsculas que si  está en minúsculas. Por lo tanto,  una regla de oro
-con  {\sf VI}  es: cuando  no  sepas con  qué comando  hacer algo,  no
-pruebes teclas  al azar.  Y por supuesto,  cuando estés  editando algo
-importante guarda el  fichero con frecuencia con el  comando {\tt :w},
-sobre todo  en las  primeras semanas  de uso. Para  salir de  {\sf VI}
-guardando el fichero utiliza el comando {\tt :x}.
-
 Una utilidad  que te puede  resultar interesante es  ejecutar comandos
 del sistema desde la misma consola en la que estamos trabajando con el
 {\sf  VIM}. En  modo  {\em comando}  escribimos  {\tt :!comando},  por
@@ -637,7 +597,6 @@ posición  deseada  y contemplar  dos  opciones  para pegar  el  texto:
 pulsando {\tt p} el texto se insertará {\em justo después} del cursor,
 pulsando {\tt S-p}  o {\tt P} el texto se  insertará {\em justo antes}
 del cursor.
->>>>>>> 1.14
 
 Cuando cortas o copias una región de  texto ésta se guarda en una zona
 de memoria, lo que se denomina  un {\em buffer}. Mientras no salgas de
@@ -856,6 +815,24 @@ File hola.txt not saved.
 $
 \end{verbatim}
 
+
+\section{Otros editores}
+
+\subsection{Joe}
+
+El primer editor  que suele aprenderse en Linux es  {\tt Joe}, por ser
+muy sencillo  y rápido.  Puede usarse  para editar  cualquier fichero,
+pero  aquí  trataremos su  uso  básico  para editar  pequeños  textos,
+ficheros de  configuración, pequeños  programas. Todos  estos ficheros
+pueden editarse con más comodidad con editores más potentes como Emacs
+o VIM pero para ello es  necesario aprender a usarlos primero, lo cual
+puede no resultar tan sencillo como aprender {\tt Joe}.
+
+Veremos sólo un par de comandos  de {\tt Joe}, simplemente como editar
+un fichero existente o nuevo, guardarlo sin salir, salir sin guardarlo
+y salir guardándolo. Para obtener más información sobre otras opciones
+del editor existe el comando de ayuda que explicaremos luego.
+=
 Esto es lo mínimo  que debemos saber para editar con  {\tt Joe}, y con
 esto nos conformaremos  aquí pues en lo sucesivo  aprenderemos a hacer
 operaciones más avanzadas con otros editores. Para conocer sobre otras
