@@ -80,7 +80,7 @@ dist: $(FILES) $(IMAGES) $(EXAMPLES)
 	cp Makefile LEEME *.tex *.sty *.bib $(DISTDIR)
 	cp -r imagenes $(DISTDIR)
 	cp -r ejemplos $(DISTDIR)
-	cd $(DISTDIR); make clean; cd ..
+	make -C $(DISTDIR) clean
 	tar cfz $(DISTDIR).tar.gz $(DISTDIR)
 	rm -rf $(DISTDIR)
 
