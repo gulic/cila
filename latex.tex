@@ -3,45 +3,45 @@
 \chapter{\LaTeX}
 
 
-\TeX  (pronunciado  ``Tek'') es  el  más  potente procesador  de  {\tt
+\TeX~  (pronunciado  ``Tek'') es  el  más  potente procesador  de  {\tt
 textos} orientados  a documentos  científicos, aunque puede  ser usado
-para cualquier tipo de documento. {\LaTeX} es un lenguaje estructurado
+para cualquier tipo de documento. \LaTeX~ es un lenguaje estructurado
 para la  elaboración de  documentos, desde  apuntes (quedan  muy bien)
 hasta  libros   completos,   problemas,    boletines,  etc. Baste como
-ejemplo,  que  este  manual  se  ha  realizado en {\LaTeX}. Una  de  las
-principales diferencias entre {\LaTeX}  y los procesadores de {\TeX}to
-al uso es que a diferencia de estos últimos {\LaTeX} no cuenta con una
-interface WYSWYG, sino que por  el contrario, un documento en {\LaTeX}
+ejemplo,  que  este  manual  se  ha  realizado en \LaTeX~. Una  de  las
+principales diferencias entre \LaTeX~  y los procesadores de {\TeX}to
+al uso es que a diferencia de estos últimos \LaTeX~ no cuenta con una
+interface WYSWYG, sino que por  el contrario, un documento en \LaTeX~
 ha de ser escrito en forma de fichero fuente para luego ser compilado.
 Esto se  puede interpretar de dos  maneras, o un gran  inconveniente o
 una gran ventaja.
 
-La primera versión  de {\TeX}, obra de Donald E.  Knuth (DEK), nació a
+La primera versión  de \TeX, obra de Donald E.  Knuth (DEK), nació a
 principios de los años ochenta. Esta versión, si bien muy potente, era
 extremadamente dificil de usar, por lo  que el mismo DEK desarrolló la
-primera ampliación de {\TeX}, el plain {\TeX}.
+primera ampliación de \TeX, el plain \TeX.
 
-El Plain {\TeX} introducía gran número  de órdenes de alto nivel, pero
+El Plain \TeX~ introducía gran número  de órdenes de alto nivel, pero
 seguía  estando  más  orientado  a  aspectos  tipográficos  que  a  la
 estructura de  los documentos como un  todo Por ello, en  1985, Leslie
-Lamport desarrolló  un lenguaje construido  sobre el Plain  {\TeX} que
-recibió  el nombre  de  {\LaTeX} dirigidos  a confeccionar  documentos
-completos  (artículos  o  libros).  Desde su  aparición,  {\LaTeX}  ha
+Lamport desarrolló  un lenguaje construido  sobre el Plain  \TeX~ que
+recibió  el nombre  de  \LaTeX~ dirigidos  a confeccionar  documentos
+completos  (artículos  o  libros).  Desde su  aparición,  \LaTeX~  ha
 conocido una gran difusión en el  ámbito científico, siendo hoy día el
 procesador  más  usado  por  matemáticos, físicos  y  gran  número  de
 ingenieros.
 
 
-El futuro  del {\LaTeX} depende  no sólo de  sí mismo sino  también de
+El futuro  del \LaTeX~ depende  no sólo de  sí mismo sino  también de
 los  avances  en  otros  procesadores,  en  la  medida  en  que  estos
 incorporen  las herramientas  y  la flexibilidad  de este  procesador,
 podrán sustituirlo. Dada la desatención  de las grandes compañías a la
-comunidad científica internacional, parece  que el futuro del {\LaTeX}
+comunidad científica internacional, parece  que el futuro del \LaTeX~
 es todavía prometedor. Aparte de por una gran ventaja que lo distingue
-de AmiPro, Word o WordPerfect. El {\LaTeX} es freeware.
+de AmiPro, Word o WordPerfect. El \LaTeX~ es freeware.
 
 
-Veamos  la  versatilidad  de  {\LaTeX}  aplicada  a  las  matemáticas,
+Veamos  la  versatilidad  de  \LaTeX~  aplicada  a  las  matemáticas,
 con  un  ejemplo  no  demasiado sencillo.  Las  líneas  que  comienzan
 por  el carácter  {\tt \%}  (porcentaje) son  comentarios, y  explican
 suficientemente el contenido del  fichero. Veamos cómo podemos obtener
@@ -56,10 +56,10 @@ El código de este ejemplo genera una página con el siguiente contenido:
 {\large Taller de Iniciación a Linux para Alumnos}
 \end{center}
 
-Esto es un  pequeño ejemplo de {\LaTeX}, el más  potente procesador de
+Esto es  un pequeño ejemplo  de \LaTeX,  el más potente  procesador de
 textos. La mayoría  de apuntes y exámenes de Matemáticas  que vemos en
-la  Facultad están  escritos  en {\LaTeX}.  Por  cierto, con  {\LaTeX}
-también tenemos soporte para el {\euro}uro
+la Facultad están  escritos en \LaTeX. Por cierto,  con \LaTeX también
+tenemos soporte para el {\euro}uro.
 
 A continuación algunos ejemplos de fórmulas matemáticas:
 
@@ -177,7 +177,7 @@ $ xdvi ejemplo.dvi
 extendido se  han generado conversores  de formato, de tal  manera que
 podemos  pasar  desde  dvi  a  formato  {\tt PostScript}  y  a  formato
 {\tt PDF}, ambos mucho más extendidos que el dvi. Para pasar un fichero
-generado por  {\LaTeX} en formato  {\tt DVI} a un  fichero {\tt PostScript}
+generado por  \LaTeX~ en formato  {\tt DVI} a un  fichero {\tt PostScript}
 usaremos el comando {\tt dvips} de la siguiente manera: 
 
 \begin{verbatim}
@@ -203,7 +203,7 @@ $ ps2pdf ejemplo.ps ejemplo.pdf
 Y  una vez  hecho esto  ya podemos  usar nuestro  visualizador de  PDF
 preferido para ver el {\tt ejemplo.pdf}.
 
-Existe también  la posibilidad de  convertir el código {\LaTeX}  de un
+Existe también  la posibilidad de  convertir el código \LaTeX~  de un
 documento  al estándar  HTML, lo  que resulta  muy útil  a la  hora de
 publicar en internet.  El programa apropiado para esto es  el {\tt GNU
 LaTeX2HTML}, y su uso básico es sumamente sencillo:
@@ -214,7 +214,7 @@ $ latex2html ejemplo.tex
 
 Al terminar  latex2html encontramos  un nuevo directorio  llamado {\tt
 ejemplo}  que contiene  la conversión  a  HTML de  nuestro ejemplo  de
-{\LaTeX},  incluidos  los  gráficos correspondientes  a  las  fórmulas
+\LaTeX,  incluidos  los  gráficos correspondientes  a  las  fórmulas
 matemáticas.  El resultado  obtenido  no está  nada  mal. Además, esta
 conversión  puede  personalizarse en  gran  medida  mediante hojas  de
 estilo.
@@ -229,8 +229,8 @@ images.pl     img13.png   img2.png   img7.png  node1.html
 \end{verbatim}
 
 
-Ésta ha sido una muy  breve introducción a {\LaTeX} que esperamos
+Ésta ha sido una muy  breve introducción a \LaTeX~ que esperamos
 haya  sido  suficiente como  para  que  os  pique  el gusanillo  y  os
-introduzcáis en el maravilloso mundo del {\LaTeX}.
+introduzcáis en el maravilloso mundo del \LaTeX.
 
 

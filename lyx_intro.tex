@@ -1,0 +1,214 @@
+
+\subsection{Navegando por la documentación}
+
+¡Bienvenido a \LyX{}!
+
+Para responder más fácilmente a tus preguntas y describir todas las
+características de \LyX{}, la documentación ha sido dividida en varios
+ficheros. Cada uno tiene un propósito concreto, como se verá más adelante.
+Sin embargo, antes de que te topes con alguno de estos ficheros, deberías
+leer éste en primer lugar, ya que contiene mucha información y comentarios
+útiles que te pueden ahorrar tiempo.
+
+\bigskip{}
+{\centering ¡¡¡¡¡ATENCIÓN!!!!! ¡¡¡¡¡ATENCIÓN!!!!! ¡¡¡¡¡ATENCIÓN!!!!\par}
+
+{\centering ¡Peligro, Will Robinson, Peligro!%
+\footnote{Referencia a una antigua teleserie norteamericana, {}``Perdidos en
+el espacio'', donde un robot avisaba siempre a su dueño de esta manera
+en situaciones de peligro. (N. del T.)
+}\par}
+\bigskip{}
+
+Aunque \LyX{} está ya en su versión 1.0 (o mayor), parte de la documentación
+puede estar incompleta o desfasada. Como el resto de \LyX{}, los manuales
+son trabajo de un grupo de voluntarios que tienen {}``verdaderos
+trabajos'', familias, platos que fregar, cestos del gato que limpiar,
+etc, etc, etc. Hacemos el mayor esfuerzo posible por mantener los
+manuales en buena forma, pero no siempre podemos lograrlo. (Si quieres
+ayudar, asegúrate de leer la sección \ref{sec:Contrib}, además del
+resto del documento).
+
+También puedes hacernos otro favor: si cualquer cosa de estos manuales
+te parece confusa, poco clara o errónea, ¡no dudes en hacérnoslo saber!
+Puedes ponerte en contacto con los actuales encargados de mantener
+la documentación escribiendo a \texttt{lyx-docs@lists.lyx.org}.
+
+
+\subsection{El formato de los manuales}
+
+Algunos de vosotros habreis impreso el manual (o manuales). Otros
+podeis estar leyéndolos {}``en pantalla'', desde \LyX{}. Existen
+algunas diferencias entre la versión impresa y el fichero \LyX{}.
+En primer lugar, el título está simplemente al principio del documento
+y no separado del resto (en la primera página) como en algunas de
+las versiones impresas. Ni las notas a pie de página ni el índice
+se encuentran visibles. Existe una opción de menú para poder ver el
+índice. Para ello elige \textsf{Índice general} en el menú \textsf{Edición}.
+Para acceder a una nota a pie de página, que aparece de esta forma,%
+\footnote{¡Hola!
+} pulsa el botón izquierdo del ratón estando sobre ella.
+
+Ahora que hemos aclarado algunas de las diferencias entre las versiones
+impresas y en pantalla de este fichero, podemos empezar con el formato
+de este documento. De vez en cuando encontrarás cosas en diferentes
+fuentes de letra:
+
+\begin{itemize}
+\item \emph{El estilo resaltado} se usa para énfasis en general, razonamientos
+genéricos, títulos de libros, secciones de otros manuales, y notas
+de los autores.
+\item \texttt{La fuente máquina de escribir} se usa para programas y nombres
+de fichero, código \LaTeX{}, y código y funciones de \LyX{}.
+\item \textsf{La fuente Sans Serif} se usa para menús, botones, o nombres
+de menús emergentes, así como nombres y combinaciones de teclas.
+\item \textsc{El Estilo Nombre} se usa para nombres propios de personas.
+\end{itemize}
+Respecto a las teclas y sus combinaciones, probablemente serás enviado
+a la sección \emph{Combinaciones de teclas asociadas} del {}``\emph{Manual
+de referencia}'' (fichero \texttt{Reference.lyx}). Cuando necesitemos
+hacer referencia a asociaciones de teclas, usaremos la siguiente convención:
+
+\begin{itemize}
+\item {}``\textsf{C-}{}`` indica la tecla \textsf{Control}.
+\item {}``\textsf{S-}{}`` indica la tecla \textsf{Shift}.
+\item {}``\textsf{M-}{}`` indica la tecla \textsf{Meta}, que en la mayoría
+de los teclados será la tecla \textsf{Alt}.
+\item {}``\textsf{F1}'' \ldots{} {}``\textsf{F12}'' serán las teclas
+de función.
+\item {}``\textsf{Esc}'' será la tecla de escape.
+\item {}``\textsf{Izquierda}'' {}``\textsf{Derecha}'' {}``\textsf{Arriba}''
+{}``\textsf{Abajo}'': autoexplicativas (también llamadas teclas
+de dirección o cursores).
+\item \textsf{{}``Insert}ar'' {}``\textsf{Suprimir}'' {}``\textsf{Inicio}''
+{}``\textsf{Fin}'' {}``\textsf{Página Arriba}'' {}``\textsf{Página
+Abajo}'': serán las 6 teclas que aparecen sobre los cursores en la
+mayoría de los teclados de PC. {}``\textsf{Página Arriba}'' y {}``\textsf{Página
+Abajo}'' son llamadas {}``\textsf{Prior}'' y {}``\textsf{Next}''
+en algunos teclados.
+\item \textsf{Retorno de carro} e \textsf{Intro} se refieren ambas a la
+misma tecla. Algunos teclados la etiquetan como {}``Return,'' otros
+como {}``Enter,'' incluso algunos tienen dos teclas. \LyX{} trata
+a todas como la misma tecla, así que usaremos \textsf{Retorno de carro}
+e \textsf{Intro} indistintamente.
+\end{itemize}
+También te encontrarás de tanto en tanto con {}``(Ver \emph{{}`Manual
+de referencia}')''. Hemos listado las asociaciones de teclas por
+defecto posibles para cada función en su correspondiente entrada en
+el \emph{{}``Manual de referencia''}, así que busca también allí.
+
+
+\subsection{Los manuales}
+
+La siguiente lista describe el contenido de cada uno de los ficheros
+de la documentación:
+
+\begin{description}
+\item [\emph{Introducción}]\emph{~}\\
+Este fichero.
+\item [\emph{Tutorial}]\emph{~}\\
+Si eres nuevo usando \LyX{}, y nunca antes has usado ni oído hablar
+de \LaTeX{}, entonces debes empezar aquí. Si ya \emph{has} usado \LaTeX{},
+deberías leer aún así la sección {}``\LyX{} para usuarios de \LaTeX{}''
+(y hojear el resto del documento no te haría daño).
+\item [\emph{Guía~del~Usuario}]\emph{~}\\
+La documentación principal. Intentaremos cubrir aquí la mayor parte
+de las opciones y características básicas de \LyX{}. El manual principal
+asume que ya tienes algunos conocimientos de \LaTeX{}, o que has leído
+el \emph{Tutorial}.
+\item [\emph{Características~Extendidas}]\emph{~}\\
+Ampliación de la Guía del Usuario. Documenta los formatos adicionales
+y características de edición de propósito específico, incluyendo algunos
+trucos de expertos en \LaTeX{}.
+\item [\emph{Personalización}]\emph{~}\\
+Una descripción de características avanzadas de \LyX{}, entre las
+que se incluyen cómo personalizar el comportamiento global del programa:
+cosas tales como asociaciones de teclas, internacionalización y ficheros
+de configuración.
+\item [\emph{Manual~de~Referencia}]\emph{~}\\
+Contiene una descripción detallada y exhaustiva de las características
+de \LyX{}, pero sin los útiles trucos y descripciones de uso de la
+\emph{Guía del Usuario} u otros manuales.
+\item [\emph{Errores~conocidos}]\emph{~}\\
+Este fichero contiene una lista de errores detectados en \LyX{}, así
+como información sobre lo que deberías hacer si encuentras un error
+en el programa.
+\item [\emph{Configuración~de~\LaTeX{}}]\emph{~}\\
+\LyX{} explora tu sistema durante la instalación. Este fichero contiene
+la información que \LyX{} ha aprendido de tu instalación. Examínalo
+si echas en falta algo que deberías tener.
+\end{description}
+Estos ficheros harán referencia unos a otros cuando sea necesario.
+Por ejemplo, la \emph{Guía del Usuario} habla \emph{algo} sobre la
+instalación y personalización, pero envía al lector al \emph{Manual
+de Personalización} para más información.
+
+De nuevo, destacamos un punto importante:
+
+\vspace{0.51cm}
+{\centering Si nunca antes has usado u oído hablar de \LaTeX{}, lee
+el \emph{Tutorial}. Ahora\@.\par}
+\vspace{0.51cm}
+
+Si no, \LyX{} te parecerá bizantino e imposible de utilizar.
+
+
+\subsection{\label{sec:Contrib}Contribuir al proyecto de documentación}
+
+
+\subsubsection{Informar de errores en los manuales}
+
+Ésta es una tarea bastante fácil de realizar. Puedes mandar un mensaje
+bien a la Lista de Correo de Desarrolladores, bien a la Lista de Correo
+de Usuarios. No obstante, el Equipo de Documentación preferiría que
+lo mandases a \texttt{lyx-docs@lists.lyx.org}. Si los arreglos son
+pequeños, alguien los hará. Si son grandes, sugerimos que te unas
+a la lista de correo y hables con nosotros antes de hacer nada.
+
+\vspace{1.06cm}
+{\centering \emph{¡Nunca realices cambios en ninguno de los manuales
+sin el consentimiento previo del Equipo de Documentación!}\par}
+\vspace{1.06cm}
+
+Cualquiera de estos cambios arbitrarios no se verán reflejados finalmente
+en la documentación, ya que el Equipo de Documentación mantiene las
+copias maestras a través del árbol de versiones CVS.
+
+
+\subsubsection{Unirse al Equipo de Documentación}
+
+El Equipo de Documentación de \LyX{}, como todo lo demás en el projecto
+de \LyX{}, puede aprovechar tu ayuda siempre. Si estás interesado
+en contribuir al Projecto de Documentación, \emph{primero} necesitas
+hacer lo siguiente:
+
+\begin{enumerate}
+\item Consigue el último código fuente de \LyX{}. Descomprímelo. Encontrarás
+un directorio en el árbol principal llamado \texttt{development}.
+Dentro de ese directorio hay un fichero llamado \texttt{DocStyle.lyx}.
+Léelo; se trata de las condiciones de estilo de la documentación.
+\item Tómate un descanso de un día o dos, y vuelve a leerlo.
+\item Después, lee la \emph{Guía} \emph{del} \emph{Usuario} y el \emph{Tutorial}.
+
+
+El objetivo de este ejercicio es darte ideas. El \emph{Tutorial} y
+la \emph{Guía} \emph{del} \emph{Usuario} serán siempre lo más actualizado
+de la documentación. Deberías ser capaz de hacerte una idea de cómo
+queremos que sean los manuales.
+
+\item Lee \texttt{DocStyle.lyx} una vez más.
+\item Por último, contacta con el equipo: 
+
+
+\texttt{lyx-docs@lists.lyx.org}
+
+\end{enumerate}
+Queremos estar seguros de que entiendes las condiciones de estilo
+\emph{antes} de que empieces a escribir. De lo contrario, te haremos
+reescribir tu trabajo.
+
+\emph{No} se te ocurra \emph{}empezar a escribir nada hasta que hablemos
+vía correo electrónico. Puedes revisar el progreso de cualquier actividad
+relacionada con los documentos en la página web del Equipo de Documentación
+(una vez que la tengamos) o a través de los archivos de la lista de
+correo en \texttt{www.lyx.org}.
