@@ -99,6 +99,79 @@ dia. Con Xine puedes ver películas en formato MPEG, ASF o DivX 5.
 
 %\subsubsection*{Aviplay}
 
+\subsubsection*{mpg321} 
+
+% <MojoPiKon> Me la pido :-)
+
+mpg321 es  reproductor de  ficheros con  formato mp3.  Se trata  de un
+programa de línea de comandos no  interactivo, esto es, uno ejecuta el
+programa con una serie de argumentos, y una vez el programa comienza a
+ejecutarse, no existe interacción entre el usuario y el programa, sino
+que se limita a realizar las operaciones que le hemos proporcionado en
+la línea de comandos.
+
+
+La forma más asequible para reproducir  mp3 con mpg321 es el siguiente
+comando, suponiendo que nos encontremos en un directorio lleno de mp3.
+
+
+\begin{verbatim}
+mpg321 *.mp3
+\end{verbatim}
+
+Para aquellos que no les basta esto  (a mí si), hay una amplia gama de
+parámetros que pueden pasarse a mpg321:
+
+\begin{verbatim}
+-o tipo_de_dispositivo, donde tipo de dispositivo puede ser oss, alsa, esd, sun, o arts.
+\end{verbatim}
+
+Esto, que en principio no tiene  interés alguno para la mayor parte de
+la gente (pues mpg321 funcionará (en  la mayor parte de los casos) sin
+especificar  este parámetro,  puede  resultar interesante  en caso  de
+que,por ejemplo, queramos reproducir dos o más mp3 simultaneamente.
+
+Si tenemos artsd instalado, podemos hacer esto arrancando mpg321 de la
+forma:
+
+\begin{verbatim}
+mpg321 -o arts fichero.mp3 &
+\end{verbatim}
+
+tras lo cual  podemos repetir la operación tantas  veces como queramos
+en la misma o en diferentes consolas.
+
+Este parámetro (-o) funciona conjuntamente con el siguiente:
+
+\begin{verbatim}
+-a nombre_de_dispositivo, donde nombre_de_dispositivo es algo así como /dev/dsp, /dev/sound/dsp1, o aquel que utilice el dispositivo de sonido que queramos utilizar para oir nuestros mp3 :-)
+\end{verbatim}
+
+Utilización de listas de reproducción:
+
+Podemos cargar una ``playlist'' de un  fichero txt con las rutas a los
+ficheros mp3 que queramos que la compongan. Esto se hace de la forma:
+
+\begin{verbatim}
+mpg321 -@ fichero.txt
+\end{verbatim}
+
+Reproducción aleatoria de ficheros:
+
+Para esto tenemos dos parámetros: -z y -Z
+
+\begin{verbatim} -Z reproduce todos los ficheros especificados de forma aleatoria hasta que paremos mpg321 \end{verbatim}
+
+\begin{verbatim} -z reproduce todos los ficheros especificados de forma aleatoria una sola vez. \end{verbatim}
+
+Para aquellos que crean que una aplicación no interactiva de reproducción de
+mp3 puede ser totalmente inutil, existen alternativas en modo texto, como
+mp3blaster (también reproduce ficheros ogg-vorbis, el formato libre alternativo
+al mp3, que por el contrario está patentado y es propietario de Franhouffer).
+
+Para el entorno x-window, tenemos ``xmms'', que es un perfecto clon de winamp,
+el conocido reproductor MP3 para ese sistema operativo que todos conocen.
+
 \subsection{Ofimática}
 
 Otra área compleja de abordar en su momento, fué la de la creación de un
@@ -125,20 +198,20 @@ trata en  (poner enlace  a la  session adecuada)  otro tema  aparte, nos
 limitaremos a  exponer algunas  capturas de  pantalla de  los diferenets
 módulos de OpenOffice.
 
-(Poner captura del Procesador de Textos)
-(Poner captura de la Hoja de Cálculo)
-(Poner captura del equivalente al PowerPoint)
-(Poner captura de la parte de acceso a Datos)
-(Poner otras captura)
+%(Poner captura del Procesador de Textos)
+%(Poner captura de la Hoja de Cálculo)
+%(Poner captura del equivalente al PowerPoint)
+%(Poner captura de la parte de acceso a Datos)
+%(Poner otras capturas)
 
 
 \subsection{Gráficos}
 
-\subsubsection*{Gimp}
+%\subsubsection*{Gimp}
 
-\subsubsection*{eog}
+%\subsubsection*{eog}
 
-\subsubsection*{gqview}
+%\subsubsection*{gqview}
 
 \subsubsection*{ghostview}
 
@@ -201,17 +274,17 @@ Una vez que tengas instalado Ghostscript sólo tienes que lanzarlo y en
 {\tt  abrir  documento}  poner  la  ruta  donde  tengas  el  documento
 PostScript o PDF que quieras visualizar.
 
-\subsection{Desarrollo}
+%\subsection{Desarrollo}
 
-\subsubsection*{Glade/Kdevelop}
+%\subsubsection*{Glade/Kdevelop}
 
-\subsubsection*{Cervicia/gcvs}
+%\subsubsection*{Cervicia/gcvs}
 
-\subsubsection*{Quanta/Bluefish}
+%\subsubsection*{Quanta/Bluefish}
 
 \subsection{Editores}
 
-\subsubsection*{AbiWord}
+%\subsubsection*{AbiWord}
 
 \subsubsection*{Kwrite}
 
@@ -705,9 +778,9 @@ la medida de tus necesidades.
 %\subsubsection*{gmemusage}
 %\subsubsection*{gr_monitor}
 
-\subsection{Aplicaciones en general}
-\subsubsection*{Creación de CD's}
-\paragraph*{GCombust}
+%\subsection{Aplicaciones en general}
+%\subsubsection*{Creación de CD's}
+%\paragraph*{GCombust}
 %\paragraph*{XCDRoad?}
 %\paragraph*{KreateCD}
 %\paragraph*{Kover}
@@ -737,99 +810,25 @@ entorno.
 %\subsubsection*{emacs}
 %\subsubsection*{vim}
 
-\subsection{Gráficos}
-\subsubsection*{ImageMagick}
-\subsubsection*{Otros Filtros}
+%\subsection{Gráficos}
+%\subsubsection*{ImageMagick}
+%\subsubsection*{Otros Filtros}
 
 %\subsection{Internet}
 %\subsubsection*{iptraf}
 %\subsubsection*{ntop}
 
-\subsection{Multimedia}
-\subsubsection*{mpg321} 
-
-% <MojoPiKon> Me la pido :-)
-
-mpg321 es  reproductor de  ficheros con  formato mp3.  Se trata  de un
-programa de línea de comandos no  interactivo, esto es, uno ejecuta el
-programa con una serie de argumentos, y una vez el programa comienza a
-ejecutarse, no existe interacción entre el usuario y el programa, sino
-que se limita a realizar las operaciones que le hemos proporcionado en
-la línea de comandos.
-
-
-La forma más asequible para reproducir  mp3 con mpg321 es el siguiente
-comando, suponiendo que nos encontremos en un directorio lleno de mp3.
-
-
-\begin{verbatim}
-mpg321 *.mp3
-\end{verbatim}
-
-Para aquellos que no les basta esto  (a mí si), hay una amplia gama de
-parámetros que pueden pasarse a mpg321:
-
-\begin{verbatim}
--o tipo_de_dispositivo, donde tipo de dispositivo puede ser oss, alsa, esd, sun, o arts.
-\end{verbatim}
-
-Esto, que en principio no tiene  interés alguno para la mayor parte de
-la gente (pues mpg321 funcionará (en  la mayor parte de los casos) sin
-especificar  este parámetro,  puede  resultar interesante  en caso  de
-que,por ejemplo, queramos reproducir dos o más mp3 simultaneamente.
-
-Si tenemos artsd instalado, podemos hacer esto arrancando mpg321 de la
-forma:
-
-\begin{verbatim}
-mpg321 -o arts fichero.mp3 &
-\end{verbatim}
-
-tras lo cual  podemos repetir la operación tantas  veces como queramos
-en la misma o en diferentes consolas.
-
-Este parámetro (-o) funciona conjuntamente con el siguiente:
-
-\begin{verbatim}
--a nombre_de_dispositivo, donde nombre_de_dispositivo es algo así como /dev/dsp, /dev/sound/dsp1, o aquel que utilice el dispositivo de sonido que queramos utilizar para oir nuestros mp3 :-)
-\end{verbatim}
-
-Utilización de listas de reproducción:
-
-Podemos cargar una ``playlist'' de un  fichero txt con las rutas a los
-ficheros mp3 que queramos que la compongan. Esto se hace de la forma:
-
-\begin{verbatim}
-mpg321 -@ fichero.txt
-\end{verbatim}
-
-Reproducción aleatoria de ficheros:
-
-Para esto tenemos dos parámetros: -z y -Z
-
-\begin{verbatim} -Z reproduce todos los ficheros especificados de forma aleatoria hasta que paremos mpg321 \end{verbatim}
-
-\begin{verbatim} -z reproduce todos los ficheros especificados de forma aleatoria una sola vez. \end{verbatim}
-
-Para aquellos que crean que una aplicación no interactiva de reproducción de
-mp3 puede ser totalmente inutil, existen alternativas en modo texto, como
-mp3blaster (también reproduce ficheros ogg-vorbis, el formato libre alternativo
-al mp3, que por el contrario está patentado y es propietario de Franhouffer).
-
-Para el entorno x-window, tenemos ``xmms'', que es un perfecto clon de winamp,
-el conocido reproductor MP3 para ese sistema operativo que todos conocen.
-
-\subsubsection*{aumix}
-\subsubsection*{zgv}
-\subsubsection*{aatv}
+%\subsubsection*{aumix}
+%\subsubsection*{zgv}
+%\subsubsection*{aatv}
 
 %\subsection{Ofimática}
 %\subsubsection*{bc}
 %\subsubsection*{}
 
-\subsection{Sistema}
-\subsubsection*{top}
-\subsubsection*{crontab}
-\subsubsection*{at}
-\subsubsection*{uptime}
+%\subsection{Sistema}
+%\subsubsection*{top}
+%\subsubsection*{crontab}
+%\subsubsection*{at}
+%\subsubsection*{uptime}
 
