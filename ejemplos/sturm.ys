@@ -11,7 +11,8 @@ Sturm (P, x) := [
         L := Append (L, - Mod ( L[i-2] , L[i-1] ) );
 
     m := 0;
-    While ( m < Length (L) And Not IsZero (L[m+1]) ) m++;
+    While ( m < Length (L) And 
+	        Not IsZero (L[m+1]) ) m++;
     
     S := List ();
     For (i := 1, i <= m, i++)

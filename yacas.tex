@@ -7,9 +7,7 @@ puesto que  funciona de  la misma  forma que harías  tú mismo  a mano,
 operando con expresiones matemáticas sin calcular el valor numérico de
 cada expresión. 
 
-En  la  web  del proyecto  Yacas  ({\tt  http://yacas.sourceforge.net}
-encontrarás el  código fuente  del programa  y toda  su documentación:
-desde  un tutorial  básico hasta  una guía  de programación  en Yacas.
+
 
 \section{¿Qué es Yacas?}
 
@@ -36,20 +34,29 @@ sistemas lineales), derivación, series  de Taylor, resolución numérica
 Tiene  también  soporte  básico   para  polinomios  en  una  variable,
 integración de funciones y cálculo tensorial.
 
+En  la  web  del proyecto  Yacas  ({\tt  http://yacas.sourceforge.net}
+encontrarás el  código fuente  del programa  y toda  su documentación:
+desde  un tutorial  básico hasta  una guía  de programación  en Yacas.
+Parte  del  texto de  este  tema  son  traducciones  de trozos  de  la
+documentación oficial de Yacas que se distribuye junto con el programa
+bajo licencia GPL.
+
+
+
 \section{Empezando con Yacas}
 
 Yacas  tiene  un  intérprete  de comandos  que  nos  permite  ejecutar
 funciones para probar  lo que queremos programar,  para luego escribir
-un script.  Para entrar al intérprete  de Yacas basta con  ejecutar el
-comando  {\tt  yacas}  en  una  consola o  terminal.  Para  salir  del
-intérprete puedes  pulsar {\tt Control-C}  o bien ejecutar  la función
-\verb+quit();+. Pulstar  {\tt Control-C} también es  útil para detener
-inmediatamente la  ejecución del intérprete  de Yacas (o de  un script
-escrito para Yacas).
+un script  (un fichero de  comandos a modo  de guión). Para  entrar al
+intérprete de Yacas  basta con ejecutar el comando {\tt  yacas} en una
+consola  o terminal.  Para  salir del  intérprete  puedes pulsar  {\tt
+Control-C}  o bien  ejecutar la  función \verb+Exit();+.  Pulstar {\tt
+Control-C} también  es útil  para detener inmediatamente  la ejecución
+del intérprete de Yacas (o de un script escrito para Yacas).
 
 \begin{verbatim}
 $ yacas
-[editvi.ys] [unix.ys] 
+[editvi.ys] [gnuplot.ys] [unix.ys] 
 True;
 Numeric mode: "Gmp"
 To exit Yacas, enter  Exit(); or quit or Ctrl-c. Type ?? for help.
@@ -65,8 +72,8 @@ proteusworksheet}. Esta utilidad te proporcioa un entorno más cómodo e
 integrado  en el  que  puedes  probar código  en  el  intérprete e  ir
 escribiendo un script en el editor que incluye.
 
-\begin{figure}[htbp]
-\centering\includegraphics[width=0.7\textwidth]{imagenes/proteus.eps}
+\begin{figure}[hbt]
+\centering\includegraphics[width=0.65\textwidth]{imagenes/proteus.eps}
 \caption{Proteus, interfaz gráfica para Yacas}
 \end{figure}
 
@@ -78,15 +85,14 @@ de programar en  Yacas veremos que el punto y  coma hay que escribirlo
 siempre,  de modo  que es  mejor acostumbrarse  a ponerlo  para evitar
 posteriores dolores de cabeza.
 
-Para  ir abriendo  el apetito  sigue la  sugerencia de  Yacas: ejecuta
-la  función \verb+Ejample();+  varias  veces. Por  supuesto no  tienes
-que  teclear el  comando  todas las  veces, ya  que  Yacas cuenta  con
-edición  de línea  al  estilo  de GNU  Emacs.  Esto  quiere decir  que
-todos  los  comandos  que  ejecutes  en Yacas  se  almacenarán  en  un
-historial, y para repetirlos puedes  recuperarlos pulsando la tecla de
-cursor  hacia arriba.  Este  historial queda  guardado  en el  fichero
-\verb+.yacas_history+ en tu directorio  personal. Veamos la salida que
-produce Yacas tras varias ejecuciones de \verb+Ejample();+
+Para ir abriendo  el apetito sigue la sugerencia de  Yacas: ejecuta la
+función  \verb+Example();+ varias  veces. Por  supuesto no  tienes que
+teclear el comando todas las veces, ya que Yacas cuenta con edición de
+línea. Esto  incluye que todos los  comandos que ejecutes en  Yacas se
+almacenarán  en un  historial, y  para repetirlos  puedes recuperarlos
+pulsando  la  tecla  de  cursor hacia  arriba.  Este  historial  queda
+guardado en  el fichero \verb+~/.yacas_history+. Veamos  la salida que
+produce Yacas tras varias ejecuciones de \verb+Example();+.
 
 \begin{verbatim}
 In> Example();
@@ -229,7 +235,9 @@ dígitos de precisión, pero siempre que  vayas a trabajar con números o
 precisiones enormes recuerda que el tiempo necesario para los cálculos
 aumentará rápidamente.
 
-\section{Variables}
+
+
+\section{Variables y funciones}
 
 En Yacas se entiende por variable un objeto al que se puede asignar un
 valor.  Las variables  pueden  llamarse como  quieras  siempre que  el
@@ -262,8 +270,6 @@ Out> True;
 In> m
 Out> m;
 \end{verbatim}
-
-\section{Funciones}
 
 Las funciones  son como las  variables, con  el añadido de  que pueden
 depender de una o más  variables. Además con Yacas podemos sobrecargar
@@ -321,6 +327,8 @@ In> g(2)
 Out> 80;
 \end{verbatim}
 
+
+
 \section{Listas}
 
 Uno de  los elementos más  importantes del  lenguaje de Yacas  son las
@@ -366,6 +374,162 @@ Out> {{"educado",False},{"edad",7.34},{"apellido","Cartman"},
 {"nombre","Eric"}};
 \end{verbatim}
 
+
+
+\section{Álgebra Lineal}
+
+Los  vectores  de  dimensión  fija  se  representan  mediante  listas.
+La  lista  \verb+{1,2,3}+ es  el  vector  $(1,2,3)$. Las  matrices  se
+representan  como vectores  de  vectores. Dado  que  los vectores  son
+realmente listas, sus elementos pueden  asignarse igual que los de las
+listas:
+
+\begin{verbatim}
+In> l := ZeroVector (3);
+Out> {0,0,0};
+In> l;
+Out> {0,0,0};
+In> l[2] := 2;
+Out> True;
+In> l;
+Out> {0,2,0};
+\end{verbatim}
+
+Yacas puede multiplicar vectores, matrices y números del modo usual en
+álgebra lineal:
+
+\begin{verbatim}
+In> v := {1, 0, 0, 0}
+Out> {1,0,0,0};
+In> E4 := { {0, u1, 0,  0}, \
+In>         {d0, 0, u2, 0}, \
+In>         {0, d1, 0,  0}, \
+In>         {0, 0,  d2, 0} }
+Out> {{0,u1,0,0},{d0,0,u2,0},{0,d1,0,0},{0,0,d2,0}};
+In> PrettyForm (%)
+
+/                             \
+| ( 0 )  ( u1 ) ( 0 )  ( 0 )  |
+|                             |
+| ( d0 ) ( 0 )  ( u2 ) ( 0 )  |
+|                             |
+| ( 0 )  ( d1 ) ( 0 )  ( 0 )  |
+|                             |
+| ( 0 )  ( 0 )  ( d2 ) ( 0 )  |
+\                             /
+
+Out> True;
+In> CharacteristicEquation (E4, x)
+Out> x^4-x*u2*d1*x-u1*d0*x^2;
+In> Expand (%, x)
+Out> x^4-(u2*d1+u1*d0)*x^2;
+In> PrettyForm (%)
+
+ 4                            2
+x  - ( u2 * d1 + u1 * d0 ) * x 
+
+Out> True;
+In> v  +  E4 * v  +  E4 * E4 * v  +  E4 * E4 * E4 * v
+Out> {u1*d0+1,d0+(d0*u1+u2*d1)*d0,d1*d0,d2*d1*d0};
+In> PrettyForm (%)
+
+/                                 \
+| u1 * d0 + 1                     |
+|                                 |
+| d0 + ( d0 * u1 + u2 * d1 ) * d0 |
+|                                 |
+| d1 * d0                         |
+|                                 |
+| d2 * d1 * d0                    |
+\                                 /
+
+Out> True;
+\end{verbatim}
+
+La librería estándar de Yacas incluye también cálculo del determinante
+y  la inversa  de una  matriz,  autovectores y  autovalores (en  casos
+simples) y resolución de sistemas  de ecuaciones lineales del tipo $Ax
+= b$ donde $A$ es una matriz y $x$ y $b$ son vectores.
+
+
+
+\section{Control de flujo}
+
+El lenguaje de  Yacas incluye algunas construcciones  y funciones para
+el control  de flujo. Para ello  necesitas saber también que  Yacas te
+permite agrupar bloques  de instrucciones de forma  que aparezcan como
+una sola instrucción. Para ello simplemente encierra las instrucciones
+del  bloque entre  corchetes  (\verb+[+ y  \verb+]+),  o bien  utiliza
+la  función \verb+Prog()+  pasándole las  instrucciones separadas  por
+\verb+;+.
+
+Para  los  bucles  disponemos  de  las  funciones  \verb+ForEach()+  y
+\verb+While()+. La  función \verb+ForEach (x, list) body+  ejecuta el
+bloque de  instrucciones \verb+body+  para cada  elemento de  la lista
+\verb+list+ asignando el valor de cada elemento a la variable \verb+x+
+en cada interación. La función \verb+While (predicate) body+ repite el
+bloque \verb+body+  hasta que  la condición  \verb+predicate+ devuelva
+\verb+False+.
+
+Para   los  condicionales   está  la   función  
+\verb+If (predicate, body1, body2)+,
+en la  que  se  ejecuta  el bloque  \verb+body1+  si
+\verb+predicate+ devuelve \verb+True+ o ejecuta el bloque \verb+body1+
+si \verb+predicate+  devuelve \verb+False+, y en  ambos casos devuelve
+el  valor devuelto  por  el  bloque ejecutado.  El  segundo bloque  es
+opcional.  Si  llamas  a  \verb+If (predicate,  body1)+  se  ejecutará
+el  bloque \verb+body1+  si  \verb+predicate+  devuelve \verb+True+  y
+devolverá  el valor  que devuelva  \verb+body1+, o  bien se  devolverá
+\verb+False+ si así lo hace \verb+predicate+.
+
+Como ejemplo de control de flujo construimos una lista con los números
+enteros pares  de $2$ a  $20$ y calculamos el  producto de los  que no
+sean divisibles por $3$. Luego definimos  el factorial de un número de
+forma recursiva.
+
+\begin{verbatim}
+In> L := {};
+Out> {};
+In> i := 2;
+Out> 2;
+In> While (i <= 20) [ \
+In>   L := Append (L, i); \
+In>   i := i + 2; \
+In> ];
+Out> True;
+In> L;
+Out> {2,4,6,8,10,12,14,16,18,20};
+In> answer := 1;
+Out> 1;
+In> ForEach (i, L) [ \
+In>   If ( Mod (i, 3) != 0, \
+In>     answer := answer * i \
+In>   ); \
+In> ];
+Out> True;
+In> answer;
+Out> 2867200;
+In> Factorial (x) := [ \
+In>   If ( IsInteger (x) And x >= 0, \
+In>     If (x = 0, 1, \
+In>       x * Eval (Factorial (x-1)) ), \
+In>   False ); \
+In> ];
+In> Factorial (5)
+Out> 120;
+In> Factorial (25)
+Out> 15511210043330985984000000;
+\end{verbatim}
+
+Una  barra  invertida  \verb+\+  al  final  de  una  línea  indica  al
+intérprete de Yacas que la línea  no está terminada, sino que continúa
+después  del salto  de carro.  En  este ejemplo  hemos utilizado  esto
+descaradamente. Esto se puede utilizar en el intérprete para hacer que
+nuestros comandos  sean más cómodos de  leer. Esto no es  necesario al
+escribir un script.
+
+
+
 \section{Gráficas con GNUplot}
 
 Yacas  incorpora la  posibilidad  de  representar gráficas  utilizando
@@ -397,10 +561,12 @@ GnuPlot: created file gnuplot.tmp/gnudata.in2
 Out> True;
 \end{verbatim}
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering\includegraphics[width=0.65\textwidth]{imagenes/yacas_gnuplot.eps}
 \caption{Representación gráfica con GNUplot desde Yacas}
 \end{figure}
+
+
 
 \section{Programando con Yacas}
 
@@ -429,6 +595,23 @@ de cinco  puntos tomados  de la función  $f(x) =  \frac{1}{1+x^2}$. En
 este  ejemplo el  interpolante de  Lagrange  no es  el adecuado,  pero
 nuestra intención  no es interpolar  $f(x)$
 \end{ejemplo}
+
+Otra   forma  de   ejecutar  un   script  es   desde  el   intérprete,
+mediante  las  funciones  \verb+Load()+  y  \verb+Use()+.  La  función
+\verb+Load("script.ys")+  lee  el  fichero \verb+script.ys+  y  evalúa
+todas  las   expresiones  que   encuentre  en  él.   Siempre  devuelve
+\verb+True+.  \verb+Use()+  hace lo  mismo  que  \verb+Load()+ con  la
+salvedad de que sólo lee el fichero si no ha sido leído antes por otra
+llamada \verb+Load()+ o \verb+Use()+.
+
+Un uso  común de \verb+Use()+ es  cargar un fichero con  funciones con
+las que queremos trabajar desde el  intérprete, de modo que no tenemos
+que teclear  las funciones  cada vez  ni tampoco  hay que  ejecutar el
+script. La función \verb+Load()+ resulta  útil para ejecutar un script
+desde el  intérprete cuando queremos hacerlo  varias veces modificando
+el script sin salir del intérprete.
+
+
 
 \section{Un ejemplo real}
 

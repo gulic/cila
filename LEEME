@@ -39,7 +39,7 @@
 	- tareas			Fichero donde apuntamos lo que vamos haciendo
 	- Makefile			Instrucciones para GNU Make
 	- main.tex			Fichero principal del códgido LaTeX
-	- tila.sty			Paquete LaTeX (basado en fncychap.sty)
+	- cila.sty			Paquete LaTeX (basado en fncychap.sty)
 	- imagenes			Directorio donde pondremos todos los gráficos
 	- ejemplos			Directorio donde pondremos los ejemplos de código
 	- portada.tex		Portadas y notas de copyright
@@ -86,7 +86,7 @@
 	- colortbl			Permite colorear columnas y filas de tablas (PS, PDF).
 						Úsenlo con precaución.
 	- verbatim			proporciona potentes usos de entornos verbatim
-	- tila				mejora el aspecto de las páginas que abren partes
+	- cila				mejora el aspecto de las páginas que abren partes
 						o capítulos (basándose en el paquete FancChapter),
 						demás de definir algunas siglas, longitudes, y 
 						constantes. Implementa el entorno para ejemplos y 
@@ -119,12 +119,6 @@
 	
 	\PILA
 		Introduce el texto 'Party de Instalación de Linux para Alumnos'
-	
-	\TIL
-		Introduce el texto 'Taller de Iniciación a Linux'
-	
-	\TILA
-		Introduce el texto 'Taller de Iniciación a Linux para Alumnos'
 	
 	\LaTeX
 		Introduce el logotipo de LaTeX
@@ -161,7 +155,7 @@
 	\begin{ejemplo}{Nombre del fichero}{Descripción corta del ejemplo}
 		Comienza un entorno destinado a mostrar ejemplos, sólo para
 		código fuente de programas. Para usarlo léanse los comentarios
-		del fichero tila.sty (líneas 77 a 104)
+		del fichero cila.sty (líneas 77 a 104)
 	
 	\begin{itemize}
 		Comienza una lista desordenada (sin números). Los elementos 
