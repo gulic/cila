@@ -37,10 +37,11 @@ Prioritario
  - Manipulación  de gráficos.  Habría que  dividirlo en  varios temas,
    tratando un programa  por tema, de forma que  constituyan un módulo
    independiente. Los programas más interesantes que consideramos son:
-   The  GIMP, DIA,  Qcad y  alguno de  dibujo vectorial.  Pablo se  ha
-   ofrecido  para escribir  sobre Blender,  Miguel Ángel  (aka miguev)
-   está dispuesto a  escribir sobre DIA y The GIMP.  Falta alguien que
-   escriba sobre QCad y estaría bien hacer algo sobre sodipodi.
+   The  GIMP, DIA,  Qcad  y  alguno de  dibujo  vectorial. Pablo  Ruíz
+   Múzquiz se  ha ofrecido para  escribir sobre Blender,  Miguel Ángel
+   (aka miguev) está dispuesto a escribir  sobre DIA y The GIMP. Falta
+   alguien  que escriba  sobre QCad  y estaría  bien hacer  algo sobre
+   sodipodi. Manolo podría añadir un tema sobre sketch.
 
  - Tema de GNU  Emacs. Abría que dejarlo  como el de VI,  salvo que en
    lugar de enrollarse con las expresiones regulares se pueden mostrar
@@ -60,7 +61,7 @@ Sugerido
 ========
 
  - Probar a cambiar los índices de materias, figuras, etc al final.
-   (sugerencia de Pablo, elfo)
+   (sugerencia de Pablo Ruíz Múzquiz)
 
  - Compilación  del  kernel.   No  sé  si  meterlo  en   la  parte  de
    administación  o  en  la  de   instalación.  Todos sabemos  que  el
