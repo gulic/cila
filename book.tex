@@ -82,18 +82,18 @@
 \frontmatter
 \include{portada}
 
+% Modificación de algunas variables para adaptarlas a nuestro uso particular
+\renewcommand{\partname}{MÓDULO}
+\renewcommand{\chaptername}{TEMA}
+\renewcommand{\listtablename}{Índice de tablas}
+\renewcommand{\tablename}{Tabla}
+
 % Presentación y Contribuciones
 \pagestyle{plain}
 \incluye{presentacion}
 \incluye{contrib}
 \newpage
 \pagestyle{fancy}
-
-% Modificación de algunas variables para adaptarlas a nuestro uso particular
-\renewcommand{\partname}{MÓDULO}
-\renewcommand{\chaptername}{TEMA}
-\renewcommand{\listtablename}{Índice de tablas}
-\renewcommand{\tablename}{Tabla}
 
 % Índices general, de tablas, de figuras y de ejemplos
 \tableofcontents\newpage\thispagestyle{empty}
