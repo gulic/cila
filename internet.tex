@@ -382,38 +382,38 @@ TELNET/SSH para sistemas Microsoft® Windows®.
       mensaje, etc. Vemos un ejemplo de  uso para hacernos una idea de
       las funciones básicas. 
 
-       El  que se haya fijado  en las dos últimas  líneas habrá
-      visto que aparece lo siguiente: 
-
-\begin{verbatim}
----Mutt: (ningún buzón) [Msgs:0]---(threads/date)-----------------------(all)---
-/var/spool/mail/miguev: No existe el fichero o el directorio (errno = 2)
-\end{verbatim}
-
-        Esto significa que mutt está buscando el correo del usuario en
-      {\tt /var/spool/mail/miguev} (en el caso del usuario miguev). No
-      se asusten.  Lo que pasa  es que el  correo está en  esa carpeta
-      pero no en el terminal donde están sentados, sino en el servidor
-      de correo.  Para poder usar  el correo  con Mutt hay  que entrar
-      primero en el servidor, lo  que podemos hacer rápidamente con lo
-      que ya sabemos de SSH. Entramos en el servidor y ejecutamos mutt
-      allí:
-
-\begin{verbatim}
-      $ ssh euler.fmat.ull.es
-      miguev@10.0.1.2's password: 
-\end{verbatim}
-
-       Una vez dentro del servidor podemos ya ejecutar mutt y utilizar
-      el correo directamente desde el servidor. Esto que parece inútil
-      tiene  su  utilidad.  Imagina  que  estás  en  un  ordenador  en
-      cualquier lugar del mundo (con acceso a internet) y quieres leer
-      tu correo en la facultad, pero no quieres bajártelo. Utilizas un
-      programa  cliente de  SSH para  entrar  en el  servidor y  desde
-      dentro usas el correo como  si lo tuvieras delante, aunque estés
-      dentro del servidor.  El mayor problema que esto  presenta es la
-      lentitud del protocolo SSH cuando la  conexión es a través de un
-      módem de línea telefónica.
+%        El  que se haya fijado  en las dos últimas  líneas habrá
+%       visto que aparece lo siguiente: 
+% 
+% \begin{verbatim}
+% ---Mutt: (ningún buzón) [Msgs:0]---(threads/date)-----------------------(all)---
+% /var/spool/mail/miguev: No existe el fichero o el directorio (errno = 2)
+% \end{verbatim}
+% 
+%         Esto significa que mutt está buscando el correo del usuario en
+%       {\tt /var/spool/mail/miguev} (en el caso del usuario miguev). No
+%       se asusten.  Lo que pasa  es que el  correo está en  esa carpeta
+%       pero no en el terminal donde están sentados, sino en el servidor
+%       de correo.  Para poder usar  el correo  con Mutt hay  que entrar
+%       primero en el servidor, lo  que podemos hacer rápidamente con lo
+%       que ya sabemos de SSH. Entramos en el servidor y ejecutamos mutt
+%       allí:
+% 
+% \begin{verbatim}
+%       $ ssh euler.fmat.ull.es
+%       miguev@10.0.1.2's password: 
+% \end{verbatim}
+% 
+%        Una vez dentro del servidor podemos ya ejecutar mutt y utilizar
+%       el correo directamente desde el servidor. Esto que parece inútil
+%       tiene  su  utilidad.  Imagina  que  estás  en  un  ordenador  en
+%       cualquier lugar del mundo (con acceso a internet) y quieres leer
+%       tu correo en la facultad, pero no quieres bajártelo. Utilizas un
+%       programa  cliente de  SSH para  entrar  en el  servidor y  desde
+%       dentro usas el correo como  si lo tuvieras delante, aunque estés
+%       dentro del servidor.  El mayor problema que esto  presenta es la
+%       lentitud del protocolo SSH cuando la  conexión es a través de un
+%       módem de línea telefónica.
 
        Ejecutamos  el comando  {\tt mutt}  y vemos  en el  terminal un
       programa casi  todas las líneas  vacías, salvo la primera  y las
@@ -421,31 +421,22 @@ TELNET/SSH para sistemas Microsoft® Windows®.
       primera vez  no veamos  nada interestante,  pero aquí  tienen un
       ejemplo de una lista de mensajes vista desde mutt.
 
-\begin{verbatim}
-q:Salir  d:Sup.  u:Recuperar  s:Guardar  m:Nuevo  r:Responder  g:Grupo  ?:Ayuda
-  43     Oct 27 Teresa Gonzalez (   0)  *>Re: [l-gulic] CILA LLENO
-  44     Oct 27 Lucas Gonzalez  (   0)   >cvs
-  45     Oct 27 Miguel Ángel Vi (   0) Bienvenido al calendario de la Universida
-  46     Oct 28 Teresa Gonzalez (   0) Re: [l-gulic] Cambios en el CVS de CILA
-  47     Oct 28 Pedro Gonzalez  (   0)  *>
-  48     Oct 28 Carlos de la Cr (   0) La pu~etera introduccion :-)
-  49     Oct 28 carlos de       (   0) maldito texto sobre java
-  50     Oct 28 frodo@fmat.ull. (   0) MUY IMPORTANTE!!
-  51     Oct 28 frodo@fmat.ull. (   0) ahora te llega?
-  52     Oct 28 frodo@fmat.ull. (   0) ¡como no te llegue! ..grrr
-  53     Oct 28 Administrador d (   0) Re: instala esto
-
-
-
-
-
-
-
-
-
-
----Mutt: /var/spool/mail/miguev [Msgs:53 425K]---(threads/date)---------(end)---
-
+ \begin{verbatim}
+ q:Salir  d:Sup.  u:Recuperar  s:Guardar  m:Nuevo  r:Responder  g:Grupo
+   43     Oct 27 Teresa Gonzalez (   0)  *>Re: [l-gulic] CILA LLENO
+   44     Oct 27 Lucas Gonzalez  (   0)   >cvs
+   45     Oct 27 Miguel Ángel Vi (   0) Bienvenido al calendario de la 
+   46     Oct 28 Teresa Gonzalez (   0) Re: [l-gulic] Cambios en el CVS
+   47     Oct 28 Pedro Gonzalez  (   0)  *>
+   48     Oct 28 Carlos de la Cr (   0) La pu~etera introduccion :-)
+   49     Oct 28 carlos de       (   0) maldito texto sobre java
+   50     Oct 28 frodo@fmat.ull. (   0) MUY IMPORTANTE!!
+   51     Oct 28 frodo@fmat.ull. (   0) ahora te llega?
+   52     Oct 28 frodo@fmat.ull. (   0) ¡como no te llegue! ..grrr
+   53     Oct 28 Administrador d (   0) Re: instala esto
+ 
+ 
+ ---Mutt: /var/spool/mail/miguev [Msgs:53 425K]---(threads/date)-------
 \end{verbatim}
 
  Vamos a enviar un  email a alguien que esté con  nosotros en el aula,
@@ -466,7 +457,7 @@ eletrónico es preocupantemente frecuente,  resulta muy molesto recibir
 un mensaje de email sin asunto.
 
 \begin{verbatim}
-Subject: Hola pringao :-P
+Subject: ¡Feliz cumpleaños!
 \end{verbatim}
 
  Una vez  que mutt ya  sabe el destinatario  del mensaje y  el asunto,
@@ -479,7 +470,7 @@ pero nos ofrece la posibilidad de hacer aún varias cosas.
 
 
 \begin{verbatim}
-y:Mandar  q:Abortar  t:To  c:CC  s:Subj  a:Adjuntar archivo  d:Descrip  ?:Ayuda
+y:Mandar  q:Abortar  t:To  c:CC  s:Subj  a:Adjuntar archivo  d:Descrip
     From: Miguel Ángel Vilela <miguev@fmat.ull.es>
       To: frodo@fmat.ull.es
       Cc:
@@ -491,17 +482,10 @@ Reply-To: Miguel Ángel Vilela <miguev@fmat.ull.es>
      PGP: En claro
 
 -- Archivos adjuntos
-- I     1 /tmp/mutt-euler-19795-2          [text/plain, 8bit, iso-8859-1, 0,1K] 
-
-
-
-
-
-
+- I     1 /tmp/mutt-euler-19795-2          [text/plain, 8bit, iso-8859-1
 
 
 -- Mutt: Crear mensaje
-
 \end{verbatim}
 
  Como podemos apreciar en el  ejemplo, tenemos varias opciones con sus
@@ -516,14 +500,16 @@ acerca del envío del mensaje. Debería aparecer
 Mensaje enviado.
 \end{verbatim}
 
- El resto del  manejo básico de {\tt mutt} es  bastante intuitivo y no
-presenta dificultades.  Si en  cualquier momento  deseamos información
-más detallada hacerca de las opciones disponibles, pulsamos {\tt ?}.
+El resto  del manejo básico de  {\tt mutt} es bastante  intuitivo y no
+presenta  dificultades,  sólo hay  que  acostumbrarse  a trabajar  con
+pulsaciones de  teclas en lugar  de clicks  de ratón. Si  en cualquier
+momento  deseamos información  más detallada  hacerca de  las opciones
+disponibles, pulsamos {\tt ?}.
 
 \begin{verbatim}
 i:Salir  -:PágAnt  <Space>:PróxPág  ?:Ayuda 
-^B          M |urlview\n           call urlview to extract URLs out of a message
-^D          delete-thread          suprimir todos los mensajes en este hilo
+^B          M |urlview\n           call urlview to extract URLs out of 
+^D          delete-thread          suprimir todos los mensajes en este 
 ^E          edit-type              editar el tipo de archivo adjunto
 ^F          forget-passphrase      borrar contraseña PGP de la memoria
 <Tab>       next-new               saltar al próximo mensaje nuevo
@@ -532,18 +518,17 @@ i:Salir  -:PágAnt  <Space>:PróxPág  ?:Ayuda
 ^N          next-thread            saltar al próximo hilo
 ^P          previous-thread        saltar al hilo anterior
 ^R          read-thread            marcar el hilo actual como leído
-^T          untag-pattern          quitar marca de los mensajes que coincidan   +                                  con un patrón
-^U          undelete-thread        restaurar todos los mensajes del hilo
+^T          untag-pattern          quitar marca de los mensajes que coi
+^U          undelete-thread        restaurar todos los mensajes del hil
 <Esc><Tab>  previous-new           saltar al mensaje nuevo anterior
-<Esc>C      decode-copy            crear copia decodificada (text/plain)
+<Esc>C      decode-copy            crear copia decodificada (text/plain
 <Esc>V      collapse-all           colapsar/expander todos los hilos
 <Esc>b      M /~b                  search in message bodies
-<Esc>c      change-folder-readonly abrir otro buzón en modo de sólo lectura
-<Esc>d      delete-subthread       suprimir todos los mensajes en este subhilo
-<Esc>e      resend-message         usar el mensaje actual como base para uno
+<Esc>c      change-folder-readonly abrir otro buzón en modo de sólo lec
+<Esc>d      delete-subthread       suprimir todos los mensajes en este 
+<Esc>e      resend-message         usar el mensaje actual como base par
 +                                  nuevo
-Ayuda para index                                                       -- (15%) 
-
+Ayuda para index                                               -- (15%) 
 \end{verbatim}
 
 \subsection{Fetchmail}
@@ -561,7 +546,7 @@ Para   la  configuración   del   fetchmail  se   utiliza  el   fichero
 
 \begin{verbatim}
 poll pop.gulic.org proto POP3 
-        user "faraox@gulic.org" is there with password "XXXXX" is faraox here 
+   user "faraox@gulic.org" is there with password "coche" is faraox here 
 \end{verbatim}
 
 La primera línea llama, {\tt  poll}, al servidor {\tt pop.gulic.org} e
@@ -582,34 +567,31 @@ fichero  de  configuración y  lo  movemos  a /etc/fetchmailrc.  En  la
 cabezera usamos  la opción {\tt  set daemon}  seguida de el  número en
 segundo de el intervalo de tiempo con el que queremos que se ejecute.
 
-\begin{table}[htbp]
-\centering
-\begin{tabular}{|c|p{0.88\textwidth}|}
-\hline
-{\tt dns} & Chequea las direcciones dns(por defecto)\\
-{\tt no dns} & No chequea direcciones dns(recomendable, aumenta la velocidad)\\
-{\tt timeout} & Especificamos el tiempo de inactividad del servidor, en segundos\\
-{\tt checkalias} & Hace una comparación de IP\\
-{\tt no checkalias} & No hace comparación de IP(por defecto)\\
-\hline
-\end{tabular}
-\caption{Algunas opciones para trabajar con el servidor}
-\end{table}
+\begin{description}
 
-\begin{table}[htbp]
-\centering
-\begin{tabular}{|c|p{0.88\textwidth}|}
-\hline
-{\tt folder} & Especifica la carpeta remota donde se consultará el correo \\
-{\tt mda} & Especifica nuestro programa de filtrado de correo (mailfilter,etc)\\
-{\tt keep} & No borra los mensajes del servidor\\
-{\tt preconnect} & Comando para ser ejecutado antes de la conección\\
-{\tt postconnect} & Comando para ser ejecutado depues de la conección\\
-{\tt limit} & Especifica el tamaño máximo de los mensajes\\
-\hline
-\end{tabular}
-\caption{Algunas opciones para el usuario}
-\end{table}
+\item[dns] Chequea las direcciones dns(por defecto)
+
+\item[no dns] No chequea direcciones dns(recomendable, aumenta la velocidad)
+
+\item[timeout] Especificamos el tiempo de inactividad del servidor, en segundos
+
+\item[checkalias] Hace una comparación de IP
+
+\item[no checkalias] No hace comparación de IP(por defecto)
+
+\item[folder] Especifica la carpeta remota donde se consultará el correo 
+
+\item[mda] Especifica nuestro programa de filtrado de correo (mailfilter,etc)
+
+\item[keep] No borra los mensajes del servidor
+
+\item [preconnect] Comando para ser ejecutado antes de la conección
+
+\item[postconnect] Comando para ser ejecutado depues de la conección
+
+\item[limit] Especifica el tamaño máximo de los mensajes
+
+\end{description}
 
 Otra  utilidad  interesante es  {\tt  fetchmailconf}.  Es un  programa
 gráfico  que  nos  permite   configurar  de  forma  intuitiva  nuestro
