@@ -588,7 +588,7 @@ Cuando finalmente XSane  funcione para tí, verás un par  de ventanas y
 tal vez algunas más. Las más importantes son la ventana principal y la
 de vista previa, que puedes ver en la figura \ref{xsane_main}.
 
-\begin{figura}{xsane_main}{0.95}
+\begin{figura}{xsane_main}{0.99}
 \caption{Ventanas principales de {\sf XSane}}
 \label{xsane_main}
 \end{figura}
@@ -710,7 +710,7 @@ previa}. Al cabo de un tiempo verás  en la ventana una vista previa de
 lo que hayas  puesto en el scanner. Si tu  scanner es antiguo, utiliza
 el puerto paralelo o está en otra máquina, esto puede tardar un poco.
 
-\begin{figura}{xsane_preview}{0.9}
+\begin{figura}{xsane_preview}{0.99}
 \caption{Vista previa de una revista en un scanner plano}
 \end{figura}
 
@@ -728,7 +728,7 @@ Una vez que  tengas seleccionada la región que  quieras escanear pulsa
 el  botón  {\sf Escanear}  y  espera  pacientemente  a que  la  imagen
 escaneada aparezca en \gimp.
 
-\begin{figura}{xsane_final}{0.9}
+\begin{figura}{xsane_final}{0.99}
 \caption{La imagen escaneada adquirida desde \gimp}
 \end{figura}
 
@@ -880,56 +880,172 @@ fotografía llena  de coches. La figura  \ref{gimp_scissors} muestra un
 ejemplo de selección realizada con tijeras inteligentes.
 
 \begin{figura}{gimp_scissors}{0.6}
-\caption{Selección realizadas con tijeras inteligentes}
+\caption{Selección realizada con tijeras inteligentes}
 \end{figura}
 
 \subsubsection{Seleccionar regiones por colores (7)}
 \index{\gimp!herramientas!seleccionar regiones por colores}
 
-Sirve para seleccionar  {\bf todas} las región de  píxeles con colores
+Sirve para seleccionar {\bf todas} las regiones de píxeles con colores
 muy cercanos al color del píxel sobre el que se aplica la herramienta.
 Su manejo es idéntico al de la selección de regiones contínuas, pero a
 diferencia de ésta las selecciones resultantes {\bf no} son conexas.
 
+% \begin{figura}{gimp_porcolores}{0.6}
+% \caption{Selección por colores sobre una región negra}
+% \end{figura}
+
 \subsection{Herramientas de transformaciones geométricas}
+
+Las  primeras   seis  herramientas  son  para   hacer  selecciones  en
+la  imagen.  Una  selección  te  permite  limitar  el  efecto  de  las
+operaciones que  hagas en la imagen,  así como cortar, copiar  y pegar
+regiones. Hay  una herramienta de  selección para cada uso.  La figura
+\ref{gimp_tools_transformation} muestra los botones correspondientes a
+estas herramientas, que pasamos a describir a continuación.
+
+\begin{figura}{gimp_tools_transformation}{0.99}
+\caption{Herramientas de transformaciones geométricas}
+\end{figura}
+
 
 \subsubsection{Mover capas y selecciones (8)}
 
+Esta herramienta tiene dos modos  de funcionamiento, dependiendo de si
+existe  una selección  o no.  Si  hay una  selección esta  herramienta
+desplaza  sus límites,  pero  no  su contenido.  Si  no hay  selección
+desplaza  la capa  sobre la  que  se aplique  el desplazamiento.  Esto
+quiere decir que si una imagen tiene varias capas e intentas mover con
+esta herramienta una de ellas debes aplicar la herramienta en un píxel
+que pertenezca  a la capa  que quieres  mover, teniendo cuidado  de no
+confundirte de capa por las transparencias.
+
 \subsubsection{Aumento y disminución (lupa) (9)}
+
+El comportamiento de  esta herramienta es aumentar  el acercamiento de
+la vista  sobre la centrada en  el píxel donde se  aplica. Manteniendo
+pulsada la tecla {\tt Control} se invierte el comportamiento.
 
 \subsubsection{Recortar o redimensionar una imagen (10)}
 
+Cuando  haces  una  captura  de pantalla  o  escaneas  una  fotografía
+normalmente tienes  que quedarte sólo  con una  región de la  imagen y
+desechar el  resto. Esta herramienta  se ajusta perfectamente  a estet
+comentido.  Selecciona  con  ella  la región  que  quieres  conservar,
+puedes reajustar la selección  cuantas veces necesites arrastrando las
+esquinas de  la región.  Cuando finalmente  tengas la  región definida
+pulsa en {\sf Recortar} y obtendrás el resultado deseado.
+
+% \begin{figura}{gimp-1.2_recortar}{0.5}
+% \caption{Cuadro de díalogo para recortar imagen en \gimp 1.2}
+% \end{figura}
+
+\begin{figura}{gimp-1.3_recortar}{0.99}
+\caption{Cuadro de díalogo para recortar imagen en \gimp 1.3}
+\end{figura}
+
+
 \subsubsection{Rotación, escalado, cizalladura y perspectiva (11)}
+
+Estas  herramientas están  reunidas  en  una sola  en  \gimp 1.2,  por
+lo  que  para  elegir  la  operación que  quieras  hacer  tendrás  que
+hacer  doble click  sobre  la  herramienta y  elegir  las opciones  en
+el  cuádro  de diálogo  que  puedes  ver en  el  centro  de la  figura
+\ref{gimp_tools_transformation}.  En  \gimp  1.3  cada  una  de  estas
+herramientas tiene su propio botón en la caja de herramientas.
+
+Cuando se aplica una de estas herramientas sobre una selección pasamos
+a manejar esta  selección mediante la malla rectangular  mínima que la
+contenga.
+
+Cada  una  de  estas   herramientas  tiene  diferentes  efectos  sobre
+la  imagen  o  selección  sobre  la que  se  apliquen.  En  la  figura
+\ref{gimp_transformations} puedes  ver los  efectos que  describimos a
+continuación:
+
+\begin{figura}{gimp_transformations}{0.99}
+\caption{Rotación, escalado, cizalladura y perspectiva en \gimp 1.3}
+\end{figura}
+
+\begin{description}
+
+\item[Rotación] transforma la selección  rotándola sobre un punto, que
+inicialmente es  el centro de  la malla rectangular.  Puedes desplazar
+este punto  arrastrándolo con el  ratón para  cambiar el centro  de la
+rotación, y rotar la malla arrastrando una de sus esquinas.
+
+\item[Escalado] altera  la anchura y  altura de la  malla rectangular,
+manteniéndola centrada  sober el  punto centrar de  referencia. Puedes
+desplazar este punto  arrastrándolo con el ratón y  modificar la malla
+arrastrando una de sus esquinas o cualquier otro punto del interior de
+la malla.
+
+\item[Cizalladura] es un caso  particular de la siguiente herramienta.
+Sólo  permite  desplazar  las  esquinas   de  la  malla  horizontal  o
+verticalmente para  desplazar un lado de  la malla en una  dirección y
+sentido  y  el  lado  opuesto  en  la  misma  dirección  pero  sentido
+contrario.
+
+\item[Perspectiva] es la transformación  más flexible, pues te permite
+desplazar  cada esquina  de  la  malla a  tu  antojo  para obtener  la
+deformación  que quieras.  También puedes  desplazar el  punto central
+para trasladar la malla.
+
+\end{description}
 
 \subsubsection{Invertir simétricamente (12)}
 
+Esta herramienta  invierte simétricamente la selección,  capa o imagen
+donde se aplique.  Por defecto produce una  inversión horizontal, para
+cambiar haz  doble click en  el botón de  la herremienta y  cámbialo a
+{\sf vertical}.
+
 \subsection{Herramientas de dibujo}
 
+\gimp tiene muchas  herramientas de dibujo, pero en este  tema vamos a
+tratar sólo las más básicas y usuales.
+
+\begin{figura}{gimp_tools_drawing}{0.8}
+\caption{Herramientas básicas de dibujo}
+\end{figura}
+
 \subsubsection{Recoger colores de la imagen (13)}
+
+Esta herramienta, comunmente denominada ``pipeta'', permite cambiar el
+color de frente tomándolo de una imagen abierta. Basta con hacer click
+en un píxel para que su  color quede seleccionado como color de frente
+y nos  muestra un  cuadro con la  información del  color seleccionado:
+valores  RGB  ({\sf  Rojo},  {\sf  Verde}  y  {\sf  Azul}),  valor  de
+transparencia ({\sf Alpha}) y terna hexadecimal RGB (útil para edición
+de páginas web).
+
+\begin{figura}{gimp_pipeta}{0.8}
+\caption{Cuadros de información de color seleccionado con la pipeta}
+\end{figura}
 
 \subsubsection{Añadir texto (14)}
 
 \subsubsection{Rellenar con un color o patrón (15)}
 
-\subsubsection{Rellenar con un graciente de colores (16)}
+\subsubsection{Dibujar trazos afilados de lápiz (16)}
 
-\subsubsection{Dibujar trazos afilados de lápiz (17)}
+\subsubsection{Borrar al color de fondo o transparente (17)}
 
-\subsubsection{Dibujar trazos borrosos de brocha (18)}
+% \subsubsection{Dibujar trazos borrosos de brocha (18)}
 
-\subsubsection{Borrar al color de fondo o transparente (19)}
+% \subsubsection{Rellenar con un gradiente de colores (19)}
 
-\subsubsection{Aerógrafo de presión variable (20)}
+% \subsubsection{Aerógrafo de presión variable (20)}
 
-\subsubsection{Pintar usando patrones o regiones de la imagen (20)}
+% \subsubsection{Pintar usando patrones o regiones de la imagen (20)}
 
-\subsubsection{Desenfocar o enfocar (21)}
+% \subsubsection{Desenfocar o enfocar (21)}
 
-\subsubsection{Dibujar con tinta (22)}
+% \subsubsection{Dibujar con tinta (22)}
 
-\subsubsection{Blanquear o ennegrecer (23)}
+% \subsubsection{Blanquear o ennegrecer (23)}
 
-\subsubsection{Borronear (24)}
+% \subsubsection{Borronear (24)}
 
 \section{Diálogos}
 \index{\gimp!diálogos}
