@@ -67,3 +67,30 @@
  6. Depuradores: gdb y ddd.             (Jesús,  1.5)
  7. Java                                (Jesús,  0.5)
  8. Bash.                               (Jesús,    1)
+
+
+ Versión resumida de Agosto 2002:
+ 1. Historia y conceptos de GNU/Linux                            (Félix,   0.5)
+ 2. Intérprete de comandos                                       (Félix,     1)
+ 3. El entorno X-Window. Gestores de ventanas                    (Jesús,   0.5)
+ 4. El escritorio GNOME                                          (Jesús,     1)
+ 5. El escritorio KDE                                            (Jesús,     1)
+ 6. Herramientas de red de GNU/Linux                             (Alberto,   1)
+ 7. Herramientas de red de GNU/Linux                             (Alberto, 1.5)
+ 8. Documentación y sistemas de ayuda                            (Miguel,    1)
+ 9. Aplicaciones diversas                                        (Miguel,  1.5)
+ 
+
+ Versión resumida de Octubre 2002:
+ 1. Historia y conceptos de GNU/Linux                            (Félix,   0.5)
+ 2. Intérprete de comandos                                       (Félix,     1)
+ 3. El entorno X-Window. Gestores de ventanas                    (Jesús,   0.5)
+ 4. El escritorio GNOME                                          (Jesús,     1)
+ 5. El escritorio KDE                                            (Félix,     1)
+ 6. Herramientas de red de GNU/Linux                             (Jesús,     1)
+ 6. Herramientas de red de GNU/Linux                             (Alberto, 1.5)
+ 7. Documentación y sistemas de ayuda                            (Alberto,   1)
+ 8. El entorno de programación FreePascal                        (Miguel,  0.5)
+ 9. El compilador GNU Fortran 77                                 (Miguel,  0.5)
+10. Herramientas de programación: depuradores, editores, etc.    (Miguel,  1.5)
+
