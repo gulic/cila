@@ -16,7 +16,7 @@ AT\&T, ahora  Lucent Technologies)  por John  Chambers y  sus colegas.
 S}. Hay diferencias importantes entre ambos, pero mucho código escrito
 para el sistema {\sf S} puede ejecutarse en {\sf R} sin modificarlo.
 
-{\sf  R}  proporciona  una  amplia  varieda  de  técnicas  gráficas  y
+{\sf  R}  proporciona  una  amplia  variedad de  técnicas  gráficas  y
 estadísticas (regresiones  lineales y no lineales,  tests estadísticos
 clásicos, análisis  de series temporales,  clasifiaciones, clustering,
 etc.)  y además  es  muy extensible.  El lenguaje  {\sf  S} suele  ser
@@ -41,9 +41,9 @@ del  proyecto {\sf  R} ({\tt  http://www.r-proyect.org}), así  como su
 documentación. Además de la  documentación oficial (en inglés) existen
 otros  documentos {\em  contribuidos} entre  los que  se encuentra  la
 traducción  al  español  de  ``An Introduction  to  R''  y  ``Gráficos
-Estadísticos  con  R''. Estos  y  más  manuales  se encuentran  en  el
-CRAN  (Comprehensive   R  Archive  Network),  concretamente   en  {\tt
-http://cran.r-project.org/other-docs.html}
+Estadísticos con R''. \index{R!documentación}  Estos y más manuales se
+encuentran en el CRAN (Comprehensive R Archive Network), concretamente
+en {\tt http://cran.r-project.org/other-docs.html}
 
 %%%%%%
 
@@ -95,8 +95,8 @@ recuperarla luego donde mismo la dejamos.
 
 Hemos considerado a lo largo de  este curso que el símbolo del sistema
 Linux/UNIX es  {\tt \$}. Vamos a  considerar ahora que el  símbolo del
-prompt {\sf R}  es {\tt $>$}. Abre un emulador  de terminal dentro del
-entorno gráfico y ejecuta los siguientes comandos:
+prompt  {\sf R}  es {\tt  $>$}. \index{R!prompt}  Abre un  emulador de
+terminal dentro del entorno gráfico y ejecuta los siguientes comandos:
 
 \begin{verbatim}
 $ mkdir sesion_R
@@ -120,12 +120,11 @@ Type `q()' to quit R.
 > 
 \end{verbatim}
 
-El  símbolo  {\tt $>$}  es  el  prompt de  {\sf  R},  indica que  está
-esperando nuestras órdenes para ejecutarlas. Para salir del entorno de
-{\sf  R} puedes  utilizar la  función {\tt  q()} o  pulsar {\tt  C-d},
-entonces {\sf  R} te preguntará si  deseas guardar el {\em  espacio de
-trabajo},  que es  toda la  información  sobre la  sesión que  quieres
-cerrar:
+El prompt de {\sf R} indica  el entorno que está esperando tus órdenes
+para ejecutarlas. Para salir del entorno de {\sf R} puedes utilizar la
+función {\tt q()}  o pulsar {\tt C-d}, entonces {\sf  R} te preguntará
+si  deseas  guardar el  {\em  espacio  de  trabajo},  que es  toda  la
+información sobre la sesión que quieres cerrar:
 
 \index{R!sesiones}
 
@@ -146,6 +145,9 @@ ejemplo {\tt  solve}, ejecuta la  función {\tt help()}  pasándole como
 parámetro el nombre de la función que quieras consultar. También existe
 una forma más corta: {\tt ?función}:
 
+\index{R!ayuda}
+\index{R!help@{\tt help()}}
+
 \begin{verbatim}
 > help (solve)
 > ?solve 
@@ -156,12 +158,13 @@ web. Si  ejecutas {\tt  help.start()} debería  abrirse una  ventana de
 navegador  con la  documentación en  formato HTML  por la  cual puedes
 navegar para buscar lo que necesites.
 
-\index{R!ayuda}
-
 Otra forma muy interesante de buscar  ayuda dentro del entorno de {\sf
 R}  es pasarle  una  palabra  a la  función  {\tt help.search()}.  Por
 ejemplo, para buscar  una función que resuelva  sistemas de ecuaciones
 puedes empezar por buscar la palabra {\tt solve}.
+
+\index{R!búsqueda}
+\index{R!help.search@{\tt help.search()}}
 
 \begin{verbatim}
 > help.search ("solve")
@@ -213,30 +216,37 @@ punto.  De hecho  se suele  utilizar  el punto  para separar  palabras
 en  los  nombres  de  las  variables en  {\sf  R},  por  ejemplo  {\tt
 hoja.de.datos}.
 
-Las comandos  elementales son expresiones o  asignaciones. Si ejecutas
-una expresión como comando ésta se  evalúa y se imprime, pero su valor
-se pierde.  En una  asignación la  expresión se evalúa  y su  valor se
-almacena en la varbiable, pero no se imprime. 
+\index{R!órdenes}
+\index{R!comandos}
 
-Los comando  se separan con  el caracter de punto  y coma ({\tt  ;}) o
+Las órdenes  (o comandos) elementales son  expresiones o asignaciones.
+Si ejecutas  una expresión como comando  ésta se evalúa y  se imprime,
+pero su valor se pierde. En una asignación la expresión se evalúa y su
+valor se almacena en la varbiable, pero no se imprime.
+
+Los comandos se  separan con el caracter  de punto y coma  ({\tt ;}) o
 simplemente  con una  salto  de  línea. Puedes  agrupar  una serie  de
 comandos  encerrándolos entre  llaves,  de esta  forma puedes  definir
 funciones como veremos más adelante. También puedes poner comantarios,
-casi donde quieras, poniendo una almohadilla  ({\tt \#}) y todo lo que
-la siga hasta el final de línea será obviado por el intérprete de {\sf
-R}.
+\index{R!comentarios} casi  donde quieras\footnote{No puedes  meter un
+comentario dentro  de una cadena  de caracteres (formaría parte  de la
+cadena), ni en medio de la lista de argumentos en la definición de una
+función}, poniendo  una almohadilla ({\tt \#})  y todo lo que  la siga
+hasta el final de línea será obviado por el intérprete de {\sf R}.
 
 Si dejas  un comando a medias  {\sf R} se  dará cuenta, y en  lugar de
 mostrarte el prompt  $>$ te mostará {\tt +} para  avisarte de que está
 esperando por el final del comando.
 
 Otra característica  interesante de {\sf  R} (al menos  en plataformas
-Linux/UNIX) es  la posibilidad  de editar la  línea de  comandos. Esto
-incluye el  típico historial de  comandos, que te permite  repetir los
-comandos  sin tener  que volver  a  teclearlos. Tan  solo utiliza  los
-cursores  arriba  y  abajo  para  recuperar  los  comandos  que  hayas
-tecleado.  Además este  historial de  comando queda  almacenado en  la
-sesión cuando sales del entorno {\sf R}.
+Linux/UNIX)  es  la  posibilidad  de  editar  la  línea  de  comandos.
+Esto  incluye  el  típico  historial   de  comandos,  que  te  permite
+repetir  los comandos  sin tener  que  volver a  teclearlos. Tan  solo
+utiliza los  cursores arriba y  abajo para recuperar los  comandos que
+hayas tecleado.  \index{R!historial} Además este historial  de comando
+queda  almacenado en  la  sesión  cuando sales  del  entorno {\sf  R},
+concretamente en  un fichero  {\tt .Rhistory}  en el  directorio donde
+ejecutaste en entorno {\sf R}.
 
 Pero si necesitas usar una serie un poco larga de comandos seguramente
 te canses de tener  que darle a los cursores. Para  estos casos lo que
@@ -244,6 +254,9 @@ necesitas  es un  script en  el que  escribes los  comandos a  modo de
 programa. Luego para ejecutar los  comandos escritos en él utilizas la
 función {\tt  source ()} del  entorno pasándole el nombre  del fichero
 donde escribiste los comandos:
+
+\index{R!leer comandos de un fichero}
+\index{R!source@{\tt source()}}
 
 \begin{verbatim}
 > source ("script.R")
@@ -253,6 +266,9 @@ Del  mismo modo  que puedes  tomar la  entrada de  un fichero  también
 puedes redireccionar la salida hacia otro fichero, con la función {\tt
 sink()}. Para almacenar la salida en el fichero {\tt salida.txt} 
 ejecuta el comando:
+
+\index{R!volcar en un fichero}
+\index{R!sink@{\tt sink()}}
 
 \begin{verbatim}
 > sink ("salida.txt")
@@ -276,6 +292,8 @@ salida.txt} y el otro lo muestra en el entorno {\sf R}.
 
 \section{Vectores}
 
+\index{R!vectores}
+
 {\sf R} realiza las operaciones sobre las llamadas {\em estructuras de
 datos}, de las cuales la más  simple es el vector numérico. Para crear
 un vector con  los 5 primeros números enteros  positivos utilizamos la
@@ -287,6 +305,8 @@ vector:
 > x
 [1] 1 2 3 4 5
 \end{verbatim}
+
+\index{R!asignación, operador de}
 
 En efecto, el operador de asignación no se parece para nada a un signo
 de igualdad. De  hecho es una flecha, que está  indicando que el valor
@@ -303,6 +323,7 @@ Cuando  ejecutas  el  nombre  de  un  objeto  como  comando,  {\sf  R}
 interpreta que deseas  ver su contenido y entonces  ejecuta la función
 {\tt print()} sobre  el objeto en cuestión. Esto  funciona sólo cuando
 estás  dentro del  entorno {\sf  R} y  tecleas el  nombre del  objeto.
+\index{R!print@{\tt print()}}
 Cuando quieras imprimir  el objeto desde un fichero  de comandos (como
 hacemos en {\tt iodemo.R}) has de utilizar la función {\tt print()}.
 
@@ -318,6 +339,8 @@ que es el resultado de concatenar los anteriores:
 
 Las  operaciones  usuales  entre  vectores  se  definen  ``elemento  a
 elemento'':
+
+\index{R!vectores!operaciones elementales}
 
 \begin{verbatim}
 > x + 2
@@ -347,6 +370,8 @@ abreviada  de  este  producto.  Formalmente  {\tt  crossprod(x,y)}  es
 equivalente a  {\tt t(x) \%*\%  y}, pero  más rápido. La  función {\tt
 t()} es la trasposición de matrices:
 
+\index{R!vectores!producto escalar}
+
 \begin{verbatim}
 > x
 [1] 1 2 3 4
@@ -364,6 +389,8 @@ Además de para guardar datos,  los vectores suelen usarse para definir
 series o  secuencias. Para  definir una  secuencia de  números enteros
 consecutivos basta  con poner el primer  y el último separados  por un
 caracter de dos puntos:
+
+\index{R!vectores!secuencias}
 
 \begin{verbatim}
 > x <- 1:10
@@ -394,10 +421,12 @@ objeto y el número de veces que quieres replicarlo:
 
 Además de vectores numéricos, {\sf R} permite operar con vectores {\em
 lógicos}.  Los valores  válidos  para los  elementos  de los  vectores
-lógicos son los de la lógica  {\em triestada}: {\tt TRUE}, {\tt FALSE}
-y {\tt NA} (``Not Available'',  no disponible). Los operadores lógicos
-para manejar  estos valores son  {\tt \&}  para ``and'', {\tt  |} para
-``or'' y {\tt !} para ``not''.
+\index{R!vectores!vectores lógicos}
+lógicos son los de la {\em lógica  triestada}: 
+\index{lógica triestada}
+{\tt TRUE}, {\tt FALSE} y {\tt NA} (``Not Available'', no disponible).
+Los operadores  lógicos para manejar  estos valores son {\tt  \&} para
+``and'', {\tt |} para ``or'' y {\tt !} para ``not''.
 
 Una forma  de generar  un vector  de valores  lógicos es  efectuar una
 comparación entre un vector numérico y un valor numérico:
@@ -415,6 +444,10 @@ R}  los vectores  se indexan  comenzando por  $1$. Para  acceder a  un
 elemento  de un  vector utiliza  la notación  usual de  los corchetes.
 También puedes acceder a un  subconjunto del vector especificando como
 índice un vector con las posiciones de los elemenos:
+
+\index{R!vectores!índices}
+\index{R!vectores!subíndices}
+\index{R!vectores!indixado}
 
 \begin{verbatim}
 > x <- 1:10
@@ -438,6 +471,9 @@ Incluso puedes indexar  un vector no palabras, poniendo  nombres a las
 posiciones dentro del vector mediante  la función {\tt names()}. Luego
 puedes acceder a los elementos mediante los nombres de las posiciones:
 
+\index{R!vectores!nombres}
+\index{R!vectores!names@{\tt names()}}
+
 \begin{verbatim}
 fruta = c (5, 10, 1, 20)
 > fruta <- c (5, 10, 1, 20)
@@ -452,16 +488,21 @@ naranja plátano manzana    ñame
 
 \section{Arrays y matrices}
 
-Un  {\em   array}\footnote{a  veces  traducido  por   ``arreglo''}  es
-una  variable  indexada  multidimensional.   Un  vector  es  un  array
-unidimensional  y  una  matriz  es un  array  bidimensional.  {\sf  R}
-proporciona un buen manejo de arrays, sobretodo para matrices.
+\index{R!arrays}
+\index{R!matrices}
+
+Un   {\em   array}\footnote{a   veces   traducido   por   ``arreglo''}
+\index{arreglo} es  una variable indexada multidimensional.  Un vector
+es un  array unidimensional  y una matriz  es un  array bidimensional.
+{\sf R} proporciona un buen manejo de arrays, sobretodo para matrices.
 
 La dimensión de un array es un vector cuya longitud es la dimesión del
 array,  y  cada uno  de  sus  elementos  es  la ``longitud''  de  cada
 dimensión en el array. Por  ejemplo, un array con dimesión $(3,5,100)$
 sería como un cubo de $1500$ elementos con $3$ celdas de largo, $5$ de
 ancho y $100$ de alto.
+
+\index{R!arrays!dimensión}
 
 En la  mayoría de  lenguajes los  elementos de  un array  se almacenan
 ``por filas'', lo que significa que el índice que avanza más rápido es
@@ -472,6 +513,10 @@ que el índice que avanza más rápido es el primero.
 Es importante tener esto en cuenta porque a la hora de crear una 
 matriz hay que proporcionar los elementos agrupados por columnas, no 
 por filas. Por ejemplo:
+
+\index{R!arrays!por filas}
+\index{R!arrays!por columnas}
+
 
 \begin{verbatim}
 > a <- array (c (1:3,-3:-1), dim = c (3,2)) 
@@ -487,6 +532,10 @@ subíndices  entre corchetes  y  separados por  comas.  Si omitimos  el
 subíndice de las filas (el  primero) obtenemos la columna señalada por
 el segundo subíndice, y análogamente  obtenemos las filas omitiendo el
 segundo suníndice.
+
+\index{R!arrays!índices}
+\index{R!arrays!subíndices}
+\index{R!arrays!indexado}
 
 \begin{verbatim}
 > a[1,2]
@@ -513,6 +562,9 @@ una matriz también podemos asignarles valores:
 
 Para multiplicar  matrices (o arrays  en general) utiliza  el operador
 \verb|%*%| que vimos antes:
+
+\index{R!arrays!producto}
+\index{R!matrices!multiplicar}
 
 \begin{verbatim}
 > a
@@ -546,6 +598,9 @@ cbind()} y {\tt rbind()}, ya que éstas siempre devuelven matrices. Las
 funciones {\tt  cbind} y  {\tt rbind}  toman una  serie de  vectores o
 números y los agrupan por columnas o filas en una matriz.
 
+\index{R!matrices!cbind@{\tt cbind()}}
+\index{R!matrices!rbind@{\tt rbind()}}
+
 \begin{verbatim}
 > x
 [1] 1 2 3 4
@@ -573,12 +628,11 @@ y    4    5    6    7
   [4,]   16   20   24   28
 \end{verbatim}
 
-%\subsection{Sistemas lineales}
-
-%\subsection{Autovalores y autovectores}
-
 
 \section{Factores: clasifición de datos}
+
+\index{R!factores}
+\index{R!clasificación de datos}
 
 Un  {\em factor}  es un  vector  que utilizamos  para especificar  una
 clasificación  discreta (agrupamiento)  de  los  componentes de  otros
@@ -628,6 +682,8 @@ Ahora queremos  aplicar unas  funciones, en este  caso {\tt  mean()} y
 separados según  un factor.  La función apropiada  para esta  tarea es
 {\tt tapply}, y se usa del siguiente modo:
 
+\index{R!tapply@{\tt tapply()}}
+
 \begin{verbatim}
 > tapply (edad, sexo.factor, mean)
 hombre  mujer 
@@ -643,6 +699,8 @@ los factores más adelante, así que asegúrate de entender al menos este
 uso de los mismos. Para mayores detalles consulta la ayuda de {\sf R}.
 
 \section{Listas}
+
+\index{R!listas}
 
 En un  array todos  los elementos  deben ser del  mismo tipo,  i.e. no
 puede  ser que  un array  contenga a  la vez  números y  palabras. Sin
@@ -660,6 +718,9 @@ elemento. Pero también,  al igual que en los  vectores, puedes indexar
 los elementos  de una lista dándoles  nombres. En caso de  nombrar los
 elementos de una lista hay una  forma más cómoda de referirse a ellos:
 en lugar de {\tt L[["nombre"]]} puedes usar {\tt L\$nombre}.
+
+\index{R!listas!índices}
+\index{R!listas!nombres}
 
 \begin{verbatim}
 > L = list (nombre = "Pepe", esposa = "Pepa", hijos = 3,
@@ -688,9 +749,14 @@ ello.
 
 \section{Hojas de datos}
 
+\index{R!tablas}
+\index{R!data frame}
+\index{R!frame}
+\index{R!hojas de datos}
+
 Una ``hoja  de datos'' (en  inglés ``data frame'') es  básicamente una
-lista  de  vectores.  Los  vectores de  palabras  son  convertidos  en
-factores.
+lista de vectores, con algunas restricciones. Los vectores de palabras
+son convertidos en factores.
 
 Piensa en una hoja  de datos como su nombre sugiere:  una hoja o tabla
 en la que tienes varios datos sobre varios individuos. Las columnas de
@@ -704,6 +770,9 @@ introduce  una lista  de  valores,  un valor  para  cada vector.  Para
 entender esto con claridad lee  la tabla del fichero {\tt muestra.dat}
 y mantenla en una variable:
 
+\index{R!hojas de datos!leer desde fichero}
+\index{R!read.table@{\tt read.table()}}
+
 \begin{verbatim}
 > hoja.datos = read.table ("muestra.dat") 
 > names (hoja.datos)
@@ -712,13 +781,15 @@ y mantenla en una variable:
 
 Esta tabla contiene  los datos (ficticios) de 50 jóvenes:  su sexo, su
 edad,  su  hábidat,  sus  ingresos familiares  (en  miles  de  pesetas
-mensuales), sus horas  de lectura semanales y sus  horas de televisión
-diarias.
+mensuales),  el número  de libros  leidos  anualmente y  sus horas  de
+televisión diarias.
 
 Normalmente para  acceder al  vector {\tt  Edad} de  la hoja  de datos
 utilizaríamos la expresión {\tt  hoja.datos\$Edad}, pero hay una forma
 más cómoda. Consiste en ``conectar'' la hoja de datos para que puedas
 referirte a sus vectores directamente por su nombre:
+
+\index{R!hojas de datos!conectar}
 
 \begin{verbatim}
 > attach (hoja.datos)
@@ -740,20 +811,26 @@ los cambios en los atajos hasta que  desconectes la hoja de datos y la
 vuelvas  a conectar.  Para desconectar  una hoja  de datos  utiliza la
 función {\tt detach()}.
 
+\index{R!hojas de datos!desconectar}
+
 Cuando quieras  almacenar una hoja de  datos en un fichero  utiliza la
 función {\tt write.table()}. Su uso básico es darle la hoja de datos y
 el nombre del  fichero, pero admite varias  opciones para personalizar
 la  forma en  la  que escribirá  los  datos en  el  fichero. Para  ver
 estos  detalles consulta  la ayuda  sobre la  función ejecutando  {\tt
-?write.table}.
+?write.table}. \index{R!hojas de datos!escribir en fichero}
 
 \subsection{Valores perdidos}
+
+\index{R!valores perdidos}
 
 En ocasiones  te encontrarás  con hojas de datos  en las  que alguna
 celda no tiene el dato. Esto puede suceder porque no haya sido posible
 averiguar el dato,  o porque éste no tenga sentido.  En estos casos se
 utiliza para esa  celda el valor {\tt NA}, que  significa que el valor
 ``no está disponible'' (NA es abreviatura de ``Not Available'').
+
+\index{R!NA@{\tt NA}}
 
 En otros casos sucede que tras efectuar una serie de operaciones sobre
 un  conjunto de  datos algunos  de  los resultados  no tengan  sentido
@@ -763,16 +840,20 @@ operación así {\sf R} no se quejará en absoluto, sino que devolverá el
 valor {\tt  NaN} que  significa que  eso ``no es  un número''  (NaN es
 abreviatura de ``Not a Number'').
 
+\index{R!NaN@{\tt NaN}}
+
 \section{Funciones}
+
+\index{R!funciones}
 
 Como todo  buen lenguaje de  programación, {\sf R} te  permite definir
 funciones  para tu  uso propio.  Para definir  una función  asignas al
 objeto (que  será tu función)  el valor  devuelto por la  función {\tt
-function}.  Esta función  particular recibe  los mismo  parámetros que
-recibirá tu  función, y  a continuación la  secuencia de  comandos que
-debe ejecutar encerrada  entre llaves. Si tu función  debe devolver un
-valor simplemente ejecuta la expresión  correspondiente al final de su
-definición.
+function}. Esta  función particular  recibe los mismos  parámetros que
+recibirá  tu  función,  y  a  continuación  una  {\em  agrupación}  de
+comandos, encerrados entre llaves y separados  con {\tt ;} o saltos de
+línea. El  valor devuelto por  tu función será  el valor de  la última
+expresión de la agrupación.
 
 Por ejemplo  si quieres  una función  que calcule  la curtosis  de una
 muestra:
@@ -801,6 +882,8 @@ más funciones,  modificar las que  ya tengas escritas, etc.  Todo esto
 puedes hacerlo más cómodamente si escribes las funciones en un fichero
 y lo importas con la función {\tt source()} que vimos antes.
 
+\index{R!funciones!leer desde fichero}
+
 Así por ejemplo tienes escrita la función {\tt curtosis} en el fichero
 {\tt curtosis.R}. Si quieres modificarla  y volver a usarla después de
 modificada no  hay problema.  Edita el  fichero {\tt  curtosis.R} para
@@ -810,11 +893,122 @@ que encuentra en el fichero que le digas, por lo que las funciones que
 tengas escritas en  el fichero serán redefinidas y  estarán lista para
 usar al instante.
 
-\subsection{Control de flujo}
-
 % NO TE OLVIDES DE ESTO
 
+\subsection{Control de flujo}
+
+\index{R!funciones!control de flujo}
+
+{\sf R} proporciona la sintaxis necesaria para construir funciones que
+mantengan  en control  del flujo  del  programa. Nos  referimos a  los
+condicionales y los bucles:
+
+\subsubsection*{Ejecución condicional}
+
+\index{R!funciones!if@{\tt if}}
+
+La  forma  de  contruir  una  sentencia  condicional  en  {\sf  R}  es
+{\tt  if (expresion\_logica)  sentencia\_1 else  sentencia\_2}. Si  la
+{\tt  expresion\_logica}  es  cierta  (su  valor  es  {\tt  TRUE})  se
+ejecutará la  {\tt sentencia\_1},  en otro caso  se ejecutará  la {\tt
+sentencia\_2}.  {\tt sentencia\_1}  y  {\tt  sentencia\_2} pueden  ser
+también agrupaciones de comandos y/o expresiones.
+
+\begin{verbatim}
+> x = 1      
+> y = 2
+> if (x > y) x else y
+[1] 2
+\end{verbatim}
+
+En las  expresiones booleanas  puedes emplear  los operadores  {\tt |}
+(OR) {\tt \&}  (AND) y {\tt !} (NOT) normales,  o si prefieres ahorrar
+un poco de  tiempo los operadores ``cortocicuitados'' {\tt  ||} (OR) y
+{\tt  \&\&}.  \index{R!||@{\tt  ||}} \index{R!\&\&@{\tt  \&\&}}  Estos
+operadores lógicos  tienen la ventaja  de que sólo evalúan  la segunda
+expresión cuando es necesario.
+
+Para las  comparaciones numéricas se utilizan  los mismos comparadores
+binarios que en el lenguaje C:  {\tt $<$}, {\tt $>$}, {\tt $<=$}, {\tt
+$>=$}, {\tt  !=} y {\tt  ==}. Ten cuidado  de no utilizar  el operador
+{\tt =} para comparaciones.
+
+\index{R!funciones!ifelse@{\tt ifelse()}}
+
+Existe  además  una  versión   {\em  vectorizada}  de  la  construción
+condicional. Se trata  de la función {\tt ifelse ()},  que recibe tres
+vectores {\tt condicion, a, b} y devuelve un vector del tamaño del más
+largo.  En este  vector  el  elemnto i-ésimo  es  {\tt  a[i]} si  {\tt
+condicion[i]} es cierto (su valor es {\tt TRUE}) o bien {\tt b[i]}) en
+caso contrario.
+
+\begin{verbatim}
+> condicion = c (TRUE, FALSE)
+> a = c (1, 2)
+> b = c (3, 4)
+> ifelse (condicion, a, b)
+[1] 1 4
+\end{verbatim}
+
+\subsubsection*{Ejecución repetitiva}
+
+\index{R!funciones!for@{\tt for}}
+
+Para la ejecución  repetitiva de comandos dispones  de la construcción
+{\tt for (variable in valores)  comandos}, donde {\tt variable} es una
+variable vacía  que irá cambiando  de valor en cada  iteración tomando
+consecutivamente los valores  del vector {\tt valores}.  Para cada uno
+de estos valores se ejecutará la secuencia {\tt comandos}.
+
+\begin{verbatim}
+> for (i in 1:3) print (c (i^2, i^3, i^4, i^5))
+[1] 1   1   1   1
+[1] 4   8  16  32
+[1] 9  27  81 243
+\end{verbatim}
+
+\index{R!funciones!while@{\tt while}}
+
+Para ejecutar  una secuencia  {\em mientras}  se cumpla  una condición
+(podría no  ejecutarse la  primera vez)  utiliza la  construcción {\tt
+while (condicion)  comandos}. Así  mientras el  valor de  la expresión
+{\tt condicion} sea {\tt TRUE} se seguirá ejecutando la secuencia {\tt
+comandos}.
+
+\begin{verbatim}
+x = rnorm (1)
+> while (x > -2) {
++   print (x)
++   x = rnorm (1)
++ }
+[1] -0.2199842
+[1] -0.1615499
+[1] 2.580791
+[1] -0.1202099
+[1] -0.794566
+[1] -1.413912
+[1] 0.4829018
+[1] 0.2780835
+[1] -0.5475556
+[1] 2.974901
+[1] -0.1805834
+\end{verbatim}
+
+\index{R!funciones!repeat@{\tt repeat}}
+\index{R!funciones!break@{\tt break}}
+\index{R!funciones!next@{\tt next}}
+
+La  construcción  {\tt  repeat  comandos} se  mantiene  ejecutando  la
+secuencia {\tt comandos} hasta que se ejecute (dentro de la secuencia)
+el  comando {\tt  break}. Esta  es la  única forma  de interrumpir  la
+ejecución de  un {\tt  repeat}. En iteración  del bluce  la intrucción
+{\tt next} hace que  la se termine la iteración y  se comienze con una
+nueva (no sale del bucle).
+
 \section{Distribuciones de probabilidad}
+
+\index{R!distribuciones de probabilidad}
+\index{R!distribuciones tabuladas}
 
 {\sf R} tiene  un conjunto de funciones para evaluar  las funciones de
 distribución, densidad y probabilidad  de las distribudiones que están
@@ -839,11 +1033,17 @@ funciones, cuyos nombres  se obtienen precediendo las  letras {\tt d},
 que  son  respectivamente  las funciones  de  densidad,  distribución,
 quantiles y simulación (generadoras aleatorias).
 
-Cada una de  estas funciones requiere argumentos  para especificar los
-parámetros de la distribución .  Por ejemplo, {\tt rnorm(n)} genera un
-vector  de {\tt  n}  números aleatorios  que  siguen una  distribución
-normal  con  media  0  y  varianza 1,  pero  estos  parámetros  pueden
-modificarse con las opciones oportunas:
+\index{R!distribuciones de probabilidad!distribución}
+\index{R!distribuciones de probabilidad!densidad}
+\index{R!distribuciones de probabilidad!quantiles}
+\index{R!distribuciones de probabilidad!simulación}
+
+Cada una  de estas  funciones puede requierer  argumentos obligatorios
+para especificar  los parámetros  de la  distribución o  bien permitir
+argumentos opcionales  para modificar los parámetros  por defecto. Por
+ejemplo, {\tt rnorm(10)}  genera un vector de  $10$ números aleatorios
+que siguen una distribución normal con  media $0$ y varianza $1$, pero
+estos parámetros pueden modificarse con las opciones oportunas:
 
 \begin{verbatim}
 > rnorm(5)
@@ -852,8 +1052,253 @@ modificarse con las opciones oportunas:
 [1] 109.8315 106.1667  94.7198 116.6163 109.8492
 \end{verbatim}
 
+Por otra parte, para evaluar la función de densidad (o cualquier otra)
+de la  distribución $\chi^2_n$  es necesario saber  el número  de {\em
+grados de libertad} $n$ (en inglés {\em degrees of freedom}). Este 
+parámetro es obligatorio:
+
+\begin{verbatim}
+> rchisq (5)
+Error in rchisq(5) : Argument "df" is missing, with no default
+> rchisq (5, 3)
+[1] 3.019664 3.335430 6.537741 4.534492 1.843734
+> rchisq (5, 30)
+[1] 29.76932 41.46605 25.69897 25.35080 33.47488
+\end{verbatim}
+
 \section{Estadística descriptiva}
+
+{\sf R} te proporciona todas las funciones que necesites para hacer un
+estudio estadístico,  empezando por  una descripción  de la  muestra a
+base de medidas de posisición  centrales, no centrales, de dispersióin
+y  de forma.
+
+Como siempre, cada una de estas funciones tiene sus propios parámetros
+(además de la muestra), así que no dudes en consultar la ayuda de {\sf
+R}  sobre  cada  función  que  necesites.  Puedes  encontrar  opciones
+realmente  interesantes. Las  funciones más  comunes para  estos casos
+son:
+
+\begin{description}
+
+\item[{\tt mean(x)}] Calcula la media  aritmética de los valores de un
+vector numérico {\tt x}.
+
+\item[{\tt median(x)}] Calcula  la mediana de los valores  de un vector
+numérico {\tt x}.
+
+\item[{\tt var(x)}] Calcula  la varianza de los valores {\tt x}, que 
+puede ser un vector o una matriz.
+
+\item[{\tt cov(x,y)}] Calcula la covarianza de  {\tt x} y {\tt y}, que
+pueden ser dos vectores o dos matrices.
+
+\item[{\tt cor(x,y)}] Calcula  la correlación entre de {\tt  x} y {\tt
+y}, que pueden ser dos vectores o dos matrices.
+
+\item[{\tt sd(x)}] Calcula la desviación  estándar de los valores {\tt
+x}, que puede ser un vector o una matriz. Su cuadrado
+
+\item[{\tt  range(x)}] Devuelve  un vector  con los  valores mínimo  y
+máximo encontrados en {\tt x}, que puede ser un vector o una matriz.
+
+\item[{\tt fivenum(x)}] Devuelve un vector  con el mínimo, el máximo y
+los cuartiles del vector {\tt x}.
+
+\item[{\tt summary(x)}]  Como {\tt  fivenum()} pero insertar  la media
+({\tt mean()} entre la mediana y  el tercer cuartil. Además define los
+nombres de los resultados.
+
+\end{description}
+
+\begin{verbatim}
+> x = rnorm (100)
+> mean (x)
+[1] -0.06673138
+> median (x)
+[1] -0.01544592
+> var (x)
+[1] 1.081379
+> sd (x)
+[1] 1.039894
+> range (x)
+[1] -3.122787  2.667167
+> fivenum (x)
+[1] -3.12278656 -0.76220579 -0.01544592  0.58888639  2.66716657
+> summary (x)
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+-3.12300 -0.75680 -0.01545 -0.06673  0.57860  2.66700
+\end{verbatim}
 
 \section{Inferencia estadística}
 
+Si no tienes conocimientos de inferencia estadística será mejor que te
+saltes  este  apartado.  Vamos  a  ver  que  también  para  tareas  de
+inferencia estadística {\sf R} cuenta con multitud de funciones.
+
+Veamos algunos  ejercicios de inferencia estadística,  utilizando como
+fuente de datos la tabla contenida  en el fichero {\tt muestra.tex} No
+te vamos  a dar una  referencia amplia  ni profunda, pero  debería ser
+suficiente para que aprendas cómo debes buscar las funcionalidades que
+necesites para tus problemas.
+
+\subsection*{Test de normalidad}
+
+% Test para la normalidad de la variable Lectura utilizando 
+% los tests de normalidad de Kolmogorov-Smirnov y Shapiro-Wilk
+
+Consideremos la variable  {\tt Lectura} y vamos si se  puede decir que
+se distribuye según una distribución normal $N(\mu,\sigma)$. Para ello
+queremos  utilizar los  tests  de normalidad  de Kolmogorov-Smirnov  y
+Shapiro-Wilk. Considera un nivel de significación del $99\%$.
+
+No sabemos qué funciones proporciona {\tt R} para estos tests, así que
+ejecutamos \verb|help.search ("test")| y  buscamos los tests deseados.
+Encontramos entre éstos:
+
+\begin{verbatim}
+ks.test(ctest)          Kolmogorov-Smirnov Tests
+shapiro.test(ctest)     Shapiro-Wilk Normality Test
+\end{verbatim}
+
+Para  el   test  de   Kolmogorov-Smirnov  necesitas   estimadores  los
+parámetros de la distribución con  la que quieras comparar la muestra.
+En esta  caso has de  estimar la media y  la desviación típica,  y una
+buena forma  es utilizar los  estimadores insesgados por  analogía que
+son  la media  muestral  y la  cuasi-desviación  típica muestral.  
+
+Utilizaremos  en  el  ejemplo   la  desviación  típica,  para  dejarte
+como ejercicio  substituirla por  la cuasi-desviación  típica muestral
+definiendo tu propia función que la calcule.
+
+\begin{verbatim}
+> hoja.datos = read.table ("muestra.dat")
+> attach (hoja.datos)
+> shapiro.test (Lectura)
+
+	Shapiro-Wilk normality test
+
+data:  Lectura 
+W = 0.9577, p-value = 0.0714
+
+> ks.test (Lectura, "pnorm", mean = mean (Lectura), sd = sd (Lectura))
+
+	One-sample Kolmogorov-Smirnov test
+
+data:  Lectura 
+D = 0.0907, p-value = 0.8053
+alternative hypothesis: two.sided 
+
+\end{verbatim}
+
+Este este  ejemplo, dado que los  p-valores de los tests  son $0.0714,
+0.8053 >  0.01 = \alpha =  1 - 0.99$ se  puede decir que el  número de
+libros leidos anualmente se distribuye según una normal.
+
+\subsection*{Contraste de hipótesis}
+
+% Contraste de hipótesis para la media de la Lectura.
+
+Una vez  comprobada la  normalidad de  una variable  hay una  serie de
+tests  interesantes que  puedes  utilizar. Aprovechando  esto vamos  a
+plantear el  siguiente un contraste de  hipótesis para la media  de la
+variable {\tt  Lectura}. La hipótesis  nula es  que la media  es $15$.
+Considera un nivel de confianza del $99\%$ ($1 - \alpha = 0.99$)
+
+$$
+\left.
+\begin{array}{r@{:}l}
+H_0 & \mu     = 15 \\
+H_1 & \mu \not= 15
+\end{array}\right\}
+$$
+
+Para este contraste  tiramos del test T de Stundent  para una muestra,
+que buscando como antes encontrarás que lo proporciona la función {\tt
+t.test()}. Con una  mirada a la ayuda de esta  función verás que debes
+especificar la media con la que  quieres constrastar ({\tt mu = 15}) y
+el nivel de confianza ({\tt conf.level = 0.99}).
+
+
+\begin{verbatim}
+> t.test (Lectura, mu = 15, conf.level = 0.99)
+
+	One Sample t-test
+
+data:  Lectura 
+t = -1.8956, df = 49, p-value = 0.06392
+alternative hypothesis: true mean is not equal to 15 
+99 percent confidence interval:
+ 10.89657 15.70343 
+sample estimates:
+mean of x 
+     13.3 
+
+\end{verbatim}
+
+Dado  el p-valor  del  contraste, $0.06392  > 0.01  =  \alpha$, no  se
+rechaza la hipótesis nula; se puede  considerar que el número medio de
+libros leidos anualmente es 15, con un nivel de confiaza del $99\%$.
+
+\subsection*{Independencia de variables}
+
+Considera ahora la dos variables {\tt Ingresos} y {\tt Habitat}. Ambas
+son vectores  de caracteres  y por lo  tanto al estar  en una  hoja de
+datos han  sido convertidas  a factores. Vamos  a contrastar  si estas
+variables son independientes, utilizando la tabla de contingencia y el
+test $\chi^2$. Considera un nivel de confianza del $95\%$.
+
+De nuevo para averiguar qué funciones nos proporciona {\sf R} buscamos
+en la ayuda: ejecutando \verb|help.search ("contingency")| encontramos
+
+\begin{verbatim}
+ftable(base)            Flat Contingency Tables
+\end{verbatim}
+
+Con la  misma forma de  búsqueda encontramos  la función para  el test
+$\chi^2$ con \verb|help.search ("test")|
+
+\begin{verbatim}
+chisq.test(ctest)       Pearson's Chi-squared Test for Count Data
+\end{verbatim}
+
+Aplicamos  el  test  $\chi^2$  a  la  tabla  de  contingencia  de  las
+variables {\tt Ingresos} y {\tt Habitat}:
+
+\begin{verbatim}
+> t = ftable(Ingresos, Habitat)
+> t
+         Habitat Rural Urbano
+Ingresos                     
+<100                 2      0
+100-200             13      9
+200-300              5     10
+300-400              1      3
+400-500              0      4
+>500                 0      2
+> chisq.test(t)
+
+	Pearson's Chi-squared test
+
+data:  t 
+X-squared = 10.6105, df = 5, p-value = 0.05967
+> qchisq (0.95, 5)
+[1] 11.07050
+\end{verbatim}
+
+La región crítica para este test  es $W = {\chi^2 > \chi^2_{5,0.05}}$,
+y  dado   que  el   estadístico  $\chi^2$   es  $10.6105   <  11.07050
+=   \chi^2_{5,0.05}$  podemos   considerar  que   las  variables   son
+independientes.
+
 \section{Gráficas}
+
+% Histogramas, con curvas y lines()
+
+% Tartas, con colores
+
+% Gráficos de cajas y cuartil-cuartil
+
+% Regresiones lineales
+
+% Superficies en 3D, como la del volcán
