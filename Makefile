@@ -15,6 +15,7 @@ FILES = book.tex			\
 		comandos.tex		\
 		xwindow.tex			\
 		editores.tex		\
+		documentacion.tex	\
 		administracion.tex	\
 		internet.tex		\
 		graficos.tex		\
@@ -29,7 +30,7 @@ FILES = book.tex			\
 		freepascal.tex		\
 		gnuc.tex			\
 		gnufortran.tex		\
-		sunjdk.tex			\
+		java.tex			\
 		bash.tex			\
 		perl.tex			\
 		python.tex			\

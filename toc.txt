@@ -42,7 +42,7 @@
 
  Módulo V:   Herramientas de programación
  1. Editores: VI, VIM y GNU Emacs                                          <== Carlos C. y Miguel Ángel
- 2. FreePascal                                                             <== Miguel Ángel
+ 2. FreePascal                                                             <== Carlos C.
  3. GNU Fortran                                                            <== Miguel Ángel
  4. GNU C/C++                                                              <== Jesús
  5. GNU Make                                                               <== Jesús
