@@ -1,13 +1,7 @@
 %Autor: _ese
-
-
 \chapter{El intérprete de comandos}
-
-
-
+\index{comandos, intérprete}
 \section{¿Qué es un intérprete de comandos?}
-
-
 
 Si  bien  manejarse en  Linux  es  cada vez  más  fácil,  debido a  la
 proliferación  de escritorios,  los  comienzos no  siempre fueron  así
@@ -19,11 +13,9 @@ Un intérprete  de comandos tiene el  aspecto de una pantalla  llena de
 letras, generalmente  con fondo negro  y letras  blancas, y que  en la
 última línea inferior, se suele ver lo siguiente:
 
-
 \begin{verbatim}
-[felix@localhost Comandos]\$
+[felix@localhost Comandos]$
 \end{verbatim}
-
 
 En  este entorno  es donde  introduciremos  los comandos  con los  que
 trabajaremos, y  coloquialmente diremos que estamos  trabajando en una
@@ -44,33 +36,33 @@ ejecución al usuario.
 Los comandos tienen el siguiente aspecto:
 
 \begin{verbatim}
-[felix@localhost Comandos]\$ fdisk
-[felix@localhost Comandos]\$ lsmod
-[felix@localhost Comandos]\$ ls
+[felix@localhost Comandos]$ fdisk
+[felix@localhost Comandos]$ lsmod
+[felix@localhost Comandos]$ ls
 \end{verbatim}
 
 También funcionan con opciones:
 
 \begin{verbatim}
-[felix@localhost Comandos]\$ fdisk -v
-[felix@localhost Comandos]\$ ls -a -l
-[felix@localhost Comandos]\$ ls -al
+[felix@localhost Comandos]$ fdisk -v
+[felix@localhost Comandos]$ ls -a -l
+[felix@localhost Comandos]$ ls -al
 \end{verbatim}
 
 Y con parámetros:
 
 \begin{verbatim}
-[felix@localhost Comandos]\$ fdisk /dev/hda
-[felix@localhost Comandos]\$ ls /tmp
-[felix@localhost Comandos]\$ ls *.txt
+[felix@localhost Comandos]$ fdisk /dev/hda
+[felix@localhost Comandos]$ ls /tmp
+[felix@localhost Comandos]$ ls *.txt
 \end{verbatim}
 
 Con opciones y parámetros:
 
 \begin{verbatim}
-[felix@localhost Comandos]\$ rpm -qpl joe-1.0.3.rpm
-[felix@localhost Comandos]\$ gcc -o suma suma.c
-[felix@localhost Comandos]\$ ls -al /tmp
+[felix@localhost Comandos]$ rpm -qpl joe-1.0.3.rpm
+[felix@localhost Comandos]$ gcc -o suma suma.c
+[felix@localhost Comandos]$ ls -al /tmp
 \end{verbatim}
 
 Al  ser Linux  un sistema  {\tt multitarea}  y {\tt  multiusuario}, se
@@ -89,12 +81,10 @@ Si se quiere acceder a una  consola desde un entorno gráfico, entonces
 se pulsan las combinaciones {\bf Ctrl + Alt  + F1} a {\bf Ctrl + Alt +
 F6}
 
-
 \section{Directorios y nombres de ficheros}
 
-
 \subsection{Trabajando con directorios.}
-
+\index{Directorio}
 
 Toda  la  información  (ya  sean  textos,  imágenes,  bases  de  datos
 o  información  para la  configuración  del  sistema) se  almacena  en
@@ -129,9 +119,9 @@ sólo nos remitiremos a la cuenta de trabajo del propio lector ;-)
 
 ¿Cómo sé  yo en  qué directorio  me encuentro?  Basta con  escribir el
 comando {\tt pwd} (Print Work Directory).
-
+\index{Directorio!pwd}
 \begin{verbatim}
-[felix@localhost felix]\$ pwd
+[felix@localhost felix]$ pwd
 /home/felix/
 \end{verbatim}
 
@@ -143,9 +133,10 @@ Y la salida que obtendré es:
 
 Para cambiar de directorio,  emplearemos el comando {\tt cd}
 (Change Directory)
+\index{Directorio!cd}
 
 \begin{verbatim}
-[felix@localhost Comandos]\$ cd /etc
+[felix@localhost Comandos]$ cd /etc
 \end{verbatim}
 
 Es decir, nos vamos al directorio {\tt /etc}
@@ -157,16 +148,17 @@ como irse a casa).
 
 ¿Cómo veo los ficheros y directorios de un directorio? Escribimos {\tt
 ls Nombre del directorio}.
+\index{Directorio!ls}
 
 \begin{verbatim}
-[felix@localhost apuntes]\$ ls /home/felix/apuntes/apuntes/
-Apuntes_CILA_2001.dvi   CVS/           introduccion.sgml  programando.sgml
+[felix@localhost apuntes]$ ls /home/felix/apuntes/apuntes/
+Apuntes_CILA_2001.dvi   CVS/    introduccion.sgml  programando.sgml
  xwindow.sgml
-Apuntes_CILA_2001.sgml  editores.sgml  LEEME              recursos.sgml
+Apuntes_CILA_2001.sgml  editores.sgml  LEEME             recursos.sgml
 cabecera.sgml           final.sgml     Makefile
  resumen_temario.txt
-comandos.sgml           graficos.sgml  matematicas.sgml   sobre.sgml
-compila*                internet.sgml  presentacion.sgml  temario.estado
+comandos.sgml           graficos.sgml  matematicas.sgml  sobre.sgml
+compila*                internet.sgml  presentacion.sgml temario.estado
 \end{verbatim}
 
 Si escribimos {\tt ls} (a secas) entonces se nos mostrará el contenido
@@ -175,9 +167,9 @@ del directorio en el que nos encontramos actualmente.
 El comando {\tt ls} admite parámetros tales como {\tt -a, -l}
 
 \begin{verbatim}
-[felix@localhost Comandos]\$ ls -a -l
-[felix@localhost Comandos]\$ ls -al
-[felix@localhost Comandos]\$ ls -la
+[felix@localhost Comandos]$ ls -a -l
+[felix@localhost Comandos]$ ls -al
+[felix@localhost Comandos]$ ls -la
 \end{verbatim}
 
 Obsérvese que ambas  formas de escribir los  parámetros son igualmente
@@ -186,7 +178,7 @@ utilizar en un comando, normalmente basta con escribir {\tt Nombre del
 comando --help}.
 
 \begin{verbatim}
-[felix@localhost apuntes]\$ ls --help
+[felix@localhost apuntes]$ ls --help
 Modo de empleo: ls [OPCIÓN]... [FICHERO]...
 List information about the FILEs (the current directory by default).
 Sort entries alphabetically if none of -cftuSUX nor --sort.
@@ -302,56 +294,56 @@ todo su  contenido disponemos  del comando {\tt  rm} con  las opciones
 {\tt  -rf}. {\bf  Mucho  cuidado con  borrar  directorios enteros  sin
 comprobar lo que se hace, pues no hay marcha atrás}
 
-
 \begin{verbatim}
-[felix@localhost apuntes]\$ mkdir pepe
-[felix@localhost apuntes]\$ mkdir tmp
-[felix@localhost apuntes]\$ rmdir pepe
-[felix@localhost apuntes]\$ rm -rf tmp
+[felix@localhost apuntes]$ mkdir pepe
+[felix@localhost apuntes]$ mkdir tmp
+[felix@localhost apuntes]$ rmdir pepe
+[felix@localhost apuntes]$ rm -rf tmp
 \end{verbatim}
 
 en el directorio actual, o también,
 
 \begin{verbatim}
-[felix@localhost apuntes]\$ mkdir /home/felix/pepe
-[felix@localhost apuntes]\$ rmdir /home/felix/pepe
+[felix@localhost apuntes]$ mkdir /home/felix/pepe
+[felix@localhost apuntes]$ rmdir /home/felix/pepe
 \end{verbatim}
 
 desde cualquier directorio.
 
-
 \subsection{Trabajando con ficheros}
+\index{Fichero}
 
 Antes  que nada,  hay  que  entender el  sistema  de  permisos de  los
 ficheros y directorios. Si escribimos {\tt ls -l}, nos encontramos con
 la siguiente salida:
+\index{Fichero!permisos}
 
 \begin{verbatim}
-[felix@localhost apuntes]\$ ls -l
+[felix@localhost apuntes]$ ls -l
 total 468
 -rw-rw-r--    1 felix    felix      163004 oct 29 10:05
  Apuntes_CILA_2001.dvi
 -rw-rw-r--    1 felix    felix      119151 oct 29 10:05
  Apuntes_CILA_2001.sgml
--rw-rw-r--    1 felix    felix        1617 oct 28 22:15 cabecera.sgml
--rw-rw-r--    1 felix    felix       13329 oct 29 10:05 comandos.sgml
--rwx------    1 felix    felix          33 oct 29 00:32 compila*
-drwxrwxr-x    2 felix    felix        4096 oct 28 23:20 CVS/
--rw-rw-r--    1 felix    felix       17250 oct 28 12:11 editores.sgml
--rw-rw-r--    1 felix    felix          12 oct 27 23:10 final.sgml
--rw-rw-r--    1 felix    felix         157 oct 27 23:10 graficos.sgml
--rw-rw-r--    1 felix    felix        2816 oct 28 21:51 internet.sgml
--rw-rw-r--    1 felix    felix       23308 oct 28 23:05 introduccion.sgml
--rw-rw-r--    1 felix    felix         402 oct 27 23:10 LEEME
--rw-rw-r--    1 felix    felix        2295 oct 28 22:19 Makefile
--rw-rw-r--    1 felix    felix       13087 oct 28 17:30 matematicas.sgml
--rw-rw-r--    1 felix    felix         652 oct 28 21:56 presentacion.sgml
--rw-rw-r--    1 felix    felix       34797 oct 28 21:56 programando.sgml
--rw-rw-r--    1 felix    felix          47 oct 28 21:56 recursos.sgml
--rw-rw-r--    1 felix    felix        1320 oct 25 13:35 resumen_temario.txt
--rw-rw-r--    1 felix    felix        4662 oct 28 22:17 sobre.sgml
--rw-rw-r--    1 felix    felix        5247 oct 28 22:19 temario.estado
--rw-rw-r--    1 felix    felix        7417 oct 27 23:10 xwindow.sgml
+-rw-rw-r--  1 felix  felix    1617 oct 28 22:15 cabecera.sgml
+-rw-rw-r--  1 felix  felix   13329 oct 29 10:05 comandos.sgml
+-rwx------  1 felix  felix      33 oct 29 00:32 compila*
+drwxrwxr-x  2 felix  felix    4096 oct 28 23:20 CVS/
+-rw-rw-r--  1 felix  felix   17250 oct 28 12:11 editores.sgml
+-rw-rw-r--  1 felix  felix      12 oct 27 23:10 final.sgml
+-rw-rw-r--  1 felix  felix     157 oct 27 23:10 graficos.sgml
+-rw-rw-r--  1 felix  felix    2816 oct 28 21:51 internet.sgml
+-rw-rw-r--  1 felix  felix   23308 oct 28 23:05 introduccion.sgml
+-rw-rw-r--  1 felix  felix     402 oct 27 23:10 LEEME
+-rw-rw-r--  1 felix  felix    2295 oct 28 22:19 Makefile
+-rw-rw-r--  1 felix  felix   13087 oct 28 17:30 matematicas.sgml
+-rw-rw-r--  1 felix  felix     652 oct 28 21:56 presentacion.sgml
+-rw-rw-r--  1 felix  felix    34797 oct 28 21:56 programando.sgml
+-rw-rw-r--  1 felix  felix      47 oct 28 21:56 recursos.sgml
+-rw-rw-r--  1 felix  felix    1320 oct 25 13:35 resumen_temario.txt
+-rw-rw-r--  1 felix  felix    4662 oct 28 22:17 sobre.sgml
+-rw-rw-r--  1 felix  felix    5247 oct 28 22:19 temario.estado
+-rw-rw-r--  1 felix  felix    7417 oct 27 23:10 xwindow.sgml
 \end{verbatim}
 
 La primera letra a  la izquierda de cada línea nos  indica si se trata
@@ -371,11 +363,9 @@ usuario  que  pertenece ese  usuario,  y  el  tercero a  los  usuarios
 $-\underbrace{rw-}_{u}\underbrace{rw-}_{g}\underbrace{r--}_{o}$
 \end{center}
 
-
 vemos  que se  trata  de un  fichero  (-) con  permisos  de lectura  y
 escritura  para el  usuario y  el grupo  al que  pertenece, y  de sólo
 lectura para un ``extraño''.
-
 
 El  siguiente  sería un  fichero  de  lectura, escritura  y  ejecución
 únicamente para el usuario pro\-pie\-ta\-rio del fichero.
@@ -407,9 +397,8 @@ El  comando para  copiar un  fichero es  {\tt cp  [fichero de  origen]
 pepe.txt} en {\bf juan.txt}.
 
 \begin{verbatim}
-[felix@localhost apuntes]\$ cp pepe.txt juan.txt
+[felix@localhost apuntes]$ cp pepe.txt juan.txt
 \end{verbatim}
-
 
 El comando  para mover o  renombrar un fichero  es {\tt mv  fichero de
 origen fichero  de destino},  es decir, que  copiamos el  fichero {\bf
@@ -417,7 +406,7 @@ pepe.txt}  en {\bf  juan.txt},  pero {\bf  pepe.txt}  deja de  existir
 físicamente.
 
 \begin{verbatim}
-[felix@localhost apuntes]\$ mv pepe.txt juan.txt
+[felix@localhost apuntes]$ mv pepe.txt juan.txt
 \end{verbatim}
 
 \noindent\rule{\linewidth}{.75pt}
@@ -431,9 +420,10 @@ fichero que Pepe.txt, ni que PEPE.TXT, etc.
 
 Un último punto  a esta sección. Si queremos que  un fichero cambie de
 propietario, lo haremos, con {\tt chown}:
+\index{Fichero!chown}
 
 \begin{verbatim}
-[felix@localhost apuntes]\$ chown miguel pepe.txt
+[felix@localhost apuntes]$ chown miguel pepe.txt
 \end{verbatim}
 
 si antes, {\bf pepe.txt} era de {\tt  felix}, ahora pasa a ser de {\tt
@@ -444,7 +434,7 @@ pepe.txt} era  del grupo  de los  profesores, y  queremos que  sea del
 grupo de los estudiantes, sólo habrá que escribir lo siguiente:
 
 \begin{verbatim}
-[felix@localhost apuntes]\$ chgrp estudiantes pepe.txt
+[felix@localhost apuntes]$ chgrp estudiantes pepe.txt
 \end{verbatim}
 
 En algunos sistemas  no se puede cambiar el propietario  de un fichero
@@ -463,7 +453,7 @@ de un  determinado volumen (su cuota)  en el disco. Si  este mecanismo
 está activo  no se permite  a los  usuarios cambiar el  propietario de
 ningún fichero, ya que podría usarse  este cambio para ocupar la cuota
 de otro usuario.
-
+\index{Fichero!chmod}
 Finalmente, para  cambiar los permisos  de un fichero, lo  haremos con
 {\tt chmod},  indicando a  que tipo de  usuario queremos  asignarlos y
 sobre qué permisos.  Para indicar el usuario  propietario, usaremos el
@@ -474,7 +464,7 @@ ejecución  respectivamente. Y  para conceder  o denegar,  usaremos los
 símbolos ``+'' y ``-'':
 
 \begin{verbatim}
-[felix@localhost apuntes]\$ chmod u+rwx pepe.txt
+[felix@localhost apuntes]$ chmod u+rwx pepe.txt
 \end{verbatim}
 
 Este ejemplo sirve para dar todos los permisos al usuario.
@@ -485,22 +475,19 @@ compila}.
 
 
 \begin{verbatim}
-[felix@localhost apuntes]\$ chmod ug+r-x compila
+[felix@localhost apuntes]$ chmod ug+r-x compila
 \end{verbatim}
 
 O quitar el permiso de ejecución a  todos los usuarios sin que se vean
 afectados los otros tipos de permisos:
 
 \begin{verbatim}
-[felix@localhost apuntes]\$ chmod -x probar
+[felix@localhost apuntes]$ chmod -x probar
 \end{verbatim}
-
-
 
 \section{Comandos básicos para sobrevivir}
 
 \begin{description}
-
 
 \item [clear:] limpia la pantalla de la consola (teclas CTRL+L)
 
@@ -527,21 +514,19 @@ regenerando la pantalla.
 
 \end{description}
 
-
 \section{El comando {\tt man}}
+\index{Comandos!man}
 
 
 Este comando es  muy útil, ya que nos dará  mucha información sobre la
 mayoría de los comandos con los que vamos a trabajar.
 
-
 \begin{verbatim}
-[felix@localhost apuntes]\$ man bash
+[felix@localhost apuntes]$ man bash
 \end{verbatim}
 
 Omitimos la información de salida ya que puede ser muy extensa e invita
 al lector a que lo pruebe él mismo.
-
 
 \section{Unidades de disco}
 
@@ -551,13 +536,7 @@ directorio raíz {\tt /}. Para acceder  a un disco es necesario primero
 {\em  montarlo},  esto es  asignarle  un  lugar  dentro del  árbol  de
 directorios del sistema.
 
-Por ejemplo, podemos asignar  a la disquetera
-el directorio {\tt /floppy}, al CD-ROM  el directorio {\tt /cdrom} o a
-la  grabadora de  CDs el  directorio {\tt  /grabata}. Normalmente  los
-directorios  para  la  disquetera  y  el lector  de  CD-ROM  están  ya
-asignados desde  el momento  de instalar el  sistema, aunque  se puede
-cambiar a voluntad (si somos root ;-).
-
+Por ejemplo, podemos asignar  a la disquetera el directorio {\tt /floppy}, al CD-ROM  el directorio {\tt /cdrom} o a la  grabadora de  CDs el  directorio {\tt  /grabata}. Normalmente  los directorios  para  la  disquetera  y  el lector  de  CD-ROM  están  ya asignados desde  el momento  de instalar el  sistema, aunque  se puede cambiar a voluntad (si somos root ;-).
 
 Para montar  un disco  utilizamos el  comando {\tt  mount} indicándole
 como parámetros el dispositivo al que queremos acceder y el directorio
@@ -567,11 +546,10 @@ conformarse montar lo  que root les permita. En nuestro  caso el señor
 root ha determinado que los usuarios sólo podemos montar la disquetera
 en el directorio {\tt /floppy}.
 
-
 \begin{verbatim}
-[miguev@euler apuntes]\$ mount /dev/fd0 /floppy
+[miguev@euler apuntes]$ mount /dev/fd0 /floppy
 mount: only root can do that
-[miguev@euler apuntes]\$ mount /floppy
+[miguev@euler apuntes]$ mount /floppy
 \end{verbatim}
 
 Una vez montado el disquete en  el directorio {\tt /floppy} ya podemos
@@ -595,8 +573,23 @@ conviene que el tiener mosqueado al Sr. root.
 Para desmontar el disquete simplemente utilizamos el sencillo comando:
 
 \begin{verbatim}
-[miguev@euler apuntes]\$ umount /floppy
+$ umount /floppy
 \end{verbatim}
+
+Como último ejemplo, hagamos lo siguiente:
+
+\begin{verbatim}
+$ mount /floppy
+$ cd /floppy
+$ umount /floppy
+\end{verbatim}
+
+¿Verdad que no funciona? Esto se debe a que en el momento de desmontar
+la  disketera, {\em  no  de  haber NADIE}  dentro  de ese  directorio.
+Recordemos que estamos en un  sistema multiusuario y puede ocurrir que
+más  de  una persona  acceda  a  la  disketera  o a  otro  dispositivo
+desmontable, como  el CD-ROM. Por  tanto, hemos de asegurarnos  que no
+hay nadie.
 
 Para comprobar en un momento dado  si el disquete está montado podemos
 usar el  comando {\tt  df}, que  nos informa  sobre los  ``sistemas de
@@ -604,7 +597,7 @@ ficheros'' que están montados y su estado de almacenamiento. La opción
 {\tt -h} nos muestra las cantidades en cifras ``{\bf h}umanas''.
 
 \begin{verbatim}
-[miguev@euler apuntes]\$ df -h
+[miguev@euler apuntes]$ df -h
 Filesystem            Size  Used Avail Use% Mounted on
 /dev/hda2             1.9G  1.8G   80M  96% /
 euler:/home            20G  3.2G   16G  17% /home
@@ -617,6 +610,3 @@ Aquí  vemos  que la  segunda  partición  del  primer disco  duro  {\tt
 /home} y  {\tt /usr/soft} del  servidor {\tt euler} están  montados en
 sus equivalente locales, y el  disquete {\tt /dev/fd0} está montado en
 el directorio {\tt /floppy}.
-
-
-

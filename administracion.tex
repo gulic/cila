@@ -1,7 +1,7 @@
 %Autor: faraox & ese
 
 \chapter{Administración básica}
-
+\index{administracion}
 \section{Paquetes de instalación}
 
 Un paquete es un archivo que  contiene varios ficheros que permiten la
@@ -9,12 +9,12 @@ instalación de un programa. En linux existen varios tipos de paquetes:
 
 \begin{description}
 
-\item[RPM:] es el  tipo de paquetes más popular. Creada  por Red Hat y
+\item[RPM:] \index{administracion!RPM, paquetes} es el  tipo de paquetes más popular. Creada  por Red Hat y
 que utilizan la mayoría de las las distribuciones.
 
-\item[DEB:] creada por  el grupo  Debian.
+\item[DEB:] \index{administraicon!DEB, paquetes} creada por  el grupo  Debian.
 
-\item[TARBALLS:]  éstos  son  ficheros comprimidos  que  contienen  el
+\item[TARBALLS:] \index{administracion!TARBALLS, paquetes} éstos  son  ficheros comprimidos  que  contienen  el
 código  fuente   del  programa   y  pueden  instalarse   en  cualquier
 distribución.
 
@@ -24,7 +24,7 @@ Una parte importante y muy delicada  de un sistema de paquetes son las
 dependencias.  Cada  paquete  necesita  que  estén  instalados  en  el
 sistemas otros paquetes que son necesarios para su funcionamiento, los
 paquetes  necesarios para  su instalación  se llaman  dependencias. Si
-esto no funciona, no asegurar  que el sistema funcione con estabilidad
+esto no funciona, no se puese asegurar  que el sistema funcione con estabilidad
 y fiabilidad al sistema GNU/Linux.
 
 % Continuar con lo de dependencias.
@@ -32,12 +32,12 @@ y fiabilidad al sistema GNU/Linux.
 
 %Esto es de Félix
 \subsection{Sistema de paquetes RPM}
-
-Este sistema  de paquetes fue creado  por la compañía Red  Hat. De ahí
+\index{RPM}
+Este sistema  de paquetes fue creado  por la compañía \index{Red Hat} Red  Hat. De ahí
 viene el  nombre RPM,  {\bf Red  Hat Package  Manager}. Con  el tiempo
 otras distribuciones han ido adoptando  este sistema de empaquetado de
 ficheros. Las principales  distribuciones que lo adotan  son: Red Hat,
-SuSE y Mandrake.
+SuSE \index{SuSE} y Mandrake. \index{Mandrake}
 
 Un paquete de software construido con RPM es un conjunto de ficheros e
 información  asociada  a ello,  como  un  nombre,  una versión  y  una
@@ -48,7 +48,7 @@ instalación.  La aplicación  que  se utiliza  para  la instalar  estos
 paquetes es {\tt rpm}. Ésta es su forma de utilización:
 
 \subsubsection{Instalación de paquetes RPM}
-
+\index{RPM!instalación}
 RPM se utiliza  principalmente para instalar de  paquetes software. La
 sintaxis general de una orden de instalación {\tt rpm} es:
 
@@ -57,14 +57,13 @@ rpm [opciones] [paquetes]
 \end{verbatim}
 
 \noindent donde {\tt opciones} puede ser alguna de las siguientes:
-
 \begin{description}
 
 \item [{\tt -v}:] Muestra por  pantalla el trabajo que está realizando
 RPM.
 
 \item [{\tt  -h o --hash}:] Imprime  en pantalla el carácter  {\bf \#}
-muchas veces seguidas mientras se está instalando el paquete.
+muchas veces seguidas mientras se está instalando el paquete para marcar el proceso de instalación.
 
 \item [{\tt  --percent}:] Muestra en pantalla  el porcentaje realizado
 mientras se extraen los ficheros de un paquete.
@@ -118,7 +117,7 @@ caso de que se quiera instalar  sin atender a estos mensajes, sólo hay
 que usar la opción {\tt --nodeps}.
 
 \subsubsection{Actualización de paquetes RPM}
-
+\index{RPM!actualización}
 El modo de actualización de  RPM proporcina un método sencillo renovar
 paquetes ya instalados a versiones más  modernas. Su uso es similar al
 de la instalación:
@@ -128,7 +127,7 @@ rpm -U [opciones] [paquetes]
 \end{verbatim}
 
 \subsubsection{Desinstalación de paquetes RPM}
-
+\index{RPM!desinstalación}
 El modo  de desinstalación  de RPM proporciona  un método  limpio para
 eliminar los archivos que pertenecen a un determinado paquete y que se
 encuentran en diferentes lugares.
@@ -160,7 +159,7 @@ son horas y ganas.
 
 %Esto es de faraox
 \subsection{Sistema de paquetes Deb}
-
+\index{DEB}
 Todos los paquetes deb tienen el siguiente formato:
 {\tt nombre-del-paquete\_version(1.3.34-5).deb}  
 
@@ -171,7 +170,7 @@ recomendando  paquetes. El  sistema APT  engloba varios  comandos como
 apt-get, apt-cache, apt-cdrom,...
 
 \subsubsection{El fichero /etc/apt/sources.list}
-
+\index{DEB!sources.list}
 Este fichero  es imprescindible  para la  instalación de  paquetes con
 APT. En  él se guardan  las direcciones de  donde APT se  descarga los
 paquetes. Los medios por los que  se pueden descargar los paquetes son
@@ -229,65 +228,59 @@ redistribuir el código,etc).
 \end{itemize}
 
 \subsubsection{Apt-get}
-
+\index{DEB!apt-get}
 El comando {\bf  apt-get} se utiliza para la  manipulación de paquetes
 deb. Permite la instalación de paquetes, borrado, \dots
 
 %probar a hacer tabla 
 
-\begin{table}[htbp]
-\centering
-\begin{tabular}{|c|p{0.88\textwidth}|}
-\hline
+\begin{description}
 
-{\tt apt-get install paquete1 paquete2 ...} & Instala paquetes. \\
+\item[{\tt apt-get install paquete1 paquete2 ...}] Instala paquetes.
 
-{\tt apt-get remove paquete1 paquete2 ...} & Borra paquetes. \\
+\item[{\tt apt-get remove paquete1 paquete2 ...}] Borra paquetes.
 
-{\tt apt-get source paquete1 paquete2 ...} & Descarga el código fuente
-de los paquetes. \\
+\item[{\tt apt-get  source paquete1 paquete2 ...}]  Descarga el código
+fuente de los paquetes.
 
-{\tt apt-get update } & Actualiza la lista de paquetes disponibles
-para instalar. \\
+\item[{\tt  apt-get   update  }]   Actualiza  la  lista   de  paquetes
+disponibles para instalar.
 
-{\tt apt-get upgrade } & Instala las nuevas  versiones de los
-diferentes paquetes disponibles. \\
+\item[{\tt  apt-get upgrade  }] Instala  las nuevas  versiones de  los
+diferentes paquetes disponibles.
 
-{\tt apt-get dist-upgrade} & Función adicional de la opción upgrade
-que modifica las dependencias por la de las nuevas versiones de los
-paquete. \\
+\item[{\tt  apt-get  dist-upgrade}]  Función adicional  de  la  opción
+upgrade que modifica  las dependencias por la de  las nuevas versiones
+de los paquete.
 
-{\tt apt-get build-dep  paquete1 paquete2 ...} &  Instala los paquetes
-necesarios para la compilación del código fuente de los paquetes.\\
+\item[{\tt  apt-get  build-dep  paquete1 paquete2  ...}]  Instala  los
+paquetes  necesarios para  la  compilación del  código  fuente de  los
+paquetes.
 
-{\tt  apt-get clean}  &  Elimina  los ficheros  que  se encuentran  en
-/var/cache/apt/archives  y   /var/cache/apt/archives/partial.  Ahí  se
-encuentran los paquetes que hemos descargado para instalar. \\
+\item[{\tt  apt-get clean}]  Elimina  los ficheros  que se  encuentran
+en /var/cache/apt/archives  y /var/cache/apt/archives/partial.  Ahí se
+encuentran los paquetes que hemos descargado para instalar.
 
-\hline
+\end{description}
 
-\end{tabular}
-\caption{Opciones principales de apt-get}
-\end{table}
+\begin{description}
 
-\begin{table}[htbp]
-\centering
-\begin{tabular}{|c|p{0.88\textwidth}|}
-\hline
-{\tt -d,--download-only} & Sólo descarga el paquete, no lo instala. \\
-{\tt -f,--fix-broken} & Esta opción es importante, intenta arreglar
-problemas de dependencias que tengamos en el sistema. \\
-{\tt -s,--simulate} & Nos muestra los resultados de la instalación de
-un paquete. \\
-{\tt -b,--build} & Compila el paquete de código fuente que hayamos
-bajado. \\
-\hline
-\end{tabular}
-\caption{Otras opciones del apt-get}
-\end{table}
+\item[{\tt  -d,--download-only}]  Sólo  descarga  el  paquete,  no  lo
+instala.
+
+\item[{\tt  -f,--fix-broken}]  Esta   opción  es  importante,  intenta
+arreglar problemas de dependencias que tengamos en el sistema.
+
+\item[{\tt   -s,--simulate}]  Nos   muestra  los   resultados  de   la
+instalación de un paquete.
+
+\item[{\tt  -b,--build}]  Compila  el  paquete de  código  fuente  que
+hayamos bajado.
+
+\end{description}
 
 \subsubsection{Apt-cache}
-
+\index{DEB!apt-cache}
 El  comando apt-cache  trabaja  con  la caché  de  los paquetes.  Este
 comando no  manipula el  estado del  sistema, así  que lo  pueden usar
 usuarios normales. Es de gran  utilidad ya que nos muestra información
@@ -313,20 +306,21 @@ paquete.
 \end{description}
 
 \subsubsection{El fichero {\tt /etc/apt/apt.conf}}
-
+\index{DEB!apt.conf}
 El fichero apt.conf sirve para la configuración por defecto de APT. En
 el fichero podemos, por ejemplo, darle  las órdenes al APT para el uso
 de  un  proxy.  Podemos  encontrar  un ejemplo  del  fichero  en  {\tt
+
 /usr/share/doc/apt/examples/configure-index.gz}
 
 \subsubsection{Apt-cdrom}
-
+\index{DEB!apt-cdrom}
 El comando  apt-cdrom permite añadir nuevos  CD-ROM's al sources.list.
 Para añadir un cdrom la orden es {\tt apt-cdrom add}
 
 
 \section{La gestión de los procesos.}
-
+\index{Procesos}
 Un proceso es  cualquier instrucción o programa que en  ese momento se
 está ejecutando en nuestro sistema. Todo proceso tiene un PID (Process
 IDentifier), es decir, un número que  le identifica y le diferencia de
@@ -334,7 +328,7 @@ todos los demás. Una característa importante es que todo proceso tiene
 un estado: corriendo, durmiendo, zombie o parado.
 
 \subsection{El comando kill}
-
+\index{Procesos!kill}
 El comando kill nos permite interactuar con cualquier proceso mandando
 señales (signal). Cuando  ejecutamos {\tt kill pid} lo  que hacemos es
 mandar la señal de TERM(terminar) con  lo cual se termina ese proceso.
@@ -419,9 +413,6 @@ USER       PID %CPU %MEM   VSZ  RSS TTY      STAT START   TIME COMMAND
 root         1  0.0  0.2  1272  436 ?        S    16:00   0:04 init [2] 
 root         2  0.0  0.0     0    0 ?        SW   16:00   0:01 [keventd]
 root         3  0.0  0.0     0    0 ?        SW   16:00   0:00 [kapmd]
-root         4  0.0  0.0     0    0 ?        SWN  16:00   0:00 [ksoftirqd_CPU0]
-faraox     613  0.0 15.4 46636 28308 ?       S    17:22   0:00 /usr/bin/galeon-bin
-faraox    1360  0.0  2.0  6416 3728 ?        S    18:57   0:00 Eterm -F -misc-fixed-mediu
 faraox    1363  0.0  0.8  2740 1564 pts/2    S    18:57   0:00 -bash
 \end{verbatim}
 
@@ -446,7 +437,7 @@ inició  y  ``COMMAND'' muestra  el  nombre  del  comando que  se  está
 ejecutando.
 
 \subsection{El comando top}
-
+\index{Procesos!top}
 El comando  top es una utilidad  que permite la monitorización  de los
 procesos de  la CPU. También muestra  el estado de la  memoria. Es una
 mezcla del comando uptime, free y ps.
@@ -466,10 +457,10 @@ PID USER     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME COMMAND
 \end{verbatim}
 \begin{table}[htbp]
 \centering
-\begin{tabular}{|c|p{0.88\textwidth}|}
+\begin{tabular}{|c|p{0.7\textwidth}|}
 \hline
 {\tt espacio} & Actualiza la pantalla \\
-{\tt Ctrol + L} & Borra y reescribe la pantalla \\
+{\tt C-l} & Borra y reescribe la pantalla \\
 {\tt k} & Mata un proceso(kill) \\
 {\tt r} & Cambia la prioridad de cualquier proceso \\
 {\tt s} & Cambia el intervalo de refresco(por defecto es cada 5 segundos) \\
@@ -485,7 +476,7 @@ PID USER     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME COMMAND
 \end{table}
 
 \subsection{{\bf Nice}: prioridad en procesos}
-
+\index{Procesos!nice}
 Una CPU tiene que compartir su  tiempo de cálculo con varios procesos.
 {\tt  Nice} es  un programa  que permite  cambiar la  prioridad de  un
 proceso en  nuestro sistema. La prioridad  tiene un rango desde  -20 a
@@ -497,7 +488,7 @@ comando}  o  también podemos  utilizar  el  comando {\tt  rnice}  para
 cambiar la prioridad de un proceso: {\tt renice prioridad PID}
 
 \section{Los servicios en Debian}
-
+\index{Administracion!servicios}
 Los servicios o demonios son  procesos que se ejecutan automáticamente
 al  arrancar  el  sistema  o  al llamarlos  y  que  esperan  cualquier
 petición.  Es el  caso por  ejemplo de  Apache, Qmail,  SSH, etc.  Los
@@ -515,7 +506,7 @@ se  inicie automáticamente  al arrancar  escribimos: {\tt  update-rc.d
 servicio defaults}
 
 \section{Los archivos de registro}
-
+\index{Administracion!registro, ficheros}
 Los ficheros de registro (logging files) se almacenan los resultados e
 información útil de algunos programas.  Éstos son muy importantes para
 conocer el  estado de  nuestra máquina. Los  ficheros de  registro más
@@ -525,12 +516,12 @@ que están guardados en un fichero ASCII.
 
 \begin{description}
 
-\item [syslog:] El fichero syslog es  el resultado de los mensajes del
+\item [{\tt syslog}:] El fichero syslog es  el resultado de los mensajes del
 demonio Syslogd.  Este demonio  se encarga de  la organización  de los
 mensajes del  kernel, así  que en el  fichero syslog  podemos enontrar
 toda la información sobre lo que ocurre en nuestra máquina.
 
-\item  [messages:]  Este fichero  es  igual  al syslog,  pero  muestra
+\item  [{\tt messages}:]  Este fichero  es  igual  al syslog,  pero  muestra
 información  más simple.  En  el podemos  controlar,  por ejemplo,  la
 información del demonio pppd.
 
@@ -543,7 +534,6 @@ con el comando {\tt last}.
 
 \end{description}
 
-
 Normalmente cada  demonio tiene  un fichero de  registro al  igual que
 otros  muchos programas.  Sólo  hay que  mirar  la documentación.  Los
 ficheros  de registro  de  nuestro servidor  de  correo se  encuentran
@@ -553,7 +543,7 @@ en  /var/log/mail.log,  así  como  los del  Apache  se  encuentran  en
 \section{Otras utilidades para la administración}
 
 \subsection*{uptime}
-
+\index{Administracion!uptime}
 El comando {\tt uptime} nos indica  el tiempo que ha estado corriendo
 la máquina.
 
@@ -569,15 +559,14 @@ sistema. Por  último muestra  la carga  media de  la máquina,  en tres
 tiempos, 1,5 y 15 minutos.
 
 \subsection*{w}
-
+\index{Administracion!w}
 Muestra los usuarios que se encuentran en el sistema. Veamos un ejemplo:
 
 \begin{verbatim}
 $w
 18:00:59 up  2:00,  8 users,  load average: 0.01, 0.02, 0.00
 USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU  WHAT
-faraox   tty1     -                16:01    1:58m  2.69s  0.00s  /bin/sh /usr/bin/X11/star
-faraox   pts/0    :0.0             16:02    9.00s 40.22s 40.16s  vi administracion.tex 
+faraox   tty1     -                16:01    1:58m  2.69s  0.00s  w
 \end{verbatim}
 
 La primera  línea que muestra  el comando {\tt w}  es la salida  de el
@@ -589,7 +578,7 @@ tiempo  usado por  los procesos  actuales y  lo que  está haciendo  el
 usuario.
 
 \subsection*{free}
-
+\index{Administracion!free}
 El  comando {\tt  free}  muestra  información sobre  el  estado de  la
 memoria del  sistema. Muestran  tanto el estado  de la  memoria física
 como de  la swap. También muestra  el búffer utilizado por  el kernel.
@@ -598,15 +587,15 @@ Una salida del comando {\tt free}
 \begin{verbatim}
 $free
 	     total       used       free     shared    buffers     cached
-Mem:        182900     173300       9600          0      11796      66588
+Mem:     182900     173300      9600          0      11796      66588
 -/+ buffers/cache:      94916      87984
-Swap:        96352        448      95904
+Swap:    96352        448      95904
 \end{verbatim}
 
 Este comando lee la información del fichero /proc/meninfo.
 
 \subsection*{dmesg}
-
+\index{Administracion!dmesg}
 Este comando  muestra los  mensajes del kernel  durante el  inicio del
 sistema.
 
@@ -623,7 +612,7 @@ Una de  las competencias  del administrador es  gestionar la  parte de
 usuarios y englobarlos dentro de grupos de trabajo.
 
 \subsection{Gestión de usuarios}
-
+\index{Administracion!usuarios, gestión}
 Para  la   gestión  de  usuarios   hay  dos  operaciones:   Adición  y
 eliminación.
 
@@ -683,7 +672,7 @@ root@tejita:/home# deluser pepe
 
 
 \subsection{Gestión de grupos}
-
+\index{Administracion!grupos, gestión}
 Cuando creamos un  usuario, siempre lo vamos a incluir  en algún grupo
 de trabajo, ya sea el suyo propio o bien, en uno común.
 

@@ -1,7 +1,6 @@
 %Author: AgarFu, _ese & wizard--
 
-\chapter{Instalacion de GNU/Linux}
-
+\chapter{Instalación de GNU/Linux}
 
 \section{Introducción}
 
@@ -63,7 +62,7 @@ para la instalación y la distribución del teclado que usaremos.\\
 El idioma  es a  vuestro gusto,  elegid aquél con  el que  más comodos
 estéis  y  la distribución  de  teclado  se  recomienda que  uséis  la
 distribución  de  vuestro teclado,  ya  que  si  no lo  hacéis  podéis
-encontraros que  pulsando la  tecla ñ  aparezca una  `p' o  algún otro
+encontraros que  pulsando la  tecla ñ  aparezca una \verb.p. o  algún otro
 carácter. Los teclados españoles son del tipo qwerty-ES.
 
 \begin{figure}[hbtp]
@@ -100,7 +99,7 @@ partición de nuestro Windows son los siguientes:
 \item{Decidir  cuánto espacio  vamos a  dejar para  la instalación  de
 Linux. Esta  decisión corre  a cuenta del  usuario. Se  recomienda que
 para  una  instalación  completa  de las  distribuciones,  se  reserve
-alrededor de 2Gb de espacio en disco.}
+alrededor de 2 Gb de espacio en disco.}
 
 \item{Reducir  el tamaño  de la  partición de  Windows. Para  llevar a
 cabo  esta tarea  se  tienen varias  posibilidades. Podemos  encontrar
@@ -148,15 +147,15 @@ más particiones de ningún  otro tipo\footnote{Como observación diremos
 que en  Windows tendremos problemas a  la hora de trabajar  con más de
 una partición primaria en FAT16 o FAT32}.}
 
-\item[Particiones  lógicas:]{   en  caso  de  querer   más  de  cuatro
-particiones deberemos usar particiones lógicas. Tendremos que eliminar
-al  menos una  partición  primaria para  crear  una partición  lógica.
-Desde este  momento podremos crear tantas  particiones extendidas como
-deseemos a partir de esta partición lógica.}
+\item[Particiones  extendidas:]{   en  caso  de  querer   más  de  cuatro
+particiones deberemos usar particiones extendidas. Tendremos que eliminar
+al  menos una  partición  primaria para  crear  una partición  extendida.
+Desde este  momento podremos crear tantas  unidades lógicas como
+deseemos a partir de esta partición extendida.}
 
-\item[Particiones extendidas:]{  este tipo de particiones  son las que
-se  crean  a partir  de  la  partición  lógica, nunca  podremos  crear
-particiones extendidas desde una partición primaria.}
+\item[Unidades lógicas:]{  este tipo de particiones  son las que
+se  crean  a partir  de  la  partición extendida, nunca  podremos  crear
+unidades lógicas desde una partición primaria.}
 
 \end{description}
 
@@ -222,9 +221,9 @@ IDE)\\
 \begin{center}
 \begin{tabular}{rcl}
 partición lógica & $\Rightarrow$ & {\tt /dev/hda1} \\
-partición extendida 1 & $\rightarrow$ & {\tt /dev/hda5} \\
-partición extendida 2 & $\rightarrow$ & {\tt /dev/hda6} \\
-partición extendida 3 & $\rightarrow$ & {\tt /dev/hda7} \\
+partición extendida 1 & $\Rightarrow$ & {\tt /dev/hda5} \\
+partición extendida 2 & $\Rightarrow$ & {\tt /dev/hda6} \\
+partición extendida 3 & $\Rightarrow$ & {\tt /dev/hda7} \\
 partición primaria 1 & $\Rightarrow$ & {\tt /dev/hda2} \\
 partición primaria 2 & $\Rightarrow$ & {\tt /dev/hda3} \\
 partición primaria 3 & $\Rightarrow$ & {\tt /dev/hda4} \\
@@ -569,34 +568,34 @@ los ficheros de configuración existentes.\\
 \caption{xf86cfg. Utilidad para configurar el servidor X}
 \end{figure}
 
-Para  proceder  con  la  configuración pulsaremos  la  tecla  <enter>,
+Para  proceder  con  la  configuración pulsaremos  la  tecla  {\tt Enter},
 apareciendo  la   pantalla  de  selección  del   protocolo  de  ratón.
 Introducimos el número de la opción elegida (normalmente es la 4. PS/2
-Mouse) seguida  de un  <enter>. Se nos  preguntará si  queremos emular
+Mouse) seguida  de un  {\tt Enter}. Se nos  preguntará si  queremos emular
 el  tercer  botón  (para  aquellos  ratones  con  sólo  dos  botones).
 Si  respondemos  afirmativamente  al   pulsar  el  botón  izquierdo  y
 derecho  simultaneamente  obtendremos  el  mismo  efecto  como  cuando
-pulsamos el tercer botón.Respondemos con  y/n y apretamos <enter> para
+pulsamos el tercer botón.Respondemos con  y/n y apretamos {\tt Enter} para
 poder  llegar  a  introducir  el  nombre  del  dispositivo  del  ratón
 (por  defecto  /dev/mouse, y  en  mayoría  de  los casos  nos  servirá
 /dev/psaux). Posteriormente se nos  pedirá que introduzcamos el número
 correspondiente a nuestro teclado de entre los listados en la pantalla
 (los del tipo  generic en caso de duda). A  continuación tendremos que
 elegir el  país (España  - 42). Seguidamente  podremos poner  un alias
-para el idioma anteriormente elegido.  Pulsando a <enter> se pondrá la
+para el idioma anteriormente elegido.  Pulsando a {\tt Enter} se pondrá la
 opción por defecto,  y el programa nos preguntará  si queremos activar
-las  opciones adicionales  del XKB  (en caso  de duda  'n' seguido  de
-<enter>) \\
+las  opciones adicionales  del XKB  (en caso  de duda  {\tt n} seguido  de
+{\tt Enter}) \\
 
 A  continuación accederemos  al apartado  de configuración  de nuestro
 monitor. Observando las opciones mostradas  en la pantalla y elegiendo
 las  adecuadas avanzaremos  dos apartados  y  en el  siguiente se  nos
 pedirá que escribamos  un identificador para el  monitor. Escribid una
 cadena con su  nombre, descripción o lo que queráis  y pulsad la tecla
-<enter> para poder elegir nuestra tarjeta de video\\
+{\tt Enter} para poder elegir nuestra tarjeta de video\\
 
-Si  leemos la  pantalla  averiguamos  que al  pulsar  'y' <enter>  nos
-aparecerá  un  listado  de  tarjetas  soportadas  (al  pulsar  <enter>
+Si  leemos la  pantalla  averiguamos  que al  pulsar  {\tt y + Enter}  nos
+aparecerá  un  listado  de  tarjetas  soportadas  (al  pulsar  {\tt Enter}
 continúa  la  lista)  del  cual tendremos  que  introducir  el  número
 correspondiente  a  nuestro modelo  de  tarjeta.  Seguidamente se  nos
 pedirá el tamaño de  la memoria de la tarjeta de  video (4096K son 4M,
@@ -639,7 +638,7 @@ siguientes:
 \end{itemize}
 
 Toda  la documentación  sobre la  instalación y  los drivers  para los
-modems anteriores se pueden encontrar en la página www.linmodems.org.
+modems an\-te\-rio\-res se pueden encontrar en la página www.linmodems.org.
 
 Antes de empezar con la configuración de nuestro modem nombrar como en
 casos  anteriores que  existen herramientas  específicas de  distintas
@@ -665,9 +664,10 @@ ficheros  de  configuiración, asi  que  antes  de empezar  necesitamos
 acceder como  root y a continuación  escribir en la línea  de comandos
 pppconfig. Seleccionamos la opcion  marcada (crear una conexión nueva)
 y posteriormente  introducimos un identificador para  nuestra conexión
-(como ejemplo usaremos 'nueva-conexion'). Elejimos nuestro tipo de DNS
+(como ejemplo usaremos 'nueva-conexion'). Elegimos nuestro tipo de DNS
+
 (casi siempre estático,  dependiendo de nuestro proveedor  de acceso a
-internet), seleccionamos <OK> y seguidamente introducimos la dirección
+internet), seleccionamos $<$OK$>$ y seguidamente introducimos la dirección
 del servidor DNS  primario y secundario si  tenemos (ambas direcciones
 son proporcionadas por el proveedor de acceso).\\
 
@@ -711,22 +711,22 @@ Los ficheros de configuración por  defecto se guardan en el directorio
 (u  otro introducido  como  identificador) y  ejecutamos el  siguiente
 comando:
 
-\begin{center}
-	{\bf cila\$ pppd file /ruta/del/fichero/nueva-conexion}
-\end{center}
+\begin{verbatim}
+$ pppd file /ruta/del/fichero/nueva-conexion
+\end{verbatim}
 
 Lo cual normalmente corresponde a lo siguiente:
 
-\begin{center}
-	{\bf cila\$ pppd file /etc/ppp/peers/nueva-conexion}
-\end{center}
+\begin{verbatim}
+$ pppd file /etc/ppp/peers/nueva-conexion
+\end{verbatim}
 
 Podremos  observar  que  es  lo  que está  sucediendo  en  el  fichero
 {\tt /var/log/messages} con el comando:
 
-\begin{center}
-	{\bf cila\$ tail -f /var/log/messages}
-\end{center}
+\begin{verbatim}
+$ tail -f /var/log/messages
+\end{verbatim}
 
 Podemos  finalizar nuestra  conexión matando  el proceso  pppd con  un
 comando kill.\\
@@ -746,9 +746,9 @@ Para poder  realizar el acceso  tenemos que configurar la  interfaz de
 red. Normalmente  usaremos el  programa {\bf  ifconfig} con  una orden
 similar a la siguiente (root):
 
-\begin{center}
-	{\bf cila\$ ifconfig eth0 192.168.0.2 netmask 255.255.255.0 up}
-\end{center}
+\begin{verbatim}
+$ ifconfig eth0 192.168.0.2 netmask 255.255.255.0 up
+\end{verbatim}
 
 Con  el comando  anterior estamos  counfigurando la  interfaz Ethernet
 eth0, asignándole una dirección IP  192.168.0.2 y la máscara de subred
@@ -757,9 +757,9 @@ manuales de  configuración de  red, así  que no  nos vamos  a extender
 demasiado en este punto. El paso siguiente es establecer un camino por
 defecto ({\bf gateway}). Lo haremos con este comando:
 
-\begin{center}
-	{\bf cila\$ route add default gw 192.168.0.1 eth0}
-\end{center}
+\begin{verbatim}
+$ route add default gw 192.168.0.1 eth0
+\end{verbatim}
 
 donde 192.168.0.1 es la dirección IP de nuestro router ADSL.\\
 

@@ -1,9 +1,8 @@
 %Autor: amd77
 
-%FALTAN TODAS LAS IMAGENES
-%FALTA PONER \index
-
 \chapter{GNU Octave}
+
+\index{Octave}
 
 % extraido de 'info octave' (paquete octave2.?-doc).
 % el uso de la parte de mkoctfile requiere octave2.?-headers
@@ -39,9 +38,13 @@ decir, traducir programas de octave  a c++ usando una librería llamada
 ejecutarlo con lo que se  gana velocidad cuando ésta sea determinante.
 Parece que hay bastantes cosas por ver, así que vamos a empezar.
 
-La web oficial de Octave es: http://bevo.che.wisc.edu/octave
+La  web oficial  de Octave  es: http://bevo.che.wisc.edu/octave.
+
+% ¿Poner en bibliografía la página info de octave? (créditos)
 
 \section{Entorno}
+
+\index{Octave!entorno}
 
 Octave  tiene una  filosofía de  uso semejante  a la  de muchas  otras
 aplicaciones de  este libro: una interfaz  en forma de shell,  con una
@@ -203,8 +206,8 @@ octave:6> ans*ans
 ans = 49.000
 \end{verbatim}
 
-\subsection{Tipos de datos}
-
+\section{Tipos de datos}
+\index{Octave!tipos de datos}
 En Octave  hay tres tipos  de datos: numéricos (escalares,  vectores y
 matrices), cadenas  (strings) y estructuras.  Como es de  suponer, los
 numéricos son los  más usados, mientras que cadenas solo  se usan para
@@ -321,8 +324,9 @@ que hay muchas funciones para su  manejo pero que no nombraremos aquí.
 Las operaciones  con matrices  y vectores son  las usuales.  De resto,
 comentar que tambien existen tipos de datos booleanos.
 
-\subsection{Variables y expresiones}
-
+\section{Variables y expresiones}
+\index{Octave!variables}
+\index{Octave!expresiones}
 Octave te permite  llamar a las variables con  secuencias de cualquier
 longitud de letras, números y  subrayados, pero sin empezar en dígito.
 Los  nombres son  sensibles a  mayúsculas/minúsculas. Ya  hemos tenido
@@ -443,14 +447,14 @@ unos y ceros, con unos en los elementos donde la condición se cumpla
 y cero donde no se cumpla. También tenemos operadores booleanos y de
 incrementación y decrementación, pero que no los vamos a nombrar.
 
-\subsection{Control de flujo}
-
+\section{Control de flujo}
+\index{Octave!control de flujo}
 Las sentencias para  el control de flujo son las  típicas de cualquier
 lenguaje de programación. Pondremos un simple ejemplo de cada una para
 que sirva de referencia en el caso que tuvieras que usarlas. Todas las
 sentencias se caracterizan por finalizar con una sentencia {\tt end*}.
 
-\subsubsection{if}
+\subsection{if}
 
 El caso más general de {\tt if} es la estructura if-elseif-else-endif,
 que se muestra aquí.
@@ -465,7 +469,7 @@ else
 endif
 \end{verbatim}
 
-\subsubsection{switch}
+\subsection{switch}
 
 Es de  reciente implantación  así que  se considera  experimental (con
 respecto a la versión 2.0.5). Es  una mera traducción de un bloque if,
@@ -484,7 +488,7 @@ switch x
 endswitch
 \end{verbatim}
 
-\subsubsection{while}
+\subsection{while}
 
 Primero se comprueba la condición, y si es válida se ejecuta el cuerpo
 y el proceso se repite. Si no es válida se sale.
@@ -498,7 +502,7 @@ while (i <= 10)
 endwhile
 \end{verbatim}
 
-\subsubsection{do-until}
+\subsection{do-until}
 
 Es el mismo caso que el  {\tt while}, pero comprobando la condición al
 final, después  de haber  ejecutado una  vez el  cuerpo. Es  decir, se
@@ -515,7 +519,7 @@ do
 until (i == 10)
 \end{verbatim}
 
-\subsubsection{for}
+\subsection{for}
 
 La variable del bucle se asigna consecutivamente a todos los elementos
 de un vector. En el caso de ejemplo, la variable i toma los valores 3,
@@ -528,21 +532,21 @@ for i = 3:10
 endfor
 \end{verbatim}
 
-\subsubsection{break/continue}
+\subsection{break/continue}
 
 La sentencia break permite salir de un bucle {\tt for} o {\tt while} y
 seguir la ejecución  del programa en la sentencia  siguiente al bucle.
 La  sentencia {\tt  continue} simplemente  se salta  todo el  cuerpo y
 realiza la siguiente iteración del bucle sin salirse.
 
-\subsubsection{unwind\_protect/try}
+\subsection{unwind\_protect/try}
 
 Octave  permite  dos formas limitadas de  manejo de  excepciones.  Más
 información en el manual.
 
 
-\subsection{Funciones}
-
+\section{Funciones}
+\index{Octave!funciones}
 Pongamos un ejemplo  de como se define una función  en octave. En este
 ejemplo, a la función se le pasa  un argumento que debe ser un vector,
 y se devuelve la media de sus componentes:
@@ -652,10 +656,10 @@ c++ en las  que no entraremos. Para compilar este  código, vayámonos a
 un shell y escribamos lo siguiente:
 
 \begin{verbatim}
-\ ls oregonator.*
+alberto@baifito:ejemplos\$ ls oregonator.*
 oregonator.cc
-$ mkoctfile oregonator.cc 
-$ ls oregonator.*
+alberto@baifito:ejemplos\$ mkoctfile oregonator.cc 
+alberto@baifito:ejemplos\$ ls oregonator.*
 oregonator.cc  oregonator.o  oregonator.oct
 \end{verbatim}
 
@@ -701,8 +705,8 @@ de procesamiento  de imágenes  que veremos  (o las  de sonido,  que no
 veremos)  son un  ejemplo de  ello. Para  más ejemplos,  consultar los
 ficheros con extensión \verb|.cc| de la distribución de octave.
 
-\subsection{Representación gráfica}
-
+\section{Representación gráfica}
+\index{Octave!gráficas}
 En los siguientes ejemplos entraremos en el campo de la representación
 gráfica,  que también  es sencillo  (NOTA: no  olvidarse los  puntos y
 comás  al final  de  línea  pues los  vectores  son  algo largos  para
@@ -714,14 +718,14 @@ realiza  usando Gnuplot,  cuya forma  de funcionar  por defecto  es en
 entorno  X-Window. No  nos adentraremos  demasiado pues  describiremos
 Gnuplot en otro capítulo.
 
-\begin{itemize}
+\subsection*{Presentación en  una dimensión}
 
-\item Presentación en  una dimensión: La función  {\tt plot(vector)} o
-{\tt plot(x,y)}  es muy  sencilla de usar.  La diferencia  entre ambas
-llamadas  es que  cuando presentamos  un vector,  el eje  x se  numera
-automáticamente de  1 en  adelante, mientras que  la segunda  forma de
-llamarla, el  valor del eje  x está  definido por nosotros.  Veamos el
-siguiente ejemplo que presenta un período de una senoidal.
+La función  {\tt plot(vector)}  o {\tt plot(x,y)}  es muy  sencilla de
+usar. La diferencia entre ambas  llamadas es que cuando presentamos un
+vector, el eje x se numera  automáticamente de 1 en adelante, mientras
+que la segunda forma de llamarla, el valor del eje x está definido por
+nosotros. Veamos el  siguiente ejemplo que presenta un  período de una
+senoidal.
 
 \begin{verbatim}
 octave:25> x=[0:0.01:1];
@@ -735,6 +739,11 @@ Se pueden presentar varias gráficas en  una usando la opción {\tt hold
 on} y se pueden añadir titulos  a las graficas con un tercer parametro
 a la funcion plot. Veamos un ejemplo:
 
+\begin{figure}[hbtp]
+\centering\includegraphics[width=0.7\textwidth]{imagenes/sinus.m.eps}
+\caption{Múltiples líneas por grafica.}
+\end{figure}
+
 \begin{ejemplo}{sinus.m}{Presentacion grafica cuatro sinusoidales.}
 Mostramos graficas sobreimpresas entre ellas y les asignamos titulos.
 \end{ejemplo}
@@ -746,28 +755,43 @@ ejemplo, en polares, de la forma {\tt polar($\theta$,$\rho$)}:
 Mostramos cuatro graficas diferentes en polares en cuatro cuadrantes.
 \end{ejemplo}
 
+\begin{figure}[hbtp]
+\centering\includegraphics[width=0.7\textwidth]{imagenes/polares.m.eps}
+\caption{Diagramas en polares}
+\end{figure}
+
 Tambien en forma de histograma, adornando las graficas con titulos.
 
 \begin{ejemplo}{histo.m}{Presentacion histograma.}
-Mostramos un histograma y sus datos de partida, con titulos sobre las graficas.
-\end{ejemplo}
+Mostramos un histograma y sus  datos de partida, con titulos
+sobre las graficas. \end{ejemplo}
 
+\begin{figure}[hbtp]
+\centering\includegraphics[width=0.7\textwidth]{imagenes/histo.m.eps}
+\caption{Representación de histogramas}
+\end{figure}
 
-\item Representación en dos dimensiones:  La función {\tt mesh(x,y,z)} hace
-una representación  3D dados dos vectores  {\tt x} e {\tt  y} para los
-ejes y una matriz bidimensional {\tt z} que será la coordenada Z en un
-espacio  tridimensional.  En  este  ejemplo, lo  más  complicado  será
-generar una  matriz {\tt z}  bonita. Una vez  tenemos la matriz  y los
-ejes, la llamada es directa.
+\subsection*{Representación en dos  dimensiones}
+
+La  función {\tt  mesh(x,y,z)} hace  una representación  3D dados  dos
+vectores {\tt  x} e {\tt y}  para los ejes y  una matriz bidimensional
+{\tt z}  que será la coordenada  Z en un espacio  tridimensional. Otra
+funcion  llamada {\tt  contour(x,y,z)} con  los mismos  argumentos que
+{\tt mesh()}, dibujará  las curvas de nivel de la  superficie. En este
+ejemplo, lo más complicado será generar una matriz {\tt z} bonita. Una
+vez tenemos la matriz y los ejes, las dos llamadas son directas.
 
 \begin{ejemplo}{meshplot.m}{Grafica en tres dimensiones.}
-Mostramos una sinc en 3 dimensiones, asi como los planos usados para generarla.
-\end{ejemplo}
+Mostramos una  sinc en  3 dimensiones,  asi como  los planos
+usados para generarla. \end{ejemplo}
 
-\end{itemize}
+\begin{figure}[hbtp]
+\centering\includegraphics[width=\textwidth]{imagenes/meshplot.m.eps}
+\caption{Gráficas en tres dimensiones}
+\end{figure}
 
-\subsection{Trabajo con matrices}
-
+\section{Matrices}
+\index{Octave!matrices}
 Octave  tiene una  amplia  colección de  funciones  para trabajar  con
 matrices y vectores. Las veremos en un ejemplo.
 
@@ -821,31 +845,26 @@ ans =
    0.31010  -1.38565
   -0.64096   0.58650
 
-octave:7> diff([1 2 4 5 7 9 11 14]) 
-# resta cada elemento con su anterior
+octave:7> diff([1 2 4 5 7 9 11 14]) # resta cada elemento con su anterior
 ans =
 
   1  2  1  2  2  2  3
 
-octave:8> find ([0 0 0 0 0 0 1 0 0 0 5 0]) 
-# encuentra indices elementos no nulos
+octave:8> find ([0 0 0 0 0 0 1 0 0 0 5 0]) # encuentra indices elementos no nulos
 ans =
 
    7  11
-octave:9> linspace (1, 10, 8) 
-# subdivide linealmente el intervalo [1,10] en 8 puntos.
+octave:9> linspace (1, 10, 8) # subdivide linealmente el intervalo [1,10] en 8 puntos.
 ans =
 
    1.0000   2.2857   3.5714   4.8571   6.1429   7.4286   8.7143  10.0000
 
-octave:13> logspace (0, 3, 6) 
-# subdivide logarítmicamente el intervalo [10^0,10^3] en 6 puntos.
+octave:13> logspace (0, 3, 6) # subdivide logarítmicamente el intervalo [10^0,10^3] en 6 puntos.
 ans =
 
      1.0000     3.9811    15.8489    63.0957   251.1886  1000.0000
 
-octave:26> [a,b,c]=lu([1,3,2;3,2,1;3,2,6]) 
-# factorización lu de una matriz
+octave:26> [a,b,c]=lu([1,3,2;3,2,1;3,2,6]) # factorización lu de una matriz
 a =
 
   1.00000  0.00000  0.00000
@@ -887,15 +906,20 @@ c =
 \end{verbatim}
 
 
-\subsection{Resolución numérica de ecuaciones diferenciales}
-
+\section{Resolución numérica de ecuaciones diferenciales}
+\index{Octave!ecuaciones diferenciales}
 \begin{ejemplo}{ode.m}{Resuelve una EDO ordinaria}
 Resuelve una EDO ordinaria de tercer orden y muestra por pantalla
 la evolucion de los x(t).
 \end{ejemplo}
 
-\subsection{Manipulación de polinomios}
+\begin{figure}[hbtp]
+\centering\includegraphics[width=\textwidth]{imagenes/ode.m.eps}
+\caption{Resolución numérica de edo}
+\end{figure}
 
+\section{Polinomios}
+\index{Octave!polinomios}
 Un polinomio de grado r en octave se presenta como un vector de
 dimensiones r+1. A partir de el se pueden realizar operaciones.
 
@@ -925,8 +949,8 @@ ans = 40
 % Distribuciones estadísticas: no tengo ni idea.
 % Funciones financieras: no tengo ni idea.
 
-\subsection{Teoría de control}
-
+\section{Teoría de control}
+\index{Octave!teoría de control}
 La versión 2.1 de octave incorpora  una Toolbox de Control. El control
 es una rama de la ingeniería  dedicada a modelar sistemas mediante las
 ecuaciones diferenciales  que relacionan  su salida  con su  entrada y
@@ -936,8 +960,8 @@ función de transferencia de un sistema.
 
 % no se si no completar esto porque es muy aburrido y poco vistoso.
 
-\subsection{Procesamiento de señales}
-
+\section{Procesamiento de señales}
+\index{Octave!procesamiento de señales}
 En esta categoría  están todas las funciones dedicadas  a trabajar con
 espectros de señales. Tanto la  {\em FFT}, como filtros digitales {\em
 FIR} e {\em  IIR}, diferentes tipos de ventanas, o  calculo de modelos
@@ -955,15 +979,24 @@ qué sencillo resulta obtener la transformada de Fourier discreta de
 una senoidal y un pulso.
 
 \begin{ejemplo}{fftview.m}{Muestra  la FFT  de dos  funciones} Muestra
-por pantalla el módulo  y la fase de dos funciones:  una senoidal y un
+por pantalla el módulo  y la fase de dos funciones:  una sinusoidal y un
 pulso. \end{ejemplo}
+
+\begin{figure}[hbtp]
+\centering\includegraphics[width=\textwidth]{imagenes/fftview1.m.eps}
+\caption{Ejemplo de FFT aplicado a una sinusoidal}
+\end{figure}
+
+\begin{figure}[hbtp]
+\centering\includegraphics[width=\textwidth]{imagenes/fftview2.m.eps}
+\caption{Ejemplo de FFT aplicado a una función escalón}
+\end{figure}
 
 % estaría bien poner un filtro de ejemplo, antes y despues de pasar
 % una señal por el.
 
 % FALTA PARTE DE TRATAMIENTO DE IMAGENES.
 
-En  el tema  de  Gnuplot  veremos como  salvar  estas  gráficas en  un
-fichero.
+En la sección de Gnuplot veremos como salvar estas gráficas en un fichero.
 
 

@@ -9,7 +9,7 @@
 %% gnotepad,acroread, ghostview, gnumeric, gqview, videolan client, xine
 
 \chapter{Aplicaciones diversas} 
-
+\index{Aplicaciones}
 En  este  apartado  trataremos,   de  manera  muy  superficial,  algunas
 aplicaciones de uso cotidiano en Linux.
 
@@ -20,13 +20,14 @@ Las aplicaciones gráficas  disponibles hoy día cubren  un amplio abanico
 de actividades. Aquí expondremos solo unas pocas de ellas.
 
 \subsection{Internet}
+\index{Aplicaciones!internet}
 Dentro  de  las  diversas  aplicaciones relacionadas  con  Internet  que
 podemos  usar a  diario,  podemos resaltar  aquellas  que se  encuentran
 orientadas a  la comunicación directa  entre personas, como los  son los
 programas de Mensajería Instantanea o los clientes de IRC
 
 \subsubsection*{Gaim}
-
+\index{Aplicaciones!Gaim}
 Entre   la  surtida   gama  de   clientes  de   Mensajería  Instantanea,
 destacaremos  el  programa  Gaim.  La caracteristica  que  nos  mueve  a
 destacar este programa  en particular es la gran  cantidad de protocolos
@@ -35,10 +36,10 @@ Instantanea podremos conectarnos  con los servicios de  MSN, Yahoo, AOL,
 ICQ,  Jabber, Napster  o al  propio IRC,  por citar  algunos, por  citar
 algunos de los protocolos soportados.
 
-(Poner una captura del Gaim)
+% Poner una captura del Gaim
 
 \subsubsection*{XChat/KVirc}
-
+\index{Aplicaciones!IRC}
 Otro de los servicios que se suelen utilizar con bastante frecuencia, se
 encuentran  las «consultas»  al IRC.  Este protocolo  nos permite  estar
 interconectados  con  otros  grupos  de  usuarios,  de  una  manera  muy
@@ -62,7 +63,7 @@ ayudas que presta  a aquellos que les guta  disfrutar haciendo «scripts»
 para los clientes de IRC
 
 \subsection{Multimedia}
-
+\index{Aplicaciones!multimedia}
 La reproducción  de los  diferentes formatos gráficos  es otro  de los
 apartados que se suelen utilizar a  diario. Para los usuarios de otros
 sistemas operativos  resulta normal el  poder disponer de  un software
@@ -71,7 +72,7 @@ linux  ha costado  un  gran  esfuerzo el  llegar  a  poder contar  con
 reproductores como el que presentamos a continuación.
 
 \subsubsection*{XMMS}
-
+\index{Aplicaciones!XMMS}
 XMMS (acrónimo de X MultiMedia System) es el reproductor multimedia de
 uso general en GNU/Linux. Puede reproducir cualquier formato de audio,
 tomándolo incluso de la red, y  algunos formatos de vídeo MPEG. Además
@@ -86,7 +87,7 @@ puerto serie de tu ordenador.
 \end{figure}
 
 \subsubsection*{Xine}
-
+\index{Aplicaciones!xine}
 Xine es el resultado de un esfuerzo continuado de superación por parte
 de la  comunidad que lo  desarrolla. Cuando se comenzó  su desarrollo,
 nadie esperaba que alcanzara el nivel  de calidad del que disfruta hoy
@@ -100,7 +101,7 @@ dia. Con Xine puedes ver películas en formato MPEG, ASF o DivX 5.
 %\subsubsection*{Aviplay}
 
 \subsubsection*{mpg321} 
-
+\index{Aplicaciones!mpg321}
 % <MojoPiKon> Me la pido :-)
 
 mpg321 es  reproductor de  ficheros con  formato mp3.  Se trata  de un
@@ -110,21 +111,21 @@ ejecutarse, no existe interacción entre el usuario y el programa, sino
 que se limita a realizar las operaciones que le hemos proporcionado en
 la línea de comandos.
 
-
 La forma más asequible para reproducir  mp3 con mpg321 es el siguiente
 comando, suponiendo que nos encontremos en un directorio lleno de mp3.
-
 
 \begin{verbatim}
 mpg321 *.mp3
 \end{verbatim}
 
-Para aquellos que no les basta esto  (a mí si), hay una amplia gama de
+Para aquellos que no les basta esto --para mí, sí--, hay una amplia gama de
 parámetros que pueden pasarse a mpg321:
 
 \begin{verbatim}
--o tipo_de_dispositivo, donde tipo de dispositivo puede ser oss, alsa, esd, sun, o arts.
+-o tipo_de_dispositivo 
 \end{verbatim}
+
+\noindent donde tipo de dispositivo puede ser oss, alsa, esd, sun, o arts.
 
 Esto, que en principio no tiene  interés alguno para la mayor parte de
 la gente (pues mpg321 funcionará (en  la mayor parte de los casos) sin
@@ -144,8 +145,12 @@ en la misma o en diferentes consolas.
 Este parámetro (-o) funciona conjuntamente con el siguiente:
 
 \begin{verbatim}
--a nombre_de_dispositivo, donde nombre_de_dispositivo es algo así como /dev/dsp, /dev/sound/dsp1, o aquel que utilice el dispositivo de sonido que queramos utilizar para oir nuestros mp3 :-)
+-a nombre_de_dispositivo, 
 \end{verbatim}
+
+\noindent donde  nombre\_de\_dispositivo  es algo  así  como  /dev/dsp,
+/dev/sound/dsp1,  o aquel  que utilice  el dispositivo  de sonido  que
+queramos utilizar para oir nuestros mp3 :-)
 
 Utilización de listas de reproducción:
 
@@ -158,11 +163,10 @@ mpg321 -@ fichero.txt
 
 Reproducción aleatoria de ficheros:
 
-Para esto tenemos dos parámetros: -z y -Z
-
-\begin{verbatim} -Z reproduce todos los ficheros especificados de forma aleatoria hasta que paremos mpg321 \end{verbatim}
-
-\begin{verbatim} -z reproduce todos los ficheros especificados de forma aleatoria una sola vez. \end{verbatim}
+Para esto  tenemos dos parámetros: -z  y -Z; {\tt -Z}  reproduce todos
+los  ficheros  especificados  de  forma aleatoria  hasta  que  paremos
+mpg321, {\tt -z}  reproduce todos los ficheros  especificados de forma
+aleatoria una sola vez.
 
 Para aquellos que crean que una aplicación no interactiva de reproducción de
 mp3 puede ser totalmente inutil, existen alternativas en modo texto, como
@@ -186,7 +190,7 @@ abrir una hoja de cálculo similar al famoso programa «Excel»
 
 %\subsubsection*{Koffice}
 \subsubsection*{OpenOffice}
-
+\index{Aplicaciones!OpenOffice}
 OpenOffice es, sin  duda, el proyecto más ambicioso,  relacionado con la
 ofimática, que  tenemos en marcha hoy  en día dentro de  la comunidad de
 dearrolladores de Software Libre.
@@ -206,7 +210,7 @@ módulos de OpenOffice.
 
 
 \subsection{Gráficos}
-
+\index{Aplicaciones!Gráficos}
 %\subsubsection*{Gimp}
 
 %\subsubsection*{eog}
@@ -214,7 +218,7 @@ módulos de OpenOffice.
 %\subsubsection*{gqview}
 
 \subsubsection*{ghostview}
-
+\index{Aplicaciones!ghostview}
 Ghostview es  una interface  de usuario X11  para Ghostscript,  que te
 permite ver y navegar por  ficheros PostScript. Hay diversos derivados
 de Ghostview que son de uso frecuente:
@@ -283,10 +287,12 @@ PostScript o PDF que quieras visualizar.
 %\subsubsection*{Quanta/Bluefish}
 
 \subsection{Editores}
+\index{Aplicaciones!editores}
 
 %\subsubsection*{AbiWord}
 
-\subsubsection*{Kwrite}
+\subsubsection*{KWrite}
+\index{Aplicaciones!KWrite}
 
 KWrite es un editor de texto para  KDE 2.0, pero también es más que un
 editor  de  textos,  pues  es  un editor  de  programación  que  puede
@@ -744,6 +750,7 @@ no han sido tratado explícitamente.
 
 
 \subsubsection*{gnotepad}
+\index{Aplicaciones!gnotepad}
 
 gnotepad+ es  un editor de  textos y de HTML,  fácil de usar  pero muy
 completo, para  sistemas basados en Unix  que dispongan de X11  y usen
@@ -800,7 +807,6 @@ quedando dormidos. Todas ellas pueden  ser lanzadas desde una terminal
 en modo gráfico, de manera que también las podemos utilizar desde este
 entorno.
 
-
 %\subsection{Desarrollo}
 %\subsubsection*{GCC}
 %\subsubsection*{make}
@@ -831,4 +837,3 @@ entorno.
 %\subsubsection*{crontab}
 %\subsubsection*{at}
 %\subsubsection*{uptime}
-

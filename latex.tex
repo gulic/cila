@@ -1579,9 +1579,16 @@ con  un  separador  de  columna   (\verb|&|)!  Se  puede  colocar  una
 etiqueta sobre  nuestra ``columna'' numérica empleando  la instrucción
 \ci{multicolumn}.
 
-\begin{example}  \begin{tabular}{c  r  @{,}   l}  Expresión  en  pi  &
-\multicolumn{2}{c}{Valor} \\  \hline $\pi$  & 3&1416 \\  $\pi^{\pi}$ &
-36&46 \\ $(\pi^{\pi})^{\pi}$ & 80662&7 \\ \end{tabular} \end{example}
+\begin{example}  
+\begin{tabular}{cr@{,}l}
+Expresión  en  pi  & \multicolumn{2}{c}{Valor} \\  
+\hline 
+$\pi$  & 3&1416 \\  
+$\pi^{\pi}$ &
+36&46 \\ 
+$(\pi^{\pi})^{\pi}$ & 80662&7 
+\\ \end{tabular} 
+\end{example}
 
 \subsection{Elementos flotantes}
 
@@ -2687,7 +2694,7 @@ debemos tener presente un pequeño consejo:
 
 \nopagebreak
 \begin{quote}
-  \underline{\textbf{Recuerda\Huge!}} que \textit{Cuanto}
+  \underline{\textbf{¡Recuerda\Huge!}} que \textit{Cuántos}
   \textsf{M\textbf{\LARGE Á} \textsl{S}} tipos \Huge utilices 
   \footnotesize \textbf{en} un \small \texttt{documento}\Huge,
   \large \textit{más} \normalsize \textsc{legible} y
@@ -2725,7 +2732,7 @@ párrafos. Si se pone una definición como
 \verb|\setlength{|\ci{parskip}\verb|}{1ex plus 0.5ex minus 0.2ex}|
 \end{code}
 
-en    el     preámbulo    del    fichero     de    entrada\footnote{El
+\noindent en    el     preámbulo    del    fichero     de    entrada\footnote{El
 preámbulo     es     la     zona    del     fichero     de     entrada
 entre     las     instrucciones     $\backslash$\texttt{documentclass}
 y   $\backslash$\texttt{begin$\mathtt{\{}$document$\mathtt{\}}$}.}  se
@@ -2823,7 +2830,7 @@ forzar separaciones adicionales \emph{entre dos párrafos} con la orden
 \end{command}
 
 Esta  orden se  debería indicar  siempre entre  dos renglones  vacíos.
-Cuando esta separación  se debe introducir aunque vaya  al principio o
+Cuando esta se\-pa\-ra\-ción  se debe introducir aunque vaya  al principio o
 al final  de una  página, entonces  en vez  de \verb|\vspace|  se debe
 utilizar \verb|\vspace*|. \index{\LaTeX!separación vertical}
 

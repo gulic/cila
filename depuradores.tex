@@ -1,7 +1,7 @@
 %Autor: aplatanad & AgarFu
 
 \chapter{Depuradores}
-
+\index{Depuradores}
 \section{Depurando la aplicación}
 
 Se suele decir que el 10\% del  tiempo de desarrollo de un programa se
@@ -99,6 +99,7 @@ interfaz gráfica para el  {\tt gdb}. Funciona sobre las X  y su uso es
 semejante a de los depuradores existentes en otras plataformas.
 
 \section{Data Display Debugger: DDD}
+\index{Depuradores!Data Display Debugger}
 
 Como ya  hemos comentado anteriormente los  programadores suelen pasar
 mucho tiempo utilizando un depuraror  para buscar fallos que no son
@@ -153,32 +154,33 @@ y escoger la opcion display.
 \caption{Watches}
 \end{figure}
 
-\subsection{Colocar puntos de  ruptura}
+\subsection{Colocar puntos de  ruptura (Breakpoints)}
+\index{Depuradores!puntos de ruptura}
 
 Bueno, ya tenemos un watch de la variable, pero\ldots ¿que pasa cuando
-pulsamos sobre  el botón  de run?  ¡No vemos nada!  bueno, eso  es una
-circunstancia pasajera, vamos  a colocar un {\em  breakpoint} o punto
+pulsamos sobre  el botón  de run?  ¡No vemos nada!  Bueno, eso  es una
+circunstancia pasajera, vamos  a colocar un {\em  punto de ruptura} o punto
 de ruptura.
 
-Los  breakpoints son  lugares  donde el  depurador  hará que  nuestro
+Los puntos de ruptura son  lugares  donde el  depurador  hará que  nuestro
 programa   pare  la   ejecucuón   para,  de   esta  manera,   analizar
 detenidamente el estado  de nuestro programa. La manera  de colocar un
-breakpoint en el  {\tt ddd} es simplemente desplazarse hasta  la línea donde
-deseamos colocar  el breakpoint y  hacer un  doble click con  el boton
+punto de ruptura en el  {\tt ddd} es simplemente desplazarse hasta  la línea donde
+deseamos colocar  el punto de ruptura y  hacer un  doble click con  el boton
 izquierdo del ratón.
 
 Vemos que se nos coloca un símbolo  de stop donde hemos hecho el doble
-click,  lo que  indica que  hay un  breakpoint. Si  pulsamos sobre  el
-breakpoint  con el  boton derecho  vemos que  se nos  da la  opcion de
+click,  lo que  indica que  hay un  punto de ruptura. Si  pulsamos sobre  el
+punto de ruptura  con el  boton derecho  vemos que  se nos  da la  opcion de
 desactivarlo, quitarlo y una muy  extraña de propiedades. La opcion de
 propiedades hace  que nos  aparezca un  cuadro de  dialogo en  el cual
 podemos introducir una expresión, ésta expresión se utiliza para hacer
-que nuestro breakpoint sea inteligente  y no pare la ejecución siempre
+que nuestro punto de ruptura sea inteligente  y no pare la ejecución siempre
 que  el programa  pase por  allí, sino  que solo  se parará  cuando la
-expresión  se cumpla,  por ejemplo,  si ponemos  el breakpoint  en un
+expresión  se cumpla,  por ejemplo,  si ponemos  el punto de ruptura  en un
 bucle con 10.000 iteraciones y nosotros queremos que se pare cuando la
 i (variable  que cuenta  las iteraciones)  llegue a  5000 pues  lo que
-hemos de poner en  propiedades del breakpoint es {\tt i  = 5000} y de
+hemos de poner en  propiedades del punto de ruptura es {\tt i  = 5000} y de
 esa manera  nos saltaremos  las 5000 primeras  iteraciones que  no nos
 interesan.
 
@@ -189,9 +191,10 @@ interesan.
 \end{figure}
 
 \subsection{Ejecución paso a paso}
+\index{Depuradores!ejecución paso a paso}
 
-Ahora que  ya tienes un  watch y un  breakpoint, en este  momento solo
-podemos ir  saltanto de  breakpoint en  breakpoint, y  esto no  nos es
+Ahora que  ya tienes un  watch y un  punto de ruptura, en este  momento solo
+podemos ir  saltanto de  punto de ruptura en  punto de ruptura, y  esto no  nos es
 suficiente  así  que  vamos  a  intentar controlar  más  el  flujo  de
 ejecución  de  nuestros  programas.  Para esta  tarea  tenemos  varias
 herramientas comunes en  la mayoría de depuradores, en el  caso del dd
@@ -203,7 +206,7 @@ son las siguientes:
 
 \item[{\em Step}:]{(paso) esta herramienta nos  sirve, como su propio nombre
 indica, para  ejecutar nuestro  programa paso  a paso.  Normalmente lo
-que  hacemos es  colocar  un  breakpoint al  inicio  de  la funcion  o
+que  hacemos es  colocar  un  punto de ruptura al  inicio  de  la funcion  o
 procedimiento que  queremos analizar  y luego  ir pulsando  {\tt step}
 para analizar sentencia a sentencia que es lo que hace nuesto código.}
 
@@ -214,10 +217,10 @@ siguiente línea del programa.}
 
 \item[{\em Until}:]{(hasta)  esta herramienta  nos  sirve  para ejecutar  el
 programa hasta  la posición actual  del cursor,  es muy parecida  a un
-breakpoint temporal.}
+punto de ruptura temporal.}
 
-\item[{\em Cont}:]{(continuar)  saltamos  hasta  el siguiente  breakpoint  o
-hasta el final del programa si es  que no hay ningún breakpoint más en
+\item[{\em Cont}:]{(continuar)  saltamos  hasta  el siguiente  punto de ruptura  o
+hasta el final del programa si es  que no hay ningún punto de ruptura más en
 el flujo de ejecución.}
 
 \end{description}
@@ -227,6 +230,7 @@ utilizar  menos, por  ejemplo  aquellas que  ejecutan exactamente  una
 instrucción (de código máquina).
 
 \subsection{Visión de punteros}
+\index{Depuradores!visión de punteros}
 
 Probablemente estabas deseando que existiera  una cosa como la que vas
 a ver. No te asombres de la  potencia de este depurador, es uno de los
@@ -262,7 +266,6 @@ Un ejemplo  de lo  que se puede  hacer es mostrar  un árbol  para, por
 ejemplo, comprobar que todos los  punteros que salen de nuestros nodos
 hoja están  a {\tt  Nil} y  de esa manera  asegurarnos de  que nuestro
 programa no va a fracasar.
-
 
 \begin{figure}[hbtp]
 \centering

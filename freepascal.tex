@@ -1,7 +1,7 @@
 %Autor: mojopikon
 
 \chapter{FreePascal}
-
+\index{FreePascal}
 
 El lenguaje de  programación Pascal es sencillo  y bastante didáctico,
 por  lo que  se suele  enseñar en  el primer  año de  algunas carreras
@@ -27,7 +27,6 @@ Ejemplo 1 de Pascal
 
 Para  compilar un  programa escrito  en  Pascal con  el compilador  de
 FreePascal utilizamos el comando {\tt ppc386} del siguiente modo:
-
 
 \begin{verbatim}
 $ ppc386 HolaMundo.pas
@@ -97,7 +96,6 @@ Ejemplo 2 de Pascal
 {Ejemplo 2 de Pascal }
 Ejemplo 2 de Pascal 
 \end{ejemplo}
-
 
 Debemos  tener cuidado  con un  detalle: Los  nombres de  las unidades
 deben coincidir  con el nombre del  fichero en el que  están escritas,
@@ -189,6 +187,8 @@ $ ./holamundo2
 Hola Pepe
 \end{verbatim}
 
+\index{Depuradores!GNU Debugger (GDB)}
+
 En FreePascal para Linux, al contrario que la versión windows de deste
 mismo compilador, hacer trazas a los programas es algo más complejo, y
 requiere un programa adicional: GNU Debugger (GDB). Para utilizar este
@@ -201,7 +201,7 @@ ppc386 -g programa.pas programa
 
 \end{verbatim}
 
-Con esto, ``Incrustamos'' el código fuente de nuestro programa en el
+Con esto, ``incrustamos'' el código fuente de nuestro programa en el
 interior del ejecutable, de forma que si ejecutamos gdb pasando como
 argumento el nombre del programa, podremos hacerle una traza.
 
@@ -225,6 +225,8 @@ ppc386 -FUunits unidad.pas
 Para utilizar units que estén en otro directorio que no sea el actual,
 utilizamos el parámetro  {\tt -Fudirectorio} (nótese que  en este caso
 la ``u'' es minúscula).
+
+\index{Depuradores!Turbo Pascal 7}
 
 {\tt -So}: Usar esta opción nos permitirá comprobar la compatibilidad
 de nuestro código con Turbo Pascal 7
