@@ -78,7 +78,7 @@ Los ficheros de registro(logging files) se almecenan los resultados e informació
 \item El fichero syslog. El fichero syslog es el resultado de los mensajes de el demonio Syslogd. Este de demonio se encarga de la organización de los mensajes del kernel, es por eso que en el fichero syslog podemos enontrar toda la información sobre lo que ocurre en nuestra máquina.
 \item El fichero messages. Este fichero es igual al syslog, lo que muestra información más simple. En el podemos controlar por ejemplo la información del demonio pppd.
 \item Los ficheros ~/.bash\_history. Estos ficheros muestran los comandos que han sido ejecutados por los usuarios desde la consola.
-\item El fichero wtmp. En el hay un listado de todas las conecciones que ha tenido la máquinamientras ha permanecido encendida. Se puede visulizar con el comando wtmp.
+\item El fichero wtmp. En el hay un listado de todas las conecciones que ha tenido la máquinamientras ha permanecido encendida. Se puede visulizar con el comando last.
 \end{itemsize}
 
 Normalmente cada demonio tiene un fichero de registro así como muchos programas también lo tienen. Solo hay que mirar la documentación. Los log's de nuestro servidor de correo se encuentran en /var/log/mail.log, así como los del Apache se encuentran en /var/log/apache,etc.
