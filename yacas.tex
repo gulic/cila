@@ -5,8 +5,11 @@ En  este tema  aprenderás a  utilizar el  programa Yacas  para relizar
 cálculos simbólicos.  Este tipo de  cálculos resulta de  gran utilidad
 puesto que  funciona de  la misma  forma que harías  tú mismo  a mano,
 operando con expresiones matemáticas sin calcular el valor numérico de
-cada expresión. Para describir lo que  es Yacas nada mejor que leer la
-información disponible en su página web: {\tt http://yacas.sf.net/}
+cada expresión. 
+
+En  la  web  del proyecto  Yacas  ({\tt  http://yacas.sourceforge.net}
+encontrarás el  código fuente  del programa  y toda  su documentación:
+desde  un tutorial  básico hasta  una guía  de programación  en Yacas.
 
 \section{¿Qué es Yacas?}
 
@@ -16,8 +19,8 @@ Sistema  de Álgebra  Computacional (SAC)  es un  programa que  permite
 manipulaciones simbólicas sobre expresiones matemáticas, reduciendo el
 tiempo necesario  para realizar  cálculos embarazosos  pero triviales.
 Esto se hace  no mediante números, sino mediante símbolos,  por lo que
-el resultado  de una operación  con expresiones matemáticas  puede ser
-una nueva expresión matemática.
+el resultado de una operación con expresiones matemáticas es una nueva
+expresión matemática.
 
 Yacas  está  construido  sobre  su  propio  lenguaje  de  programación
 diseñado  para  este  propósito,  en  el  que  se  pueden  implementar
@@ -37,8 +40,10 @@ integración de funciones y cálculo tensorial.
 
 Yacas  tiene  un  intérprete  de comandos  que  nos  permite  ejecutar
 funciones para probar  lo que queremos programar,  para luego escribir
-un script.  Para intrar al intérprete  de Yacas basta con  ejecutar el
-comando {\tt yacas} en una consola o terminal:
+un script.  Para entrar al intérprete  de Yacas basta con  ejecutar el
+comando  {\tt  yacas}  en  una  consola o  terminal.  Para  salir  del
+intérprete puedes  pulsar {\tt Control-C}  o bien ejecutar  la función
+\verb+quit();+.
 
 \begin{verbatim}
 $ yacas
@@ -52,22 +57,34 @@ To see example commands, keep typing Example();
 In>
 \end{verbatim}
 
+También   existe  una   interfaz  gráfica   llamada  Porteus.   Si  la
+tienes  instalada  deberías  poder  iniciarla  ejecutando  el  comando
+\verb+proteusworksheet+. Esta  utilidad te  proporcioa un  entorno más
+cómodo e integrado  en el que puedes probar código  en el intérprete e
+ir escribiendo un script en el editor que incluye.
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=0.7\textwidth]{imagenes/proteus.eps}
+\caption{Proteus, interfaz gráfica para Yacas}
+\end{figure}
+
 La última línea (\verb+In>+) es el prompt de entrada de Yacas, que nos
-indica que  el intérpreta está  esperando nuestras órdenes.  Todas las
+indica que  el intérprete está  esperando nuestras órdenes.  Todas las
 órdenes de Yacas deben terminar con un punto y coma (\verb+;+), aunque
 el intérprete suele  añadirlo si no lo ponemos. Sin  embargo a la hora
 de programar en  Yacas veremos que el punto y  coma hay que escribirlo
 siempre,  de modo  que es  mejor acostumbrarse  a ponerlo  para evitar
 posteriores dolores de cabeza.
 
-Para ir  abriendo el apetito  sigue la sugerencia, ejecuta  la función
-\verb+Ejample();+ varias veces. Por supuesto  no tienes que teclear el
-comando todas las  veces, ya que Yacas cuenta con  edición de línea al
-estilo de  Emacs (utiliza GNU  readline). Esto quiere decir  que todos
-los comandos que  ejecutes en Yacas se almacenarán en  un historial, y
-para repetirlos puedes recuperarlos pulsando  la tecla de cursor hacia
-arriba. Veamos la salida que  produce Yacas tras varias ejecuciones de
-\verb+Ejample();+
+Para ir abriendo  el apetito sigue la sugerencia de  Yacas: ejecuta la
+función  \verb+Ejample();+ varias  veces. Por  supuesto no  tienes que
+teclear el comando todas las veces, ya que Yacas cuenta con edición de
+línea al estilo de GNU Emacs (utiliza GNU readline). Esto quiere decir
+que todos  los comandos  que ejecutes  en Yacas  se almacenarán  en un
+historial, y para repetirlos puedes  recuperarlos pulsando la tecla de
+cursor  hacia arriba.  Este  historial queda  guardado  en el  fichero
+\verb+.yacas_history+ en tu directorio  personal. Veamos la salida que
+produce Yacas tras varias ejecuciones de \verb+Ejample();+
 
 \begin{verbatim}
 In> Example();
@@ -109,13 +126,19 @@ Take a limit.
 Out> 1;
 \end{verbatim}
 
+En cualquier momento puedes acceder  a la documentación de una función
+ejecutando la función  precedida por un signo  de interrogación, p.ej.
+\verb+?IsFreeOf+. Un detalle  importante de Yacas es  que, como muchos
+lenguajes del mundo de Un*x, es sensible a las mayúsculas; esto es, no
+es lo mismo \verb+esto+ que \verb+Esto+ ni que \verb+eSTO+.
+
 Estos ejemplos ilustran  lo fácil que es obtener  buenos resultados en
 cálculos  simbólicos  con  Yacas.  Sin embargo  es  probable  que  los
 resultados  de  los siguientes  ejemplos  no  te resulten  fáciles  de
 interpretar:
 
 \begin{verbatim}
-In> Integrate(x) Expand((x-y)^3)
+In> Integrate(x) ((x-y)^3)
 Out> x^4/4-(x^3*3*y)/3+(x^2*3*y^2)/2-y^3*x;
 \end{verbatim}
 
@@ -137,7 +160,7 @@ x    x  * 3 * y   x  * 3 * y     3
 Out> True;
 \end{verbatim}
 
-El signo \verb+%+  es una referencia que se refiere  siempre al último
+El signo  \verb+%+ es una referencia  que se apunta siempre  al último
 valor  devuelto por  el  intérprete, es  decir lo  que  aparezca a  la
 derecha del  último \verb+Out>+. Esta referencia  sólo está disponible
 cuando usamos Yacas como intérprete  interactivo, no se puede utilizar
@@ -150,16 +173,16 @@ Para  mostrar  una  expresión  de estas  formas  están  las  funciones
 funciones  no devuelven  la  expresión  que muestran,  por  lo que  no
 podemos  utilizar  la  referencia  \verb+%+ dos  veces  seguidas  para
 mostrar  una  expresión  (la  segunda mostraría  la  expresión  lógica
-\verb+True+). Por  eso escribimos  \verb+Integrate(x) Expand((x-y)^3)+
+\verb+True+). Por  eso escribimos  \verb+Integrate(x) ((x-y)^3)+
 en cada línea:
 
 \begin{verbatim}
-In> CForm (Integrate(x) Expand((x-y)^3))
-Out> "pow(x, 4.) / 4. - ( pow(x, 3.) * 3. * y)  / 3. + ( pow(x, 2.) * 3. * pow(y
-, 2.))  / 2. - pow(y, 3.) * x";
-In> TeXForm (Integrate(x) Expand((x-y)^3))
-Out> "$\frac{x ^{4}}{4}  - \frac{x ^{3} 3 y}{3}  + \frac{x ^{2} 3 y ^{2}}{2}  - 
-y ^{3} x$";
+In> CForm (Integrate(x) ((x-y)^3))
+Out> "pow(x, 4.) / 4. - ( pow(x, 3.) * 3. * y)  / 3. + ( pow(x, 2.) * 
+3. * pow(y, 2.))  / 2. - pow(y, 3.) * x";
+In> TeXForm (Integrate(x) ((x-y)^3))
+Out> "$\frac{x ^{4}}{4}  - \frac{x ^{3} 3 y}{3}  + \frac{x ^{2} 3 y ^{
+2}}{2} - y ^{3} x$";
 \end{verbatim}
 
 La función \verb+CForm()+ devuelve la expresión escrita en lenguaje C,
@@ -168,11 +191,208 @@ función \verb+TeXForm()+ devuelve la  expresión escrita en el lenguaje
 tipográfico  \TeX, de  forma  que podemos  incluirla  en un  documento
 escrito en  \TeX~ o \LaTeX.  Por ejemplo,  este libro está  escrito el
 \LaTeX, lo  que me  permite incluir la  salida de  \verb+TeXForm()+ en
-este  mismo párrafo  con  sólo  copiar y  pegar:  $\frac{x ^{4}}{4}  -
-\frac{x ^{3} 3 y}{3} + \frac{x ^{2} 3 y ^{2}}{2} - y ^{3} x$.
+este  mismo párrafo  con  sólo copiar  y pegar.  De  esta forma  puedo
+escribir $\int (x-y)^3 \, dx = \frac{x ^{4}}{4} - \frac{x ^{3} 3 y}{3}
++ \frac{x ^{2} 3 y ^{2}}{2} - y ^{3} x$.
 
-\section{Variables y funciones}
+En ocasiones nos  interesa conocer el valor numérico  de una expresión
+determinada, y posiblemente sólo nos interese un número determinado de
+decimales.  Yacas  es un  lenguaje  de  precisión arbitraria,  lo  que
+significa que puedes  pedirle toda la precisión que  quieras, pero ten
+cuidado no le pidas demasiada precisión  si tu máquina no es realmente
+potente.
+
+La función \verb+Precision()+ establece  el número de cifras decimales
+con  las  que se  aproximarán  los  valores. Estas  aproximaciones  se
+realizan con  la función  \verb+N()+, que  además permite  saltarse la
+precisión establecida por \verb+Precision()+ pasándosela como segundo
+parámetro. En el siguiente ejemplo se ilustra esto:
+
+\begin{verbatim}
+In> alpha := Sqrt (Pi ())
+Out> Sqrt(3.1415926535897932384626433832795028841971694);
+In> Precision (2);
+Out> True;
+In> N (alpha)
+Out> 1.77;
+In> Precision (20);
+Out> True;
+In> N (alpha)
+Out> 1.77245385090551602729;
+In> N (alpha, 50)
+Out> 1.77245385090551602729816748334114518279754945629866;
+\end{verbatim}
+
+Normalmente  no hay  problema  por  pedirle a  Yacas  unos cientos  de
+dígitos de precisión, pero siempre que  vayas a trabajar con números o
+precisiones enormes recuerda que el tiempo necesario para los cálculos
+aumentará rápidamente.
+
+\section{Variables}
+
+En Yacas se entiende por variable un objeto al que se puede asignar un
+valor.  Las variables  pueden  llamarse como  quieras  siempre que  el
+nombre  empiece  por  una  letra  y continúe  con  letras  y  números.
+Para  asignar un  valor  a  una variable  se  utiliza  el operador  de
+asignación \verb+:=+ en lugar de \verb+=+ (este último se utiliza como
+comparador). En cualquier momento puedes  ver el valor de una variable
+tecleando su nombre como si fuera  un comando de Yacas, y esto también
+es válido en un script. Asignaciones válidas son:
+
+\begin{verbatim}
+In> n := 10;
+Out> 10;
+In> m := n!;
+Out> 3628800;
+In> n
+Out> 10;
+In> m
+Out> 3628800;
+\end{verbatim}
+
+Si en algún momento quieres que una variable pierda su valor no tienes
+más que ``limpiarla'' con la función \verb+Clear()+:
+
+\begin{verbatim}
+In> m
+Out> 3628800;
+In> Clear (m);
+Out> True;
+In> m
+Out> m;
+\end{verbatim}
+
+\section{Funciones}
+
+Las funciones  son como las  variables, con  el añadido de  que pueden
+depender de una o más  variables. Además con Yacas podemos sobrecargar
+una función, esto  es, definir dos funciones con el  mismo nombre pero
+distinto número de  variables de forma que se evalúe  una u otra según
+el número de parámetros que reciba.
+
+Como ejemplo definimos la función \verb+Area+ de dos formas: si recibe
+un parámetro  devuelve el área  del círculo con  el radio igual  a ese
+parámetro, pero si recibe dos parámetros devuelve el área de la elipse
+que tenga esos dos parámetros como radios.
+
+\begin{verbatim}
+In> Area (r) := Pi () * r^2;
+Out> True;
+In> Area (a, b) := Pi () * a * b;
+Out> True;
+In> Area (3);
+Out> 28.2743338823;
+In> Area (3, 5);
+Out> 47.1238898035;
+\end{verbatim}
+
+Cuando  definimos una  función en  Yacas, la  parte a  la derecha  del
+operador de asignación \verb+:=+ no se  evalúa sino que se asigna como
+expresión a la  función. Si quieres que Yacas evalúe  la parte derecha
+de  la  definición de  una  función  puedes  forzarlo con  la  función
+\verb+Eval()+. Esto es  útil cuando la evaluación de  la parte derecha
+resulta computacionalemente costosa, por ejemplo  en el caso de series
+de Taylor.  Si evaluamos una  expansión en  series de Taylor  antes de
+asignarla a la función, la máquina no tendrá que calcular la expansión
+cada vez que la función sea llamada.
+
+\begin{verbatim}
+In> f(x) := Eval (Taylor (x, 0, 9) Sin(x))
+Out> True;
+In> f(x)
+Out> x-x^3/6+x^5/120-x^7/5040+x^9/362880;
+\end{verbatim}
+
+\section{Listas}
+
+Uno de  los elementos más  importantes del  lenguaje de Yacas  son las
+listas, que como era de esperar son grupos de objetos ordenados. Yacas
+representa las listas  con sus elementos entre llaves  y separados por
+comas.  Los  vectores  son  listas,  y  las  matrices  son  listas  de
+listas. De  hecho, cualquier expresión  matemática en Yacas  puede ser
+transformada en una  lista. Para acceder a los elementos  de una lista
+puedes  usar la  notación habitual  en los  corchetes, y  no sólo  con
+números sino también con secuencias de ellos.
+
+\begin{verbatim}
+In> lista := {a, b, c, d, e, f};
+Out> {a,b,c,d,e,f};
+In> lista[2];
+Out> b;
+In> lista[2 .. 4];
+Out> {b,c,d};
+\end{verbatim}
+
+Fíjate  que los  espacios a  ambos  lados del  operador \verb+..+  son
+necesarios  para distinguir  estos puntos  de los  que podrían  formar
+parte de un número.
+
+También puedes  indexar una lista  con palabras, no sólo  con números,
+mientras que  los elementos de la  lista pueden ser cualquier  tipo de
+objetos. Esto  te permite tener  pequeñas bases  de datos en  forma de
+listas asociativas con parejas clave -- valor.
+
+\begin{verbatim}
+In> pers := {};
+Out> {};
+In> pers["nombre"] := "Eric";
+Out> True;
+In> pers["apellido"] := "Cartman";
+Out> True;
+In> pers["edad"] := 7.34;
+Out> True;
+In> pers["educado"] := False;
+Out> True;
+In> pers
+Out> {{"educado",False},{"edad",7.34},{"apellido","Cartman"},{"nombre","Eric"}};
+\end{verbatim}
 
 \section{Programando con Yacas}
 
+\section{Gráficas con Yacas y GNUplot}
+
+Yacas  incorpora la  posibilidad  de  representar gráficas  utilizando
+GNUplot,  si  bien esta  capacidad  depende  de que  tengas  instalado
+también el programa  GNUplot. La función para  representar gráficas es
+\verb+GnuPlot()+ y  recibe cuatro  parámetros: el  valor mínimo  de la
+variable,  el  valor  máximo  de  la variable,  el  número  de  puntos
+utilizados para la representación y la función para representar. En el
+siguiente  ejemplo  calculamos  el polinomio  interpolador  de  cuatro
+puntos y  lo representamos junto  a la función $f(x)  = 2 \cdot  e^x -
+x^2$.
+
+\begin{verbatim}
+In> f(x) := 2 * Exp(x) - x^2;
+Out> True;
+In> xlist := {0.0, 1.0, 1.5, 2.25};
+Out> {0.0,1.0,1.5,2.25};
+In> ylist := {2.0, 4.4366, 6.7134, 13.9130};
+Out> {2.0,4.4366,6.7134,13.9130};
+In> p (x) := LagrangeInterpolant (xlist, ylist, x);
+Out> True;
+In> GnuPlot(0, 3, 100, {f(x), p(x)})
+GnuPlot: created file gnuplot.tmp/gnudata.in1
+GnuPlot: created file gnuplot.tmp/gnudata.in2
+Out> True;
+\end{verbatim}
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=0.7\textwidth]{imagenes/yacas_gnuplot.eps}
+\caption{Representación gráfica con GNUplot desde Yacas}
+\end{figure}
+
+
+
 \section{Rizando el rizo}
+
+\begin{verbatim}
+In> f(x) := x^5;
+Out> True;
+In> f1(x) := D(x) f(x)
+Out> True;
+In> Eval (Subst(x, 1) f(x))
+Out> 1;
+In> Eval (Subst(x, 1) f1(x))
+Out> 5;
+\end{verbatim}
+
