@@ -29,11 +29,9 @@ que lo primero  que intente arrancar sea el CD-ROM  y listo, tendremos
 nuestro sistema de instalación de nuestra distribución esperando a que
 le demos la orden de continuar.
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/bootsplash.eps}
+\begin{figura}{bootsplash}{0.3}
 \caption{Cargador de arranque de Mandrake Linux}
-\end{figure}
+\end{figura}
 
 Si nuestra placa no soporta el  arranque desde el CD siempre se pueden
 hacer los  disketes para arrancar  desde la disketera. Todos  los PC's
@@ -65,11 +63,9 @@ teclado, ya  que si  no lo  haces podrás  encontrarte que  pulsando la
 tecla  \verb.ñ.  aparezca una  \verb.p.  o  algún otro  carácter.  Los
 teclados españoles son del tipo qwerty-ES.
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=\textwidth]{imagenes/mandrake_idioma.eps}
+\begin{figura}{mandrake_idioma}{0.5}
 \caption{Selección del idioma}
-\end{figure}
+\end{figura}
 
 \section{Particiones}
 
@@ -120,11 +116,9 @@ continuación se detallará este paso.
 
 \end{enumerate}
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/redhat_particiones.eps}
+\begin{figura}{redhat_particiones}{0.8}
 \caption{Preparación de las particiones}
-\end{figure}
+\end{figura}
 
 
 \subsection{La vida en solitario}
@@ -386,11 +380,9 @@ módulos  que  hacen falta  para  que  éste funcione  correctamente  es
 éste el  momento de  seleccionarlos y  configurarlos para  su correcta
 instalación.
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/lycoris_ethernet.eps}
+\begin{figura}{lycoris_ethernet}{0.8}
 \caption{Configuración de la red}
-\end{figure}
+\end{figura}
 
 
 Si hemos  instalado módulos  de hardware que  necesitan algún  tipo de
@@ -445,11 +437,9 @@ haremos  caso,  en este  paso  normalmente  no  hay muchas  cosas  que
 decidir. Simplemente  se instalan  los programas  básicos para  que el
 sistema operativo pueda arrancar y poco más.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/lycoris_usuario.eps}
+\begin{figura}{lycoris_usuario}{0.8}
 \caption{Creación de usuarios durante la instalación}
-\end{figure}
+\end{figura}
 
 
 \section{Instalar el software}
@@ -502,10 +492,9 @@ necesidades. Casi  todas las aplicaciones  se pueden encontrar  en los
 CD's  de tu  distribución favorita,  pero algunas  de ellas  pueden no
 estar en esos CD's.
 
-\begin{figure}[hbtp]
-\centering\includegraphics[width=\textwidth]{imagenes/kpackage.eps}
+\begin{figura}{kpackage}{0.8}
 \caption{KPackage. Gestor de paquetes RPM y DEB para KDE}
-\end{figure}
+\end{figura}
 
 Para instalar esos programas bastará con descargar los paquetes de esa
 aplicación e instalarlos. Hay que anotar que existen paquetes binarios
@@ -567,10 +556,9 @@ presionando la combinación  de teclas C-C. Así que no  debemos temer a
 equivocarnos ya que al interrumpir  esta herramienta no se afectan los
 ficheros de configuración existentes.
 
-\begin{figure}[hbtp]
-\centering\includegraphics[width=0.5\textwidth]{imagenes/xf86cfg.eps}
+\begin{figura}{xf86cfg}{0.5}
 \caption{xf86cfg. Utilidad para configurar el servidor X}
-\end{figure}
+\end{figura}
 
 Para proceder  con la configuración  pulsaremos la tecla  {\tt Enter},
 apareciendo  la   pantalla  de  selección  del   protocolo  de  ratón.
@@ -656,10 +644,9 @@ soporte para  el protocolo PPP ({\em  Point to Point Protocol})  en el
 kernel, apartado {\em  Network devices}, el cual  suele estar activado
 al instalar nuestra distribución.
 
-\begin{figure}[hbtp]
-\centering\includegraphics[width=0.7\textwidth]{imagenes/kpp.eps}
+\begin{figura}{kpp}{0.5}
 \caption{KPPP. Interfaz GUI de pppd para KDE}
-\end{figure}
+\end{figura}
 
 Gracias  a   una  herramienta  como   {\em  pppconfig}  la   tarea  de
 configuración es  muy sencilla,  basta con ejecutar  el programa  e ir
@@ -706,10 +693,9 @@ un enlace  a alguno de  los /dev/ttySx. Introduciremos  el dispositivo
 correspondiente  (/dev/ttySx)  y  habrémos  acabado  con  el  proceso.
 Guardamos los cambios y abandonamos al asistente pppconfig.
 
-\begin{figure}[hbtp]
-\centering\includegraphics[width=0.7\textwidth]{imagenes/pppconfig.eps}
+\begin{figura}{pppconfig}{0.9}
 \caption{PPPConfig}
-\end{figure}
+\end{figura}
 
 Los ficheros de configuración por  defecto se guardan en el directorio
 /etc/ppp. Buscamos la ruta del  fichero con el nombre 'nueva-conexión'
@@ -833,11 +819,9 @@ password  de un  usuario del  sistema con  permiso para  configurar el
 CUPS, por ejemplo root. Una vez  obtenido acceso a la configuración de
 CUPS en el navegador aparecerá una página web como esta:
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/cups_inicio.eps}
+\begin{figura}{cups_inicio}{0.7}
 \caption{Página web que CUPS sirve en el puerto 631}
-\end{figure}
+\end{figura}
 
 Para  comenzar   con  la   configuración  pulsaremos  sobre   {\tt  Do
 Administration Tasks}  en ese  momento nos aparecerán  tres categorías
@@ -869,48 +853,38 @@ Tendremos  que ir  facilitando  los  datos que  se  nos solicitan,  lo
 primero es asignarle un nombre, decir  donde se encuentra y añadir una
 breve descripción al nombre.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/cups_instalando1.eps}
+\begin{figura}{cups_instalando1}{0.7}
 \caption{Configuración de una nueva impresora}
-\end{figure}
+\end{figura}
 
 Lo  siguiente   es  seleccionar  donde  tendremos   conectada  nuestra
 impresora,  normalmente tendremos  conectada  la  impresora al  puerto
 paralelo ({\tt Parallel Port \#1})
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/cups_instalando2.eps}
+\begin{figura}{cups_instalando2}{0.7}
 \caption{Selección del puerto de la impresora}
-\end{figure}
+\end{figura}
 
 En  la siguiente  página tendremos  que seleccionar  el fabricante  de
 nuestra impresora.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/cups_instalando3.eps}
+\begin{figura}{cups_instalando3}{0.7}
 \caption{Selección del fabricante de la impresora}
-\end{figure}
+\end{figura}
 
 A continuación elegiremos el modelo de impresora.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\textwidth]{imagenes/cups_instalando4.eps}
+\begin{figura}{cups_instalando4}{0.7}
 \caption{Selección del modelo de la impresora}
-\end{figure}
+\end{figura}
 
 y listo, nuestra  impresora ya está instalada,  simplemente faltan los
 últimos  retoques. Pulsaremos  sobre el  nombre  que le  hemos dado  a
 nuestra impresora y aparece la siguiente pantalla:
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=\textwidth]{imagenes/cups_configurando.eps}
-\caption{CUPS 6}
-\end{figure}
+\begin{figura}{cups_configurando}{0.7}
+\caption{Configuración de CUPS}
+\end{figura}
 
 Ahora pulsamos sobre  {\tt Configure Printer} y  seleccionamos el tipo
 de papel  que queremos  usar, la  calidad de impresión  y ese  tipo de
