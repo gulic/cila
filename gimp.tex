@@ -282,10 +282,10 @@ la combinación de teclas {\tt C-S} y será suficiente.
 
 Si has  creado una imagen nueva  y quieres guardarla por  primera vez,
 puedes usar la  misma combinación de teclas, pero  aparecerá un cuadro
-de diálogo  para preguntarte por  el nombre del  fichero en el  que la
-quieres  guardar y  algunos  detalles  más. Lo  mismo  sucederá si  en
-cualquier imagen eliges {\sf Archivo $\rightarrow$ Guardar como...} en
-el menú de la imagen.
+de  diálogo para  preguntarte  por el  nombre del  fichero  en el  que
+la  quieres guardar  y  algunos  detalles más.  Lo  mismo sucederá  si
+en  cualquier  imagen  eliges {\sf  Archivo}\lyxarrow{\sf  Guardar
+como...} en el menú de la imagen.
 
 \begin{figura}{gimp_save_as}{0.95}
 \caption{Cuadros de diálogo para guardar una imagen a fichero}
@@ -556,7 +556,181 @@ diálogo como los de la figura \ref{gimp_acquire}
 
 \subsubsection{Escanear una imagen}
 
-XXX ESCRIBIR EN LA FACULTAD XXX
+La forma  más usual de  utilizar un scanner  en GNU/Linux es  a través
+de  SANE\footnote{Scanner Access  Now  Easy, más  información en  {\tt
+http://www.mostang.com/sane/}} y su interfaz  {\sf xsane}. El programa
+{\sf xsane}  permite escanear  imágenes con  las opciones  básicas que
+proporciona el  scanner. 
+
+Sin  embargo las  imágenes  escaneadas suelen  necesitar retoques,  lo
+que  nos lleva  a querer  que  las imágenes  escaneadas sean  enviadas
+directamente a \gimp,  cosa que {\sf xsane} no hace  por sí solo. Para
+esto busca el  submenú {\sf Fich.}\lyxarrow{\sf Adquirir}\lyxarrow{\sf
+XSane} o {\sf Archivo}\lyxarrow{\sf Acquire}\lyxarrow{\sf XSane}.
+
+Si no  te aparece este menú  haz un enlace simbólico  en tu directorio
+personal  {\tt  .gimp-1.2/plug-ins/}\footnote{Si  usas  \gimp  1.3  el
+directorio es  {\tt .gimp-1.3/plug-ins/}} que apunte  al ejecutable de
+{\sf xsane}. Esto se traduce en ejecutar el siguiente comando:
+
+\begin{verbatim}
+$ ln -s /usr/bin/xsane ~/.gimp-1.2/plug-ins/
+\end{verbatim}
+
+Debes reiniciar \gimp  para que este cambio tenga efecto.  Una vez que
+tengas el  submenú {\sf XSane}  verás que  al menos aparece  la opción
+{\sf Device  dialog...}. Si  aparece una o  más entradas  diferentes a
+esta, se trata  de los scanners que tengas soportados  por Sane. Si no
+aparece ninguno elige  la opción {\sf Device dialog...}  y {\sf xsane}
+buscará la lista de scanners soportados en tu sistema.
+
+Cuando finalmente XSane  funcione para tí, verás un par  de ventanas y
+tal vez algunas más. Las más importantes son la ventana principal y la
+de vista previa, que puedes ver en la figura \ref{xsane_main}.
+
+\begin{figura}{xsane_main}{0.95}
+\caption{Ventanas principales de {\sf XSane}}
+\label{xsane_main}
+\end{figura}
+
+La ventana principal contiene un par de menús desplegables que siempre
+estarán ahí,  otros que  dependen de  las opciones  que eligas  en los
+primeros.
+
+% El  menú desplegable  {\sf Modo  de  XSane} te  dará a  elegir lo  que
+% quieres hacer con las imágenes escaneadas:
+% 
+% \begin{description}
+% 
+% \item[Visor interno] para verlas directamente en XSane.
+% 
+% \item[Guardar  imagen]  para  guardarlas directamente  en  fichero  en
+% formato JPEG, PNM, PNG, \mbox{PostScript} o TIFF.
+% 
+% \item[Copiar a impresora] para enviarlas directamente a la impresora, 
+% como su fuera una fotocopiadora.
+% 
+% \item[Enviar por FAX] para enviarlo por FAX.
+% 
+% \item[Enviar  por   correo  electrónico]  para  enviarlo   por  correo
+% electrónico.
+% 
+% \end{description}
+
+Hay un menú  desplegable importante que define el modelo  de color que
+quieres  utilizar  para las  imágenes  escaneadas.  Por defecto  suele
+aparecer  selecionado {\sf  Lineart}, pero  como  verás no  es el  más
+adecuado en la mayoría de los casos. Las posibilidades son:
+
+\begin{description}
+
+\item[Lineart] utiliza el modelo de color indexado con sólo 2 colores
+
+\item[Grayscale] utiliza el modelo de escala de grises
+
+\item[Color] utiliza el modelo RGB
+
+\end{description}
+
+Dependiendo del modelo  de scanner y del soporte  de los controladores
+de Sane para  ese modelo verás otro menú desplegable  con las opciones
+propias  de ese  modelo,  como puede  ser escanear  algo  plano o  una
+película (negativa o de diapositiva).
+
+Una  observación importante  si  utilizas los  modelos  de color  {\sf
+grayscale} o {\sf color} verás que  aparece un menú desplegable con la
+opción {\sf  Rango de color completo}.  Si tienes un scanner  capaz de
+escanear películas (negativos o diapositivas) aquí tienes la opción de
+utilizar el  rango de colores  corresponiente a la película  que estés
+usando. Si no estás escaneando  películas puedes dejarlo en {\sf Rango
+de color completo}.
+
+Debajo de  los menús desplegables  hay cuatro opciones que  se regulan
+mediante controles numéricos o deslizadores, que son:
+
+\begin{description}
+
+\item[La  resolución], i.e.  la cantidad  de píxeles  por pulgada.  La
+resolución mínima es de 12 dpi (ridícula) y la máxima puede rondar los
+1200 dpi (depende del modelo del scanner). Normalmente para retocar la
+imagen y más  adelante imprimirla suele ser  suficiente una resolución
+de 300 dpi para  calidad media o 600 dpi para alta  calidad. Si lo que
+quieres  es incluir  tu imagen  en una  página web  es mejor  bajar la
+resolución para no obtener un fichero  demasiado grande, 100 ó 150 dpi
+puede estar bien.
+
+\item[El factor Gamma]
+
+\item[El Brillo] regula la luminosidad de la imagen escaneada.
+
+\item[El Contraste] puede acentuar o  atenuar las diferencias de color
+entre los píxeles de la imagen escaneada respecto del original.
+
+\end{description}
+
+Debajo de los controles deslizantes hay seis botones con las siguiente
+funcionalidades:
+
+\begin{itemize}
+
+\item Desglosar  los controles por canales.  Normalmente regularás los
+controles gamma, brillo y contraste para la imagen afectando por igual
+a los tres canales: rojo, verde  y azul. Si estás manipulando imágenes
+con  desequilibrios en  los  colores\footnote{Por ejemplo  fotografías
+tomadas con  película para luz  de día  en lugares iluminados  con luz
+artificial}  puedes necesitar  diferentes  ajuste de  gamma, brillo  o
+contraste para cada canal.
+
+\item Invertir los  colores de la imagen. Al hacer  esto el control de
+gamma  se  invierte multiplicativamente  y  el  control de  brillo  se
+invierte aditivamente.
+
+\item Autoajustar los controles gamma, brillo y contraste. {\sf XSane}
+examina la imagen de la vista previa y trata de determinar los mejores
+valores  para estos  ajustes. Pueden  no ser  los ajustes  que más  te
+gusten, pero pueden ser una buena aproximación inicial.
+
+\item Restablece los valores neutros  de los controles gamma, brillo y
+contraste. Estos valores son respectivamente $1$, $0$, $0$.
+
+\item Recupera  los últimos ajustes  de los controles gamma,  brillo y
+contraste previamente memorizados.
+
+\item Memoriza los ajustes de los controles gamma, brillo y contraste.
+
+\end{itemize}
+
+Por último  en la parte  de abajo de  la ventana principal  tienes dos
+barras  de estado  que te  informan del  tamaño que  tendrá la  imagen
+escaneada finalmente.  Junto a  estas barras de  estado está  el botón
+{\sf Escanear} y {\sf Cancelar}.
+
+Pero antes de  escanear una imagen pulsa el botón  {\sf Adquirir vista
+previa}. Al cabo de un tiempo verás  en la ventana una vista previa de
+lo que hayas  puesto en el scanner. Si tu  scanner es antiguo, utiliza
+el puerto paralelo o está en otra máquina, esto puede tardar un poco.
+
+\begin{figura}{xsane_preview}{0.9}
+\caption{Vista previa de una revista en un scanner plano}
+\end{figura}
+
+Sobre esta vista  previa selecciona la región que  quieres escanear En
+caso de  duda sé generoso  y selecciona un poco  más de imagen,  ya la
+recortarás  luego si  te  sobra. Lo  que {\bf  nunca}  debes hacer  es
+seleccionar  más allá  del límite  físico del  scanner, ya  que muchos
+scanners no tienen un sensor que  indique que han llegado al final del
+recorrido e intentan seguir más  allá. Si esto te sucede probablemente
+oirás un sonido horrible y  entonces si no desconectas la alimentación
+del  scanner puede  que  se rompa.  Aunque son  raros  los casos,  ten
+cuidado con esto.
+
+Una vez que  tengas seleccionada la región que  quieras escanear pulsa
+el  botón  {\sf Escanear}  y  espera  pacientemente  a que  la  imagen
+escaneada aparezca en \gimp.
+
+\begin{figura}{xsane_final}{0.9}
+\caption{La imagen escaneada adquirida desde \gimp}
+\end{figura}
 
 \section{Herramientas}
 \index{\gimp!herramientas}
