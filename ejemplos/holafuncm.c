@@ -1,4 +1,7 @@
-/* holafunc3.c .- Ejemplo 3 para el CILA 2001 */
+/* holafuncm.c .- Ejemplo de programa que require la biblioteca de
+ *		funciones matemáticas. Definición de holafunc().
+ */
+
 #include <math.h>
 #include <stdio.h>
 #include "holafunc.h"

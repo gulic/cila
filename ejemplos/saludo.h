@@ -1,4 +1,5 @@
-// saludo.h .- Ejemplo 5 para el CILA 2001
+// saludo.h .- Ejemplo de programa en C++.
+//              Declaración de la clase saludo.
 
 class saludo
 {

@@ -1,3 +1,5 @@
-/* holafunc.h .- Ejemplo 2 para el CILA 2001 */
+/* holafunc.h .- Ejemplo de programa en varios archivos.
+ * 		Declaración de holafunc().
+ */
 
 int holafunc (const char *str);

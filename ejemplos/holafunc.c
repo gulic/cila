@@ -1,4 +1,6 @@
-/* holafunc.c .- Ejemplo 2 para el CILA 2001 */
+/* holafunc.c .- Ejemplo de programa en varios archivos.
+ * 		Definición de holafunc().
+ */
 
 #include <stdio.h>
 #include "holafunc.h"

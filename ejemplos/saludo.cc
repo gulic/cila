@@ -1,6 +1,7 @@
-// saludo.cc .- Ejemplo 5 para el CILA 2001
+// saludo.cc .- Ejemplo de programa en C++.
+//              Definición de los miembros de la clase saludo.
 
-#include <iostream.h>;
+#include <iostream.h>
 #include "saludo.h"
 
 saludo::saludo (const char *str):
