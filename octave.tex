@@ -1,6 +1,5 @@
 %Autor: amd77
 
-%buscar include y arreglar el > que falta
 %FALTAN TODAS LAS IMAGENES
 %FALTA PONER \index
 
@@ -641,11 +640,11 @@ Esta  función recibe  un vector  de tres  elementos como  argumento de
 entrada y hace un cálculo con esos valores para devolver un resultado.
 \end{ejemplo}
 
-No vamos  a analizar este  ejemplo en profundidad, sino  solamente dar
-unas  pistas sobre  como está  hecho. En  primer lugar  vemos un  {\tt
-\#include <octave/oct.h}. Lo  que hace es definir todos  los tipos de
-datos de octave y las funciones  nativas como clases y métodos de c++.
-Con  esto  queremos  decir  que  si  en  octave  podíamos  hacer  {\tt
+No  vamos  a analizar  este  ejemplo  en profundidad,  sino  solamente
+dar  unas pistas  sobre  como está  hecho. En  primer  lugar vemos  un
+\verb|include <octave/oct.h|. Lo  que hace es definir  todos los tipos
+de datos  de octave y las  funciones nativas como clases  y métodos de
+c++. Con  esto queremos  decir que  si en  octave podíamos  hacer {\tt
 length(vector)} para  obtener las  dimensiones de  un vector,  en {\em
 c++}  podremos hacer  lo mismo  usando {\tt  vector.lenght}. Entendido
 esto, el  resto son meras particularidades  sintácticas específicas de
