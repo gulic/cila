@@ -636,21 +636,31 @@ por {\tt vim} sin que cambien palabras del texto como vivir, etc.
 \end{verbatim}
 
 
-Podemos utilizar el carácter \verb.^. le indica al vim que no exista ningun carácter antes de la expresión regular que queremos sustituir en esa línea, y el carácter \verb.$. le indica al vim que no  exista ningun carácter despuéas de la expresión regular que queremos sustituir en usa línea. Vamos a ver unos ejemplos: 
+Podemos utilizar el  carácter \verb.^. le indica al vim  que no exista
+ningun carácter antes  de la expresión regular  que queremos sustituir
+en  esa  línea,  y el  carácter  \verb.$.  le  indica  al vim  que  no
+exista ningun carácter  despuéas de la expresión  regular que queremos
+sustituir en usa línea. Vamos a ver unos ejemplos:
+
 \begin{verbatim}
 :s/^vi/vim/g
 \end{verbatim}
-En este ejemplo, se cambia la palabra {\tt vi} por {\tt vim} si no existe ningun carácter delante de la palabra {\tt vi}.
+
+En este  ejemplo, se cambia  la palabra {\tt vi}  por {\tt vim}  si no
+existe ningun carácter delante de la palabra {\tt vi}.
+
 \begin{verbatim}
 :s/vi$/vim
 \end{verbatim}
-En el anterior ejemplo, se sustituye la palabra {\tt vi} por {\tt vim} que se encuentre al final de una línea.
+
+En el anterior ejemplo, se sustituye la palabra {\tt vi} por {\tt vim}
+que se encuentre al final de una línea.
 
 \begin{verbatim}
 :s/^vi$/vim
 \end{verbatim}
 
-Los metacaracteres nos permiten una gran flexibilidad a la hora de
+Los metacaracteres  nos permiten  una gran flexibilidad  a la  hora de
 trabajar con expresiones regulares.
 
 \begin{table}[htbp]
@@ -754,3 +764,4 @@ cualquier número espacios al principio de la línea (\verb.\(\s\+\).) y
 que detrás contenga algún texto(\verb.\(\w\+\)). y lo sustituye por la
 exresión(\verb.\2.), es  decir, solo  mantiene el grupo  \verb.\2., el
 que contiene la palabra.
+
