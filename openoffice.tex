@@ -7,486 +7,42 @@
 % Sección: Introducción %
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introducción}
-StarOffice es un entorno de oficina que contiene todas las
-herramientas para desenvolverse en un ambiente de trabajo, así como
-también hogareño. Este set de herramientas ha ido evolucionando a
-través de los años, originalmente lo mantenía una companía alemana
-llamada StarDivision, pero en el año 1999 Sun Microsystems compró el
-paquete y actualmente lo mantiene dicha empresa\footnote{Próximamente
-será liberado como software libre}.
 
-StarOffice es uno de los grandes competidores del paquete de oficina
-\emph{Microsoft Office}, ya que el StarOffice es compatible con los
+OpenOffice.org es un entorno de oficina que contiene todas las
+herramientas para desenvolverse en un ambiente de trabajo, así como
+también hogareño. 
+Este set de herramientas tiene sus raices en StarOffice, 
+un suite de oficina que desde mediados de los ochenta se desarrollaba en Alemania,
+a cargo de una compañía llamada StarDivision,  cuyos derechos fueron comprados en  
+1999 por Sun Microsystems.
+La version 5.2 of StarOffice se lanzó en junio del 2000, y la versión 6.0 salió
+en mayo del 2002. Lo más extraordinario del desarrollo de StarOffice 6.0 es que se
+desarrolla mayoritariamente en el contexto del proyecto Open Source de OpenOffice.org. 
+A efectos de posibilitar dicho desarrollo, Sun hizo público el código fuente de la mayoría 
+de los módulos de StarOffice (excepto por algunos módulos de proveedores externos, que no 
+han entrado en el proyecto), y estableció el proyecto OpenOffice.org. Esto no significa sin 
+embargo que Sun deja en manos de voluntarios el desarrollo futuro del suite: la mayoría del
+trabajo todavía se lleva a cabo por desarrolladores de Sun. Sun también se encarga de los 
+costes operacionales del proyecto OpenOffice.org.
+
+OpenOffice.org es uno de los grandes competidores del paquete de oficina
+\emph{Microsoft Office}, ya que el OpenOffice.org es compatible con los
 formatos de archivos del MS-Office, además que existen versiones para
 GNU/Linux, MS-Windows, y otros sistemas operativos; y por último, una
 característica muy importante: es gratis.
 
+Openoffice.org es una suite ofimática que está compuesta por diferentes módulos
+que se pueden cargar de forma independiente.
 Este capítulo no está orientado a ser un manual exhaustivo de
-StarOffice, sino más bien una introducción a este enorme paquete,
+OpenOffice.org, sino más bien una introducción a este enorme paquete,
 donde se explicará el funcionamiento básico de los módulos mas
 importantes y se mencionará la existencia de los demás módulos.
 
-StarOffice se maneja en un entorno de escritorio propio, cuando se
-ejecuta el programa, se abre una ventana (ver figura
-\ref{fig:StarOffice}) en la que se observa un conjunto de íconos, y
-una ayuda por debajo, que va mencionando las diferentes funciones del
-paquete.
 
-\figura{EscritorioInicial del StarOffice}{StarOffice}
-%%%%%%%%%%%%%%%%%%%%%%%%
-% Sección: StarDesktop %
-%%%%%%%%%%%%%%%%%%%%%%%%
-\section{StarDesktop: El Entorno de StarOffice}
-\figura{StarDesktop, el entorno de trabajo de StarOffice}{StarDesktop}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sección: OpenOffice.org Writer %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Tareas básicas:
-%		Trabajo con íconos
-%		Manejo de grupos (Work Folder)
-
-% Tareas mas avanzadas:
-%			Trabajo con el Beamer
-%			Uso del escritorio como administrador de archivos
-%			Uso del escritorio como navegador web
-%			Modo FullScreen
-%			Modo Integrated Desktop
-
-Cuando arranca StarOffice, ocupa su propia ventana, que es una
-\textbf{ventana de aplicación}. Dentro de esta ventana se situarán las
-\textbf{ventanas de documento}, una para cada documento que se desee
-visualizar, además de una ventana para el escritorio propio de
-StarOffice (en inglés, \emph{desktop}). La figura \ref{fig:StarDesktop}
-muestra una pantalla típica en la que, además de la ventana principal,
-se ve el desktop.
-
-\subsection{La ventana principal}
-Recorriendo desde arriba hacia abajo la ventana principal, vemos:
-\begin{itemize}
-\item La barra de título.
-\item El menú principal.
-\item Dos barras de símbolos.
-\item La zona de trabajo, ocupada completamente por el desktop, pero en la 
-que más adelante irán apareciendo las ventanas de los documentos.
-\item La barra de tareas propia de StarOffice, con su botón Inicio a la
- izquierda y reloj a la derecha.
-\end{itemize}
-
-\subsection{La ventana del desktop}
-Según cómo se haya instalado StarOffice, en el desktop aparecerán sólo
-los iconos del programa, como en la ilustración.
-
-\subsection{Modos de visualización}
-StarOffice puede aparecer en pantalla de varios modos distintos:
-\begin{itemize}
-\item Si en el menú Ver se marca la opción Escritorio integrado, el programa
- ocupará toda la pantalla y desaparecerán el marco de su ventana, la barra de
- título, así como la barra de tareas de KDE (o GNOME).
-\item Si en el menú Ver se marca la opción Pantalla completa, desaparecerán 
-casi todos los elementos de la ventana principal, y sólo se verá la
-ventana del documento. Quedarán la barra de tareas de StarOffice y un
-icono (figura \ref{fig:StarDesktopBotonDePantallaCompleta}) que
-permite volver al modo anterior. En esta situación no se puede acceder
-al menú principal con el ratón, pero sí se pueden usar los atajos de
-teclado y el menú de contexto.
-\end{itemize}
-\figura{Botón para volver del estado de \emph{Pantalla Completa}}{StarDesktopBotonDePantallaCompleta}
-
-\subsection{Otros elementos}
-Además de los elementos ya vistos y las ventanas de los documentos, en
-StarOffice pueden estar visibles otros dos elementos, el
-\textbf{Explorador} y el \textbf{Beamer}. Ambos se activan y
-desactivan desde el menú \menu{Ver}. En la figura
-\ref{fig:StarDesktopExplorerYBeamer} se observa un aspecto de
-StarOffice con el Explorador a la izquierda, el Beamer a la derecha
-arriba y el desktop a la derecha abajo.
-\figura{El \emph{Desktop} con elementos desplegados}{StarDesktopExplorerYBeamer}
-
-\subsubsection{El explorador}
-Consta de varios grupos, representados por rectángulos grises. Desde
-cada grupo se accede a funciones distintas. Esencialmente sirven para
-acceder a las distintas partes del programa de un modo unificado.
-
-\subsubsection{El Beamer}
-Es un visor de archivos. Cuando en el explorador se señala una
-carpeta, en el Beamer se ve la relación de sus archivos; cuando en el
-Explorador se señala un archivo de la Galería, en el Beamer se ve su
-aspecto.
-
-\subsection{Las barras de símbolos}
-Consisten en una serie de \textbf{botones que activan funciones} del
-programa. Normalmente son funciones que ya están disponibles en alguno
-de los menús. Resultan muy cómodos para tener a mano aquello que hace
-falta a menudo. No es necesario recordar exactamente el cometido de
-cada botón, ya que al pasar el ratón sobre cada uno, aparece un
-pequeño rectángulo amarillo (llamado globo\footnote{En inglés se
-llama \emph{tooltip}}) con el nombre de la función asociada.
-
-\subsubsection{Barras más usuales}
-Hay varias barras disponibles, pero las más usuales son:
-\begin{description}
-\item[Barra de funciones.] Permite acceder a cualquier carpeta, archivo o 
-dirección de Internet simplemente escribiendo su nombre, así como avanzar y
- retroceder entre los elementos ya vistos. También incorpora las funciones
- generales más habituales.
-\item[Barra de objetos.] Según el tipo de documento, esta barra irá cambiando.
-\item[Barra de herramientas.] Aparece en vertical en las ventanas de documento.
-\end{description}
-
-\subsubsection{Configuración}
-Las barras de símbolos se hacen aparecer o no eligiéndolas en el menú
-\menu{Ver}, submenú \menu{Barras de símbolos}. Se puede cambiar su
-altura arrastrando el borde inferior. Tienen un menú de contexto desde
-el que se pueden personalizar fácilmente, añadiendo o quitando
-botones. Cuando no caben en la pantalla todos los botones de la barra,
-aparecen en el extremo derecho dos flechitas que permiten ir viendo
-todos los botones. Pueden estar fijas en un extremo de la ventana o
-bien flotantes en su propia ventana (que se podrá cambiar de forma y
-posición); se pasa de un modo a otro haciendo una doble pulsación
-sobre ellas, en algún punto libre, mientras se pulsa la tecla
-\boton{Ctrl}.
-
-\subsection{Salida de StarOffice}
-Para concluir la ejecución de este programa basta elegir en el menú
-Archivo la opción Terminar.
-
-\subsubsection{Aviso a la salida}
-Si se sale de StarOffice sin guardar los cambios en algún documento,
-aparece un cuadro de diálogo como la figura
-\ref{fig:StarDesktopDialogoSalir}, advirtiendo del hecho. Si se pulsa
-\boton{Guardar}, se guardan los cambios y luego se sale. Si se pulsa
-\boton{Rechazar}, no se guardan pero sí se sale; y si se pulsa
-\boton{Cancelar}, ni se guardan ni se sale.
-\figura{Diálogo de cierre del StarOffice}{StarDesktopDialogoSalir}
-
-\subsection{Creación de documentos}
-Se puede crear un documento nuevo desde varias partes del programa:
-\begin{itemize}
-\item Desde el desktop, haciendo doble pulsación sobre el tipo de archivo.
-\item Desde el menú \boton{Inicio}.
-\item Desde al menú \menu{Archivo}, submenú \menu{Nuevo}. Éste es el modo
- desde el que se pueden ver todas las posibilidades. La figura
- \ref{fig:StarDesktopArchivoNuevo} presenta el aspecto de este
- submenú.
-\item Basándose en una plantilla ya hecha: se elige la opción 
-\menu{A partir de una plantilla}, lo que lleva al cuadro de diálogo
- \emph{Nuevo}, que se ve en la figura
- \ref{fig:StarDesktopArchivoNuevoPlantilla}, en el que se elige
- primero un área y luego una plantilla. StarOffice incorpora gran
- cantidad de plantillas, lo que ahorra bastante trabajo, con la
- contrapartida de que no se aprende mucho y los documentos resultan
- poco originales.
-\end{itemize}
-\figura{Menú de creación de un nuevo documento}{StarDesktopArchivoNuevo}
-\figura{StarOffice permite el uso de plantillas}{StarDesktopArchivoNuevoPlantilla}
-
-\subsection{Las ventanas de documento}
-StarOffice es capaz de manejar simultáneamente hasta 255
-documentos. En la figura \ref{fig:StarDesktopMultiplesVentanas} se
-muestra un modo de trabajo de StarOffice con bastantes
-ventanas. Cuando una ventana de documento está maximizada, sus botones
-aparecen a la derecha del menú principal. En cualquier otro caso, las
-ventanas presentan un grupo de cuatro botones, que se explican de
-izquierda a derecha:
-\begin{itemize}
-\item Botón de \boton{ocultar}. Si se pulsa, la ventana se reduce a la barra
- del título y el botón se convierte en el botón de mostrar.
-\item Botón de \boton{minimizar}. Si se pulsa, la ventana desaparece del
- área de trabajo, aunque sigue representada en la barra de tareas.
-\item Botón de \boton{maximizar}. Cuando se pulsa, la ventana ocupa toda
- el área de trabajo.
-\item Botón de \boton{cerrar}. Cierra la ventana y el documento que contiene.
-\end{itemize}
-\figura{El \emph{StarDesktop} con varios documentos cargados}{StarDesktopMultiplesVentanas}
-
-\subsection{El menú Ventana}
-Además de los métodos explicados para manejar las ventanas de
-documento, se dispone de un menú llamado \menu{Ventana}, con estas
-características:
-\begin{itemize}
-\item Cada documento abierto aparece en la lista del menú. Se puede activar 
-cualquiera simplemente eligiéndolo.
-\item La opción Cascada coloca todos los documentos de modo que se puedan
- ver sus barras del título.
-\item La opción Azulejar divide al área de trabajo de modo que aparezcan 
-todos los documentos del mejor modo posible.
-\item Las opciones Horizontal y Vertical colocan todos los documentos de
- modo que sus ventanas ocupen todo el espacio disponible, horizontal o
- verticalmente.
-\end{itemize}
-\figura{Menú \emph{Ventana}}{StarDesktopMenuVentana}
-
-\subsection{La barra de herramientas}
-Es la que aparece verticalmente en las ventanas de documento. Algunos
-de sus botones tienen una pequeña flecha verde. Son botones que abren
-una barra con más botones cuando se mantiene un momento el puntero del
-mouse pulsado sobre ellos. La barra que aparece se puede separar de la
-barra de herramientas arrastrándola hacia la derecha desde la barra de
-título. En ese momento se convierte en una barra de herramientas
-flotante. En la figura \ref{fig:StarDesktopBarraHerramientas}se puede
-ver el proceso: arriba cómo aparece la barra y abajo la barra
-convertida en flotante.
-\figura{Barra de herramientas}{StarDesktopBarraHerramientas}
-
-\subsection{Formatos de archivo}
-StarOffice tiene sus propios formatos para almacenar en archivos el
-contenido de los documentos. También es capaz de leerlo y almacenarlo
-en otros tipos de archivos, pero la recomendación es guardar cada
-documento siempre en el formato nativo de StarOffice y posteriormente
-en cualquier otro que se desee. El motivo es que si no se hace así se
-podrían perder algunas características.
-\figura{StarOffice advierte de la pérdida de formato}{StarDesktopPerdidaFormato}
-
-\subsubsection{Formatos nativos}
-Éstas son las extensiones de los formatos nativos de StarOffice:
-\begin{itemize}
-\item Documento de texto: \textbf{sdw}.
-\item Hoja de cálculo: \textbf{sdc}.
-\item Presentación: \textbf{sdd}.
-\item Dibujo vectorial: \textbf{sda}.
-\item Diagrama: \textbf{sds}.
-\item Fórmula matemática: \textbf{smf}.
-\end{itemize}
-
-\subsubsection{Formatos abiertos}
-La única manera de asegurar un intercambio libre de información en
-informática es mediante el uso de formatos universalmente establecidos
-que no dependan de ninguna compañía en concreto. Las especificaciones
-de estos formatos se encuentran publicadas en gran cantidad de sitios
-y cualquier programador puede incorporarlos a sus creaciones.
-StarOffice lee y escribe los siguientes formatos abiertos, entre
-otros:
-\begin{itemize}
-\item Documentos de texto ANSI, HTML, Rich Text Format y Comma Separated 
-Values.
-\item Gráficos CGM, JPG, PNG y TIFF.
-\end{itemize}
-
-\subsubsection{Formatos propietarios}
-StarOffice puede leer y escribir, entre otros muchos, los siguientes
-formatos propietarios:
-\begin{itemize}
-\item Documentos de texto de MS Word, Corel WordPerfect, WordStar y Ami Pro.
-\item Hojas de cálculo de MS Excel y Lotus 1-2-3.
-\item Presentaciones de MS PowerPoint.
-\item Dibujos vectoriales de AutoCad, EPS y Windows Metafile.
-\item Imágenes bitmap de Adobe Photoshop y BMP.
-\end{itemize}
-
-\subsection{Qué es un documento}
-Cada texto, hoja de cálculo, presentación, dibujo vectorial o bitmap
-que se crea con StarOffice es un documento; lo que tienen todos de
-común es que se almacenan en un archivo cada uno.
-
-\subsection{Creación de un documento}
-Partiendo de un documento en blanco, se siguen estos pasos:
-\begin{enumerate}
-\item Se escribe el comienzo del texto, se ponen los datos iniciales y
- rápidamente se almacena y se le pone un nombre. En el menú \menu{Archivo} 
-se elige la opción \menu{Guardar} como y se abre el cuadro de diálogo
- Guardar como, que se estudia más adelante.
-\item Según se va trabajando, de vez en cuando, se guardan los cambios
- que se van haciendo. En el menú \menu{Archivo} se elige la opción
- Guardar; el programa almacena la versión actualizada y en seguida 
-devuelve el control para seguir trabajando.
-\item Cuando se ha terminado de confeccionar el documento y ya se ha
- guardado por última vez, se cierra. En el menú \menu{Archivo} se elige
- la opción \menu{Cerrar}.
-\end{enumerate}
-
-\subsection{Modificación de un documento}
-Si ya se ha creado un documento, se encuentra almacenado en el disco
-duro o en un disquete y se desea realizar algún cambio, se siguen
-estos pasos:
-\begin{enumerate}
-\item Se abre el documento, es decir, se lee desde el disco duro o
- disquete y se coloca en la memoria RAM, con lo que se ve en la pantalla 
-de StarOffice. Para hacerlo, en el menú \menu{Archivo} se elige la
- opción \menu{Abrir} y se abre el cuadro de diálogo Abrir, que se
- estudia más adelante.
-\item Según se va trabajando, de vez en cuando, se guardan los cambios 
-que se van haciendo. En el menú \menu{Archivo} se elige la opción Guardar
-; el programa almacena la versión actualizada y en seguida devuelve el
- control para seguir trabajando.
-\item Cuando se ha terminado de modificar el documento y ya se ha
- guardado  por última vez, se cierra. En el menú \menu{Archivo} se elige
- la opción Cerrar.
-\end{enumerate}
-
-\subsection{Propiedades del documento}
-Es posible anotar datos adicionales sobre el documento, así como
-obtener sus características básicas mediante esta opción. Si se elige
-en el menú \menu{Archivo} la opción Propiedades, aparece el cuadro de
-diálogo Propiedades, que consta de cinco fichas. La figura
-\ref{fig:StarDesktopPropiedadesDocumento} muestra la ficha
-Descripción, en la que se pueden definir los datos que permiten buscar
-más fácilmente el archivo.
-\figura{Propiedades del documento}{StarDesktopPropiedadesDocumento}
-
-\subsection{El cuadro de diálogo \emph{Abrir}}
-Se examina ahora con más detalle este importante cuadro de diálogo,
-que puede presentar el aspecto que se ve en la figura 
-\ref{fig:StarDesktopDialogoAbrir}.
-
-El cuadro se abre en la misma carpeta en que se trabajó la última
-vez. En la zona grande de trabajo aparecen las carpetas de esa carpeta
-y los documentos encontrados. Haciendo doble pulsación sobre una
-carpeta, se pasa a examinar su contenido. El cuarto botón de la barra
-de herramientas permite volver a la carpeta padre de la que se está
-viendo. El segundo y tercer botones sirven para elegir el modo de
-presentar la lista de documentos encontrados. Se recomienda el modo
-\emph{Detalles}, ya que así se puede navegar más fácilmente por el árbol de
-directorios, pulsando en los <<+>> y <<->>.
-
-El cuadro de texto \emph{Nombre del archivo} puede usarse para
-escribir directamente el nombre (o el nombre completo) del documento
-que se desea abrir. También se puede escribir un nombre usando
-caracteres comodín; al pulsar el botón Abrir, aparecerán aquellos
-nombres de documento que encajen con el patrón dado en los
-comodines. La lista desplegable \emph{Tipo de archivo} tiene
-exactamente esta utilidad, pero con una serie de nombres de fichero ya
-preestablecida.
-
-Por fin, cuando se decida el documento que hay que abrir, se pulsa
-sobre él y luego sobre el botón \boton{Abrir}.
-\figura{Cuadro de diálogo \emph{Abrir}}{StarDesktopDialogoAbrir}
-
-\subsection{El cuadro de diálogo \emph{Guardar como}}
-Es el turno ahora de este otro cuadro. Su aspecto es el que se ve en
-la figura \ref{fig:StarDesktopGuardarComo}. Se usa de un modo muy
-similar al cuadro de diálogo Abrir. Concretamente, la búsqueda de la
-unidad y la carpeta en la que se desea guardar el documento es
-exactamente igual. Una vez encontrada la carpeta, se escribe el nombre
-que se desea dar al documento en el cuadro de texto \emph{Nombre del
-archivo}; no hace falta añadir extensión, StarOffice pone
-automáticamente extensión adecuada si está activa la casilla
-Ampliación automática del nombre de archivo.
-\figura{Cuadro de diálogo \emph{Guardar Como}}{StarDesktopGuardarComo}
-
-\subsubsection{Guardar con contraseña}
-Una buena medida para progeter datos secretos es guardar archivos
-protegidos con contraseña. En el cuadro de diálogo Guardar como se
-marca la casilla Guardar con contraseña; así, el programa pide una
-contraseña (fig. \ref{fig:StarDesktopGuardarComoPassword}); cuando se
-intente abrir el archivo, se preguntará por esa contraseña
-(fig. \ref{fig:StarDesktopAbrirPassword}) y si no se escribe
-correctamente, el archivo no se abrirá
-(fig. \ref{fig:StarDesktopPasswordErronea}).
-\figura{Guardar con contraseña}{StarDesktopGuardarComoPassword}
-\figura{Ingreso de contraseña para abrir documento}{StarDesktopAbrirPassword}
-\figura{Contraseña mal ingresada}{StarDesktopPasswordErronea}
-
-\subsection{Manejo de archivos}
-Desde los dos cuadros de diálogo es posible acceder a una serie de
-funciones sencillas para crear carpetas, copiar y borrar archivos,
-etc. Aunque esto es mucho más cómodo de realizar desde el
-\emph{Administrador de archivos} de KDE, algunas veces es útil
-disponer de estas opciones directamente desde StarOffice.  Si se pulsa
-sobre el nombre de un documento con el botón derecho del mouse,
-aparece un menú de contexto que permite algunas manipulaciones.
-
-\subsection{Últimos archivos}
-En el menú \menu{Archivo} siempre aparecen, al final, los últimos
-documentos que han sido abiertos. Si se elige alguno de ellos,
-StarOffice lo abre directamente, lo que ahorra pasar por el cuadro de
-diálogo \emph{Abrir}.
-
-\subsection{Niveles de ayuda}
-Este programa va guiando y ayudando al usuario desde muchos puntos
-distintos y a varios niveles. Por desgracia, la ayuda más avanzada no
-está traducida al español, por lo que se da el caso de encontrar
-textos de ayuda en inglés y en español.
-
-\subsection{Recuperación de errores}
-En el menú \menu{Editar} se dispone siempre como primera opción de una
-que deshace la última acción que se haya realizado: puede ser borrar
-un bloque, cambiar una alineación o cualquier otra cosa. Esto da
-cierta tranquilidad a la hora de probar nuevas funciones.
-
-\subsection{Los \emph{tooltips}}
-Son el nombre en inglés de los pequeños globos amarillos con
-información que aparecen cuando el puntero se deja un momento sobre
-algún botón de una barra de símbolos. Para que aparezcan hay que
-marcar en el menú \menu{Ayuda} la opción \emph{Significación}. Si se
-desea que en el globo aparezca una información más detallada, habrá
-que marcar también la opción Ayuda activa. En las figuras
-\ref{fig:StarDesktopTooltip} y \ref{fig:StarDesktopTooltipExtendido}
-se ve la diferencia de información que se obtiene en el primer caso y
-en el segundo sobre un mismo botón. Cuando la ayuda activa esté
-marcada, también aparecerán globos sobre las opciones de los menús.
-\figura{Tooltip normal}{StarDesktopTooltip}
-\figura{Tooltip extendido}{StarDesktopTooltipExtendido}
-
-\subsection{Ayuda general}
-Para acceder al fichero general de ayuda de StarOffice basta elegir en
-el menú \menu{Ayuda} la opción Contenido. Esto abre una ventana con el
-texto de la ayuda, que está en formato hipertexto, es decir, se puede
-ir pulsando por los diversos vínculos que tiene para ir pasando de
-página en página. Se puede navegar por las páginas hacia delante y
-hacia atrás con los botones correspondientes de la barra de
-funciones. Obsérvese que la ventana de ayuda tiene su propia barra de
-objetos. Un ejemplo de esta ventana se ve en la figura
-\ref{fig:StarDesktopAyuda}.
-\figura{Ayuda en Línea}{StarDesktopAyuda}
- 
-Cuando es necesario buscar algo en la ayuda se pulsa el botón
-\boton{Buscar} en la ayuda, lo que abre el cuadro de diálogo
-\emph{Buscar}, con dos fichas que se ven en las figuras \ref{fig:StarDesktopAyudaBuscarTexto} y \ref{fig:StarDesktopAyudaBuscarIndice}.
-En la pestaña \emph{Indice} se buscará una palabra, pero sólo en los títulos
-de las partes de la ayuda; más potente es la pestaña \emph{Texto}, que puede
-buscar en toda la ayuda, aunque para ello debe crear índices, lo que
-le lleva algún tiempo, cosa que indica con un aviso. Si se encuentra
-el tema deseado, se pulsa el botón
-\boton{Mostrar} y así se vuelve a la ventana de ayuda.  Otro modo de
-consultar la ayuda consiste en abrir el \emph{Explorador de
-StarOffice} y usar la entrada Ayuda, como se ve en la figura
-\ref{fig:StarDesktopAyudaExplorador}.
-\figura{Busqueda de Ayuda por índice}{StarDesktopAyudaBuscarIndice}
-\figura{Busqueda de Ayuda por índice}{StarDesktopAyudaBuscarTexto}
-\figura{También se tiene mucha ayuda desde el \emph{Explorador}}{StarDesktopAyudaExplorador}
-
-\subsection{El ayudante}
-Su nombre en inglés es \emph{Help Agent}. Se activa automáticamente en
-gran número de situaciones, a no ser que se configure para que no lo
-haga. Siempre presenta ayuda \emph{sensible al contexto}, es decir,
-relevante para la situación que se esté tratando. En la figura
-\ref{fig:StarDesktopAyudante} se muestra su aspecto típico. Cuando no
-se presenta espontáneamente, se puede hacer aparecer de varias formas:
-\begin{itemize}
-\item Eligiendo en el menú \menu{Ayuda} la opción Ayudante.
-\item Pulsando la tecla \boton{F1}.
-\item Pulsando el botón \boton{Ayuda} de cualquier cuadro de diálogo.
-\end{itemize}
-\figura{El Ayudante de StarOffice}{StarDesktopAyudante}
-
-\subsubsection{Barra}
-El ayudante presenta su propia barra, con botones muy útiles. Salvo
-quizá el botón \boton{Pregunta}, que no siempre sabe responder, como
-se ve en las figuras \ref{fig:StarDesktopAyudaPregunta} y
-\ref{fig:StarDesktopAyudaRespuesta} (se presenta la pregunta realizada
-y la contestación obtenida).
-\figura{Uno puede preguntarle al Ayudante que necesita}{StarDesktopAyudaPregunta}
-\figura{A veces el Ayudante no sabe qué decir}{StarDesktopAyudaRespuesta}
-
-\subsubsection{Configuración}
-El ayudante aparece en situaciones en que no se ha llamado. Aunque
-esto puede resultar útil para los principiantes, puede ser incómodo
-para otras personas. La configuración del ayudante se realiza de dos
-formas:
-\begin{itemize}
-\item Cada vez que aparece, se puede marcar una casilla de verificación 
-para que no vuelva a aparecer en esa situación.
-\item Eligiendo en el menú \menu{Herramientas} la opción Opciones,
- en el cuadro de diálogo Opciones la categoría General y la
- subcategoría Otros, y por fin atendiendo la sección Ayudante, como se
- ve en la figura \ref{fig:StarDesktopAyudanteConfiguracion}. Si se
- marca la casilla \emph{Restablecer lista inicial}, se borrarán todas las
- configuraciones realizadas por el método anterior. Si se deja sin
- marcar la casilla \emph{Inicio automático}, el ayudante sólo aparecerá
- cuando sea llamado explícitamente.
-\end{itemize}
-\figura{Configuración del \emph{Ayudante}}{StarDesktopAyudanteConfiguracion}
-%%%%%%%%%%%%%%%%%%%%%%%
-% Sección: StarWriter %
-%%%%%%%%%%%%%%%%%%%%%%%
 % Características generales:
 %				Autocorrección
 %				Impresión
@@ -496,12 +52,12 @@ para que no vuelva a aparecer en esa situación.
 %				DirectCursor
 %				Autotexto
 
-\section{Starwriter: Procesador de textos}
+\section{OpenOffice.org Writer: Procesador de textos}
 
 
 \subsection{Introducción:}
 
-StarWriter es un procesador de textos\footnote{%
+OpenOffice.org Writer es un procesador de textos\footnote{%
 Un procesador de textos es un programa con el que se generan diferentes documentos
 de texto como, cartas, informes o incluso el presente libro
 } avanzado, con el que se pueden crear diferentes tipos de documentos en los
@@ -513,13 +69,13 @@ vitae, libros, etc. Además de las anteriores existen multitud de utilidades
 que facilitan el uso del procesador, como son el autocorrector, el autoformato,
 etc.
 
-Un punto muy importante a favor de StarWriter es la compatibilidad con los documentos
+Un punto muy importante a favor de OpenOffice.org Writer es la compatibilidad con los documentos
 guardados con formatos propietarios como Microsoft Word, no obstante siempre
 se podrán exportar documentos de cualquier procesador de texto guardandolo en
 formato de texto Enriquecido (RTF\footnote{%
 RTF: formato de texto enriquecido, es un formato estandar que puede ser entendido
 por la practica totalidad de editores de texto.
-}). StarWriter posee un sisema de ayuda que puede ser consultado de forma contextual
+}). OpenOffice.org Writer posee un sisema de ayuda que puede ser consultado de forma contextual
 (pulsando \boton{F1}) mientras se edita el documento o buscando en los temas de ayuda.
 Se debe tener en cuenta que se puede acceder a todas las funcionalidades del
 editor a través de los diferentes menús con el ratón como con diferentes combinaciones
@@ -528,11 +84,11 @@ de una forma mucho más rápida y eficaz.
 
 \subsection{Como empezar:}
 
-Este es el aspecto que tiene la pantalla del StarWriter, antes de comenzar a crear
+Este es el aspecto que tiene la pantalla del OpenOffice.org Writer, antes de comenzar a crear
 nuestro documento vamos a determinar para que sirven los principales menús que
 encontramos en la aplicación.
 
-%\figura{StarWriter}{principal_p.eps}
+%\figura{OpenOffice.org Writer}{principal_p.eps}
 
 
 \subsubsection{Especificaciones del menú principal:}
@@ -541,7 +97,7 @@ encontramos en la aplicación.
 
 \begin{description}
 \item [\textmd{Archivo:}]Este menú se utiliza para abrir, cerrar, imprimir o crear
-asistentes para documentos, para cerrar StarWriter hay pulsar en este menú la
+asistentes para documentos, para cerrar OpenOffice.org Writer hay pulsar en este menú la
 opción cerrar.
 \item [\textmd{Editar:}]Sirve para modificar el texto, cortar, pegar, seleccionar,
 buscar y remplazar, etc.
@@ -561,7 +117,7 @@ abierto más de un documento se tiene la posilididad de desplazarse de uno a
 otro, verlos en cascada, azulejearlos que es verlos todos a la vez en la pantalla,
 ver dos documentos en horizontal o en vertical, cerrar todas la ventanas a la
 vez y ver cuantos documentos se tienen abiertos.
-\item [\textmd{Ayuda:}]Para obtener ayuda sobre el contenido o sea sobre StarWriter,
+\item [\textmd{Ayuda:}]Para obtener ayuda sobre el contenido o sea sobre OpenOffice.org Writer,
 tener el asistente abierto mientras escribimos, o la ayuda activa que al posicionar
 el cursor sobre un icono da una explicación de para que se utiliza (está sin
 traducir al castellano).
@@ -572,7 +128,7 @@ traducir al castellano).
 
 \subsection{El documento:}
 
-Una vez que se ha abierto StarOffice, para abrir una sesión de StarWriter hay
+Una vez que se ha abierto OpenOffice.org, para abrir una sesión de OpenOffice.org Writer hay
 que abrir un documento ya sea nuevo o existente.
 
 
@@ -586,7 +142,7 @@ documento seleccionando en el menú \menu{Archivo} la opción \menu{Nuevo} y elegi
 
 \subsubsection{Como abrir un documento existente:}
 
-Con StarWriter existe la posibilidad de trabajar con documentos de formatos
+Con OpenOffice.org Writer existe la posibilidad de trabajar con documentos de formatos
 muy diferentes, como pueden ser los documentos de Microsoft Word, html, TXT,
 RTF, Winword, etc. Para abrir un documento existente se pulsa en \menu{Archivo}
 y se elige \menu{Abrir} y aparecerá un cuadro de dialogo en el que aparece la
@@ -601,7 +157,7 @@ el nombre del archivo y se pulsa abrir o utilizamos las teclas rápidas \boton{Ct
 La primera vez que se guarda un documento hay que darle un nombre y decidir
 su ubicación (donde se quiere guardar). Guardar como, se utiliza para guardar
 el documento con un nombre de archivo, por ejemplo: Manual.doc, y en una localización
-determinada en el sistema de archivos, por ejemplo: \comando{/home/usuario/StarWriter/personal/trabajos/Manual.doc},
+determinada en el sistema de archivos, por ejemplo: \comando{/home/usuario/OpenOffice.org Writer/personal/trabajos/Manual.doc},
 para Guardar Como se pulsa sobre \menu{Archivo} y después sobre \menu{Guardar como},
 y se elige la ruta y el nombre del archivo en el cuadro de dialogo.
 
@@ -652,7 +208,7 @@ las casillas.........., formato del texto de la tabla ......
 
 Para poder imprimir correctamente un documento se debe tener previamente configurada
 la impresora que se vaya a utilizar\footnote{%
-La impresora se configura siendo Administrador y desde el escritorio de StarOffice
+La impresora se configura siendo Administrador y desde el escritorio de OpenOffice.org
 (Desktop)
 }. Antes de imprimir el documento es conveniente que veamos el aspecto que va
 ha tener una vez impreso, para previsualizarlo se pulsa en \menu{Archivo} y después
@@ -681,9 +237,9 @@ puede utilizar la serie de teclas \boton{Ctrl-P}
 \subsection{Teclas rapidas:}
 
 
-\subsection{Salir de StarWriter:}
+\subsection{Salir de OpenOffice.org Writer:}
 
-Para salir de StarWriter, se pulsa \boton{Archivo} y se elige \boton{Salir}, pudiendose
+Para salir de OpenOffice.org Writer, se pulsa \boton{Archivo} y se elige \boton{Salir}, pudiendose
 utilizar también las teclas rápidas \boton{Ctrl-Q}. Si el documento no se ha guardado
 previamente aparecerá un cuadro de dialogo
  que preguntando si se quieren guardarlos cambios realizados en el documento, seleccionando \boton{Si} los cambios serán
@@ -691,7 +247,7 @@ almacenados y se cerrara la aplicación, si por el contrario elegimos \boton{No}
 los cambios no son guardados y se perderá todas las modificaciones realizadas
 en el documento, finalmente si se pulsa \boton{Cancelar} se retornará al documento.
 
-%Figura 5.3.6.: Salir de StarWriter.
+%Figura 5.3.6.: Salir de OpenOffice.org Writer.
 
 %Figura 5.3.7.: Cuadro de Dialogo para Salir
 % \end{document}
@@ -728,7 +284,7 @@ manuales tediosos que puedan inducir a errores.
 Definido el problema al que se puede enfrentar el usuario ahora queda la
 elección del programa de hoja de cálculo. En el mercado hay una gran cantidad
 de paquetes que incorporan hojas de cálculo. Aquí se expondrá el uso de la
-StarCalc, la hoja de cálculo perteneciente al paquete ofimático StarOffice.
+StarCalc, la hoja de cálculo perteneciente al paquete ofimático OpenOffice.org.
 Pero lo aquí explicado puede ser aplicado sin esfuerzo al uso de otras hojas
 de cálculo, como la Excel.
 El lector debe tener en cuenta que aquí no se explican todas las opciones  y
@@ -795,7 +351,7 @@ trabajando.
 \subsubsection{Creación de nuevas hojas}
 Para crear una nueva hoja se puede recurrir a varias formas de hacerlo.
 Por un lado se puede hacer doble click en el icono de
-\comando{Nueva Hoja de Cálculo} dentro del escritorio del entorno StarOffice.
+\comando{Nueva Hoja de Cálculo} dentro del escritorio del entorno OpenOffice.org.
 También se puede crear en el menú \comando{Archivo}, submenú \comando{Nuevo},
 y elegir \comando{Hoja de cálculo}. Otra forma es utilizar las plantillas,
 para ello se puede acceder al menú  \menu{Archivo}, submenú \menu{Nuevo},
@@ -946,7 +502,7 @@ la configuración presionamos \boton{Aceptar}.
 %Imprimir documentos y presentación en pantalla
 %(eso de los colores y las líneas).
 El uso de la impresión dentro de la StarCalc sigue el mismo esquema que en el
-resto de la suite StarOffice. Seleccionaremos el menú \menu{Archivo} e
+resto de la suite OpenOffice.org. Seleccionaremos el menú \menu{Archivo} e
 \menu{Imprimir}, también podemos presionar las teclas \boton{Ctrl+P}. En
 ambos casos se mostrará un cuadro de diálogo. En el caso de que no necesitemos
 ajustar las propiedades presionaremos \boton{Aceptar} y StarCalc mandará el
@@ -1148,8 +704,8 @@ que interesan. Por eso, al crear la lista se añade un botón denominado
 de aquellos datos que se busquen.   
 \emph{Bases de datos.}
 StarCalc puede trabajar conjuntamente con bases de datos profesionales. Se
-pueden importar tablas desde bases de datos que StarOffice tenga registradas para trabajar
-directamente con listas. En la versión 5.2 de StarOffice se instala por defecto el soporte
+pueden importar tablas desde bases de datos que OpenOffice.org tenga registradas para trabajar
+directamente con listas. En la versión 5.2 de OpenOffice.org se instala por defecto el soporte
 para Adabas siempre y cuando dicha base de datos se encuentre en el sistema.
 El uso de bases de datos tiene su tratamiento en la sección de StarBase. 
  
@@ -1169,7 +725,7 @@ La creación de tablas dinámicas en StarCalc sigue el mismo procedimiento que
 el apartado anterior. Pero, esta vez, en lugar de seleccionar los datos en
 la hoja, utilizaremos fuentes externas. Activamos el \menu{Piloto de Datos}
 en el menú \menu{Datos}. Seleccionamos \menu{Fuente de datos registrada
-en StarOffice}\footnote{En nuestro caso no podemos usar la Fuente
+en OpenOffice.org}\footnote{En nuestro caso no podemos usar la Fuente
 externa/interfaz porque no tenemos registrada ninguna base de datos.}
 y presionamos \boton{Aceptar}. Seleccionaremos aquellas fuentes que deseemos
 utilizar y persionaremos \boton{Aceptar}. Los siguientes pasos son los del
@@ -1494,12 +1050,12 @@ Para finalizar, lo más aconsejable es guardar los datos con \menu{Archivo} y
 % Sección: StarImpress %
 %%%%%%%%%%%%%%%%%%%%%%%%
 \section{StarImpress: Creador y Visualizador de Presentaciones}
-\figura{Presentaciones en StarOffice}{StarImpress}
+\figura{Presentaciones en OpenOffice.org}{StarImpress}
 %%%%%%%%%%%%%%%%%%%%%
 % Sección: StarDraw %
 %%%%%%%%%%%%%%%%%%%%%
 \section{StarDraw: Creador de dibujos}
-\figura{El creador de ilustraciones de StarOffice}{StarDraw}
+\figura{El creador de ilustraciones de OpenOffice.org}{StarDraw}
 
 %%%% {Estudio de gráficos}
 \subsection{Importancia de los gráficos}
@@ -1659,15 +1215,15 @@ compresión: a mayor compresión, menor calidad de imagen.
 %%%% {La ventana de Draw}
 \subsection{Las ventanas}
 
-En StarOffice cada ventana de documento tiene sus peculiaridades, para
+En OpenOffice.org cada ventana de documento tiene sus peculiaridades, para
 poder ofrecer las funcionalidades que demanda cada módulo. Aunque
 comparten muchas características, hay pequeños detalles que distinguen
 las ventanas de cada tipo de documento.  En la ilustración de la
-derecha se muestra una ventana de StarOffice que contiene un documento
+derecha se muestra una ventana de OpenOffice.org que contiene un documento
 de Draw. Normalmente se trabaja con la ventana del documento
 maximizada, pero aquí se muestra en posición \emph{flotante}, para
 poder apreciar mejor qué componentes pertenecen a la \textbf{ventana
-de aplicación} de StarOffice y cuáles a la \textbf{ventana de
+de aplicación} de OpenOffice.org y cuáles a la \textbf{ventana de
 documento} de Draw.
 
 \subsubsection{La ventana principal}
@@ -1783,7 +1339,7 @@ En los programas de dibujo en general, la barra de herramientas es un
 componente fundamental, porque es la que decide el modo de trabajo: es
 completamente distinto encontrarse seleccionando objetos que dibujando
 rectángulos o polígonos, por ejemplo. La barra de herramientas de
-StarOffice Draw presenta este aspecto cuando se elige la apariencia
+OpenOffice.org Draw presenta este aspecto cuando se elige la apariencia
 flotante y orientación horizontal (normalmente está anclada a la
 izquierda y vertical):
 
@@ -1842,7 +1398,7 @@ un caso particular de elipse) directamente, sin recurrir a pulsar
 \subsubsection{Líneas y flechas}
 
 A la derecha se ve la barra de herramientas de línea, que también
-permite crear flechas, ya que para StarOffice Draw los objetos
+permite crear flechas, ya que para OpenOffice.org Draw los objetos
 \emph{línea} y \emph{flecha} pertenecen a la misma clase y siempre se
 puede pasar de uno a otro.
 
@@ -1944,7 +1500,7 @@ los programas de diseño.
 Aunque los conceptos que intervienen en una curva de Bézier son
 claros, las palabras que los representan a veces no lo son
 tanto. Además, cambian de programa en programa. En estas hojas se
-utilizará la traducción al español utilizada en StarOffice, que no
+utilizará la traducción al español utilizada en OpenOffice.org, que no
 coincide con la que se puede leer en otros lugares.
 
 \subsection{Conceptos de las Curvas de Bézier}
@@ -1971,7 +1527,7 @@ curvas, luego no aparecen.
 \end{description}
 
 \subsubsection{Tipos de puntos de apoyo}
-En StarOffice Draw cada punto de apoyo puede ser de estos tipos:
+En OpenOffice.org Draw cada punto de apoyo puede ser de estos tipos:
 
 \begin{description}
 \item[Punto de esquina.] Tiene dos líneas de control que forman un 
@@ -2006,7 +1562,7 @@ En el ejemplo, el CD.
 
 \subsection{Creación}
 
-El modo de crear curvas de Bézier en StarOffice Draw presenta algunas
+El modo de crear curvas de Bézier en OpenOffice.org Draw presenta algunas
 limitaciones que a veces impiden crear exactamente la curva deseada;
 pero una vez creada, es muy fácil modificarla. Concretamente, tiene
 estas limitaciones:
@@ -2093,7 +1649,7 @@ editar como cualquier otra.
 %%%% {Texto}
 \subsection{Tipos de texto}
 
-En StarOffice Draw se pueden introducir cuatro tipos distintos de
+En OpenOffice.org Draw se pueden introducir cuatro tipos distintos de
 texto, cada uno con una finalidad diferente. Para poder hacer
 referencia a cada tipo, se usarán aquí unos nombres adaptados de la
 denominación oficiosa presente en la ayuda del programa.
@@ -2181,7 +1737,7 @@ relación entre los dos se puede configurar eligiendo en el menú
 diálogo \textbf{Texto}, que se ve a la derecha. En la ficha Texto se
 encuentran las opciones pertinentes en Draw (con la ficha Animación de
 texto se accede a efectos espectaculares, pero se utiliza en el módulo
-StarOffice Impress).
+OpenOffice.org Impress).
 
 \begin{itemize}
 \item La casilla de verificación Ajustar altura al texto permite 
@@ -2540,7 +2096,7 @@ convertidos a curvas, y por tanto tienen nuevos puntos de apoyo.
 \subsection{Formas}
 
 Una de las maneras más utilizadas para obtener objetos nuevos consiste
-en realizar ciertas operaciones con objetos existentes. En StarOffice
+en realizar ciertas operaciones con objetos existentes. En OpenOffice.org
 Draw hay tres operaciones disponibles, agrupadas en el menú
 \menu{Modificar}, submenú \menu{Formas}: Unir, Substraer y Cortar.
 
@@ -2600,7 +2156,7 @@ efecto, se selecciona el objeto y en el menú \menu{Modificar}, submenú
 
 A partir de una figura plana se puede crear una figura tridimensional
 mediante la rotación respecto a un eje. Los cuerpos así generados se
-llaman <<cuerpos de revolución>>. En StarOffice Draw se pueden crear
+llaman <<cuerpos de revolución>>. En OpenOffice.org Draw se pueden crear
 eligiendo en el menú \menu{Modificar}, submenú \menu{Convertir}, la
 opción \menu{En cuerpo de rotación 3D}. Si se hace con el botón del
 mismo nombre de la barra de herramientas Efectos, será posible definir
@@ -2620,7 +2176,7 @@ diálogo \textbf{Efectos 3D}, que se muestra a la derecha.
 Uno de los efectos más habituales es deformar un texto para que siga
 el recorrido de una curva. Casi todos los programas de diseño tienen
 este efecto, pero cada uno lo denomina de una forma distinta. En
-StarOffice se llama FontWork. Se selecciona el texto, en el menú
+OpenOffice.org se llama FontWork. Se selecciona el texto, en el menú
 \menu{Formato} se elige la opción \menu{FontWork}, y en el cuadro de
 diálogo \textbf{FontWork}, de muy fácil manejo, se van definiendo
 todos los parámetros, mientras se va viendo el resultado. Éste es un
@@ -2685,7 +2241,7 @@ de los cuadros de diálogo que piden esos datos:
 
 Cuando se exporta un gráfico vectorial a un formato bitmap es crucial
 poder decidir el tamaño en píxeles del resultado. Según se acaba de
-ver, esto es algo que StarOffice Draw sólo admite con algunos
+ver, esto es algo que OpenOffice.org Draw sólo admite con algunos
 formatos, la minoría. Realizando algunas pruebas, se descubre que el
 programa utiliza la resolución de pantalla para calcular el
 tamaño. Esta resolución se suele medir en puntos por pulgada
@@ -2704,7 +2260,7 @@ los márgenes de la página, pero no la página completa.
 % Sección: StarChart %
 %%%%%%%%%%%%%%%%%%%%%%
 \section{StarChart: Generador de gráficas}
-\figura{Armado de gráficas en StarOffice}{StarChart}
+\figura{Armado de gráficas en OpenOffice.org}{StarChart}
 %%%%%%%%%%%%%%%%%%%%%%
 % Sección: StarImage %
 %%%%%%%%%%%%%%%%%%%%%%
@@ -2718,7 +2274,7 @@ los márgenes de la página, pero no la página completa.
 \subsection{Crear}
 \subsubsection{Nueva imagen}
 
-Cuando se comienza una nueva imagen en StarOffice y se arranca el módulo Image, lo primero
+Cuando se comienza una nueva imagen en OpenOffice.org y se arranca el módulo Image, lo primero
 que aparece es el cuadro de diálogo \menu{Nueva imagen}, en el que hay que definir los dos parámetros
 básicos de cualquier gráfico bitmap: las dimensiones y la profundidad de color.
 
@@ -2726,10 +2282,10 @@ básicos de cualquier gráfico bitmap: las dimensiones y la profundidad de color.
 \ref{fig:StarImageNuevaImagen}
 
 \subsubsection{La ventana de Image}
-En la ilustración de la derecha se muestra una ventana de StarOffice que contiene un
+En la ilustración de la derecha se muestra una ventana de OpenOffice.org que contiene un
 documento de Image. Normalmente se trabaja con la ventana del documento maximizada, pero aquí 
 se muestra en posición {\it flotante}, para poder apreciar mejor qué componentes pertenecen a la
-\textbf{ventana de aplicación} de StarOffice y cuáles a la \textbf{ventana de documento} de Image.
+\textbf{ventana de aplicación} de OpenOffice.org y cuáles a la \textbf{ventana de documento} de Image.
 
 \figura{Ventana nueva imagen}{StarImageNuevaImagenSin}
 \ref{fig:StarImageNuevaImagenSin}
