@@ -11,6 +11,9 @@ pasarán a ser WIP ("Work In Progress")
 Prioritario
 ===========
 
+ - Tema de Yacas. Actualizar de GnuPlot a Plot2D. Añadir ejemplos más
+   jugosos de Álgebra Lineal y polinomios.
+
  - Tema de OpenOffice. Carlos Pérez (aka Sirma) tiene material valioso
    para este tema. Lo subirá tan pronto sea posible.
 
@@ -20,7 +23,7 @@ Prioritario
    The  GIMP, DIA,  Qcad y  alguno de  dibujo vectorial.  Pablo se  ha
    ofrecido  para escribir  sobre Blender,  Miguel Ángel  (aka miguev)
    está dispuesto a  escribir sobre DIA y The GIMP.  Falta alguien que
-   escriba sobre QCad.
+   escriba sobre QCad y estaría bien hacer algo sobre sodipodi.
 
  - Tema de GNU  Emacs. Abría que dejarlo  como el de VI,  salvo que en
    lugar de enrollarse con las expresiones regulares se pueden mostrar
