@@ -1,6 +1,6 @@
 %Autor: aplatanad
 
-\chapter{GNU C/C++}
+\chapter{GNU C/C++}\label{gnuc}
 
 En este capítulo tomaremos en consideración la programación en lenguaje
 C/C++ bajo el sistema operativo GNU/Linux. Todos los lenguajes de
@@ -95,6 +95,8 @@ $ ./holamundo
 El que a buen árbol se arrima, buena sombra le cobija.
 \end{verbatim}
 
+\section{Enlazado con bibliotecas externas}
+
 Como hemos comentado anteriormente, {\tt gcc} compila cada unos de los
 archivos de código fuente pasados en la línea de comandos. El resultado
 es un archivo de código objeto por cada archivo de código fuente. Dichos
@@ -143,6 +145,7 @@ que no está siendo enlazada al programa. Para resolver el problema se
 emplea la opción {\tt -lnombre\_biblioteca}, con la que se indica la
 biblioteca adicional que debe ser enlazada al programa.
 
+\label{holafuncm}
 \begin{verbatim}
 $ gcc -lm -o holamundo holamain.c holafuncm.c
 $ ./holamundo
@@ -164,6 +167,8 @@ nombre {\tt libpropia} que se encuentra en el directorio actual:
 \begin{verbatim}
 $ gcc -L. -lm -lpropia -o holamundo holamain.c holafuncm.c
 \end{verbatim}
+
+\section{Separando compilación y enlazado}
 
 En caso de que prefiramos separar la etapa de compilación y enlazado, se
 utiliza la opción {\tt -c} con el compilador {\tt gcc}. De esa manera le
@@ -199,6 +204,8 @@ indicarle a mano al {\tt ld} que enlace a nuestro programa las
 bibliotecas estándar del sistema, puesto que él no lo hace
 automáticamente. Ya que {\tt gcc} hace dicho trabajo por nosotros,
 evitaremos entrar en más detalles.
+
+\section{Bibliotecas de enlace dinámico}
 
 Un uso interesante del {\tt ld} es para generar nuestras propias
 bibliotecas de enlace dinámico. Ahora que disponemos de un archivo {\tt
