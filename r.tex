@@ -1137,7 +1137,7 @@ saltes  este  apartado.  Vamos  a  ver  que  también  para  tareas  de
 inferencia estadística {\sf R} cuenta con multitud de funciones.
 
 Veamos algunos  ejercicios de inferencia estadística,  utilizando como
-fuente de datos la tabla contenida  en el fichero {\tt muestra.tex} No
+fuente de datos la tabla contenida  en el fichero {\tt muestra.dat} No
 te vamos  a dar una  referencia amplia  ni profunda, pero  debería ser
 suficiente para que aprendas cómo debes buscar las funcionalidades que
 necesites para tus problemas.
@@ -1293,12 +1293,101 @@ independientes.
 
 \section{Gráficas}
 
-% Histogramas, con curvas y lines()
+La función más frecuentemente usada para crear gráficas nuevas es {\tt
+plot()}. Esta función representa uno o dos vectores numéricos como una
+nube de punto,  un factor mediante un diagrama de  barras, un factor y
+un vector  numérico con un  diagrama de cajas  (boxplot), y un  par de
+factores como un diagrama de barras  con cada barras dividida según el
+factor.
 
-% Tartas, con colores
+Para verlo más claro ejecuta la función {\tt plot()} con las variables
+de  la tabla  del  fichero {\tt  muestra.dat}.  Prueba las  siguientes
+combinaciones:
 
-% Gráficos de cajas y cuartil-cuartil
+\begin{verbatim}
+> hoja.datos = read.table ("muestra.dat")
+> attach (hoja.datos)
+> plot (Lectura)
+> plot (Lectura, TV)
+> plot (Ingresos)
+> plot (Ingresos, Habitat)
+\end{verbatim}
 
-% Regresiones lineales
+Para  representar   vectores  numéricos   agrupando  sus   valores  en
+intervalos  utilizamos un  histograma.  La función  {\tt hist()}  hace
+exactamente eso.
 
-% Superficies en 3D, como la del volcán
+Otras gráficas interesantes son  las de comparación de distribuciones,
+basadas en  los cuantiles. La función  {\tt qqnorm ()} toma  un vector
+numérico y  lo representa comparando  sus cuantiles con  los cuantiles
+teóricos  (los que  se  esperarían  en una  muestra  que siguiera  una
+distribución normal). La función {\tt  qqline()} añade a la gráfica la
+recta que pasa por los cuartiles de los datos y la distribución.
+
+%\begin{figure}[hbtp]
+%\centering
+%\includegraphics[width=0.5\textwidth]{imagenes/r_hist.eps}
+%\caption{Histograma obtenido con {\tt hist (TV)}}
+%\end{figure}
+
+\begin{figure}[hbtp]
+\centering
+\subfigure[Gráfico Q-Q para {\tt Lectura}]{%
+\includegraphics[width=0.49\textwidth]{imagenes/r_qqplot_1.eps}}
+\subfigure[Gráfico Q-Q para {\tt TV}]{%
+\includegraphics[width=0.49\textwidth]{imagenes/r_qqplot_2.eps}}
+\caption{Gráficos Q-Q para dos variables, una que se comporta como una
+normal y otra que no}
+\end{figure}
+
+% Esta figura  múltiple ocupará toda una  página, así que no  la pongo
+% antes que el histograma
+\begin{figure}[p]
+\centering
+\subfigure[{\tt plot (Lectura)}]{%
+\includegraphics[width=0.49\textwidth]{imagenes/r_plot_1.eps}}
+\subfigure[{\tt plot (Lectura, TV)}]{%
+\includegraphics[width=0.49\textwidth]{imagenes/r_plot_2.eps}}
+\subfigure[{\tt plot (Ingresos)}]{%
+\includegraphics[width=0.49\textwidth]{imagenes/r_plot_3.eps}}
+\subfigure[{\tt plot (Ingresos, Habitat)}]{%
+\includegraphics[width=0.49\textwidth]{imagenes/r_plot_4.eps}}
+\caption{Las distintas formas de la función {\tt plot()}}
+\end{figure}
+
+Para  representar  matrices puedes  optar  por  ver sus  valores  como
+imágenes. La  función {\tt image()} lo  hace a modo de  una rejilla de
+rectángulos de  diferentes colores  para representar  el valor  de las
+celdas. Para  verlo en forma de  contorno usa {\tt contour()},  y para
+verlo en perspectiva utiliza {\tt persp()}.
+
+\begin{figure}[htbp]
+\centering
+\subfigure[{\tt image(volcano)}]{%
+\includegraphics[width=0.3\textwidth]{imagenes/r_image.eps}}
+\subfigure[{\tt contour(volcano)}]{%
+\includegraphics[width=0.3\textwidth]{imagenes/r_contour.eps}}
+\subfigure[{\tt persp(volcano)}]{%
+\includegraphics[width=0.3\textwidth]{imagenes/r_persp.eps}}
+\caption{Gráficas para  representar matrices. El objeto  {\tt volcano}
+lo obtenemos al ejecutar {\tt data(volcano)}}
+\end{figure}
+
+Los gráficos de sectores te dan una impresión clara a primera vista de
+los  porcentajes que  tienen cada  ``clase'' en  una clasificación  de
+datos.  Por ejemplo  para ver  los porcentajes  de personas  según las
+edades representamos en un gráfico de sectores el número de individuos
+que tiene cada edad. Una forma de hacerlo (seguramente no es la mejor)
+sería:
+
+\begin{verbatim}
+> pie (tapply (Edad, fedad, length))
+\end{verbatim}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/r_pie.eps}
+\caption{Diagrama de sectores para la {\tt Edad}}
+\end{figure}
+
+
