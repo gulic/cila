@@ -55,6 +55,9 @@
 
 \frenchspacing
 
+% Habilida las instrucciones especiales de indexado
+\makeindex
+
 % COMIENZO DEL DOCUMENTO
 \begin{document}
 
@@ -93,12 +96,12 @@
 % Parte posterior
 %\backmatter
 
+% Índice terminológico
+\printindex\newpage\thispagestyle{empty}
+
 % Bibliografía, generado por BIBTeX
 \bibliographystyle{plain}
 \bibliography{biblio}
-
-% Índice terminológico
-\printindex
 
 \end{document}
 % FIN DEL DOCUMENTO

@@ -77,7 +77,7 @@ EXAMPLES = 	ejemplos/HolaMundo.for 		\
 
 all: $(FILES) $(IMAGES) $(EJEMPLOS)
 	latex book
-	makeindex book.tex
+	makeindex book.idx
 	bibtex book
 	latex book
 	dvips -o $(NAME).ps book.dvi
