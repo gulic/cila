@@ -94,7 +94,7 @@ Este es el aspecto que tiene la pantalla del StarOffice Writer, antes de comenza
 nuestro documento vamos a determinar para que sirven los principales menús que
 encontramos en la aplicación.
 
-\begin{figura}{StarWriter}{1}
+\begin{figura}{StarWriter}{0.9}
 \caption{Primer vistazo al StarOffice Writer}
 \end{figura}
 
@@ -333,6 +333,7 @@ de la hoja de cálculo. Ver figura \ref{fig:StarCalcMenus}.
 %<Gráfico menu>
 \begin{figura}{StarCalcMenus}{1}
 \caption{Los menús de la StarCalc}
+\label{fig:StarCalcMenus}
 \end{figura}
 
 
@@ -344,10 +345,12 @@ izquierda de  la pantalla, que pueden verse en las figuras
 %<Gráfico botones>
 \begin{figura}{StarCalcBotones}{1}
 \caption{Barra de botones superiores}
+\label{fig:StarCalcBotones}
 \end{figura}
 
 \begin{figura}{StarCalcBotonesLaterales}{1}
 \caption{Barra de botones laterales}
+\label{fig:StarCalcBotoensLaterales}
 \end{figura}
 
 
@@ -358,6 +361,7 @@ observarse en la figura \ref{fig:StarCalcTrabajo}.
 %<Gráfico trabajo> 
 \begin{figura}{StarCalcTrabajo}{1}
 \caption{Zona de trabajo}
+\label{fig:StarCalcTrabajo}
 \end{figura}
 
 
@@ -412,6 +416,7 @@ opciones para recuperar el archivo, como se aprecia en la figura
 
 \begin{figura}{StarCalcAbrir}{1}
 \caption{Recuperar archivo}
+\label{fig:StarCalcAbrir}
 \end{figura}
 
 
@@ -580,6 +585,7 @@ según el uso que se les quiera dar. Ver figura \ref{fig:StarCalcFucniones}.
 
 \begin{figura}{StarCalcFunciones}{1}
 \caption{Autopiloto de funciones.}
+\label{fig:StarCalcFucniones}
 \end{figura}
 
 
@@ -680,9 +686,12 @@ opciones del gráfico  de forma más rápida.
 
 \begin{figura}{StarCalcDiagramaGraficoCambioPropiedades}{1}
 \caption{Personalización de gráficos}
+\label{fig:StarCalcDiagramaGraficoCambioPropiedades}
 \end{figura}
 
-\ref{fig:StarCalcDiagramaGraficoCambioPropiedades}
+% \ref{fig:StarCalcDiagramaGraficoCambioPropiedades}
+
+
 %***********************************************************************
 %              Gestión de bases de datos y listas                      *
 %***********************************************************************
@@ -787,6 +796,7 @@ figura \ref{fig:StarCalcMacro}.
 
 \begin{figura}{StarCalcMacro}{1}
 \caption{Cuadro de Macro}
+\label{fig:StarCalcMacro}
 \end{figura}
 
 
@@ -798,6 +808,7 @@ finalizar presionaremos en el cuadro detener macro que se ve en la figura
 
 \begin{figura}{StarCalcMacroStop}{.1}
 \caption{Parar grabación de la macro.}
+\label{fig:StarCalcMacroStop}
 \end{figura}
 
 
@@ -811,6 +822,7 @@ que se parace al Visual Basic para Aplicaciones de la Excel.Figura
 
 \begin{figura}{StarCalcBasic}{1}
 \caption{Entorno de StarBasic}
+\label{fig:StarCalcBasic}
 \end{figura}
 
 
@@ -837,6 +849,8 @@ ganaba con su trabajo en una tienda de caramelos así que decidió
 montar un sistema de contabilidad doméstica para llevar un orden y
 control de todo el dinero que pasaba por sus manos.\\
 
+\begin{table}
+\centering
 \begin{tabular}{|l|r|r|r|r|r|}
 \hline
 Mes & Enero & Febrero & Marzo & Abril & Mayo\\
@@ -849,13 +863,15 @@ Luz & 11.000 & 10.000 & 12.000 & 9.000 & 10.500\\
 Varios & 10.000 & 18.000 & 11.000 & 8.000 & 11.000\\
 \hline
 \end{tabular}
-\\
-Lo primero de todo es diseñar la hoja para no tener que estar más
-tarde rediseñando todo el trabajo.  Vemos de que información
-disponemos y lo que queremos conseguir. Esto es, tenemos series de
-datos correspondientes a ingresos y gastos y queremos ver el saldo al
+%\caption{}
+\end{table}
+
+\noindent Lo  primero de  todo es  diseñar la hoja  para no  tener que
+estar más tarde rediseñando todo  el trabajo. Vemos de que información
+disponemos y  lo que  queremos conseguir. Esto  es, tenemos  series de
+datos correspondientes a ingresos y gastos  y queremos ver el saldo al
 final de cada periodo. Lo más lógico es pensar en tener una periocidad
-mensual aunque no se descarta que sea semanal para aquellas personas,
+mensual aunque no se descarta  que sea semanal para aquellas personas,
 que, por ejemplo, tengan una nómina semanal.
 
 El siguiente paso lógico es crear un libro nuevo con la StarCalc. Para
@@ -988,25 +1004,30 @@ C(K,S,T-t,r,\sigma)=S·N(d_{1})-K·e^{-r(T-t)}·N(d_{2})
 
 
 \subsubsection{Análisis de tendencia.}
+
 Objetivo. Calcular las previsiones para años futuros dada una serie de
 datos con un modelo sencillo.
-
 Los datos a utilizar son los siguientes y que se presentan de esta
 manera por economía de espacio.
 
 %****************************************************************
 %                          CORREGIR
 % La tabla se sale de los límites de la página.
+\begin{table}
+\centering
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 \hline
-t & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12\\
-X\(_t\) & 99,93 & 103 & 103,41 & 112,79 & 109,52 & 113,57 & 110,5 & 120,42 &
-118,23& 119 & 118,75 & 127,32\\
-t & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24\\
-Xt & 124,93 & 128,13 & 127,55 & 137,06 & 131,95 & 133,91 & 135,35 &
-146,19 & 138,57 & 143,14 & 144,64 & 153,72\\
+$t$   & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+$X_t$ & 99,93 & 103 & 103,41 & 112,79 & 109,52 & 113,57 & 110,5 & 120,42 \\
+\hline
+$t$   & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 \\
+$X_t$ & 118,23& 119 & 118,75 & 127,32 & 124,93 & 128,13 & 127,55 & 137,06\\
+\hline
+$t$   & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24\\
+$X_t$ & 131,95 & 133,91 & 135,35 & 146,19 & 138,57 & 143,14 & 144,64 & 153,72\\
 \hline
 \end{tabular}
+\end{table}
 %******************************************************************
 
 Se va a indicar la manera de hacer esta práctica paso a paso, por lo
@@ -1112,7 +1133,7 @@ Para finalizar, lo más aconsejable es guardar los datos con \menu{Archivo} y
 % Sección: StarDraw %
 %%%%%%%%%%%%%%%%%%%%%
 \section{StarDraw: Creador de dibujos}
-\begin{figura}{StarDraw}{1}
+\begin{figura}{StarDraw}{0.9}
 \caption{El creador de ilustraciones de StarOffice}
 \end{figura}
 
@@ -2315,7 +2336,7 @@ los márgenes de la página, pero no la página completa.
 % Sección: StarSchedule %
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{StarSchedule: Agenda}
-\begin{figura}{StarSchedule}{1}
+\begin{figura}{StarSchedule}{0.9}
 \caption{Organizar las tareas con StarSchedule}
 \end{figura}
 
@@ -2323,7 +2344,7 @@ los márgenes de la página, pero no la página completa.
 % Sección: StarChart %
 %%%%%%%%%%%%%%%%%%%%%%
 \section{StarChart: Generador de gráficas}
-\begin{figura}{StarChart}{1}
+\begin{figura}{StarChart}{0.9}
 \caption{Armado de gráficas en StarOffice}
 \end{figura}
 
@@ -2331,7 +2352,7 @@ los márgenes de la página, pero no la página completa.
 % Sección: StarImage %
 %%%%%%%%%%%%%%%%%%%%%%
 \section{StarImage: Editor de Imágenes}
-\begin{figura}{StarImage}{1}
+\begin{figura}{StarImage}{0.9}
 \caption{Retocador de imágenes del starOffice}
 \end{figura}
 
@@ -2347,11 +2368,12 @@ Cuando se comienza una nueva imagen en StarOffice y se arranca el módulo Image, 
 que aparece es el cuadro de diálogo \menu{Nueva imagen}, en el que hay que definir los dos parámetros
 básicos de cualquier gráfico bitmap: las dimensiones y la profundidad de color.
 
-\begin{figura}{StarImageNuevaImagen}{1}
+\begin{figura}{StarImageNuevaImagen}{0.9}
 \caption{Creación de una imagen}
+\label{fig:StarImageNuevaImagen}
 \end{figura}
 
-\ref{fig:StarImageNuevaImagen}
+% \ref{fig:StarImageNuevaImagen}
 
 \subsubsection{La ventana de Image}
 En la ilustración de la derecha se muestra una ventana de StarOffice que contiene un
@@ -2359,11 +2381,12 @@ documento de Image. Normalmente se trabaja con la ventana del documento maximiza
 se muestra en posición {\it flotante}, para poder apreciar mejor qué componentes pertenecen a la
 \textbf{ventana de aplicación} de StarOffice y cuáles a la \textbf{ventana de documento} de Image.
 
-\begin{figura}{StarImageNuevaImagenSin}{1}
+\begin{figura}{StarImageNuevaImagenSin}{0.9}
 \caption{Ventana nueva imagen}
+\label{fig:StarImageNuevaImagenSin}
 \end{figura}
 
-\ref{fig:StarImageNuevaImagenSin}
+% \ref{fig:StarImageNuevaImagenSin}
 
 \subsubsection{La ventana principal}
 
@@ -2396,12 +2419,14 @@ Y si la repasamos de izquierda a derecha, tenemos esto:
 \item Cambio de la profundidad de color.
 \end{itemize}
 
-\begin{figura}{StarImageColores}{1}
+\begin{figura}{StarImageColores}{0.9}
 \caption{Selector de Colores}
+\label{fig:StarImageColores}
 \end{figura}
 
-\begin{figura}{StarImageEscalaGrises}{1}
+\begin{figura}{StarImageEscalaGrises}{0.6}
 \caption{Conversión a grises}
+\label{fig:StarImageEscalaGrises}
 \end{figura}
 
 
@@ -2417,7 +2442,7 @@ Si el cambio consiste en cambiar una imagen a color en una imagen en escala de g
 elegir más opciones tomando en el menú \menu{Colores} la opción \menu{Conversión} de escalas de grises
 para abrir el cuadro de diálogo Escala de grises, que también se muestra a la derecha.
 
-\ref{fig:StarImageEscalaGrises}
+% \ref{fig:StarImageEscalaGrises}
 
 \subsubsection{Cambio de dimensiones}
 Para cambiar las dimensiones de la imagen se elige en el menú \menu{Modificar} la opción \menu{Modificar}
@@ -2425,11 +2450,12 @@ tamaño, que abre el cuadro de diálogo Modificar tamaño. Esta operación hay que e
 siempre implica una pérdida de calidad. El programa escala la imagen, y para ello debe añadir o eliminar 
 puntos, cosa que es imposible de realizar conservando todas las características.
 
-\begin{figura}{StarImageModificarTam}{1}
+\begin{figura}{StarImageModificarTam}{0.6}
 \caption{Modificar tamaño}
+\label{fig:StarImageModificarTam}
 \end{figura}
 
-\ref{fig:StarImageModificarTam}
+% \ref{fig:StarImageModificarTam}
 
 \subsubsection{Escala}
 Además del cuadro de diálogo Escala, en Image se dispone de la barra de herramientas Escala para modificar 
@@ -2437,11 +2463,12 @@ el tamaño con que se ve la imagen en pantalla. De las opciones disponibles, la ú
 como es exactamente es la opción \textbf{1:1}, con la que cada punto de la imagen se representa con un píxel
 de la pantalla.
 
-\begin{figura}{StarImageEscala}{1}
+\begin{figura}{StarImageEscala}{0.4}
 \caption{Barra de escala}
+\label{fig:StarImageEscala}
 \end{figura}
 
-\ref{fig:StarImageEscala}
+% \ref{fig:StarImageEscala}
 
 \subsubsection{Manejo de archivos}
 Image no dispone de un formato propio para almacenar imágenes, de modo que no se pueden proteger con 
@@ -2467,11 +2494,12 @@ Sirve para dibujar a mano alzada arrastrando el ratón con cualquiera de los boto
 se puede elegir entre siete posibilidades, en la barra de herramientas Plumas, que se ve a la derecha. La 
 anchura del trazo se elige en la barra de opciones.
 
-\begin{figura}{StarImagePlumas}{1}
+\begin{figura}{StarImagePlumas}{0.4}
 \caption{Plumas}
+\label{fig:StarImagePlumas}
 \end{figura}
 
-\ref{fig:StarImagePlumas}
+% \ref{fig:StarImagePlumas}
 
 \subsubsection{Líneas}
 Sirve para dibujar un segmento recto. Hay que pulsar en el punto inicial del segmento y arrastrar hasta el 
@@ -2492,11 +2520,12 @@ encuentran en la barra de herramientas Imagen. Si se desea reflejar
 sólo una parte de la imagen, se puede seleccionar primero con la
 herramienta de selección.
 
-\begin{figura}{StarImageImagen}{1}
+\begin{figura}{StarImageImagen}{0.4}
 \caption{Reflejos}
+\label{fig:StarImageImagen}
 \end{figura}
 
-\ref{fig:StarImageImagen}
+% \ref{fig:StarImageImagen}
 
 \subsubsection{Rotaciones}
 Es posible rotar la imagen completa mediante las opciones del menú \menu{Modificar}, submenú \menu{Rodar},
@@ -2505,11 +2534,12 @@ que usar la opción \comando{Ángulo libre de rotación} para poder indicar el ángu
 Ángulo de rotación libre. Hay que saber que el uso de esta herramienta origina que el tamaño de 
 la imagen aumente.
 
-\begin{figura}{StarImageRotac}{1}
+\begin{figura}{StarImageRotac}{0.6}
 \caption{Rotación}
+\label{fig:StarImageRotac}
 \end{figura}
 
-\ref{fig:StarImageRotac}
+% \ref{fig:StarImageRotac}
 
 \subsubsection{Recortar}
 Consiste en dejar en la imagen sólo una parte seleccionada, con lo que la imagen disminuye de tamaño.
@@ -2535,11 +2565,12 @@ Para invertir los colores se elige en el menú \menu{Colores} la opción \menu{Inv
 Para modificar estas características se elige en el menú \menu{Colores} la opción \menu{Brillo/Contraste},
 y en el cuadro de diálogo Brillo y contraste se regulan a voluntad.
 
-\begin{figura}{StarImageBrillo_y_Contraste}{1}
+\begin{figura}{StarImageBrillo_y_Contraste}{0.6}
 \caption{Brillo y contraste}
+\label{fig:StarImageBrillo_y_Contraste}
 \end{figura}
 
-\ref{fig:StarImageBrillo_y_Contraste}
+% \ref{fig:StarImageBrillo_y_Contraste}
 
 \subsubsection{Valores RGB}
 Las imágenes que se forman por emisión de luz, como las que se ven en la pantalla de ordenador o la 
@@ -2547,11 +2578,12 @@ televisión, están formadas por tres componentes: rojo (red, R), verde (green, G)
 Se puede regular cada componente eligiendo en el menú Colores la opción Valores RGB y modificando ahí sus
 cantidades.
 
-\begin{figura}{StarImageRGB}{1}
+\begin{figura}{StarImageRGB}{0.6}
 \caption{Valores RGB}
+\label{fig:StarImageRGB}
 \end{figura}
 
-\ref{fig:StarImageRGB}
+% \ref{fig:StarImageRGB}
 
 \subsubsection{Color}
 La barra de herramientas Color, permite modificar el brillo, el contraste y los valores RGB, así como 
@@ -2565,16 +2597,18 @@ o desde la barra de herramientas Filtros, si bien desde la barra no se pueden aj
 y desde el menú sí. Ambos se muestran a la derecha. Para conocer sus efectos, lo mejor es utilizar una 
 fotografía e invertir algo de tiempo en ir probando cada filtro.
 
-\begin{figura}{StarImageFiltroMenu}{1}
+\begin{figura}{StarImageFiltroMenu}{0.5}
 \caption{Menú de filtros}
+\label{fig:StarImageFiltroMenu}
 \end{figura}
 
-\begin{figura}{StarImageFiltros}{1}
+\begin{figura}{StarImageFiltros}{0.2}
 \caption{Barra de filtros}
+\label{fig:StarImageFiltros}
 \end{figura}
 
-\ref{fig:StarImageFiltroMenu}
-\ref{fig:StarImageFiltros}
+% \ref{fig:StarImageFiltroMenu}
+% \ref{fig:StarImageFiltros}
 
 
 %******************************************************************
@@ -2583,4 +2617,4 @@ fotografía e invertir algo de tiempo en ir probando cada filtro.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Sección: Compatibilidad con el MS Office %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Compatibilidad con el MS Office}
+%\section{Compatibilidad con el MS Office}
