@@ -105,17 +105,17 @@ alemana ``Buch'' o  en la escocesa ``Loch''. Este es  el sonido de una
 \LaTeX\ es un paquete de macros que te permite componer e imprimir más
 fácilmente un documento con la  calidad tipográfica de \TeX, empleando
 para  ello patrones  definidos.  Originalmente,  \LaTeX{} lo  escribió
-\index{Lamport,  Leslie}Leslie   Lamport~\cite{llmanual}.  Utiliza  el
+\index{\LaTeX!Lamport,  Leslie}Leslie   Lamport~\cite{llmanual}.  Utiliza  el
 cajista \TeX{} como elemento de composición.
 
 Desde diciembre de  1994, el paquete \LaTeX{}  está siendo actualizado
-por  un equipo  llamado  \index{LaTeX3@\LaTeX 3}\LaTeX  3, que  dirige
-\index{Mittelbach, Frank}Frank Mittelbach, para incluir algunas de las
+por  un equipo  llamado  \index{\LaTeX!LaTeX3@\LaTeX 3}\LaTeX  3, que  dirige
+\index{\LaTeX!Mittelbach, Frank}Frank Mittelbach, para incluir algunas de las
 mejoras que se  habían solicitado desde hace tiempo  y para reunificar
 todas las versiones retocadas que  han surgido desde que apareciera la
-primera versión \index{LaTeX 2.09@\LaTeX{}  2.09}\LaTeX{} 2.09 hace ya
+primera versión \index{\LaTeX!LaTeX 2.09@\LaTeX{}  2.09}\LaTeX{} 2.09 hace ya
 algunos años. Para distinguirla de la  vieja, a la nueva versión se le
-llama \index{LaTeX  2e@\LaTeXe}\LaTeXe. Aquí de lo  que te presentamos
+llama \index{\LaTeX!LaTeX  2e@\LaTeXe}\LaTeXe. Aquí de lo  que te presentamos
 es \LaTeXe.
 
 \LaTeX{} se pronuncia ``Lei-tegh'',  aunque entre los hispanohablantes
@@ -265,7 +265,7 @@ tienen ocupada la CPU continuamente.
 documento predefinido,  la creación de  un diseño entero es  difícil y
 lleva mucho tiempo\footnote{Los  rumores dicen que este es  uno de los
 puntos claves  sobre el  que se  hará hincapié  en el  próximo sistema
-LaTeX 3.}.\index{LaTeX3@\LaTeX 3}
+LaTeX 3.}.\index{\LaTeX!LaTeX3@\LaTeX 3}
 
 \end{itemize}
 
@@ -285,7 +285,7 @@ y  el  final  de  línea,  son tratados  por  \LaTeX\  como  signos  de
 se  tratan  como  \emph{un}   \wi{espacio  en  blanco}.  Generalmente,
 un  espacio  en  blanco  al  comienzo   de  una  línea  se  ignora,  y
 \emph{varios} renglones en blanco se tratan como un renglón en blanco.
-\index{espacio en blanco!al comienzo de una línea}
+\index{\LaTeX!espacio en blanco!al comienzo de una línea}
 
 Un renglón en blanco entre dos líneas  de texto definen el final de un
 párrafo. \emph{Varias} líneas en blanco se tratan como \emph{una sola}
@@ -327,13 +327,13 @@ específicas.
 
 \paragraph{Las órdenes de \LaTeX{}}
 
-En las  órdenes\index{ordenes@órdenes} de  \LaTeX{} se  distinguen las
+En las  órdenes\index{\LaTeX!ordenes@órdenes} de  \LaTeX{} se  distinguen las
 letras  mayúsculas y  las minúsculas.  Toman uno  de los  dos formatos
 siguientes:
 
 \begin{itemize}
 
-\item Comienzan con  una \emph{barra invertida}\index{barra invertida}
+\item Comienzan con  una \emph{barra invertida}\index{\LaTeX!barra invertida}
 \verb|\|\cih{\bs} y  tienen un nombre  compuesto sólo por  letras. Los
 nombres de  las órdenes acaban  con uno o  más espacios en  blanco, un
 carácter especial o una cifra.
@@ -343,7 +343,7 @@ carácter especial o una cifra.
 \end{itemize}
 
 \LaTeX{}  ignora los  espacios en  blanco  que van  tras las  órdenes.
-Si  deseas introducir  \index{espacio en  blanco!tras instrucción}  un
+Si  deseas introducir  \index{\LaTeX!espacio en  blanco!tras instrucción}  un
 espacio en blanco tras una instrucción, se debe poner o bien \verb|{}|
 y un espacio, o bien una instrucción de espaciado después de la orden.
 Con \verb|{}|  se fuerza  a \LaTeX{}  a dejar de  ignorar el  resto de
@@ -372,7 +372,7 @@ línea justamente aquí!%
 \end{example}
 
 \paragraph{Comentarios}
-\index{comentarios}
+\index{\LaTeX!comentarios}
 
 Cuando  \LaTeX{} encuentra  un carácter  \verb|%| mientras  procesa un
 fichero de entrada,  ignora el resto de la línea.  Esto suele ser útil
@@ -500,17 +500,17 @@ más comunes para las clases de documento estándares.
   especializadas, ponencias, trabajos de prácticas de formación,
   trabajos de seminarios, informes pequeños, solicitudes,
   dictámenes, descripciones de programas, invitaciones y muchos
-  otros.\index{articulo@artículo}%
-\index{clase \texttt{article}@clase article}
+  otros.\index{\LaTeX!articulo@artículo}%
+\index{\LaTeX!clase \texttt{article}@clase article}
 \item [\normalfont\texttt{report}] para informes mayores que constan
   de más de un capítulo, proyectos fin de carrera, tesis doctorales,
   libros pequeños, disertaciones, guiones y
-  similares.\index{informe}\index{clase \texttt{report}@clase report}
+  similares.\index{\LaTeX!informe}\index{\LaTeX!clase \texttt{report}@clase report}
 \item [\normalfont\texttt{book}] para libros de
-  verdad\index{libro}\index{clase \texttt{book}@clase book}
+  verdad\index{\LaTeX!libro}\index{\LaTeX!clase \texttt{book}@clase book}
 \item [\normalfont\texttt{slide}] para transparencias. Esta clase emplea
   tipos grandes \textsf{sans serif}.
-  \index{transparencias}\index{clase \texttt{slide}@clase slide}
+  \index{\LaTeX!transparencias}\index{\LaTeX!clase \texttt{slide}@clase slide}
 \end{description}
 \end{lined}
 \end{table}
@@ -524,15 +524,15 @@ más comunes para las clases de documento estándares.
   Establecen el tamaño (cuerpo) para los tipos\footnote{El término
     adecuado para designar lo que normalmente se conoce como
     \emph{fuente} es el de \emph{tipo}}. Si no se especifica ninguna
-  opción, se toma \texttt{10pt}.\index{tamaño de los tipos!del
+  opción, se toma \texttt{10pt}.\index{\LaTeX!tamaño de los tipos!del
     documento}
 \item[\normalfont\texttt{a4paper}, \texttt{letterpaper}, \ldots] \quad
   Definen el tamaño del papel. Si no se indica nada, se toma
   \texttt{letterpaper}. Aparte de estos se puede elegir
   \texttt{a5paper}, \texttt{b5paper}, \texttt{executivepaper} y
-  \texttt{legalpaper}. \index{papel legal} \index{tamaño del
-    papel}\index{papel DIN-A4} \index{papel de carta} \index{papel DIN-A5}\
-  \index{papel DIN-B5} \index{papel ejecutivo}
+  \texttt{legalpaper}. \index{\LaTeX!papel legal} \index{\LaTeX!tamaño del
+    papel}\index{\LaTeX!papel DIN-A4} \index{\LaTeX!papel de carta} \index{\LaTeX!papel DIN-A5}\
+  \index{\LaTeX!papel DIN-B5} \index{\LaTeX!papel ejecutivo}
   
 \item[\normalfont\texttt{fleqn}] \quad Con esta opción las ecuaciones
   se disponen hacia la izquierda en vez de centradas.
@@ -544,7 +544,7 @@ más comunes para las clases de documento estándares.
   Indica si se debe comenzar una página nueva tras el \wi{título del
     documento} o no. Si no se indica otra cosa, la clase
   \texttt{article} no comienza una página nueva, mientras que \texttt{report}
-  y \texttt{book} sí.\index{titlepage@\texttt{titlepage}}
+  y \texttt{book} sí.\index{\LaTeX!titlepage@\texttt{titlepage}}
 
 \item[\normalfont\texttt{twocolumn}] \quad Le dice a \LaTeX{} que
   componga el documento en \wi{dos columnas}.
@@ -578,7 +578,7 @@ impresión a \emph{doble cara} en \emph{papel DIN-A4}.
 
 \pagebreak[2]
 \paragraph{Paquetes}
-\index{paquete} Mientras escribes el documento, probablemente te
+\index{\LaTeX!paquete} Mientras escribes el documento, probablemente te
 encuentres en situaciones donde el \LaTeX{} básico no basta para
 realizar lo que buscas. Si deseas incluir \wi{gráficos}, \wi{texto en
   color} o el código fuente de un fichero, se necesita mejorar las
@@ -652,14 +652,14 @@ propias extensiones a \LaTeXe.
 
 Con \LaTeX{} existen tres combinaciones predefinidas de \wi{cabeceras}
 y \wi{pies de página}, a las que se llaman estilos de
-página.\index{estilo de pagina@estilo de página} El parámetro
+página.\index{\LaTeX!estilo de pagina@estilo de página} El parámetro
 \emph{estilo} de la instrucción
-\index{estilo de pagina@estilo de página!plain@\texttt{plain}}%
-\index{plain@\texttt{plain}}%
-\index{estilo de pagina@estilo de página!headings@\texttt{headings}}%
-\index{headings@\texttt{headings}}%
-\index{estilo de pagina@estilo de página!empty@\texttt{empty}}%
-\index{empty@\texttt{empty}}%
+\index{\LaTeX!estilo de pagina@estilo de página!plain@\texttt{plain}}%
+\index{\LaTeX!plain@\texttt{plain}}%
+\index{\LaTeX!estilo de pagina@estilo de página!headings@\texttt{headings}}%
+\index{\LaTeX!headings@\texttt{headings}}%
+\index{\LaTeX!estilo de pagina@estilo de página!empty@\texttt{empty}}%
+\index{\LaTeX!empty@\texttt{empty}}%
 \begin{command}
 \ci{pagestyle}\verb|{|\emph{estilo}\verb|}|
 \end{command}
@@ -874,7 +874,7 @@ del fichero.
 \subsubsection{Comillas}
 
 Para las \wi{comillas} no se debe utilizar el carácter de comillas
-\index{""@\texttt{""}} que se usa en las máquinas de escribir. Para
+\index{\LaTeX!""@\texttt{""}} que se usa en las máquinas de escribir. Para
 las publicaciones se suelen utilizar caracteres especiales, tanto para
 abrir como para cerrar comillas. En \LaTeX{} se usan dos~\verb|`|
 para abrir comillas y dos~\verb|'| para cerrarlas.
@@ -895,11 +895,11 @@ para abrir comillas y dos~\verb|'| para cerrarlas.
 \LaTeX{} reconoce cuatro tipos de \wi{guiones}. Para tener acceso a
 tres de éstos se pone una cantidad diferente de guiones consecutivos.
 El cuarto tipo es el signo matemático `menos':
-\index{-}%
-\index{--}%
-\index{---}%
-\index{-@$-$}%
-\index{matemático!menos}%
+\index{\LaTeX!-}%
+\index{\LaTeX!--}%
+\index{\LaTeX!---}%
+\index{\LaTeX!-@$-$}%
+\index{\LaTeX!matemático!menos}%
 
 \begin{example}
 psico-terapéutico \\
@@ -925,7 +925,7 @@ Para estos puntos existe una instrucción especial llamada
 \begin{command}
 \ci{ldots}
 \end{command}
-\index{...@\ldots}
+\index{\LaTeX!...@\ldots}
 \begin{example}
 No así ... sino así:\\
 New York, Tokyo, Budapest\ldots
@@ -975,22 +975,22 @@ Stra\ss e
 \A{\i}  & \A{\j} & !` & \verb|!`| & ?` & \verb|?`| 
 \end{tabular}
 
-\index{i y j sin puntito@\i{} y \j{} sin puntito}%
-\index{Letras escandinavas}%
-\index{ae@\ae}%
-\index{umlaut@\emph{umlaut}}%
-\index{dieresis@diéresis}%
-\index{grave@\emph{grave}}%
-\index{acute@\emph{acute}}%
-\index{acento!ortográfico}%
-\index{oe@\oe}
+\index{\LaTeX!i y j sin puntito@\i{} y \j{} sin puntito}%
+\index{\LaTeX!Letras escandinavas}%
+\index{\LaTeX!ae@\ae}%
+\index{\LaTeX!umlaut@\emph{umlaut}}%
+\index{\LaTeX!dieresis@diéresis}%
+\index{\LaTeX!grave@\emph{grave}}%
+\index{\LaTeX!acute@\emph{acute}}%
+\index{\LaTeX!acento!ortográfico}%
+\index{\LaTeX!oe@\oe}
 
 \medskip
 \end{lined}
 \end{table}
  
 \subsection{Facilidades para lenguajes internacionales}
-\index{internacional}
+\index{\LaTeX!internacional}
 
 Si necesitas escribir documentos en otros \wi{idiomas} distintos del
 inglés, \LaTeX{} debe utilizar otras \wi{reglas de silabeo} para
@@ -1013,7 +1013,7 @@ sistema.
 
 Para algunos idiomas, \textsf{babel} también define nuevas
 instrucciones con las que se simplifica la entrada de caracteres
-especiales. En el idioma español\index{espanol@español}, por ejemplo,
+especiales. En el idioma español\index{\LaTeX!espanol@español}, por ejemplo,
 se utilizan letras con acento ortográfico. Con \textsf{babel} y el
 estilo \textsf{spanish}, se puede introducir \emph{í} con \verb|'i| en
 vez de~\verb|\'{\i}|\footnote{En este caso particular de los acentos
@@ -1066,7 +1066,7 @@ genera un espacio que no se puede ensanchar pero en el que además no
 se puede producir ningún cambio de renglón. Si antes de un punto
 aparece la instrucción \verb|\@|, significa que este punto acaba una
 oración, aunque se encuentre tras una letra mayúscula. \cih{"@}
-\index{~@\verb.~.} \index{tilde@tilde (\verb.~.)} \index{.!  espacio
+\index{\LaTeX!~@\verb.~.} \index{\LaTeX!tilde@tilde (\verb.~.)} \index{\LaTeX!.!  espacio
   tras}
 
 \begin{example}
@@ -1134,7 +1134,7 @@ del fichero de entrada. La instrucción
 \end{command}
 \noindent introduce este índice en el lugar donde coloques esta orden.
 Un documento nuevo se debe procesar dos veces para obtener un
-índice\index{indice@índice} correcto. En algunos casos puede ser
+índice\index{\LaTeX!indice@índice} correcto. En algunos casos puede ser
 necesario compilar el documento una tercera vez. \LaTeX{} te lo
 indicará en caso necesario.
 
@@ -1311,7 +1311,7 @@ en una lista.
 Los entornos \ei{flushleft} y \ei{flushright} producen párrafos
 justificados a la izquierda y a la derecha (sin nivelación de
 bordes).%
-\index{justificado a la izquierda}\index{justificado a la derecha} El
+\index{\LaTeX!justificado a la izquierda}\index{\LaTeX!justificado a la derecha} El
 entorno \ei{center} genera texto centrado. Si no se introduce \ci{\bs}
 para dividir los renglones, entonces \LaTeX{} lo hará
 automáticamente.
@@ -1445,7 +1445,7 @@ saltos de línea y \verb.|. para una línea vertical.
 Dentro de un entorno \texttt{tabular}, \verb|&| salta a la próxima
 columna, \ci{\bs} separa los renglones y \ci{hline} introduce una
 línea horizontal.
-\index{"|@ \verb."|.}
+\index{\LaTeX!"|@ \verb."|.}
 \begin{example}
 \begin{tabular}{|r|l|}
 \hline
@@ -1496,7 +1496,7 @@ y a la derecha\\
 \end{tabular}
 \end{example}
 
-\index{alineación decimal}%
+\index{\LaTeX!alineación decimal}%
 Ya que no hay ningún mecanismo incorporado para alinear columnas
 numéricas sobre la coma decimal \footnote{Si se halla instalado el
   conjunto `tools'\ en su sistema, eche un vistazo al paquete
@@ -1817,9 +1817,9 @@ la misma sintaxis que la instrucción \ci{newenvironment}.
 
 \LaTeX{} posee un modo especial para componer expresiones
 \wi{matemáticas}. En un párrafo, el texto matemático se introduce
-entre \ci{(} y \ci{)}, \index{\$@\texttt{\$}} entre \texttt{\$} y
+entre \ci{(} y \ci{)}, \index{\LaTeX!\$@\texttt{\$}} entre \texttt{\$} y
 \texttt{\$} o entre \verb|\begin{|\ei{math}\verb|}| y
-  \verb|\end{math}|.  \index{formulas@fórmulas}
+  \verb|\end{math}|.  \index{\LaTeX!formulas@fórmulas}
 
 \begin{example}
 Siendo $a$ y $b$ los catetos
@@ -1891,8 +1891,8 @@ Existen diferencias entre el \emph{modo matemático} y el \emph{modo
   lógica de la expresión matemática o se deben indicar con
   instrucciones especiales como \ci{,}, \ci{quad}, \ci{qquad}, \ci{:},
   \ci{;}, \verb*|\ | y \verb|\!|\cih{"!}.%
-\index{instrucciones!\quad@\verb*".\ ".}%
-\index{\quad@\hspace*{-1.2ex}\verb*".\ ".}%
+\index{\LaTeX!instrucciones!\quad@\verb*".\ ".}%
+\index{\LaTeX!\quad@\hspace*{-1.2ex}\verb*".\ ".}%
 
 \begin{example}
 \begin{equation}
@@ -1925,7 +1925,7 @@ x^{2} \geq 0\qquad
 
 Los matemáticos pueden ser muy exigentes con los símbolos que se
 emplean: aquí sería más \emph{convencional} emplear `\emph{blackboard
-  bold}' \index{blackboard bold@\emph{blackboad bold}} \index{simbolos
+  bold}' \index{\LaTeX!blackboard bold@\emph{blackboad bold}} \index{\LaTeX!simbolos
   en negrita@símbolos en negrita} que se obtienen con \ci{mathbb} del
 paquete \pai{amsfonts} o \pai{amssymb}.  \ifx\mathbb\undefined\else El
 último ejemplo se convierte en
@@ -1966,10 +1966,10 @@ introducen como \verb|\Gamma|, \verb|\Delta|\ldots
 $\lambda,\xi,\pi,\mu,\Phi,\Omega$
 \end{example}
 
-\index{exponente}\index{subíndice}%
+\index{\LaTeX!exponente}\index{\LaTeX!subíndice}%
 \textbf{Los exponentes y los subíndices} se pueden indicar empleando
-el carácter \verb|^|\index{^@\verb"|^"|} y el carácter
-\verb|_|\index{_@\verb"|_"|}.
+el carácter \verb|^|\index{\LaTeX!^@\verb"|^"|} y el carácter
+\verb|_|\index{\LaTeX!_@\verb"|_"|}.
 
 \begin{example}
 $a_{1}$ \qquad $x^{2}$ \qquad
@@ -1993,23 +1993,23 @@ $\surd[x^2 + y^2]$
 Las instrucciones \ci{overline} y \ci{underline} producen
 \textbf{líneas horizontales} directamente encima o debajo de una
 expresión.
-\index{linea@línea!horizontal}
+\index{\LaTeX!linea@línea!horizontal}
 \begin{example}
 $\overline{m+n}$
 \end{example}
 
 Las órdenes \ci{overbrace} y \ci{underbrace} crean \textbf{llaves
   horizontales} largas encima o bien debajo de una expresión.
-\index{llave!horizontal}
+\index{\LaTeX!llave!horizontal}
 \begin{example}
 $\underbrace{ a+b+\cdots+z }_{26}$
 \end{example}
 
-\index{acentos!matemáticos}Para poner acentos matemáticos, como
+\index{\LaTeX!acentos!matemáticos}Para poner acentos matemáticos, como
 pequeñas flechas o \wi{tilde}s a las variables, se pueden utilizar las
 órdenes que aparecen en la tabla~\ref{mathacc}. Los ángulos y las
 tildes que abarcan varios caracteres se obtienen con \ci{widetilde} y
-\ci{widehat}. Con el símbolo \verb|'|\index{'@\verb"|'"|} se introduce
+\ci{widehat}. Con el símbolo \verb|'|\index{\LaTeX!'@\verb"|'"|} se introduce
 el signo de \wi{prima}.
 % un guión es --
 
@@ -2043,7 +2043,7 @@ y \ci{overleftarrow}.
 Existen funciones matemáticas (seno, coseno, tangente,
 logaritmos\ldots) que se presentan con redondilla y \emph{nunca} en
 itálica. Para éstas \LaTeX{} proporciona las siguientes
-instrucciones: \index{funciones!matemáticas}
+instrucciones: \index{\LaTeX!funciones!matemáticas}
 
 \begin{verbatim}
 \arccos   \cos    \csc   \exp   \ker     \limsup  \min   \sinh
@@ -2062,9 +2062,9 @@ Para la \wi{función módulo} existen dos órdenes distintas:
 \ci{pmod} para expresiones como ``$x\equiv a \pmod{b}$''.
 
 Un \textbf{\wi{quebrado}} o
-\textbf{fracción}\index{fraccion@fracción} se pone con la orden
+\textbf{fracción}\index{\LaTeX!fraccion@fracción} se pone con la orden
 \ci{frac}\verb|{...}{...}|. Para los quebrados sencillos a veces
-suele ser preferible utilizar el operador \verb|/|, %\index{/@\verb|/|}
+suele ser preferible utilizar el operador \verb|/|, %\index{\LaTeX!/@\verb|/|}
 como en $1/2$.
 \begin{example}
 $1\frac{1}{2}$~horas
@@ -2129,7 +2129,7 @@ entonces emplea `\ci{right.}'.
 
 
 En algunos casos es necesario fijar de modo explícito el tamaño
-correcto del delimitador matemático\index{delimitador!matemático}.
+correcto del delimitador matemático\index{\LaTeX!delimitador!matemático}.
 Para esto se pueden utilizar las instrucciones \ci{big}, \ci{Big},
 \ci{bigg} y \ci{Bigg} como prefijos de la mayoría de las órdenes de
 delimitadores\footnote{Estas instrucciones pueden no funcionar del
@@ -2150,9 +2150,9 @@ existen varias órdenes. \ci{ldots} coloca los puntos en la línea base
 y \ci{cdots} los pone en la zona media del renglón. Ademas de éstos,
 también existen las instrucciones \ci{vdots} para puntos verticales y
 \ci{ddots} para puntos en diagonal.
-\index{puntos suspensivos!verticales}%
-\index{puntos suspensivos!en diagonal}%
-\index{puntos suspensivos!horizontales}%
+\index{\LaTeX!puntos suspensivos!verticales}%
+\index{\LaTeX!puntos suspensivos!en diagonal}%
+\index{\LaTeX!puntos suspensivos!horizontales}%
 En el apartado \ref{sec:vert} existe otro ejemplo.
 
 \begin{example}
@@ -2164,7 +2164,7 @@ x_{1}+\cdots+x_{n}
  
 \subsection{Espaciado en modo matemático}
 
-\index{espaciado en modo matematico@espaciado en modo matemático}
+\index{\LaTeX!espaciado en modo matematico@espaciado en modo matemático}
 Si no estás satisfecho con los espaciados que \TeX{} elige dentro de
 una fórmula, éstos se pueden alterar con instrucciones especiales.
 Las más importantes son \ci{,} para un espacio muy pequeño, %
@@ -2225,7 +2225,7 @@ y = \left\{ \begin{array}{ll}
 
 
 Para las ecuaciones que ocupen varios renglones o para los sistemas de
-ecuaciones \index{sistema de ecuaciones} se pueden emplear los
+ecuaciones \index{\LaTeX!sistema de ecuaciones} se pueden emplear los
 entornos \ei{eqnarray} y \verb|eqnarray*|. En \texttt{eqnarray} cada
 renglón contiene un número de ecuación. Con \verb|eqnarray*| no se
 produce ninguna numeración.
@@ -2250,7 +2250,7 @@ columna central, donde se encuentran los signos. Para reducir estas
 separaciones se puede emplear \verb|\setlength\arraycolsep{2pt}| como
 en el ejemplo siguiente.
 
-\index{ecuaciones largas} Las \textbf{ecuaciones largas} no se dividen
+\index{\LaTeX!ecuaciones largas} Las \textbf{ecuaciones largas} no se dividen
 automáticamente. Eres tú quien debe determinar en qué lugares se deben
 fraccionar y cuánto se debe sangrar. Los dos métodos siguientes son
 las variantes más utilizadas para esto.
@@ -2283,7 +2283,7 @@ para la ecuación en la que está colocada la orden.
 
 \subsection{Tamaño del tipo para ecuaciones}
 
-\index{tamano del tipo@tamaño del tipo!para ecuaciones} En el modo
+\index{\LaTeX!tamano del tipo@tamaño del tipo!para ecuaciones} En el modo
 matemático \TeX{} selecciona el tamaño del tipo según el contexto.
 Los superíndices, por ejemplo, se ponen en un tipo más pequeño. Si
 quiere introducir un texto en redondilla en una ecuación y utilizas la
@@ -2360,7 +2360,7 @@ del triángulo}
 Si necesitas componer a menudo segmentos de texto como éste, ahora es
 el momento idóneo para practicar la instrucción
 \verb|\newenvironment|. Empléala para crear un entorno especializado
-para describir variables.\index{descripción de variables} Revisa la
+para describir variables.\index{\LaTeX!descripción de variables} Revisa la
 descripción al final del tema anterior.
 
 \subsection{Teoremas, leyes\ldots}
@@ -2428,7 +2428,7 @@ el apartado actual. También se podría utilizar otra unidad, como,
 por ejemplo, un capítulo o un subapartado.
 
 \subsection{Símbolos en negrita}
-\index{simbolos en negrita@símbolos en negrita}
+\index{\LaTeX!simbolos en negrita@símbolos en negrita}
 
 Es bastante difícil obtener símbolos en negrita en \LaTeX\@.
 Probablemente esto sea intencionado ya que los compositores de texto
@@ -2817,7 +2817,7 @@ poner un texto en negrita se escribe encima del texto ya escrito.
 
 \subsection{Tipos y tamaños}
 
-\index{tipo}\index{tamaño del tipo} \LaTeX{} elige el tipo y el tamaño
+\index{\LaTeX!tipo}\index{\LaTeX!tamaño del tipo} \LaTeX{} elige el tipo y el tamaño
 de los tipos basándose en la estructura lógica del documento
 (apartados, notas al pie\ldots). En algunos casos podrías querer
 cambiar directamente los tipos y los tamaños. Para realizar esto se
@@ -2871,7 +2871,7 @@ ello. Consulta para esto la tabla~\ref{mathfonts}.
 
 
 \begin{table}[!bp]
-\index{tamaños del tipo}
+\index{\LaTeX!tamaños del tipo}
 \caption{Tamaños de los tipos} \label{sizes}
 \begin{lined}{12cm}
 \begin{tabular}{@{}ll}
@@ -2955,7 +2955,7 @@ tipos, ten presente un pequeño consejo:
  
 \subsubsection{Separaciones entre renglones}
 
-\index{separaciones entre renglones} Si quieres emplear mayores
+\index{\LaTeX!separaciones entre renglones} Si quieres emplear mayores
 separaciones entre renglones, puedes cambiar su valor poniendo la orden
 \begin{command}
 \ci{linespread}\verb|{|\emph{factor}\verb|}|
@@ -2965,7 +2965,7 @@ separaciones entre renglones, puedes cambiar su valor poniendo la orden
 \verb|\linespread{1.6}| para textos a doble espacio. Normalmente los
 renglones no se separan tanto, por lo que, a no ser que se indique
 otra cosa, el factor de separación entre renglones es~1.%
-\index{doble espacio}
+\index{\LaTeX!doble espacio}
 
 \subsubsection{Diseño de los párrafos}\label{parsp}
 
@@ -3007,7 +3007,7 @@ seccionado.
  
 \LaTeX{} determina automáticamente las separaciones entre palabras y
  oraciones. Para producir otras separaciones horizontales utiliza:
- \index{espacio!horizontal}
+ \index{\LaTeX!espacio!horizontal}
 \begin{command}
 \ci{hspace}\verb|{|\emph{longitud}\verb|}|
 \end{command}
@@ -3016,7 +3016,7 @@ final o al comienzo de un renglón, emplea \verb|\hspace*| en vez de
 \verb|\hspace|. La indicación de la distancia consta, en el caso más
 simple, de un número más una unidad. En la tabla~\ref{units}
 encontrarás las unidades más importantes.
-\index{unidades}\index{dimensiones}
+\index{\LaTeX!unidades}\index{\LaTeX!dimensiones}
 
 \begin{example}
 Este\hspace{1.5cm}es un espacio
@@ -3024,7 +3024,7 @@ de 1.5 cm.
 \end{example}
 \suppressfloats
 \begin{table}[tbp]
-\caption{Unidades de \TeX} \label{units}\index{unidades}
+\caption{Unidades de \TeX} \label{units}\index{\LaTeX!unidades}
 \begin{lined}{9.5cm} 
 \begin{tabular}{@{}ll@{}}
 \texttt{mm} &  milímetro $\approx 1/25$~pulgada \quad \demowidth{1mm} \\
@@ -3065,7 +3065,7 @@ la orden
 Esta orden se debería indicar siempre entre dos renglones vacíos.
 Cuando esta separación se debe introducir aunque vaya al principio o
 al final de una página, entonces en vez de \verb|\vspace| se debe
-utilizar \verb|\vspace*|. \index{separación vertical}
+utilizar \verb|\vspace*|. \index{\LaTeX!separación vertical}
 
 Se puede utilizar la orden \verb|\stretch| conjuntamente con
 \verb|\pagebreak| para llevar texto al borde inferior de una

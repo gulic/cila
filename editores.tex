@@ -3,7 +3,7 @@
 
 \chapter{Editores de texto}
 
-
+\index{Texto!Editores}
 
 \section{Joe}
 
@@ -97,6 +97,7 @@ opciones de este editor, se puede utilizar la opción {\tt Ctrl-k h}.
 
 \section{GNU Emacs}
 
+\index{Emacs}
 
 {\sf Emacs}, junto con {\sf VI},  ha sido uno de los primeros editores
 de  texto para  UNIX.  A  pesar de  visualmente  presenta un  interfaz
@@ -264,6 +265,8 @@ actual del cursor.
 
 \section{VI}
 
+\index{VI}
+\index{VIM}
 
 {\sf VI} es un editor de texto visual, de pantalla completa, basado en
 el editor de  línea {\tt ex}. Es  un editor poco intuitivo  y con mala
@@ -299,14 +302,14 @@ utilizar un  interfaz gráfico, lo que  aumenta el comfort y  mejora el
 rendimiento del programador.
 
 Lo primero que debe aprenderse con {\sf VI} es la filosofía de los dos
-modos de  trabajo: el modo {\em  comando} y el modo  {\em edición}. El
-modo comando se utiliza sólamente  para dar órdenes al editor, decirle
-que  haga cosas  como borrar  una línea,  buscar un  patrón, ir  a una
-determinada  línea,  guardar el  fichero,  salir,  etc. El  modo  {\em
-edición} se  utiliza sólamente para  escribir texto en el  fichero. Es
-muy importante familiarizarse con esta filosofía de funcionamiento, ya
-que  resulta imprescindible  para  cualquier operación  que se  quiera
-realizar con {\sf VIM}.
+modos de  trabajo: \index{VIM!modos} el  modo {\em comando} y  el modo
+{\em edición}. El  modo comando se utiliza sólamente  para dar órdenes
+al editor,  decirle que haga  cosas como  borrar una línea,  buscar un
+patrón, ir a una determinada línea, guardar el fichero, salir, etc. El
+modo  {\em edición}  se utiliza  sólamente para  escribir texto  en el
+fichero.  Es  muy  importante  familiarizarse con  esta  filosofía  de
+funcionamiento, ya que resulta imprescindible para cualquier operación
+que se quiera realizar con {\sf VIM}.
 
 En adelante  nos referiremos  al editor como  {\sf VI}  cuando digamos
 algo que sea común a todas las versiones de {\sf VI}, y como {\sf VIM}
@@ -315,7 +318,7 @@ cuando se trate de extensiones propias de {\sf VIM}.
 Para ejecutar este editor el comando  es {\tt vi}. Si tienes instalada
 otra  versión de  {\sf  VI} pero  quieres utilizar  {\sf  VIM} no  hay
 problema,  simplemente  ejecuta  {\tt  vim}. Si  quieres  utilizar  la
-interfaz gráfica de {\sf VIM} ejecuta {\tt gvim}.
+interfaz gráfica de {\sf VIM} ejecuta {\tt gvim}.\index{GVIM}
 
 Aunque  conserva el  nombre de  {\sf VI}  estamos trabajando  con {\sf
 VIM}. Este comando admite varias opciones  que se le pueden pasar como
@@ -339,6 +342,7 @@ diferentes.
 
 \begin{table}[htbp]
 \centering
+\index{VIM!insertar}
 \begin{tabular}{|c|p{0.88\textwidth}|}
 \hline
 {\tt i} & Comienza a insertar texto en la posición del cursor.                       \\
@@ -412,7 +416,7 @@ comando}.  Entonces teclea  la orden  {\tt  :w} y  pulsa {\tt  Enter}.
 Veremos como la orden {\tt :w}  aparece en la barra de estado mientras
 la tecleamos,  y luego al  ejecutarla se muestra información  sobre el
 resultado, en este  caso información sobre el fichero  que acabamos de
-guardar.
+guardar.\index{VIM!guardar}
 
 \begin{verbatim}
 "hola.c" [New] 6L, 62C written                       6,1           All
@@ -424,6 +428,7 @@ al terminar de escribirlo  estamos en la línea 6 y en  la columna 1, y
 podemos ver todo el fichero.
 
 Si tu  versión de {\em VIM}  tiene soporte para coloreado  de sintaxis
+\index{VIM!coloreado de sintaxis}
 probalmente ya  estará funcionando  y verás las  palabras {\tt  int} e
 {\tt include}  de distinto color.  Sin aún  no estás viendo  el código
 coloreado prueba a pasar al modo  {\em comando} (pulsando {\tt ESC}) y
@@ -473,6 +478,7 @@ fuente,  incluso  puedes ejecutar  una  consola  de sistema  desde  el
 editor, con el comando {\tt :sh}
 
 Para buscar palabras dentro de un  documento es fácil, solo tienes que
+\index{VIM!búsqueda}
 escribir  en modo  {\em  comando}  {\tt /palabra}  y  si salen  varios
 resultados, pulsando  {\tt n} los  irá mostrando. Si prefieres  que la
 búsqueda  sea hacia  atrás  (desde  el final  hacia  el principio  del
@@ -513,14 +519,14 @@ en la  que se  encuentre el  cursor, \verb.d}.  borra desde  el cursor
 hasta el final del párrafo en la que se encuentre el cursor, \verb.d{.
 borra desde el cursor hasta el final del párrafo anterior.
 
-A lo mejor te interes pegar en otro sitio ese trozo de fichero que has
-borrado, o prefieres copiar y pegar  en lugar de cortar y pegar. Claro
-que puedes  hacerlo con  {\sf VI} y  seleccionando exactamente  lo que
-quieras. Para seleccionar una parte  del fichero sitúate en un extremo
-de la selección (principio o final),  pulsa {\tt v} y desplázate hasta
-el otro extremo de la selección. Para cancelar la selección pulsa {\tt
-Esc}.  Una  vez  que  tienes el  texto  seleccionado  puedes  cortarlo
-pulsando {\tt d} o copiarlo pulsando {\tt y}.
+A lo mejor  te interesa pegar en  otro sitio ese trozo  de fichero que
+has borrado,  o prefieres copiar y  pegar en lugar de  cortar y pegar.
+Claro que puedes  hacerlo con {\sf VI} y  seleccionando exactamente lo
+que  quieras. Para  seleccionar una  parte del  fichero sitúate  en un
+extremo  de  la  selección  (principio  o  final),  pulsa  {\tt  v}  y
+desplázate hasta  el otro  extremo de la  selección. Para  cancelar la
+selección pulsa  {\tt Esc}. Una  vez que tienes el  texto seleccionado
+puedes cortarlo pulsando {\tt d} o copiarlo pulsando {\tt y}.
 
 Para pegar lo que has copiado o  cortado has de situar el cursor en la
 posición  deseada  y contemplar  dos  opciones  para pegar  el  texto:
@@ -548,6 +554,7 @@ $ vi fichero1 fichero2
 \end{verbatim}
 
 Con esto tienes varios ficheros abiertos,  con un buffer para cada uno
+\index{VIM!buffers}
 (aquí entendemos buffer en el sentido con el que lo hacíamos al hablar
 de Emacs) y puedes pasar de un  buffer a otro con el comando {\tt :bN}
 donde {\tt N} es el número  del buffer (se numeran empezando por $1$).
@@ -561,6 +568,7 @@ con pulsar la  tecla \% situarte sobre uno de  estos caracteres que te
 muestre  el  de cierre  o  apertura  que  le corresponda.  
 
 Una de las  funcionalidades más queridas de {\sf VI}  es la búsqueda y
+\index{VIM!búsqueda y substitución}
 sustitución de texto.  Para empezar pensemos en  simples palabras, por
 ejemplo en substituir  la palabra ``coche'' por  la palabra ``carro''.
 El  comando para  la substitución  es {\tt  :s} y  tiene el  siguiente
@@ -586,6 +594,8 @@ substituir en las ocurrencias, y  también puede ser una {\em expresión
 regular}.
 
 Una {\em expresión regular} es un  tipo de expresiones de uso común en
+\index{expresiones regulares en VI}
+\index{VIM!expresiones regulares}
 programación.  Define  una  serie  de  reglas  que  debe  cumplir  una
 expresión para considerar  que {\em encaja} con  la expresión regular.
 Esto se  consigue utilizando  caracteres con  significados especiales,
@@ -628,6 +638,7 @@ trabajar con expresiones regulares.
 
 \begin{table}[htbp]
 \centering
+\index{VIM!metacaracteres}
 \begin{tabular}{|c|l|}
 \hline
 {\tt .}         & Cualquier caracter \\
@@ -656,11 +667,12 @@ modo sencillo podemos hacer:
 /\u\l
 \end{verbatim}
 
-Ahora   vamos  a   introducir   unos  elementos   nuevos  para   hacer
-reemplazos y  busquedas más  ``profesionales''. Uno  de ellos  son los
-{\em cuantificadores}.  Si necesitamos  buscar en  un documento  grandes
-grupos de números de 9 cifras por ejemplo nos resultaría muy trabajoso
-escribir \verb./\d\d\d\d\d\d\d\d\d.. Los  cuantificadores son diversas
+Ahora vamos a  introducir unos elementos nuevos  para hacer reemplazos
+y  busquedas  más  ``profesionales''.  Uno   de  ellos  son  los  {\em
+cuantificadores}.\index{VIM!expresiones  regulares!cuantificadores} Si
+necesitamos  buscar   en  un  documento  grandes   grupos  de  números
+de  9  cifras  por  ejemplo  nos  resultaría  muy  trabajoso  escribir
+\verb./\d\d\d\d\d\d\d\d\d..    Los   cuantificadores    son   diversas
 expresiones que nos permiten definir  el número de veces que aparecerá
 el  tipo de  caracter que  queremos  buscar. Los  más importantes  son
 \verb.\+., relaciona  el caracter que aparece  una o más veces  en una
@@ -684,8 +696,9 @@ el  texto  todos las  letras  entre  la a  y  la  h, ambas  inclusive,
 valor  negativo  en los  rangos,  es  el  {\tt \verb.^.}.  El  comando
 \verb./[^j-z]. mostrará todas las letras minúsculas anteriores a la j.
 
-Para  buscar mayúsculas  o minúsculas  hay algo  mejor que  los rangos
-\verb.[a-z]. y  \verb.[A-Z]., que  son las  {\em clases}. Las  clases se
+Para   buscar   mayúsculas   o   minúsculas   hay   algo   mejor   que
+los   rangos   \verb.[a-z].  y   \verb.[A-Z].,   que   son  las   {\em
+clases}\index{VIM!expresiones   regulares!clases}.   Las   clases   se
 refieren mediante  palabras encerradas entre \verb.[[:.  y \verb.:]].,
 por  lo  que para  buscar  una  expresión  mediante clases  el  patrón
 de  búsqueda deberá  contener  \verb.[[:clase:]]. Las  clases que  nos
@@ -704,8 +717,9 @@ interesan son:
 \caption{Metacaracteres en las expresiones regulares de VI}
 \end{table}
 
-Tambien podemos cambiar el  orden de las frases de todo  un texto o de
-zonas  específicas,  utilizando los  {\em  agrupadores}.  Se trata  de
+Tambien   podemos   cambiar  el   orden   de   las  frases   de   todo
+un   texto    o   de   zonas   específicas,    utilizando   los   {\em
+agrupadores}\index{VIM!expresiones regulares!agrupadores}. Se trata de
 crear  grupos de  expresiones  que luego  para sustituir  utilizaremos
 expresiones  que  nos permitan  reordenarlos.  Para  definir un  grupo
 se  utiliza \verb.\(\).,  el  texto  que se  encuentre  entre esos  el

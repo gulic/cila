@@ -2,7 +2,7 @@
 
 \chapter{Yacas}
 
-\index{yacas}
+\index{Yacas}
 \index{cálculo simbólico}
 
 En  este tema  aprenderás a  utilizar el  programa Yacas  para relizar
@@ -16,6 +16,8 @@ cada expresión.
 \section{¿Qué es Yacas?}
 
 Yacas  es un  Sistema  de  Álgebra Computacional  (en  inglés CAS,  de
+\index{CAS}
+\index{Álgebra Computacional}
 Computer  Algebra  System) de  propósito  general  fácil de  usar.  Un
 Sistema  de Álgebra  Computacional (SAC)  es un  programa que  permite
 manipulaciones simbólicas sobre expresiones matemáticas, reduciendo el
@@ -53,10 +55,10 @@ Yacas  tiene  un  intérprete  de comandos  que  nos  permite  ejecutar
 funciones para probar  lo que queremos programar,  para luego escribir
 un script  (un fichero de  comandos a modo  de guión). Para  entrar al
 intérprete de Yacas  basta con ejecutar el comando {\tt  yacas} en una
-consola  o terminal.  Para  salir del  intérprete  puedes pulsar  {\tt
-Control-C}  o bien  ejecutar la  función \verb+Exit();+.  Pulstar {\tt
-Control-C} también  es útil  para detener inmediatamente  la ejecución
-del intérprete de Yacas (o de un script escrito para Yacas).
+consola o terminal. Para salir  del intérprete puedes pulsar {\tt C-c}
+o bien ejecutar  la función \verb+Exit();+. Pulstar  {\tt C-c} también
+es útil  para detener  inmediatamente la  ejecución del  intérprete de
+Yacas (o de un script escrito para Yacas).
 
 \begin{verbatim}
 $ yacas
@@ -75,10 +77,11 @@ instalada  deberías   poder  iniciarla  ejecutando  el   comando  {\tt
 proteusworksheet}. Esta utilidad te proporcioa un entorno más cómodo e
 integrado  en el  que  puedes  probar código  en  el  intérprete e  ir
 escribiendo un script en el editor que incluye.
-\index{proteus}
 
 \begin{figure}[hbt]
 \centering\includegraphics[width=0.65\textwidth]{imagenes/proteus.eps}
+\index{proteus}
+\index{Yacas!proteus}
 \caption{Proteus, interfaz gráfica para Yacas}
 \end{figure}
 
@@ -161,6 +164,8 @@ normal  en  Yacas,  pero  no  la única.  Podemos  pedir  a  Yacas  que
 muestre  las  expresiones  de  forma más  ``bonita''  con  la  función
 \verb+PrettyForm()+.
 
+\index{Yacas!PrettyFrom}
+
 \begin{verbatim}
 In> PrettyForm(%)
 
@@ -187,6 +192,9 @@ podemos  utilizar  la  referencia  \verb+%+ dos  veces  seguidas  para
 mostrar  una  expresión  (la  segunda mostraría  la  expresión  lógica
 \verb+True+). Por  eso escribimos  \verb+Integrate(x) ((x-y)^3)+
 en cada línea:
+
+\index{Yacas!CFrom}
+\index{Yacas!TeXFrom}
 
 \begin{verbatim}
 In> CForm (Integrate(x) ((x-y)^3))
@@ -220,6 +228,8 @@ realizan con  la función  \verb+N()+, que  además permite  saltarse la
 precisión establecida por \verb+Precision()+ pasándosela como segundo
 parámetro. En el siguiente ejemplo se ilustra esto:
 
+\index{Yacas!presición}
+
 \begin{verbatim}
 In> alpha := Sqrt (Pi ())
 Out> Sqrt(3.1415926535897932384626433832795028841971694);
@@ -243,6 +253,9 @@ aumentará rápidamente.
 
 
 \section{Variables y funciones}
+
+\index{Yacas!variables}
+\index{Yacas!funciones}
 
 En Yacas se entiende por variable un objeto al que se puede asignar un
 valor.  Las variables  pueden  llamarse como  quieras  siempre que  el
@@ -336,6 +349,8 @@ Out> 80;
 
 \section{Listas}
 
+\index{Yacas!listas}
+
 Uno de  los elementos más  importantes del  lenguaje de Yacas  son las
 listas, que como era de esperar son grupos de objetos ordenados. Yacas
 representa las listas  con sus elementos entre llaves  y separados por
@@ -382,6 +397,10 @@ Out> {{"educado",False},{"edad",7.34},{"apellido","Cartman"},
 
 
 \section{Álgebra Lineal}
+
+\index{Yacas!Álgegra Lineal}
+\index{Yacas!matrices}
+\index{Yacas!vectores}
 
 Los  vectores  de  dimensión  fija  se  representan  mediante  listas.
 La  lista  \verb+{1,2,3}+ es  el  vector  $(1,2,3)$. Las  matrices  se
@@ -461,6 +480,8 @@ simples) y resolución de sistemas  de ecuaciones lineales del tipo $Ax
 
 \section{Control de flujo}
 
+\index{Yacas!control de flujo}
+
 El lenguaje de  Yacas incluye algunas construcciones  y funciones para
 el control  de flujo. Para ello  necesitas saber también que  Yacas te
 permite agrupar bloques  de instrucciones de forma  que aparezcan como
@@ -538,6 +559,8 @@ escribir un script.
 
 \section{Gráficas con GNUplot}
 
+\index{Yacas!gráficas}
+
 Yacas  incorpora la  posibilidad  de  representar gráficas  utilizando
 GNUplot,  si  bien esta  capacidad  depende  de que  tengas  instalado
 también el programa  GNUplot. Para saber si tu versión  de Yacas tiene
@@ -576,6 +599,8 @@ Out> True;
 
 \section{Programando con Yacas}
 
+\index{Yacas!programación}
+
 Si bien  el intérprete de  Yacas proporciona una interfaz  cómoda para
 ejecutar  cálculos, cuando  éstos  se complican  resulta más  práctico
 escribir un ``script'' y ejecutarlo  con Yacas. Para hacer un programa
@@ -596,6 +621,7 @@ $ yacas -c lagrange.ys
 \end{verbatim}
 
 \begin{ejemplo}{lagrange.ys}{Script en Yacas que interpola una función}
+\index{Yacas!script}
 Script en Yacas  que muestra un interpolante de Lagrage  para una nube
 de cinco  puntos tomados  de la función  $f(x) =  \frac{1}{1+x^2}$. En
 este  ejemplo el  interpolante de  Lagrange  no es  el adecuado,  pero
@@ -621,13 +647,15 @@ el script sin salir del intérprete.
 
 \section{Un ejemplo real}
 
-A continuación explicamos un ejemplo real de uso de Yacas: calcular la
-sucesión de Sturm  asociada a un polinomio real de  una variable real.
-Esta  sucesión se  utiliza en  el teorema  de Sturm  para calcular  el
-número de  raíces reales de un  polinomio en un intervalo  de la recta
-real.  El  algoritmo para  calcular  esta  sucesión de  polinomios  no
-es  complicado, pero  por  si  no lo  conoces  aquí  tienes una  breve
-explicación:
+\index{Yacas!ejemplo real}
+
+A continuación  explicamos un ejemplo  del uso  de Yacas ``en  la vida
+real'': calcular la sucesión de Sturm  asociada a un polinomio real de
+una variable  real. Esta sucesión  se utiliza  en el teorema  de Sturm
+para  calcular el  número  de  raíces reales  de  un  polinomio en  un
+intervalo de la  recta real. El algoritmo para  calcular esta sucesión
+de polinomios no es complicado, pero  por si no lo conoces aquí tienes
+una breve explicación:
 
 El algoritmo  de Sturm parte  de un polinomio con  coeficientes reales
 $p(x)$  y su  derivada $p'(x)$.  Tomando $f_0(x)  = p(x)$  como primer
@@ -712,3 +740,4 @@ multiplicidad  impar)  o  con  el método  de  cristalización  simulada
 (raíces de multiplicidad par). El trabajo fué expuesto en clase y tuvo
 la calificación de sobresaliente, el código y las transparencias están
 disponibles en {\tt http://www.fmat.ull.es/\~{}miguev/algcomp}
+
