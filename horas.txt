@@ -40,14 +40,14 @@
  6. Software adicional (a gusto del consumidor)
 
  Módulo III: Edición de gráficos y documentos
- 1. OpenOffice                          (Félix,      1)
+ 1. OpenOffice                          (Félix,    2.5)
  2. HTML                                (Félix,    1.5)
  3. Edición de gráficos:
-    - DIA                               (Félix,   0.75)
-    - QCad                              (Félix,   0.75)
-    - The GIMP                          (Miguel,   1.5)
+    - DIA                               (Miguel,   0.5)
+    - QCad                              (Miguel,   0.5)
+    - The GIMP                          (Miguel,     1)
  4. LyX                                 (Miguel,     1)
- 5. LaTeX                               (Miguel,   1.5)
+ 5. LaTeX                               (Miguel,     1)
 
  Módulo IV:  Herramientas para matemáticas
  1. Octave y SciLab                     (Alberto, 1.25)
