@@ -60,6 +60,7 @@ para los clientes de IRC
 (Poner una captura del Kvirc)
 
 \subsection{Multimedia}
+
 La  reproducción de  los diferentes  formatos  gráficos es  otro de  los
 apartados que  se suelen utilizar a  diario. Para los usuarios  de otros
 sistemas  operativos resulta  normal el  poder disponer  de un  software
@@ -177,51 +178,59 @@ entorno.
 
 % <MojoPiKon> Me la pido :-)
 
-mpg321 es reproductor de ficheros con formato  mp3.
-Se trata de un programa de línea de comandos no interactivo,  esto  es,
-uno  ejecuta  el  programa  con una  serie  de argumentos, y  una vez 
-el programa comienza  a ejecutarse,  no existe interacción  entre el usuario
-y  el programa,  sino que  se limita  a realizar las  operaciones que le hemos
-proporcionado  en la  línea de comandos.
+mpg321 es  reproductor de  ficheros con  formato mp3.  Se trata  de un
+programa de línea de comandos no  interactivo, esto es, uno ejecuta el
+programa con una serie de argumentos, y una vez el programa comienza a
+ejecutarse, no existe interacción entre el usuario y el programa, sino
+que se limita a realizar las operaciones que le hemos proporcionado en
+la línea de comandos.
 
 
-La forma  más asequible para  reproducir mp3 con mpg321 es  el siguiente
-comando,suponiendo  que nos encontremos  en un directorio lleno de mp3 :-)
+La forma más asequible para reproducir  mp3 con mpg321 es el siguiente
+comando,suponiendo que nos  encontremos en un directorio  lleno de mp3
+:-)
 
 \begin{verbatim}
 mpg321 *.mp3
 \end{verbatim}
 
-Para aquellos que no les basta esto (a mí si), hay una amplia gama de parámetros
-que pueden pasarse a mpg321:
+Para aquellos que no les basta esto  (a mí si), hay una amplia gama de
+parámetros que pueden pasarse a mpg321:
 
 \begin{verbatim}
 -o tipo_de_dispositivo, donde tipo de dispositivo puede ser oss, alsa, esd, sun, o arts.
 \end{verbatim}
 
-Esto, que en principio no tiene interés alguno para la mayor parte de la gente (pues mpg321 funcionará (en la mayor parte de los casos) sin especificar este parámetro, puede resultar interesante en caso de que,por ejemplo, queramos reproducir dos o más mp3 simultaneamente.
+Esto, que en principio no tiene  interés alguno para la mayor parte de
+la gente (pues mpg321 funcionará (en  la mayor parte de los casos) sin
+especificar  este parámetro,  puede  resultar interesante  en caso  de
+que,por ejemplo, queramos reproducir dos o más mp3 simultaneamente.
 
-Si tenemos artsd instalado, podemos hacer esto arrancando mpg321 de la forma:
+Si tenemos artsd instalado, podemos hacer esto arrancando mpg321 de la
+forma:
 
 \begin{verbatim}
 mpg321 -o arts fichero.mp3 &
 \end{verbatim}
-tras lo cual podemos repetir la operación tantas veces como queramos en la
-misma o en diferentes consolas.
+
+tras lo cual  podemos repetir la operación tantas  veces como queramos
+en la misma o en diferentes consolas.
 
 Este parámetro (-o) funciona conjuntamente con el siguiente:
+
 \begin{verbatim}
 -a nombre_de_dispositivo, donde nombre_de_dispositivo es algo así como /dev/dsp, /dev/sound/dsp1, o aquel que utilice el dispositivo de sonido que queramos utilizar para oir nuestros mp3 :-)
 \end{verbatim}
 
 Utilización de listas de reproducción:
 
-Podemos cargar una ``playlist'' de un fichero txt con las rutas a los ficheros
-mp3 que queramos que la compongan. Esto se hace de la forma:
+Podemos cargar una ``playlist'' de un  fichero txt con las rutas a los
+ficheros mp3 que queramos que la compongan. Esto se hace de la forma:
 
 \begin{verbatim}
 mpg321 -@ fichero.txt
 \end{verbatim}
+
 Reproducción aleatoria de ficheros:
 
 Para esto tenemos dos parámetros: -z y -Z
