@@ -6,4 +6,4 @@ For ( i := 1 , i <= n , i++ ) [
   yl := Append (yl, Eval (f (xl[i])));
 ];
 pol (x) := Eval (LagrangeInterpolant (xl, yl, x));
-GnuPlot (xl[1], xl[n], 50, {f(x), pol(x)});
+Plot2D ({f(x), pol(x)}, xl[1]:xl[n]);

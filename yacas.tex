@@ -62,7 +62,7 @@ del intérprete de Yacas (o de un script escrito para Yacas).
 
 \begin{verbatim}
 $ yacas
-[editvi.ys] [gnuplot.ys] [unix.ys] 
+[editvi.ys] [unix.ys] 
 True;
 Numeric mode: "Gmp"
 To exit Yacas, enter  Exit(); or quit or Ctrl-c. Type ?? for help.
@@ -153,7 +153,7 @@ cálculos  simbólicos  con  Yacas.  Sin  embargo  es  probable  que  el
 resultado del siguiente ejemplo no te resulte fácil de interpretar:
 
 \begin{verbatim}
-In> Integrate(x) ((x-y)^3)
+In> Integrate(x) Expand((x-y)^3);
 Out> x^4/4-(x^3*3*y)/3+(x^2*3*y^2)/2-y^3*x;
 \end{verbatim}
 
@@ -190,17 +190,17 @@ Para  mostrar  una  expresión  de estas  formas  están  las  funciones
 funciones  no devuelven  la  expresión  que muestran,  por  lo que  no
 podemos  utilizar  la  referencia  \verb+%+ dos  veces  seguidas  para
 mostrar  una  expresión  (la  segunda mostraría  la  expresión  lógica
-\verb+True+). Por  eso escribimos  \verb+Integrate(x) ((x-y)^3)+
+\verb+True+). Por  eso escribimos  \verb+Integrate(x) Expand((x-y)^3)+
 en cada línea:
 
 \index{Yacas!CFrom}
 \index{Yacas!TeXFrom}
 
 \begin{verbatim}
-In> CForm (Integrate(x) ((x-y)^3))
+In> CForm (Integrate(x) Expand((x-y)^3))
 Out> "pow(x, 4.) / 4. - ( pow(x, 3.) * 3. * y)  / 3. + ( pow(x, 2.) * 
 3. * pow(y, 2.))  / 2. - pow(y, 3.) * x";
-In> TeXForm (Integrate(x) ((x-y)^3))
+In> TeXForm (Integrate(x) Expand((x-y)^3))
 Out> "$\frac{x ^{4}}{4}  - \frac{x ^{3} 3 y}{3}  + \frac{x ^{2} 3 y ^{
 2}}{2} - y ^{3} x$";
 \end{verbatim}
@@ -212,8 +212,8 @@ tipográfico  \TeX, de  forma  que podemos  incluirla  en un  documento
 escrito en  \TeX~ o \LaTeX.  Por ejemplo,  este libro está  escrito en
 \LaTeX, lo  que me  permite incluir la  salida de  \verb+TeXForm()+ en
 este  mismo párrafo  con  sólo copiar  y pegar.  De  esta forma  puedo
-escribir $\int (x-y)^3 \, dx = \frac{x ^{4}}{4} - \frac{x ^{3} 3 y}{3}
-+ \frac{x ^{2} 3 y ^{2}}{2} - y ^{3} x$.
+escribir: $$\int  (x-y)^3 \, dx  = \frac{x  ^{4}}{4} - \frac{x  ^{3} 3
+y}{3} + \frac{x ^{2} 3 y ^{2}}{2} - y ^{3} x$$
 
 En ocasiones nos  interesa conocer el valor numérico  de una expresión
 determinada, y posiblemente sólo nos interese un número determinado de
@@ -557,45 +557,54 @@ escribir un script.
 
 
 
-\section{Gráficas con GNUplot}
+\section{Gráficas}
 
 \index{Yacas!gráficas}
 
-Yacas  incorpora la  posibilidad  de  representar gráficas  utilizando
-GNUplot,  si  bien esta  capacidad  depende  de que  tengas  instalado
-también el programa  GNUplot. Para saber si tu versión  de Yacas tiene
-soporte  para  GNUplot fíjate  en  la  primera  línea que  imprime  el
-intérprete cuando  arranca, si  aparece \verb+[gnuplot.ys]+ es  que tu
-versión de Yacas soporte para gráficas con GNUplot.
+Yacas incorpora la posibilidad de representar gráficas bidimensionales
+utilizando  GNUplot, si  bien  esta capacidad  depende  de que  tengas
+instalado también  el programa  GNUplot. Para saber  si tu  versión de
+Yacas  tiene soporte  para  GNUplot  fíjate en  la  primera línea  que
+imprime el  intérprete cuando arranca, si  aparece \verb+[gnuplot.ys]+
+es   que   tu   versión   de   Yacas   soporte   para   gráficas   con
+GNUplot\footnote{Esto  era cierto  hasta la  versión 1.0.50  de Yacas,
+pero  en el  momento de  escribir esta  nota la  versión 1.0.51  de mi
+máquina no  aparece {\tt [gnuplot.ys]}  pero puede hacer  las gráficas
+con la función {\tt Plot2D}}.
 
 \begin{verbatim}
 $ yacas
 [editvi.ys] [gnuplot.ys] [unix.ys]
 \end{verbatim}
 
-La  función para  representar  gráficas es  \verb+GnuPlot()+ y  recibe
-cuatro parámetros: el valor mínimo de  la variable, el valor máximo de
-la variable, el  número de puntos utilizados para  la representación y
-la función para representar. En  el siguiente ejemplo calculamos el el
-polinomio de Taylor de orden 5  para la función $\sin(x)$ en el origen
-y  la representamos  (en  rojo)  junto con  la  función $\sin(x)$  (en
-verde).
+La función para  representar gráficas es \verb+Plot2D()+  y recibe dos
+parámetros: la expresión  (o lista de expresiones)  para representar y
+el  intervalo  de  la  variable  en  la  forma  {\tt  valor\_minimo  :
+valor\_maximo}.
+
+En anteriores versiones de Yacas, la función para representar gráficas
+era \verb+GnuPlot()+ y  recibía cuatro parámetros: el  valor mínimo de
+la  variable, el  valor máximo  de la  variable, el  número de  puntos
+utilizados para la representación y la función para representar. 
+
+En los  siguientes ejemplos  calculamos el el  polinomio de  Taylor de
+orden 5 para la función $\sin(x)$  en el origen y la representamos (en
+rojo) junto con la función $\sin(x)$ (en verde).
+
+\begin{figura}{yacas_gnuplot}{0.8}
+\caption{Representación gráfica con GNUplot desde Yacas}
+\end{figura}
 
 \begin{verbatim}
 In> f(x) := Eval (Taylor (x, 0, 5) Sin(x) )
+Out> True;
+In> Plot2D ({f(x), Sin (x)}, -Pi:Pi)
 Out> True;
 In> GnuPlot (-Pi(), Pi(), 50, {f(x), Sin(x)})
 GnuPlot: created file gnuplot.tmp/gnudata.in1
 GnuPlot: created file gnuplot.tmp/gnudata.in2
 Out> True;
 \end{verbatim}
-
-\begin{figure}[htb]
-\centering\includegraphics[width=\textwidth]{imagenes/yacas_gnuplot.eps}
-\caption{Representación gráfica con GNUplot desde Yacas}
-\end{figure}
-
-
 
 \section{Programando con Yacas}
 
@@ -666,13 +675,13 @@ como divisor. Al  cabo de un número finito de  iteraciones, en las que
 $f_j(x)$ es el resto de la división $j-1$, se obtiene un resto nulo en
 la iteración $m+1$.
 
-$$\begin{array}{r@{\,=\,}l}
-f_0(x) & f_1(x) q_1(x) - f_2(x)          \\
-f_1(x) & f_2(x) q_2(x) - f_3(x)          \\
-\multicolumn{2}{c}{\vdots}               \\
-f_{m-2}(x) & f_{m-1}(x) q_1(x) - f_m(x)  \\
-f_{m-1}(x) & f_m(x) q_m(x)
-\end{array}$$
+\begin{eqnarray*}
+f_0(x) & = & f_1(x) q_1(x) - f_2(x)          \\
+f_1(x) & = & f_2(x) q_2(x) - f_3(x)          \\
+& \vdots &                                   \\
+f_{m-2}(x) & = & f_{m-1}(x) q_1(x) - f_m(x)  \\
+f_{m-1}(x) & = & f_m(x) q_m(x)
+\end{eqnarray*}
 
 A  partir de  los polinomios  $f_j$ obtenidos  en estas  divisiones se
 construye la sucesión de Sturm asociada a $p(x)$, que viene dada por
@@ -683,7 +692,7 @@ El teorema  de Sturm garantiza que  el número de raíces  del polinomio
 $p(x)$ en  el intervalo  $[a,b]$ es exactamente  $V(a) -  V(b)$, donde
 $V(x_0)$ es el número de variaciones  de la sucesión de Sturm evaluada
 en el punto $x_0$,  i.e. el número de cambios de  signo en la suceción
-$\left\{   \hat{f}_0(x_0),   \hat{f}_1(x_1),  \ldots,   \hat{f}_m(x_m)
+$\left\{   \hat{f}_0(x_0),   \hat{f}_1(x_0),  \ldots,   \hat{f}_m(x_0)
 \right\}$.
 
 Para implementar esto en Yacas definimos la función \verb+Sturm()+ que
@@ -739,5 +748,5 @@ intervalos y aproximándolas  con el método de la  bisección (raíces de
 multiplicidad  impar)  o  con  el método  de  cristalización  simulada
 (raíces de multiplicidad par). El trabajo fue expuesto en clase y tuvo
 la calificación de sobresaliente, el código y las transparencias están
-disponibles en {\tt http://www.fmat.ull.es/\~{}miguev/algcomp}
+disponibles en {\tt http://www.fmat.ull.es/\~{}miguev/algcomp/}
 
