@@ -96,7 +96,7 @@ install: $(FILES) $(IMAGES) $(EJEMPLOS) $(NAME).ps
 
 clean: clean_splits
 	rm -f *.aux *.log *.dvi *.idx *.ilg *.ind *.toc *.bbl \
-	      *.blg *.lot *.lof *.lde *.exa
+	      *.blg *.lot *.lof *.lde *.exa *.ps *.pdf
 	rm -rf main
 	rm -f $(EPSS) $(CEPSS)
 
