@@ -33,8 +33,132 @@ y fiabilidad al sistema GNU/Linux.
 %Esto es de Félix
 \subsection{Sistema de paquetes RPM}
 
+Este sistema  de paquetes fue creado  por la compañía Red  Hat. De ahí
+viene el  nombre RPM,  {\bf Red  Hat Package  Manager}. Con  el tiempo
+otras distribuciones han ido adoptando  este sistema de empaquetado de
+ficheros. Las principales  distribuciones que lo adotan  son: Red Hat,
+SuSE y Mandrake.
+
+Un paquete de software construido con RPM es un conjunto de ficheros e
+información  asociada  a ello,  como  un  nombre,  una versión  y  una
+descripción. que terminan con la extensión {\tt .rpm}. A diferencia de
+el  sistema  de  Debian,  cuando queremos  instalar  un  paquete  rpm,
+hemos  de bajárnoslo  nosotros mismos  y efectuar  las operaciones  de
+instalación.  La aplicación  que  se utiliza  para  la instalar  estos
+paquetes es {\tt rpm}. Ésta es su forma de utilización:
+
+\subsubsection{Instalación de paquetes RPM}
+
+RPM se utiliza  principalmente para instalar de  paquetes software. La
+sintaxis general de una orden de instalación {\tt rpm} es:
+
+\begin{verbatim}
+rpm [opciones] [paquetes]
+\end{verbatim}
+
+\noindent donde {\tt opciones} puede ser alguna de las siguientes:
+
+\begin{description}
+
+\item [{\tt -v}:] Muestra por  pantalla el trabajo que está realizando
+RPM.
+
+\item [{\tt  -h o --hash}:] Imprime  en pantalla el carácter  {\bf \#}
+muchas veces seguidas mientras se está instalando el paquete.
+
+\item [{\tt  --percent}:] Muestra en pantalla  el porcentaje realizado
+mientras se extraen los ficheros de un paquete.
+
+\item [{\tt --test}:] Realiza el proceso de instalación de un paquete,
+pero no instala nada. Se utiliza  más bien para detectar problemas que
+pudieran surgir en la instalación.
+
+\item [{\tt --nodeps}:] No  se realizan verificaciones de dependencias
+antes de la instalación de un paquete.
+
+\item  [{\tt --force}:]  Fuerza la  instalación de  un paquete  aunque
+surjan problemas de conflictos.
+
+\end{description}
+
+Cuando se le pasan opciones  a RPM, independientemente del modo, todas
+las opciones indicadas  por una sola letra se pueden  unir formando un
+único bloque. Así, si se hace:
+
+\begin{verbatim}
+rpm -i -v -h vim-4.5-2.i386.rpm
+\end{verbatim}
+
+\noindent sería equivalente a
+
+\begin{verbatim}
+rpm -ivh vim-4.5-2.i386.rpm
+\end{verbatim}
+
+Observemos que este paquete sigue el convenio de nomenclatura:
+
+\begin{verbatim}
+nombre-versión-emisión.arquitectura.rpm
+\end{verbatim}
+
+Puede ocurrir que se intenta instalar el paquete ``dosemu''
+
+\begin{verbatim}
+# rpm -ivh dosemu-0.66.2-1.i386.rpm
+
+failed  dependences: kernel  >=  2.2.16 is  needed by  dosemu-0.66.2-1
+dosemu = 0.64.1 is needed by xdosemu-0.64.1-1 
+\end{verbatim}
+
+Estos mensajes indican dos cosas: Es necesario actualizar a la versión
+2.2.16 del  kernel y, si se  instala, una versión más  moderna de {\tt
+dosemu}, también  habrá queinstalar  una versión  más moderna  de {\tt
+xdosemu}. Aunque no suele ser una buena idea ignorar estos errores, en
+caso de que se quiera instalar  sin atender a estos mensajes, sólo hay
+que usar la opción {\tt --nodeps}.
+
+\subsubsection{Actualización de paquetes RPM}
+
+El modo de actualización de  RPM proporcina un método sencillo renovar
+paquetes ya instalados a versiones más  modernas. Su uso es similar al
+de la instalación:
+
+\begin{verbatim}
+rpm -U [opciones] [paquetes]
+\end{verbatim}
+
+\subsubsection{Desinstalación de paquetes RPM}
+
+El modo  de desinstalación  de RPM proporciona  un método  limpio para
+eliminar los archivos que pertenecen a un determinado paquete y que se
+encuentran en diferentes lugares.
+
+Muchos paquetes  instalan ficheros  en {\tt /etc},  {\tt /usr}  y {\tt
+/lib}, por lo  que puede ser complicado eliminarlos, pero  con RPM, se
+puede desinstalar un paquete completo con la orden:
+
+\begin{verbatim}
+rpm -e [opciones] [paquetes]
+\end{verbatim}
+
+Hay que tener  en cuenta que para desinstalar sólo  hay que indicar el
+nombre de la aplicación, no el del paquete, como se hace en el proceso
+de instalación.
+
+\subsubsection{Pidiendo ayuda a  RPM}
+
+Como es obvio,  RPM tiene muchísimas opciones y  también puede ocurrir
+que no nos acordemos de alguna. Entonces podemos pedirle ayuda a RPM:
+
+\begin{verbatim}
+rpm -h
+\end{verbatim}
+
+Con esto tenemos  para saber manejar el RPM de  forma básica. El resto
+son horas y ganas.
 
 
+%Esto es de faraox
 \subsection{Sistema de paquetes Deb}
 
 Todos los paquetes deb tienen el siguiente formato:
@@ -46,7 +170,7 @@ paquetes de  forma fácil y  rápida, advirtiendo de las  dependencias y
 recomendando  paquetes. El  sistema APT  engloba varios  comandos como
 apt-get, apt-cache, apt-cdrom,...
 
-\subsection{El fichero /etc/apt/sources.list}
+\subsubsection{El fichero /etc/apt/sources.list}
 
 Este fichero  es imprescindible  para la  instalación de  paquetes con
 APT. En  él se guardan  las direcciones de  donde APT se  descarga los
@@ -104,7 +228,7 @@ redistribuir el código,etc).
 
 \end{itemize}
 
-\subsection{Apt-get}
+\subsubsection{Apt-get}
 
 El comando {\bf  apt-get} se utiliza para la  manipulación de paquetes
 deb. Permite la instalación de paquetes, borrado, \dots
@@ -113,7 +237,7 @@ deb. Permite la instalación de paquetes, borrado, \dots
 
 \begin{table}[htbp]
 \centering
-\begin{tabular}{|c|p{0.88\textwidh}|}
+\begin{tabular}{|c|p{0.88\textwidth}|}
 \hline
 {\tt apt-get install paquete1 paquete2 ...} & Instala paquetes. \\
 {\tt apt-get remove paquete1 paquete2 ...} & Borra paquetes. \\
@@ -127,7 +251,9 @@ diferentes paquetes disponibles. \\
 que modifica las dependencias por la de las nuevas versiones de los
 paquete. \\
 {\tt apt-get build-dep paquete1 paquete2 ...} & Instala los paquetes necesarios para la compilación del código fuente de los paquetes.\\
-{\tt apt-get clean} & Elimina los ficheros que se encuentran en /var/cache/apt/archives y /var/cache/apt/archives/partial. Ahí se encuentran los paquetes que hemos descargado para instalar.
+{\tt apt-get clean} & Elimina los ficheros que se encuentran en
+/var/cache/apt/archives y /var/cache/apt/archives/partial. Ahí se
+encuentran los paquetes que hemos descargado para instalar. \\
 \hline
 \end{tabular}
 \caption{Opciones principales de apt-get}
@@ -149,7 +275,7 @@ bajado. \\
 \caption{Otras opciones del apt-get}
 \end{table}
 
-\subsection{Apt-cache}
+\subsubsection{Apt-cache}
 
 El  comando apt-cache  trabaja  con  la caché  de  los paquetes.  Este
 comando no  manipula el  estado del  sistema, así  que lo  pueden usar
@@ -175,14 +301,14 @@ paquete.
 
 \end{description}
 
-\subsection{El fichero {\tt /etc/apt/apt.conf}}
+\subsubsection{El fichero {\tt /etc/apt/apt.conf}}
 
 El fichero apt.conf sirve para la configuración por defecto de APT. En
 el fichero podemos, por ejemplo, darle  las órdenes al APT para el uso
 de  un  proxy.  Podemos  encontrar  un ejemplo  del  fichero  en  {\tt
 /usr/share/doc/apt/examples/configure-index.gz}
 
-\subsection{Apt-cdrom}
+\subsubsection{Apt-cdrom}
 
 El comando  apt-cdrom permite añadir nuevos  CD-ROM's al sources.list.
 Para añadir un cdrom la orden es {\tt apt-cdrom add}
@@ -329,7 +455,7 @@ PID USER     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME COMMAND
 \end{verbatim}
 \begin{table}[htbp]
 \centering
-\begin{tabular}{|c|p{0.88\textwidh}|}
+\begin{tabular}{|c|p{0.88\textwidth}|}
 \hline
 {\tt espacio} & Actualiza la pantalla \\
 {\tt Ctrol + L} & Borra y reescribe la pantalla \\
@@ -347,7 +473,7 @@ PID USER     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME COMMAND
 \caption{Teclas para la interactuación con el top}
 \end{table}
 
-\subsection*{Nice:prioridad en procesos}
+\subsection{{\bf Nice}: prioridad en procesos}
 
 Una CPU tiene que compartir su  tiempo de cálculo con varios procesos.
 {\tt  Nice} es  un programa  que permite  cambiar la  prioridad de  un
@@ -377,7 +503,7 @@ Shell Script y lo copiamos al directorio /etc/init.d/. Si queremos que
 se  inicie automáticamente  al arrancar  escribimos: {\tt  update-rc.d
 servicio defaults}
 
-\section{Los archivos de registro }
+\section{Los archivos de registro}
 
 Los ficheros de registro (logging files) se almacenan los resultados e
 información útil de algunos programas.  Éstos son muy importantes para
@@ -397,7 +523,7 @@ toda la información sobre lo que ocurre en nuestra máquina.
 información  más simple.  En  el podemos  controlar,  por ejemplo,  la
 información del demonio pppd.
 
-\item [\verb+~/.bash\_history+:] Estos  ficheros muestran los comandos
+\item [{\tt \~/.bash\_history}:] Estos  ficheros muestran los comandos
 que han sido ejecutados por los usuarios desde la consola.
 
 \item [wtmp:]  En el  hay un  listado de todas  las conexiones  que ha
