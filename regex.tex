@@ -4,30 +4,99 @@
 
 
 \chapter{Expresiones regulares}
+\index{Expresiones regulares}
 \label{regex.tex}
 
-\index{Expresiones regulares}
+Las expresiones  regulares se comprenden  mejor desde su  utilidad que
+desde su definición, así que vamos  a introducirlas con el ejemplo que
+utilizan en el libro \cite{mastregex}.
 
-Una {\em expresión regular} es un  tipo de expresiones de uso común en
-programación.  Define  una  serie  de  reglas  que  debe  cumplir  una
-expresión para considerar  que {\em encaja} con  la expresión regular.
-Esto se  consigue utilizando  caracteres con  significados especiales,
-que son \verb_. ^ $ [ ] \ * -_
+Imagina que  necesitas una herramienta para  buscar palabras repetidas
+en  documentos,  cosas  como   ``esto  esto'',  un  problema  bastante
+frecuente en  documentos que son  editados una  y otra vez  (como este
+libro). 
 
-% ¿es / un caracter especial en las expresiones regulares en general?
+Tendrías que  escribir una solución que:  detectara palabras repetidas
+de una línea a  la siguiente, cuando una palabra está  al final de una
+línea y también al principio de  la siguiente línea; que no tuviera en
+cuenta  si las  letras están  en minúsculas  o mayúsculas  y encontrar
+palabras  repetidas en  medio de  código HTML,  \LaTeX, \LyX~  u otros
+lenguajes de marcado usados en documentación.
 
-En  una expresión  regular,  \verb_._ encaja  con cualquier  caracter,
-\verb.$. con  el final de  la línea, \verb.^.  con el principio  de la
-línea cuando  es el primero en  la expresión regular, mientras  que en
-otro caso encaja con cualquier caracter  que no sea el que le preceda.
-Los caracteres \verb.-., \verb.[.  y \verb.]. permiten definir rangos,
-\verb.*.  extiende el  significado de  la expresión  que le  preceda a
-ninguna o varias ocurrencias de la misma.
+Esto  es un  problema  real,  y el  autor  del libro  \cite{mastregex}
+escribió  esta  solución y  se  vió  sorprendido  por la  cantidad  de
+palabras  repetidas que  encontró en  el propio  libro. Este  problema
+puede  resolverse  de   muchas  maneras  y  en   muchos  lenguajes  de
+programación,  pero   las  expresiones  regulares  son   sin  duda  la
+herramienta que hacen este tipo de  problemas más fáciles y rápidos de
+resolver.
 
-% La barra  \verb./. se  utiliza para separar  los  patrones de  búsqueda.
-Para utilizar alguno de estos  caracteres de forma que encajen consigo
-mismos (por  ejemplo para buscar  un punto en  el texto) hay  que {\em
-escaparlos} anteponiéndoles una barra invertida (\verb.\.).
+\section{Definición de expresión regular}
+
+Una {\em expresión  regular} es un literal (cadena  de caracteres) que
+define  una  serie de  reglas  que  debe  cumplir una  expresión  para
+considerar que {\em encaja} con la expresión regular. Esto se consigue
+utilizando caracteres con significados especiales para {\em describir}
+un patrón con el que deben encajar las expresiones.
+
+Los  caracteres   con  significados   especiales  se   denominan  {\em
+metacaracteres}, y aunque  la mayoría son comunes  entre los distintos
+estilos   de  expresiones   regulares  hay   diferencias  y   conviene
+estudiarlos  desde la  herramienta en  la que  usemos las  expresiones
+regulares. Así, nos encontramos con  expresiones regulares de UNIX, de
+VI, de PERL, de Emacs, etc. y no tienen la misma sintaxis exactamente.
+
+Dado  que  esto  no  es  un  curso  de  programación  no  veremos  las
+expresiones regulares al  estilo de lenguajes de  programación sino al
+estilo de los editores de texto.
+
+\section{Expresiones regulares en VI \& VIM}
+\index{Expresiones regulares!con VIM }
+
+Una de las  funcionalidades más queridas de {\sf VI}  es la búsqueda y
+\index{VIM!búsqueda y substitución}
+sustitución de texto.  Para empezar pensemos en  simples palabras, por
+ejemplo en substituir  la palabra ``coche'' por  la palabra ``carro''.
+El  comando para  la substitución  es {\tt  :s} y  tiene el  siguiente
+esquema:
+
+\begin{verbatim}
+:rango/busca/sustituye/[gc]
+\end{verbatim}
+
+Lo que pongas en {\tt rango}  determina la región del fichero que será
+afectada por el  comando. Puedes poner dos números  de línea separados
+por  coma para  afectar  a  todas las  líneas  entre  esas dos  (ambas
+inclusive), o  bien substituir el  número de  la segunda línea  por un
+\verb.$. para extender la región  afectada hasta el final del fichero.
+Si en lugar de líneas poner \verb.%. afectará a todo el fichero.
+
+Las opciones  {\tt g} y  {\tt c} del  final son opcionales.  La opción
+{\tt g} hace  que se substituyan todas las ocurrencias  en cada línea,
+ya que si  no la especificas sólo se substituye  la primera ocurrencia
+de cada línea.  La opción {\tt c} hace que  {\tt VI} pida confirmación
+antes de substituir cada ocurrencia.
+
+La expresión {\tt busca} es el patrón que {\sf VIM} buscará. Puede ser
+una  palabra,  o  más  en  general una  {\em  expresión  regular}.  La
+expresión {\tt substituye}  es el patrón que {\sf  VIM} utilizará para
+substituir en las ocurrencias, y  también puede ser una {\em expresión
+regular}.
+
+En  {\sf  VI}  las   expresiones  regulares  utilizan  los  siguientes
+metacaracteres: \verb_. ^ $ [ ] \ * - /_
+
+El punto  (\verb_._) encaja  con cualquier  caracter, \verb.$.  con el
+final de la línea, \verb.^. con el  principio de la línea cuando es el
+primero en la expresión regular, mientras  que en otro caso encaja con
+cualquier caracter que  {\bf no} sea el que le  suceda. Los caracteres
+\verb.-.,  \verb.[.  y  \verb.].  permiten  definir  rangos,  \verb.*.
+extiende el  significado de la  expresión que  le preceda a  ninguna o
+varias  ocurrencias de  la misma.  La barra  \verb./. se  utiliza para
+separar  los  patrones de  búsqueda.  Para  utilizar alguno  de  estos
+caracteres  de forma  que  encajen consigo  mismos  (por ejemplo  para
+buscar un punto en el  texto) hay que {\em escaparlos} anteponiéndoles
+una barra invertida (\verb.\.).
 
 Otros  caracteres   adquieren  un  significado  especial   cuando  son
 precedidos de la barra invertida.  Así \verb.\|. es el operador ``o'',
@@ -35,17 +104,17 @@ es decir la  expresión \verb.casa\|coche. encaja con {\tt  casa} y con
 {\tt coche}.  Los símbolos de desigualdad  permiten delimitar palabras
 en un patrón, usando \verb.\<. que  encaja con el principio de palabra
 y \verb.\>. con  el final. Así podremos sustituir la  palabra {\tt vi}
-por {\tt vim} sin que cambien palabras del texto como vivir, etc.
+por {\tt vim} sin que cambien palabras del texto como {\tt vivir}.
 
-% \begin{verbatim}
-% :s/\<vi\>/vim
-% \end{verbatim}
+\begin{verbatim}
+:s/\<vi\>/vim
+\end{verbatim}
 
-Podemos utilizar el  carácter \verb.^. le indica al vim  que no exista
+Podemos  utilizar el  carácter  \verb.^. para  indicar  que no  exista
 ningun carácter antes  de la expresión regular  que queremos sustituir
-en  esa  línea,  y el  carácter  \verb.$.  le  indica  al vim  que  no
-exista ningun carácter  despuéas de la expresión  regular que queremos
-sustituir en usa línea. Vamos a ver unos ejemplos:
+en esa línea, y el carácter  \verb.$. para indica que no exista ningun
+carácter despuéas  de la expresión  regular que queremos  sustituir en
+usa línea. Vamos a ver unos ejemplos:
 
 \begin{verbatim}
 :s/^vi/vim/g
@@ -70,7 +139,7 @@ trabajar con expresiones regulares.
 
 \begin{table}[htbp]
 \centering
-\index{VIM!metacaracteres}
+\index{Expresiones regulares!metacaracteres con VIM }
 \begin{tabular}{|c|l|}
 \hline
 {\tt .}         & Cualquier caracter \\
@@ -89,14 +158,14 @@ Vamos a poner un ejemplo con este tipo de comandos. Si queremos buscar
 en el texto fechas con el formato DD/MM/AAAA, lo que haríamos sería:
 
 \begin{verbatim}
-/\d\d/\d\d/\d\d\d\d
+/\d\d\/\d\d\/\d\d\d\d
 \end{verbatim}
 
 O por ejemplo  si buscamos palabras que empiezen con  mayúsculas de un
 modo sencillo podemos hacer:
 
 \begin{verbatim}
-/\u\l
+/\<\u
 \end{verbatim}
 
 Ahora vamos a  introducir unos elementos nuevos  para hacer reemplazos
@@ -169,35 +238,4 @@ cualquier número espacios al principio de la línea (\verb.\(\s\+\).) y
 que detrás contenga algún texto(\verb.\(\w\+\)). y lo sustituye por la
 exresión(\verb.\2.), es  decir, solo  mantiene el grupo  \verb.\2., el
 que contiene la palabra.
-
-
-\section{El nombre pa'luego}
-
-\section{Expresiones regulares con VI \& VIM}
-
-Una de las  funcionalidades más queridas de {\sf VI}  es la búsqueda y
-\index{VIM!búsqueda y substitución}
-sustitución de texto.  Para empezar pensemos en  simples palabras, por
-ejemplo en substituir  la palabra ``coche'' por  la palabra ``carro''.
-El  comando para  la substitución  es {\tt  :s} y  tiene el  siguiente
-esquema: \verb.:rangos/busca/sustituye/[gc].
-
-Lo que  pongas {\tt rango}  determina la  región del fichero  que será
-afectada por el  comando. Puedes poner dos números  de línea separados
-por  coma para  afectar  a  todas las  líneas  entre  esas dos  (ambas
-inclusive), o  bien substituir el  número de  la segunda línea  por un
-\verb.$. para extender la región  afectada hasta el final del fichero.
-Si en lugar de líneas poner \verb.%. afectará a todo el fichero.
-
-Las opciones  {\tt g} y  {\tt c} del  final son opcionales.  La opción
-{\tt g} hace  que se substituyan todas las ocurrencias  en cada línea,
-ya que si  no la especificas sólo se substituye  la primera ocurrencia
-de cada línea.  La opción {\tt c} hace que  {\tt VI} pida confirmación
-antes de substituir cada ocurrencia.
-
-La expresión {\tt busca} es el patrón que {\sf VIM} buscará. Puede ser
-una  palabra,  o  más  en  general una  {\em  expresión  regular}.  La
-expresión {\tt substituye}  es el patrón que {\sf  VIM} utilizará para
-substituir en las ocurrencias, y  también puede ser una {\em expresión
-regular}.
 

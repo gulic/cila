@@ -24,6 +24,9 @@ all: $(FILES) $(EPSS) $(EXAMPLES) book.ind book.bbl
 	latex book
 	dvips -o $(NAME).ps book.dvi
 
+images: $(EPSS) 
+	echo listo
+
 %.jpg: %.png
 	pngtopnm $< | pnmtojpeg > $@
 
