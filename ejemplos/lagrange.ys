@@ -1,18 +1,9 @@
-/*f(x) := (x) * (x - 5) * (x + 5) / 200;*/
 f(x) := 1.0 / (1.0 + x^2);
-
-n  := 10;
-xl := {};
+xl := {-5, -2, 0, 3, 5};
 yl := {};
-
-For ( i := -n , i <= n , i++ ) [
-	x  := i;/* + 0.5 * Random();*/
-	xl := Append (xl, x);
-	yl := Append (yl, N(f(x))/* + 0.5 * Random()*/ );
+n := Length (xl);
+For ( i := 1 , i <= n , i++ ) [
+	yl := Append (yl, Eval (f (xl[i])));
 ];
-
-Clear (x);
-
-pol (x) := LagrangeInterpolant (xl, yl, x);
-
-GnuPlot (-n, n, 25, {pol(x), f(x)});
+pol (x) := Eval (LagrangeInterpolant (xl, yl, x));
+GnuPlot (xl[1], xl[n], 50, {f(x), pol(x)});

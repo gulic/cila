@@ -1,0 +1,26 @@
+Sturm (P, x) := [
+    Local (L, S, m, i);
+
+    L := List ();
+    L := Append (L, P(x));
+    L := Append (L, D(x) P(x));
+
+    /* El número de términos en la sucesión de Sturm asociada a P(x)
+     * es siempre no superior al grado del polinomio P(x) */
+    For ( i := 3 , i <= Degree(P(x)) , i++ )
+        L := Append (L, - Mod ( L[i-2] , L[i-1] ) );
+
+    m := 0;
+    While ( m < Length (L) And Not IsZero (L[m+1]) ) m++;
+    
+    S := List ();
+    For (i := 1, i <= m, i++)
+      S := Append (S, Simplify (Div ( L[i] , L[m]) ) );
+
+    S;
+];
+
+P(x) := RandomPoly (x, 3, 1, 10);
+PrettyForm (P(x));
+S := Sturm (P, x);
+PrettyForm (S);

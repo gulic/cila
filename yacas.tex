@@ -330,7 +330,8 @@ comas.  Los  vectores  son  listas,  y  las  matrices  son  listas  de
 listas. De  hecho, cualquier expresión  matemática en Yacas  puede ser
 transformada en una  lista. Para acceder a los elementos  de una lista
 puedes  usar la  notación habitual  en los  corchetes, y  no sólo  con
-números sino también con secuencias de ellos.
+números  sino también  con secuencias  de ellos.  Los elementos  de la
+lista pueden ser cualquier tipo de objetos.
 
 \begin{verbatim}
 In> lista := {a, b, c, d, e, f};
@@ -345,60 +346,180 @@ Fíjate  que los  espacios a  ambos  lados del  operador \verb+..+  son
 necesarios  para distinguir  estos puntos  de los  que podrían  formar
 parte de un número.
 
-También puedes  indexar una lista  con palabras, no sólo  con números,
-mientras que  los elementos de la  lista pueden ser cualquier  tipo de
-objetos. Esto  te permite tener  pequeñas bases  de datos en  forma de
-listas asociativas con parejas clave -- valor.
+También puedes  indexar una lista  con palabras, no sólo  con números.
+Esto  te permite  tener pequeñas  bases de  datos en  forma de  listas
+asociativas con parejas clave -- valor.
 
 \begin{verbatim}
-In> pers := {};
+In> boy := {};
 Out> {};
-In> pers["nombre"] := "Eric";
+In> boy["nombre"] := "Eric";
 Out> True;
-In> pers["apellido"] := "Cartman";
+In> boy["apellido"] := "Cartman";
 Out> True;
-In> pers["edad"] := 7.34;
+In> boy["edad"] := 7.34;
 Out> True;
-In> pers["educado"] := False;
+In> boy["educado"] := False;
 Out> True;
-In> pers
-Out> {{"educado",False},{"edad",7.34},{"apellido","Cartman"},{"nombre","Eric"}};
+In> boy
+Out> {{"educado",False},{"edad",7.34},{"apellido","Cartman"},
+{"nombre","Eric"}};
 \end{verbatim}
 
-\section{Programando con Yacas}
-
-\section{Gráficas con Yacas y GNUplot}
+\section{Gráficas con GNUplot}
 
 Yacas  incorpora la  posibilidad  de  representar gráficas  utilizando
 GNUplot,  si  bien esta  capacidad  depende  de que  tengas  instalado
-también el programa  GNUplot. La función para  representar gráficas es
-\verb+GnuPlot()+ y  recibe cuatro  parámetros: el  valor mínimo  de la
-variable,  el  valor  máximo  de  la variable,  el  número  de  puntos
-utilizados para la representación y la función para representar. En el
-siguiente  ejemplo  calculamos  el polinomio  interpolador  de  cuatro
-puntos y  lo representamos junto  a la función $f(x)  = 2 \cdot  e^x -
-x^2$.
+también el programa  GNUplot. Para saber si tu versión  de Yacas tiene
+soporte  para  GNUplot fíjate  en  la  primera  línea que  imprime  el
+intérprete cuando  arranca, si  aparece \verb+[gnuplot.ys]+ es  que tu
+versión de Yacas soporte para gráficas con GNUplot.
 
 \begin{verbatim}
-In> f(x) := 2 * Exp(x) - x^2;
+$ yacas
+[editvi.ys] [gnuplot.ys] [unix.ys]
+\end{verbatim}
+
+La  función para  representar  gráficas es  \verb+GnuPlot()+ y  recibe
+cuatro parámetros: el valor mínimo de  la variable, el valor máximo de
+la variable, el  número de puntos utilizados para  la representación y
+la función para representar. En  el siguiente ejemplo calculamos el el
+polinomio de Taylor de orden 5  para la función $\sin(x)$ en el origen
+y  la representamos  (en  rojo)  junto con  la  función $\sin(x)$  (en
+verde).
+
+\begin{verbatim}
+In> f(x) := Eval (Taylor (x, 0, 5) Sin(x) )
 Out> True;
-In> xlist := {0.0, 1.0, 1.5, 2.25};
-Out> {0.0,1.0,1.5,2.25};
-In> ylist := {2.0, 4.4366, 6.7134, 13.9130};
-Out> {2.0,4.4366,6.7134,13.9130};
-In> p (x) := LagrangeInterpolant (xlist, ylist, x);
-Out> True;
-In> GnuPlot(0, 3, 100, {f(x), p(x)})
+In> GnuPlot (-Pi(), Pi(), 50, {f(x), Sin(x)})
 GnuPlot: created file gnuplot.tmp/gnudata.in1
 GnuPlot: created file gnuplot.tmp/gnudata.in2
 Out> True;
 \end{verbatim}
 
 \begin{figure}[htbp]
-\centering\includegraphics[width=0.7\textwidth]{imagenes/yacas_gnuplot.eps}
+\centering\includegraphics[width=0.65\textwidth]{imagenes/yacas_gnuplot.eps}
 \caption{Representación gráfica con GNUplot desde Yacas}
 \end{figure}
 
-\section{Poturrí de funciones útiles}
+\section{Programando con Yacas}
 
-\section{Un ejemplo práctico}
+Si bien  el intérprete de  Yacas proporciona una interfaz  cómoda para
+ejecutar  cálculos, cuando  éstos  se complican  resulta más  práctico
+escribir un ``script'' y ejecutarlo  con Yacas. Para hacer un programa
+con Yacas escribe en un fichero  la secuencia de comandos que componen
+el  programa, incluyendo  definiciones de  funciones. Los  ficheros de
+script  de Yacas  suelen tener  tener la  extensión {\tt  .ys} (no  es
+obligatorio).  
+
+Para ejecutar  el script simplemente  ejecuta Yacas dándole  el nombre
+del fichero como parámetro. La opción {\tt -c} del comando {\tt yacas}
+hace que Yacas  no muestre los prompts \verb+In>+  y \verb+Out>+ (útil
+para sesiones no interactivas, como el caso de ejecutar un script). El
+siguiente ejemplo  muestra como ejecutar  un script en Yacas,  en este
+caso el script es el fichero de ejemplo {\tt lagrange.ys}
+
+\begin{verbatim}
+$ yacas -c lagrange.ys
+\end{verbatim}
+
+\begin{ejemplo}{lagrange.ys}{Script en Yacas que interpola una función}
+Script en Yacas  que muestra un interpolante de Lagrage  para una nube
+de cinco  puntos tomados  de la función  $f(x) =  \frac{1}{1+x^2}$. En
+este  ejemplo el  interpolante de  Lagrange  no es  el adecuado,  pero
+nuestra intención  no es interpolar  $f(x)$
+\end{ejemplo}
+
+\section{Un ejemplo real}
+
+A continuación explicamos un ejemplo real de uso de Yacas: calcular la
+sucesión de Sturm  asociada a un polinomio real de  una variable real.
+Esta  sucesión se  utiliza en  el teorema  de Sturm  para calcular  el
+número de  raíces reales de un  polinomio en un intervalo  de la recta
+real.  El  algoritmo para  calcular  esta  sucesión de  polinomios  no
+es  complicado, pero  por  si  no lo  conoces  aquí  tienes una  breve
+explicación:
+
+El algoritmo  de Sturm parte  de un polinomio con  coeficientes reales
+$p(x)$  y su  derivada $p'(x)$.  Tomando $f_0(x)  = p(x)$  como primer
+polinomio  y $f_1(x)  =  p'(x)$ como  segundo  polinomio, se  realizan
+sucesivas divisiones euclídeas utilizando  en cada división el divisor
+de la  anterior como dividendo y  el opuesto del resto  de la anterior
+como divisor. Al  cabo de un número finito de  iteraciones, en las que
+$f_j(x)$ es el resto de la división $j-1$, se obtiene un resto nulo en
+la iteración $m+1$.
+
+$$\begin{array}{r@{\,=\,}l}
+f_0(x) & f_1(x) q_1(x) - f_2(x)          \\
+f_1(x) & f_2(x) q_2(x) - f_3(x)          \\
+\multicolumn{2}{c}{\vdots}               \\
+f_{m-2}(x) & f_{m-1}(x) q_1(x) - f_m(x)  \\
+f_{m-1}(x) & f_m(x) q_m(x)
+\end{array}$$
+
+A  partir de  los polinomios  $f_j$ obtenidos  en estas  divisiones se
+construye la sucesión de Sturm asociada a $p(x)$, que viene dada por
+
+$$\left\{\hat{f}_j(x) = \frac{f_j(x)}{f_m(x)}\right\}_{j=0}^{n}$$
+
+El teorema  de Sturm garantiza que  el número de raíces  del polinomio
+$p(x)$ en  el intervalo  $[a,b]$ es exactamente  $V(a) -  V(b)$, donde
+$V(x_0)$ es el número de variaciones  de la sucesión de Sturm evaluada
+en el punto $x_0$,  i.e. el número de cambios de  signo en la suceción
+$\left\{   \hat{f}_0(x_0),   \hat{f}_1(x_1),  \ldots,   \hat{f}_m(x_m)
+\right\}$.
+
+Para implementar esto en Yacas definimos la función \verb+Sturm()+ que
+recibe el polinomio \verb+P+ junto con la variable en la que éste está
+expresado \verb+x+  y genera una  lista \verb+L+ con el  polinomio, su
+derivada  y los  sucesivos restos  de las  divisiones euclídeas.  Para
+ahorrar esfuerzo  computacional acotamos el  número de términos  de la
+lista con el grado del polinomio \verb+P(x)+, ya que éste es el número
+máximo de divisiones necesarias para encontrar el máximo común divisor
+del polinomio y  su derivada. Luego busca el último  polinomio no nulo
+en  \verb+L+, que  es  el  máximo común  divisor  del  polinomio y  su
+derivada, y construye la sucesión de Sturm en una nueva lista \verb+S+
+que  finalmente devuelve  como  valor  de retorno  de  la función.  La
+función \verb+Simplify+ simplifica cualquier expresión que reciba.
+
+\begin{ejemplo}{sturm.ys}{Script en Yacas que implementa el algoritmo de Sturm}
+Script en Yacas que implementa el algoritmo de Sturm.
+\end{ejemplo}
+
+En  el  script  escribimos  esta   función  y  añadimos  los  comandos
+necesarios para ejecutar un  test. La función \verb+RandomPoly+ genera
+un polinomio aleatorio, lo mostramos con \verb+PrettyForm+, calculamos
+su sucesión de Sturm y la mostramos con \verb+PrettyForm+ de nuevo. El
+resultado de ejecutar el script es el siguiente:
+
+\begin{verbatim}
+     3         2            
+7 * x  + 10 * x  + 3 * x + 3
+
+
+/                                          \
+|     /           2                      \ |
+| 9 * \ -96605 * x  + 73253 * x - 181452 / |
+| ---------------------------------------- |
+|                 2685619                  |
+|                                          |
+| 81 * ( -139 * x - 117 )                  |
+| -----------------------                  |
+|          19321                           |
+|                                          |
+| 1                                        |
+\                                          /
+\end{verbatim}
+
+Este ejemplo  real ha sido  extraido del programa presentado  por unos
+alumnos como trabajo para  asignatura ``Álgebra Computacional'' que se
+imparte en la Facultad de Matemáticas  de la Universidad de La Laguna.
+En  teoría  debieron realizar  el  trabajo  utilizando Maple  V,  pero
+propusieron al profesor la alternativa  de programarlo en Yacas y éste
+aceptó con  curiosidad. El programa  aproxima las raíces reales  de un
+polinomio utilizando el  algoritmo de Sturm para aislar  las raíces en
+intervalos y aproximándolas  con el método de la  bisección (raíces de
+multiplicidad  impar)  o  con  el método  de  cristalización  simulada
+(raíces de multiplicidad par). El trabajo fué expuesto en clase y tuvo
+la calificación de sobresaliente, el código y las transparencias están
+disponibles en {\tt http://www.fmat.ull.es/\~{}miguev/algcomp}

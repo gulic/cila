@@ -113,8 +113,8 @@
 \newcommand{\source}{#1} %                     Descripción corta del ejemplo
 \newcommand{\descripcion}{{\tt[#1]} #2} %      Descripción larga del ejemplo
 \vspace*{2mm}%                                 Pequeño margen superior 
-\fbox{\sf Fichero \tt \source}\newline%        Nombre del fichero del ejemplo
-\rule[5mm]{\textwidth}{1pt} %                  Regla separadora al principio
+\noindent\fbox{\sf Fichero \tt \source}%      Nombre del fichero del ejemplo
+\newline\rule[5mm]{\textwidth}{1pt} %          Regla separadora al principio
 \stepcounter{nejemplo}%                        Se incremente el contador y
 \addcontentsline{lde}{section}{%               se añade una línea al índice
 \protect\numberline{\thechapter.\thenejemplo}\descripcion}%  de ejemplos
