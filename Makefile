@@ -7,20 +7,22 @@ LATEX = latex
 DVIPS = dvips
 NAME = Libro_CILA
 
-.PHONY: clean
 PNGS = $(wildcard imagenes/*.png)
 JPGS = $(wildcard imagenes/*.jpg)
 EPSS = $(JPGS:.jpg=.eps) $(PNGS:.png=.eps)
 
+CJPGS = $(wildcard cubierta/*.jpg)
+CEPSS = $(CJPGS:.jpg=.eps)
+
 TEXS = $(wildcard *.tex)
+IMAGES = $(wilcard imagenes/*.eps)
+EXAMPLES = $(wilcard ejemplos/*.*)
 
 FILES = $(TEXS) cila.sty biblio.bib
 
-IMAGES = $(wilcard imagenes/*.eps)
-
-EXAMPLES = 	$(wilcard ejemplos/*.*)
-
-all: $(EPSS) 
+all: $(FILES) $(EPSS) $(EXAMPLES) book.ind book.bbl
+	latex book
+	dvips -o $(NAME).ps book.dvi
 
 %.jpg: %.png
 	pngtopnm $< | pnmtojpeg > $@
@@ -37,14 +39,6 @@ all: $(EPSS)
 %.pdf: %.ps
 	ps2pdf $< $@
 
-CJPGS = $(wildcard cubierta/*.jpg)
-CEPSS = $(CJPGS:.jpg=.eps)
-
-cubierta: cubierta.tex $(CEPSS)
-	latex cubierta
-	dvips -o Cubiertas_A3.ps cubierta.dvi
-	ps2pdf Cubiertas_A3.ps Cubiertas_A3.pdf
-
 book.ind: $(FILES)
 	latex book
 	makeindex book.idx
@@ -53,9 +47,10 @@ book.bbl: $(FILES)
 	latex book
 	bibtex book
 
-all: $(FILES) $(EPSS) $(EJEMPLOS) book.ind book.bbl
-	latex book
-	dvips -o $(NAME).ps book.dvi
+cubierta: cubierta.tex $(CEPSS)
+	latex cubierta
+	dvips -o Cubiertas_A3.ps cubierta.dvi
+	ps2pdf Cubiertas_A3.ps Cubiertas_A3.pdf
 
 pdf: all
 	ps2pdf $(NAME).ps $(NAME).pdf
@@ -77,7 +72,7 @@ clean_splits:
 	rm -f $(NAME)_*.ps
 	rm -f $(NAME)_*.pdf
 
-dist: $(FILES) $(IMAGES) $(EJEMPLOS)
+dist: $(FILES) $(IMAGES) $(EXAMPLES)
 	mkdir $(DISTDIR)
 	cp Makefile LEEME *.tex *.sty *.bib $(DISTDIR)
 	cp -r imagenes $(DISTDIR)
@@ -86,7 +81,7 @@ dist: $(FILES) $(IMAGES) $(EJEMPLOS)
 	tar cfz $(DISTDIR).tar.gz $(DISTDIR)
 	rm -rf $(DISTDIR)
 
-install: $(FILES) $(IMAGES) $(EJEMPLOS) $(NAME).ps
+install: $(FILES) $(IMAGES) $(EXAMPLES) $(NAME).ps
 	install -m 755 -d $(DOCSDIR)/$(PACKAGE)
 	ln -s $(DOCSDIR)/cila-ejemplos $(DOCSDIR)/$(PACKAGE)/ejemplos
 	install -m 644 $(NAME).ps $(DOCSDIR)/$(PACKAGE)
@@ -94,6 +89,7 @@ install: $(FILES) $(IMAGES) $(EJEMPLOS) $(NAME).ps
 	#install -m 644 ejemplos/*.* $(DOCSDIR)/$(PACKAGE)/ejemplos
 	#mv -fv ejemplos/.CVS ejemplos/CVS
 
+.PHONY: clean
 clean: clean_splits
 	rm -f *.aux *.log *.dvi *.idx *.ilg *.ind *.toc *.bbl \
 	      *.blg *.lot *.lof *.lde *.exa *.ps *.pdf
