@@ -12,14 +12,14 @@
  VI.  Programación avanzada (?? días)
 
  Módulo I:   Entorno GNU/Linux
- 1. Historia de GNU/Linux. [Félix]
+ 1. Historia de GNU/Linux.                                                 <== Félix
  2. El entorno del intérprete de comandos, con mtools.                     <== Félix
  3. El entorno X-Window, Gnome, KDE.                                       <== Jesús y Carlos C.
- 4. Aplicaciones para Internet: Mozilla, Konqueror, Mutt, SSH              <== ¿¿VOLUNTARIOS??
- 5. Aplicaciones diversas: gnotepad, openoffice, GIMP, acroread            <== ¿¿VOLUNTARIOS??
- 6. Sistemas de ayuda y documentación                                      <== ¿¿VOLUNTARIOS??
+ 4. Aplicaciones para Internet: Mozilla, Konqueror, Mutt, SSH              <== Jesús y Alberto
+ 5. Aplicaciones diversas: gnotepad, openoffice, GIMP, acroread            <== Teresa
+ 6. Sistemas de ayuda y documentación                                      <== Víctor
 
- Módulo II:  Instalación (Debian GNU/Linux 3.0, 8 CDs, 25 plazas)
+ Módulo II:  Instalación (Debian GNU/Linux 3.0, 8 CDs, 25 plazas)          <== René y Edín
  1. Sistema base (particiones y Lilo)
  2. Hardware y kernel (kernel-package)
  3. Administración básica (adduser, floppy, cdrom, APT)
