@@ -1,18 +1,178 @@
 
 \chapter{Yacas}
 
-Yacas is a general purpose easy to use Computer Algebra System (a CAS
-is  a  program  that  can  be used  to  do  symbolic  manipulation  of
-mathematical expressions). It  is built on top of  its own programming
-language designed for this purpose, in which new algorithms can easily
-be implemented. In addition, it  comes with extensive documentation on
-the functionality implemented and methods used to implement them.
+En  este tema  aprenderás a  utilizar el  programa Yacas  para relizar
+cálculos simbólicos.  Este tipo de  cálculos resulta de  gran utilidad
+puesto que  funciona de  la misma  forma que harías  tú mismo  a mano,
+operando con expresiones matemáticas sin calcular el valor numérico de
+cada expresión. Para describir lo que  es Yacas nada mejor que leer la
+información disponible en su página web: {\tt http://yacas.sf.net/}
 
-Yacas es un Sistema de  Álgebra Computacional (en inglés CAS, Computer
-Algebra System)  de propósito general y  fágil de usar. Un  Sistema de
-Álgebra Computacional (SAC) es  un programa que permite manipulaciones
-simbólicas  sobre expresiones  matemáticas. Está  construido sobre  su
-propio lenguaje  de programación diseñado  para este propósito,  en el
-que  se  pueden  implementar  fácilmente  nuevos  algoritmos.  Además,
-incorpora  una documentación  extensa  sobre  las funcionalidades  que
-implementa y los métodos usados para implementarlas.
+\section{¿Qué es Yacas?}
+
+Yacas  es un  Sistema  de  Álgebra Computacional  (en  inglés CAS,  de
+Computer  Algebra  System) de  propósito  general  fácil de  usar.  Un
+Sistema  de Álgebra  Computacional (SAC)  es un  programa que  permite
+manipulaciones simbólicas sobre expresiones matemáticas, reduciendo el
+tiempo necesario  para realizar  cálculos embarazosos  pero triviales.
+Esto se hace  no mediante números, sino mediante símbolos,  por lo que
+el resultado  de una operación  con expresiones matemáticas  puede ser
+una nueva expresión matemática.
+
+Yacas  está  construido  sobre  su  propio  lenguaje  de  programación
+diseñado  para  este  propósito,  en  el  que  se  pueden  implementar
+fácilmente  nuevos  algoritmos.  Además, incorpora  una  documentación
+extensa sobre las funcionalidades que  implementa y los métodos usados
+para implementarlas.
+
+Entre las características que  Yacas implementan encontramos precisión
+arbitraria, números racionales,  vectores, números complejos, cálculos
+con  matrices  (incluyendo  inversas, determinantes  y  resolución  de
+sistemas lineales), derivación, series  de Taylor, resolución numérica
+(método  de Newton),  y un  montón más  de algoritmos  no matemáticos.
+Tiene  también  soporte  básico   para  polinomios  en  una  variable,
+integración de funciones y cálculo tensorial.
+
+\section{Empezando con Yacas}
+
+Yacas  tiene  un  intérprete  de comandos  que  nos  permite  ejecutar
+funciones para probar  lo que queremos programar,  para luego escribir
+un script.  Para intrar al intérprete  de Yacas basta con  ejecutar el
+comando {\tt yacas} en una consola o terminal:
+
+\begin{verbatim}
+$ yacas
+[editvi.ys] [unix.ys] 
+True;
+Numeric mode: "Gmp"
+To exit Yacas, enter  Exit(); or quit or Ctrl-c. Type ?? for help.
+Or type ?function for help on a function.
+Type 'restart' to restart Yacas.
+To see example commands, keep typing Example();
+In>
+\end{verbatim}
+
+La última línea (\verb+In>+) es el prompt de entrada de Yacas, que nos
+indica que  el intérpreta está  esperando nuestras órdenes.  Todas las
+órdenes de Yacas deben terminar con un punto y coma (\verb+;+), aunque
+el intérprete suele  añadirlo si no lo ponemos. Sin  embargo a la hora
+de programar en  Yacas veremos que el punto y  coma hay que escribirlo
+siempre,  de modo  que es  mejor acostumbrarse  a ponerlo  para evitar
+posteriores dolores de cabeza.
+
+Para ir  abriendo el apetito  sigue la sugerencia, ejecuta  la función
+\verb+Ejample();+ varias veces. Por supuesto  no tienes que teclear el
+comando todas las  veces, ya que Yacas cuenta con  edición de línea al
+estilo de  Emacs (utiliza GNU  readline). Esto quiere decir  que todos
+los comandos que  ejecutes en Yacas se almacenarán en  un historial, y
+para repetirlos puedes recuperarlos pulsando  la tecla de cursor hacia
+arriba. Veamos la salida que  produce Yacas tras varias ejecuciones de
+\verb+Ejample();+
+
+\begin{verbatim}
+In> Example();
+Current example : 40!;
+
+Simple factorial of a number.
+
+Out> 815915283247897734345611269596115894272000000000;
+In> Example();
+Current example : D(x)Sin(x);
+
+Taking the derivative of a function (the derivative of Sin(x) with
+respect to x in this case).
+
+Out> Cos(x);
+In> Example();
+Current example : Taylor(x,0,5)Sin(x);
+
+Expanding a function into a taylor series.
+
+Out> x-x^3/6+x^5/120;
+In> Example();
+Current example : Integrate(x,a,b)Sin(x);
+
+Integrate a function.
+
+Out> Cos(a)-Cos(b);
+In> Example();
+Current example : Solve(a+x*y==z,x);
+
+Solve a function for a variable.
+
+Out> (z-a)/y;
+In> Example();
+Current example : Limit(x,0)Sin(x)/x;
+
+Take a limit.
+
+Out> 1;
+\end{verbatim}
+
+Estos ejemplos ilustran  lo fácil que es obtener  buenos resultados en
+cálculos  simbólicos  con  Yacas.  Sin embargo  es  probable  que  los
+resultados  de  los siguientes  ejemplos  no  te resulten  fáciles  de
+interpretar:
+
+\begin{verbatim}
+In> Integrate(x) Expand((x-y)^3)
+Out> x^4/4-(x^3*3*y)/3+(x^2*3*y^2)/2-y^3*x;
+\end{verbatim}
+
+la forma en  que Yacas recibe nuestra orden de  integrar $\int (x-y)^3
+\, dx$ no es nada críptica, pero su respuesta no es precisamente fácil
+de  leer. Esta  forma de  mostrar  las expresiones  matemáticas es  la
+normal  en  Yacas,  pero  no  la única.  Podemos  pedir  a  Yacas  que
+muestre  las  expresiones  de  forma más  ``bonita''  con  la  función
+\verb+PrettyForm()+.
+
+\begin{verbatim}
+In> PrettyForm(%)
+
+ 4    3            2        2         
+x    x  * 3 * y   x  * 3 * y     3    
+-- - ---------- + ----------- - y  * x
+4        3             2              
+
+Out> True;
+\end{verbatim}
+
+El signo \verb+%+  es una referencia que se refiere  siempre al último
+valor  devuelto por  el  intérprete, es  decir lo  que  aparezca a  la
+derecha del  último \verb+Out>+. Esta referencia  sólo está disponible
+cuando usamos Yacas como intérprete  interactivo, no se puede utilizar
+desde un script.
+
+Otras  formas  de mostrar  una  expresión  son  las utilizadas  en  el
+lenguaje  de  programación  C  y  en  el  lenguaje  tipográfico  \TeX.
+Para  mostrar  una  expresión  de estas  formas  están  las  funciones
+\verb+CForm()+  y \verb+TeXForm()+  respectivamente. Fíjate  que estas
+funciones  no devuelven  la  expresión  que muestran,  por  lo que  no
+podemos  utilizar  la  referencia  \verb+%+ dos  veces  seguidas  para
+mostrar  una  expresión  (la  segunda mostraría  la  expresión  lógica
+\verb+True+). Por  eso escribimos  \verb+Integrate(x) Expand((x-y)^3)+
+en cada línea:
+
+\begin{verbatim}
+In> CForm (Integrate(x) Expand((x-y)^3))
+Out> "pow(x, 4.) / 4. - ( pow(x, 3.) * 3. * y)  / 3. + ( pow(x, 2.) * 3. * pow(y
+, 2.))  / 2. - pow(y, 3.) * x";
+In> TeXForm (Integrate(x) Expand((x-y)^3))
+Out> "$\frac{x ^{4}}{4}  - \frac{x ^{3} 3 y}{3}  + \frac{x ^{2} 3 y ^{2}}{2}  - 
+y ^{3} x$";
+\end{verbatim}
+
+La función \verb+CForm()+ devuelve la expresión escrita en lenguaje C,
+de forma que  podemos incluirla en el  código de un programa  en C. La
+función \verb+TeXForm()+ devuelve la  expresión escrita en el lenguaje
+tipográfico  \TeX, de  forma  que podemos  incluirla  en un  documento
+escrito en  \TeX~ o \LaTeX.  Por ejemplo,  este libro está  escrito el
+\LaTeX, lo  que me  permite incluir la  salida de  \verb+TeXForm()+ en
+este  mismo párrafo  con  sólo  copiar y  pegar:  $\frac{x ^{4}}{4}  -
+\frac{x ^{3} 3 y}{3} + \frac{x ^{2} 3 y ^{2}}{2} - y ^{3} x$.
+
+\section{Variables y funciones}
+
+\section{Programando con Yacas}
+
+\section{Rizando el rizo}
