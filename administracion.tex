@@ -1,4 +1,118 @@
 %Autor: Carlos de la Cruz (frodo@fmat.ull.es).
-
 \chapter{Administración básica}
+
+\section{Paquetes}
+
+Un paquetes es un archivo que contiene varios ficheros que permiten la instalación de un programa. En linux existen varios tipos de paquetes, los más conocidos son los *.rpm, el tipo de paquetes que fue creada por Red Hat y que utilizan todas las dristribuciones que se basan en ellas, *.deb, que fue creada por el grupo Debian, y los tarballs, estos son ficheros comprimidos que contienen el código fuente del programa y pueden instalarse en cualquier distribución.
+
+Una parte importante de un sistema de paquetes son las dependencias. Cada paquete necesita que esten instalados en el sistemas otros paquetes que son necesariospara su funcionamiento, los paquetes necesarios para su instalación se llaman dependencias. Esto permite dar estabilidad y fiabilidad al sistema GNU/Linux. % continuar con lo de dependencias.
+
+\subsection{Sistema de Paquetes Deb}
+
+Todos los paquetes deb tienen el siguiente formato:
+{\tt nombre-del-paquete\_version(1.3.34-5).deb}  
+
+La distribución Debian tiene diversas utilidades para la instalaciónn de paquetes, entre ellas, el APT, que permie la instalación de paquetes de forma fácil y rápida, advirtiendo de las dependencias y recomendando paquetes. El sistema APT engloba varios comandos como apt-get, apt-cache, apt-cdrom,...
+
+\subsection{El fichero /etc/apt/sources.list}
+Este fichero es impresindible para la instalación de paquetes con APT. En el se guardan las direcciones de donde la utilidad apt se descarga los paquetes. Los medios por los que se pueden descargar los paquetes son varios: file(podemos elegir un directorio albitrario de donde bajarnos los paquetes, esto es útil para mirrors locales o carpetas NTFS),de un cdrom,de un servidor web(http), de un ftp, por rsh/ssh. Vamos a ver un ejemplo:
+\begin{verbatim}
+deb http://http.us.debian.org/debian woody main contrib non-free
+deb http://non-us.debian.org/debian-non-US woody/non-US main contrib non-free
+deb-src http://http.us.debian.org/debian woody main contrib non-free
+\end{verbatim}
+La diferencia entre \verb.deb. y \verb.deb-src. es que el primero indica la descarga de paquetes .deb, mientras que con el segundo podemos descargarnos el código fuente del paquete(usando el comando apt-get source). La siguiente parte de la línea es el \verb.URI., es decir, el tipo de sistema para la descarga, recordemos que existen varios(file,cdrom,ftp,http,rsh/ssh). En este caso es de un servidor web. Seguidamente escribimos la \verb.localización. del mirror de paquetes, este caso tenemos varias líneas con diferente localización, esto es debido a que en USA es ilegal utilizar aplicaciones de encriptación, por lo que para bajar esos programas, existen líneas especiales que contienen la palabra non-US. Despues de la localización, separado por un espacio, se escribe la \verb.version de debian., es válido tanto el alias de la version como en que estado se encuentra(stable, unstable,testing). Por último se escriben las \verb.secciones de software. que usaremos(main, contrib, non-free). Debian organiza los paquetes en varias carpetas segun su licencia. La sección {\tt main} agrupa los paquetes en los que su licencia cumple con los criterios de la DGFS(``Guías de Debian del Software libre''). La sección {\tt contrib} agrupa paquetes que tiene una licencia libre pero que sin embargo dependen de otros paquetes que no cumple con las normas del DGFS. Y por último, la sección {\tt non-free} contienen paquetes que son de libre distribución pero que sin embargo no cumplen las directrices de la DGFS(no distribuye el código, no se permite redistribuir el código,etc).
+
+\subsection{APT-GET}
+
+El comando {\bf apt-get} se utiliza para la manipulación de paquetes deb. Permite la instalación de paquetes, borrado,...
+%probar ha hacer tabla 
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|l|{0.88\textwidh}|}
+\hline
+{\tt apt-get install paquete1 paquete2 ...} & Instala paquetes \\
+{\tt apt-get remove paquete1 paquete2 ...} & Borra paquetes \\
+{\tt apt-get source paquete1 paquete2 ...} & Descarga el código fuente de los paquetes \\
+{\tt apt-get update } & Actualiza la lista de paquetes disponibles para instalar \\
+{\tt apt-get upgrade } & Instala las nuevas  versiones de los diferentes paquetes disponibles \\
+{\tt apt-get dist-upgrade} & Funcion adicional de la opción upgrade que modifica las dependencias por la de las nuevas versiones de los paquete \\
+{\tt apt-get build-dep paquete1 paquete2 ...} & Instala los paquetes necesarios para la compilación del código fuente de los paquetes.\\
+{\tt apt-get clean} & Elimina los ficheros que se encuentran en /var/cache/apt/archives y /var/cache/apt/archives/partial. Ahí se encuentran los paquetes que hemos descargado para instalar.
+\hline
+\end{tabular}
+\caption{Opciones principales de apt-get}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|l|{0.88\textwidth}|}
+\hline
+{\tt -d,--download-only} & Solo descarga el paquete, no lo instala \\
+{\tt -f,--fix-broken} & Esta opción es imporatante, intenta arreglar problemas de dependencias que tengamos en el sistema\\
+{\tt -s,--simulate} & Nos muestra los resultados de la instalación de un paquete\\
+{\tt -b,--build} & Compila el paquete de código fuente que hayamos bajado\\
+\hline
+\end{tabular}
+\caption{Otras opciones del apt-get}
+\end{table}
+\subsection{APT-CACHE}
+El comando apt-cache trabaja con la cache de los paquetes. El comando no manipula el estado del sistema, por lo que puede ser usado por usuarios normales. Es un comando de gran utilidad ya que nos muestra información valiosa sobre los paquetes.
+
+Algunas opciones más importantes:
+\begin{itemize}
+\item apt-cache show paquete1: Este comando muestra la cabezera de los paquetes. Muestra el desarrollador, las dependencias, una breve descripción del mismo, su tamaño, el nombre del fichero donde se encuentra, entre otros.
+\item apt-cache search texto: Muestra una lista de todos los paquete y una breve descripción relacionado con el texto que hemos buscado.
+\item apt-cache depends paquete: Muestra las dependencias de dicho paquete.
+\item apt-cache stats: Muestra la estadística de el cache.
+\end{itemize}
+\subsection{El fichero /etc/apt/apt.conf}
+El fichero apt.conf sirve para la configuración por defecto de APT. En el fichero podemos por ejemplo darle las órdenes al APT para la utilización de un proxy. Podemos encontrar un ejemplo del fichero en /usr/share/doc/apt/examples/configure-index.gz.
+\subsection{APT-CDROM}
+El comando apt-cdrom permite añadir nuevos cdrom al sources.list. Para añadir un cdrom la orden es \verb.apt-cdrom add..
+
+\section{Los archivos de registro }
+Los ficheros de registro(logging files) se almecenan los resultados e información util de algunos programas. Estos son muy importantes para conocer el estado de nuestra máquina. Los ficheros log's más importantes se encuentran en la carpeta \verb./var/log/.. Normalmente, los ficheros log se pueden visualizar con cualquier editor de texto ya que están guardados en un fichero ASCII.
+
+\begin{itemize}
+\item El fichero syslog. El fichero syslog es el resultado de los mensajes de el demonio Syslogd. Este de demonio se encarga de la organización de los mensajes del kernel, es por eso que en el fichero syslog podemos enontrar toda la información sobre lo que ocurre en nuestra máquina.
+\item El fichero messages. Este fichero es igual al syslog, lo que muestra información más simple. En el podemos controlar por ejemplo la información del demonio pppd.
+\item Los ficheros ~/.bash\_history. Estos ficheros muestran los comandos que han sido ejecutados por los usuarios desde la consola.
+\item El fichero wtmp. En el hay un listado de todas las conecciones que ha tenido la máquinamientras ha permanecido encendida. Se puede visulizar con el comando wtmp.
+\end{itemsize}
+
+Normalmente cada demonio tiene un fichero de registro así como muchos programas también lo tienen. Solo hay que mirar la documentación. Los log's de nuestro servidor de correo se encuentran en /var/log/mail.log, así como los del Apache se encuentran en /var/log/apache,etc.
+
+\section{Otras utilidades para la administración}
+
+\subsection{uptime}
+El comando \verb.uptime. nos indica el tiempo que ha estado corriendo la máquina.
+\begin{verbatim}
+$ uptime
+17:56:33 up  1:55,  8 users,  load average: 0.05, 0.01, 0.01
+\end{verbatim}
+El primer elemento es la hora actual. El siguiente elemento, seguido de la palabra ''up'' es el tiempo que la máquina está encendida. Seguidamente nombra el número de usuarios que se encuentran en el sistema. Por último muestra la carga media de la máquina, en tres tiempos, 1,5 y 15 minutos.
+
+\subsection{w}
+Muestra los usuarios que se encuentran en el sistema. Veamos un ejemplo:
+\begin{verbatim}
+$w
+18:00:59 up  2:00,  8 users,  load average: 0.01, 0.02, 0.00
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU  WHAT
+faraox   tty1     -                16:01    1:58m  2.69s  0.00s  /bin/sh /usr/bin/X11/star
+faraox   pts/0    :0.0             16:02    9.00s 40.22s 40.16s  vi administracion.tex 
+\end{verbatim}
+La primera línea que muestra el comando \verb.w. es la salida de el comando \verb.uptime.. Por orden, la información que muestra es el nombre de usuario, la consola desde donde ha entrado, desde donde se conecta, la hora de entrada, el idle, el tiempo usado por todos los procesos de esa consola(tty), el tiempo usado por los procesos actuales y lo que está haciendo el usuario.
+\subsection{free}
+El comando \verb.free. muestra información sobre el estado de la memoria del sistema. Muestran tanto el estado de la memoria física como de la swap. También muestra el buffer utilizado por el kernel. Una salida del comando \verb.free.
+\begin{verbatim}
+$free
+	     total       used       free     shared    buffers     cached
+Mem:        182900     173300       9600          0      11796      66588
+-/+ buffers/cache:      94916      87984
+Swap:        96352        448      95904
+\end{verbatim}
+Este comando lee la información del fichero /proc/meninfo.
+\subsection{dmesg}
+Este comando muestra los mensajes del kernel durante el inicio del sistema.
 
