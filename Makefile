@@ -55,6 +55,11 @@ all: $(FILES) $(EPSS) $(EJEMPLOS) book.ind book.bbl
 html: $(FILES)
 	latex2html main
 
+splitps: Libro_CILA.ps
+	echo "quit" | gs -sDEVICE=pswrite -sOutputFile=Libro_CILA_%03d.ps Libro_CILA.ps
+
+splitcls:
+	rm -f Libro_CILA_*.ps
 
 dist: $(FILES) $(IMAGES) $(EJEMPLOS)
 	mkdir $(DISTDIR)
@@ -78,3 +83,4 @@ clean:
 	      *.blg *.lot *.lof *.lde *.exa
 	rm -rf main
 	rm -f $(EPSS) $(CEPSS)
+
