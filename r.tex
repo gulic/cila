@@ -2,144 +2,228 @@
 
 \chapter{R}
 
-   {\tt R}  es un  entorno de  programación para  análisis de
-datos y gráficos, especialmente  útil para estadística. {\tt R} dispone
-de librerías  que implementan muchas técnicas  estadísticas, desde las
-clásicas  hasta la  última  metodología, pero  el  usuario debe  estar
-dispuesto a trabajar un poco para encontrarlas. 
+\index{R}
 
- La forma  de trabajar con {\tt R} es distinta  a la de otros
-programas  como  {\tt SPSS}.  En  {\tt R}, un  análisis  estadístico  se
-realiza en  una serie  de pasos, con  unos resultados  intermedios que
-se  van  almacenando en  objetos,  para  ser observados  o  analizados
-posteriormente,  produciendo  unas  salidas  mínimas.  En  {\tt SPSS}
-se  obtendría de  modo  inmediato una  salida  copiosa para  cualquier
-análisis. Esto puede parecer a primera vista una terrible incomodidad,
-pero  si  tuviéramos   que  trabajar  en  una   máquina  poco  potente
-rápidamente nos daríamos cuenta de que puede resultar muy ventajosa la
-sencillez  del  entorno  de  {\tt R}  (un entorno  de  comandos)  y  la
-posibilidad de ver en cada momento exactamente lo que se necesita, sin
-excesos que desperdicien recursos del sistema. 
+\section{Introducción a R}
 
- Veamos  cómo se trabaja  con {\tt R} usándolo. En  primer lugar
-conviene crear  un directorio  y entrar  en él  antes de  comenzar una
-sesión con {\tt R}, que en éste almacena siempre en el directorio donde
-se ejecutan unos ficheros donde almacena los objetos, datos, funciones
-y comandos ejecutados. Esto puede  sernos muy útil en trabajos largos,
-podemos  interrumpir  la sesión  con  {\tt R}  en cualquier  momento  y
-recuperarla luego donde mismo la dejamos. 
+%%%%%% Traducido de la web de R en http://www.r-project.org
 
- Hemos considerado a lo largo  de este curso que el símbolo del
-sistema  Linux/UNIX es  {\tt \$},  y  ahora vamos  a  considerar que  el
-símbolo del prompt {\tt R} es {\tt $>$}. Abrimos un emulador de terminal
-dentro del entorno gráfico y seguimos los siguientes pasos. 
+{\sf R}  es a  la vez un  entorno y un  lenguaje de  programación para
+realizar cálculos y gráficos estadísticos. Es un proyecto GNU similiar
+al  sistema {\sf  S}  desarrollado en  Bell Laboratories  (formalmente
+AT\&T, ahora  Lucent Technologies)  por John  Chambers y  sus colegas.
+{\sf R} puede  considerarse como una implementación  diferente de {\sf
+S}. Hay diferencias importantes entre ambos, pero mucho código escrito
+para el sistema {\sf S} puede ejecutarse en {\sf R} sin modificarlo.
+
+{\sf  R}  proporciona  una  amplia  varieda  de  técnicas  gráficas  y
+estadísticas (regresiones  lineales y no lineales,  tests estadísticos
+clásicos, análisis  de series temporales,  clasifiaciones, clustering,
+etc.)  y además  es  muy extensible.  El lenguaje  {\sf  S} suele  ser
+utilizado para la investigación en  metodología estadística, y {\sf R}
+proporciona una alternativa de código abierto para esta actividad.
+
+Uno de  los puntos fuertes de  {\sf R} es  la facilidad con la  que se
+pueden  producir  gráficas  de  buen diseño  y  calidad  de  imprenta,
+incluyendo  símbolos y  fórmulas  matemáticas  donde sean  necesarias.
+Aunque {\sf R}  pone un gran cuidado en las  opciones por defecto para
+el diseño de las gráficas, el  usuario puede tener control total sobre
+éstas.
+
+{\sf R}  es Software  Libre, disponible  bajo los  términos de  la GNU
+General Public  License de  la Free Software  Foundation, en  forma de
+código fuente. Se puede compilar y  ejecutar en una amplia variedad de
+plataformas  UNIX  (incluyendo  Linux  y  FreeBSD),  MacOS  y  Windows
+9x/NT/2000.
+
+El  código  fuente  de  {\sf  R} se  puede  descargar  del  sitio  web
+del  proyecto {\sf  R} ({\tt  http://www.r-proyect.org}), así  como su
+documentación. Además de la  documentación oficial (en inglés) existen
+otros  documentos {\em  contribuidos} entre  los que  se encuentra  la
+traducción  al  español  de  ``An Introduction  to  R''  y  ``Gráficos
+Estadísticos  con  R''. Estos  y  más  manuales  se encuentran  en  el
+CRAN  (Comprehensive   R  Archive  Network),  concretamente   en  {\tt
+http://cran.r-project.org/other-docs.html}
+
+%%%%%%
+
+\section{El entorno R}
+
+\index{R!entorno}
+
+{\sf  R} es  un conjunto  integrado de  utilidades para  manipulación,
+cálculo  y  representación  de  datos.  Decimos  que  {\sf  R}  es  un
+{\em entorno}  porque es  un sistema  diseñado para  ser completamente
+coherente.  El  entorno  de   {\sf  R}  proporciona  facilidades  para
+manipulación  y almacenamiento  de  datos,  operaciones con  variables
+indexadas  (como vectores  y matrices),  análisis y  representación de
+datos, un lenguaje de programación  bien desarrollado (con todo lo que
+cabe esperar  de un lenguaje  de programación) y una  amplia colección
+integrada y coherente de utilidades para análisis de datos.
+
+Aunque mucha  gente utiliza {\sf  R} como un sistema  estadístico, sus
+autores  prefieren considerarlo  como ``un  entorno en  el que  se han
+implementado muchas  técnicas estadísticas, clásicas y  modernas''. La
+mayoría  de la  estadística clásica  y muchas  de los  últimos métodos
+están disponibles en  {\sf R}, aunque posiblemente  tendrás que buscar
+un rato para encontrarlas.
+
+La forma de trabajar  con {\sf R} es distinta a  la de otros programas
+como {\tt SPSS}. En {\sf R}, un análisis estadístico se realiza en una
+serie de pasos, con unos resultados intermedios que se van almacenando
+en  objetos,   para  ser   observados  o   analizados  posteriormente,
+produciendo unas salidas  mínimas. En {\tt SPSS} se  obtendría de modo
+inmediato  una  salida copiosa  para  cualquier  análisis. Esto  puede
+parecer a primera  vista una terrible incomodidad,  pero si tuviéramos
+que  trabajar en  una máquina  poco potente  rápidamente nos  daríamos
+cuenta de que puede resultar muy ventajosa la sencillez del entorno de
+{\sf  R} (un  entorno de  comandos) y  la posibilidad  de ver  en cada
+momento exactamente lo  que se necesita, sin  excesos que desperdicien
+recursos del sistema.
+
+Aún así, la mejor  manera de trabajar con R es  en un entorno gráfico,
+con un sistema de ventanas como  X-Window, de forma que puedas ver las
+gráficas en el momento de generarlas.
+
+%\section{Primer contacto con R}
+
+Veamos cómo se trabaja con {\sf  R} usándolo. En primer lugar conviene
+crear un  directorio y entrar en  él antes de comenzar  una sesión con
+{\sf  R}, que  en  éste almacena  siempre en  el  directorio donde  se
+ejecutan unos ficheros donde almacena  los objetos, datos, funciones y
+comandos ejecutados.  Esto puede sernos  muy útil en  trabajos largos,
+podemos  interrumpir la  sesión con  {\sf  R} en  cualquier momento  y
+recuperarla luego donde mismo la dejamos.
+
+Hemos considerado a lo largo de  este curso que el símbolo del sistema
+Linux/UNIX es  {\tt \$}. Vamos a  considerar ahora que el  símbolo del
+prompt {\sf R}  es {\tt $>$}. Abre un emulador  de terminal dentro del
+entorno gráfico y ejecuta los siguientes comandos:
 
 \begin{verbatim}
 $ mkdir sesion_R
 $ cd sesion_R
 $ R
 
-R : Copyright 1999, The R Development Core Team
-Version 0.90.1  (December 15, 1999)
+R : Copyright 2002, The R Development Core Team
+Version 1.5.1  (2002-06-17)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
-Type	"?license" or "?licence" for distribution details.
+Type `license()' or `licence()' for distribution details.
 
 R is a collaborative project with many contributors.
-Type	"?contributors" for a list.
+Type `contributors()' for more information.
 
-Type	"demo()" for some demos, "help()" for on-line help, or
-     	"help.start()" for a HTML browser interface to help.
-Type	"q()" to quit R.
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
 
->
+> 
 \end{verbatim}
 
- El símbolo  {\tt $>$} es el prompt de {\tt R},  indica que está
-esperando  nuestras  órdenes  para ejecutarlas.  Comenzamos  con  unos
-ejemplos de vectores, distribuciones  probabilísticas y algún gráfico.
+El  símbolo  {\tt $>$}  es  el  prompt de  {\sf  R},  indica que  está
+esperando nuestras órdenes para ejecutarlas. Para salir del entorno de
+{\sf  R} puedes  utilizar la  función {\tt  q()} o  pulsar {\tt  C-d},
+entonces {\sf  R} te preguntará si  deseas guardar el {\em  espacio de
+trabajo},  que es  toda la  información  sobre la  sesión que  quieres
+cerrar:
 
+\index{R!sesiones}
 
 \begin{verbatim}
-> x <- rnorm(50)
-> y <- rnorm(x)
-> plot(x,y)
-> ls()
-[1] "x"        "y"
-> rm(x,y)
+> q()
+Save workspace image? [y/n/c]: 
 \end{verbatim}
 
- Hasta ahora nada complicado,  hemos introducido en {\tt x} y en
-{\tt y} dos vectores  cada uno de 50 pseudoaleatorios  obtenidos de una
-distribución normal  N(0,1), los mostrados  en un gráfico  X-Y, listado
-los  objetos  disponibles y  borrados  los  objetos {\tt x}  e  {\tt y}.
+Para salir guardando la sesión pulsa {\tt y}, para salir sin guardarla
+pulsa {\tt n} y para para cancelar la salida pulsa {\tt c}. Si guardas
+la  sesión al  salir quedará  almacenada en  el directorio  en el  que
+ejecutaste {\tt R},  y será automáticamente recuperada  la próxima vez
+que ejecutes {\tt R} dentro del directorio en cuestión.
 
+{\sf R} dispone de un sistema de ayuda similar a las páginas de manual
+de  Linux/UNIX. Cuando  necesites información  sobre una  función, por
+ejemplo {\tt  solve}, ejecuta la  función {\tt help()}  pasándole como
+parámetro el nombre de la función que quieras consultar. También existe
+una forma más corta: {\tt ?función}:
 
 \begin{verbatim}
-> x <- 1:20
-> w <- 1 + sqrt(x)/2
-> hoja.de.datos <- data.frame(x=x,y=x+rnorm(x)*w)
-> hoja.de.datos
-> regr <- lm(y~x,data=hoja)
-> summary(regr)
-
-Call:
-lm(formula = y ~ x, data = hoja)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
-    -4.4338 -1.6785 -0.4704  1.9643  4.1038 
-
-    Coefficients:
-                Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  1.78985    1.08627   1.648    0.117    
-x            0.84553    0.09068   9.324 2.59e-08 ***
----
-Signif. codes:  0  `***'  0.001  `**'  0.01  `*'  0.05  `.'  0.1  ` '  1 
-
-Residual standard error: 2.338 on 18 degrees of freedom
-Multiple R-Squared: 0.8285,	Adjusted R-squared: 0.8189 
-F-statistic: 86.94 on 1 and 18 degrees of freedom,	p-value: 2.592e-08 
+> help (solve)
+> ?solve 
 \end{verbatim}
 
- Esta vez hemos introducido  en {\tt x} el vector (1,2,...,20) y
-a partir  de él creamos  un vector pon\-de\-ra\-do de  desviaciones típicas,
-que  almacenamos  en  {\tt w}.  Con  estos  dos  vectores  creamos  una
-{\em hoja  de datos},  la guardamos  en {\tt hoja},  y la  mostramos por
-pantalla.  A  continuación  realizamos  el  ajuste  de  un  modelo  de
-regresión lineal de {\tt y} sobre {\tt x}, lo almacenamos en {\tt regr} y
-presentamos en pantalla un resumen  del análisis. Veamos ahora algunas
-representaciones gráficas a partir de estos datos. 
+Normalmente  puedes  ver  la  documentación también  en  el  navegador
+web. Si  ejecutas {\tt  help.start()} debería  abrirse una  ventana de
+navegador  con la  documentación en  formato HTML  por la  cual puedes
+navegar para buscar lo que necesites.
 
- En primer  lugar conectamos la hoja de datos,  de tal modo que
-sus  columnas  aparecen  como  variables y  podemos  acceder  a  ellas
-directamente  por  su  nombre.   Realizamos  una  regresión  local  no
-paramétrica.  Representamos el  gráfico  bidimensional  estándar y  le
-superponemos la regresión local, la verdadera recta de regresión, y la
-recta de regresión ponderada. Una vez  que hemos terminado con la hoja
-de datos {\tt hoja} la desconectamos. 
+\index{R!ayuda}
+
+Otra forma muy interesante de buscar  ayuda dentro del entorno de {\sf
+R}  es pasarle  una  palabra  a la  función  {\tt help.search()}.  Por
+ejemplo, para buscar  una función que resuelva  sistemas de ecuaciones
+puedes empezar por buscar la palabra {\tt solve}.
 
 \begin{verbatim}
-> attach(hoja)
-> regr.loc <- lowess(x,y)
-> plot(x,y)
-> lines(x,regr.loc$y)
-> abline(0,1,lty=3)
-> abline(coef(regr),col="red")
-> detach()
+> help.search ("solve")
+
+Help files with alias or title matching `solve',
+type `help(FOO, package = PKG)' to inspect entry `FOO(PKG) TITLE':
+
+backsolve(base)         Solve an Upper or Lower Triangular System
+qr(base)                The QR Decomposition of a Matrix
+solve(base)             Solve a System of Equations
 \end{verbatim}
 
-  Finalmente  terminamos la  sesión  con  el comando  {\tt q()}.
-{\tt R} nos  preguntará si  queremos guardar la  imagen del  espacio de
-trabajo, que es donde están  guardados todos los objetos que estábamos
-usando y  el historial  de los comandos  que hemos  ejecutado. Podemos
-responder {\tt c}  para cancelar y  no salir, {\tt n} para  desechar los
-datos y no guardarlos  o {\tt y} para guardar los datos  de la sesión y
-poder así retomarla en cualquier momento. Nótese que {\tt R} guarda una
-imagen de espacio  de trabajo en cada directorio donde  se ejecuta, lo
-que  nos permite  tener múltiples  sesiones guardadas  según dónde  lo
-hayamos ejecutado. 
+De un  primer golpe  ya sabes  que el  paquete {\tt  base} de  {\sf R}
+tiene  funciones para  resolver  sistemas  triangulares (superiores  o
+inferiores), descomponer matrices  en la forma QR  y resolver sistemas
+de ecuaciones (cualesquiera).
+
+{\sf  R} proporciona  algunas  demostraciones  sobre sus  capacidades.
+Para  ir abriendo  el apetito  ejecuta la  funciones que  muestran las
+demostraciones con gráficos e imágenes:
+
+\begin{verbatim}
+> demo (graphics)
+> demo (images)
+\end{verbatim}
+
+\begin{figure}[hbtp]
+\centering\includegraphics[width=\textwidth]{imagenes/r_demos.eps}
+\index{R!demos}
+\caption{Demostraciones sobre gráficos e imágenes}
+\end{figure}
 
 
+\section{El lenguaje de {\sf R}}
 
+\index{R!lenguaje}
+
+Al igual que  la mayoría de lenguajes basados en  UNIX, el lenguaje de
+{\sf R} distingue entre mayúsculas y minúsculas. Esto es, {\tt esto} y
+{\tt  Esto} son  símbolos  distintos y  pueden  referirse a  variables
+distintas. En {\sf  R} los nombres de variables pueden  tener letras y
+números  (como en  casi cualquier  lenguaje), aunque  {\bf no}  pueden
+tener el  subrayado ({\tt \_}),  pero en su  lugar sí pueden  tener el
+punto.  De hecho  se suele  utilizar  el punto  para separar  palabras
+en  los  nombres  de  las  variables en  {\sf  R},  por  ejemplo  {\tt
+hoja.de.datos}.
+
+Las comandos  elementales son expresiones o  asignaciones. Si ejecutas
+una expresión como comando ésta se  evalúa y se imprime, pero su valor
+se pierde.  En una  asignación la  expresión se evalúa  y su  valor se
+almacena en la varbiable, pero no se imprime. 
+
+Los comando  se separan con  el caracter de punto  y coma ({\tt  ;}) o
+simplemente  con una  salto  de  línea. Puedes  agrupar  una serie  de
+comandos  encerrándolos entre  llaves,  de esta  forma puedes  definir
+funciones como veremos más adelante. También puedes poner comantarios,
+casi donde quieras, poniendo una almohadilla  ({\tt \#}) y todo lo que
+la siga hasta el final de línea será obviado por el intérprete de {\sf
+R}.
+
+Si dejas  un comando a medias  {\sf R} se  dará cuenta, y en  lugar de
+mostrarte el prompt  $>$ te mostará {\tt +} para  avisarte de que está
+esperando por el final del comando.
