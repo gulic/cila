@@ -56,7 +56,7 @@ all: $(FILES) $(EPSS) $(EJEMPLOS) book.ind book.bbl
 	latex book
 	dvips -o $(NAME).ps book.dvi
 
-html: $(FILES)
+html: $(FILES) $(EPSS)
 	latex2html main
 
 splitps: Libro_CILA.ps
