@@ -58,6 +58,13 @@ html: $(FILES)
 splitps: Libro_CILA.ps
 	echo "quit" | gs -sDEVICE=pswrite -sOutputFile=Libro_CILA_%03d.ps Libro_CILA.ps
 
+splitpdf:
+	for f in `ls Libro_CILA_*.ps`; do \
+	rm -f $$f.pdf; \
+	ff=`echo "$$f" | cut -f1 -d.`; \
+	ps2pdf $$ff.ps $$ff.pdf; \
+	done
+
 splitcls:
 	rm -f Libro_CILA_*.ps
 
