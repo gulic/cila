@@ -155,6 +155,20 @@
 %%%
 \newcommand{\incluye}[1]{\include{#1}\newpage\thispagestyle{empty}}
 
+%%%
+%%% Entorno para incluir gráficos (png -> eps)
+%%%
+
+\newenvironment{figura}[2]{%                  Entorno "figura", 2 argumentos
+\newcommand{\source}{#1} %                    Fichero del gráfico (sin .eps)
+\newcommand{\factor}{#2} %                    Ancho relativo \in (0,1]
+\begin{figure}[hbtp]
+\centering\includegraphics[width=\factor\textwidth]{imagenes/\source.eps}
+\caption{}{}
+\end{figure}}
+
+
+
 
 %%%
 %%%  Definicion de \part, modificación de la definición de \part de ull.sty
@@ -475,7 +489,7 @@
 
 %%
 %% Añadido para el tema de OpenOffice, basado en el curso
-%% de StarOffice escrito por Carlos Pérez Pérez para Lucas
+%% de StarOffice escrito por Carlos Pérez Pérez para LuCAS
 %%
 % Comando para incluir figuras con su comentario
 % Primer argumento: Comentario
@@ -489,14 +503,14 @@
 % donde <arg2> es el segundo argumento que se le pasó a la imagen (es decir,
 % el nombre de la imágen sin su extensión)
 %
-\newcommand{\figura}[2]{
-   \begin{figure}
-   \begin{center}
-   \includegraphics[scale=0.5]{imagenes/#2.eps}
-   \caption{#1}\label{fig:#2}
-   \end{center}
-   \end{figure}
-}
+%\newcommand{\figura}[2]{
+%   \begin{figure}
+%   \begin{center}
+%   \includegraphics[scale=0.5]{imagenes/#2.eps}
+%   \caption{#1}\label{fig:#2}
+%   \end{center}
+%   \end{figure}
+%}
 
 
 %% Comandos generales de formateo de diferentes expresiones
