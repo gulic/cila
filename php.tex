@@ -23,16 +23,15 @@ http://miservidor.com/hora.php, tuviera la hora del instante en que se
 ejecutó el código php.
 
 Cada vez que alguien le diera a ``recargar'' en el navegador, vería la
-hora actual.
-
-Pero como podremos comprobar,si se hace  clic en el botón ``ver código
-fuente'' del navegador, sólo veremos, por ejemplo ``12:02:12''.
+hora actual, sin embargo, como podremos  comprobar, si se hace clic en
+el botón  ``ver código  fuente'' del  navegador, sólo  veríamos código
+html conteniendo por algún lugar la hora en que se generó la página.
 
 PHP tiene  todas las  ventajas que  tienen otros  lenguajes utilizados
 para generación dinámica de contenido web como PERL y ASP, y otras que
 ninguno de estos  permiten hacer de una forma flexible  y cómoda, como
-por  ejemplo la  generación  dinámica de  películas Macromedia  Flash,
-imágenes (con el módulo GDLib), informes en formato PDF, etc.
+por ejemplo la creación de ficheros de Macromedia Flash, imágenes (con
+el módulo GDLib), informes en formato PDF, etc.
 
 \section{Primeros Pasos}
 
@@ -40,12 +39,16 @@ Todo script php está delimitado por los identificadores \verb+<?php+ y
 \verb+?>+. Dentro de estos símbolos, va  escrito todo el código php de
 este.
 
-La primera función que veremos de PHP será ''echo'', que nos permite imprimir
-texto o tags HTML en nuestra página. La función echo va siempre acompañada de
-unos paréntesis y comillas(simples o dobles) en caso de que vayamos a imprimir una o varias cadenas estáticas de texto, y puede ir o no acompañada de estos en caso de que vayamos a imprimir sólo el contenido de una o varias variables.
+La primera función  que veremos de PHP será ''echo'',  que nos permite
+imprimir  texto o  tags HTML  en nuestra  página. La  función echo  va
+siempre acompañada de unos paréntesis  y comillas(simples o dobles) en
+caso  de que  vayamos a  imprimir una  o varias  cadenas estáticas  de
+texto, y puede  ir o no acompañada  de estos en caso de  que vayamos a
+imprimir sólo el contenido de una o varias variables.
 
 
-Como con el resto de los lenguajes, vamos a empezar viendo como sería un "hola mundo" en PHP.
+Como con el resto de los  lenguajes, vamos a empezar viendo como sería
+un "hola mundo" en PHP.
 
 \begin{verbatim}
 <?php
@@ -60,9 +63,10 @@ del código HTML,  pues si introdujéramos código HTML  suelto dentro de
 los delimitadores \verb+<?php+  y \verb+?>+, el módulo  PHP de nuestro
 servidor web provocaría un error de interpretación.
 
-PHP es un lenguaje muy flexible. Nos permite imprimir el valor de variables
-dentro de cadenas de texto sin tener que cerrar y volver a abrir comillas, de
-la siguiente forma:
+PHP es  un lenguaje  muy flexible.  Nos permite  imprimir el  valor de
+variables dentro de  cadenas de texto sin tener que  cerrar y volver a
+abrir comillas, de la siguiente forma:
+
 \begin{verbatim}
 <?php
 
@@ -74,20 +78,35 @@ echo("Tenemos $limones limones y $naranjas naranjas.");
 
 \end{verbatim}
 
-Fíjate que no es lo mismo escribir:
-{\tt echo("Tenemos $limones limones y $naranjas naranjas."); } que
-{\tt echo('Tenemos $limones limones y $naranjas naranjas."); }.
+Fíjate  que  no es  lo  mismo  escribir: {\tt  echo("Tenemos  $limones
+limones  y $naranjas  naranjas."); }  que {\tt  echo('Tenemos $limones
+limones y $naranjas naranjas."); }.
 
-La primera línea, para $limones=2 y $naranjas=3 imprimirá "Tenemos 2 limones y 3 naranjas", mientras que la segunda imprimirá ''Tenemos $limones limones y $naranjas naranjas". Es decir, si utilizamos las dobles comillas, tendremos que los valores de las variable se despliegan dentro de estas. Si utilizamos, por el contrario, comillas simples, lo que haya entre ellas se imprimirá tal cual.
+La primera línea,  para $limones=2 y $naranjas=3  imprimirá "Tenemos 2
+limones y  3 naranjas",  mientras que  la segunda  imprimirá ''Tenemos
+$limones limones  y $naranjas naranjas".  Es decir, si  utilizamos las
+dobles  comillas,  tendremos  que  los  valores  de  las  variable  se
+despliegan dentro de estas. Si  utilizamos, por el contrario, comillas
+simples, lo que haya entre ellas se imprimirá tal cual.
 
-Es importante saber que cuando uno necesita utilizar comillas en el HTML resultante de nuestro script PHP, conviene que ''escape'' las comillas, o de lo contrario el interpretador mostrará una página con un error de compilación.
+Es importante  saber que cuando  uno necesita utilizar comillas  en el
+HTML resultante  de nuestro  script PHP,  conviene que  ''escape'' las
+comillas, o de  lo contrario el interpretador mostrará  una página con
+un error de compilación.
 
 por ejemplo, si queremos mostrar el tag html:
 
-{\tt <a href="http://www.fmat.ull.es/~frodo">}, tendremos que hacerlo de la siguiente forma en php:
-{\tt echo("<a href=\"http://www.fmat.ull.es/~frodo\">");}. (Fíjate en las barras invertidas que se anteponen a cada una de las comillas que van dentro del par de comillas de la función "echo".
+{\tt   <a    href="http://www.fmat.ull.es/~frodo">},   tendremos   que
+hacerlo   de    la   siguiente    forma   en   php:    {\tt   echo("<a
+href=\"http://www.fmat.ull.es/~frodo\">");}.  (Fíjate  en  las  barras
+invertidas que se anteponen a cada  una de las comillas que van dentro
+del par de comillas de la función "echo".
 
-Para la inclusión de código HTML previamente escrito dentro de una página que se genera dinámicamente (por ejemplo, supón que tienes una cabecera, un pie de página predefinidos para tu sitio web, y quieres que varíe sólo el cuerpo de la página, para darle un diseño uniforme), utilizamos el comando {\tt include}.
+Para la  inclusión de  código HTML previamente  escrito dentro  de una
+página que se genera dinámicamente  (por ejemplo, supón que tienes una
+cabecera, un pie  de página predefinidos para tu sitio  web, y quieres
+que varíe sólo el cuerpo de la página, para darle un diseño uniforme),
+utilizamos el comando {\tt include}.
 
 Por ejemplo:
 
@@ -103,22 +122,38 @@ include"include/pie.php;
 \end{verbatim}
 
 
-
-
-
-\section{Estructuras de datos}
-
-Básicamente, existen los escalares, los hash y los arrays.
-
-
 \section{Estructuras de control}
 
-Para el uso de las estructuras de control PHP es muy parecido al lenguaje ''C'', tanto por el uso de llaves para delimitar los bloques de código como por usar la misma sintaxis. Distinguiremos dos tipos de estructuras de control:
+Para  el uso  de las  estructuras de  control PHP  es muy  parecido al
+lenguaje ''C'', tanto por el uso  de llaves para delimitar los bloques
+de código como por usar la misma sintaxis. Distinguiremos dos tipos de
+estructuras de control:
 
 \subsection{Condicionales: If, Switch}
 
-If: Este condicional nos permite ejecutar un bloque de código en caso de que se
-de una condición determinada. Veamos un ejemplo:
+If: Este condicional nos permite ejecutar  un bloque de código en caso
+de que se  de una condición determinada. Por decirlo  de alguna forma,
+la sintaxis podría ser:
+
+\begin{verbatim}
+
+If (condicion){
+	linea1;
+	linea2;
+	linea_n;
+}
+
+\end{verbatim}
+
+O, si es más corto lo que queremos hacer dada esa condición, podría ser:
+
+\begin{verbatim}
+	
+\end{verbatim}
+
+
+
+Veamos un ejemplo:
 
 \begin{verbatim}
 <?php
@@ -131,24 +166,32 @@ if ($a<$b) {
 	}
 	
 ?>
-
-Como, evidentemente 2 siempre será menor que 10, el bloque de código entre llaves se ejecutaría siempre.
-
 \end{verbatim}
+
+
 
 \subsection{Repetitivas: While,For}
 
 \section{Como estructurar nuestro código en php}
 
-Las funciones. function chona($lalala,$otroparametro)
+Las funciones. 
 
 \section{Manejo de formularios}
 
 
-\section{Utilización de bases de datos}
-Aunque PHP soporta varias clases de servidores de base de datos, debido a que cada uno usa un interfaz distinto, resulta bastante incómodo tener que aprender las funciones de PHP para cada uno de ellos. Es por ello que suelen utilizarse librerías adicionales (no incluidas con PHP, pero sí con la mayoría de las distribuciones Linux), como la que utilizaremos en este texto/curso: AdoDB.
+\section{Utilización  de bases  de  datos} Aunque  PHP soporta  varias
+clases de servidores  de base de datos,  debido a que cada  uno usa un
+interfaz distinto,  resulta bastante  incómodo tener que  aprender las
+funciones  de PHP  para cada  uno  de ellos.  Es por  ello que  suelen
+utilizarse librerías adicionales (no incluidas con PHP, pero sí con la
+mayoría de las distribuciones Linux), como la que utilizaremos en este
+texto/curso: AdoDB.
 
-AdoDB nos permite cambiar de sistema de bases de datos simplemente cambiando un parámetro al realizar la conexión a la Base de datos (BDD de ahora en adelante) , de forma que una aplicación PHP diseñada para correr con Oracle, puede ser portada para funcionar en MySql, Informix, etc. con tan sólo cambiar una línea de código.
+AdoDB nos  permite cambiar  de sistema de  bases de  datos simplemente
+cambiando un parámetro al realizar la conexión a la Base de datos (BDD
+de ahora en adelante) , de  forma que una aplicación PHP diseñada para
+correr  con  Oracle,  puede  ser  portada  para  funcionar  en  MySql,
+Informix, etc. con tan sólo cambiar una línea de código.
 
 
 \section{Creación de imágenes dinámicamente}
