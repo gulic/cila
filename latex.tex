@@ -1,226 +1,3204 @@
-%Autor: tbd & miguev
 
-\chapter{\LaTeX}
+\section{Introducción preliminar}
 
+\LaTeX~\cite{manual}   es  un   sistema  de   composición  de   textos
+especialmente orientado  a la  creación de documentos  científicos que
+contengan fórmulas matemáticas. Además,  también se pueden crear otros
+tipos  de documentos,  que  pueden ser  desde  cartas sencillas  hasta
+libros completos. \LaTeX\ está organizado sobre \TeX~\cite{texbook}.
 
-\TeX~  (pronunciado ``Tek'')  es  el más  potente  procesador de  {\tt
-textos} orientados  a documentos  científicos, aunque puede  ser usado
-para cualquier tipo de documento.  \LaTeX~ es un lenguaje estructurado
-para la  elaboración de  documentos, desde  apuntes (quedan  muy bien)
-hasta libros completos, problemas, boletines, etc. Baste como ejemplo,
-que  este  libro  está  escrito  en \LaTeX.  Una  de  las  principales
-diferencias entre \LaTeX~ y los procesadores de {\TeX}to al uso es que
-a diferencia  de estos  últimos {\LaTeX} no  cuenta con  una interface
-WYSWYG, sino que  por el contrario, un documento en  \LaTeX~ ha de ser
-escrito en forma  de fichero fuente para luego ser  compilado. Esto se
-puede interpretar de  dos maneras, o un gran inconveniente  o una gran
-ventaja.
+Este  capítulo está  dedicado a  \LaTeX\  y pretende  versar sobre  lo
+básico que se debe poder emplear  en la mayoría de las aplicaciones de
+\LaTeX.  Existen  diversos manuales~\cite{manual,companion}  donde  se
+encuentra una descripción completa de \LaTeX.
 
-La primera  versión de \TeX,  obra de Donald  E. Knuth (DEK),  nació a
-principios de los años ochenta. Esta versión, si bien muy potente, era
-extremadamente dificil de usar, por lo  que el mismo DEK desarrolló la
-primera ampliación de \TeX, el plain \TeX.
+\LaTeX\  está  disponible  para  la  mayoría  de  los  miniordenadores
+y  microordenadores,  desde  IBM~PCs  en  adelante.  En  muchas  redes
+universitarias de  ordenadores se encuentra instalado  para utilizarse
+al instante. Normalmente existe  una \guialatex donde podrás averiguar
+cómo acceder a la  instalación de \LaTeX, cómo se opera  con ella y de
+qué complementos se dispone.
 
-El Plain \TeX~  introducía gran número de órdenes de  alto nivel, pero
-seguía  estando  más  orientado  a  aspectos  tipográficos  que  a  la
-estructura de  los documentos como un  todo Por ello, en  1985, Leslie
-Lamport desarrolló  un lenguaje  construido sobre  el Plain  \TeX~ que
-recibió  el  nombre de  \LaTeX~  dirigidos  a confeccionar  documentos
-completos  (artículos  o  libros).  Desde  su  aparición,  \LaTeX~  ha
-conocido una gran difusión en el  ámbito científico, siendo hoy día el
-procesador  más  usado  por  matemáticos, físicos  y  gran  número  de
-ingenieros.
+El propósito  de este  capítulo \emph{no} es  indicar cómo  se instala
+y  se  mantiene un  sistema  de  \LaTeX,  sino mostrar  cómo  escribir
+documentos para poderlos procesar con \LaTeX.
 
-Veamos  la versatilidad  de \LaTeX~  aplicada a  las matemáticas,  con
-un  ejemplo  no  demasiado  sencillo. Las  líneas  que  comienzan  por
-el  carácter  {\tt  \%}   (porcentaje)  son  comentarios,  y  explican
-suficientemente el contenido del  fichero. Veamos cómo podemos obtener
-distintos  ficheros de  salida,  en formatos  PostScript  y PDF  entre
-otros. En el fichero {\tt ejemplo.tex} tenemos el siguiente código:
-
-
-\begin{ejemplo}{ejemplo.tex}{Ejemplo de página en LaTeX}
-El código de este ejemplo genera una página con el siguiente contenido:
-\rm
-\begin{center}
-{\large Taller de Iniciación a Linux para Alumnos}
-\end{center}
-
-Esto es  un pequeño ejemplo  de \LaTeX,  el más potente  procesador de
-textos. La mayoría  de apuntes y exámenes de Matemáticas  que vemos en
-la Facultad están  escritos en \LaTeX. Por cierto,  con \LaTeX también
-tenemos soporte para el {\euro}uro.
-
-A continuación algunos ejemplos de fórmulas matemáticas:
-
+\bigskip
+\noindent Esta descripción se divide en cuatro apartados:
 \begin{description}
+\item[El 1$^\text{er}$ apartado] muestra la estructura básica de los
+  documentos de \LaTeXe. También se enseña un poco de la historia de
+  \LaTeX. Tras leer este capítulo deberías tener una visión muy
+  escueta de \LaTeX. Esta visión consistirá sólo de un pequeño ``marco
+  de trabajo'' en el que podrá integrar la información que se
+  proporcionamos en los demás apartados y la que podrás hallar en
+  otras fuentes ---como los manuales~\cite{manual,companion}---.
+\item[El 2$^\text{o}$ apartado] incide en los detalles sobre la
+  composición de los documentos. En este aparatdos se explican la
+  mayoría de las instrucciones y los entornos básicos de \LaTeX. Una
+  vez leído este apartado serás capaz de escribir tus primeros
+  documentos.
+\item[En el 3$^\text{er}$ apartado] se explican algunas nociones sobre
+  cómo componer fórmulas matemáticas con \LaTeX. Aquí te presentamos
+  varios ejemplos para ayudarte a entender una de las principales
+  potencialidades de \LaTeX.
+\item[El último apartado] indica otras posibilidades que se pueden
+  obtener de \LaTeX{}, que, si bien no son esenciales, a veces pueden
+  resultar muy útiles. Por ejemplo, se muestra cómo incluir gráficos
+  de PostScript encapsulado en sus documentos o cómo añadir un índice
+  de materias en su documento.
+\end{description}
+%
+\bigskip
+\noindent Es importante que leas estos apartados por orden. Por favor,
+lee cuidadosamente los ejemplos, ya que en ellos es donde se encuentra
+gran parte de la información útil.
+%
+\bigskip
+\noindent Si necesitas cualquier material relacionado con \LaTeX,
+puedes recurrir a cualquiera de los servidores de archivos de
+\texttt{CTAN}\@. En la República Federal de Alemania es
+\texttt{ftp.dante.de} y en el Reino Unido es \texttt{ftp.tex.ac.uk}.
+También existen diversos espejos. Si no te encuentras en uno de estos
+países, por favor elije el servidor más cercano.
 
-\item [Definición de límite]
-$$
-\lim_{x \longrightarrow a} = l \iff 
-\forall \, \varepsilon > 0 \,
-\, \exists \, \delta > 0 \, / \,
-\, 0 < \| x - a \| < \delta \,
-\Longrightarrow \, \| f(x) - l \| < \varepsilon
-$$
+\vspace{\stretch{1}}
+\noindent Si tienes ideas sobre algo que debería ser añadido o
+alterado en este documento, por favor hazlo saber. Estamos
+especialmente interesados en los principiantes con \LaTeX.
+\bigskip
+\begin{verse}
+\contrib{Tomás Bautista}{bautista@iuma.ulpgc.es}%
+{División de SICAD, Instituto Universitario de Microelectrónica
+  Aplicada, Universidad de Las Palmas de G.C.}
+\end{verse}
+\endinput
+\section{Lo que es fundamental saber}
+\begin{intro}
+  En la primera parte de este apartado te presentamos una visión
+  general de la filosofía e historia de \textrm{\LaTeXe}. En la
+  segunda parte se incide en las estructuras básicas de un documento
+  de \LaTeX. Tras leer este capítulo, podrás tener un conocimiento
+  básico del modo de funcionamiento de \LaTeX. Cuando continúes
+  leyendo, la información de este apartado te ayudará a integrar toda
+  la información adicional que puedas obtener sobre \LaTeX, tanto en
+  el resto de los apartados como de otros sitios.
+\end{intro}
 
-\item [Teorema Generalizado de Cauchy]
-Si $f$ y $g$ tienen derivadas contínuas hasta el orden $n(n-1)$ en 
-el intervalo $\lbrack a , b \rbrack$ y además $\forall \, x \in (a,b)
-\, \, \exists \, f^{n)}(x), g^{n)}(x)$, entonces
-$\exists \, c \in (a,b) \, /$
-$$
-\bigg( f(b) - \sum_{k=0}^{n-1} \frac{f^{k)}(a)}{k!}(b-a)^k \bigg) g^{n)}(x) =
-f^{n)}(x) \bigg( g(b) - \sum_{k=0}^{n-1} \frac{g^{k)}(a)}{k!}(b-a)^k \bigg) 
-$$
+\subsection{El nombre del juego}
 
-\item [$1^{er}$ Teorema de Isomorfía]
-Sean $G$, $G'$ grupos, $f : G \longrightarrow G'$
-homomorfismo de grupos. Entonces
-$$
-\frac{G}{Ker(G)} \, \thickapprox \, Im f
-$$
+\subsubsubsection{\TeX}
+ 
+\TeX\ es un programa de ordenador de Donald E.~Knuth~\cite{texbook}.
+Está orientado a la composición e impresión textos y fórmulas
+matemáticas.
 
-\item [Funciones Eulerianas: Gamma y Beta]
-$$
-\Gamma(p) = \int_{0}^{+\infty} e^{-x} x^{p-1} dx \quad \forall \, p > 0
-$$
-$$
-\beta(p,q) = \int_{0}^{1} x^{p-1} (1-x)^{q-1} dx
-$$
+\TeX{} se pronuncia ``Tech'', con una ``ch'' como en la palabra
+alemana ``Buch'' o en la escocesa ``Loch''. Este es el sonido de una
+`h'\ aspirada, como en la onomatopeya española ``argh''. En un entorno
+\texttt{ASCII} \TeX{} se escribe \texttt{TeX}.
 
-\item [Y por último, un ejemplo denso]
-$$
-\sum \limits_{n = 0}^{\infty} 
-\left(
-  \frac
-    {\int \limits_{-\infty}^{+\infty}
-      {\left\lceil 
-        \frac
-          {\sin 
-      	    \left[ 
-    	      8 \frac{\pi}{3}^3
-    	    \right]}
-          {\arctan \left(
-    	    \sqrt[3]{ 2 \cdot \sin {(x)} }
-    	  \right)}
-      \right\rceil 
-      dx}
-    }
-    {\lim \limits_{x \to n^2}
-      \left(
-        \vert{
-          \frac
-    	    {\log
-    	      {\frac
-    	        {\pi}
-      	        {x^4}
-    	      }
-    	    }
-            {e^{
-    	      \frac
-    	        {n + 1}
-    	        {n - 1}
-    	      }
-            }
-        \vert}
-      \right)
-    }
-\right)
-=
-\left|
-  \begin{array}{cccc}
-    m_{(i,j)}   & m_{(i,j+1)}       & \ldots   & m_{(i,n)}     \\
-    m_{(i+1,j)} & m_{(i+1,j+1)}     & \ldots   & m_{(i+1,n)}   \\
-    \vdots        & \vdots              & \ddots & \vdots          \\
-    m_{(n,j)}   & m_{(i + n,j + 1)} & \ldots   & m_{(n,n)}
-  \end{array}
-\right|
-$$
+% ``Buch'', --libro--, casi seguro que se conoce más que ``Ach''.
+% En Canarias, Andalucía (?) y en toda Latinoamérica este sonido
+% es más utilizado que la clásica `j' castellana, que es bastante
+% más fuerte.
+
+\subsubsubsection{\LaTeX}
+ 
+\LaTeX\ es un paquete de macros que te permite componer e imprimir más
+fácilmente un documento con la calidad tipográfica de \TeX, empleando
+para ello patrones definidos. Originalmente, \LaTeX{} lo escribió
+\index{Lamport, Leslie}Leslie Lamport~\cite{manual}. Utiliza el
+cajista \TeX{} como elemento de composición.
+
+Desde diciembre de 1994, el paquete \LaTeX{} está siendo actualizado
+por un equipo llamado \index{LaTeX3@\LaTeX 3}\LaTeX 3, que dirige
+\index{Mittelbach, Frank}Frank Mittelbach, para incluir algunas de las
+mejoras que se habían solicitado desde hace tiempo y para reunificar
+todas las versiones retocadas que han surgido desde que apareciera la
+primera versión \index{LaTeX 2.09@\LaTeX{} 2.09}\LaTeX{} 2.09 hace ya
+algunos años. Para distinguirla de la vieja, a la nueva versión se le
+llama \index{LaTeX 2e@\LaTeXe}\LaTeXe. Aquí de lo que te presentamos
+es \LaTeXe.
+
+\LaTeX{} se pronuncia ``Lei-tegh'', aunque entre los
+hispanohablantes se ha aceptado ``La-tegh''. Para referirnos a
+\LaTeX{} en un entorno \texttt{ASCII} escribiremos \texttt{LaTeX}.
+\LaTeXe{} se pronuncia ``Lei-tegh tu íi'' ---aunque muchos nos
+empeñamos en decir ``Lategh dos e''--- y se puede escribir
+\texttt{LaTeX2e}.
+
+\subsubsubsection{Conceptos básicos}
+ 
+\paragraph{Autor, diseñador y cajista}
+
+Normalmente, para una publicación el autor le entrega a la editorial
+un escrito a máquina. El diseñador de libros de la editorial decide
+entonces el formato del documento (longitud de los renglones, tipo de
+letra, espacios antes y después de cada capítulo, etc.)\ y le da estas
+instrucciones al cajista para producir este formato.
+
+Un diseñador de libros humano intenta averiguar las intenciones del
+autor mientras ha realizado el escrito. Entonces decide sobre el modo
+de presentar los títulos de capítulos, citas, ejemplos, fórmulas,
+etc.,\ basándose en su saber profesional y en el contenido del
+escrito.
+
+En un entorno de \LaTeX, \LaTeX{} realiza el papel del diseñador de
+libros y emplea a \TeX{} como cajista. Pero \LaTeX{} \emph{sólo} es
+un programa y, por tanto, necesita más ayuda para sus decisiones que
+un diseñador humano de libros. El autor tiene que proporcionarle
+información adicional que describa la estructura lógica del texto.
+Esta información se indica dentro del texto a través de las
+\emph{instrucciones} u \emph{órdenes} de \LaTeX.
+
+Esto es bastante diferente del enfoque \wi{WYSIWYG}\footnote{Siglas
+  que significan \emph{What you see is what you get,} lo que ve es lo
+  que se obtiene.} de la mayoría de los procesadores de textos tales
+como \emph{Microsoft Word} o \emph{FrameMaker}. Con estas
+aplicaciones, el autor establece el formato del texto con la entrada
+interactiva al introducirlo en el ordenador. En cada momento, el autor
+ve en pantalla el aspecto que tendrá el trabajo final cuando lo
+imprima.
+% En algunos casos no tan ``exactamente'', pero bueno...
+
+Por regla general, al emplear \LaTeX{} el autor no ve, al introducir
+el texto, cómo va a resultar la composición final. Sin embargo,
+existen herramientas que permiten mostrar en pantalla lo que
+finalmente se va a obtener tras procesar los ficheros con \LaTeX. Con
+ellas puedes siempre realizar correcciones antes de enviar el
+documento final a la impresora.
+
+\paragraph{Diseño del formato}
+ 
+El diseño tipográfico es una artesanía que se debe aprender. Los
+autores inexpertos cometen con frecuencia graves errores de dise'no.
+Muchos profanos creen erróneamente que el diseño tipográfico es, ante
+todo, una cuestión de estética: si el documento presenta un buen
+aspecto desde el punto de vista artístico, entonces creen que está
+bien ``diseñado''. Sin embargo, ya que los documentos se van a leer y
+no a colgarse en un museo, es más importante presentar una mayor
+legibilidad y una comprensión mejor que un aspecto más agradable.
+
+Por ejemplo, algunas reglas básicas que deberían seguirse son las
+siguientes:
+\begin{itemize}
+\item Se debe elegir el tamaño de las letras y la numeración de los
+  títulos de modo que la estructura de los capítulos y las secciones
+  sea fácilmente reconocible.
+\item Se debe elegir la longitud de los renglones de modo que se evite
+  el movimiento fatigoso de los ojos del lector y no para que
+  rellenen, a ser posible, las páginas con un aspecto estéticamente
+  bueno.
+\end{itemize}
+
+Con los sistemas \wi{WYSIWYG} los autores producen, en general,
+documentos estéticamente bonitos pero con una estructura muy escasa o
+inconsistente. \LaTeX{} evita estos errores de formato, ya que con
+\LaTeX{} el autor está obligado a indicar la estructura
+\emph{lógica} del texto. Entonces \LaTeX{} elige el formato más
+apropiado para éste.
+
+
+\paragraph{Ventajas e inconvenientes}
+
+Una cuestión que se discute a menudo cuando la gente del mundo
+\mbox{\wi{WYSIWYG}} se encuentra con la gente que utiliza \LaTeX{} es
+sobre ``las \wi{ventajas de \LaTeX} sobre un procesador de textos
+normal'' o al revés. Cuando te veas ante una discusión como ésta, lo
+mejor que se puede hacer es mantener una postura de asentimiento, ya
+que las cosas suelen salirse de control. Pero a veces no se puede
+huir\ldots
+
+\medskip\noindent En estas circunstancias hay que recordar algunas de
+las principales ventajas de \LaTeX\ sobre los procesadores de texto
+normales, que son las siguientes:
+
+\begin{itemize}
+\item Existe mayor cantidad de diseños de texto profesionales a
+  disposición, con los que realmente se pueden crear documentos
+  como si fueran ``de imprenta''.
+
+\item Se facilita la composición de fórmulas con un cuidado
+  especial.
+
+\item El usuario sólo necesita introducir instrucciones sencillas de
+  entender con las que se indica la estructura del documento. Casi
+  nunca hace falta preocuparse por los detalles de creación con
+  técnicas de impresión.
+  
+\item También las estructuras complejas como notas a pie de página,
+  bibliografía, índices, tablas y muchas otras se pueden producir
+  sin gran esfuerzo.
+  
+\item Existen paquetes adicionales sin coste alguno para muchas tareas
+  tipográficas que no se facilitan directamente por el \LaTeX{}
+  básico. Por ejemplo, existen paquetes para incluir gráficos en
+  formato \mbox{\textsc{PostScript}} o para componer bibliografías
+  conforme a determinadas normas. Muchos de estos paquetes se
+  describen en \companion.
+
+\item \LaTeX{} hace que los autores tiendan a escribir textos bien
+  estructurados porque así es como trabaja \LaTeX, o sea,
+  indicando su estructura.
+
+\item \TeX, la máquina de composición de \LaTeXe, es altamente
+  portable y gratis. Por esto, el sistema funciona prácticamente en
+  cualquier en cualquier plataforma.
+
+\end{itemize}
+
+\LaTeX\ tiene, naturalmente, también inconvenientes:
+
+\begin{itemize}
+  
+\item Para hacer funcionar un sistema de \LaTeX, se necesitan más
+  recursos (memoria, espacio de disco y potencia de procesamiento, y
+  espacio de almacenamiento) que para un procesador de texto simple.
+  Aunque no es menos cierto que las cosas van siendo cada vez mejores,
+  y las distintas versiones que cada vez van apareciendo de
+  \emph{Microsoft Word} necesita cada vez más espacio de disco que un
+  sistema de \LaTeX{} normal. Cuando analizamos el uso del procesador,
+  podemos ver que \LaTeX{} supera en prestaciones cualquier sistema
+  \wi{WYSIWYG} ya que necesita mucha cantidad de CPU pero únicamente
+  cuando el documento se procesa, mientras que los paquetes
+  \wi{WYSIWYG} tienen ocupada la CPU continuamente.
+
+\item Si bien se pueden ajustar algunos parámetros de un diseño de
+  documento predefinido, la creación de un diseño entero es difícil
+  y lleva mucho tiempo\footnote{Los rumores dicen que este es uno de
+    los puntos claves sobre el que se hará hincapié en el próximo
+    sistema LaTeX 3.}.\index{LaTeX3@\LaTeX 3}
+
+\end{itemize}
+
+\subsection{Ficheros de entrada de \LaTeX}
+
+La entrada para \LaTeX{} es un fichero de texto en formato
+\texttt{ASCII}. Se puede crear con cualquier editor de textos.
+Contiene tanto el texto que se debe imprimir como las
+``instrucciones'', con las cuales le puedes indicar a \LaTeX\ cómo
+debe disponer el texto.
+
+\subsubsubsection{Signos de espacio}
+
+Los caracteres ``invisibles'', como el espacio en blanco, el tabulador
+y el final de línea, son tratados por \LaTeX\ como signos de
+\wi{espacio} propiamente dichos. \emph{Varios} espacios seguidos se
+tratan como \emph{un} \wi{espacio en blanco}. Generalmente, un espacio
+en blanco al comienzo de una línea se ignora, y \emph{varios}
+renglones en blanco se tratan como un renglón en blanco.
+\index{espacio en blanco!al comienzo de una línea}
+
+Un renglón en blanco entre dos líneas de texto definen el final de
+un párrafo. \emph{Varias} líneas en blanco se tratan como \emph{una
+  sola} línea en blanco. El texto que mostramos a continuación es un
+ejemplo. A la derecha se encuentra el texto del fichero de entrada y a
+la izquierda la salida formateada.
+
+\begin{example}
+No importa si introduce
+varios        espacios tras
+una palabra.
+
+Con una línea vacía se
+empieza un párrafo nuevo.
+\end{example}
+ 
+\subsubsubsection{Caracteres especiales}
+
+Los símbolos siguientes son \wi{caracteres reservados} que tienen un
+significado especial para \LaTeX{} o que no están disponibles en todos
+los tipos. Si los introduces en su fichero directamente es muy
+probable que no se impriman o que fuercen a \LaTeX{} a hacer cosas que
+probablemente te parecerán extrañas.
+%
+\begin{code}
+\verb.$ & % # _ { }  ~  ^  \ . 
+\end{code}
+
+Como puedes ver, estos caracteres se pueden incluir en sus documentos
+anteponiendo el carácter \verb|\| (\emph{barra invertida}):
+%
+\begin{example}
+\$ \& \% \# \_ \{ \}
+\end{example}
+
+Los restantes símbolos y otros muchos caracteres especiales se pueden
+imprimir en fórmulas matemáticas o como acentos con órdenes
+específicas.
+
+\subsubsubsection{Las órdenes de \LaTeX{}}
+
+En las órdenes\index{ordenes@órdenes} de \LaTeX{} se distinguen las
+letras mayúsculas y las minúsculas. Toman uno de los dos formatos
+siguientes:
+
+\begin{itemize}
+\item Comienzan con una \emph{barra invertida}\index{barra invertida}
+  \verb|\|\cih{\bs} y tienen un nombre compuesto sólo por letras. Los
+    nombres de las órdenes acaban con uno o más espacios en blanco,
+    un carácter especial o una cifra.
+\item Se compone de una \emph{barra invertida} y un carácter
+  especial.
+\end{itemize}
+
+%
+% No se tiene en cuenta \\*
+%
+
+%
+% ?`Puede \3 ser una instrucción válida? (jacoboni)
+% En ``LaTeX: eine Einf"uhrung'', de Helmut Kopka, 1988 existe
+% en la página 13 una posible definición de este comando.
+% Esto es para LaTeX 2.09, pero funcionaría con LaTeX2e?
+% (Tomás Bautista)
+%
+
+
+\LaTeX{} ignora los espacios en blanco que van tras las órdenes. Si
+deseas introducir \index{espacio en blanco!tras instrucción} un
+espacio en blanco tras una instrucción, se debe poner o bien
+\verb|{}| y un espacio, o bien una instrucción de espaciado después
+de la orden. Con \verb|{}| se fuerza a \LaTeX{} a dejar de ignorar el
+resto de espacios que se encuentren después de la instrucción.
+
+\begin{example}
+He leído que Knuth distingue a la
+gente que trabaja con \TeX{} en
+\TeX{}nicos y \TeX pertos.\\
+Hoy es \today.
+\end{example}
+
+Algunas instrucciones necesitan un \wi{parámetro} que se debe poner
+entre \wi{llaves} \verb|{ }| tras la instrucción. Otras órdenes
+pueden llevar \wi{parámetros opcionales} que se añaden a la
+instrucción entre \wi{corchetes}~\verb|[ ]| o no. El siguiente
+ejemplo usa algunas órdenes de \LaTeX{} que te explicaremos más
+adelante.
+
+\begin{example}
+!`Te puedes \textsl{apoyar} en mí!
+\end{example}
+\begin{example}
+!`Por favor, comienza una nueva
+línea justamente aquí!%
+\linebreak[3] Gracias.
+\end{example}
+
+\subsubsubsection{Comentarios}
+\index{comentarios}
+
+Cuando \LaTeX{} encuentra un carácter \verb|%| mientras procesa un
+fichero de entrada, ignora el resto de la línea. Esto suele ser útil
+para introducir notas en el fichero de entrada que no se mostrarán en
+la versión impresa.
+
+\begin{example}
+Esto es un % tonto
+% Mejor: instructivo <----
+ejemplo.
+\end{example}
+
+Esto a veces puede resultar útil cuando no quieras líneas demasiado
+largas en el fichero fuente. Si no quisieras introducir un espacio
+entre dos palabras, y prefieres tener dos renglones,
+entonces el signo \verb|%| debe ir justo al final del renglón pero
+pegado al último carácter. De este modo se comenta el carácter de
+``salto de línea'', que de otro modo se hubiese tratado como un
+espacio en blanco.
+
+\begin{example}
+Este es otro ejem% y
+% ahora el resto
+plo.
+\end{example}
+
+\subsection{Estructura de un fichero de entrada}
+
+Cuando \LaTeXe{} procesa un fichero de entrada, espera de éste que siga
+una determinada \wi{estructura}. Todo fichero de entrada debe comenzar
+con la orden
+\begin{code}
+\verb|\documentclass{...}|
+\end{code}
+Esto indica qué tipo de documento es el que quiers crear. Tras esto,
+se pueden incluir órdenes que influirán sobre el estilo del documento
+entero o puedes cargar \wi{paquete}s con las que añadir nuevas
+propiedades al sistema de \LaTeX. Para cargar uno de estos paquetes
+puedes emplear la instrucción
+\begin{code}
+\verb|\usepackage{...}|
+\end{code}
+
+Cuando todo el trabajo de configuración esté realizado\footnote{El
+  área entre \texttt{\bs documentclass} y \texttt{\bs
+    begin$\mathtt{\{}$document$\mathtt{\}}$} se llama
+  \emph{\wi{preámbulo}}.} entonces comienza el cuerpo del texto con
+la instrucción
+\begin{code}
+\verb|\begin{document}|
+\end{code}
+
+A partir de entonces puedes introducir el texto mezclado con las
+instrucciones que consideres necesarios de \LaTeX. Al finalizar el
+documento debes poner la orden
+\begin{code}
+\verb|\end{document}|
+\end{code}
+LaTeX{} ingorará cualquier cosa que pongas tras esta instrucción.
+
+La figura~\ref{mini} muestra el contenido mínimo de un fichero de
+\LaTeXe. En la figura~\ref{document} se expone un \wi{fichero de
+  entrada} algo más complejo.
+
+\begin{figure}[!bp]
+\begin{lined}{6cm}
+\begin{verbatim}
+\documentclass{article}
+\begin{document}
+Lo pequeño es bello.
+\end{document}
+\end{verbatim}
+\end{lined}
+\caption{Un fichero mínimo de \LaTeX} \label{mini}
+\end{figure}
+ 
+\begin{figure}[!bp]
+\begin{lined}{10cm}
+\begin{verbatim}
+\documentclass[a4paper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[activeacute,spanish]{babel}
+\author{T.~Bautista}
+\title{Minimizando}
+\frenchspacing
+\begin{document}
+\maketitle
+\tableofcontents
+\subsection{Inicio}
+Bien\ldots{} y aquí comienza mi artículo tan
+estupendo.
+\subsection{Fin}
+\ldots{} y aquí acaba.
+\end{document}
+\end{verbatim}
+\end{lined}
+\caption{Ejemplo para un artículo científico (en) español.} \label{document}
+\end{figure}
+ 
+\subsection{El formato del documento}
+ 
+\subsubsubsection{Clases de documentos}\label{sec:documentclass}
+
+Cuando procesa un fichero de entrada, lo primero que necesita saber
+\LaTeX{} es el tipo de documento que quieres crear. Esto se
+lo puedes indicar con la instrucción \ci{documentclass}.
+\begin{command}
+\ci{documentclass}\verb|[|\emph{opciones}\verb|]{|\emph{clase}\verb|}|
+\end{command}
+\noindent En este caso, la \emph{clase} indica el tipo de documento
+que se creará. En la tabla~\ref{documentclasses} se muestran las
+clases de documento que te explicaremos aquí. La distribución de
+\LaTeXe{} proporciona más clases para otros documentos, como cartas y
+transparencias. El parámetro de \emph{\wi{opciones}} personaliza el
+comportamiento de la clase de documento elegida. Las opciones se deben
+separar con comas. En la tabla~\ref{options} se indican las opciones
+más comunes para las clases de documento estándares.
+
+
+\begin{table}[!bp]
+\caption{Clases de documentos} \label{documentclasses}
+\begin{lined}{12cm}
+\begin{description}
+ 
+\item [\normalfont\texttt{article}] para artículos de revistas
+  especializadas, ponencias, trabajos de prácticas de formación,
+  trabajos de seminarios, informes pequeños, solicitudes,
+  dictámenes, descripciones de programas, invitaciones y muchos
+  otros.\index{articulo@artículo}%
+\index{clase \texttt{article}@clase article}
+\item [\normalfont\texttt{report}] para informes mayores que constan
+  de más de un capítulo, proyectos fin de carrera, tesis doctorales,
+  libros pequeños, disertaciones, guiones y
+  similares.\index{informe}\index{clase \texttt{report}@clase report}
+\item [\normalfont\texttt{book}] para libros de
+  verdad\index{libro}\index{clase \texttt{book}@clase book}
+\item [\normalfont\texttt{slide}] para transparencias. Esta clase emplea
+  tipos grandes \textsf{sans serif}.
+  \index{transparencias}\index{clase \texttt{slide}@clase slide}
+\end{description}
+\end{lined}
+\end{table}
+
+\begin{table}[!bp]
+\caption{Opciones de clases de documento} \label{options}
+\begin{lined}{12cm}
+\begin{flushleft}
+\begin{description}
+\item[\normalfont\texttt{10pt}, \texttt{11pt}, \texttt{12pt}] \quad
+  Establecen el tamaño (cuerpo) para los tipos\footnote{El término
+    adecuado para designar lo que normalmente se conoce como
+    \emph{fuente} es el de \emph{tipo}}. Si no se especifica ninguna
+  opción, se toma \texttt{10pt}.\index{tamaño de los tipos!del
+    documento}
+\item[\normalfont\texttt{a4paper}, \texttt{letterpaper}, \ldots] \quad
+  Definen el tamaño del papel. Si no se indica nada, se toma
+  \texttt{letterpaper}. Aparte de estos se puede elegir
+  \texttt{a5paper}, \texttt{b5paper}, \texttt{executivepaper} y
+  \texttt{legalpaper}. \index{papel legal} \index{tamaño del
+    papel}\index{papel DIN-A4} \index{papel de carta} \index{papel DIN-A5}\
+  \index{papel DIN-B5} \index{papel ejecutivo}
+  
+\item[\normalfont\texttt{fleqn}] \quad Con esta opción las ecuaciones
+  se disponen hacia la izquierda en vez de centradas.
+
+\item[\normalfont\texttt{leqno}] \quad Coloca el número de las
+  ecuaciones a la izquierda en vez de a la derecha.
+
+\item[\normalfont\texttt{titlepage}, \texttt{notitlepage}] \quad
+  Indica si se debe comenzar una página nueva tras el \wi{título del
+    documento} o no. Si no se indica otra cosa, la clase
+  \texttt{article} no comienza una página nueva, mientras que \texttt{report}
+  y \texttt{book} sí.\index{titlepage@\texttt{titlepage}}
+
+\item[\normalfont\texttt{twocolumn}] \quad Le dice a \LaTeX{} que
+  componga el documento en \wi{dos columnas}.
+  
+\item[\normalfont\texttt{twoside, oneside}] \quad Especifica si se
+  debe generar el documento a una o a dos caras. En caso de no
+  indicarse otra cosa, las clases \texttt{article} y \texttt{report}
+  son a una cara y la clase \texttt{book} es a dos.
+  
+\item[\normalfont\texttt{openright, openany}] \quad Hace que los
+  capítulos comienzen o bien sólo en páginas a la derecha, o bien
+  en la próxima que esté disponible. Esto no funciona con la clase
+  \texttt{article}, ya que en esta clase no existen capítulos. De
+  modo predeterminado, la clase \texttt{report} comienza los
+  capítulos en la próxima página disponible y la clase
+  \texttt{book} las comienza en las páginas a la derecha.
+\end{description}
+\end{flushleft}
+\end{lined}
+\end{table}
+
+Por ejemplo: un fichero de entrada para un documento de \LaTeX{}
+podrías comenzarlo con
+\begin{code}
+\ci{documentclass}\verb|[11pt,twoside,a4paper]{article}|
+\end{code}
+Con esto le indicas a \LaTeX{} que componga el documento como un
+\emph{artículo} utilizando tipos del cuerpo 11 ---en términos más
+coloquiales, con fuente de 11 puntos--- y que produzca un formato para
+impresión a \emph{doble cara} en \emph{papel DIN-A4}.
+
+\pagebreak[2]
+\subsubsubsection{Paquetes}
+\index{paquete} Mientras escribes el documento, probablemente te
+encuentres en situaciones donde el \LaTeX{} básico no basta para
+realizar lo que buscas. Si deseas incluir \wi{gráficos}, \wi{texto en
+  color} o el código fuente de un fichero, se necesita mejorar las
+capacidades de \LaTeX. Tales mejoras se realizan con ayuda de los
+llamados \emph{paquetes.} Los paquetes se activan con la orden
+\begin{command}
+\ci{usepackage}\verb|[|\emph{opciones}\verb|]{|\emph{paquete}\verb|}|
+\end{command}
+\noindent donde \emph{paquete} es el nombre del paquete y
+\emph{opciones} es una lista de palabras clave que activan funciones
+especiales del paquete, a las que \LaTeX{} les añade las opciones que
+previamente hayas podido indicar en la orden \verb|\documentclass|.
+Algunos paquetes vienen con la distribución básica de \LaTeXe{} (véase
+la tabla~\ref{packages}). Otros se proporcionan por separado.  En la
+\guia{} (si existe) puede encontrar más información sobre los paquetes
+disponibles en la instalación a la que tengas acceso. Una buena fuente
+de información sobre \LaTeX{} es \companion. Contiene descripciones de
+cientos de paquetes, así como información sobre cómo escribir sus
+propias extensiones a \LaTeXe.
+
+\begin{table}[!hbp]
+\caption{Algunos paquetes distribuidos con \LaTeX} \label{packages}
+\begin{lined}{11cm}
+\begin{description}
+\item[\normalfont\pai{doc}] Permite la documentación de paquetes y
+  otros ficheros de \LaTeX.\\ Se describe en \texttt{doc.dtx} y en
+  \companion.
+
+\item[\normalfont\pai{exscale}] Proporciona versiones escaladas de
+  los tipos adicionales para matemáticas.\\ 
+ Descrito en \texttt{ltexscale.dtx}.
+
+\item[\normalfont\pai{fontenc}] Especifica qué \wi{codificación de
+    tipo} debe usar \LaTeX.\\ Descrito en \texttt{ltoutenc.dtx}.
+
+\item[\normalfont\pai{ifthen}] Proporciona instrucciones de la forma\\
+  `si\ldots{} entonces\ldots{} si no\ldots'\\ Descrito en
+  \texttt{ifthen.dtx} y en \companion.
+
+\item[\normalfont\pai{latexsym}] Para que \LaTeX{} acceda al tipo
+  de símbolos, se debe usar el paquete \texttt{latexsym}.\\ Descrito
+  en \texttt{latexsym.dtx} y en \companion.
+ 
+\item[\normalfont\pai{makeidx}] Proporciona instrucciones para
+  producir índices de materias.\\ Descrito en el
+  apartado~\ref{sec:indexing} y en \companion.
+
+\item[\normalfont\pai{syntonly}] Procesa un documento sin
+  componerlo.\\ Se describe en \texttt{syntonly.dtx} y en \companion.
+  Es útil para la verificación rápida de errores.
+  
+\item[\normalfont\pai{inputenc}] Permite la especificación de una
+  codificación de entrada como ASCII (con la opción \pai{ascii}),
+  ISO Latin-1 (con la opción \pai{latin1}), ISO Latin-2 (con la
+  opción \pai{latin2}), páginas de código de 437/850 IBM (con las
+  opciones \pai{cp437} y \pai{cp580}, respectivamente), Apple
+  Macintosh (con la opción \pai{applemac}), Next (con la opción
+  \pai{next}), ANSI-Windows (con la opción \pai{ansinew}) o una
+  definida por el usuario. Está descrito en \texttt{inputenc.dtx}.
 
 \end{description}
+\end{lined}
+\end{table}
 
-\end{ejemplo}
+\clearpage
+%
+% Puntero a información de los paquetes
+%
 
-  Copiamos   esta  fórmula   en  algún  fichero,   por  ejemplo
-{\tt ejemplo.tex} y  veamos los pasos necesarios  para {\em compilarlo}.
-Para compilar el  fuente lo único que hay que  hacer es ejecutar {\LaTeX}
-seguido del nombre  del fichero fuente {\LaTeX}. En  nuestro ejemplo, nos
-colocaremos  en  el directorio  donde  tenemos  el {\tt ejemplo.tex}  y
-teclearemos:
+\subsubsubsection{Estilo de página}
+
+Con \LaTeX{} existen tres combinaciones predefinidas de \wi{cabeceras}
+y \wi{pies de página}, a las que se llaman estilos de
+página.\index{estilo de pagina@estilo de página} El parámetro
+\emph{estilo} de la instrucción
+\index{estilo de pagina@estilo de página!plain@\texttt{plain}}%
+\index{plain@\texttt{plain}}%
+\index{estilo de pagina@estilo de página!headings@\texttt{headings}}%
+\index{headings@\texttt{headings}}%
+\index{estilo de pagina@estilo de página!empty@\texttt{empty}}%
+\index{empty@\texttt{empty}}%
+\begin{command}
+\ci{pagestyle}\verb|{|\emph{estilo}\verb|}|
+\end{command}
+\noindent define cuál quieres emplee \LaTeX. La tabla~\ref{pagestyle}
+muestra los estilos de página predefinidos.
+
+\begin{table}[!hbp]
+\caption{Estilos de página predefinidos en \LaTeX} \label{pagestyle}
+\begin{lined}{12cm}
+\begin{description}
+  
+\item[\normalfont\texttt{plain}] imprime los números de página en el
+  centro del pie de las páginas. Este es el estilo de página que se
+  toma si no se indica otro.
+
+\item[\normalfont\texttt{headings}] en la cabecera de cada página
+  imprime el capítulo que se está procesando y el número de
+  página, mientras que el pie está vacío.
+
+\item[\normalfont\texttt{empty}] deja tanto la cabecera como el pie
+  de las páginas vacíos.
+
+\end{description}
+\end{lined}
+\end{table}
+
+Es posible cambiar el estilo de página de la página actual con la
+instrucción
+\begin{command}
+\ci{thispagestyle}\verb|{|\emph{estilo}\verb|}|
+\end{command}
+En \companion{} existe una descripción de cómo crear tus propias
+cabeceras y pies de página\footnote{Uno de los paquetes más socorridos
+  para este tipo de cosas es \texttt{fancyhdr}. Mira su documentación,
+  fundamentalmente la que existe en el fichero
+  \texttt{fancyhdr.dtx}.}.
+%
+% Puntero a la descripción del paquete fancyhdr
+%
+% Información sobre la numeración de páginas, ...
+% \pagenumbering
+
+\subsection{Proyectos grandes}
+
+Cuando trabajes con documentos grandes, podrías, si lo consideras
+oportuno, dividir el fichero de entrada en varias partes. \LaTeX{}
+tiene dos instrucciones que te ayudan a realizar esto.
+
+\begin{command}
+\ci{include}\verb|{|\emph{fichero}\verb|}|
+\end{command}
+\noindent se puede utilizar en el cuerpo del documento para introducir el
+contenido de otro fichero. En este caso, \LaTeX{} comenzará una página
+nueva antes de procesar el texto del \emph{fichero}.
+
+La segunda instrucción sólo se puede emplear en el preámbulo. Permite
+indicarle a \LaTeX{} que sólo tome la entrada de algunos ficheros de
+los indicados con \verb|\include|.
+
+\begin{command}
+\ci{includeonly}\verb|{|\emph{fichero}\verb|,|\emph{fichero}%
+\verb|,|\ldots\verb|}|
+\end{command}
+
+Una vez se encuentre esta instrucción en el preámbulo del documento,
+sólo se procesarán las instrucciones \ci{include} con los ficheros
+indicados en el argumento de la orden \ci{includeonly}. Vigila que no
+hayan espacios entre los nombres de los ficheros y las comas.
+
+\endinput
+ 
+\section{Composición del texto}
+
+\begin{intro}
+  Tras leer este capítulo deberiás conocer los elementos básicos de
+  los que se compone un documento de \LaTeXe. En este capítulo
+  completaremos la estructura sobre la que normalmente se trabaja
+  para componer documentos reales.
+\end{intro}
+
+\subsection{Salto de línea y de página}
+ 
+\subsubsection{Párrafos justificados}
+
+Normalmente los libros se suelen componer con todos los renglones del
+mismo tamaño. \LaTeX{} inserta los saltos de línea y los espacios
+entre las palabras optimizando el contenido de los párrafos enteros.
+Si es necesario, también introduce guiones, dividiendo las palabras
+que no encajen bien al final de los renglones. El modo de componer los
+párrafos depende de la clase de documento. Normalmente se introduce
+una sangría horizontal en la primera línea de un párrafo y no se
+introduce espacio adicional entre cada dos párrafos. Para más
+información véase el apartado~\ref{parsp}.
+
+En casos especiales se le puede ordenar a \LaTeX{} que introduzca un
+salto de línea.
+
+\begin{command}
+\ci{\bs} o \ci{newline} 
+\end{command}
+\noindent comienza una línea nueva sin comenzar un párrafo nuevo.
+
+\begin{command}
+\ci{\bs*}
+\end{command}
+\noindent además prohíbe que se produzca un salto de página tras el
+salto de línea.
+
+\begin{command}
+\ci{newpage}
+\end{command}
+\noindent comienza una página nueva. 
+\pagebreak
+
+\begin{command}
+\ci{linebreak}\verb|[|\emph{n}\verb|]|,
+\ci{nolinebreak}\verb|[|\emph{n}\verb|]|, 
+\ci{pagebreak}\verb|[|\emph{n}\verb|]| and
+\ci{nopagebreak}\verb|[|\emph{n}\verb|]|
+\end{command}
+\noindent hacen lo que indican sus nombres: salto de línea, ningún
+salto de línea, salto de página y ningún salto de página. Además te
+permite influir sobre las acciones a través del argumento opcional
+\emph{n}. Se puede establecer a un valor entre cero y cuatro. Al poner
+\emph{n} menor de 4 se le deja a \LaTeX{} la posibilidad de ignorar la
+orden si el resultado resulta muy malo.
+
+\LaTeX{} siempre intenta realizar los saltos de línea lo mejor
+posible. Si no puede encontrar ninguna posibilidad satisfactoria para
+producir los bordes de los párrafos totalmente rectos, cumpliendo con
+las reglas impuestas, entonces dejará un renglón demasiado largo. En
+este caso \LaTeX{} producirá el correspondiente mensaje de advertencia
+(``\wni{overfull box}'') mientras procesa el fichero de entrada. Esto
+sucede en especial si no se encuentra un lugar apropiado para
+introducir un guión de divisón entre las sílabas. Si se introduce la
+orden \ci{sloppy}, \LaTeX{} será menos severo en sus exigencias y
+evita tales renglones con longitudes mayores, aumentando la separación
+entre las palabras ---si bien el resultado final no es de lo mejor---.
+En este caso se dan mensajes de advertencia (``\wni{underfull
+  hbox}''). El resultado suele ser aceptable la mayoría de las veces.
+La orden \ci{fussy} actúa en sentido contrario. Esto podría hacerlo en
+caso que desee ver a \LaTeX{} quejarse en todos los sitios.
+
+
+\subsubsection{Silabeo} \label{hyph}
+
+\LaTeX{} silabea las palabras cuando resulta necesario. Si el
+algoritmo de silabeo no produce los resultados correctos, entonces se
+puede remediar esta situación con órdenes como las que presentamos a
+continuación. Esto suele ser especialmente necesario en palabras
+compuestas o de idiomas extranjeros.
+
+La instrucción
+\begin{command}
+\ci{hyphenation}\verb|{|\emph{lista de palabras}\verb|}|
+\end{command}
+\noindent da lugar a que las palabras mencionadas en ella se puedan
+dividir en cualquier momento en, y sólo en, los lugares indicados con
+``\verb|-|''\@. Esta orden debería aparecer en el preámbulo del
+fichero de entrada y debería contener solamente palabras construidas
+sin caracteres especiales.
+%%% Alguna idea de la definición de ``letras normales''???
+%%% Es lo que aparece en el documento en inglés...
+No se hacen distinciones entre las letras mayúsculas y minúsculas
+de las palabras a las que se refiera esta orden. El ejemplo siguiente
+permitirá localizar las sílabas de ``fichero'' y ``Fichero'' del
+mismo modo, e impedirá que en las palabras ``FORTRAN'', ``Fortran'' y
+``fortran'' se introduzcan guiones. No se permiten caracteres con
+acentos o símbolos en el argumento.
+%%% Pues podrían planteárselo por lo menos... :-)
+
+Ejemplo:
+\begin{code}
+\verb|\hyphenation{FORTRAN fi-che-ro}|
+\end{code}
+
+Dentro de una palabra, la instrucción \ci{-} establece un sitio donde
+colocar un guión si fuese necesario. Además, éstos se convierten en
+los únicos lugares donde se permite introducir los guiones en esta
+palabra. Esta instrucción es especialmente útil para las palabras
+que contienten caracteres especiales (como, p.ej.,\ los caracteres
+con acento ortográfico), ya que \LaTeX{} no silabea de modo
+automático las palabras que contienen estos caracteres.
+%\footnote{A no ser que esté usando los nuevos
+%\wi{tipos DC}}.
+
+\begin{example}
+Me parece que esto es: su\-per\-%
+ca\-li\-fra\-gi\-lis\-ti\-co\-%
+ex\-pia\-li\-do\-so
+\end{example}
+
+También se pueden mantener varias palabras en el mismo renglón con la
+orden
+\begin{command}
+\ci{mbox}\verb|{|\emph{texto}\verb|}|
+\end{command}
+\noindent Hace que su argumento se mantenga siempre unido bajo cualquier
+circunstancia, o sea, que no se puede dividir.
+
+\begin{example}
+Dentro de poco tendré otro teléfono.
+Será el \mbox{(040) 3783-225}.
+
+El parámetro \mbox{\emph{nombre
+de fichero}} debe contener el nombre
+del fichero.
+\end{example}
+
+\subsection{Caracteres especiales y símbolos}
+ 
+\subsubsection{Comillas}
+
+Para las \wi{comillas} no se debe utilizar el carácter de comillas
+\index{""@\texttt{""}} que se usa en las máquinas de escribir. Para
+las publicaciones se suelen utilizar caracteres especiales, tanto para
+abrir como para cerrar comillas. En \LaTeX{} se usan dos~\verb|`|
+para abrir comillas y dos~\verb|'| para cerrarlas.
+
+\begin{example}
+``Por favor, pulse la tecla `x.'\,''
+\end{example}
+% También podríamos haber escrito
+% ... la tecla `x'.''
+% El dejar una comilla delante o detrás de un signo de
+% puntuación parece que es una cuestión de gusto.
+% Sin embargo, una vez se planteó esta cuestión en
+% Spanglish@EUnet.es y se había concluido que en esta situación se
+% debía emplear la segunda opción. Como estamos con un ejemplo...
+
+\subsubsection{Guiones y rayas}
+
+\LaTeX{} reconoce cuatro tipos de \wi{guiones}. Para tener acceso a
+tres de éstos se pone una cantidad diferente de guiones consecutivos.
+El cuarto tipo es el signo matemático `menos':
+\index{-}%
+\index{--}%
+\index{---}%
+\index{-@$-$}%
+\index{matemático!menos}%
+
+\begin{example}
+psico-terapéutico \\
+10--18~horas \\
+Madrid -- Barcelona \\
+?`Sí? ---dijo ella--- \\
+0, 1 y $-1$
+\end{example}
+
+% En inglés, los nombres de estos guiones son:
+% \texttt{-} \wi{hyphen}, \texttt{--} \wi{en-dash},
+% \texttt{---} \wi{em-dash} y \verb|$-$| \wi{signo menos}.
+
+\subsubsection{Puntos suspensivos (`\ldots')}
+
+En una máquina de escribir, tanto para la \wi{coma} como para el
+\wi{punto} se les da el mismo espaciado que a cualquier otro
+carácter. En la impresión de libros, estos caracteres sólo ocupan
+un pequeño espacio y se colocan muy próximos al carácter que les
+precede. Por esto, los ``puntos suspensivos'' no se pueden introducir
+con tres puntos normales, ya que no tendrían el espaciado correcto.
+Para estos puntos existe una instrucción especial llamada
+\begin{command}
+\ci{ldots}
+\end{command}
+\index{...@\ldots}
+\begin{example}
+No así ... sino así:\\
+New York, Tokyo, Budapest\ldots
+\end{example}
+ 
+\subsubsection{Ligaduras}
+
+Algunas combinaciones de letras no se componen con las distintas
+letras que la forman, sino que, de hecho, se emplean símbolos
+especiales.
+\begin{code}
+{\large ff fi fl ffi\ldots}\quad
+en lugar de\quad {\large f{}f f{}i f{}l f{}f{}i \ldots}
+\end{code}
+Estas \wi{ligaduras} se pueden evitar intercalando \ci{mbox}\verb|{}|
+entre el par letras en cuestión.
+
+\subsubsection{Acentos y caracteres especiales}
+
+\LaTeX{} permite el uso de \wi{acentos} y \wi{caracteres especiales}
+de numerosos idiomas. En la tabla~\ref{accents} puedes ver todos los
+tipos de acentos que se pueden aplicar a la letra \emph{o}.
+Naturalmente, también funciona con otras letras.
+
+Para colocar el acento sobre una \emph{i} o una \emph{j} se debe
+eliminar el puntito superior de estas letras. Esto se consigue con las
+instrucciones \verb|\i| y \verb|\j|.
+\begin{example}
+H\^otel, na\"\i ve, \él\`eve,\\ 
+sm\o rrebr\o d, !`Se\ñorita!,\\
+Sch\"onbrunner Schlo\ss{} 
+Stra\ss e
+\end{example}
+\begin{table}[!hbp]
+\caption{Acentos y caracteres especiales} \label{accents}
+\begin{lined}{10cm}
+\begin{tabular}{*4{cl}}
+\A{\`o} & \A{\ó} & \A{\^o} & \A{\~o} \\
+\A{\=o} & \A{\.o} & \A{\"o} \\[6pt]
+\B{\u}{o} & \B{\v}{o} & \B{\H}{o} & \B{\c}{o} \\
+\B{\d}{o} & \B{\b}{o} & \B{\t}{oo} \\[6pt]
+\A{\oe}  &  \A{\OE} & \A{\ae} & \A{\AE} \\
+\A{\aa} & \A{\aa} & \A{\AA} \\[6pt]
+\A{\o}  & \A{\O} & \A{\l} & \A{\L} \\
+\A{\i}  & \A{\j} & !` & \verb|!`| & ?` & \verb|?`| 
+\end{tabular}
+\index{i y j sin puntito@\i{} y \j{} sin puntito}\index{Letras
+  escandinavas}
+\index{ae@\ae}\index{umlaut@\emph{umlaut}}\index{dieresis@diéresis}%
+\index{grave@\emph{grave}}\index{acute@\emph{acute}}%
+\index{acento!ortográfico}
+\index{oe@\oe}
+
+\bigskip
+\end{lined}
+\end{table}
+ 
+\subsection{Facilidades para lenguajes internacionales}
+\index{internacional}
+
+Si necesitas escribir documentos en otros \wi{idiomas} distintos del
+inglés, \LaTeX{} debe utilizar otras \wi{reglas de silabeo} para
+producir un resultado correcto.
+
+Para muchos idiomas, estos cambios se pueden llevar a cabo utilizando
+el paquete \pai{babel} de Johannes L.\ Braams. Para emplear este
+paquete, el sistema \LaTeX{} debe estar configurado de modo especial.
+En la \guia{} deberías encontrar más información sobre este
+particular.
+
+Si tu sistema se configura de modo apropiado, entonces podrás activar
+el paquete \pai{babel} con la instrucción
+\begin{command}
+\ci{usepackage}\verb|[|\emph{idioma}\verb|]{babel}| 
+\end{command}
+\noindent tras la orden \verb|\documentclass|. En la \guia{} también
+debería aparecer un listado de los \emph{idiomas} que acepta tu
+sistema.
+
+Para algunos idiomas, \textsf{babel} también define nuevas
+instrucciones con las que se simplifica la entrada de caracteres
+especiales. En el idioma español\index{espanol@español}, por ejemplo,
+se utilizan letras con acento ortográfico. Con \textsf{babel} y el
+estilo \textsf{spanish}, se puede introducir \emph{í} con \verb|'i| en
+vez de~\verb|\'{\i}|\footnote{En este caso particular de los acentos
+  ortográficos, al paquete \textsf{babel} \emph{también} debe
+  pasársele la opción \textsf{activeacute}.}.
+
+Además, con \textsf{babel} se vuelven a definir los títulos que
+producen algunas instrucciones de \LaTeX, que normalmente son en
+inglés. Por ejemplo, si introduces la orden \ci{tableofcontents}
+aparecerá en el resultado final el índice del documento. Sin
+embargo, el título de este índice dependerá del idioma seleccionado
+(`\emph{Table of contents}'\ si es inglés, `\emph{Índice}'\ si es
+español, `\emph{In\-halt\-ver\-zeich\-nis}'\ si es alemán, etc.)
+
+Con \textsf{babel} también se modifica la definición de la
+instrucción \ci{today} para que introduzca la fecha del día en el
+idioma elegido.
+
+% Aquí podríamos introducir muchas más cosas para el idioma
+% español. Muchas de ellas ya están recogidas en otros apartados.
+
+Algunos sistemas de ordenadores te permiten introducir caracteres
+especiales directamente desde el teclado. \LaTeX{} puede manejar esos
+caracteres. Desde la versión básica de \LaTeXe{} de diciembre de 1994,
+se posibilita la utilización de diversos codificaciones de entrada.
+Para esta facilidad véase el paquete \pai{inputenc}. Si utilizas este
+paquete deberías considerar que otra gente puede no ser capaz de ver
+sus ficheros en su ordenador de forma correcta porque utilizan una
+codificación diferente. Por ejemplo, el símbolo alemán \emph{\"a}
+tiene en un PC el código 132 y en algunos sistemas Unix que emplean
+ISO-LATIN~1 tiene el código 228. Por lo tanto, utiliza esta facilidad
+con sumo cuidado.
+
+
+\subsection{Distancias entre palabras}
+
+Para conseguir un margen derecho recto en la salida, \LaTeX{}
+introduce cantidades variables de espacios entre las palabras. Al
+final de una oración, introduce unos espacios algo mayores que
+favorecen la legibilidad del texto. \LaTeX{} presupone que las frases
+acaban con puntos, signos de interrogación y de admiración. Si hay un
+punto tras una letra mayúscula, entonces esto no se considera el fin
+de una oración ya que los puntos tras las letras mayúsculas
+normalmente se utilizan para abreviaturas.
+
+Cualquier excepción a estas reglas debes indicarla. Una \emph{barra
+  invertida} \verb|\| antes de un espacio en blanco produce un espacio
+en blanco que no se ensanchará. Un carácter de tilde~`\verb|~|'\ 
+genera un espacio que no se puede ensanchar pero en el que además no
+se puede producir ningún cambio de renglón. Si antes de un punto
+aparece la instrucción \verb|\@|, significa que este punto acaba una
+oración, aunque se encuentre tras una letra mayúscula. \cih{"@}
+\index{~@\verb.~.} \index{tilde@tilde (\verb.~.)} \index{.!  espacio
+  tras}
+
+\begin{example}
+En la fig.\ 1 del cap.\ 1\dots \\
+El Dr.~López se encuentra \\
+con Dña.~Pérez. \\
+\dots\ 5~m de ancho. \\
+Necesito vitamina~C\@. ?`Y tú?
+\end{example}
+
+Este tratamiento especial para los espacios al final de las oraciones
+se puede evitar con la instrucción
+\begin{command}
+\ci{frenchspacing}
+\end{command}
+\noindent que le indica a \LaTeX{} que \emph{no} introduzca más
+espacios tras un punto que tras cualquier otro carácter. Esto es muy
+común en diversos idiomas, como es el caso del español. En este caso
+la instrucción \verb|\@| no es necesaria.
+
+    
+\subsection{Títulos, capítulos y apartados}
+
+Para ayudar al lector a seguir cómodamente el tema de su trabajo,
+deberías dividirlo en capítulos, apartados y subapartados. \LaTeX{} lo
+facilita con instrucciones especiales que toman el título de la
+sección como su argumento. De tí depende emplearlos en el orden
+correcto.
+
+Para la clase \texttt{article} existen las siguientes órdenes de
+seccionado:
+\nopagebreak
+\begin{code}
+\ci{section}\verb|{...}           |\ci{paragraph}\verb|{...}|\\
+\ci{subsection}\verb|{...}        |\ci{subparagraph}\verb|{...} |\\
+\ci{subsubsubsection}\verb|{...}     |\ci{appendix}
+\end{code}
+
+Con las clases \texttt{report} y \texttt{book} puedes utilizar dos
+instrucciones de seccionado adicionales:
+\begin{code}
+\ci{part}\verb|{...}              |\ci{chapter}\verb|{...}|
+\end{code}
+
+Ya que la clase \texttt{article} no sabe de capítulos, es bastante
+sencillo añadir los artículos como capítulos de un libro. \LaTeX{}
+pone automáticamente el espaciado entre secciones, la numeración y
+los tipos de los títulos.
+
+Dos de las instrucciones de seccionado son un poco especiales:
+\begin{itemize}
+\item La orden \ci{part} no influye en la secuencia de numeración de
+  los capítulos.
+\item La orden \ci{appendix} no toma ningún argumento. Simplemente
+  cambia la modo de numeración de los capítulos\footnote{Para el
+    estilo de artículo lo que cambia es la forma de numerar los
+    apartados.} a letras.
+\end{itemize}
+
+\LaTeX{} crea un índice tomando las cabeceras de las
+distintas secciones y los números de página del último tratamiento
+del fichero de entrada. La instrucción
+\begin{command}
+\ci{tableofcontents}
+\end{command}
+\noindent introduce este índice en el lugar donde coloques esta orden.
+Un documento nuevo se debe procesar dos veces para obtener un
+índice\index{indice@índice} correcto. En algunos casos puede ser
+necesario compilar el documento una tercera vez. \LaTeX{} te lo
+indicará en caso necesario.
+
+De todas las órdenes de seccionado que se han indicado también
+existen versiones modificadas, que se construyen añadiéndoles un
+asterisco \verb|*| al nombre de la instrucción. Producen encabezados
+de sección que no aparecen en el índice y no se numeran. La
+instrucción \verb|\subsection{Ayuda}| podría, por ejemplo, convertirse
+en \verb|\subsection*{Ayuda}|.
+
+Normalmente los encabezados de las secciones aparecen en el índice
+exactamente como los introduces en el texto. En determinadas ocasiones
+esto no es posible porque el título es demasiado largo para caber en
+el índice. Entonces se puede especificar la entrada para el índice con
+un argumento opcional antes del encabezado real.
+
+\begin{code}
+\verb|\chapter[!`Léelo! Te gustará]{Esto es un título largo|\\
+\verb|                 y que puede aburrir a mucha gente}|
+\end{code}
+
+El \wi{título} de todo el documento se genera con la instrucción
+\begin{command}
+\ci{maketitle}
+\end{command}
+\noindent El contenido del título se debe definir con las órdenes
+\begin{command}
+\ci{title}\verb|{...}|, \ci{author}\verb|{...}| 
+y opcionalmente \ci{date}\verb|{...}| 
+\end{command}
+\noindent antes de llamar a \verb|\maketitle|. En el argumento de
+\ci{author} se pueden proporcionar varios nombres separados con la
+orden \ci{and}.
+
+Un ejemplo de algunas de las instrucciones mencionadas las puedes
+encontrar en la fig.~\ref{document} de la página~\pageref{document}.
+
+Además de las instrucc se puedeiones de seccionado que se han indicado,
+\LaTeXe{} introduce 3 instrucciones adicionales para su uso con la
+clase \verb|book|:
+\begin{command}
+\ci{frontmatter}, \ci{mainmatter} y \ci{backmatter}
+\end{command}
+
+\noindent Son útiles para dividir tu publicación. Estas
+instrucciones cambian los encabezados de los capítulos y la
+numeración de las páginas del mismo modo que en un libro normal.
+
+\subsection{Referencias cruzadas}
+
+En los libros, informes y artículos existen, a menudo,
+\wi{referencias cruzadas} a figuras, tablas y segmentos especiales de
+texto que se hayan en otros lugares del documento. \LaTeX{}
+proporciona las siguientes instrucciones para producir referencias
+cruzadas:
+\begin{command}
+  \ci{label}\verb|{|\emph{marcador}\verb|}|,
+  \ci{ref}\verb|{|\emph{marcador}\verb|}| y
+  \ci{pageref}\verb|{|\emph{marcador}\verb|}|
+\end{command}
+\noindent donde \emph{marcador} es un identificador que puedes utilizar
+en cualquier momento para hacer referencia al elemento al que lo
+asocies. \LaTeX{} reemplaza \verb|\ref| por el número del apartado,
+subapartado, figura, tabla o teorema donde se introdujiste la
+instrucción \verb|\label| correspondiente. La orden \verb|\pageref|
+imprime el número de página donde se produce la orden \verb|\label|
+con igual argumento. Aquí también se utilizan los números del
+procesamiento anterior.
+
+\begin{example}
+Una referencia a este subapartado
+\label{sec:este} aparecería como:
+
+``vea el apartado~\ref{sec:este} en
+la página~\pageref{sec:este}.''
+\end{example}
+ 
+\subsection{Notas a pie de página}
+
+Con la instrucción
+\begin{command}
+\ci{footnote}\verb|{|\emph{texto de la nota al pie}\verb|}|
+\end{command}
+\noindent se imprime una nota en el pie de la página actual.
+
+\begin{example}
+Las notas a pie de página%
+\footnote{Esta es una nota a pie
+de página} son utilizadas con
+frecuencia por la gente que usa
+\LaTeX.
+\end{example}
+ 
+También existe una variante de esta instrucción, que es
+\begin{command}
+\ci{footnote}\verb|[|\emph{número}\verb|]{|\emph{texto de la nota al
+    pie}\verb|}|
+\end{command}
+De esta forma para la nota al pie correspondiente se empleará para el
+marcador el \emph{número} que se ha indicado en vez del valor del
+contador de notas al pie. Esta variante \emph{sólo} se puede emplear
+dentro de los párrafos.
+
+\subsection{Palabras resaltadas}
+
+En los escritos a máquina, para resaltar determinados segmentos de
+texto normalmente se $\underline{\mathrm{subrayan}}$. En los libros
+impresos estas palabras se \emph{resaltan} o se \emph{destacan}. La
+orden con la que cambiar a un tipo de letra \emph{resaltado} es
+\begin{command}
+\ci{emph}\verb|{|\emph{texto}\verb|}|
+\end{command}
+\noindent Su argumento es el texto que se debe \wi{resaltar}.
+
+\begin{example}
+\emph{Si está empleando
+\emph{resalte} en un texto
+ya resaltado, entonces \LaTeX{}
+utiliza \emph{redonda} para volver
+a resaltar texto.}
+\end{example}
+ 
+
+\subsection{Entornos} \label{env}
+
+Para componer textos con un propósito especial \LaTeX{} define muchos
+tipos de \wi{entornos} para toda clase de diseños:
+\begin{command}
+\ci{begin}\verb|{|\emph{nombre}\verb|}|\quad
+   \emph{texto}\quad
+\ci{end}\verb|{|\emph{nombre}\verb|}|
+\end{command}
+\noindent donde \emph{nombre} es el nombre del entorno. Los entornos
+son ``grupos'' o ``agrupaciones''. También puedes cambiar a un nuevo
+entorno dentro de otro, en cuyo caso prestar especial atención a la
+secuencia:
+\begin{code}
+\verb|\begin{aaa}...\begin{bbb}...\end{bbb}...\end{aaa}|
+\end{code}
+
+En los apartados siguientes te explicamos todos los entornos importantes.
+
+\subsubsection{Listas y descripciones (\texttt{itemize},
+  \texttt{enumerate}, \texttt{description})}
+
+El entorno \ei{itemize} es adecuado para las listas sencillas, el
+entorno \ei{enumerate} para relaciones numeradas y el entorno
+\ei{description} para descripciones.\cih{item}
+
+\begin{example}
+\begin{enumerate}
+\item Puedes mezclar los entornos
+de listas a tu gusto:
+\begin{itemize}
+\item Pero podría comenzar a
+parecer incómodo.
+\item Si abusa de ellas.
+\end{itemize}
+\item Por lo tanto, recuerda:
+\begin{description}
+\item[Lo innecesario] no va a
+resultar adecuado porque
+lo coloques en una lista.
+\item[Lo adecuado,] sin embargo,
+se puede presentar agradablemente
+en una lista.
+\end{description}
+\end{enumerate}
+\end{example}
+ 
+\subsubsection{Justificaciones y centrado (\texttt{flushleft},
+            \texttt{flushright}, \texttt{center})}
+
+Los entornos \ei{flushleft} y \ei{flushright} producen párrafos
+justificados a la izquierda y a la derecha (sin nivelación de
+bordes).%
+\index{justificado a la izquierda}\index{justificado a la derecha} El
+entorno \ei{center} genera texto centrado. Si no se introduce \ci{\bs}
+para dividir los renglones, entonces \LaTeX{} lo hará
+automáticamente.
+
+\begin{example}
+\begin{flushleft}
+Este texto está\\ justificado a
+la izquierda. \LaTeX{} no intenta
+forzar que todas las líneas
+tengan longitud.
+\end{flushleft}
+\end{example}
+
+\begin{example}
+\begin{flushright}
+Este texto está\\ justificado a
+la derecha. \LaTeX{} no intenta
+forzar que todas las líneas
+tengan igual longitud.
+\end{flushright}
+\end{example}
+
+\begin{example}
+\begin{center}
+En el centro\\de la tierra
+\end{center}
+\end{example}
+
+\subsubsection{Citas (\texttt{quote}, \texttt{quotation}, \texttt{verse})}
+
+El entorno \ei{quote} sirve para citas pequeñas, ejemplos y para
+resaltar oraciones.
+\begin{example}
+Una regla de oro en tipografía
+para el largo de los renglones
+dice:
+\begin{quote}
+Ningún renglón debe contener
+más de 66~letras.
+\end{quote}
+Por esto se suelen utilizar varias
+columnas en los periódicos.
+\end{example}
+% Curioso lo que hace el ``66~letras'' en el primer renglón. Hay un
+% modo de indicar preferencias entre la división de ``debe'' y
+% ``66~letras''?
+
+
+Hay dos entornos muy parecidos: el entorno \ei{quotation} y el entorno
+\ei{verse}. El entorno \texttt{quotation} es adecuado para citas
+mayores que consten de varios párrafos. El entorno \texttt{verse} es
+apropiado para poemas en los que la separación de los renglones es
+esencial. Los versos (los renglones) se dividen con \ci{\bs} y las
+estrofas con renglones en blanco.
+
+\begin{example}
+\begin{flushleft}
+\begin{verse}
+Soberano gofio en polvo,\\
+sustento de mi barriga,\\
+el día que no te como\\
+para mí no hay alegría.
+\end{verse}
+\end{flushleft}
+\end{example}
+
+\subsubsection{Edición directa (\texttt{verbatim}, \texttt{verb})}
+
+El texto que se colque entre \verb|\begin{|\ei{verbatim}\verb|}| y
+  \verb|\end{verbatim}| aparecerá tal como se ha introducido, como si
+se hubiese escrito con una máquina de escribir, con todos los espacios
+en blanco y cambios de línea y sin interpretación de las instrucciones
+de \LaTeX.
+
+Dentro de un párrafo se puede lograr el mismo efecto con
+\begin{command}
+\ci{verb}\verb|+|\emph{text}\verb|+|
+\end{command}
+
+\noindent El \verb|+| sólo es un ejemplo de carácter delimitador.
+Puedes emplear cualquier carácter excepto las letras, \verb|*| o
+caracteres en blanco.
+
+\begin{example}
+La instrucción \verb|\ldots|%
+\ldots
 
 \begin{verbatim}
-$ latex ejemplo.tex
+10 PRINT "HELLO WORLD ";
+20 GOTO 10
 \end{verbatim}
+\end{example}
 
- Esto generará varios ficheros,  pero el que realmente interesa
-en estos momentos es {\tt ejemplo.dvi}. Este fichero es el resultado de
-la compilación  y lo  podemos ver usando  por ejemplo  {\tt xdvi}. Para
-verlo teclearemos en el mismo directorio en el que está el fichero
+\begin{example}
+\begin{verbatim*}
+La version con estrella del
+entorno          verbatim
+destaca los espacios     en
+el  texto con un símbolo
+  especial.
+\end{verbatim*}
+\end{example}
 
+La instrucción \ci{verb} se puede usar exactamente del mismo modo, con
+un asterisco:
+\begin{example}
+\verb*|de esta   manera :-) |
+\end{example}
+
+El entorno \texttt{verbatim} y la instrucción \verb|\verb| no pueden
+utilizarse como parámetros de otras instrucciones.
+
+
+\subsubsection{Estadillos (\texttt{tabular})}
+
+El entorno \ei{tabular} sirve para crear \wi{estadillos}, con líneas
+horizontales y verticales según desees. \LaTeX{} determina el ancho
+de las columnas de modo automático.
+
+El argumento \emph{especificaciones del estadillo} de la instrucción
+\begin{command}
+\verb|\begin{tabular}{|\emph{especificaciones del estadillo}\verb|}|
+\end{command} 
+\noindent define el diseño del estadillo. Puedes utilizar \texttt{l} para una
+columna con texto justificado a la izquierda, \texttt{r} para
+justificar el texto a la derecha, \texttt{c} para texto centrado,
+\verb|p{|\emph{ancho}\verb|}| para una columna que contenga texto con
+saltos de línea y \verb.|. para una línea vertical.
+
+
+Dentro de un entorno \texttt{tabular}, \verb|&| salta a la próxima
+columna, \ci{\bs} separa los renglones y \ci{hline} introduce una
+línea horizontal.
+\index{"|@ \verb."|.}
+\begin{example}
+\begin{tabular}{|r|l|}
+\hline
+Cantidad & Base
+\hline
+\hline
+7C0 & hexadecimal \\
+3700 & octal \\
+11111000000 & binario \\
+\hline \hline
+1984 & decimal \\
+\hline
+\end{tabular}
+\end{example}
+
+\begin{example}
+\begin{tabular}{|p{4.7cm}|}
+\hline
+Bienvenido al párrafo del Sr.\
+Cajón. Esperamos que disfrute
+del espectáculo.\\
+\hline
+\end{tabular}
+
+\end{example}
+
+Con la construcción \verb|@{...}| se puede especificar el separador de
+columnas. Esta construcción elimina el espacio entre columnas y lo
+reemplaza con lo que hayas introducido entre los paréntesis. Un uso
+muy frecuente de esta construcción se explica más adelante con el
+problema de la alineación de la coma decimal. Otra posible utilización
+es para eliminar el espacio que antecede y precede a los renglones de
+una tabla con \verb|@{}|.
+
+\begin{example}
+\begin{tabular}{@{} l @{}}
+\hline
+ningún espacio a la izquierda
+ni derecha\\\hline
+\end{tabular}
+\end{example}
+\begin{example}
+\begin{tabular}{l}
+\hline
+espacios a la izquierda
+y a la derecha\\
+\hline
+\end{tabular}
+\end{example}
+
+\index{alineación decimal}%
+Ya que no hay ningún mecanismo incorporado para alinear columnas
+numéricas sobre la coma decimal \footnote{Si se halla instalado el
+  conjunto `tools'\ en su sistema, eche un vistazo al paquete
+  \pai{dcolumn}.}, podríamos ``imitarlo'' utilizando dos columnas: un
+entero alineado a la derecha y luego los decimales a la izquierda. La
+instrucción \verb|@{,}| en el argumento de \verb|\begin{tabular}|
+  reemplaza el espacio normal entre columnas con una ``,'', dando la
+  apariencia de una única columna justificada por la coma decimal.
+  !`No te olvides de reemplazar la coma decimal en sus números con un
+  separador de columna (\verb|&|)! Se puede colocar una etiqueta sobre
+  nuestra ``columna'' numérica empleando la instrucción
+  \ci{multicolumn}.
+ 
+\begin{example}
+\begin{tabular}{c r @{,} l}
+Expresión en pi       &
+\multicolumn{2}{c}{Valor} \\
+\hline
+$\pi$               & 3&1416  \\
+$\pi^{\pi}$         & 36&46   \\
+$(\pi^{\pi})^{\pi}$ & 80662&7 \\
+\end{tabular}
+\end{example}
+
+\subsection{Elementos flotantes}
+
+Hoy en día, la mayoría de las publicaciones contienen muchas
+ilustraciones y tablas. Estos elementos necesitan un tratamiento
+especial porque no se pueden cortar entre páginas. Un método podría
+ser comenzando una página nueva cada vez que una ilustración o una
+tabla sea demasiado larga para caber en la página actual. Este
+enfoque deja páginas parcialmente vacías, lo que resulta poco
+estético.
+
+La solución a este problema es hacer que cualquier ilustración o
+tabla que no quepa en la página actual `flote'\ hasta una página
+posterior mientras se rellena la página actual con el texto del
+documento.
+
+\LaTeX{} te ofrece dos entornos para los \wi{elementos flotantes}. Uno
+ para las tablas y otro para las ilustraciones. Para aprovechar
+ completamente estos dos entornos es importante entender
+ aproximadamente cómo maneja \LaTeX{} estos objetos flotantes
+ internamente. Si no, los objetos flotantes se pueden convertir en una
+ fuente de frustaciones porque \LaTeX{} nunca los pone donde
+ quieres que vayan.
+
+\bigskip
+Primeramente, echemos un vistazo a las instrucciones que \LaTeX{}
+proporciona para objetos flotantes.
+
+Cualquier cosa que se incluya en un entorno \ei{figure} o \ei{table}
+se tratará como materia flotante. Ambos entornos flotantes
+proporcionan un parámetro opcional
+\begin{command}
+\verb|\begin{figure}[|\emph{designador de colocado}\verb|]| o\\
+\verb|\begin{table}[|\emph{designador de colocado}\verb|]|
+\end{command}
+\noindent llamado el \emph{designador de colocado}. Este parámetro se
+emplea para indicarle a \LaTeX{} los lugares donde le permites que
+vaya colocado el objeto flotante. Un \emph{designador de colocado} se
+construye con una cadena de \emph{permisos de colocación flotante}.
+Los puedes encontrar en la tabla~\ref{tab:permiss}.
+
+\begin{table}[!bp]
+\caption{Permisos de colocación flotante}\label{tab:permiss}
+\noindent \begin{minipage}{\textwidth}
+\medskip
+\begin{center}
+\begin{tabular}{@{}cp{10cm}@{}}
+  Designador&Permiso para colocar el objeto flotante\ldots\\ \hline
+  \rule{0pt}{1.05em}
+\texttt{h} & aquí (\emph{here}), muy próximo al
+  lugar en el texto donde se ha introducido. Es útil, principalmente,
+  para objetos flotantes pequeños.\\[0.3ex]
+\texttt{t} & en la parte superior de una página (\emph{top}).\\[0.3ex]
+\texttt{b} & en la parte inferior de una página
+  (\emph{bottom}).\\[0.3ex]
+\texttt{p} & en una \emph{página} especial que sólo contenga
+  elementos flotantes.\\[0.3ex]
+\texttt{!} & sin considerar la mayoría de los parámetros
+  internos\footnote{Como el número máximo de elementos flotantes en
+  una página.} que impedirían a este objeto flotante que se colocase.
+\end{tabular}
+\end{center}
+\end{minipage}
+\end{table}
+
+\pagebreak[3]
+Una tabla se podría comenzar con, por ejemplo, la siguiente línea:
+\begin{code}
+\verb|\begin{table}[!hbp]|
+\end{code}
+\noindent El \wi{designador de colocado} \verb|[!hbp]| le permite a
+\LaTeX{} colocar la tabla justamente aquí (\texttt{h}) o al final
+(\texttt{b}) de alguna página o en alguna página especial para
+elementos flotantes, y en cualquier parte si no queda tan bien
+(\texttt{!}). Si no indicas ningún designador de colocado, entonces se
+sobreentienden las clases normalizadas \verb|[tbp]|.
+
+\LaTeX{} colocará todos los objetos flotantes que encuentre según los
+de\-sig\-na\-do\-res de colocado que hayas indicado. Si un objeto
+flotante no se puede colocar en la página actual entonces se aplaza su
+colocación, para lo cual se introduce en una cola\footnote{Son de tipo
+  \emph{fifo}: lo que se introdujo primero es lo primero en
+  extraerse.} de \emph{tablas} o \emph{figuras} (ilustraciones).
+Cuando se comienza una nueva página, lo primero que \LaTeX{} hace es
+confirmar si se puede construir una página especial con los objetos
+flotantes que se hayan en las colas. Si no es posible, entonces se
+trata el primer objeto que se encuentra en las colas como si lo
+acabases de introducir. Entonces \LaTeX{} vuelve a intentar colocar el
+objeto según sus designadores de colocado (eso sí, sin tener en cuenta
+la opción `\verb|h|',\ que ya no es posible). Cualquier objeto
+flotante nuevo que aparezca en el texto se introduce en la cola
+correspondiente. \LaTeX{} mantiene estrictamente el orden original de
+apariciones de cada tipo de objeto flotante.
+
+Esta es la razón por la que una ilustración que no se puede colocar
+desplaza al resto de las figuras al final del documento. Por lo tanto:
+
+\begin{quote}
+  Si \LaTeX{} no coloca los objetos flotantes como esperaba, suele
+  deberse únicamente a un objeto flotante que está atascando una de
+  las dos colas de objetos flotantes.
+\end{quote}                 
+
+\bigskip
+\noindent Además, existen algunas cosas más que se deben indicar
+sobre los entornos \ei{table} y \ei{figure}. Con la instrucción
+\begin{command}
+\ci{caption}\verb|{|\emph{texto de título}\verb|}|
+\end{command}
+\noindent se puede definir un título para el objeto flotante. \LaTeX{}
+le añadirá la cadena ``Figura'' o ``Tabla'' y un número de secuencia.
+
+
+Las dos instrucciones
+\begin{command}
+\ci{listoffigures} y \ci{listoftables} 
+\end{command}
+\noindent funcionan de modo análogo a la orden
+\verb|\tableofcontents|, imprimiendo un índice de figuras o de tablas
+respectivamente. En estas listas se repetirán los títulos completos.
+Debes tener presente que si tiendes a utilizar títulos largos, es
+recomendable tener una versión de estos títulos más cortos para
+utilizarlos para estos índices. Esto se consigue dando la versión
+corta entre corchetes tras la orden \verb|\caption|.
+\begin{code}
+\verb|\caption[Corto]{LLLLLaaaaaaaaarrrrrrrrgggggooooooo}| 
+\end{code}
+
+Con \verb|\label| y \verb|\ref| se pueden crear referencias a un
+objeto flotante dentro del texto.
+
+El siguiente ejemplo dibuja un cuadrado y lo inserta en el
+documento. Podría utilizar esto si desea reservar espacios para
+imágenes que vaya a pegar en el documento acabado.
+
+\begin{code}
+\begin{verbatim}
+La ilustración~\ref{blanco} es un ejemplo del Pop-Art.
+\begin{figure}[!hbp]
+\makebox[\textwidth]{\framebox[5cm]{\rule{0pt}{5cm}}}
+\caption{$5\times 5$ centímetros} \label{blanco}
+\end{figure}
+\end{verbatim}
+\end{code}
+
+\noindent En el ejemplo anterior\footnote{suponiendo que la cola de
+  figuras esté vacía.} \LaTeX{} intentará \emph{por todos los
+  medios}~(\texttt{!}) colocar la ilustración exactamente
+\emph{aquí}~(\texttt{h}). Si no puede, intentará colocarla en la
+\emph{parte inferior}~(\texttt{b}) de la página. Si no consigue
+colocar esta figura en la página actual, determina si es posible crear
+una página (\verb|p|) con elementos flotantes exclusivamente que
+contenga esta ilustración y algunas tablas que pudieran haber en la
+cola de tablas. Si no hay material suficiente para una página especial
+de objetos flotantes, entonces \LaTeX{} comienza una página nueva y
+otra vez trata la figura como si acabase de aparecer en el texto.
+
+Bajo determinadas condiciones podría ser necesario emplear la orden
+\begin{command}
+\ci{clearpage}
+\end{command}
+\noindent Le ordena a \LaTeX{} que coloque \emph{inmediatamente} todos
+los objetos flotantes que se hallen en las colas y después comenzar
+una página nueva.
+
+%Más adelante veremos cómo incluir imágenes en formato PostScript en
+%tus documentos de \LaTeXe.
+
+
+\subsection{Añadiendo instrucciones y entornos nuevos}
+
+En el primer apartado te explicamos que \LaTeX{} necesita información
+sobre la estructura lógica del texto para elegir el formato adecuado.
+Este es un concepto muy bien cuidado. Pero en la práctica solemos
+chocar con las limitaciones que esto nos impone, ya que \LaTeX{}
+simplemente no tiene el entorno especializado o la orden que deseamos
+para un propósito específico.
+
+Una solución es emplear varias órdenes de \LaTeX{} para producir el
+diseño que se tiene en mente. Si tienes que hacer esto una vez, no hay
+ningún problema. Pero si esto sucede repetidamente, entonces lleva
+mucho tiempo. Si alguna vez desearas cambiar el formato tendrías que
+revisar el fichero de entrada entero y editar todos los elementos en
+cuestión.
+
+Para resolver este problema, \LaTeX{} te permite definir tus propias
+instrucciones y entornos.
+
+\subsubsection{Instrucciones nuevas}
+
+Para añadir tus propias instrucciones utiliza la orden
+\begin{command}
+\ci{newcommand}\verb|{|%
+   \emph{nombre}\verb|}[|\emph{num}\verb|]{|\emph{definición}\verb|}|
+\end{command}
+\noindent Básicamente, la instrucción necesita dos argumentos: el
+\emph{nombre} de la instrucción que quieres crear y la
+\emph{definición} de la instrucción. El argumento entre corchetes
+\emph{num} es opcional. Puedes usarlo para crear órdenes nuevas que
+tomen hasta 9 argumentos.
+
+Los dos ejemplos siguientes deberían ayudarte a captar la idea. El
+primer ejemplo define una instrucción nueva llamada \verb|\udl|. Esta
+es una forma abreviada de introducir ``Una Descripción de \LaTeXe''.
+Una orden como ésta sería muy útil si tuviéramos que escribir el
+título de este capítulo una y otra vez.
+
+\begin{example}
+\newcommand{\udl}
+    {Una Descripción de \LaTeXe}
+% en el cuerpo del documento :
+``\udl'' \ldots{} ``\udl''
+\end{example}
+
+El ejemplo siguiente ilustra cómo usar el argumento \emph{num}. La
+secuencia \verb|#1| encuentra un sustituto en el argumento que
+especifiques. Si quisieras más de un argumento, emplea \verb|#2| y así
+sucesivamente.
+
+\begin{example}
+\newcommand{\txsit}[1]
+    {Una Descripción \emph{#1}
+     Pequeña de \LaTeXe}
+% en el cuerpo del documento: 
+\begin{itemize}
+\item \txsit{no tan}
+\item \txsit{muy}
+\end{itemize}
+\end{example}
+
+\LaTeX{} no te permitirá crear una instrucción nueva con un nombre que
+ya existe. Si quieres ignorar de modo explícito una instrucción
+existente debes utilizar \ci{renewcommand}. Aparte de su nombre,
+utiliza la misma sintaxis que la instrucción \verb|\newcommand|. En
+determinados casos podrías querer utilizar la instrucción
+\ci{providecommand}. Funciona como \ci{newcommand}, pero si ya hay una
+instrucción definida con este nombre, entonces \LaTeXe{} simplemente
+ignora esta otra definición que acabaras de indicar.
+
+\subsubsection{Entornos nuevos}
+
+De modo análogo a la instrucción \verb|\newcommand| existe una orden
+para crear tus propios entornos. Cuando estábamos escribiendo este
+capítulo, hemos creado entornos especiales para estructuras que se
+empleaban repetidamente en toda la descripción: ``ejemplos'',
+``segmentos de código'' y ``cajas de definición de instrucciones''.
+La instrucción \ci{newenvironment} utiliza la siguiente sintaxis:
+
+\begin{command}
+\ci{newenvironment}\verb|{|%
+       \emph{nombre}\verb|}[|\emph{num}\verb|]{|%
+       \emph{antes}\verb|}{|\emph{después}\verb|}|
+\end{command}
+
+Al igual que la instrucción \verb|\newcommand|, se puede usar
+\ci{newenvironment} con o sin argumento opcional. Lo que especifiques
+en el argumento \emph{antes} se procesa antes que el texto dentro del
+entorno. Lo que indiques en el argumento \emph{después} se procesa
+cuando se encuentra la instrucción \verb|\end{|\emph{nombre}\verb|}|.
+
+El siguiente ejemplo ilustra el empleo de la instrucción
+\ci{newenvironment}.
+
+\begin{example}
+\newenvironment{king}
+    {\begin{quote}}{\end{quote}}
+% use esto en el cuerpo
+\begin{king}
+Mis humildes vasallos\ldots
+\end{king}
+\end{example}
+
+El argumento \emph{num} se utiliza igual que la instrucción
+\verb|\newcommand|. \LaTeX{} se asegura de que no definas un entorno
+que ya existía. Si alguna vez deseas cambiar una entorno existente,
+entonces puedes utilizar la instrucción \ci{renewenvironment}. Tiene
+la misma sintaxis que la instrucción \ci{newenvironment}.
+
+
+\endinput
+
+\section{Composición de fórmulas matemáticas}
+
+\begin{intro}
+  !`Ahora a admirarse con este apartado! En esta sección vamos a
+  abordar el punto fuerte de \TeX: la composición matemática. Pero te
+  advertimos que este apartado sólo muestra la superficie. Mientras lo
+  que aquí explicamos es suficiente para mucha gente, no te desesperes
+  si no puedes encontrar una solución a tus necesidades de composición
+  de expresiones matemáticas. Es muy probable que en esos casos tu
+  problema ya esté abordado en AMS-\LaTeXe
+  \footnote{\texttt{CTAN:/tex-archive/macros/latex/packages/amslatex}}
+  o en algún otro paquete.
+\end{intro}
+  
+\subsection{Generalidades}
+
+\LaTeX{} posee un modo especial para componer expresiones
+\wi{matemáticas}. En un párrafo, el texto matemático se introduce
+entre \ci{(} y \ci{)}, \index{$@\texttt{\$}} entre \texttt{\$} y
+\texttt{\$} o entre \verb|\begin{|\ei{math}\verb|}| y
+  \verb|\end{math}|.  \index{formulas@fórmulas}
+
+\begin{example}
+Siendo $a$ y $b$ los catetos
+y $c$ la hipótenusa
+de un triángulo rectángulo,
+entonces $c^{2}=a^{2}+b^{2}$
+(Teorema de Pitágoras).
+\end{example}
+
+\begin{example}
+\TeX{} se pronuncia como
+ $\tau\epsilon\chi$.\\[6pt]
+100~m$^{2}$ de área útil \\[6pt]
+De mi $\heartsuit$.
+\end{example}
+
+Las fórmulas matemáticas mayores o las ecuaciones suelen quedar mejor
+en renglones separados del texto. Para ello se ponen entre \ci{[} y
+\ci{]} o entre \verb|\begin{|\ei{displaymath}\verb|}| y
+  \verb|\end{displaymath}|. Esto produce fórmulas sin número de
+ecuación. Si quieres que \LaTeX{} las enumere, entonces puedes emplear
+el entorno \ei{equation}.
+
+\begin{example}
+Siendo $a$ y $b$ los catetos
+y $c$ la hipótenusa
+de un triángulo rectángulo,
+entonces
+\begin{displaymath}
+c = \sqrt{  a^{2}+b^{2}  }
+\end{displaymath}
+(Teorema de Pitágoras).
+\end{example}
+
+Con \ci{label} y \ci{ref} se puede hacer referencia a una
+ecuación del documento.
+
+\begin{example}
+\begin{equation} \label{eq:eps}
+\epsilon > 0
+\end{equation}
+De (\ref{eq:eps}) se deduce\ldots
+\end{example}
+
+Fíjate que las expresiones se componen con un estilo diferente al
+disponerlas en párrafos separados del texto:
+
+\begin{example}
+$\lim_{n \to \infty}
+\sum_{k=1}^n \frac{1}{k^2}
+= \frac{\pi^2}{6}$
+\end{example}
+\begin{example}
+\begin{displaymath}
+\lim_{n \to \infty}
+\sum_{k=1}^n \frac{1}{k^2}
+= \frac{\pi^2}{6}
+\end{displaymath}
+\end{example}
+
+
+Existen diferencias entre el \emph{modo matemático} y el \emph{modo
+  texto}. Por ejemplo, en el \emph{modo matemático}:
+
+\begin{enumerate}
+
+\item Los espacios en blanco y los cambios de línea no tienen ningún
+  significado. Todos los espacios se determinarán a partir de la
+  lógica de la expresión matemática o se deben indicar con
+  instrucciones especiales como \ci{,}, \ci{quad}, \ci{qquad}, \ci{:},
+  \ci{;}, \verb*|\ | y \verb|\!|\cih{"!}.%
+\index{instrucciones!\quad@\verb*".\ ".}%
+\index{\quad@\hspace*{-1.2ex}\verb*".\ ".}%
+
+\begin{example}
+\begin{equation}
+\forall x \in \mathbf{R}:
+\qquad x^{2} \geq 0
+\end{equation}
+\end{example}
+ 
+\item Los renglones en blanco están prohibidos. Sólo puede haber un
+  párrafo por fórmula.
+\item Cada letra en particular se tendrá en cuenta como el nombre de
+  una variable y se pondrá como tal (cursiva con espacios
+  adicionales). Para introducir texto normal dentro de un texto
+  matemático (con escritura en redondilla y con espacios entre
+  palabras) debes incluirlo dentro de la orden \verb|\textrm{...}|.
+
+\begin{example}
+\begin{equation}
+x^{2} \geq 0\qquad
+\textrm{para todo }x\in\mathbf{R}
+\end{equation}
+\end{example}
+ 
+\end{enumerate}
+
+%
+% Añada el paquete AMSSYB ... Blackboard bold .... R para números
+% reales
+%
+
+Los matemáticos pueden ser muy exigentes con los símbolos que se
+emplean: aquí sería más \emph{convencional} emplear `\emph{blackboard
+  bold}' \index{blackboard bold@\emph{blackboad bold}} \index{simbolos
+  en negrita@símbolos en negrita} que se obtienen con \ci{mathbb} del
+paquete \pai{amsfonts} o \pai{amssymb}.  \ifx\mathbb\undefined\else El
+último ejemplo se convierte en
+\begin{example}
+\begin{displaymath}
+x^{2} \geq 0\qquad
+\textrm{para todo }x\in\mathbb{R}
+\end{displaymath}
+\end{example}
+\fi
+
+\subsection{Agrupaciones en modo matemático}
+
+En modo matemático la mayoría de las instrucciones sólo afecta al
+carácter siguiente. Si deseas que una instrucción influya sobre
+varios caracteres, entonces debes agruparlos empleando llaves
+(\verb|{...}|).
+
+\begin{example}
+\begin{equation}
+a^x+y \neq a^{x+y}
+\end{equation}
+\end{example}
+ 
+\subsection{Elementos de las fórmulas matemáticas}
+
+A continuación te presentamos las instrucciones más importantes que se
+utilizan en las fórmulas matemáticas.
+
+\textbf{Las \wi{letras griegas} minúsculas} se introducen como
+\verb|\alpha|, \verb|\beta|, \verb|\gamma|\ldots, y las
+mayúsculas\footnote{No hay definida ninguna Alfa mayúscula en
+  \LaTeXe{} porque tiene el mismo aspecto que la redondilla A. Una vez
+  que se haga la nueva codificación matemática, esto cambiará.} se
+introducen como \verb|\Gamma|, \verb|\Delta|\ldots
+
+\begin{example}
+$\lambda,\xi,\pi,\mu,\Phi,\Omega$
+\end{example}
+
+\index{exponente}\index{subíndice}%
+\textbf{Los exponentes y los subíndices} se pueden indicar empleando
+el carácter \verb|^|\index{^@\verb"|^"|} y el carácter
+\verb|_|\index{_@\verb"|_"|}.
+
+\begin{example}
+$a_{1}$ \qquad $x^{2}$ \qquad
+$e^{-\alpha t}$ \qquad
+$a^{3}_{ij}$\\
+$e^{x^2} \neq {e^x}^2$
+\end{example}
+
+El \textbf{\wi{signo de raíz cuadrada}} se introduce con \ci{sqrt}, y
+la raíz \mbox{$n$-ésima} con \verb|\sqrt[|$n$\verb|]|. \LaTeX\ elige
+automáticamente el tamaño del signo de raíz. Si sólo necesitas el
+signo de la raíz utiliza \verb|\surd|.
+
+\begin{example}
+$\sqrt{x}$ \qquad 
+$\sqrt{ x^{2}+\sqrt{y} }$ 
+\qquad $\sqrt[3]{2}$\\[3pt]
+$\surd[x^2 + y^2]$
+\end{example}
+
+Las instrucciones \ci{overline} y \ci{underline} producen
+\textbf{líneas horizontales} directamente encima o debajo de una
+expresión.
+\index{linea@línea!horizontal}
+\begin{example}
+$\overline{m+n}$
+\end{example}
+
+Las órdenes \ci{overbrace} y \ci{underbrace} crean \textbf{llaves
+  horizontales} largas encima o bien debajo de una expresión.
+\index{llave!horizontal}
+\begin{example}
+$\underbrace{ a+b+\cdots+z }_{26}$
+\end{example}
+
+\index{acentos!matemáticos}Para poner acentos matemáticos, como
+pequeñas flechas o \wi{tilde}s a las variables, se pueden utilizar las
+órdenes que aparecen en la tabla~\ref{mathacc}. Los ángulos y las
+tildes que abarcan varios caracteres se obtienen con \ci{widetilde} y
+\ci{widehat}. Con el símbolo \verb|'|\index{'@\verb"|'"|} se introduce
+el signo de \wi{prima}.
+% un guión es --
+
+\begin{example}
+\begin{displaymath}
+y=x^{2}\qquad y'=2x\qquad y''=2
+\end{displaymath}
+\end{example}
+
+\begin{table}[!h]
+\caption{Acentos en modo matemático}  \label{mathacc}
+\begin{symbols}{*4{cl}}
+\W{\hat}{a}     & \W{\check}{a} & \W{\tilde}{a} & \W{\acute}{a} \\
+\W{\grave}{a} & \W{\dot}{a} & \W{\ddot}{a}    & \W{\breve}{a} \\
+\W{\bar}{a} &\W{\vec}{a} &\W{\widehat}{A}&\W{\widetilde}{A}\\  
+\end{symbols}
+\end{table}
+
+Con frecuencia los \textbf{\wi{vectores}} se indican añadiéndoles
+\wi{símbolos de flecha} pequeños encima de la variable. Esto se
+realiza con la orden \ci{vec}. Para designar al vector que va desde
+$A$ hasta $B$ resultan adecuadas las instrucciones \ci{overrightarrow}
+y \ci{overleftarrow}.
+
+\begin{example}
+\begin{displaymath}
+\vec a\quad\overrightarrow{AB}
+\end{displaymath}
+\end{example}
+
+Existen funciones matemáticas (seno, coseno, tangente,
+logaritmos\ldots) que se presentan con redondilla y \emph{nunca} en
+itálica. Para éstas \LaTeX{} proporciona las siguientes
+instrucciones: \index{funciones!matemáticas}
 
 \begin{verbatim}
-$ xdvi ejemplo.dvi
+\arccos   \cos    \csc   \exp   \ker     \limsup  \min   \sinh
+\arcsin   \cosh   \deg   \gcd   \lg      \ln      \Pr    \sup
+\arctan   \cot    \det   \hom   \lim     \log     \sec   \tan
+\arg      \coth   \dim   \inf   \liminf  \max     \sin   \tanh
 \end{verbatim}
 
- Dado que el formato  {\tt DVI} (DeVice Independent) no está muy
-extendido se  han generado conversores  de formato, de tal  manera que
-podemos  pasar  desde  dvi  a  formato  {\tt PostScript}  y  a  formato
-{\tt PDF}, ambos mucho más extendidos que el dvi. Para pasar un fichero
-generado por  \LaTeX~ en formato  {\tt DVI} a un  fichero {\tt PostScript}
-usaremos el comando {\tt dvips} de la siguiente manera: 
+\begin{example}
+\[\lim_{n \rightarrow 0}
+\frac{\sin x}{x}=1\]
+\end{example}
 
+Para la \wi{función módulo} existen dos órdenes distintas:
+\ci{bmod} para el operador binario, como en ``$a \bmod b$'', y
+\ci{pmod} para expresiones como ``$x\equiv a \pmod{b}$''.
+
+Un \textbf{\wi{quebrado}} o
+\textbf{fracción}\index{fraccion@fracción} se pone con la orden
+\ci{frac}\verb|{...}{...}|. Para los quebrados sencillos a veces
+suele ser preferible utilizar el operador \verb|/|, %\index{/@\verb|/|}
+como en $1/2$.
+\begin{example}
+$1\frac{1}{2}$~horas
+\begin{displaymath}
+\frac{ x^2 }{ k+1 }\qquad
+x^{ \frac{2}{k+1} }\qquad
+x^{ 1/2 }
+\end{displaymath}
+\end{example}
+
+Los \textbf{\wi{coeficientes de los binomios}} y estructuras similares
+se pueden componer con la instrucción \verb|{... |\ci{choose}%
+\verb| ...}| o \verb|{... |\ci{atop}\verb| ...}|. Con la segunda orden se
+consigue lo mismo pero sin paréntesis.
+
+\begin{example}
+\begin{displaymath}
+{n \choose k}\qquad {x \atop y+2}
+\end{displaymath}
+\end{example}
+ 
+\medskip
+
+El \textbf{\wi{signo de integral}} se obtiene con \ci{int} y el
+\textbf{\wi{signo de sumatorio}} con \ci{sum}. Los límites superior e
+inferior se indican con~\verb|^| y~\verb|_|, tal como se hace para los
+superíndices y subíndices.
+
+\begin{example}
+\begin{displaymath}
+\sum_{i=1}^{n} \qquad
+\int_{0}^{\frac{\pi}{2}} \qquad
+\end{displaymath}
+\end{example}
+
+Para las \textbf{\wi{llaves}} y otros \wi{delimitadores} tenemos todos
+los tipos de símbolos de \TeX{}
+(p.~ej.~$[\;\langle\;\|\;\updownarrow$). Los paréntesis y los
+corchetes se introducen con las teclas correspondientes, las llaves
+con \verb|\{| y \verb|\}|, y el resto con instrucciones especiales
+(p.~ej.~\verb|\updownarrow|).
+
+\begin{example}
+\begin{displaymath}
+{a,b,c}\neq\{a,b,c\}
+\end{displaymath}
+\end{example}
+
+Para que \LaTeX\ elija de modo automático el tamaño apropiado se pone
+la orden \ci{left} delante del delimitador de apertura y \ci{right}
+delante del que cierra. Ten en cuenta que debes cerrar cada \ci{left}
+con el \ci{right} correspondiente. Si no deseas nada en la derecha,
+entonces emplea `\ci{right.}'.
+
+
+\begin{example}
+\begin{displaymath}
+1 + \left( \frac{1}{ 1-x^{2} }
+    \right) ^3
+\end{displaymath}
+\end{example}
+
+
+En algunos casos es necesario fijar de modo explícito el tamaño
+correcto del delimitador matemático\index{delimitador!matemático}.
+Para esto se pueden utilizar las instrucciones \ci{big}, \ci{Big},
+\ci{bigg} y \ci{Bigg} como prefijos de la mayoría de las órdenes de
+delimitadores\footnote{Estas instrucciones pueden no funcionar del
+  modo deseado si has utilizado una instrucción de cambio del tamaño
+  del tipo, o si se ha especificado la opción \texttt{11pt} o
+  \texttt{12pt}. Los paquetes \pai{exscale} o \pai{amstex} sirven para
+  corregir esta anomalía.}.
+
+\begin{example}
+$\Big( (x+1) (x-1) \Big) ^{2}$\\
+$\big(\Big(\bigg(\Bigg($\quad
+$\big\}\Big\}\bigg\}\Bigg\}$\quad
+$\big\|\Big\|\bigg\|\Bigg\|$
+\end{example}
+
+Para poner los \textbf{\wi{puntos suspensivos}} en una ecuación
+existen varias órdenes. \ci{ldots} coloca los puntos en la línea base
+y \ci{cdots} los pone en la zona media del renglón. Ademas de éstos,
+también existen las instrucciones \ci{vdots} para puntos verticales y
+\ci{ddots} para puntos en diagonal.
+\index{puntos suspensivos!verticales}%
+\index{puntos suspensivos!en diagonal}%
+\index{puntos suspensivos!horizontales}%
+En el apartado \ref{sec:vert} existe otro ejemplo.
+
+\begin{example}
+\begin{displaymath}
+x_{1},\ldots,x_{n} \qquad
+x_{1}+\cdots+x_{n}
+\end{displaymath}
+\end{example}
+ 
+\subsection{Espaciado en modo matemático}
+
+\index{espaciado en modo matematico@espaciado en modo matemático}
+Si no estás satisfecho con los espaciados que \TeX{} elige dentro de
+una fórmula, éstos se pueden alterar con instrucciones especiales.
+Las más importantes son \ci{,} para un espacio muy pequeño, %
+\verb*.\ . para una mediana (\verb*. . significa un carácter en
+blanco), \ci{quad} y \ci{qquad} para espaciados grandes y
+\verb|\!|\cih{"!} para la disminución de una separación.
+
+\begin{example}
+\newcommand{\rd}{\mathrm{d}}
+\begin{displaymath}
+\int\!\!\!\int_{D} g(x,y)
+  \, \rd x\, \rd y
+\end{displaymath}
+en lugar de
+\begin{displaymath}
+\int\int_{D} g(x,y)\rd x \rd y
+\end{displaymath}
+\end{example}
+Observa que la `d' en la diferencial se compone de modo convencional
+en redondilla\footnote{En este ejemplo la `d' en redondilla se ha
+  introducido a través de la orden \texttt{\bs rd}, que previamente
+  se ha definido con \texttt{\bs newcommand\{\bs rd\}\{\bs mathrm\{d\}\}}.
+  De esta forma se evita estar introduciendo la secuencia \texttt{\bs
+    mathrm\{d\}} repetidamente.}.
+ 
+
+\subsection{Colocación de signos encima de otros}
+\label{sec:vert}
+
+Para componer \textbf{matrices} y similares se tiene el entorno
+\ei{array}. Éste funciona de modo similar al entorno \texttt{tabular}.
+Para dividir los renglones se utiliza la instrucción \verb|\\|.
+
+\begin{example}
+\begin{displaymath}
+\mathbf{X} =
+\left( \begin{array}{ccc}
+x_{11} & x_{12} & \ldots \\
+x_{21} & x_{22} & \ldots \\
+\vdots & \vdots & \ddots
+\end{array} \right)
+\end{displaymath}
+\end{example}
+
+También se puede usar el entorno \ei{array} para componer expresiones
+de funciones que tienen ``\verb|.|'' como delimitador invisible
+derecho, o sea, \ci{right}\verb|.|.
+
+\begin{example}
+\begin{displaymath}
+y = \left\{ \begin{array}{ll}
+ a & \textrm{si $d>c$}\\
+ b+x & \textrm{por la mañana}\\
+ l & \textrm{el resto del día}
+  \end{array} \right.
+\end{displaymath}
+\end{example}
+
+
+Para las ecuaciones que ocupen varios renglones o para los sistemas de
+ecuaciones \index{sistema de ecuaciones} se pueden emplear los
+entornos \ei{eqnarray} y \verb|eqnarray*|. En \texttt{eqnarray} cada
+renglón contiene un número de ecuación. Con \verb|eqnarray*| no se
+produce ninguna numeración.
+
+Los entornos \texttt{eqnarray} y \verb|eqnarray*| funcionan como una
+tabla de 3 columnas con la disposición \verb|{rcl}|, donde la columna
+central se utiliza para el signo de igualdad, desigualdad o cualquier
+otro signo que deba ir. La instrucción \verb|\\| divide los
+renglones.
+
+\begin{example}
+\begin{eqnarray}
+f(x) & = & \cos x       \\
+f'(x) & = & -\sin x     \\
+\int_{0}^{x} f(y) \mathrm{d}y &
+ = & \sin x
+\end{eqnarray}
+\end{example}
+
+\noindent Observa que existe demasiado espacio a cada lado de la
+columna central, donde se encuentran los signos. Para reducir estas
+separaciones se puede emplear \verb|\setlength\arraycolsep{2pt}| como
+en el ejemplo siguiente.
+
+\index{ecuaciones largas} Las \textbf{ecuaciones largas} no se dividen
+automáticamente. Eres tú quien debe determinar en qué lugares se deben
+fraccionar y cuánto se debe sangrar. Los dos métodos siguientes son
+las variantes más utilizadas para esto.
+
+\begin{example}
+{\setlength\arraycolsep{2pt}
+\begin{eqnarray}
+\sin x & = & x -\frac{x^{3}}{3!}
+     +\frac{x^{5}}{5!}-{}
+                    \nonumber\\
+ & & {}-\frac{x^{7}}{7!}+{}\cdots
+\end{eqnarray}}
+\end{example}
+\pagebreak[1]
+
+\begin{example}
+\begin{eqnarray}
+\lefteqn{ \cos x = 1
+     -\frac{x^{2}}{2!} +{} }
+                    \nonumber\\
+ & & {}+\frac{x^{4}}{4!}
+     -\frac{x^{6}}{6!}+{}\cdots
+\end{eqnarray}
+\end{example}
+
+\enlargethispage{\baselineskip}
+La instrucción \ci{nonumber} impide que \LaTeX{} coloque un número
+para la ecuación en la que está colocada la orden.
+
+
+\subsection{Tamaño del tipo para ecuaciones}
+
+\index{tamano del tipo@tamaño del tipo!para ecuaciones} En el modo
+matemático \TeX{} selecciona el tamaño del tipo según el contexto.
+Los superíndices, por ejemplo, se ponen en un tipo más pequeño. Si
+quiere introducir un texto en redondilla en una ecuación y utilizas la
+instrucción \verb|\textrm|, el mecanismo de cambio del tamaño del tipo
+no funcionará, ya que \verb|\textrm| conmuta de modo temporal al modo
+de texto. Entonces se debe emplear \verb|\mathrm| para que se mantenga
+activo el mecanismo de cambio de tamaño. Pero ten cuidado, ya que
+\ci{mathrm} sólo funcionará bien con cosas pequeñas. Los espacios no
+son aún activos y los caracteres con acentos no funcionan\footnote{El
+  paquete AMS-\LaTeX{} hace que la orden \ci{textrm} funcione bien con
+  el cambio de tamaños.}.
+
+\begin{example}
+\begin{equation}
+2^\textrm{o} \quad 
+2^\mathrm{o}
+\end{equation}
+\end{example}
+
+Sin embargo, a veces resulta necesario indicarle a \LaTeX{} el tamaño
+del tipo correcto. En modo matemático el tamaño del tipo se fija con
+las cuatro instrucciones:
+\begin{flushleft}
+\ci{displaystyle}~($\displaystyle 123$),
+\ci{textstyle}~($\textstyle 123$), 
+\ci{scriptstyle}~($\scriptstyle 123$) y
+\ci{scriptscriptstyle}~($\scriptscriptstyle 123$).
+\end{flushleft}
+
+El cambio de estilo también afecta al modo de presentar los límites.
+
+\begin{example}
+\begin{displaymath}
+\mathrm{corr}(X,Y)= 
+ \frac{\displaystyle 
+   \sum_{i=1}^n(x_i-\bar x)
+   (y_i-\bar y)} 
+  {\displaystyle\sqrt{
+ \sum_{i=1}^n(x_i-\bar x)^2
+\sum_{i=1}^n(y_i-\bar y)^2}}
+\end{displaymath}    
+\end{example}
+% Esto no es un acento matemático, y ningún libro de Matemáticas lo
+% compondría de este modo.
+% mathop produce el espaciado correcto.
+ 
+\noindent Éste es uno de los ejemplos en los que se necesitan
+corchetes mayores que los normalizados que proporciona %
+\verb|\left[| y \verb|\right]|.
+
+
+\subsection{Descripción de variables}
+
+Para algunas de sus ecuaciones podrías querer añadir una sección donde
+se describan las variables utilizadas. Para esto te podría servir de
+ayuda el siguiente ejemplo:
+
+\begin{example}
+\begin{displaymath}
+a^2+b^2=c^2
+\end{displaymath}
+{\settowidth{\parindent}
+   {donde:\ }
+
+\makebox[0pt][r]
+ {donde:\ }$a$, $b$ son  
+los adjuntos del ángulo recto
+de un triángulo rectángulo.
+
+$c$ es la hipotenusa
+del triángulo}
+\end{example}
+
+Si necesitas componer a menudo segmentos de texto como éste, ahora es
+el momento idóneo para practicar la instrucción
+\verb|\newenvironment|. Empléala para crear un entorno especializado
+para describir variables.\index{descripción de variables} Revisa la
+descripción al final del capítulo anterior.
+
+\subsection{Teoremas, leyes\ldots}
+
+Cuando se escriben documentos matemáticos, probablemente necesites de
+un modo para componer ``lemas'', ``definiciones'', ``axiomas'' y
+estructuras similares. \LaTeX{} facilita esto con la orden
+\begin{command}
+\ci{newtheorem}\verb|{|\emph{nombre}\verb|}[|\emph{contador}\verb|]{|%
+         \emph{texto}\verb|}[|\emph{sección}\verb|]|
+\end{command}
+El argumento \emph{nombre} es una palabra clave corta que se utiliza
+para identificar el ``teorema''. Con el argumento \emph{texto} se
+define el nombre del ``teorema'' que aparecerá en el documento final.
+
+Los argumentos entre corchetes son opcionales. Ambos se emplean para
+especificar la numeración utilizada para el ``teorema''. Con el
+argumento \emph{contador} se puede especificar el \emph{nombre} de un
+``teorema'' declarado previamente. El nuevo ``teorema'' se numerará
+con la misma secuencia. El argumento \emph{sección} te permite indicar
+la unidad de sección con la que te gustaría numerar tu ``teorema''.
+
+Tras ejecutar la instrucción \ci{newtheorem} en el preámbulo del
+documento, dentro del texto se puede usar la instrucción siguiente:
+
+
+\begin{code}
+\verb|\begin{|\emph{nombre}\verb|}[|\emph{texto}\verb|]|\\
+Este es un teorema interesante\\
+\verb|\end{|\emph{nombre}\verb|}|     
+\end{code}
+
+He aquí otro ejemplo de las posibilidades de este entorno:
+
+\begin{example}
+% Definiciones para el documento.
+% Preámbulo
+\newtheorem{ley}{Ley}
+\newtheorem{jurado}[ley]{Jurado}
+% En el documento
+\begin{ley} \label{law:box}
+No se esconda en la caja testigo
+\end{ley}
+\begin{jurado}[Los doce]
+Podría ser Vd. Por tanto, tenga
+cuidado y vea la ley
+\ref{law:box}\end{jurado}
+\begin{ley}No, No, No\end{ley}
+\end{example}
+
+El teorema ``Jurado'' emplea el mismo contador que el teorema ``Ley''.
+Por ello, toma un número que está en secuencia con las otras
+``Leyes''. El argumento que está entre corchetes se utiliza para
+especificar un título o algo parecido para el teorema.
+
+\begin{example}
+\newtheorem{mur}{Ley de Murphy}[section]
+\begin{mur} Si algo puede ir mal,
+irá mal.
+\end{mur}
+\end{example}
+
+El teorema ``Ley de Murphy'' obtiene un número que está ligado con
+el apartado actual. También se podría utilizar otra unidad, como,
+por ejemplo, un capítulo o un subapartado.
+
+\subsection{Símbolos en negrita}
+\index{simbolos en negrita@símbolos en negrita}
+
+Es bastante difícil obtener símbolos en negrita en \LaTeX\@.
+Probablemente esto sea intencionado ya que los compositores de texto
+aficionados tienden a abusar de ellos. La orden de cambio de tipo
+\verb|\mathbf| produce letras en negrita, pero éstas son redondillas
+mientras que los símbolos matemáticos normalmente van en versalita.
+Existe una orden \ci{boldmath}, pero \emph{sólo se puede emplear fuera
+  del modo matemático}. También funciona con los símbolos.
+
+\begin{example}
+\begin{displaymath}
+\mu, M \qquad \mathbf{M} \qquad
+\mbox{\boldmath $\mu, M$}
+\end{displaymath}
+\end{example}
+
+\noindent
+Observa que la coma también está en negrita, lo cual puede que a veces
+no los creas adecuado.
+
+El paquete \pai{amsbsy} (incluido por \pai{amsmath}) hace
+esto mucho más fácil. Incluye una orden \ci{boldsymbol} y una
+``negrita del hombre pobre'' \ci{pmb} (``\emph{poor man's bold}''),
+que opera de forma análoga a las máquinas de escribir, que para
+poner un texto en negrita se escribe encima del texto ya escrito.
+
+\ifx\boldsymbol\undefined\else
+\begin{example}
+\begin{displaymath}
+\mu, M \qquad
+\boldsymbol{\mu}, \boldsymbol{M}
+\qquad \pmb{\mu}, \pmb{M}
+\end{displaymath}
+\end{example}
+\fi
+
+
+\endinput
+
+
+\section{Lista de s'imbolos matem'aticos}  \label{symbols}
+
+En las tablas siguientes se indican todos los s'imbolos que
+normalmente se pueden utilizar en el \emph{modo matem'atico}.
+
+%
+% Texto v'alido en el caso de tener instalados los tipos de la AMS
+%
+\ifx\noAMS\relax Para usar los s'imbolos de las
+tablas~\ref{AMSD}--\ref{AMSNBR}\footnote{Estas tablas provienen de
+  \texttt{symbols.tex} y luego se hicieron muchas modificaciones
+  seg'un las sugerencias de Josef~Tkadlec}, se debe cargar el paquete
+\pai{amssymb} en el pre'ambulo del documento y adem'as deber'an
+encontrarse en el sistema los tipos matem'aticos de la \emph{American
+  Mathematical Society} (AMS).  Si no est'an instalados el paquete y
+los tipos de la AMS, entonces eche un vistazo a\\ 
+\centerline{\texttt{CTAN:/tex-archive/macros/latex/packages/amslatex}}\fi
+
+
+\begin{table}[!h]
+\caption{Acentos en modo matem'atico}  \label{mathacc}
+\begin{symbols}{*4{cl}}
+\W{\hat}{a}     & \W{\check}{a} & \W{\tilde}{a} & \W{\acute}{a} \\
+\W{\grave}{a} & \W{\dot}{a} & \W{\ddot}{a}    & \W{\breve}{a} \\
+\W{\bar}{a} &\W{\vec}{a} &\W{\widehat}{A}&\W{\widetilde}{A}\\  
+\end{symbols}
+\end{table}
+ 
+\begin{table}[!h]
+\caption{Letras griegas min'usculas}
+\begin{symbols}{*4{cl}}
+ \X{\alpha}     & \X{\theta}     & \X{o}          & \X{\upsilon}  \\
+ \X{\beta}      & \X{\vartheta}  & \X{\pi}        & \X{\phi}      \\
+ \X{\gamma}     & \X{\iota}      & \X{\varpi}     & \X{\varphi}   \\
+ \X{\delta}     & \X{\kappa}     & \X{\rho}       & \X{\chi}      \\
+ \X{\epsilon}   & \X{\lambda}    & \X{\varrho}    & \X{\psi}      \\
+ \X{\varepsilon}& \X{\mu}        & \X{\sigma}     & \X{\omega}    \\
+ \X{\zeta}      & \X{\nu}        & \X{\varsigma}  & &             \\
+ \X{\eta}       & \X{\xi}        & \X{\tau} 
+\end{symbols}
+\end{table}
+
+\begin{table}[!h]
+\caption{Letras griegas may'usculas}
+\begin{symbols}{*4{cl}}
+ \X{\Gamma}     & \X{\Lambda}    & \X{\Sigma}     & \X{\Psi}      \\
+ \X{\Delta}     & \X{\Xi}        & \X{\Upsilon}   & \X{\Omega}    \\
+ \X{\Theta}     & \X{\Pi}        & \X{\Phi} 
+\end{symbols}
+\end{table}
+\clearpage 
+
+\begin{table}[!tbp]
+\caption{Relaciones}
+\bigskip Puede realizar las negaciones correspondientes a estos
+s'imbolos a~nadi'endoles una orden \verb|\not| como prefijo a las
+instrucciones siguientes.
+\begin{symbols}{*3{cl}}
+ \X{<}           & \X{>}           & \X{=}          \\
+ \X{\leq}o \verb|\le|   & \X{\geq}o \verb|\ge|   & \X{\equiv}     \\
+ \X{\ll}         & \X{\gg}         & \X{\doteq}     \\
+ \X{\prec}       & \X{\succ}       & \X{\sim}       \\
+ \X{\preceq}     & \X{\succeq}     & \X{\simeq}     \\
+ \X{\subset}     & \X{\supset}     & \X{\approx}    \\
+ \X{\subseteq}   & \X{\supseteq}   & \X{\cong}      \\
+ \X{\sqsubset}$^a$ & \X{\sqsupset}$^a$ & \X{\Join}$^a$    \\
+ \X{\sqsubseteq} & \X{\sqsupseteq} & \X{\bowtie}    \\
+ \X{\in}         & \X{\ni}, \verb|\owns|  & \X{\propto}    \\
+ \X{\vdash}      & \X{\dashv}      & \X{\models}    \\
+ \X{\mid}        & \X{\parallel}   & \X{\perp}      \\
+ \X{\smile}      & \X{\frown}      & \X{\asymp}     \\
+ \X{:}           & \X{\notin}      & \X{\neq}o \verb|\ne|
+\end{symbols}
+\centerline{\footnotesize $^a$Para obtener este s'imbolo emplee el
+  paquete \textsf{latexsym}}
+\end{table}
+
+\begin{table}[!tbp]
+\caption{Operadores binarios}
+\begin{symbols}{*3{cl}}
+ \X{+}              & \X{-}              & &                 \\
+ \X{\pm}            & \X{\mp}            & \X{\triangleleft} \\
+ \X{\cdot}          & \X{\div}           & \X{\triangleright}\\
+ \X{\times}         & \X{\setminus}      & \X{\star}         \\
+ \X{\cup}           & \X{\cap}           & \X{\ast}          \\
+ \X{\sqcup}         & \X{\sqcap}         & \X{\circ}         \\
+ \X{\vee}, \verb|\lor|     & \X{\wedge}, \verb|\land|  & \X{\bullet}       \\
+ \X{\oplus}         & \X{\ominus}        & \X{\diamond}      \\
+ \X{\odot}          & \X{\oslash}        & \X{\uplus}        \\
+ \X{\otimes}        & \X{\bigcirc}       & \X{\amalg}        \\
+ \X{\bigtriangleup} &\X{\bigtriangledown}& \X{\dagger}       \\
+ \X{\lhd}$^a$         & \X{\rhd}$^a$         & \X{\ddagger}      \\
+ \X{\unlhd}$^a$       & \X{\unrhd}$^a$       & \X{\wr}
+\end{symbols}
+\centerline{\footnotesize $^a$Para obtener este s'imbolo emplee el
+  paquete \textsf{latexsym}}
+\end{table}
+
+\begin{table}[!tbp]
+\caption{Operadores ``grandes''}
+\begin{symbols}{*4{cl}}
+ \X{\sum}      & \X{\bigcup}   & \X{\bigvee}   & \X{\bigoplus}\\
+ \X{\prod}     & \X{\bigcap}   & \X{\bigwedge} &\X{\bigotimes}\\
+ \X{\coprod}   & \X{\bigsqcup} & &             & \X{\bigodot} \\
+ \X{\int}      & \X{\oint}     & &             & \X{\biguplus}
+\end{symbols}
+ 
+\end{table}
+
+
+\begin{table}[!tbp]
+\caption{Flechas}
+\begin{symbols}{*3{cl}}
+ \X{\leftarrow}o \verb|\gets|& \X{\longleftarrow}     & \X{\uparrow}          \\
+ \X{\rightarrow}o \verb|\to|& \X{\longrightarrow}    & \X{\downarrow}        \\
+ \X{\leftrightarrow}    & \X{\longleftrightarrow}& \X{\updownarrow}      \\
+ \X{\Leftarrow}         & \X{\Longleftarrow}     & \X{\Uparrow}          \\
+ \X{\Rightarrow}        & \X{\Longrightarrow}    & \X{\Downarrow}        \\
+ \X{\Leftrightarrow}    & \X{\Longleftrightarrow}& \X{\Updownarrow}      \\
+ \X{\mapsto}            & \X{\longmapsto}        & \X{\nearrow}          \\
+ \X{\hookleftarrow}     & \X{\hookrightarrow}    & \X{\searrow}          \\
+ \X{\leftharpoonup}     & \X{\rightharpoonup}    & \X{\swarrow}          \\
+ \X{\leftharpoondown}   & \X{\rightharpoondown}  & \X{\nwarrow}          \\
+ \X{\rightleftharpoons} & \X{\iff}(espacios mayores)& \X{\leadsto}$^a$
+
+\end{symbols}
+\centerline{\footnotesize $^a$Para obtener este s'imbolo emplee el
+  paquete \textsf{latexsym}}
+\end{table}
+
+\begin{table}[!tbp]
+\caption{Delimitadores}\label{tab:delimiters}
+\begin{symbols}{*4{cl}}
+ \X{(}            & \X{)}            & \X{\uparrow} & \X{\Uparrow}    \\
+ \X{[}o \verb|\lbrack|   & \X{]}o \verb|\rbrack|  & \X{\downarrow}   & \X{\Downarrow}  \\
+ \X{\{}o \verb|\lbrace|  & \X{\}}o \verb|\rbrace|  & \X{\updownarrow} & \X{\Updownarrow}\\
+ \X{\langle}      & \X{\rangle}  & \X{|}o \verb|\vert| &\X{\|}o \verb|\Vert|\\
+ \X{\lfloor}      & \X{\rfloor}      & \X{\lceil}       & \X{\rceil}      \\
+ \X{/}            & \X{\backslash}   & &. (vac'io dual)
+\end{symbols}
+\end{table}
+
+\begin{table}[!tbp]
+\caption{Delimitadores grandes}
+\begin{symbols}{*4{cl}}
+ \Y{\lgroup}      & \Y{\rgroup}      & \Y{\lmoustache}  & \Y{\rmoustache} \\
+ \Y{\arrowvert}   & \Y{\Arrowvert}   & \Y{\bracevert} 
+\end{symbols}
+\end{table}
+
+
+\begin{table}[!tbp]
+\caption{S'imbolos diversos}
+\begin{symbols}{*4{cl}}
+ \X{\dots}       & \X{\cdots}      & \X{\vdots}      & \X{\ddots}     \\
+ \X{\hbar}       & \X{\imath}      & \X{\jmath}      & \X{\ell}       \\
+ \X{\Re}         & \X{\Im}         & \X{\aleph}      & \X{\wp}        \\
+ \X{\forall}     & \X{\exists}     & \X{\mho}$^a$      & \X{\partial}   \\
+ \X{'}           & \X{\prime}      & \X{\emptyset}   & \X{\infty}     \\
+ \X{\nabla}      & \X{\triangle}   & \X{\Box}$^a$     & \X{\Diamond}$^a$ \\
+ \X{\bot}        & \X{\top}        & \X{\angle}      & \X{\surd}      \\
+\X{\diamondsuit} & \X{\heartsuit}  & \X{\clubsuit}   & \X{\spadesuit} \\
+ \X{\neg}o \verb|\lnot| & \X{\flat}       & \X{\natural}    & \X{\sharp}
+
+\end{symbols}
+\centerline{\footnotesize $^a$Para obtener este s'imbolo emplee el
+  paquete \textsf{latexsym}}
+\end{table}
+
+\begin{table}[!tbp]
+\caption{S'imbolos no matem'aticos}
+\bigskip
+Los siguientes s'imbolos tambi'en se pueden utilizar en modo texto.
+\begin{symbols}{*3{cl}}
+\SC{\dag} & \SC{\S} & \SC{\copyright}  \\
+\SC{\ddag} & \SC{\P} & \SC{\pounds}  \\
+\end{symbols}
+\end{table}
+
+%
+% Si no disponemos del material de AMS, entonces nos saltamos el resto
+% :-)
+%
+\noAMS
+
+\begin{table}[!tbp]
+\caption{Delimitadores de la AMS}\label{AMSD}
+\bigskip
+\begin{symbols}{*4{cl}}
+\X{\ulcorner}&\X{\urcorner}&\X{\llcorner}&\X{\lrcorner}
+\end{symbols}
+\end{table}
+
+\begin{table}[!tbp]
+\caption{S'imbolos griegos y hebreos de la AMS}
+\begin{symbols}{*5{cl}}
+\X{\digamma}     &\X{\varkappa} & \X{\beth}& \X{\daleth}     &\X{\gimel}
+\end{symbols}
+\end{table}
+
+\begin{table}[!tbp]
+\caption{Relaciones binarias de la AMS}
+\begin{symbols}{*3{cl}}
+ \X{\lessdot}           & \X{\gtrdot}            & \X{\doteqdot}o \verb|\Doteq| \\
+ \X{\leqslant}          & \X{\geqslant}          & \X{\risingdotseq}     \\
+ \X{\eqslantless}       & \X{\eqslantgtr}        & \X{\fallingdotseq}    \\
+ \X{\leqq}              & \X{\geqq}              & \X{\eqcirc}           \\
+ \X{\lll}o \verb|\llless|      & \X{\ggg}o \verb|\gggtr| & \X{\circeq}  \\
+ \X{\lesssim}           & \X{\gtrsim}            & \X{\triangleq}        \\
+ \X{\lessapprox}        & \X{\gtrapprox}         & \X{\bumpeq}           \\
+ \X{\lessgtr}           & \X{\gtrless}           & \X{\Bumpeq}           \\
+ \X{\lesseqgtr}         & \X{\gtreqless}         & \X{\thicksim}         \\
+ \X{\lesseqqgtr}        & \X{\gtreqqless}        & \X{\thickapprox}      \\
+ \X{\preccurlyeq}       & \X{\succcurlyeq}       & \X{\approxeq}         \\
+ \X{\curlyeqprec}       & \X{\curlyeqsucc}       & \X{\backsim}          \\
+ \X{\precsim}           & \X{\succsim}           & \X{\backsimeq}        \\
+ \X{\precapprox}        & \X{\succapprox}        & \X{\vDash}            \\
+ \X{\subseteqq}         & \X{\supseteqq}         & \X{\Vdash}            \\
+ \X{\Subset}            & \X{\Supset}            & \X{\Vvdash}           \\
+ \X{\sqsubset}          & \X{\sqsupset}          & \X{\backepsilon}      \\
+ \X{\therefore}         & \X{\because}           & \X{\varpropto}        \\
+ \X{\shortmid}          & \X{\shortparallel}     & \X{\between}          \\
+ \X{\smallsmile}        & \X{\smallfrown}        & \X{\pitchfork}        \\
+ \X{\vartriangleleft}   & \X{\vartriangleright}  & \X{\blacktriangleleft}\\
+ \X{\trianglelefteq}    & \X{\trianglerighteq}   &\X{\blacktriangleright}
+\end{symbols}
+\end{table}
+
+\begin{table}[!tbp]
+\caption{Flechas de la AMS}
+\begin{symbols}{*3{cl}}
+ \X{\dashleftarrow}      & \X{\dashrightarrow}     & \X{\multimap}          \\
+ \X{\leftleftarrows}     & \X{\rightrightarrows}   & \X{\upuparrows}        \\
+ \X{\leftrightarrows}    & \X{\rightleftarrows}    & \X{\downdownarrows}    \\
+ \X{\Lleftarrow}         & \X{\Rrightarrow}        & \X{\upharpoonleft}     \\
+ \X{\twoheadleftarrow}   & \X{\twoheadrightarrow}  & \X{\upharpoonright}    \\
+ \X{\leftarrowtail}      & \X{\rightarrowtail}     & \X{\downharpoonleft}   \\
+ \X{\leftrightharpoons}  & \X{\rightleftharpoons}  & \X{\downharpoonright}  \\
+ \X{\Lsh}                & \X{\Rsh}                & \X{\rightsquigarrow}   \\
+ \X{\looparrowleft}      & \X{\looparrowright}     &\X{\leftrightsquigarrow}\\
+ \X{\curvearrowleft}     & \X{\curvearrowright}    & &                      \\
+ \X{\circlearrowleft}    & \X{\circlearrowright}   & &
+\end{symbols}
+\end{table}
+
+\begin{table}[!tbp]
+\caption{Relaciones binarias y flechas negadas de la AMS}\label{AMSNBR}
+\begin{symbols}{*3{cl}}
+ \X{\nless}           & \X{\ngtr}            & \X{\varsubsetneqq}  \\
+ \X{\lneq}            & \X{\gneq}            & \X{\varsupsetneqq}  \\
+ \X{\nleq}            & \X{\ngeq}            & \X{\nsubseteqq}     \\
+ \X{\nleqslant}       & \X{\ngeqslant}       & \X{\nsupseteqq}     \\
+ \X{\lneqq}           & \X{\gneqq}           & \X{\nmid}           \\
+ \X{\lvertneqq}       & \X{\gvertneqq}       & \X{\nparallel}      \\
+ \X{\nleqq}           & \X{\ngeqq}           & \X{\nshortmid}      \\
+ \X{\lnsim}           & \X{\gnsim}           & \X{\nshortparallel} \\
+ \X{\lnapprox}        & \X{\gnapprox}        & \X{\nsim}           \\
+ \X{\nprec}           & \X{\nsucc}           & \X{\ncong}          \\
+ \X{\npreceq}         & \X{\nsucceq}         & \X{\nvdash}         \\
+ \X{\precneqq}        & \X{\succneqq}        & \X{\nvDash}         \\
+ \X{\precnsim}        & \X{\succnsim}        & \X{\nVdash}         \\
+ \X{\precnapprox}     & \X{\succnapprox}     & \X{\nVDash}         \\
+ \X{\subsetneq}       & \X{\supsetneq}       & \X{\ntriangleleft}  \\
+ \X{\varsubsetneq}    & \X{\varsupsetneq}    & \X{\ntriangleright} \\
+ \X{\nsubseteq}       & \X{\nsupseteq}       & \X{\ntrianglelefteq}\\
+ \X{\subsetneqq}      & \X{\supsetneqq}      &\X{\ntrianglerighteq}\\[0.5ex]
+ \X{\nleftarrow}      & \X{\nrightarrow}     & \X{\nleftrightarrow}\\
+ \X{\nLeftarrow}      & \X{\nRightarrow}     & \X{\nLeftrightarrow}
+
+\end{symbols}
+\end{table}
+
+\begin{table}[!tbp]
+\caption{Operadores binarios de la AMS}
+\begin{symbols}{*3{cl}}
+ \X{\dotplus}        & \X{\centerdot}      & \X{\intercal}      \\
+ \X{\ltimes}         & \X{\rtimes}         & \X{\divideontimes} \\
+ \X{\Cup}o \verb|\doublecup|& \X{\Cap}o \verb|\doublecap|& \X{\smallsetminus} \\
+ \X{\veebar}         & \X{\barwedge}       & \X{\doublebarwedge}\\
+ \X{\boxplus}        & \X{\boxminus}       & \X{\circleddash}   \\
+ \X{\boxtimes}       & \X{\boxdot}         & \X{\circledcirc}   \\
+ \X{\leftthreetimes} & \X{\rightthreetimes}& \X{\circledast}    \\
+ \X{\curlyvee}       & \X{\curlywedge}  
+\end{symbols}
+\end{table}
+
+\begin{table}[!tbp]
+\caption{S'imbolos diversos de la AMS}
+\begin{symbols}{*3{cl}}
+ \X{\hbar}             & \X{\hslash}           & \X{\Bbbk}            \\
+ \X{\square}           & \X{\blacksquare}      & \X{\circledS}        \\
+ \X{\vartriangle}      & \X{\blacktriangle}    & \X{\complement}      \\
+ \X{\triangledown}     &\X{\blacktriangledown} & \X{\Game}            \\
+ \X{\lozenge}          & \X{\blacklozenge}     & \X{\bigstar}         \\
+ \X{\angle}            & \X{\measuredangle}    & \X{\sphericalangle}  \\
+ \X{\diagup}           & \X{\diagdown}         & \X{\backprime}       \\
+ \X{\nexists}          & \X{\Finv}             & \X{\varnothing}      \\
+ \X{\eth}              & \X{\mho}       
+\end{symbols}
+\end{table}
+
+
+
+\begin{table}[!tbp]
+\caption{Alfabetos matem'aticos}
+\begin{symbols}{@{}*3l@{}}
+Ejemplo& Instrucci'on & Paquete necesario\\
+\hline
+\rule{0pt}{1.05em}$\mathrm{ABCdef}$
+        & \verb|\mathrm{ABCdef}|
+        &       \\
+$\mathit{ABCdef}$
+        & \verb|\mathit{ABCdef}|
+        &       \\
+$\mathnormal{ABCdef}$
+        & \verb|\mathnormal{ABCdef}|
+        &       \\
+$\mathcal{ABC}$
+        & \verb|\mathcal{ABC}|
+        &       \\
+% Para cuando no d'e problemas con el estilo spanish de babel... :-(
+% \ifx\EuScript\undefined\else
+% $\EuScript{ABC}$
+        & \verb|\mathcal{ABC}|
+        &\textsf{euscript} con opci'on \textsf{mathcal}   \\
+        & \verb|\mathscr{ABC}|
+        &\textsf{euscript} con opci'on \textsf{mathscr}\\
+$\mathfrak{ABCdef}$
+        & \verb|\mathfrak{ABCdef}|
+        &\textsf{eufrak}                \\
+%\fi
+$\mathbb{ABC}$
+        & \verb|\mathbb{ABC}|
+        &\textsf{amsfonts} o \textsf{amssymb}        \\
+\end{symbols}
+\end{table}
+
+
+\endinput
+
+\section{Especialidades}
+\begin{intro}
+  Si ya te sientes lo sucifientemente seguro de tí mismo, entonces
+  ahora ya puedes comenzar a escribir tus documentos en \LaTeX. El
+  propósito de este capítulo es añadir algunas `especias'\ a tus
+  conocimientos de \LaTeX. En el {\normalfont\manual{}} y {\normalfont
+    \companion} podrás encontrar una descripción más completa de las
+  especialidades y de las posibles mejoras que puedes realizar con
+  \LaTeX.
+\end{intro}
+
+\subsection{Tipos y tamaños}
+
+\index{tipo}\index{tamaño del tipo} \LaTeX{} elige el tipo y el tamaño
+de los tipos basándose en la estructura lógica del documento
+(apartados, notas al pie\ldots). En algunos casos podrías querer
+cambiar directamente los tipos y los tamaños. Para realizar esto se
+pueden usar las instrucciones de las tablas~\ref{fonts} y~\ref{sizes}.
+El tamaño real de cada tipo es cuestión de diseño y depende de la
+clase de documento y de sus opciones.
+
+\begin{example}
+{\small Los pequeños y
+\textbf{gordos} romanos dominaron}
+{\Large toda la grande
+\textit{Italia}.}
+\end{example}
+
+Una característica importante de \LaTeXe{} es que los atributos de
+los tipos son independientes. Esto significa que se puede llamar a
+instrucciones de cambio de tamaño o incluso de tipo y aún así se
+mantienen los atributos de negrita o inclinado que se establecieron
+previamente.
+
+En el \emph{modo matemático} se pueden emplear instrucciones de
+cambio de tipos para salir temporalmente del \emph{modo matemático} e
+introducir texto normal. Si para componer las ecuaciones prefirieses
+utilizar otro tipo existe un conjunto especial de instrucciones para
+ello. Consulta para esto la tabla~\ref{mathfonts}.
+
+\begin{table}[!bp]
+\caption{Tipos} \label{fonts}
+\begin{lined}{12cm}
+%
+\begin{tabular}{@{}rl@{\qquad}rl@{}}
+\ci{textrm}\verb|{...}|        &  \textrm{\wi{redonda}}&
+\ci{textsf}\verb|{...}|        &  \textsf{\wi{sin línea de pie}}\\
+\ci{texttt}\verb|{...}|        &  \texttt{de máquina}\\
+                               &  \texttt{de escribir}&
+                               &                         \\[6pt]
+\ci{textmd}\verb|{...}|        &  \textmd{media}&
+\ci{textbf}\verb|{...}|        &  \textbf{\wi{negrita}}\\[6pt]
+\ci{textup}\verb|{...}|        &  \textup{\wi{vertical}}&
+\ci{textit}\verb|{...}|        &  \textit{\wi{itálica}}\\
+\ci{textsl}\verb|{...}|        &  \textsl{\wi{inclinada}}&
+\ci{textsc}\verb|{...}|        &  \textsc{\wi{versalita}}\\[6pt]
+\ci{emph}\verb|{...}|          &  \emph{resaltada} &
+\ci{textnormal}\verb|{...}|    &  tipo del\\
+ & & & \textnormal{documento}
+\end{tabular}
+
+\bigskip
+\end{lined}
+\end{table}
+
+
+\begin{table}[!bp]
+\index{tamaños del tipo}
+\caption{Tamaños de los tipos} \label{sizes}
+\begin{lined}{12cm}
+\begin{tabular}{@{}ll}
+\ci{tiny}      & \tiny            letra diminuta \\
+\ci{scriptsize}   & \scriptsize   letra muy pequeña\\
+\ci{footnotesize} & \footnotesize letra bastante pequeña \\
+\ci{small}        &  \small       letra pequeña \\
+\ci{normalsize}   &  \normalsize  letra normal \\
+\ci{large}        &  \large       letra grande
+\end{tabular}%
+\qquad\begin{tabular}{ll@{}}
+\ci{Large}        &  \Large       letra mayor \\[5pt]
+\ci{LARGE}        &  \LARGE       muy grande \\[5pt]
+\ci{huge}         &  \huge        enorme \\[5pt]
+\ci{Huge}         &  \Huge        la mayor
+\end{tabular}
+
+\bigskip
+\end{lined}
+\end{table}
+
+\begin{table}[!bp]
+\caption{Tipos matemáticos} \label{mathfonts}
+\begin{lined}{12.2cm}
+\begin{tabular}{@{}lll@{}}
+\textit{Orden}&\textit{Ejemplo}&    \textit{Resultado}\\[6pt]
+\ci{mathcal}\verb|{...}|&    \verb|$\mathcal{B}=c$|&     $\mathcal{B}=c$\\
+\ci{mathrm}\verb|{...}|&     \verb|$\mathrm{K}_2$|&      $\mathrm{K}_2$\\
+\ci{mathbf}\verb|{...}|&     \verb|$\sum x=\mathbf{v}$|& $\sum x=\mathbf{v}$\\
+\ci{mathsf}\verb|{...}|&     \verb|$\mathsf{G\times R}$|&        $\mathsf{G\times R}$\\
+\ci{mathtt}\verb|{...}|&     \verb|$\mathtt{L}(b,c)$|&   $\mathtt{L}(b,c)$\\
+\ci{mathnormal}\verb|{...}|& \verb|$\mathnormal{R_1}=R_1$|&      $\mathnormal{R_1}=R_1$\\
+\ci{mathit}\verb|{...}|&     \verb|$eficaz\neq\mathit{eficaz}$|& $eficaz\neq\mathit{eficaz}$
+\end{tabular}
+
+\bigskip
+\end{lined}
+\end{table}
+
+Conjuntamente con las instrucciones de los tamaños de los tipos, las
+\wi{llaves} juegan un papel significativo. Se utilizan para construir
+agrupaciones o \emph{grupos}. Los \wi{grupo}s limitan el ámbito de la
+mayoría de las instrucciones de \LaTeX.
+
+\begin{example}
+A él le gustan las {\LARGE
+letras grandes y las letras
+{\small pequeñas}}.
+\end{example}
+
+Las instrucciones de tamaño del tipo también alteran el espaciado
+entre renglones, pero sólo si el párrafo termina dentro del ámbito
+de la orden de tamaño del tipo. Por ello, la llave de cierre \verb|}|
+no debería aparecer antes de lo indicado. Observa la posición de
+la instrucción \verb|\par| en los dos ejemplos siguientes.
+
+\begin{example}
+{\Large !`No leas esto! No es
+cierto. !`Créeme!\par}
+\end{example}
+\begin{example}
+{\Large Esto no es cierto.
+Pero recuerda que digo
+mentiras.}\par
+\end{example}
+
+Para concluir este viaje al mundo de los tipos y los tamaños de
+tipos, ten presente un pequeño consejo:
+\nopagebreak
+\begin{quote}
+  \underline{\textbf{Recuerda\Huge!}} que \textit{Cuanto}
+  \textsf{M\textbf{\LARGE Á} \textsl{S}} tipos \Huge utilices \tiny
+  Vd. \footnotesize \textbf{en} un \small \texttt{documento}\Huge,
+  \large \textit{más} \normalsize \textsc{legible} y
+  \textsl{\textsf{agradable} resul\large t\Large a\LARGE r\huge
+    á}.\footnote{!`Ojo!, que se trata de una pequeña sátira.
+    !`Espero que te des cuenta!}
+\end{quote}
+
+\subsection{Separaciones}
+ 
+\subsubsection{Separaciones entre renglones}
+
+\index{separaciones entre renglones} Si quieres emplear mayores
+separaciones entre renglones, puedes cambiar su valor poniendo la orden
+\begin{command}
+\ci{linespread}\verb|{|\emph{factor}\verb|}|
+\end{command}
+\noindent en el preámbulo de su documento. Utiliza
+\verb|\linespread{1.3}| para textos a espacio y medio y
+\verb|\linespread{1.6}| para textos a doble espacio. Normalmente los
+renglones no se separan tanto, por lo que, a no ser que se indique
+otra cosa, el factor de separación entre renglones es~1.%
+\index{doble espacio}
+
+\subsubsection{Diseño de los párrafos}\label{parsp}
+
+En \LaTeX{} existen dos parámetros que influyen en el formato de
+los párrafos. Si se pone una definición como
+\begin{code}
+\ci{setlength}\verb|{|\ci{parindent}\verb|}{0pt}| \\
+\verb|\setlength{|\ci{parskip}\verb|}{1ex plus 0.5ex minus 0.2ex}|
+\end{code}
+en el preámbulo del fichero de entrada\footnote{El preámbulo es la
+  zona del fichero de entrada entre las instrucciones
+  $\backslash$\texttt{documentclass} y
+  $\backslash$\texttt{begin$\mathtt{\{}$document$\mathtt{\}}$}.} se
+puede cambiar el aspecto de los párrafos. Estas dos líneas pueden
+aumentar el espacio entre dos párrafos y dejarlos sin sangrías. En la
+Europa continental, a menudo se separan los párrafos con algún espacio
+y no se le pone sangría. Pero ten cuidado, ya que esto también tiene
+efecto en el índice general, haciendo que tus líneas queden más
+separadas.
+
+Si quisieras sangrar un párrafo que no tiene sangría, entonces utiliza
+\begin{command}
+\ci{indent}
+\end{command}
+\noindent al comienzo del párrafo\footnote{Para sangrar el primer
+  párrafo después de cada cabecera de apartado, emplea el
+ paquete \pai{indentfirst} del conjunto `tools'.}. Esto sólo
+ funcionará cuando \verb|\parindent| no esté puesto a cero.
+
+Para crear un párrafo sin sangría emplee
+\begin{command}
+\ci{noindent}
+\end{command}
+\noindent como primera orden del párrafo. Esto podría resultar útil
+cuando comiences un documento con texto y sin ninguna instrucción de
+seccionado.
+
+\subsubsection{Separaciones horizontales}
+ 
+\LaTeX{} determina automáticamente las separaciones entre palabras y
+ oraciones. Para producir otras separaciones horizontales utiliza:
+ \index{espacio!horizontal}
+\begin{command}
+\ci{hspace}\verb|{|\emph{longitud}\verb|}|
+\end{command}
+Cuando se debe producir una separación como ésta, incluso si cae al
+final o al comienzo de un renglón, emplea \verb|\hspace*| en vez de
+\verb|\hspace|. La indicación de la distancia consta, en el caso más
+simple, de un número más una unidad. En la tabla~\ref{units}
+encontrarás las unidades más importantes.
+\index{unidades}\index{dimensiones}
+
+\begin{example}
+Este\hspace{1.5cm}es un espacio
+de 1.5 cm.
+\end{example}
+\suppressfloats
+\begin{table}[tbp]
+\caption{Unidades de \TeX} \label{units}\index{unidades}
+\begin{lined}{9.5cm} 
+\begin{tabular}{@{}ll@{}}
+\texttt{mm} &  milímetro $\approx 1/25$~pulgada \quad \demowidth{1mm} \\
+\texttt{cm} & centímetro = 10~mm  \quad \demowidth{1cm}                    \\
+\texttt{in} & pulgada $\approx$ 25~mm \quad \demowidth{1in}                 \\
+\texttt{pt} & punto $\approx 1/72$~pulgada $\approx \frac{1}{3}$~mm  \quad\demowidth{1pt}\\
+\texttt{em} & aprox.{} el ancho de una \texttt{m} en el tipo actual \quad \demowidth{1em}\\
+\texttt{ex} & aprox.{} la altura de una \texttt{x} en el tipo actual \quad \demowidth{1ex}
+\end{tabular}
+
+\bigskip
+\end{lined}
+\end{table}
+ 
+La instrucción
+\begin{command}
+\ci{stretch}\verb|{|\emph{n}\verb|}|
+\end{command} 
+\noindent produce una separación especial elástica. Se alarga hasta
+que el espacio que resta en un renglón se llena. Si dos instrucciones
+\verb|\hspace{\stretch{|\emph{n}\verb|}}| aparecen en el mismo
+renglón, los espaciados crecen según sus `factores de alargamiento'.
+\begin{example}
+x\hspace{\stretch{1}}
+x\hspace{\stretch{3}}x
+\end{example}
+
+\subsubsection{Separaciones verticales especiales}
+
+\LaTeX{} determina de modo automático las separaciones entre dos
+párrafos, apartados, subapartados\ldots\ En casos especiales se
+pueden forzar separaciones adicionales \emph{entre dos párrafos} con
+la orden
+\begin{command}
+\ci{vspace}\verb|{|\emph{longitud}\verb|}|
+\end{command}
+
+Esta orden se debería indicar siempre entre dos renglones vacíos.
+Cuando esta separación se debe introducir aunque vaya al principio o
+al final de una página, entonces en vez de \verb|\vspace| se debe
+utilizar \verb|\vspace*|. \index{separación vertical}
+
+Se puede utilizar la orden \verb|\stretch| conjuntamente con
+\verb|\pagebreak| para llevar texto al borde inferior de una
+página o para centrarlo verticalmente.
+
+\begin{code}
 \begin{verbatim}
-$ dvips ejemplo.dvi -o ejemplo.ps
+Algo de texto \ldots
+
+\vspace{\stretch{1}}
+Esto va en el último renglón de la página.\pagebreak
 \end{verbatim}
+\end{code}
 
- Ahora podemos  ver el resultado con  cualquier visualizador de
-ficheros PostScript, por ejemplo {\tt gv}: 
+Las separaciones adicionales entre dos renglones \emph{del mismo
+párrafo} o dentro de una tabla se consiguen con la orden
+\begin{command}
+\ci{\bs}\verb|[|\emph{longitud}\verb|]|
+\end{command}
 
+\subsection{Inclusión de gráficos EPS}
+
+Con los entornos \texttt{figure} y \texttt{table} \LaTeX{} proporciona
+las facilidades básicas para trabajar con objetos flotantes, entre
+los que se incluyen las imágenes y los gráficos.
+
+Existen varias alternativas para generar \wi{gráficos} con el \LaTeX{}
+básico o un paquete de extensiones de \LaTeX{} mediante órdenes. Por
+desgracia, la mayoría de los usuarios los encuentran difíciles de
+entender. Por esto, no las vamos a explicar aquí. Si realmente buscas
+más información sobre este particular siempre puedes echar mano de
+textos más específicos y extensos, como \companion{} y el \manual.
+
+Un modo más sencillo de poner gráficos en un documento es
+produciéndolos con un paquete de \emph{software}
+especializado\footnote{Tales como XFig, CorelDraw!, Freehand, Gnuplot,
+  Tgif, Paint Shop Pro, Gimp\ldots} e incluir los gráficos dentro del
+documento. En este punto, también hay paquetes de \LaTeX{} que ofrecen
+muchas alternativas. En esta descripción sólo te mostraremos el uso de
+gráficos en \wi{PostScript Encapsulado} (EPS), ya que es un método muy
+sencillo y utilizado ampliamente. Para utilizar dibujos en formato
+EPS, debes disponer una impresora \wi{PostScript}\footnote{Otra
+  posibilidad para imprimir PostScript es con el programa de GNU
+  \textsc{\wi{GhostScript}}, que puede encontrar, p.~ej., en
+  \texttt{CTAN:/tex-archive/support/ghostscript}.} para imprimir.
+
+Un buen conjunto de órdenes para la inclusión de gráficos se
+proporciona con el paquete \pai{graphicx} de D.~P.~Carlisle. Forma
+parte de todo un conjunto de paquetes que se llama el conjunto
+``graphics''%
+\footnote{\texttt{CTAN:/tex-archive/macros/latex/packages/graphics}.}.
+
+Suponiendo que tengas una impresora PostScript para imprimir y
+utilices el paquete \textsf{graphicx}, puedes seguir la siguiente
+lista de pasos para incluir un dibujo dentro de tus documento:
+
+\begin{enumerate}
+\item Exportar el dibujo desde tu programa de gráficos en formato EPS.
+\item Cargar el paquete \textsf{graphicx} en el preámbulo del fichero
+  de entrada con
+\begin{command}
+\verb|\usepackage[|\emph{driver}\verb|]{graphicx}|
+\end{command}
+\emph{driver} es el nombre de su conversor ``de \emph{dvi} a
+PostScript''\footnote{El programa más utilizado para esto se llama
+  \texttt{dvips}.}. El paquete necesita esta información porque la
+inclusión de los gráficos la realiza el \emph{driver} de la
+impresora. Una vez que se conozca el \emph{driver}, el paquete
+\textsf{graphicx} inserta las órdenes correctas en el
+fichero~\texttt{.dvi} para incluir el gráfico que se desea con el
+\emph{driver} de impresora.
+ 
+\item Utiliza la orden
+\begin{command}
+\ci{includegraphics}\verb|[|\emph{clave}=\emph{valor},
+ \ldots\verb|]{|\emph{fichero}\verb|}|
+\end{command}
+para incluir \emph{fichero} en tus documentos. El parámetro opcional
+acepta una lista de \emph{claves} separadas por comas y sus
+\emph{valores} asociados. Las \emph{claves} se pueden emplear para
+modificar el ancho, la altura y el giro del gráfico incluido. En la
+tabla~\ref{keyvals} puedes encontrar las claves más importantes.
+\end{enumerate}
+
+\begin{table}[htb]
+\caption{Nombres de las claves para el paquete \textsf{graphicx}}
+\label{keyvals}
+\begin{lined}{10.1cm}
+\begin{tabular}{@{}ll}
+\texttt{width}& escalado gráfico al ancho indicado\\
+\texttt{height}& escalado gráfico a la altura indicada\\
+\texttt{angle}& giro del gráfico en el sentido de las agujas del reloj
+\end{tabular}
+
+\bigskip
+\end{lined}
+\end{table}
+
+El siguiente ejemplo podrá ayudarte a aclarar algunas de estas ideas:
+\begin{code}
 \begin{verbatim}
-$ gv ejemplo.ps
+\begin{figure}
+\begin{center}
+\includegraphics[angle=90, width=10cm]{test.eps}
+\end{center}
+\end{figure}
 \end{verbatim}
-
-Una  vez comprobado  que  todo va  bien  intentemos pasar  este
-último  fichero   en  formato  {\tt PostScript}  a   formato  {\tt PDF}.
-Para  ello  usaremos   el  comando  {\tt ps2pdf}  como   se  explica  a
-continuación:
-
-\begin{verbatim}
-$ ps2pdf ejemplo.ps ejemplo.pdf
-\end{verbatim}
-
-Y  una vez  hecho esto  ya podemos  usar nuestro  visualizador de  PDF
-preferido para ver el {\tt ejemplo.pdf}.
-
-Existe también  la posibilidad de  convertir el código \LaTeX~  de un
-documento  al estándar  HTML, lo  que resulta  muy útil  a la  hora de
-publicar en internet.  El programa apropiado para esto es  el {\tt GNU
-LaTeX2HTML}, y su uso básico es sumamente sencillo:
-
-\begin{verbatim}
-$ latex2html ejemplo.tex
-\end{verbatim}
-
-Al terminar  latex2html encontramos  un nuevo directorio  llamado {\tt
-ejemplo}  que contiene  la conversión  a  HTML de  nuestro ejemplo  de
-\LaTeX,  incluidos  los  gráficos correspondientes  a  las  fórmulas
-matemáticas.  El resultado  obtenido  no está  nada  mal. Además, esta
-conversión  puede  personalizarse en  gran  medida  mediante hojas  de
-estilo.
-
-\begin{verbatim}
-$ ls ejemplo
-ejemplo.css   images.tex  img14.png  img3.png  img8.png    WARNINGS
-ejemplo.html  img10.png   img15.png  img4.png  img9.png
-images.aux    img11.png   img16.png  img5.png  index.html
-images.log    img12.png   img1.png   img6.png  labels.pl
-images.pl     img13.png   img2.png   img7.png  node1.html
-\end{verbatim}
+\end{code}
+Este código introduce el gráfico que se encuentra en el fichero
+\texttt{test.eps}. El gráfico se gira \emph{primero} 90$^\circ$ y
+\emph{después} se escala hasta lograr los 10\,cm de ancho. La
+relación de aspecto es de 1.0 porque no se ha indicado ninguna altura
+especial.
 
 
-Ésta ha sido una muy  breve introducción a \LaTeX~ que esperamos
-haya  sido  suficiente como  para  que  os  pique  el gusanillo  y  os
-introduzcáis en el maravilloso mundo del \LaTeX.
+Para buscar más información sobre este paquete y sus posibilidades
+siempre puedes acudir a su documentación en~\cite{graphics}.
 
-
+\endinput

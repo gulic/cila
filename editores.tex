@@ -1,4 +1,4 @@
-%Autor: miguev && Carlos de la Cruz (frodo@fmat.ull.es)
+%Autor: miguev, mojopikon, faraox
 
 
 \chapter{Editores de texto}
@@ -250,6 +250,7 @@ diferentes.
 {\tt A} & Comienza a insertar texto al final de la línea.                            \\
 {\tt O} & Comienza a insertar texto en una nueva línea encima del cursor.            \\
 {\tt S} & Borra la línea en la  posición del cursor y comienza a insertar texto.     \\
+{\tt R} & Comienza a insertar texto reemplazando el existente.     \\
 \hline
 \end{tabular}
 \caption{Pasar el modo {\em edición} en {\sf VI}}
@@ -270,7 +271,8 @@ $ gvim hola.c
 \caption{Interfaz gráfica de VIM con un fichero nuevo (vacío)}
 \end{figure}
 
-La última línea de la interfaz (o de la consola) debería parecerse a esto:
+La última línea  de la interfaz (o de la  consola) debería parecerse a
+esto:
 
 \begin{verbatim}
 "hola.c" [New File]                                       0,0-1         All
@@ -336,99 +338,175 @@ puedes cambiar el esquema de colores  desde la interfaz de consola del
 {\sf VIM} con el comando {\tt :colors esquema}. Por ejemplo, activa el
 coloreado de sintaxis y ejecuta {\tt :colors koehler}.
 
-%% Sigue reescribiendo aquí
-
-Ahora pensemos  que queremos  eliminar esas líneas  de tres  guiones y
-cambiarlas  por  líneas  de  cinco asteriscos.  Pasamos  a  modo  {\tt
-comando}, situamos el cursor en una de esas línas y pulsamos {\tt dd}.
-Veremos como  la línea entera  desaparece. Repetimos lo mismo  con las
-otras líneas. Ahora nos situamos en  la primera línea y pasamos a modo
-{\tt  edición},  escribimos  cinco  asteriscos y  pulsamos  {\tt  \flq
-Enter\frq }. Volvemos al modo {\tt  comando}, situamos el cursor en la
-nueva línea de asteriscos y pulsamos  de nuevo {\tt dd}, vemos cómo la
-línea desaparece.  Situamos el cursor  en el  principio de la  línea y
-pulsamos {\tt P}, vemos cómo la  línea que habíamos borrado se inserta
-{\em antes}  del cursor.  Si  situamos  el cursor  al  principio de  la
-tercera  línea y  pulsamos  {\tt p}  vemos cómo  la  línea se  inserta
-{\em después} del  cursor. Añadimos las restantes  líneas de asteriscos
-donde estaban las de guiones.
+En adelante, el comando {\tt x} significará pulsar la tecla {\tt x} en
+modo {\em comando}, el comando  {\tt :letras} significará teclear {\tt
+:letras} en modo  comando y pulsar {\tt Enter}.  Cualquier comando del
+primer tipo puede  modificarse teclando un número, lo que  hará que se
+ejecute ese número de veces (el comando {\tt 4x} es equivalente a {\tt
+xxxx}). Si te equivocas  tecleando cualquier comando puedes cancelarlo
+pulsando {\tt Esc}.
 
 Para  deshacer cualquier  operación  realizada pulsamos  en modo  {\em
-comando} la tecla {\tt u}. Para  salir del editor {\bf sin} guardar el
-fichero utiliza  el comando  {\tt :q!}. Probablemente  realizarás esta
-operación con mucha  frecuencia al principio, cuando  se cometas algún
-error grave como teclear una palabra  sin pasar al modo {\em edición}.
-En el modo  {\em comando} cada tecla tiene su  función, y es diferente
-además si está en mayúsculas que  si está en minúsculas. Por lo tanto,
-una regla  de oro  con {\sf VI}  es: cuando no  sepas con  qué comando
-hacer algo, no pruebes teclas al  azar. Tampoco es nada bueno utilizar
-la tecla. Y por supuesto, cuando estés editando algo importante guarda
-el fichero con  frecuencia con el comando {\tt :w},  sobre todo en las
-primeras semanas de  uso. Para salir de {\sf VI}  guardando el fichero
-utiliza el comando {\tt :x}.
+comando} la tecla  {\tt u}, para rehacer la  última operación deshecha
+pulsa {\tt C-r}.  Para repetir la última operación  realizada pulsa un
+simple punto {\tt .} solitario en modo {\em comando}.
 
-Una utilidad que nos podría resultar interesante sería ejecutar comandos del sistema desde la misma consola en la que estamos trabajando con el {\sf VIM}. En modo {\em comando} escribimos {\tt :!comando}, por ejemplo, si escribimos {\tt :!ls} nos mostrará un listado de archivos del directorio en el que nos encontramos.Para buscar palabras dentro de un documento es fácil, solo tenemos que escribir en modo {\em comando} {\tt /palabra} y si salen varios resultados, solo tendremos que apretar {/tt n} y nos los irá mostrando. Si lo que queremos es desplazarnos por un documento muy grande (como por ejemplo el código fuente de un programa) a líneas concretas el {\sf VIM} lo soluciona. Para  desplazarnos a la línea 60 de un documento, lo que haríamos sería escribir en modo {\em comando} {\tt 60} y luego apretar las teclas {\tt Mayúsculas-g}. Es decir, deberíamos teclear el número de línea al que queremos acceder y luego apretar las teclas Mayúsculas-g. Otro comando que nos ayuda en nuestra tarea de desarolladores es el comando \%. Si estamos trabajando con algunas sintaxis de algunos programas que manejen con mucha regularidad (, [ o $\lbrace$ , el {\sf vim} nos permite con apretar la tecla \% situarnos sobre uno de estos caracteres que nos muestre el de cierre o apertura que le corresponda. Si estamos escribiendo un  texto sobre cualquier tema y en todo el texto el nombre Pedro debe ser sustituido por Juan, {\sf VIM} nos ayuda. Escribiremos en modo comando {\tt :s }/ {\tt Pedro} / {\tt Juan} / {\tt g}, si queremos que solo se sustituya en la línea en la que nos encontramos, suprima la {\tt g}. Quedaría así el esquema para utilizarlo, {\tt :s} / {\sf palabra a cambiar} / {\sf palabra nueva}. Añadiríamos a este esquema / {tt g} sí queremos que se sustituya en todo el documento.
+Para  salir  del  editor  {\bf  sin} guardar  el  fichero  utiliza  el
+comando {\tt  :q!}. Probablemente realizarás esta  operación con mucha
+frecuencia  al principio,  cuando se  cometas algún  error grave  como
+teclear una palabra  sin pasar al modo {\em edición}.  En el modo {\em
+comando} cada tecla tiene su función, y es diferente además si está en
+mayúsculas que si  está en minúsculas. Por lo tanto,  una regla de oro
+con  {\sf VI}  es: cuando  no  sepas con  qué comando  hacer algo,  no
+pruebes teclas  al azar.  Y por supuesto,  cuando estés  editando algo
+importante guarda el  fichero con frecuencia con el  comando {\tt :w},
+sobre todo  en las  primeras semanas  de uso. Para  salir de  {\sf VI}
+guardando el fichero utiliza el comando {\tt :x}.
 
-\begin{table}
-\begin{tabular}{|c|p{12cm}|}
-\hline
-Comando & Descripción \\
-\hline
- {\tt x}    & Borra un carácter \\
-\hline
- {\tt r}    & Reemplaza un carácter \\
-\hline
- {\tt u}    & Deshace la última operación  realizada (se puede repetir para
- des\-ha\-cer varias operaciones)\\
-\hline
- {\tt U}    & Deshace los cambios efectuados sobre la línea actual \\
-\hline
- {\tt :q}   & Salir del editor \\
-\hline
- {\tt :x}   & Salir del editor {\bf guardando} el fichero \\
-\hline
- {\tt :q!}  & Salir del editor {\bf sin guardar} el fichero \\
-\hline
- {\tt :w}   & Guardar el fichero \\
-\hline
- {\tt :w nombrefichero}  & Guardar el fichero con nombre {\bf nombrefichero} \\
-\hline
- {\tt nG}   & Ir a la línea {\tt n} \\
-\hline
- {\tt \$G}   & Ir al final del fichero \\
-\hline
- {\tt v}    & Activa el modo de selección (utiliza los cursores para  
-              seleccionar texto\\
-\hline
- {\tt y}    & Copia en memoria (buffer) el texto seleccionado \\
-\hline
- {\tt d}    & Borra el texto seleccionado, y lo copia en memoria (buffer) \\
-\hline
- {\tt p}    & Pega el texto copiado en memoria, tras la posición del cursor \\
-\hline
- {\tt P}    & Pega el texto copiado en memoria, en la posición del cursor \\
-\hline
- {\tt :syntax on}  & Activa el coloreado de sintaxis \\
-\hline
- {\tt :syntax off}  & Desactiva el coloreado de sintaxis \\
-\hline
- {\tt /palabra}   & Busca la cadena {\tt palabra} hacia adelante \\
-\hline
- {\tt ?palabra}   & Busca la cadena {\tt palabra} hacia atrás \\
-\hline
- {\tt n}   & Muestra la  siguiente  coincidencia de  la última  búsqueda \\
-\hline
- {\tt \% } & Nos muestra el paréntesis o llave posterior o anterior de la que nos encontremos situados \\
-\hline
- {\tt !comando} & Nos permite ejecutar un comando del sistema sin salir del editor \\
-\hline
- {\tt :s/palabra1/palabra2/g} & Sustituye en todo el documento la palabra1 por la palabra2 \\
-\hline
-\end{tabular}
-\caption{Comandos básicos del VI}
-\end{table}
+Una utilidad  que te puede  resultar interesante es  ejecutar comandos
+del sistema desde la misma consola en la que estamos trabajando con el
+{\sf  VIM}. En  modo  {\em comando}  escribimos  {\tt :!comando},  por
+ejemplo, si escribimos {\tt :!ls}  nos mostrará un listado de archivos
+del directorio  en el  que nos encontramos.  Esto te  permite compilar
+programas o  documentos mientras editas  uno o más ficheros  de código
+fuente,  incluso  puedes ejecutar  una  consola  de sistema  desde  el
+editor, con el comando {\tt :sh}
 
+Para buscar palabras dentro de un  documento es fácil, solo tienes que
+escribir  en modo  {\em  comando}  {\tt /palabra}  y  si salen  varios
+resultados, pulsando  {\tt n} los  irá mostrando. Si prefieres  que la
+búsqueda  sea hacia  atrás  (desde  el final  hacia  el principio  del
+fichero) el comando que necesitas  es {\tt ?palabra}. También con esta
+búsqueda pasas de un resultado a otro pulsando {\tt n}.
 
+Si lo que  necesitas es desplazarte por un documento  muy grande (como
+por ejemplo el  código fuente de un programa) a  líneas concretas {\sf
+VIM} lo  soluciona. Para desplazarnos a  la línea 60 de  un documento,
+escribe en modo {\em comando} {\tt 60}  y luego pulsa {\tt S-g} o {\tt
+G}. Si  pulsas sólo  {\tt S-g}  o {\tt  G} te  desplazas al  final del
+fichero, y si  pulsas {\tt gg} (pulsas {\tt g}  dos veces seguidas) te
+desplazas al principio del fichero.
+
+Para desplazamientos  más cortos dispones  del comando {\tt  0} (cero)
+que te  sitúa el principio  de la línea, \verb.^.  que te sitúa  en el
+primer caracter no blanco (espacio  o tabulador) de la línea, \verb.$.
+que te sitúa al final de la línea, {\tt w} te sitúa al principio de la
+siguiente palabra, y {\tt b} hace lo mismo con la anterior palabra. El
+comando  \verb.).  te desplaza  a  la  siguiente frase,  mientras  que
+\verb.(. te  desplaza a  la anterior. Del  mismo modo  puedes utilizar
+\verb.{. y \verb.}. para saltar de párrafo en párrafo.
+
+Si en  lugar de desplazarte  por el fichero  lo que quieres  es borrar
+parte de su contenido estos mismos comandos, pulsando previamente {\tt
+d}, hacen lo siguiente: {\tt d0}  borra desde el principio de la línea
+hasta  justo antes  del cursor,  {\tt D}  o \verb.d$.  borra desde  el
+cursor hasta  el final  de la  línea, {\tt dw}  borra desde  el cursor
+hasta el principio de la siguiente palabra, {\tt db} borra desde justo
+antes  del cursor  hasta  el principio  de  la palabra  en  la que  se
+encuentre el cursor, {\tt dd} borra la línea en la que se encuentre el
+cursor, {\tt dj} borra la línea en  la que se encuentre el cursor y la
+que  estén justo  debajo,  {\tt 34dj}  borra  la línea  en  la que  se
+encuentre el cursor y las siguientes 34 líneas que estén justo debajo,
+\verb.d). borra  desde el  cursor hasta el  principio de  la siguiente
+frase, \verb.d(. borra desde el cursor  hasta el principio de la frase
+en la  que se  encuentre el  cursor, \verb.d}.  borra desde  el cursor
+hasta el final del párrafo en la que se encuentre el cursor, \verb.d{.
+borra desde el cursor hasta el final del párrafo anterior.
+
+A lo mejor te interes pegar en otro sitio ese trozo de fichero que has
+borrado, o prefieres copiar y pegar  en lugar de cortar y pegar. Claro
+que puedes  hacerlo con  {\sf VI} y  seleccionando exactamente  lo que
+quieras. Para seleccionar una parte  del fichero sitúate en un extremo
+de la selección (principio o final),  pulsa {\tt v} y desplázate hasta
+el otro extremo de la selección. Para cancelar la selección pulsa {\tt
+Esc}.  Una  vez  que  tienes el  texto  seleccionado  puedes  cortarlo
+pulsando {\tt d} o copiarlo pulsando {\tt y}.
+
+Para pegar lo que has copiado o  cortado has de situar el cursor en la
+posición  deseada  y contemplar  dos  opciones  para pegar  el  texto:
+pulsando {\tt p} el texto se insertará {\em justo después} del cursor,
+pulsando {\tt S-p}  o {\tt P} el texto se  insertará {\em justo antes}
+del cursor.
+
+Cuando cortas o copias una región de  texto ésta se guarda en una zona
+de memoria, lo que se denomina  un {\em buffer}. Mientras no salgas de
+{\sf VIM}  este buffer se  conserva completamente hasta que  vuelvas a
+cortar  o copiar  otra  región.  Ten cuidado  porque  borrar algo  con
+cualquier comando también se considera cortar, por lo que sobreescribe
+el buffer. Este  buffer se conserva además entre ficheros,  por lo que
+puedes cortar o copiar  en un fichero y pegar en  otro, siempre que no
+salgas del  editor para hacer  esta maniobra.  Si sales del  editor se
+conserva sólo una parte del buffer, suele ser suficiente para regiones
+no muy grandes, pero no te confíes.
+
+Si quieres  cortar o  copiar de un  fichero y pegar  en otro  lo mejor
+es  que  abras ambos  ficheros  con  el  mismo {\sf  VI},  simplemente
+ejecutando:
+
+\begin{verbatim}
+$ vi fichero1 fichero2
+\end{verbatim}
+
+Con esto tienes varios ficheros abiertos,  con un buffer para cada uno
+(aquí entendemos buffer en el sentido con el que lo hacíamos al hablar
+de Emacs) y puedes pasar de un  buffer a otro con el comando {\tt :bN}
+donde {\tt N} es el número  del buffer (se numeran empezando por $1$).
+Para pasar  de un  buffer a  otro primero debes  guardar a  fichero el
+buffer en el que te encuentres (con el comando {\tt :w}).
+
+Otro comando que te ayudará si  tienes que programar es el comando \%.
+Si estás trabajando  con algunos lenguajes cuyas  sintaxis manejan con
+mucha frecuencia \verb.(., \verb.{. o  \verb.{. , {\sf VIM} te permite
+con pulsar la  tecla \% situarte sobre uno de  estos caracteres que te
+muestre  el  de cierre  o  apertura  que  le corresponda.  
+
+Una de las  funcionalidades más queridas de {\sf VI}  es la búsqueda y
+sustitución de texto.  Para empezar pensemos en  simples palabras, por
+ejemplo en substituir  la palabra ``coche'' por  la palabra ``carro''.
+El  comando para  la substitución  es {\tt  :s} y  tiene el  siguiente
+esquema: \verb.:rangos/busca/sustituye/[gc].
+
+Lo que  pongas {\tt rango}  determina la  región del fichero  que será
+afectada por el  comando. Puedes poner dos números  de línea separados
+por  coma para  afectar  a  todas las  líneas  entre  esas dos  (ambas
+inclusive), o  bien substituir el  número de  la segunda línea  por un
+\verb.$. para extender la región  afectada hasta el final del fichero.
+Si en lugar de líneas poner \verb.%. afectará a todo el fichero.
+
+Las opciones  {\tt g} y  {\tt c} del  final son opcionales.  La opción
+{\tt g} hace  que se substituyan todas las ocurrencias  en cada línea,
+ya que si  no la especificas sólo se substituye  la primera ocurrencia
+de cada línea.  La opción {\tt c} hace que  {\tt VI} pida confirmación
+antes de substituir cada ocurrencia.
+
+La expresión {\tt busca} es el patrón que {\sf VIM} buscará. Puede ser
+una  palabra,  o  más  en  general una  {\em  expresión  regular}.  La
+expresión {\tt substituye}  es el patrón que {\sf  VIM} utilizará para
+substituir en las ocurrencias, y  también puede ser una {\em expresión
+regular}.
+
+Una {\em expresión regular} es un  tipo de expresiones de uso común en
+programación.  Define  una  serie  de  reglas  que  debe  cumplir  una
+expresión para considerar  que {\em encaja} con  la expresión regular.
+Esto se  consigue utilizando  caracteres con  significados especiales,
+que en las expresiones regulares de {\sf VI} son:
+\verb_. * $ / [ ] \ * -_
+
+En  una expresión  regular,  \verb_._ encaja  con cualquier  caracter,
+\verb.*. con  el principio de  la línea, \verb.$.  con el final  de la
+línea, \verb.-., \verb.[. y \verb.]. permiten definir rangos, \verb.*.
+extiende  el significado  del  anterior caracter  a  ninguna o  varias
+ocurrencias del  mismo. La barra {\tt  /} se utiliza para  separar los
+patrones  de  búsqueda  y  reemplazo,  por  lo  que  no  puede  usarse
+directamente en los patrones. Para utilizar alguno de estos caracteres
+de forma que  encajen consigo mismos (por ejemplo para  busar un punto
+en  el  texto) hay  que  {\em  escaparlos} anteponiéndoles  una  barra
+invertida (\verb.\.).
+
+Otros  caracteres   adquieren  un  significado  especial   cuando  son
+precedidos de la barra invertida.  Así \verb.\|. es el operador ``o'',
+es decir la  expresión \verb.casa\|coche. encaja con {\tt  casa} y con
+{\tt coche}.
 
 \section{Joe}
 
@@ -518,34 +596,4 @@ esto nos conformaremos  aquí pues en lo sucesivo  aprenderemos a hacer
 operaciones más avanzadas con otros editores. Para conocer sobre otras
 opciones  de  este editor,  se  puede  utilizar  la opción  {\tt  \flq
 Ctrl\frq k h}.
-
-%\subsection{Kwrite}
-%
-%{\tt Kwrite}  es un potente editor  de textos para KDE  que cuenta con
-%todo lo necesario para editar cualquier tipo de texto, es configurable
-%en  todos los  aspectos, desde  el tipo  de letra  con la  que se  nos
-%presentará el  texto editado hasta las  teclas de acceso rápido  a las
-%funciones que implementa este editor.
-%
-%Entre las  características que tiene  destaca el reconocimiento  de la
-%sintaxis de muchos lenguajes de programación (C, C++, PASCAL, FORTRAN,
-%LATEX, etc  ...) el  indentado automático, deshacer,  rehacer, copiar,
-%pegar, buscar, reemplazar  y un largo etcétera  de herramientas útiles
-%para la edición.
-%
-%\subsection{gnotepad+}
-%
-%{\tt Gnotepad+} es un editor con prácticamentes las mismas capacidades
-%que el kwrite de KDE solo que en este caso es para el entorno de GNOME
-%y  no tiene  tantas opciones  de  reconocimiento de  sintaxis como  el
-%kwrite, en cambio tiene algunas herramientas para la edición de código
-%HTML interesantes  para el desarrollo  de un  proyecto para la  web de
-%poca  complejidad,  como son  la  posibilidad  de visualizar  como  va
-%quedando  el código  que vamos  haciendo, botones  que simplifican  la
-%inserción  de ciertos  elementos del  lenguaje  html, etc  ... Una  de
-%las  capacidades  interesantes del  gnotepad  es  la de  poder  editar
-%simutáneamente  varios ficheros  fuente con  un solo  editor y  varias
-%pestañas  de edición,  lo cual  resulta interesante  para no  tener el
-%escritorio lleno de ventanas y la memoria del sistema desperdiciada en
-%llevar cuatro procesos exactamente iguales.
 
