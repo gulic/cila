@@ -239,22 +239,33 @@ deb. Permite la instalación de paquetes, borrado, \dots
 \centering
 \begin{tabular}{|c|p{0.88\textwidth}|}
 \hline
+
 {\tt apt-get install paquete1 paquete2 ...} & Instala paquetes. \\
+
 {\tt apt-get remove paquete1 paquete2 ...} & Borra paquetes. \\
+
 {\tt apt-get source paquete1 paquete2 ...} & Descarga el código fuente
 de los paquetes. \\
+
 {\tt apt-get update } & Actualiza la lista de paquetes disponibles
 para instalar. \\
+
 {\tt apt-get upgrade } & Instala las nuevas  versiones de los
 diferentes paquetes disponibles. \\
+
 {\tt apt-get dist-upgrade} & Función adicional de la opción upgrade
 que modifica las dependencias por la de las nuevas versiones de los
 paquete. \\
-{\tt apt-get build-dep paquete1 paquete2 ...} & Instala los paquetes necesarios para la compilación del código fuente de los paquetes.\\
-{\tt apt-get clean} & Elimina los ficheros que se encuentran en
-/var/cache/apt/archives y /var/cache/apt/archives/partial. Ahí se
+
+{\tt apt-get build-dep  paquete1 paquete2 ...} &  Instala los paquetes
+necesarios para la compilación del código fuente de los paquetes.\\
+
+{\tt  apt-get clean}  &  Elimina  los ficheros  que  se encuentran  en
+/var/cache/apt/archives  y   /var/cache/apt/archives/partial.  Ahí  se
 encuentran los paquetes que hemos descargado para instalar. \\
+
 \hline
+
 \end{tabular}
 \caption{Opciones principales de apt-get}
 \end{table}
@@ -523,12 +534,12 @@ toda la información sobre lo que ocurre en nuestra máquina.
 información  más simple.  En  el podemos  controlar,  por ejemplo,  la
 información del demonio pppd.
 
-\item [{\tt \~/.bash\_history}:] Estos  ficheros muestran los comandos
+\item [{\tt \~{}/.bash\_history}:] Estos  ficheros muestran los comandos
 que han sido ejecutados por los usuarios desde la consola.
 
-\item [wtmp:]  En el  hay un  listado de todas  las conexiones  que ha
-tenido la máquina mientras ha permanecido encendida. Se puede leer con
-el comando {\tt last}.
+\item [{\tt wtmp}:]  En el hay un listado de  todas las conexiones que
+ha tenido la máquina mientras  ha permanecido encendida. Se puede leer
+con el comando {\tt last}.
 
 \end{description}
 
