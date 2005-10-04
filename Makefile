@@ -22,7 +22,6 @@ FILES = $(TEXS) cila.sty biblio.bib
 
 all: $(FILES) $(EPSS) $(EXAMPLES) book.ind book.bbl
 	latex book
-	dvips -o $(NAME).ps book.dvi
 
 images: $(EPSS) 
 	echo listo
@@ -36,8 +35,9 @@ images: $(EPSS)
 %.dvi: %.tex
 	$(LATEX) $<
 
-%.ps: %.dvi
-	$(DVIPS) -o $@ $<
+$(NAME).ps: book.dvi
+#	$(DVIPS) -o $@ $<
+	dvips -o $(NAME).ps book.dvi
 
 %.pdf: %.ps
 	ps2pdf $< $@
