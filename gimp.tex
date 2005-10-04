@@ -133,17 +133,18 @@ denominan ``píxeles''.
 Las imágenes de mapa de bits tienen tamaños enteros; i.e. puedes crear
 una imagen  de $2000 \times  2500$ píxeles,  pero no de  $20.25 \times
 25.75$ píxeles.  Insisto en que  los píxeles son  indivisibles, porque
-son las células o los átomos  que componen la imagen. Cada píxel tiene
-un valor entero de 0 a 255 o  una terna de valores enteros de 0 a 255,
-dependiendo el modelo de color que utilice el fichero.
+son las células o los átomos  que componen la imagen. Dependiendo del
+modelo de color que se utilice en una imagen, el color del píxel se
+representa mediante un valor entero de 0 a 255 (escala de grises),
+una terna de valores enteros de 0 a 255 (RGB),
+o bien un valor entero menor que una cierta cantidad que limita el
+número de colores diferentes que pueden aparecer en la imagen (indexado).
 
 \subsection{Modelos de colores}
 \index{\gimp!modelos de colores}
 
-Cada píxel  tiene un  valor que  determina su color,  pero no  hay una
-única  manera en  cómo ese  valor determina  el color  del píxel.  Las
-distintas  maneras de  hacerlo  se denominan  ``modelos de  colores''.
-Veamos los más usuales:
+Existen varios modos de representar el color de un píxel, 
+denominados  ``modelos de  colores''.  Veamos los más usuales:
 
 \begin{description}
 
@@ -159,7 +160,7 @@ pintura) los colores rojo y verde ``suman'' amarillo.
 A partir de esta propiedad de la luz, se puede descomponer el color de
 cada píxel  en tres  componentes que expresan  la proporción  de rojo,
 verde y azul que tiene ese color. Estas proporciones suelen expresarse
-en {\bf  enteros} valores desde el  0 ($0\%$) hasta el  255 ($100\%$),
+con números {\bf  enteros} desde el  0 ($0\%$) hasta el  255 ($100\%$),
 así un píxel rojo está representado por la terna $(255,0,0)$, el color
 amarillo  por  la  terna  $(255,255,0)$  y  el  blanco  por  la  terna
 $(255,255,255)$.
@@ -169,7 +170,7 @@ generados por ordenador, y en el campo  de la imagen digital es el más
 extendido.
 
 \item[HSV]  son   las  iniciales  de  {\bf   Hue,  Saturation,  Value}
-(tonalidad, saturación e  intensidad). Este modemos es  similar al RGB
+(tonalidad, saturación e  intensidad). Este modelo es  similar al RGB
 pero en lugar de descomponer el color de cada píxel en sus componentes
 rojo verde y azul lo descompone  de una forma más descriptiva para los
 humanos.
@@ -177,58 +178,64 @@ humanos.
 La  tonalidad (Hue)  representa el  color tal  como lo  entendemos los
 humanos  mediante  un  ángulo de  $0\textdegree$  a  $360\textdegree$.
 La  tonalidad comienza  por  el rojo  puro  ($0\textdegree$) y  avanza
-en  sentido   dextrógiro  hacia  el  amarillo   ($60\textdegree$),  el
+en  sentido   horario     hacia  el  amarillo   ($60\textdegree$),  el
 verde   ($120\textdegree$),  el   cian  ($180\textdegree$),   el  azul
 ($240\textdegree$), el magenta ($300\textdegree$) y finalmente regresa
 al rojo ($360\textdegree$).
 
-La saturación  (Saturation) representa la  pureza del mismo.  Un color
-sin saturación no  es color, es sólo  un tono de gris,  mientras en un
+La saturación  (Saturation) representa la  pureza del color.  Un color
+sin saturación no  es color, es sólo  un tono de gris,  mientras que un
 color con saturación máxima es un color puro.
 
-La  intensidad  (Value)  representa   la  luminosidad.  Un  color  sin
-intensidad es un negro absoluto  mientras que un color con luminosidad
-máxima  es  un  blanco  puro,  sin importar  ni  la  tonalidad  ni  la
-saturación.
+La  intensidad  (Value)  representa   la  luminosidad del color.
+Un  color  sin intensidad es un negro absoluto  mientras que un color
+con luminosidad máxima  es  un  blanco  puro,  sin importar  ni  la
+tonalidad  ni  la saturación.
 
 Aunque la tonalidad  es un ángulo y la saturación  y la intensidad son
-porcentajes, en  los ficheros estos  valores se representan entre  0 y
-255.
+porcentajes, en  los ficheros estos  valores se representan mediante
+números enteros entre  0 y 255.
 
 \item[HLS] se  refiere a {\bf Hue,  Lightness, Saturation} (tonalidad,
 luminosidad y saturación)  y es análogo al HSV  intercambiando las dos
-últimas componentes; i.e. la luminosidad es la intensidad.
+últimas componentes; es decir, la luminosidad es la intensidad.
 
 \end{description}
 
-Los  tres  modelos anteriores  permiten  almacenar  imágenes de  hasta
-$256^3 = 16777216$ colores distintos.
+En los  tres  modelos anteriores el color cada píxel se representa mediante
+tres valores, cada uno con distintos rangos. Sin embargo, los ficheros de mapas
+de bits utilizan un byte (número entero entre 0 y 255) para almacenar cada uno
+de estos valores, por lo que todos ellos quedan en el rango entre 0 y 255.
+Dado que el color se determina por tres valores enteros entre 0 y 255, se
+dispone de hasta $256^3 = 16777216$ colores distintos, que son más de los
+que el ojo humano puede distinguir.
 
 \begin{description}
 
 \item[CMYK] hace referencia a {\bf Cyan, Magenta, Yellow, inK}, que es
-la  forma de  descomponer los  colores en  las imprentas.  Los modelos
-anteriores descomponen  los colores basándose  en la luz  porque están
-diseñamos para las pantallas de  ordenador y televisión, pero el model
-CMYK está descompone los colores basándose en las mezclas de tintas.
+la  forma de  descomponer los  colores en  las imprentas: los tres colores
+básicos de la pintura (cyan, magenta y amarillo) y una cuarta componente
+de color negro (tinta). Los modelos anteriores descomponen los colores
+basándose  en la luz  porque están diseñamos para las pantallas de ordenador y
+televisión, pero el modelo CMYK descompone los colores basándose en las
+mezclas de tintas empleadas en la imprenta.
 
-Como \gimp ha sido diseñado para gráficos generados por ordenador y no
-para trabajos  de preedición  e impresión, no  soporta este  modelo de
+Debido a que \gimp ha sido diseñado para gráficos generados por ordenador
+y no para trabajos  de preedición  e impresión, no  soporta este  modelo de
 colores.
 
-\item[Escala de grises]  Este modelo es también similar  al modelo HSV
+\item[Escala de grises]  Este modelo es similar  al modelo HSV
 pero cada píxel  sólo tiene una componente que es  la intensidad. Esta
 forma  de representar  el color  sólo permite  representar escalas  de
-grises, i.e. cada píxel tiene un único valor que va de 0 (negro) a 255
-(blanco).
+grises, por lo que cada píxel tiene un único valor que va de 0 (negro)
+a 255 (blanco).
 
 \item[Indexado] Por último  vamos a recordar un modelo  de colores que
 no suele  usarse mucho. Algunas  veces la forma de  almacenar imágenes
 está muy limitada  y hay que utilizar un número  máximo de colores muy
-reducido, e.g. 16 ó  256. En estos casos el valor de  cada píxel es un
-índice que  hace referencia a  un color que  está en una  colección de
-colores  previamente fijada  para  la  imagen (de  ahí  el nombre  del
-modelo).
+reducido (por ejemplo 16 ó 256). En estos casos el valor de  cada píxel
+es un índice que  hace referencia a  un color que  está en una  tabla de
+colores  previamente fijada  para  la  imagen, denominada ``paleta de colores''.
 
 \end{description}
 
@@ -236,13 +243,13 @@ modelo).
 \index{\gimp!transparencias}
 
 En  ocasiones  hay   que  trabajar  con  imágenes   que  tienen  zonas
-transparentes, i.e. regiones donde los píxeles no tienen ningún color,
-simplemente no están. Sin embargo esa  propiedad de ``no estar'' no se
+transparentes, donde los píxeles no tienen ningún color (simplemente
+no están). Sin embargo esa  propiedad de ``no estar'' no se
 puede representar en los modelos de color que \gimp puede manejar. Por
-eso  se añade  un bit  (o byte)  más a  cada píxel  que representa  la
+eso  se añade  un bit  (o byte)  adicional a  cada píxel  que representa  la
 transparencia  y esta  información adicional  pasa a  formar un  nuevo
-canal  denominado ``canal  alpha''.  Más sobre  canales  en la  página
-\pageref{gimp.canales}
+canal  denominado ``canal  alpha''.
+%  Más sobre  canales  en la  página \pageref{gimp.canales}
 
 \section{Maniobras básicas}
 
