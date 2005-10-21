@@ -26,89 +26,6 @@ Linux. Para saber  más sobre \gimp o descargarlo visita  su página web
 en  {\tt http://www.gimp.org}.  También  puede  ser  de  utilidad  la
 traducción al castellano de la Referencia de \gimp\cite{gimpref}.
 
-% OBSOLETO
-% Antes  de  continuar  permíteme  una  aclaración.  Encontrarás  en  el
-% libro ejemplos  duplicados con dos  versiones de \gimp  con interfaces
-% diferentes. Cuando esto  suceda el primer ejemplo (o  de la izquierda)
-% corresponde a la versión 1.2.3 (estable) y el segundo ejemplo (o el de
-% la derecha) corresponde a la versión 1.3.15 (inestable).
-
-\section{Primeros pasos}
-
-La interfaz de usuario de \gimp resulta resulta extraña y poco intuitiva
-a simple vista, con un  característico estilo que
-la  diferencia  de  las  interfaces de  programas  similares  como  el
-Photoshop  de Adobe.  La mayoría  de aplicaciones  de manipulación  de
-gráficos tienen una  ventana que ocupa toda la pantalla,  dentro de la
-cual se crean  nuevas ventanas. Esto es lo que  se denomina un entorno
-MDI. \gimp por el contrario tiene una pequeña ventana que apenas ocupa
-espacio  en  la  pantalla,  con  un escueto  menú  y  los  botones  de
-herramientas y diálogos imprescindibles.
-
-Esta interfaz  produce la sensación  a primera  vista de que  \gimp no
-tiene apenas herramientas ni opciones de  menú, pero no es verdad. Tan
-pronto  como crees  o abras  una imagen  verás que  al clickar  con el
-\bdr aparecerá  un menú  lleno de  posibilidades que  exploraremos más
-adelante.
-
-Versiones anteriores de \gimp
-mostraban un diálogo de  instalación de usuario al ejecutarlo por primera vez.
-Este diálogo, que se refiere realmente a la personalización del programa,
-preguntaba acerca de la resolución de la pantalla (suele ser 72 dpi),
-los  directorios donde  guardar  ciertos objetos (brochas,  patrones,
-gradientes, etc.) y  el directorio de intercambio. Dado  que el diálogo
-estaba en español resultaba muy fácil de seguir. Aceptar las opciones
-por defecto era suficiente.
-
-En las versiones recientes de \gimp este dialogo se ha obviado para dar una
-mejor bienvenida al usuario ahorrándole todas esas preguntas. Conviene recordar,
-sin embargo, una precaución necesaria a la hora de trabajar en entornos
-con sistemas de ficheros remotos como NFS o Samba, en los que el directorio
-personal del usuario se encuentra en una máquina distinta de la que ejecuta
-\gimp. En estos entornos se conveniente modificar la opción {\sf Carpeta
-de intercambio} para que utilice {\tt /tmp}, como indica el texto de ayuda
-del diálogo de configuración correspondiente del \gimp
-mostrado en la figura \ref{gimp-2.2_swap}.
-
-\begin{figura}{gimp-2.2_swap}{0.99}
-\caption{Carpeta de intercambio en las preferencias de \gimp 2.2}
-\end{figura}
-
-
-
-
-Cuando finalmente \gimp se presenta ante nosotros vemos la ventana del
-``consejo diario'',  donde podemos  leer trucos  y consejos  que \gimp
-tendrá la amabilidad de enseñarnos. Es una buena idea leer estos consejos
-al menos una vez antes de utilizar \gimp por primera vez, puesto que
-proporciona información muy útil y a en ocasiones poco evidente.
-%
-Puedes regresar a la ventana del ``consejo diario'' para leer
-los consejos de \gimp en cualquier momento a través del menú
-\textsf{A\underbar{y}uda} \lyxarrow{} \textsf{\underbar{C}onsejo del día} 
-en la ventana principal.
-
-La interfaz inical de \gimp (figura \ref{gimp-2.2_first})
-dedica una ventana separada para los diálogos
-de capas, canales y caminos que veremos más adelante. También proporciona,
-en la ventana principal, un espacio opcional con las opciones actuales
-de la herramienta seleccionada. Si bien todo esto es muy útil cuando se lo
-necesita, para empezar a manejar \gimp es prescindible. 
-
-Dado que la interfaz de \gimp es bastante flexible, dejaremos en manos
-del lector la configuración de la misma, pudieron cerrar diálogos que
-no utilice o por el contrario añadiendo los que considere necesarios.
-La figura \ref{gimp-2.2_minimal} muestra una configuración minimalista
-de la interfaz.
-
-\begin{figura}{gimp-2.2_first}{0.88}
-\caption{Aspecto de \gimp 2.2 al ejecutarlo por primera vez}
-\end{figura}
-
-\begin{figura}{gimp-2.2_minimal}{0.18}
-\caption{Configuración minimalista de la interfaz de \gimp 2.2}
-\end{figura}
-
 \section{Conceptos fundamentales}
 
 % Mapas de bits, modelos de colores, transparencia
@@ -250,6 +167,93 @@ eso  se añade  un bit  (o byte)  adicional a  cada píxel  que representa  la
 transparencia  y esta  información adicional  pasa a  formar un  nuevo
 canal  denominado ``canal  alpha''.
 %  Más sobre  canales  en la  página \pageref{gimp.canales}
+
+
+
+% OBSOLETO
+% Antes  de  continuar  permíteme  una  aclaración.  Encontrarás  en  el
+% libro ejemplos  duplicados con dos  versiones de \gimp  con interfaces
+% diferentes. Cuando esto  suceda el primer ejemplo (o  de la izquierda)
+% corresponde a la versión 1.2.3 (estable) y el segundo ejemplo (o el de
+% la derecha) corresponde a la versión 1.3.15 (inestable).
+
+\section{Primeros pasos}
+
+La interfaz de usuario de \gimp resulta resulta extraña y poco intuitiva
+a simple vista, con un  característico estilo que
+la  diferencia  de  las  interfaces de  programas  similares  como  el
+Photoshop  de Adobe.  La mayoría  de aplicaciones  de manipulación  de
+gráficos tienen una  ventana que ocupa toda la pantalla,  dentro de la
+cual se crean  nuevas ventanas. Esto es lo que  se denomina un entorno
+MDI. \gimp por el contrario tiene una pequeña ventana que apenas ocupa
+espacio  en  la  pantalla,  con  un escueto  menú  y  los  botones  de
+herramientas y diálogos imprescindibles.
+
+Esta interfaz  produce la sensación  a primera  vista de que  \gimp no
+tiene apenas herramientas ni opciones de  menú, pero no es verdad. Tan
+pronto  como crees  o abras  una imagen  verás que  al clickar  con el
+\bdr aparecerá  un menú  lleno de  posibilidades que  exploraremos más
+adelante.
+
+Versiones anteriores de \gimp
+mostraban un diálogo de  instalación de usuario al ejecutarlo por primera vez.
+Este diálogo, que se refiere realmente a la personalización del programa,
+preguntaba acerca de la resolución de la pantalla (suele ser 72 dpi),
+los  directorios donde  guardar  ciertos objetos (brochas,  patrones,
+gradientes, etc.) y  el directorio de intercambio. Dado  que el diálogo
+estaba en español resultaba muy fácil de seguir. Aceptar las opciones
+por defecto era suficiente.
+
+En las versiones recientes de \gimp este dialogo se ha obviado para dar una
+mejor bienvenida al usuario ahorrándole todas esas preguntas. Conviene recordar,
+sin embargo, una precaución necesaria a la hora de trabajar en entornos
+con sistemas de ficheros remotos como NFS o Samba, en los que el directorio
+personal del usuario se encuentra en una máquina distinta de la que ejecuta
+\gimp. En estos entornos se conveniente modificar la opción {\sf Carpeta
+de intercambio} para que utilice {\tt /tmp}, como indica el texto de ayuda
+del diálogo de configuración correspondiente del \gimp
+mostrado en la figura \ref{gimp-2.2_swap}.
+
+\begin{figura}{gimp-2.2_swap}{0.99}
+\caption{Carpeta de intercambio en las preferencias de \gimp 2.2}
+\end{figura}
+
+
+
+
+Cuando finalmente \gimp se presenta ante nosotros vemos la ventana del
+``consejo diario'',  donde podemos  leer trucos  y consejos  que \gimp
+tendrá la amabilidad de enseñarnos. Es una buena idea leer estos consejos
+al menos una vez antes de utilizar \gimp por primera vez, puesto que
+proporciona información muy útil y a en ocasiones poco evidente.
+%
+Puedes regresar a la ventana del ``consejo diario'' para leer
+los consejos de \gimp en cualquier momento a través del menú
+\textsf{A\underbar{y}uda} \lyxarrow{} \textsf{\underbar{C}onsejo del día} 
+en la ventana principal.
+
+La interfaz inical de \gimp (figura \ref{gimp-2.2_first})
+dedica una ventana separada para los diálogos
+de capas, canales y caminos que veremos más adelante. También proporciona,
+en la ventana principal, un espacio opcional con las opciones actuales
+de la herramienta seleccionada. Si bien todo esto es muy útil cuando se lo
+necesita, para empezar a manejar \gimp es prescindible. 
+
+Dado que la interfaz de \gimp es bastante flexible, dejaremos en manos
+del lector la configuración de la misma, pudieron cerrar diálogos que
+no utilice o por el contrario añadiendo los que considere necesarios.
+La figura \ref{gimp-2.2_minimal} muestra una configuración minimalista
+de la interfaz.
+
+\begin{figura}{gimp-2.2_first}{0.88}
+\caption{Aspecto de \gimp 2.2 al ejecutarlo por primera vez}
+\end{figura}
+
+\begin{figura}{gimp-2.2_minimal}{0.18}
+\caption{Configuración minimalista de la interfaz de \gimp 2.2}
+\end{figura}
+
+
 
 \section{Maniobras básicas}
 
