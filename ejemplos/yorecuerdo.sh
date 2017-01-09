@@ -1,5 +1,5 @@
 #!/bin/sh
-# yorecuerdo.sh .- Argumentos de la línea de comandos.
+# yorecuerdo.sh .- Argumentos de la lÃ­nea de comandos.
 
 echo El comando es $0
 echo El primer argumento es $1

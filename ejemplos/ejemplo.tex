@@ -1,32 +1,32 @@
-% Define el  tipo de documento  como "article" (artículo)  y especifica
-% las opciones "a4paper" (tamaño de  papel A4), "12pt" (tamaño de letra
+% Define el  tipo de documento  como "article" (artÃ­culo)  y especifica
+% las opciones "a4paper" (tamaÃ±o de  papel A4), "12pt" (tamaÃ±o de letra
 % a 12 puntos) y "twoside" (para imprimir a doble cara)
 \documentclass[a4paper,12pt,twoside]{article}
 
-% Utiliza  el paquete  "inputenc"  con la  opción  "latin1", esto  nos
-% permite teclear las  "ñ" y las tildes sin tener  que preocuparnos de
+% Utiliza  el paquete  "inputenc"  con la  opciÃ³n  "latin1", esto  nos
+% permite teclear las  "Ã±" y las tildes sin tener  que preocuparnos de
 % nada, porque el charset que estamos usando el latin1 y se lo decimos
-% a LaTeX. Nota: Latin1 se refiere al estándar ISO-8859-1
+% a LaTeX. Nota: Latin1 se refiere al estÃ¡ndar ISO-8859-1
 \usepackage[latin1]{inputenc}
 
-% Utiliza  el  paquete  "babel"  con   la  opción  "spanish",  lo  que
-% incluye  entre  otras  cosas   traducción  de  elementos  insertados
-% automáticamente, como "Índice general" en lugar de "Contents"
+% Utiliza  el  paquete  "babel"  con   la  opciÃ³n  "spanish",  lo  que
+% incluye  entre  otras  cosas   traducciÃ³n  de  elementos  insertados
+% automÃ¡ticamente, como "Ãndice general" en lugar de "Contents"
 \usepackage[spanish]{babel}
 
 % Utiliza el  paquete amssymb,  American Mathematical  Society SYMbols,
-% (símbolos de  la Sociedad Matemática  Americana). Es este  paquete se
-% encuentra  por ejemplo  el símbolo  de "isomorfo  a" utilizado  en el
-% Teorema de Isomorfía.
+% (sÃ­mbolos de  la Sociedad MatemÃ¡tica  Americana). Es este  paquete se
+% encuentra  por ejemplo  el sÃ­mbolo  de "isomorfo  a" utilizado  en el
+% Teorema de IsomorfÃ­a.
 \usepackage{amssymb}
 
-% Utiliza el paquete  "eurosym" para proporcionar el  símbolo del euro.
-% Con este  paquete podemos escribir el  símbolo del euro con  la orden
+% Utiliza el paquete  "eurosym" para proporcionar el  sÃ­mbolo del euro.
+% Con este  paquete podemos escribir el  sÃ­mbolo del euro con  la orden
 % \euro
 \usepackage{eurosym}
 
-% Ordenamos a LaTeX que no numere  las páginas, ya que tenemos una sóla
-% página y un "1" solitario no queda muy bien.
+% Ordenamos a LaTeX que no numere  las pÃ¡ginas, ya que tenemos una sÃ³la
+% pÃ¡gina y un "1" solitario no queda muy bien.
 \pagestyle{empty}
 
 % Evita que  LaTeX introduzca  espacios mayores de  lo normal  tras los
@@ -35,22 +35,22 @@
 
 \begin{document} % Comienza el documento
 
-% Esta frase estará centrada y con un tamaño de letra mayor
+% Esta frase estarÃ¡ centrada y con un tamaÃ±o de letra mayor
 \begin{center}
-{\large Taller de Iniciación a Linux para Alumnos}
+{\large Taller de IniciaciÃ³n a Linux para Alumnos}
 \end{center}
 
-Esto es un  pequeño ejemplo de {\LaTeX}, el más  potente procesador de
-textos. La mayoría  de apuntes y exámenes de Matemáticas  que vemos en
-la  Facultad están  escritos  en {\LaTeX}.  Por  cierto, con  {\LaTeX}
-también estamos preparados para la llegada del {\euro}uro
+Esto es un  pequeÃ±o ejemplo de {\LaTeX}, el mÃ¡s  potente procesador de
+textos. La mayorÃ­a  de apuntes y exÃ¡menes de MatemÃ¡ticas  que vemos en
+la  Facultad estÃ¡n  escritos  en {\LaTeX}.  Por  cierto, con  {\LaTeX}
+tambiÃ©n estamos preparados para la llegada del {\euro}uro
 
-A continuación algunos ejemplos de fórmulas matemáticas:
+A continuaciÃ³n algunos ejemplos de fÃ³rmulas matemÃ¡ticas:
 
-% Comenzamos una descripción de varios "items"
+% Comenzamos una descripciÃ³n de varios "items"
 \begin{description}
 
-\item [Definición de límite (Análisis Matemático I)]
+\item [DefiniciÃ³n de lÃ­mite (AnÃ¡lisis MatemÃ¡tico I)]
 $$
 \lim_{x \longrightarrow a} = l \iff 
 \forall \, \varepsilon > 0 \,
@@ -59,9 +59,9 @@ $$
 \Longrightarrow \, \| f(x) - l \| < \varepsilon
 $$
 
-\item [Teorema Generalizado de Cauchy (Análisis Matemático I)]
-Si $f$ y $g$ tienen derivadas contínuas hasta el orden $n(n-1)$ en 
-el intervalo $\lbrack a , b \rbrack$ y además $\forall \, x \in (a,b)
+\item [Teorema Generalizado de Cauchy (AnÃ¡lisis MatemÃ¡tico I)]
+Si $f$ y $g$ tienen derivadas contÃ­nuas hasta el orden $n(n-1)$ en 
+el intervalo $\lbrack a , b \rbrack$ y ademÃ¡s $\forall \, x \in (a,b)
 \, \, \exists \, f^{n)}(x), g^{n)}(x)$, entonces
 $\exists \, c \in (a,b) \, /$
 $$
@@ -69,14 +69,14 @@ $$
 f^{n)}(x) \bigg( g(b) - \sum_{k=0}^{n-1} \frac{g^{k)}(a)}{k!}(b-a)^k \bigg) 
 $$
 
-\item [$1^{er}$ Teorema de Isomorfía (Álgebra I)]
+\item [$1^{er}$ Teorema de IsomorfÃ­a (Ãlgebra I)]
 Sean $G$, $G'$ grupos, $f : G \longrightarrow G'$
 homomorfismo de grupos. Entonces
 $$
 \frac{G}{Ker(G)} \, \thickapprox \, Im f
 $$
 
-\item [Funciones Eulerianas: Gamma y Beta (Análisis Matemático II)]
+\item [Funciones Eulerianas: Gamma y Beta (AnÃ¡lisis MatemÃ¡tico II)]
 $$
 \Gamma(p) = \int_{0}^{+\infty} e^{-x} x^{p-1} dx \quad \forall \, p > 0
 $$
@@ -84,7 +84,7 @@ $$
 \beta(p,q) = \int_{0}^{1} x^{p-1} (1-x)^{q-1} dx
 $$
 
-\item [Y por último, un ejemplo denso]
+\item [Y por Ãºltimo, un ejemplo denso]
 $$ \sum \limits_{n = 0}^{\infty} 
 \left( \frac{\int \limits_{-\infty}^{+\infty}
 {\left\lceil \frac{\sin \left[8 \frac{\pi}{3}^3 \right]}

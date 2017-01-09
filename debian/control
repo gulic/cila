@@ -1,7 +1,7 @@
 Source: cila-libro
 Section: doc
 Priority: optional
-Maintainer: Miguel ¡ngel Vilela GarcÌa (miguev) <miguev@gulic.org>
+Maintainer: Miguel √Ångel Vilela Garc√≠a (miguev) <miguev@gulic.org>
 Build-Depends: debhelper (>> 3.0.0), make, tetex-extra, tetex-eurosym, dvips, gs-common
 Standards-Version: 3.5.2
 
@@ -10,8 +10,8 @@ Architecture: all
 Depends: ${shlibs:Depends}, cila-ejemplos
 Recommends: cila-base
 Suggests: cila-extra, cila-libro-src
-Description: Libro del Curso de IntroducciÛn a Linux para Alumnos
- Libro del Curso de IntroducciÛn a Linux para Alumnos
+Description: Libro del Curso de Introducci√≥n a Linux para Alumnos
+ Libro del Curso de Introducci√≥n a Linux para Alumnos
  .
- Este libro constituye  los apuntes de un curso de  Linux diseÒado para
+ Este libro constituye  los apuntes de un curso de  Linux dise√±ado para
  alumnos (estudiantes) de universidad y secundaria.

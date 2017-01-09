@@ -6,5 +6,5 @@ function mifunc ()
   date
 }
 
-echo Veamos qué hace esta función...
+echo Veamos quÃ© hace esta funciÃ³n...
 mifunc

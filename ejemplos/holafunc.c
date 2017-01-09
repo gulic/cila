@@ -1,5 +1,5 @@
 /* holafunc.c .- Ejemplo de programa en varios archivos.
- *         Definición de holafunc().
+ *         DefiniciÃ³n de holafunc().
  */
 
 #include <stdio.h>
@@ -8,5 +8,5 @@
 int
 holafunc (const char *str)
 {
-  return printf ("El que a buen árbol se arrima, %s.\n\n", str);
+  return printf ("El que a buen Ã¡rbol se arrima, %s.\n\n", str);
 }

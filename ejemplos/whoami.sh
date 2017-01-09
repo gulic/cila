@@ -1,5 +1,5 @@
 #!/bin/sh
-# whoami.sh .- Ejemplo sencillo de programación en BASH
+# whoami.sh .- Ejemplo sencillo de programaciÃ³n en BASH
  
 echo Usted es:
 whoami

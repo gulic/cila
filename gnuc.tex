@@ -4,38 +4,38 @@
 \chapter{GNU C/C++}\label{gnuc}
 \label{gnuc.tex}
 
-En este capÌtulo tomaremos en consideraciÛn la programaciÛn en lenguaje
+En este cap√≠tulo tomaremos en consideraci√≥n la programaci√≥n en lenguaje
 C/C++ bajo el sistema operativo GNU/Linux. Todos los lenguajes de
-programaciÛn compilados pasan en menor o mayor medida por las mismas
+programaci√≥n compilados pasan en menor o mayor medida por las mismas
 fases, por lo que mucho de lo que estudiaremos se puede aplicar a otros
 lenguajes y problemas.
 
 \section{Compilado y enlazado}
 
-Todos los leguajes de programaciÛn compilados, y el C no es una
-excepciÛn, requieren de dos fases para generar el binario (o ejecutable)
+Todos los leguajes de programaci√≥n compilados, y el C no es una
+excepci√≥n, requieren de dos fases para generar el binario (o ejecutable)
 de un programa:
 
 \begin{description}
 
 \item[Compilar] Traduce cada archivo fuente en C {\tt (*.c)} del
-programa a lenguaje m·quina, almacenando la traducciÛn en los archivos
-de cÛdigo objeto {\tt (*.o)}. Para ello usamos el {\sf GCC (GNU C
-Compiler)} a travÈs del comando {\tt gcc}\index{gcc}.
+programa a lenguaje m√°quina, almacenando la traducci√≥n en los archivos
+de c√≥digo objeto {\tt (*.o)}. Para ello usamos el {\sf GCC (GNU C
+Compiler)} a trav√©s del comando {\tt gcc}\index{gcc}.
 
-\item[Enlazar] Une todos los archivos de cÛdigo objeto generados en la
-etapa anterior para fundirlos en el ejecutable de la aplicaciÛn. Para
+\item[Enlazar] Une todos los archivos de c√≥digo objeto generados en la
+etapa anterior para fundirlos en el ejecutable de la aplicaci√≥n. Para
 esta tarea se utiliza el comando {\tt ld}\index{ld}.
 
 \end{description}
 
 Por fortuna para nosotros {\tt gcc} llama por defecto a {\tt ld},
-ahorr·ndonos tener que realizar los dos pasos a mano. Como ejemplo
+ahorr√°ndonos tener que realizar los dos pasos a mano. Como ejemplo
 tomemos el siguiente programa:
 
 \begin{ejemplo}{holamundo.c}{Ejemplo de programa en C} Ejemplo de un
 sencillo programa en C para compilar y enlazar. El programa muestra un
-mensaje por la salida est·ndar y termina.
+mensaje por la salida est√°ndar y termina.
 \end{ejemplo}
 
 Y ejecutemos el comando: 
@@ -44,74 +44,74 @@ Y ejecutemos el comando:
 $ gcc holamundo.c 
 \end{verbatim}
 
-Si list·semos el contenido del directorio actual con el comando {\tt ls}
-verÌamos un nuevo archivo con el nombre de {\tt a.out}\index{a.out}. Ese
-archivo contiene nuestro programa y puede ser f·cilmente ejecutado.
+Si list√°semos el contenido del directorio actual con el comando {\tt ls}
+ver√≠amos un nuevo archivo con el nombre de {\tt a.out}\index{a.out}. Ese
+archivo contiene nuestro programa y puede ser f√°cilmente ejecutado.
 
 \begin{verbatim}
 $ ./a.out
-El que a buen ·rbol se arrima, buena sombra le cobija.
+El que a buen √°rbol se arrima, buena sombra le cobija.
 \end{verbatim}
 
 Es probable que pocos programadores consideren que {\tt a.out} sea
-un nombre apropiado para el ejecutable de su aplicaciÛn. Con el
-fin de cambiar dicho nombre se puede utilizar la opciÛn {\tt -o
+un nombre apropiado para el ejecutable de su aplicaci√≥n. Con el
+fin de cambiar dicho nombre se puede utilizar la opci√≥n {\tt -o
 nombre\_ejecutable}.
 
 \begin{verbatim}
 $ gcc -o holamundo holamundo.c
 $ ./holamundo
-El que a buen ·rbol se arrima, buena sombra le cobija.
+El que a buen √°rbol se arrima, buena sombra le cobija.
 \end{verbatim}
 
-Como podemos apreciar, el ejecutable de nuestra aplicaciÛn ahora se
+Como podemos apreciar, el ejecutable de nuestra aplicaci√≥n ahora se
 denomina {\tt holamundo}.
 
-Una pr·ctica muy habitual en programaciÛn es dividir nuestro cÛdigo
+Una pr√°ctica muy habitual en programaci√≥n es dividir nuestro c√≥digo
 en varios archivos, cada uno especializado en un tarea determinada.
 Supongamos que disponemos del siguiente programa:
 
 \begin{ejemplo}{holamain.c}{Ejemplo de programa en varios archivos}
-DefiniciÛn de la funciÛn {\tt main()}; punto de entrada al ejemplo de un
-sencillo programa en C en varios archivos. La funciÛn llama a {\tt
+Definici√≥n de la funci√≥n {\tt main()}; punto de entrada al ejemplo de un
+sencillo programa en C en varios archivos. La funci√≥n llama a {\tt
 holafunc()}, definida en {\tt holafunc.c}, para que muestre un mensaje
-por la salida est·ndar.
+por la salida est√°ndar.
 \end{ejemplo}
 
 \begin{ejemplo}{holafunc.h}{Ejemplo de programa en varios archivos}
-DeclaraciÛn de la funciÛn {\tt holafunc()} encargada de mostrar un
-mensaje por la salida est·ndar.
+Declaraci√≥n de la funci√≥n {\tt holafunc()} encargada de mostrar un
+mensaje por la salida est√°ndar.
 \end{ejemplo}
 
 \begin{ejemplo}{holafunc.c}{Ejemplo de programa en varios archivos}
-DefiniciÛn de la funciÛn {\tt holafunc()} encargada de mostrar un
-mensaje por la salida est·ndar.
+Definici√≥n de la funci√≥n {\tt holafunc()} encargada de mostrar un
+mensaje por la salida est√°ndar.
 \end{ejemplo}
 
-Para generar nuestro programa sÛlo debemos listar los archivos que lo
-forman en la lÌnea de comandos del {\tt gcc}.
+Para generar nuestro programa s√≥lo debemos listar los archivos que lo
+forman en la l√≠nea de comandos del {\tt gcc}.
 
 \begin{verbatim}
 $ gcc -o holamundo holamain.c holafunc.c
 $ ./holamundo
-El que a buen ·rbol se arrima, buena sombra le cobija.
+El que a buen √°rbol se arrima, buena sombra le cobija.
 \end{verbatim}
 
 \section{Enlazado con bibliotecas externas}
 
 Como hemos comentado anteriormente, {\tt gcc} compila cada unos de los
-archivos de cÛdigo fuente pasados en la lÌnea de comandos. El resultado
-es un archivo de cÛdigo objeto por cada archivo de cÛdigo fuente. Dichos
-archivos de cÛdigo objeto son enlazados por {\tt ld} para generar el
-ejecutable de nuestra aplicaciÛn. Cuando {\tt gcc} llama a {\tt ld} no
-solo se est·n enlazando a nuestro programa el cÛdigo objeto de {\tt
+archivos de c√≥digo fuente pasados en la l√≠nea de comandos. El resultado
+es un archivo de c√≥digo objeto por cada archivo de c√≥digo fuente. Dichos
+archivos de c√≥digo objeto son enlazados por {\tt ld} para generar el
+ejecutable de nuestra aplicaci√≥n. Cuando {\tt gcc} llama a {\tt ld} no
+solo se est√°n enlazando a nuestro programa el c√≥digo objeto de {\tt
 holamain.c} y el de {\tt holafunc.c}. El compilador sabe que para que
-nuestro programa funcione es necesario que estÈ enlazado a una serie de
-bibliotecas est·ndar del sistema, asÌ que las incluye autom·ticamente.
+nuestro programa funcione es necesario que est√© enlazado a una serie de
+bibliotecas est√°ndar del sistema, as√≠ que las incluye autom√°ticamente.
 
-Una de esas bibliotecas es la {\sf Biblioteca GNU Est·ndar de C (GLIBC,
+Una de esas bibliotecas es la {\sf Biblioteca GNU Est√°ndar de C (GLIBC,
 GNU C Library)}, comunmente conocida como {\tt libc}\index{libc}.
-Podemos acceder a la documentaciÛn de dicha biblioteca a travÈs del
+Podemos acceder a la documentaci√≥n de dicha biblioteca a trav√©s del
 comando:
 
 \begin{verbatim}
@@ -119,16 +119,16 @@ $ info libc
 \end{verbatim}
 
 Funciones como {\tt fopen()}, {\tt malloc()}, {\tt printf()} y en
-general todas las del C est·ndar y muchas m·s se definen en la {\tt
+general todas las del C est√°ndar y muchas m√°s se definen en la {\tt
 libc}. Evidentemente en nuestro sistema existen bibliotecas para toda
-clase de tareas cuya documentaciÛn se puede obtener recurriendo a la
+clase de tareas cuya documentaci√≥n se puede obtener recurriendo a la
 ayuda del sistema. Sin embargo, la mayor parte de esas bibliotecas no se
-enlazan autom·ticamente, asÌ que nos queda la duda de cÛmo resolver este
+enlazan autom√°ticamente, as√≠ que nos queda la duda de c√≥mo resolver este
 problema. Por ejemplo vamos a modificar {\tt holafunc.c}:
 
 \begin{ejemplo}{holafuncm.c}{Ejemplo de progrma que requiere la
-biblioteca de funciones matem·ticas} DefiniciÛn de la funciÛn {\tt
-holafunc()} encargada de mostrar un mensaje por la salida est·ndar y de
+biblioteca de funciones matem√°ticas} Definici√≥n de la funci√≥n {\tt
+holafunc()} encargada de mostrar un mensaje por la salida est√°ndar y de
 calcular el coseno de 0.5 radianes. \end{ejemplo}
 
 Si compilamos {\tt holamundo} veremos el siguiente mensaje de error:
@@ -140,28 +140,28 @@ $ gcc -o holamundo holamain.c holafuncm.c
 collect2: ld returned 1 exit status
 \end{verbatim}
 
-Ese mensaje nos indica que la funciÛn {\tt cos()} llamada desde {\tt
-holafunc()} no est· definida puesto que se encuentra en una biblioteca
-que no est· siendo enlazada al programa. Para resolver el problema se
-emplea la opciÛn {\tt -lnombre\_biblioteca}, con la que se indica la
+Ese mensaje nos indica que la funci√≥n {\tt cos()} llamada desde {\tt
+holafunc()} no est√° definida puesto que se encuentra en una biblioteca
+que no est√° siendo enlazada al programa. Para resolver el problema se
+emplea la opci√≥n {\tt -lnombre\_biblioteca}, con la que se indica la
 biblioteca adicional que debe ser enlazada al programa.
 
 \label{holafuncm}
 \begin{verbatim}
 $ gcc -lm -o holamundo holamain.c holafuncm.c
 $ ./holamundo
-El que a buen ·rbol se arrima, buena sombra lo cobija,
+El que a buen √°rbol se arrima, buena sombra lo cobija,
 y el coseno de 0.500000 es 0.877583.
 \end{verbatim}
 
 Al especificar {\tt -lm} se enlaza la biblioteca {\tt libm} (como
 vemos no hace falta poner el prefijo {\tt lib} cuando se indica el
-nombre de la biblioteca) que contiene la definiciÛn de {\tt cos()}. Es
-importante destacar que el enlazador sÛlo busca bibliotecas en una serie
-de directorios est·ndar de nuestro sistema. Por ejemplo, {\tt libm} se
-encuentra en {\tt /usr/lib/} que es un directorio est·ndar. Si deseamos
+nombre de la biblioteca) que contiene la definici√≥n de {\tt cos()}. Es
+importante destacar que el enlazador s√≥lo busca bibliotecas en una serie
+de directorios est√°ndar de nuestro sistema. Por ejemplo, {\tt libm} se
+encuentra en {\tt /usr/lib/} que es un directorio est√°ndar. Si deseamos
 enlazar bibliotecas situadas en otros directorios, como por ejemplo el
-directorio actual, debemos usar la opciÛn {\tt -Lruta\_biblioteca}. Por
+directorio actual, debemos usar la opci√≥n {\tt -Lruta\_biblioteca}. Por
 ejemplo, el siguiente comando enlaza a nuestro programa una biblioteca
 de nombre {\tt libpropia} que se encuentra en el directorio actual:
 
@@ -169,54 +169,54 @@ de nombre {\tt libpropia} que se encuentra en el directorio actual:
 $ gcc -L. -lm -lpropia -o holamundo holamain.c holafuncm.c
 \end{verbatim}
 
-\section{Separar compilaciÛn y enlazado}
+\section{Separar compilaci√≥n y enlazado}
 
-En caso de que prefiramos separar la etapa de compilaciÛn y enlazado, se
-utiliza la opciÛn {\tt -c} con el compilador {\tt gcc}. De esa manera le
-informamos de que sÛlo queremos que genere el cÛdigo objeto. Probemos a
-generar el cÛdigo objeto para cada archivo:
+En caso de que prefiramos separar la etapa de compilaci√≥n y enlazado, se
+utiliza la opci√≥n {\tt -c} con el compilador {\tt gcc}. De esa manera le
+informamos de que s√≥lo queremos que genere el c√≥digo objeto. Probemos a
+generar el c√≥digo objeto para cada archivo:
 
 \begin{verbatim}
 $ gcc -c holamain.c holafuncm.c
 \end{verbatim}
 
 Ahora tenemos dos nuevos archivos denominados {\tt holamain.o} y
-{\tt holafuncm.o} que se corresponden con el cÛdigo objeto de {\tt
+{\tt holafuncm.o} que se corresponden con el c√≥digo objeto de {\tt
 holamain.c} y {\tt holafuncm.c} respectivamente.
 
-Para enlazar, sÛlo debemos especificar los archivos de cÛdigo objeto en
-la lÌnea de comandos del {\tt gcc}.
+Para enlazar, s√≥lo debemos especificar los archivos de c√≥digo objeto en
+la l√≠nea de comandos del {\tt gcc}.
 
 \begin{verbatim}
 $ gcc -lm -o holamundo holamain.o holafuncm.o
 \end{verbatim}
 
 La parte positiva de esto es que ahora podemos enlazar en nuestra
-aplicaciÛn cÛdigo objeto generado por otros lenguajes, como {\tt
-Fortran} (vÈase \ref{fortran+c}) o {\tt Pascal}. Adem·s, nos permite
-compilar sÛlo aquellos archivos de cÛdigo fuente que han cambiado desde
-la ˙ltima compilaciÛn. Esto no parece importante cuando trabajamos en
-proyectos pequeÒos con apenas un par de archivos. Pero es fundamental a
+aplicaci√≥n c√≥digo objeto generado por otros lenguajes, como {\tt
+Fortran} (v√©ase \ref{fortran+c}) o {\tt Pascal}. Adem√°s, nos permite
+compilar s√≥lo aquellos archivos de c√≥digo fuente que han cambiado desde
+la √∫ltima compilaci√≥n. Esto no parece importante cuando trabajamos en
+proyectos peque√±os con apenas un par de archivos. Pero es fundamental a
 la hora de desarrollar programas de mayor envergadura.
 
-TambiÈn es posible utilizar directamente {\tt ld}, en lugar de
-ejecutar {\tt gcc} y que Èste llame al primero. El problema es que
+Tambi√©n es posible utilizar directamente {\tt ld}, en lugar de
+ejecutar {\tt gcc} y que √©ste llame al primero. El problema es que
 debemos indicarle a mano al {\tt ld} que enlace a nuestro programa
-las bibliotecas est·ndar del sistema, puesto que Èl no lo hace
-autom·ticamente. Ya que {\tt gcc} hace dicho trabajo por nosotros,
-evitaremos entrar en m·s detalles.
+las bibliotecas est√°ndar del sistema, puesto que √©l no lo hace
+autom√°ticamente. Ya que {\tt gcc} hace dicho trabajo por nosotros,
+evitaremos entrar en m√°s detalles.
 
-\section{Bibliotecas de enlace din·mico}
+\section{Bibliotecas de enlace din√°mico}
 
 Un uso interesante del {\tt ld} es para generar nuestras propias
-bibliotecas de enlace din·mico. Ahora que disponemos de un archivo {\tt
+bibliotecas de enlace din√°mico. Ahora que disponemos de un archivo {\tt
 holafuncm.o} ejecutemos lo siguiente:
 
 \begin{verbatim}
 $ ld -shared -lm -o libholafunc.so holafuncm.o
 \end{verbatim}
 
-Aunque tambiÈn es posible, y recomendable, invocar al {\tt gcc} para que
+Aunque tambi√©n es posible, y recomendable, invocar al {\tt gcc} para que
 realice el mismo trabajo.
 
 \begin{verbatim}
@@ -225,44 +225,44 @@ $ gcc -shared -lm -o libholafunc.so holafuncm.o
 
 En ambos casos, si listamos el contenido del directorio observaremos un
 nuevo archivo denominado {\tt libholafunc.so} que es nuestra biblioteca
-de enlace din·mico. Dicha biblioteca puede ser utilizada por cualquier
-aplicaciÛn del sistema, si la enlazamos como hemos aprendido.
+de enlace din√°mico. Dicha biblioteca puede ser utilizada por cualquier
+aplicaci√≥n del sistema, si la enlazamos como hemos aprendido.
 
 \begin{verbatim}
 $ gcc -L. -lholafunc -o holamundo holamain.o
 \end{verbatim}
 
-A diferencia de ejemplos anteriores, nuestro programa no funcionar· si
+A diferencia de ejemplos anteriores, nuestro programa no funcionar√° si
 no disponemos de {\tt libholafunc.so}. Sin embargo, cualquier programa
-futuro podr· utilizar las funciones de nuestra biblioteca.
+futuro podr√° utilizar las funciones de nuestra biblioteca.
 
-El inconveniente de crear bibliotecas de enlace din·mico es que hay
-que instalarlas en alg˙n directorio donde el enlazador din·mico
+El inconveniente de crear bibliotecas de enlace din√°mico es que hay
+que instalarlas en alg√∫n directorio donde el enlazador din√°mico
 ({\tt ld.so}) sepa que hay bibliotecas (p.ej. {\tt /usr/lib}), pero
-la labor de instalar o desinstalar bibliotecas en el sistema, asÌ
+la labor de instalar o desinstalar bibliotecas en el sistema, as√≠
 como la de configurar {\tt ld.so} para que las busque es del {\tt
-root}. Por ello, si ejecut·ramos ahora nuestro programa Èste no
-funcionarÌa, puesto que serÌa incapaz de encontrar {\tt libholafunc.so}.
-Para que esto no sea asÌ debemos definir la variable de entorno
+root}. Por ello, si ejecut√°ramos ahora nuestro programa √©ste no
+funcionar√≠a, puesto que ser√≠a incapaz de encontrar {\tt libholafunc.so}.
+Para que esto no sea as√≠ debemos definir la variable de entorno
 \$LD\_LIBRARY\_PATH\index{\$LD\_LIBRARY\_PATH} con la ruta de nuestra
 biblioteca.
 
 \begin{verbatim}
 $ export LD_LIBRARY_PATH=./
 $ ./holamundo
-El que a buen ·rbol se arrima, buena sombra le cobija,
+El que a buen √°rbol se arrima, buena sombra le cobija,
 y el coseno de 0.500000 es 0.877583.
 \end{verbatim}
 
-La forma en la que hemos generado nuestra biblioteca de enlace din·mico
+La forma en la que hemos generado nuestra biblioteca de enlace din√°mico
 no suele dar problemas en sistemas GNU/Linux bajo plataforma Intel x86.
 Sin embargo, no es el procedimiento recomendado. Lo ideal, con el fin
 de garantizar la compatibilidad entre plataformas, es que compilemos
-el cÛdigo fuente de nuestra biblioteca de enlace din·mico con la
-opciÛn {\tt -fPIC}. Dicha opciÛn fuerza al compilador a generar cÛdigo
-independiente de la posiciÛn. De esa manera la biblioteca puede ser
+el c√≥digo fuente de nuestra biblioteca de enlace din√°mico con la
+opci√≥n {\tt -fPIC}. Dicha opci√≥n fuerza al compilador a generar c√≥digo
+independiente de la posici√≥n. De esa manera la biblioteca puede ser
 cargada en cualquier punto del espacio de direcciones de la memoria de
-las aplicaciones que la utilizan. Por tanto, el procedimiento est·ndar
+las aplicaciones que la utilizan. Por tanto, el procedimiento est√°ndar
 para generar nuestro programa queda de la siguiente manera:
 
 \begin{verbatim}
@@ -272,7 +272,7 @@ $ gcc -shared -lm -o libholafunc.so holafuncm.o
 $ gcc -L. -lholafunc -o holamundo holamain.o
 \end{verbatim}
 
-O, en caso de no querer conservar los archivos de cÛdigo objeto, podemos
+O, en caso de no querer conservar los archivos de c√≥digo objeto, podemos
 hacerlo de la siguiente manera:
 
 \begin{verbatim}
@@ -280,31 +280,31 @@ $ gcc -fPIC -shared -lm -o libholafunc.so holafuncm.c
 $ gcc -L. -lholafunc -o holamundo holamain.c
 \end{verbatim}
 
-\section{øY que pasa con el C++?}
+\section{¬øY que pasa con el C++?}
 
-A la hora de compilar cÛdigo en C++ (habitualmente con extensiones
+A la hora de compilar c√≥digo en C++ (habitualmente con extensiones
 {\tt *.C, *.cc, *.cpp, *.c++, *.cp, *.cxx}) se utiliza el comando
-{\tt g++}\index{g++}. B·sicamente se encarga de ejecutar el {\tt
-gcc} habilitando el C++ como lenguaje por defecto, y aÒadiendo las
-bibliotecas est·ndar del C++ en la fase de enlazado. Por tanto, todo lo
+{\tt g++}\index{g++}. B√°sicamente se encarga de ejecutar el {\tt
+gcc} habilitando el C++ como lenguaje por defecto, y a√±adiendo las
+bibliotecas est√°ndar del C++ en la fase de enlazado. Por tanto, todo lo
 explicado para {\tt gcc} es aplicable para el {\tt g++}. Y si no, veamos
-el siguiente cÛdigo de ejemplo:
+el siguiente c√≥digo de ejemplo:
 
 \begin{ejemplo}{holamain.cc}{Ejemplo de programa en C++}
-DefiniciÛn de la funciÛn {\tt main()}; punto de entrada al ejemplo de un
-sencillo programa en C++. La funciÛn crea un objeto de clase {\tt
+Definici√≥n de la funci√≥n {\tt main()}; punto de entrada al ejemplo de un
+sencillo programa en C++. La funci√≥n crea un objeto de clase {\tt
 saludo}, definida en {\tt saludo.cc}, para que muestre un mensaje por la
-salida est·ndar.
+salida est√°ndar.
 \end{ejemplo}
 
 \begin{ejemplo}{saludo.h}{Ejemplo de programa en C++}
-DeclaraciÛn de la clase {\tt saludo} encargada de mostrar un mensaje por
-la salida est·ndar.
+Declaraci√≥n de la clase {\tt saludo} encargada de mostrar un mensaje por
+la salida est√°ndar.
 \end{ejemplo}
 
 \begin{ejemplo}{saludo.cc}{Ejemplo de programa en C++}
-DefiniciÛn de la clase {\tt saludo} encargada de mostrar un mensaje por
-la salida est·ndar.
+Definici√≥n de la clase {\tt saludo} encargada de mostrar un mensaje por
+la salida est√°ndar.
 \end{ejemplo}
 
 El cual se genera de forma semejante al caso en el que trabajamos en
@@ -313,10 +313,10 @@ lenguaje C.
 \begin{verbatim}
 $ g++ -o holamundo holamain.cc saludo.cc
 $ ./holamundo
-El que a buen ·rbol se arrima, buena sombra le cobija.
+El que a buen √°rbol se arrima, buena sombra le cobija.
 \end{verbatim}
 
 Con todo esto se puede decir que ya estamos hechos unos {\em C/C++ Linux
-Programmers}. Por lo que sÛlo queda navegar un poco, escoger el {\em
-proyecto de software libre} que m·s nos guste, o disguste, y ponernos a
+Programmers}. Por lo que s√≥lo queda navegar un poco, escoger el {\em
+proyecto de software libre} que m√°s nos guste, o disguste, y ponernos a
 colaborar.

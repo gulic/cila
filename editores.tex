@@ -16,67 +16,67 @@
 
 
 {\sf VI} es un editor de texto visual, de pantalla completa, basado en
-el editor de  lÌnea {\tt ex}. Es  un editor poco intuitivo  y con mala
+el editor de  l√≠nea {\tt ex}. Es  un editor poco intuitivo  y con mala
 prensa entre los estudiantes que dan sus primeros pasos en Linux/UNIX,
 pero por otra parte es el  editor favorito de los usuarios avanzados y
-de muchos programadores. Es adem·s un editor que se puede encontrar en
+de muchos programadores. Es adem√°s un editor que se puede encontrar en
 cualquier sistema UNIX, desde antiguas  estaciones Sun Solaris o HP-UX
-hasta  las  m·s  recientes  distribuciones  de  GNU/Linux  o  FreeBSD,
+hasta  las  m√°s  recientes  distribuciones  de  GNU/Linux  o  FreeBSD,
 OpenBSD, etc.
 
-{\sf  VI}  es  adem·s  un   editor  muy  potente,  que  permite  hacer
+{\sf  VI}  es  adem√°s  un   editor  muy  potente,  que  permite  hacer
 complicadas operaciones  en grandes ficheros con  unos pocos comandos,
 por lo que su aprendizaje  puede ahorrarnos mucho tiempo. Otra ventaja
 de {\sf VI}  es que al ser tan corriente  suele encontrarse incluso en
-disquetes de rescate. LÛgicamente poco se puede rescatar si no se sabe
-manejar el ˙nico editor disponible en un momento de emergencia.
+disquetes de rescate. L√≥gicamente poco se puede rescatar si no se sabe
+manejar el √∫nico editor disponible en un momento de emergencia.
 
-Pero el manejo de {\sf VI}  es realmente incÛmodo si nos enfrentamos a
-la  versiÛn cl·sica.  Por ejemplo  no podemos  usar los  cursores para
+Pero el manejo de {\sf VI}  es realmente inc√≥modo si nos enfrentamos a
+la  versi√≥n cl√°sica.  Por ejemplo  no podemos  usar los  cursores para
 movernos por el  texto, debemos pasar al llamado modo  {\em comando} y
 utilizar letras para movernos.
 
 En este  curso utilizaremos el  editor {\sf VIM}. {\sf  VIM} significa
-``{\bf V}i {\bf IM}proved'' (en espaÒol ``{\bf VI M}ejorado''), y como
-su nombre  indica es un  clon (muy)  mejorado del cl·sico  editor {\sf
-VI}. {\sf VIM}  es bastante m·s amigable que {\sf  VI}, ya que permite
-un uso m·s intuitivo (p.ej. los cursores y otras teclas para moverse).
-Adem·s,  si  se compila  adecuadamente  (y  suele ser  asÌ)  incorpora
-coloreado de sintaxis para casi  todos los lenguajes de programaciÛn y
-ficheros  de configuraciÛn  que puedas  encontrar en  Linux/UNIX. Otra
-caracterÌstica  muy interesante  de  {\sf VIM}  es  la posibilidad  de
-utilizar un  interfaz gr·fico, lo que  aumenta el confort y  mejora el
+``{\bf V}i {\bf IM}proved'' (en espa√±ol ``{\bf VI M}ejorado''), y como
+su nombre  indica es un  clon (muy)  mejorado del cl√°sico  editor {\sf
+VI}. {\sf VIM}  es bastante m√°s amigable que {\sf  VI}, ya que permite
+un uso m√°s intuitivo (p.ej. los cursores y otras teclas para moverse).
+Adem√°s,  si  se compila  adecuadamente  (y  suele ser  as√≠)  incorpora
+coloreado de sintaxis para casi  todos los lenguajes de programaci√≥n y
+ficheros  de configuraci√≥n  que puedas  encontrar en  Linux/UNIX. Otra
+caracter√≠stica  muy interesante  de  {\sf VIM}  es  la posibilidad  de
+utilizar un  interfaz gr√°fico, lo que  aumenta el confort y  mejora el
 rendimiento del programador.
 
-Lo primero que hay que aprender con {\sf VI} es la filosofÌa de los dos
+Lo primero que hay que aprender con {\sf VI} es la filosof√≠a de los dos
 modos de  trabajo: \index{VIM!modos} el  modo {\em comando} y  el modo
-{\em ediciÛn}. El  modo comando se utiliza solamente  para dar Ûrdenes
-al editor,  decirle que haga  cosas como  borrar una lÌnea,  buscar un
-patrÛn, ir a una determinada lÌnea, guardar el fichero, salir, etc. El
-modo  {\em ediciÛn}  se utiliza  solamente para  escribir texto  en el
-fichero.  Es  muy  importante  familiarizarse con  esta  filosofÌa  de
-funcionamiento, ya que resulta imprescindible para cualquier operaciÛn
+{\em edici√≥n}. El  modo comando se utiliza solamente  para dar √≥rdenes
+al editor,  decirle que haga  cosas como  borrar una l√≠nea,  buscar un
+patr√≥n, ir a una determinada l√≠nea, guardar el fichero, salir, etc. El
+modo  {\em edici√≥n}  se utiliza  solamente para  escribir texto  en el
+fichero.  Es  muy  importante  familiarizarse con  esta  filosof√≠a  de
+funcionamiento, ya que resulta imprescindible para cualquier operaci√≥n
 que se quiera realizar con {\sf VIM}.
 
 En adelante  nos referiremos  al editor como  {\sf VI}  cuando digamos
-algo que sea com˙n a todas las versiones de {\sf VI}, y como {\sf VIM}
+algo que sea com√∫n a todas las versiones de {\sf VI}, y como {\sf VIM}
 cuando se trate de extensiones propias de {\sf VIM}.
 
 Para ejecutar este editor el comando  es {\tt vi}. Si tienes instalada
-otra  versiÛn de  {\sf  VI} pero  quieres utilizar  {\sf  VIM} no  hay
+otra  versi√≥n de  {\sf  VI} pero  quieres utilizar  {\sf  VIM} no  hay
 problema,  simplemente  ejecuta  {\tt  vim}. Si  quieres  utilizar  la
-interfaz gr·fica de {\sf VIM} ejecuta {\tt gvim}.\index{GVIM}
+interfaz gr√°fica de {\sf VIM} ejecuta {\tt gvim}.\index{GVIM}
 
 Aunque  conserva el  nombre de  {\sf VI}  estamos trabajando  con {\sf
 VIM}. Este comando admite varias opciones  que se le pueden pasar como
-par·metros, p.ej. el nombre del fichero que queremos editar:
+par√°metros, p.ej. el nombre del fichero que queremos editar:
 
 \begin{verbatim}
 $ vi fichero
 \end{verbatim}
 
-TambiÈn puedes especificar  la lÌnea en la que quieres  empezar con el
-par·metro {\tt +n}. Por ejemplo para empezar en la lÌnea 12:
+Tambi√©n puedes especificar  la l√≠nea en la que quieres  empezar con el
+par√°metro {\tt +n}. Por ejemplo para empezar en la l√≠nea 12:
 
 \begin{verbatim}
 $ vi fichero +12
@@ -84,7 +84,7 @@ $ vi fichero +12
 
 {\tt  VIM} comienza  siempre  en modo  {\tt  comando}, preparado  para
 realizar operaciones  sobre el  fichero. Una  de estas  operaciones es
-pasar al modo {\tt ediciÛn}. Esta transiciÛn puede hacerse de 8 formas 
+pasar al modo {\tt edici√≥n}. Esta transici√≥n puede hacerse de 8 formas 
 diferentes.
 
 \begin{table}[htbp]
@@ -92,56 +92,56 @@ diferentes.
 \index{VIM!insertar}
 \begin{tabular}{|c|p{0.88\textwidth}|}
 \hline
-{\tt i} & Comienza a insertar texto en la posiciÛn del cursor. \\
-{\tt a} & Comienza a insertar texto en la posiciÛn siguiente a la del cursor. \\
-{\tt o} & Comienza a insertar texto en una nueva lÌnea debajo del cursor. \\
-{\tt s} & Borra el car·cter en la  posiciÛn del cursor y comienza a insertar texto. \\ 
+{\tt i} & Comienza a insertar texto en la posici√≥n del cursor. \\
+{\tt a} & Comienza a insertar texto en la posici√≥n siguiente a la del cursor. \\
+{\tt o} & Comienza a insertar texto en una nueva l√≠nea debajo del cursor. \\
+{\tt s} & Borra el car√°cter en la  posici√≥n del cursor y comienza a insertar texto. \\ 
 \hline
-{\tt I} & Comienza a insertar texto al principio de la lÌnea. \\
-{\tt A} & Comienza a insertar texto al final de la lÌnea. \\
-{\tt O} & Comienza a insertar texto en una nueva lÌnea encima del cursor. \\
-{\tt S} & Borra la lÌnea en la  posiciÛn del cursor y comienza a insertar texto. \\
+{\tt I} & Comienza a insertar texto al principio de la l√≠nea. \\
+{\tt A} & Comienza a insertar texto al final de la l√≠nea. \\
+{\tt O} & Comienza a insertar texto en una nueva l√≠nea encima del cursor. \\
+{\tt S} & Borra la l√≠nea en la  posici√≥n del cursor y comienza a insertar texto. \\
 
 \hline
 \end{tabular}
-\caption{Pasar el modo {\em ediciÛn} en {\sf VI}}
+\caption{Pasar el modo {\em edici√≥n} en {\sf VI}}
 \end{table}
 
-Para pasar  del modo  {\em ediciÛn}  al modo  {\em comando}  basta con
-pulsar {\tt  ESC}. A  continuaciÛn vamos a  editar un  pequeÒo fichero
-para familiarizarnos con sus comandos b·sicos. Comenzamos invocando al
-editor desde la  lÌnea de comandos (suponemos que  est·s utilizando la
-interfaz gr·fica, aunque tambiÈn puedes prescindir de ella):
+Para pasar  del modo  {\em edici√≥n}  al modo  {\em comando}  basta con
+pulsar {\tt  ESC}. A  continuaci√≥n vamos a  editar un  peque√±o fichero
+para familiarizarnos con sus comandos b√°sicos. Comenzamos invocando al
+editor desde la  l√≠nea de comandos (suponemos que  est√°s utilizando la
+interfaz gr√°fica, aunque tambi√©n puedes prescindir de ella):
 
 \begin{verbatim}
 $ gvim hola.c
 \end{verbatim}
 
 \begin{figura}{gvim1}{0.85}
-\caption{Interfaz gr·fica de VIM con un fichero nuevo (vacÌo)}
+\caption{Interfaz gr√°fica de VIM con un fichero nuevo (vac√≠o)}
 \end{figura}
 
-La ˙ltima lÌnea  de la interfaz (o de la  consola) deberÌa parecerse a
+La √∫ltima l√≠nea  de la interfaz (o de la  consola) deber√≠a parecerse a
 esto:
 
 \begin{verbatim}
 "hola.c" [New File]                                  0,0-1         All
 \end{verbatim}
 
-Esta  lÌnea es  la {\em  barra de  estado} del  editor. Es  aquÌ donde
-teclearemos los comandos y donde  aparecer· cierta informaciÛn como el
-modo en el que estamos (comando, ediciÛn, reemplazo, etc.), la lÌnea y
+Esta  l√≠nea es  la {\em  barra de  estado} del  editor. Es  aqu√≠ donde
+teclearemos los comandos y donde  aparecer√° cierta informaci√≥n como el
+modo en el que estamos (comando, edici√≥n, reemplazo, etc.), la l√≠nea y
 columna  en la  que estamos,  el porcentaje  del documento  en el  que
-estamos, si el fichero ha sido salvado y su tamaÒo.
+estamos, si el fichero ha sido salvado y su tama√±o.
 
-A  continuaciÛn pulsamos  la tecla  {\tt i}  para pasar  al modo  {\em
-ediciÛn}. Observamos que la barra de estado se muestra diferente:
+A  continuaci√≥n pulsamos  la tecla  {\tt i}  para pasar  al modo  {\em
+edici√≥n}. Observamos que la barra de estado se muestra diferente:
 
 \begin{verbatim}
 -- INSERT --                                         0,1           All
 \end{verbatim}
 
-Ahora es el momento de teclear, escribe el siguiente cÛdigo:
+Ahora es el momento de teclear, escribe el siguiente c√≥digo:
 
 \begin{verbatim}
 #include <stdio.h>
@@ -153,74 +153,74 @@ int main()
 \end{verbatim}
 
 \begin{figura}{gvim2}{0.85}
-\caption{Interfaz gr·fica de VIM con cÛdigo C coloreado}
+\caption{Interfaz gr√°fica de VIM con c√≥digo C coloreado}
 \end{figura}
 
 Cuando tengas  esto escrito, pulsa {\tt  ESC} para pasar al  modo {\em
 comando}.  Entonces teclea  la orden  {\tt  :w} y  pulsa {\tt  Enter}.
 Veremos como la orden {\tt :w}  aparece en la barra de estado mientras
-la tecleamos,  y luego al  ejecutarla se muestra informaciÛn  sobre el
-resultado, en este  caso informaciÛn sobre el fichero  que acabamos de
+la tecleamos,  y luego al  ejecutarla se muestra informaci√≥n  sobre el
+resultado, en este  caso informaci√≥n sobre el fichero  que acabamos de
 guardar.\index{VIM!guardar}
 
 \begin{verbatim}
 "hola.c" [New] 6L, 62C written                       6,1           All
 \end{verbatim}
 
-En esta  lÌnea {\sf VI} nos  indica que ha escrito  el fichero hola.c,
-que es nuevo, que tiene un tamaÒo de 62 caracteres en 6 lÌneas. Adem·s
-al terminar de escribirlo  estamos en la lÌnea 6 y en  la columna 1, y
+En esta  l√≠nea {\sf VI} nos  indica que ha escrito  el fichero hola.c,
+que es nuevo, que tiene un tama√±o de 62 caracteres en 6 l√≠neas. Adem√°s
+al terminar de escribirlo  estamos en la l√≠nea 6 y en  la columna 1, y
 podemos ver todo el fichero.
 
-Si tu  versiÛn de {\sf VIM}  tiene soporte para coloreado  de sintaxis
+Si tu  versi√≥n de {\sf VIM}  tiene soporte para coloreado  de sintaxis
 \index{VIM!coloreado de sintaxis}
-probalmente ya  estar· funcionando  y ver·s las  palabras {\tt  int} e
-{\tt include}  de distinto color.  Sin a˙n  no est·s viendo  el cÛdigo
+probalmente ya  estar√° funcionando  y ver√°s las  palabras {\tt  int} e
+{\tt include}  de distinto color.  Sin a√∫n  no est√°s viendo  el c√≥digo
 coloreado prueba a pasar al modo  {\em comando} (pulsando {\tt ESC}) y
 ejecutar el comando  {\tt :syntax on} (para los  comandos que empiezan
 en {\tt  :} hay que  pulsar {\tt Enter} al  final). Si te  devuelve el
-mensaje  de que  esa funciÛn  no est·  implementada es  que no  tienes
+mensaje  de que  esa funci√≥n  no est√°  implementada es  que no  tienes
 disponible el coloreado de sintaxis. Si por el contrario funciona pero
 no te gusta y quieres quitarlo  ejecuta el comando {\tt :syntax off} y
-desaparecer·n los colores. En la interfaz  gr·fica de {\sf VIM} hay un
-men˙ {\sf Esquemas  de colores} dentro del men˙  {\sf Editar}. TambiÈn
+desaparecer√°n los colores. En la interfaz  gr√°fica de {\sf VIM} hay un
+men√∫ {\sf Esquemas  de colores} dentro del men√∫  {\sf Editar}. Tambi√©n
 puedes cambiar el esquema de colores  desde la interfaz de consola del
 {\sf VIM} con el comando {\tt :colors esquema}. Por ejemplo, activa el
 coloreado de sintaxis y ejecuta {\tt :colors koehler}.
 
-% Ahora pensemos  que queremos  eliminar esas lÌneas  de tres  guiones y
-% cambiarlas  por  lÌneas  de  cinco asteriscos.  Pasamos  a  modo  {\tt
-% comando}, situamos el cursor en una de esas lÌnas y pulsamos {\tt dd}.
-% Veremos como  la lÌnea entera  desaparece. Repetimos lo mismo  con las
-% otras lÌneas. Ahora nos situamos en  la primera lÌnea y pasamos a modo
-% {\tt  ediciÛn},  escribimos  cinco  asteriscos y  pulsamos  {\tt  \flq
+% Ahora pensemos  que queremos  eliminar esas l√≠neas  de tres  guiones y
+% cambiarlas  por  l√≠neas  de  cinco asteriscos.  Pasamos  a  modo  {\tt
+% comando}, situamos el cursor en una de esas l√≠nas y pulsamos {\tt dd}.
+% Veremos como  la l√≠nea entera  desaparece. Repetimos lo mismo  con las
+% otras l√≠neas. Ahora nos situamos en  la primera l√≠nea y pasamos a modo
+% {\tt  edici√≥n},  escribimos  cinco  asteriscos y  pulsamos  {\tt  \flq
 % Enter\frq }. Volvemos al modo {\tt comando}, colocamos el cursor en la
-% nueva lÌnea de asteriscos y pulsamos  de nuevo {\tt dd}, vemos cÛmo la
-% lÌnea desaparece.  Situamos el cursor  en el  principio de la  lÌnea y
-% pulsamos {\tt P}, vemos cÛmo la  lÌnea que habÌamos borrado se inserta
+% nueva l√≠nea de asteriscos y pulsamos  de nuevo {\tt dd}, vemos c√≥mo la
+% l√≠nea desaparece.  Situamos el cursor  en el  principio de la  l√≠nea y
+% pulsamos {\tt P}, vemos c√≥mo la  l√≠nea que hab√≠amos borrado se inserta
 % {\em  antes} del  cursor. Si  situamos el  cursor al  principio de  la
-% tercera lÌnea y  pulsamos {\tt p} vemos cÛmo la  lÌnea se inserta {\em
-% despuÈs} del cursor. AÒadimos las restantes lÌneas de asteriscos donde
+% tercera l√≠nea y  pulsamos {\tt p} vemos c√≥mo la  l√≠nea se inserta {\em
+% despu√©s} del cursor. A√±adimos las restantes l√≠neas de asteriscos donde
 % estaban las de guiones.
 
-En adelante, el comando {\tt x} significar· pulsar la tecla {\tt x} en
-modo {\em comando}, el comando  {\tt :letras} significar· teclear {\tt
+En adelante, el comando {\tt x} significar√° pulsar la tecla {\tt x} en
+modo {\em comando}, el comando  {\tt :letras} significar√° teclear {\tt
 :letras} en modo  comando y pulsar {\tt Enter}.  Cualquier comando del
-primer tipo puede  modificarse teclando un n˙mero, lo que  har· que se
-ejecute ese n˙mero de veces (el comando {\tt 4x} es equivalente a {\tt
+primer tipo puede  modificarse teclando un n√∫mero, lo que  har√° que se
+ejecute ese n√∫mero de veces (el comando {\tt 4x} es equivalente a {\tt
 xxxx}). Si te equivocas  tecleando cualquier comando puedes cancelarlo
 pulsando {\tt Esc}.
 
-Para  deshacer cualquier  operaciÛn  realizada pulsamos  en modo  {\em
+Para  deshacer cualquier  operaci√≥n  realizada pulsamos  en modo  {\em
 comando} la tecla {\tt u}. Para  salir del editor {\bf sin} guardar el
-fichero utiliza  el comando  {\tt :q!}. Probablemente  realizar·s esta
-operaciÛn con mucha  frecuencia al principio, cuando  se cometas alg˙n
-error grave como teclear una palabra  sin pasar al modo {\em ediciÛn}.
-En el modo  {\em comando} cada tecla tiene su  funciÛn, y es diferente
-adem·s si est· en may˙sculas que  si est· en min˙sculas. Por lo tanto,
-una regla de oro con {\sf VI} es: {\bf cuando no sepas con quÈ comando
+fichero utiliza  el comando  {\tt :q!}. Probablemente  realizar√°s esta
+operaci√≥n con mucha  frecuencia al principio, cuando  se cometas alg√∫n
+error grave como teclear una palabra  sin pasar al modo {\em edici√≥n}.
+En el modo  {\em comando} cada tecla tiene su  funci√≥n, y es diferente
+adem√°s si est√° en may√∫sculas que  si est√° en min√∫sculas. Por lo tanto,
+una regla de oro con {\sf VI} es: {\bf cuando no sepas con qu√© comando
 hacer algo, no pruebes teclas al azar}. Tampoco es nada bueno utilizar
-la tecla. Y por supuesto, cuando estÈs editando algo importante guarda
+la tecla. Y por supuesto, cuando est√©s editando algo importante guarda
 el fichero con  frecuencia con el comando {\tt :w},  sobre todo en las
 primeras semanas de  uso. Para salir de {\sf VI}  guardando el fichero
 utiliza el comando {\tt :x}.
@@ -228,80 +228,80 @@ utiliza el comando {\tt :x}.
 Una utilidad  que te puede  resultar interesante es  ejecutar comandos
 del sistema desde la misma consola en la que estamos trabajando con el
 {\sf  VIM}. En  modo  {\em comando}  escribimos  {\tt :!comando},  por
-ejemplo, si escribimos {\tt :!ls}  nos mostrar· un listado de archivos
+ejemplo, si escribimos {\tt :!ls}  nos mostrar√° un listado de archivos
 del directorio  en el  que nos encontramos.  Esto te  permite compilar
-programas o  documentos mientras editas  uno o m·s ficheros  de cÛdigo
+programas o  documentos mientras editas  uno o m√°s ficheros  de c√≥digo
 fuente,  incluso  puedes ejecutar  una  consola  de sistema  desde  el
 editor, con el comando {\tt :sh}
 
-Para buscar palabras dentro de un  documento es f·cil, solo tienes que
-\index{VIM!b˙squeda} escribir  en modo {\em comando}  {\tt /palabra} y
-si salen  varios resultados, pulsando  {\tt n} pasar·s al  siguiente y
-pulsando {\tt N}  al anterior. Si prefieres que la  b˙squeda sea hacia
-atr·s (desde el  final hacia el principio del fichero)  el comando que
-necesitas es  {\tt ?palabra}.  TambiÈn con esta  b˙squeda pasas  de un
+Para buscar palabras dentro de un  documento es f√°cil, solo tienes que
+\index{VIM!b√∫squeda} escribir  en modo {\em comando}  {\tt /palabra} y
+si salen  varios resultados, pulsando  {\tt n} pasar√°s al  siguiente y
+pulsando {\tt N}  al anterior. Si prefieres que la  b√∫squeda sea hacia
+atr√°s (desde el  final hacia el principio del fichero)  el comando que
+necesitas es  {\tt ?palabra}.  Tambi√©n con esta  b√∫squeda pasas  de un
 resultado a otro pulsando {\tt n}.
 
 Si lo que  necesitas es desplazarte por un documento  muy grande (como
-por ejemplo el  cÛdigo fuente de un programa) a  lÌneas concretas {\sf
-VIM} lo  soluciona. Para desplazarnos a  la lÌnea 60 de  un documento,
+por ejemplo el  c√≥digo fuente de un programa) a  l√≠neas concretas {\sf
+VIM} lo  soluciona. Para desplazarnos a  la l√≠nea 60 de  un documento,
 escribe en modo {\em comando} {\tt 60}  y luego pulsa {\tt S-g} o {\tt
-G}. Si  pulsas sÛlo  {\tt S-g}  o {\tt  G} te  desplazas al  final del
+G}. Si  pulsas s√≥lo  {\tt S-g}  o {\tt  G} te  desplazas al  final del
 fichero, y si  pulsas {\tt gg} (pulsas {\tt g}  dos veces seguidas) te
 desplazas al principio del fichero.
 
-Para desplazamientos  m·s cortos dispones  del comando {\tt  0} (cero)
-que te  sit˙a el principio  de la lÌnea, \verb.^.  que te sit˙a  en el
-primer caracter no blanco (espacio  o tabulador) de la lÌnea, \verb.$.
-que te sit˙a al final de la lÌnea, {\tt w} te sit˙a al principio de la
+Para desplazamientos  m√°s cortos dispones  del comando {\tt  0} (cero)
+que te  sit√∫a el principio  de la l√≠nea, \verb.^.  que te sit√∫a  en el
+primer caracter no blanco (espacio  o tabulador) de la l√≠nea, \verb.$.
+que te sit√∫a al final de la l√≠nea, {\tt w} te sit√∫a al principio de la
 siguiente palabra, y {\tt b} hace lo mismo con la anterior palabra. El
 comando  \verb.).  te desplaza  a  la  siguiente frase,  mientras  que
 \verb.(. te  desplaza a  la anterior. Del  mismo modo  puedes utilizar
-\verb.{. y \verb.}. para saltar de p·rrafo en p·rrafo.
+\verb.{. y \verb.}. para saltar de p√°rrafo en p√°rrafo.
 
 Si en  lugar de desplazarte  por el fichero  lo que quieres  es borrar
 parte de su contenido estos mismos comandos, pulsando previamente {\tt
-d}, hacen lo siguiente: {\tt d0}  borra desde el principio de la lÌnea
+d}, hacen lo siguiente: {\tt d0}  borra desde el principio de la l√≠nea
 hasta  justo antes  del cursor,  {\tt D}  o \verb.d$.  borra desde  el
-cursor hasta  el final  de la  lÌnea, {\tt dw}  borra desde  el cursor
+cursor hasta  el final  de la  l√≠nea, {\tt dw}  borra desde  el cursor
 hasta el principio de la siguiente palabra, {\tt db} borra desde justo
 antes  del cursor  hasta  el principio  de  la palabra  en  la que  se
-encuentre el cursor, {\tt dd} borra la lÌnea en la que se encuentre el
-cursor, {\tt dj} borra la lÌnea en  la que se encuentre el cursor y la
-que  estÈn justo  debajo,  {\tt 34dj}  borra  la lÌnea  en  la que  se
-encuentre el cursor y las siguientes 34 lÌneas que estÈn justo debajo,
+encuentre el cursor, {\tt dd} borra la l√≠nea en la que se encuentre el
+cursor, {\tt dj} borra la l√≠nea en  la que se encuentre el cursor y la
+que  est√©n justo  debajo,  {\tt 34dj}  borra  la l√≠nea  en  la que  se
+encuentre el cursor y las siguientes 34 l√≠neas que est√©n justo debajo,
 \verb.d). borra  desde el  cursor hasta el  principio de  la siguiente
 frase, \verb.d(. borra desde el cursor  hasta el principio de la frase
 en la  que se  encuentre el  cursor, \verb.d}.  borra desde  el cursor
-hasta el final del p·rrafo en la que se encuentre el cursor, \verb.d{.
-borra desde el cursor hasta el final del p·rrafo anterior.
+hasta el final del p√°rrafo en la que se encuentre el cursor, \verb.d{.
+borra desde el cursor hasta el final del p√°rrafo anterior.
 
 A lo mejor  te interesa pegar en  otro sitio ese trozo  de fichero que
 has borrado,  o prefieres copiar y  pegar en lugar de  cortar y pegar.
 Claro que puedes  hacerlo con {\sf VI} y  seleccionando exactamente lo
-que  quieras. Para  seleccionar una  parte del  fichero sit˙ate  en un
-extremo  de  la  selecciÛn  (principio  o  final),  pulsa  {\tt  v}  y
-despl·zate hasta  el otro  extremo de la  selecciÛn. Para  cancelar la
-selecciÛn pulsa  {\tt Esc}. Una  vez que tienes el  texto seleccionado
+que  quieras. Para  seleccionar una  parte del  fichero sit√∫ate  en un
+extremo  de  la  selecci√≥n  (principio  o  final),  pulsa  {\tt  v}  y
+despl√°zate hasta  el otro  extremo de la  selecci√≥n. Para  cancelar la
+selecci√≥n pulsa  {\tt Esc}. Una  vez que tienes el  texto seleccionado
 puedes cortarlo pulsando {\tt d} o copiarlo pulsando {\tt y}.
 
 Para pegar lo que has copiado o  cortado has de situar el cursor en la
-posiciÛn  deseada  y contemplar  dos  opciones  para pegar  el  texto:
-pulsando {\tt p} el texto se insertar· {\em justo despuÈs} del cursor,
-pulsando {\tt S-p}  o {\tt P} el texto se  insertar· {\em justo antes}
+posici√≥n  deseada  y contemplar  dos  opciones  para pegar  el  texto:
+pulsando {\tt p} el texto se insertar√° {\em justo despu√©s} del cursor,
+pulsando {\tt S-p}  o {\tt P} el texto se  insertar√° {\em justo antes}
 del cursor.
 
-Cuando cortas o copias una regiÛn de  texto Èsta se guarda en una zona
+Cuando cortas o copias una regi√≥n de  texto √©sta se guarda en una zona
 de memoria, lo que se denomina  un {\em buffer}. Mientras no salgas de
 {\sf VIM}  este buffer se  conserva completamente hasta que  vuelvas a
-cortar  o copiar  otra  regiÛn.  Ten cuidado  porque  borrar algo  con
-cualquier comando tambiÈn se considera cortar, por lo que sobreescribe
-el buffer. Este  buffer se conserva adem·s entre ficheros,  por lo que
+cortar  o copiar  otra  regi√≥n.  Ten cuidado  porque  borrar algo  con
+cualquier comando tambi√©n se considera cortar, por lo que sobreescribe
+el buffer. Este  buffer se conserva adem√°s entre ficheros,  por lo que
 puedes cortar o copiar  en un fichero y pegar en  otro, siempre que no
 salgas del  editor para hacer  esta maniobra.  Si sales del  editor se
-conserva sÛlo una parte del buffer, suele ser suficiente para regiones
-no muy grandes, pero no  te confÌes\footnote{En el momento de escribir
-esto la versiÛn de VIM 6.1-474 limita el buffer a 50 lÌneas}.
+conserva s√≥lo una parte del buffer, suele ser suficiente para regiones
+no muy grandes, pero no  te conf√≠es\footnote{En el momento de escribir
+esto la versi√≥n de VIM 6.1-474 limita el buffer a 50 l√≠neas}.
 
 Si quieres  cortar o  copiar de un  fichero y pegar  en otro  lo mejor
 es  que  abras ambos  ficheros  con  el  mismo {\sf  VI},  simplemente
@@ -312,15 +312,15 @@ $ vi fichero1 fichero2
 \end{verbatim}
 
 Con esto tienes varios ficheros abiertos,  con un buffer para cada uno
-\index{VIM!buffers} (aquÌ entendemos  buffer en el sentido  con el que
-lo hacemos  al hablar  de Emacs  en la  secciÛn \ref{emacs})  y puedes
+\index{VIM!buffers} (aqu√≠ entendemos  buffer en el sentido  con el que
+lo hacemos  al hablar  de Emacs  en la  secci√≥n \ref{emacs})  y puedes
 pasar de un buffer a otro con el comando {\tt :bN} donde {\tt N} es el
-n˙mero del  buffer (se numeran  empezando por  $1$). Para pasar  de un
+n√∫mero del  buffer (se numeran  empezando por  $1$). Para pasar  de un
 buffer a otro primero  debes guardar a fichero el buffer  en el que te
 encuentres (con el comando {\tt :w}).
 
-Otro comando que te ayudar· si  tienes que programar es el comando \%.
-Si est·s trabajando  con algunos lenguajes cuyas  sintaxis manejan con
+Otro comando que te ayudar√° si  tienes que programar es el comando \%.
+Si est√°s trabajando  con algunos lenguajes cuyas  sintaxis manejan con
 mucha frecuencia \verb.(., \verb.{. o  \verb.{. , {\sf VIM} te permite
 con pulsar la  tecla \% situarte sobre uno de  estos caracteres que te
 muestre  el  de cierre  o  apertura  que  le corresponda.  
@@ -331,35 +331,35 @@ muestre  el  de cierre  o  apertura  que  le corresponda.
 
 {\sf Emacs}, junto con {\sf VI},  ha sido uno de los primeros editores
 de  texto para  UNIX.  A  pesar de  visualmente  presenta un  interfaz
-similar al  de un  editor de  texto corriernte,  como podrÌa  ser {\sf
+similar al  de un  editor de  texto corriernte,  como podr√≠a  ser {\sf
 joe},  el {\sf  edit} de  MS-DOS, o  similar, lo  cierto es  que tiene
-muchÌsimas posibilidades que no atribuirÌas  a un editor de texto para
-consola. Por ejemplo, el indentado  autom·tico de cÛdigo Pascal, Java,
-C,  o cualquier  lenguaje  para el  que haya  escrito  un mÛdulo  para
-Emacs de  asistencia a  la programaciÛn,  nos ofrece  posibilidades de
-trabajar con  CVS, enviar correo  electrÛnico, y un largo  etcÈtera de
-posibilidades. Como anÈcdota cabe contar,  para que te hagas una idea,
+much√≠simas posibilidades que no atribuir√≠as  a un editor de texto para
+consola. Por ejemplo, el indentado  autom√°tico de c√≥digo Pascal, Java,
+C,  o cualquier  lenguaje  para el  que haya  escrito  un m√≥dulo  para
+Emacs de  asistencia a  la programaci√≥n,  nos ofrece  posibilidades de
+trabajar con  CVS, enviar correo  electr√≥nico, y un largo  etc√©tera de
+posibilidades. Como an√©cdota cabe contar,  para que te hagas una idea,
 el manual de GNU Emacs, en formato ASCII ocupa cerca de 1.1 MB.
 
-Hablemos de cÛmo manejarse con los  men˙s de Emacs. Existen cientos de
+Hablemos de c√≥mo manejarse con los  men√∫s de Emacs. Existen cientos de
 combinaciones de teclas en Emacs que nos permiten hacer cualquier cosa
-sin  ver  un  men˙.  Los  usuarios  expertos  de  Emacs  valoran  esta
-posibilidad, pues a la hora de  escribir con prisas, un men˙ puede ser
-algo muy incÛmodo.  Pero para nosotros que  estamos empezando, debemos
+sin  ver  un  men√∫.  Los  usuarios  expertos  de  Emacs  valoran  esta
+posibilidad, pues a la hora de  escribir con prisas, un men√∫ puede ser
+algo muy inc√≥modo.  Pero para nosotros que  estamos empezando, debemos
 recordar:
 la tecla {\tt F10} es nuestra amiga.
 
-Esta tecla  nos da acceso a  todos los men˙s de  Emacs, menu, archivo,
-ediciÛn, cambio entre las distintas ventanas de ediciÛn de texto, etc.
+Esta tecla  nos da acceso a  todos los men√∫s de  Emacs, menu, archivo,
+edici√≥n, cambio entre las distintas ventanas de edici√≥n de texto, etc.
 
-Empecemos viendo cÛmo editar un fichero de texto b·sico. En la consola
+Empecemos viendo c√≥mo editar un fichero de texto b√°sico. En la consola
 ponemos:
 
 \begin{verbatim}
 $ emacs hola.c
 \end{verbatim}
 
-y escribe un programa com˙n y corto:
+y escribe un programa com√∫n y corto:
 
 \begin{verbatim}
 #include <stdio.h>
@@ -370,43 +370,43 @@ main()
 }
 \end{verbatim}
 
-Como podr·s  apreciar, Emacs hace  retroceder el cursor al  cerrar los
-corchetes y los parÈntesis, para  indicarnos dÛnde los abrimos y tener
-una  referencia de  cu·les quedan  a˙n  por cerrar.  Probemos ahora  a
-guardar nuestro pequeÒo programa C. Para ello pulsamos {\tt F10} y una
-vez pulsada {\tt F10}  vemos que la tecla {\tt B}  nos darÌa acceso al
-men˙ buffers  (que no  son otra  cosa que  las distintas  ventanas que
-tenemos abiertas), la {\tt F} nos darÌa acceso al men˙ {\tt files} (el
-cual  hace pr·cticamente  lo mismo  que el  men˙ archivo  de cualquier
-editor de texto,  etc\dots \ y la  tecla {\tt C} nos  darÌa acceso, si
+Como podr√°s  apreciar, Emacs hace  retroceder el cursor al  cerrar los
+corchetes y los par√©ntesis, para  indicarnos d√≥nde los abrimos y tener
+una  referencia de  cu√°les quedan  a√∫n  por cerrar.  Probemos ahora  a
+guardar nuestro peque√±o programa C. Para ello pulsamos {\tt F10} y una
+vez pulsada {\tt F10}  vemos que la tecla {\tt B}  nos dar√≠a acceso al
+men√∫ buffers  (que no  son otra  cosa que  las distintas  ventanas que
+tenemos abiertas), la {\tt F} nos dar√≠a acceso al men√∫ {\tt files} (el
+cual  hace pr√°cticamente  lo mismo  que el  men√∫ archivo  de cualquier
+editor de texto,  etc\dots \ y la  tecla {\tt C} nos  dar√≠a acceso, si
 las tenemos instaladas,  a las posibilidades que ofrece  emacs para la
-ediciÛn de cÛdigo  en C. Como sÛlo queremos  guardar, pulsamos despuÈs
-de  {\tt F10},  {\tt  S}. Ya  lo tendrÌamos  guardado.  Otra cosa  muy
+edici√≥n de c√≥digo  en C. Como s√≥lo queremos  guardar, pulsamos despu√©s
+de  {\tt F10},  {\tt  S}. Ya  lo tendr√≠amos  guardado.  Otra cosa  muy
 importante, en  cualquier programa  es saber salir.  Esto se  hace con
-{\tt F10}, {\tt F} y a continuaciÛn la tecla {\tt E}. Nos pregunta, si
+{\tt F10}, {\tt F} y a continuaci√≥n la tecla {\tt E}. Nos pregunta, si
 no lo  hemos hecho ya, que  si deseamos guardar. Escribimos  {\tt yes}
-(hay que escribirlo entero) o {\tt  no}, y a continuaciÛn nos pregunta
-si realmente queremos salir, a lo cual ahora sÌ, responderemos {\tt y}
-para {\tt sÌ} o {\tt n} para {\tt no}.
+(hay que escribirlo entero) o {\tt  no}, y a continuaci√≥n nos pregunta
+si realmente queremos salir, a lo cual ahora s√≠, responderemos {\tt y}
+para {\tt s√≠} o {\tt n} para {\tt no}.
 
 Emacs  es famoso  por sus  innumerables combinaciones  de teclas  para
 realizar  cualquiera de  las operaciones  que ofrece.  Algunas de  las
-combinaciones de  teclas para  moverse cÛmodamente por  los documentos
+combinaciones de  teclas para  moverse c√≥modamente por  los documentos
 son:
 
 \begin{table}[htbp]
 \centering
 \begin{tabular}{|c|l|}
 \hline
-{\tt A-f  } & Sit˙a el cursor al principio de la palabra siguiente. \\
-{\tt A-b  } & Sit˙a el cursor al principio de la palabra anterior. \\
-{\tt C-a  } & Sit˙a el cursor al principio de la lÌnea actual. \\
-{\tt C-e  } & Sit˙a el cursor al final de la lÌnea actual. \\
+{\tt A-f  } & Sit√∫a el cursor al principio de la palabra siguiente. \\
+{\tt A-b  } & Sit√∫a el cursor al principio de la palabra anterior. \\
+{\tt C-a  } & Sit√∫a el cursor al principio de la l√≠nea actual. \\
+{\tt C-e  } & Sit√∫a el cursor al final de la l√≠nea actual. \\
 {\tt A-a  } & Retrocede el cursor hasta el principio de la frase. \\
 {\tt A-e  } & Avanza el cursor hasta el final de la frase. \\
 {\tt Home } & Nos permite situarnos al principio del "buffer". \\
 {\tt End  } & Nos permite situarnos al final del "buffer". \\
-{\tt C-l  } & Sit˙a el cursor justo al principio de la lÌnea del medio de la pantalla \\
+{\tt C-l  } & Sit√∫a el cursor justo al principio de la l√≠nea del medio de la pantalla \\
 \hline
 \end{tabular}
 \caption{Combinaciones de teclas para moverse con GNU Emacs}
@@ -420,7 +420,7 @@ Algunas teclas para eliminar texto:
 \hline
 {\tt A-d }      & Elimina la palabra que sigue al cursor. \\
 {\tt A-delete } & Elimina la palabra anterior al cursor. \\
-{\tt C-k }      & Elimina la lÌnea actual entera. \\
+{\tt C-k }      & Elimina la l√≠nea actual entera. \\
 {\tt A-k }      & Elimina la frase siguiente \\
 {\tt C-x + BackSpace } & Elimina la frase anterior \\
 \hline
@@ -428,28 +428,28 @@ Algunas teclas para eliminar texto:
 \caption{Combinaciones de teclas para borrar texto con GNU Emacs}
 \end{table}
 
-Hay que aÒadir un truco bastante  ˙til que es la combinaciÛn de teclas
+Hay que a√±adir un truco bastante  √∫til que es la combinaci√≥n de teclas
 {\tt C-u}, la cual nos permite repetir cualquier comando n veces.
 
-Por  ejemplo, si  quisiÈramos  avanzar 24  palabras, utilizarÌamos  la
+Por  ejemplo, si  quisi√©ramos  avanzar 24  palabras, utilizar√≠amos  la
 secuencia de teclas {\tt C-u 24 A-f}
 
-Otra funciÛn  muy b·sica tambiÈn es  la de buscar y  reemplazar texto.
-Esto  puede hacerse  cÛmodamente con  la  combinaciÛn {\tt  C-s}, y  a
-continuaciÛn poniendo que queremos buscar  y pulsando {\tt Enter}. Una
-vez encuentre  la primera coin\-ci\-den\-cia, puede  seguir busc·ndose
-el mismo patrÛn pulsando de nuevo simplemente {\tt C-s}.
+Otra funci√≥n  muy b√°sica tambi√©n es  la de buscar y  reemplazar texto.
+Esto  puede hacerse  c√≥modamente con  la  combinaci√≥n {\tt  C-s}, y  a
+continuaci√≥n poniendo que queremos buscar  y pulsando {\tt Enter}. Una
+vez encuentre  la primera coin\-ci\-den\-cia, puede  seguir busc√°ndose
+el mismo patr√≥n pulsando de nuevo simplemente {\tt C-s}.
 
-Podemos saber  en todo momento  quÈ estamos haciendo fij·ndonos  en la
-lÌnea inferior de la pantalla de Emacs.
+Podemos saber  en todo momento  qu√© estamos haciendo fij√°ndonos  en la
+l√≠nea inferior de la pantalla de Emacs.
 
-Para  reemplazar  trozos  de  texto, cosa  tambiÈn  de  supervivencia,
-podemos hacerlo f·cilmente de la siguiente forma:
+Para  reemplazar  trozos  de  texto, cosa  tambi√©n  de  supervivencia,
+podemos hacerlo f√°cilmente de la siguiente forma:
 
 \begin{enumerate}
 \item Pulsamos {\tt F10}
-\item Pulsamos la S, que corresponde al men˙ Search
-\item Nos sale el siguiente men˙:
+\item Pulsamos la S, que corresponde al men√∫ Search
+\item Nos sale el siguiente men√∫:
 \end{enumerate}
 
 \begin{verbatim}
@@ -471,26 +471,26 @@ Luego,  emacs  nos   pregunta:  {\tt  query  replace   with:  }  donde
 escribiremos el  texto con  el cual  queremos sustituir,  y pulsaremos
 enter.
 
-En este  men˙, encontramos  tambiÈn una serie  de comandos,  como {\tt
+En este  men√∫, encontramos  tambi√©n una serie  de comandos,  como {\tt
 query  regexp},  {\tt  query  replace regexp},  etc.,  que  aunque  no
 entraremos en ellos,  son muy interesantes, pues  nos permiten buscar,
-no  ya patrones  de  texto concretos,  sino un  tipo  de b˙squeda  m·s
+no  ya patrones  de  texto concretos,  sino un  tipo  de b√∫squeda  m√°s
 avanzada por medio de expresiones regulares ({\bf regular expressions}
-en  inglÈs), esto  es,  ``todas  las palabras  que  empiecen  por c  y
-terminen por j'' o ``todas  las may˙sculas cambiarlas por min˙sculas''
+en  ingl√©s), esto  es,  ``todas  las palabras  que  empiecen  por c  y
+terminen por j'' o ``todas  las may√∫sculas cambiarlas por min√∫sculas''
 en el caso de {\tt query replace regexp}.
 
 Insertando un fichero de texto en nuestro documento:
 
 Para  los amantes  del Cut  \& Pasting  (un deporte  muy extendido  en
-algunos cÌrculos de programadores), aquÌ va un comando que nos permite
+algunos c√≠rculos de programadores), aqu√≠ va un comando que nos permite
 introducir un documento de texto dentro de otro:
 
 Pulsamos {\tt C-x}, seguido de la {\tt i}, para insertar un fichero en
-la posiciÛn  actual del cursor. Entonces,  en la lÌnea de  comandos de
-emacs, aparecer· el directorio actual.
+la posici√≥n  actual del cursor. Entonces,  en la l√≠nea de  comandos de
+emacs, aparecer√° el directorio actual.
 
-Escribimos  la ruta  completa al  archivo y  aparecer· en  la posiciÛn
+Escribimos  la ruta  completa al  archivo y  aparecer√° en  la posici√≥n
 actual del cursor.
 
 \section{Joe}
@@ -498,24 +498,24 @@ actual del cursor.
 \index{Joe}
 
 El primer editor  que suele aprenderse en Linux es  {\sf Joe}, por ser
-muy sencillo  y r·pido.  Puede usarse  para editar  cualquier fichero,
-pero  aquÌ trataremos  su uso  b·sico, lo  justo para  editar pequeÒos
-textos,  ficheros de  configuraciÛn, pequeÒos  programas. Todos  estos
-ficheros pueden editarse  con m·s comodidad con  editores m·s potentes
+muy sencillo  y r√°pido.  Puede usarse  para editar  cualquier fichero,
+pero  aqu√≠ trataremos  su uso  b√°sico, lo  justo para  editar peque√±os
+textos,  ficheros de  configuraci√≥n, peque√±os  programas. Todos  estos
+ficheros pueden editarse  con m√°s comodidad con  editores m√°s potentes
 como {\sf  Emacs} o {\sf VIM}  pero para ello es  necesario aprender a
 usarlos primero, lo cual puede  no resultar tan sencillo como aprender
 {\sf Joe}.
 
-Veremos sÛlo un par de comandos  de {\sf Joe}, simplemente como editar
+Veremos s√≥lo un par de comandos  de {\sf Joe}, simplemente como editar
 un fichero existente o nuevo, guardarlo sin salir, salir sin guardarlo
-y salir guard·ndolo. Para obtener m·s informaciÛn sobre otras opciones
+y salir guard√°ndolo. Para obtener m√°s informaci√≥n sobre otras opciones
 del editor existe el comando de ayuda que explicaremos luego.
 
 El manejo de {\tt Joe} se basa en combinaciones de teclas con la tecla
-{\tt Control}. Denotaremos por {\tt C-x  y} a la combinaciÛn de teclas
+{\tt Control}. Denotaremos por {\tt C-x  y} a la combinaci√≥n de teclas
 que se  obtiene al  pulsar la tecla  {\tt Control},  seguidamente (sin
-soltar la  primera) pulsar la  tecla {\tt  x} y despuÈs  (soltando las
-teclas anteriores) pulsar  la tecla {\tt y}. Veamos  un r·pido ejemplo
+soltar la  primera) pulsar la  tecla {\tt  x} y despu√©s  (soltando las
+teclas anteriores) pulsar  la tecla {\tt y}. Veamos  un r√°pido ejemplo
 del uso de este editor. En un terminal ejecuta:
 
 \begin{verbatim}
@@ -528,8 +528,8 @@ Escribe una frase sencilla, tal como:
 Si algo funciona, no lo toques.
 \end{verbatim}
 
-Para guardar el  fichero utilizamos la combinaciÛn de  teclas {\tt C-k
-s} y  entonces {\tt Joe}  te preguntar· el  nombre con el  que quieres
+Para guardar el  fichero utilizamos la combinaci√≥n de  teclas {\tt C-k
+s} y  entonces {\tt Joe}  te preguntar√° el  nombre con el  que quieres
 guardar el fichero.
 
 \begin{verbatim}
@@ -539,15 +539,15 @@ Name of file to save (^C to abort): hola.txt
 Si pulsamos ahora  ahora {\tt C-c} simplemente cancelamos  la orden de
 guardar el  fichero, pero  no perdemos su  contenido. Para  guardar el
 fichero pulsamos {\tt Enter}, modificando  el nombre del fichero si lo
-deseamos. Ahora aÒadimos otra lÌnea:
+deseamos. Ahora a√±adimos otra l√≠nea:
 
 \begin{verbatim}
 Si algo funciona, no lo toques.
-Si algo funciona, y no sabes por quÈ, ˙salo siempre.
+Si algo funciona, y no sabes por qu√©, √∫salo siempre.
 \end{verbatim}
 
 Ahora saldremos  del editor {\bf  guardando los cambios},  mediante la
-combinaciÛn de teclas {\tt C-k x}. De esta manera volveremos al prompt
+combinaci√≥n de teclas {\tt C-k x}. De esta manera volveremos al prompt
 del sistema siendo informados de que el fichero ha sido guardado.
 
 \begin{verbatim}
@@ -555,19 +555,19 @@ File prueba.txt saved.
 $
 \end{verbatim}
 
-Como ˙ltima maniobra, abrimos de  nuevo el fichero, borramos la ˙ltima
-lÌnea y salimos sin guardar los cambios.
+Como √∫ltima maniobra, abrimos de  nuevo el fichero, borramos la √∫ltima
+l√≠nea y salimos sin guardar los cambios.
 
 
 \begin{verbatim}
 $ joe prueba.txt
 \end{verbatim}
 
-Borramos la  ˙ltima lÌnea  usando las teclas  de borrado  habituales, y
+Borramos la  √∫ltima l√≠nea  usando las teclas  de borrado  habituales, y
 pulsamos {\tt C-c}  para salir sin guardar los cambios.  El editor nos
-pedir· confirmaciÛn antes de salir.  Podemos responder que sÌ queremos
+pedir√° confirmaci√≥n antes de salir.  Podemos responder que s√≠ queremos
 salir  pulsando {\tt  y},  o  por el  contrario  cancelar la  maniobra
-pulsando {\tt n} o  {\tt C-c}. Decimos que sÌ ({\tt  y}) y volvemos al
+pulsando {\tt n} o  {\tt C-c}. Decimos que s√≠ ({\tt  y}) y volvemos al
 prompt del sistema.
 
 \begin{verbatim}
@@ -576,10 +576,10 @@ File hola.txt not saved.
 $
 \end{verbatim}
 
-Esto es  lo mÌnimo que  debes saber para editar  con {\tt Joe},  y con
-esto  ser· suficiente  aquÌ pues  en  lo sucesivo  aprender·s a  hacer
-operaciones m·s avanzadas con otros editores. Para conocer sobre otras
-opciones de este editor, se puede utilizar la opciÛn {\tt C-k h}.
+Esto es  lo m√≠nimo que  debes saber para editar  con {\tt Joe},  y con
+esto  ser√° suficiente  aqu√≠ pues  en  lo sucesivo  aprender√°s a  hacer
+operaciones m√°s avanzadas con otros editores. Para conocer sobre otras
+opciones de este editor, se puede utilizar la opci√≥n {\tt C-k h}.
 
 
 

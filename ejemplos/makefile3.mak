@@ -1,4 +1,4 @@
-# Makefile .- Ejemplo de Makefile con reglas implícitas.
+# Makefile .- Ejemplo de Makefile con reglas implÃ­citas.
 
 LINK = $(CC)
 CFLAGS += -g -Wall

@@ -5,62 +5,62 @@
 \label{yacas.tex}
 
 \index{Yacas}
-\index{c·lculo simbÛlico}
+\index{c√°lculo simb√≥lico}
 
-En  este tema  aprender·s a  utilizar el  programa Yacas  para relizar
-c·lculos simbÛlicos.  Este tipo de  c·lculos resulta de  gran utilidad
-puesto que  funciona de  la misma  forma que harÌas  t˙ mismo  a mano,
-operando con expresiones matem·ticas sin calcular el valor numÈrico de
-cada expresiÛn. 
+En  este tema  aprender√°s a  utilizar el  programa Yacas  para relizar
+c√°lculos simb√≥licos.  Este tipo de  c√°lculos resulta de  gran utilidad
+puesto que  funciona de  la misma  forma que har√≠as  t√∫ mismo  a mano,
+operando con expresiones matem√°ticas sin calcular el valor num√©rico de
+cada expresi√≥n. 
 
 
 
-\section{øQuÈ es Yacas?}
+\section{¬øQu√© es Yacas?}
 
-Yacas  es un  Sistema  de  ¡lgebra Computacional  (en  inglÈs CAS,  de
+Yacas  es un  Sistema  de  √Ålgebra Computacional  (en  ingl√©s CAS,  de
 \index{CAS}
-\index{¡lgebra Computacional}
-Computer  Algebra  System) de  propÛsito  general  f·cil de  usar.  Un
-Sistema  de ¡lgebra  Computacional (SAC)  es un  programa que  permite
-manipulaciones simbÛlicas sobre expresiones matem·ticas, reduciendo el
-tiempo necesario  para realizar  c·lculos embarazosos  pero triviales.
-Esto se hace  no mediante n˙meros, sino mediante sÌmbolos,  por lo que
-el resultado de una operaciÛn con expresiones matem·ticas es una nueva
-expresiÛn matem·tica.
+\index{√Ålgebra Computacional}
+Computer  Algebra  System) de  prop√≥sito  general  f√°cil de  usar.  Un
+Sistema  de √Ålgebra  Computacional (SAC)  es un  programa que  permite
+manipulaciones simb√≥licas sobre expresiones matem√°ticas, reduciendo el
+tiempo necesario  para realizar  c√°lculos embarazosos  pero triviales.
+Esto se hace  no mediante n√∫meros, sino mediante s√≠mbolos,  por lo que
+el resultado de una operaci√≥n con expresiones matem√°ticas es una nueva
+expresi√≥n matem√°tica.
 
-Yacas  est·  construido  sobre  su  propio  lenguaje  de  programaciÛn
-diseÒado  para  este  propÛsito,  en  el  que  se  pueden  implementar
-f·cilmente  nuevos  algoritmos.  Adem·s, incorpora  una  documentaciÛn
-extensa sobre las funcionalidades que  implementa y los mÈtodos usados
+Yacas  est√°  construido  sobre  su  propio  lenguaje  de  programaci√≥n
+dise√±ado  para  este  prop√≥sito,  en  el  que  se  pueden  implementar
+f√°cilmente  nuevos  algoritmos.  Adem√°s, incorpora  una  documentaci√≥n
+extensa sobre las funcionalidades que  implementa y los m√©todos usados
 para implementarlas.
 
-Entre las  caracterÌsticas que Yacas implementa  encontramos precisiÛn
-arbitraria, n˙meros racionales,  vectores, n˙meros complejos, c·lculos
-con  matrices  (incluyendo  inversas, determinantes  y  resoluciÛn  de
-sistemas lineales), derivaciÛn, series  de Taylor, resoluciÛn numÈrica
-(mÈtodo  de Newton),  y un  montÛn m·s  de algoritmos  no matem·ticos.
-Tiene  tambiÈn  soporte  b·sico   para  polinomios  en  una  variable,
-integraciÛn de funciones y c·lculo tensorial.
+Entre las  caracter√≠sticas que Yacas implementa  encontramos precisi√≥n
+arbitraria, n√∫meros racionales,  vectores, n√∫meros complejos, c√°lculos
+con  matrices  (incluyendo  inversas, determinantes  y  resoluci√≥n  de
+sistemas lineales), derivaci√≥n, series  de Taylor, resoluci√≥n num√©rica
+(m√©todo  de Newton),  y un  mont√≥n m√°s  de algoritmos  no matem√°ticos.
+Tiene  tambi√©n  soporte  b√°sico   para  polinomios  en  una  variable,
+integraci√≥n de funciones y c√°lculo tensorial.
 
 En  la  web  del proyecto  Yacas  ({\tt  http://yacas.sourceforge.net}
-encontrar·s el  cÛdigo fuente  del programa  y toda  su documentaciÛn:
-desde  un tutorial  b·sico hasta  una guÌa  de programaciÛn  en Yacas.
+encontrar√°s el  c√≥digo fuente  del programa  y toda  su documentaci√≥n:
+desde  un tutorial  b√°sico hasta  una gu√≠a  de programaci√≥n  en Yacas.
 Parte  del  texto de  este  tema  son  traducciones  de trozos  de  la
-documentaciÛn oficial de Yacas que se distribuye junto con el programa
+documentaci√≥n oficial de Yacas que se distribuye junto con el programa
 bajo licencia GPL.
 
 
 
 \section{Empezando con Yacas}
 
-Yacas  tiene  un  intÈrprete  de comandos  que  nos  permite  ejecutar
+Yacas  tiene  un  int√©rprete  de comandos  que  nos  permite  ejecutar
 funciones para probar  lo que queremos programar,  para luego escribir
-un script  (un fichero de  comandos a modo  de guiÛn). Para  entrar al
-intÈrprete de Yacas  basta con ejecutar el comando {\tt  yacas} en una
-consola  o terminal.  Para  salir del  intÈrprete  puedes pulsar  {\tt
-Control-C}  o bien  ejecutar la  funciÛn \verb+Exit();+.  Pulsar  {\tt
-Control-C} tambiÈn  es ˙til  para detener inmediatamente  la ejecuciÛn
-del intÈrprete de Yacas (o de un script escrito para Yacas).
+un script  (un fichero de  comandos a modo  de gui√≥n). Para  entrar al
+int√©rprete de Yacas  basta con ejecutar el comando {\tt  yacas} en una
+consola  o terminal.  Para  salir del  int√©rprete  puedes pulsar  {\tt
+Control-C}  o bien  ejecutar la  funci√≥n \verb+Exit();+.  Pulsar  {\tt
+Control-C} tambi√©n  es √∫til  para detener inmediatamente  la ejecuci√≥n
+del int√©rprete de Yacas (o de un script escrito para Yacas).
 
 \begin{verbatim}
 $ yacas
@@ -74,32 +74,32 @@ To see example commands, keep typing Example();
 In>
 \end{verbatim}
 
-TambiÈn  existe una  interfaz gr·fica  llamada Proteus.  Si la  tienes
-instalada  deberÌas   poder  iniciarla  ejecutando  el   comando  {\tt
-proteusworksheet}. Esta utilidad te proporciona un entorno  m·s cÛmodo
-e integrado  en el  que  puedes  probar cÛdigo  en  el intÈrprete e ir
+Tambi√©n  existe una  interfaz gr√°fica  llamada Proteus.  Si la  tienes
+instalada  deber√≠as   poder  iniciarla  ejecutando  el   comando  {\tt
+proteusworksheet}. Esta utilidad te proporciona un entorno  m√°s c√≥modo
+e integrado  en el  que  puedes  probar c√≥digo  en  el int√©rprete e ir
 escribiendo un script en el editor que incluye.
 
 \begin{figure}[hbt]
 \centering\includegraphics[width=\textwidth]{imagenes/proteus.eps}
 \index{proteus}
 \index{Yacas!proteus}
-\caption{Proteus, interfaz gr·fica para Yacas}
+\caption{Proteus, interfaz gr√°fica para Yacas}
 \end{figure}
 
-La ˙ltima lÌnea (\verb+In>+) es el prompt de entrada de Yacas, que nos
-indica que  el intÈrprete est·  esperando nuestras Ûrdenes.  Todas las
-Ûrdenes de Yacas deben terminar con un punto y coma (\verb+;+), aunque
-el intÈrprete suele  aÒadirlo si no lo ponemos. Sin  embargo a la hora
+La √∫ltima l√≠nea (\verb+In>+) es el prompt de entrada de Yacas, que nos
+indica que  el int√©rprete est√°  esperando nuestras √≥rdenes.  Todas las
+√≥rdenes de Yacas deben terminar con un punto y coma (\verb+;+), aunque
+el int√©rprete suele  a√±adirlo si no lo ponemos. Sin  embargo a la hora
 de programar en  Yacas veremos que el punto y  coma hay que escribirlo
 siempre,  de modo  que es  mejor acostumbrarse  a ponerlo  para evitar
 posteriores dolores de cabeza.
 
 Para ir abriendo  el apetito sigue la sugerencia de  Yacas: ejecuta la
-funciÛn  \verb+Example();+ varias  veces. Por  supuesto no  tienes que
-teclear el comando todas las veces, ya que Yacas cuenta con ediciÛn de
-lÌnea. Esto  incluye que todos los  comandos que ejecutes en  Yacas se
-almacenar·n  en un  historial, y  para repetirlos  puedes recuperarlos
+funci√≥n  \verb+Example();+ varias  veces. Por  supuesto no  tienes que
+teclear el comando todas las veces, ya que Yacas cuenta con edici√≥n de
+l√≠nea. Esto  incluye que todos los  comandos que ejecutes en  Yacas se
+almacenar√°n  en un  historial, y  para repetirlos  puedes recuperarlos
 pulsando  la  tecla  de  cursor hacia  arriba.  Este  historial  queda
 guardado en  el fichero \verb+~/.yacas_history+. Veamos  la salida que
 produce Yacas tras varias ejecuciones de \verb+Example();+.
@@ -144,15 +144,15 @@ Take a limit.
 Out> 1;
 \end{verbatim}
 
-En cualquier momento puedes acceder  a la documentaciÛn de una funciÛn
-ejecutando la funciÛn  precedida por un signo  de interrogaciÛn, p.ej.
+En cualquier momento puedes acceder  a la documentaci√≥n de una funci√≥n
+ejecutando la funci√≥n  precedida por un signo  de interrogaci√≥n, p.ej.
 \verb+?IsFreeOf+. Un detalle  importante de Yacas es  que, como muchos
-lenguajes del mundo de Un*x, es sensible a las may˙sculas; esto es, no
+lenguajes del mundo de Un*x, es sensible a las may√∫sculas; esto es, no
 es lo mismo \verb+esto+ que \verb+Esto+ ni que \verb+eSTO+.
 
-Estos ejemplos ilustran  lo f·cil que es obtener  buenos resultados en
-c·lculos  simbÛlicos  con  Yacas.  Sin  embargo  es  probable  que  el
-resultado del siguiente ejemplo no te resulte f·cil de interpretar:
+Estos ejemplos ilustran  lo f√°cil que es obtener  buenos resultados en
+c√°lculos  simb√≥licos  con  Yacas.  Sin  embargo  es  probable  que  el
+resultado del siguiente ejemplo no te resulte f√°cil de interpretar:
 
 \begin{verbatim}
 In> Integrate(x) Expand((x-y)^3);
@@ -160,10 +160,10 @@ Out> x^4/4-(x^3*3*y)/3+(x^2*3*y^2)/2-y^3*x;
 \end{verbatim}
 
 la forma en  que Yacas recibe nuestra orden de  integrar $\int (x-y)^3
-\, dx$ no es nada crÌptica, pero su respuesta no es precisamente f·cil
-de  leer. Esta  forma de  mostrar  las expresiones  matem·ticas es  la
-normal  en  Yacas,  pero  no  la ˙nica.  Podemos  pedir  a  Yacas  que
-muestre  las  expresiones  de  forma m·s  ``bonita''  con  la  funciÛn
+\, dx$ no es nada cr√≠ptica, pero su respuesta no es precisamente f√°cil
+de  leer. Esta  forma de  mostrar  las expresiones  matem√°ticas es  la
+normal  en  Yacas,  pero  no  la √∫nica.  Podemos  pedir  a  Yacas  que
+muestre  las  expresiones  de  forma m√°s  ``bonita''  con  la  funci√≥n
 \verb+PrettyForm()+.
 
 \index{Yacas!PrettyFrom}
@@ -179,21 +179,21 @@ x    x  * 3 * y   x  * 3 * y     3
 Out> True;
 \end{verbatim}
 
-El signo \verb+%+ es una referencia que apunta siempre al ˙ltimo valor
-devuelto por el intÈrprete, es decir  lo que aparezca a la derecha del
-˙ltimo \verb+Out>+. Esta referencia sÛlo est· disponible cuando usamos
-Yacas  como intÈrprete  interactivo,  no se  puede  utilizar desde  un
+El signo \verb+%+ es una referencia que apunta siempre al √∫ltimo valor
+devuelto por el int√©rprete, es decir  lo que aparezca a la derecha del
+√∫ltimo \verb+Out>+. Esta referencia s√≥lo est√° disponible cuando usamos
+Yacas  como int√©rprete  interactivo,  no se  puede  utilizar desde  un
 script.
 
-Otras  formas  de mostrar  una  expresiÛn  son  las utilizadas  en  el
-lenguaje  de  programaciÛn  C  y  en  el  lenguaje  tipogr·fico  \TeX.
-Para  mostrar  una  expresiÛn  de estas  formas  est·n  las  funciones
-\verb+CForm()+  y \verb+TeXForm()+  respectivamente. FÌjate  que estas
-funciones  no devuelven  la  expresiÛn  que muestran,  por  lo que  no
+Otras  formas  de mostrar  una  expresi√≥n  son  las utilizadas  en  el
+lenguaje  de  programaci√≥n  C  y  en  el  lenguaje  tipogr√°fico  \TeX.
+Para  mostrar  una  expresi√≥n  de estas  formas  est√°n  las  funciones
+\verb+CForm()+  y \verb+TeXForm()+  respectivamente. F√≠jate  que estas
+funciones  no devuelven  la  expresi√≥n  que muestran,  por  lo que  no
 podemos  utilizar  la  referencia  \verb+%+ dos  veces  seguidas  para
-mostrar  una  expresiÛn  (la  segunda mostrarÌa  la  expresiÛn  lÛgica
+mostrar  una  expresi√≥n  (la  segunda mostrar√≠a  la  expresi√≥n  l√≥gica
 \verb+True+). Por  eso escribimos  \verb+Integrate(x) Expand((x-y)^3)+
-en cada lÌnea:
+en cada l√≠nea:
 
 \index{Yacas!CFrom}
 \index{Yacas!TeXFrom}
@@ -207,30 +207,30 @@ Out> "$\frac{x ^{4}}{4}  - \frac{x ^{3} 3 y}{3}  + \frac{x ^{2} 3 y ^{
 2}}{2} - y ^{3} x$";
 \end{verbatim}
 
-La funciÛn \verb+CForm()+ devuelve la expresiÛn escrita en lenguaje C,
-de forma que  podemos incluirla en el  cÛdigo de un programa  en C. La
-funciÛn \verb+TeXForm()+ devuelve la  expresiÛn escrita en el lenguaje
-tipogr·fico  \TeX, de  forma  que podemos  incluirla  en un  documento
-escrito en  \TeX~ o \LaTeX.  Por ejemplo,  este libro est·  escrito en
+La funci√≥n \verb+CForm()+ devuelve la expresi√≥n escrita en lenguaje C,
+de forma que  podemos incluirla en el  c√≥digo de un programa  en C. La
+funci√≥n \verb+TeXForm()+ devuelve la  expresi√≥n escrita en el lenguaje
+tipogr√°fico  \TeX, de  forma  que podemos  incluirla  en un  documento
+escrito en  \TeX~ o \LaTeX.  Por ejemplo,  este libro est√°  escrito en
 \LaTeX, lo  que me  permite incluir la  salida de  \verb+TeXForm()+ en
-este  mismo p·rrafo  con  sÛlo copiar  y pegar.  De  esta forma  puedo
+este  mismo p√°rrafo  con  s√≥lo copiar  y pegar.  De  esta forma  puedo
 escribir: $$\int  (x-y)^3 \, dx  = \frac{x  ^{4}}{4} - \frac{x  ^{3} 3
 y}{3} + \frac{x ^{2} 3 y ^{2}}{2} - y ^{3} x$$
 
-En ocasiones nos  interesa conocer el valor numÈrico  de una expresiÛn
-determinada, y posiblemente sÛlo nos interese un n˙mero determinado de
-decimales.  Yacas  es un  lenguaje  de  precisiÛn arbitraria,  lo  que
-significa que puedes  pedirle toda la precisiÛn que  quieras, pero ten
-cuidado no le pidas demasiada precisiÛn  si tu m·quina no es realmente
+En ocasiones nos  interesa conocer el valor num√©rico  de una expresi√≥n
+determinada, y posiblemente s√≥lo nos interese un n√∫mero determinado de
+decimales.  Yacas  es un  lenguaje  de  precisi√≥n arbitraria,  lo  que
+significa que puedes  pedirle toda la precisi√≥n que  quieras, pero ten
+cuidado no le pidas demasiada precisi√≥n  si tu m√°quina no es realmente
 potente.
 
-La funciÛn \verb+Precision()+ establece  el n˙mero de cifras decimales
-con  las  que se  aproximar·n  los  valores. Estas  aproximaciones  se
-realizan con  la funciÛn  \verb+N()+, que  adem·s permite  saltarse la
-precisiÛn establecida por \verb+Precision()+ pas·ndosela como segundo
-par·metro. En el siguiente ejemplo se ilustra esto:
+La funci√≥n \verb+Precision()+ establece  el n√∫mero de cifras decimales
+con  las  que se  aproximar√°n  los  valores. Estas  aproximaciones  se
+realizan con  la funci√≥n  \verb+N()+, que  adem√°s permite  saltarse la
+precisi√≥n establecida por \verb+Precision()+ pas√°ndosela como segundo
+par√°metro. En el siguiente ejemplo se ilustra esto:
 
-\index{Yacas!presiciÛn}
+\index{Yacas!presici√≥n}
 
 \begin{verbatim}
 In> alpha := Sqrt (Pi ())
@@ -248,9 +248,9 @@ Out> 1.77245385090551602729816748334114518279754945629866;
 \end{verbatim}
 
 Normalmente  no hay  problema  por  pedirle a  Yacas  unos cientos  de
-dÌgitos de precisiÛn, pero siempre que  vayas a trabajar con n˙meros o
-precisiones enormes recuerda que el tiempo necesario para los c·lculos
-aumentar· r·pidamente.
+d√≠gitos de precisi√≥n, pero siempre que  vayas a trabajar con n√∫meros o
+precisiones enormes recuerda que el tiempo necesario para los c√°lculos
+aumentar√° r√°pidamente.
 
 
 
@@ -261,12 +261,12 @@ aumentar· r·pidamente.
 
 En Yacas se entiende por variable un objeto al que se puede asignar un
 valor.  Las variables  pueden  llamarse como  quieras  siempre que  el
-nombre  empiece  por  una  letra  y contin˙e  con  letras  y  n˙meros.
+nombre  empiece  por  una  letra  y contin√∫e  con  letras  y  n√∫meros.
 Para  asignar un  valor  a  una variable  se  utiliza  el operador  de
-asignaciÛn \verb+:=+ en lugar de \verb+=+ (este ˙ltimo se utiliza como
+asignaci√≥n \verb+:=+ en lugar de \verb+=+ (este √∫ltimo se utiliza como
 comparador). En cualquier momento puedes  ver el valor de una variable
-tecleando su nombre como si fuera  un comando de Yacas, y esto tambiÈn
-es v·lido en un script. Asignaciones v·lidas son:
+tecleando su nombre como si fuera  un comando de Yacas, y esto tambi√©n
+es v√°lido en un script. Asignaciones v√°lidas son:
 
 \begin{verbatim}
 In> n := 10;
@@ -279,8 +279,8 @@ In> m
 Out> 3628800;
 \end{verbatim}
 
-Si en alg˙n momento quieres que una variable pierda su valor no tienes
-m·s que ``limpiarla'' con la funciÛn \verb+Clear()+:
+Si en alg√∫n momento quieres que una variable pierda su valor no tienes
+m√°s que ``limpiarla'' con la funci√≥n \verb+Clear()+:
 
 \begin{verbatim}
 In> m
@@ -291,16 +291,16 @@ In> m
 Out> m;
 \end{verbatim}
 
-Las funciones  son como las  variables, con  el aÒadido de  que pueden
-depender de una o m·s  variables. Adem·s con Yacas podemos sobrecargar
-una funciÛn, esto  es, definir dos funciones con el  mismo nombre pero
-distinto n˙mero de  variables de forma que se eval˙e  una u otra seg˙n
-el n˙mero de par·metros que reciba.
+Las funciones  son como las  variables, con  el a√±adido de  que pueden
+depender de una o m√°s  variables. Adem√°s con Yacas podemos sobrecargar
+una funci√≥n, esto  es, definir dos funciones con el  mismo nombre pero
+distinto n√∫mero de  variables de forma que se eval√∫e  una u otra seg√∫n
+el n√∫mero de par√°metros que reciba.
 
-Como ejemplo definimos la funciÛn \verb+Area+ de dos formas: si recibe
-un par·metro  devuelve el ·rea  del cÌrculo con  el radio igual  a ese
-par·metro, pero si recibe dos par·metros devuelve el ·rea de la elipse
-que tenga esos dos par·metros como radios.
+Como ejemplo definimos la funci√≥n \verb+Area+ de dos formas: si recibe
+un par√°metro  devuelve el √°rea  del c√≠rculo con  el radio igual  a ese
+par√°metro, pero si recibe dos par√°metros devuelve el √°rea de la elipse
+que tenga esos dos par√°metros como radios.
 
 \begin{verbatim}
 In> Area (r) := Pi () * r^2;
@@ -313,8 +313,8 @@ In> Area (3, 5);
 Out> 47.1238898035;
 \end{verbatim}
 
-Al definir  una funciÛn, Yacas no  eval˙a la parte de  la derecha sino
-que se asigna  como expresiÛn simbÛlica. Esto puede  no interesarte en
+Al definir  una funci√≥n, Yacas no  eval√∫a la parte de  la derecha sino
+que se asigna  como expresi√≥n simb√≥lica. Esto puede  no interesarte en
 casos como el que ilustra el siguiente ejemplo:
 
 \begin{verbatim}
@@ -328,14 +328,14 @@ In> g(2)
 Out> 5*x^4;
 \end{verbatim}
 
-SerÌa  deseable que  \verb+g(2)+  devolviera el  valor  de la  funciÛn
+Ser√≠a  deseable que  \verb+g(2)+  devolviera el  valor  de la  funci√≥n
 \verb+g(x)+  cuando  \verb+x+  vale  $2$,   pero  no  lo  hace  porque
-\verb+g(x)+ almacena la expresiÛn  \verb+5*x^4+ sin ninguna referencia
+\verb+g(x)+ almacena la expresi√≥n  \verb+5*x^4+ sin ninguna referencia
 a la  necesidad de evaluarla en  un valor determinado. Sin  embargo si
-indicamos a  Yacas que  eval˙e la  expresiÛn antes  de asignarla  a la
-funciÛn  (mediante  \verb+Eval()+)  podremos  pedirle  que  eval˙e  la
-funciÛn \verb+g(x)+ en valores determinados. Esto que parece un follÛn
-es  en realidad  simple, el  siguiente ejemplo  muestra el  cÛdigo que
+indicamos a  Yacas que  eval√∫e la  expresi√≥n antes  de asignarla  a la
+funci√≥n  (mediante  \verb+Eval()+)  podremos  pedirle  que  eval√∫e  la
+funci√≥n \verb+g(x)+ en valores determinados. Esto que parece un foll√≥n
+es  en realidad  simple, el  siguiente ejemplo  muestra el  c√≥digo que
 funciona como es de esperar:
 
 \begin{verbatim}
@@ -353,14 +353,14 @@ Out> 80;
 
 \index{Yacas!listas}
 
-Uno de  los elementos m·s  importantes del  lenguaje de Yacas  son las
+Uno de  los elementos m√°s  importantes del  lenguaje de Yacas  son las
 listas, que como era de esperar son grupos de objetos ordenados. Yacas
 representa las listas  con sus elementos entre llaves  y separados por
 comas.  Los  vectores  son  listas,  y  las  matrices  son  listas  de
-listas. De  hecho, cualquier expresiÛn  matem·tica en Yacas  puede ser
+listas. De  hecho, cualquier expresi√≥n  matem√°tica en Yacas  puede ser
 transformada en una  lista. Para acceder a los elementos  de una lista
-puedes  usar la  notaciÛn habitual  en los  corchetes, y  no sÛlo  con
-n˙meros  sino tambiÈn  con secuencias  de ellos.  Los elementos  de la
+puedes  usar la  notaci√≥n habitual  en los  corchetes, y  no s√≥lo  con
+n√∫meros  sino tambi√©n  con secuencias  de ellos.  Los elementos  de la
 lista pueden ser cualquier tipo de objetos.
 
 \begin{verbatim}
@@ -372,12 +372,12 @@ In> lista[2 .. 4];
 Out> {b,c,d};
 \end{verbatim}
 
-FÌjate  que los  espacios a  ambos  lados del  operador \verb+..+  son
-necesarios  para distinguir  estos puntos  de los  que podrÌan  formar
-parte de un n˙mero.
+F√≠jate  que los  espacios a  ambos  lados del  operador \verb+..+  son
+necesarios  para distinguir  estos puntos  de los  que podr√≠an  formar
+parte de un n√∫mero.
 
-TambiÈn puedes  indexar una lista  con palabras, no sÛlo  con n˙meros.
-Esto  te permite  tener pequeÒas  bases de  datos en  forma de  listas
+Tambi√©n puedes  indexar una lista  con palabras, no s√≥lo  con n√∫meros.
+Esto  te permite  tener peque√±as  bases de  datos en  forma de  listas
 asociativas con parejas clave -- valor.
 
 \begin{verbatim}
@@ -398,13 +398,13 @@ Out> {{"educado",False},{"edad",7.34},{"apellido","Cartman"},
 
 
 
-\section{¡lgebra Lineal}
+\section{√Ålgebra Lineal}
 
-\index{Yacas!¡lgegra Lineal}
+\index{Yacas!√Ålgegra Lineal}
 \index{Yacas!matrices}
 \index{Yacas!vectores}
 
-Los  vectores  de  dimensiÛn  fija  se  representan  mediante  listas.
+Los  vectores  de  dimensi√≥n  fija  se  representan  mediante  listas.
 La  lista  \verb+{1,2,3}+ es  el  vector  $(1,2,3)$. Las  matrices  se
 representan  como vectores  de  vectores. Dado  que  los vectores  son
 realmente listas, sus elementos pueden  asignarse igual que los de las
@@ -421,8 +421,8 @@ In> l;
 Out> {0,2,0};
 \end{verbatim}
 
-Yacas puede multiplicar vectores, matrices y n˙meros del modo usual en
-·lgebra lineal:
+Yacas puede multiplicar vectores, matrices y n√∫meros del modo usual en
+√°lgebra lineal:
 
 \begin{verbatim}
 
@@ -473,9 +473,9 @@ In> PrettyForm (%)
 Out> True;
 \end{verbatim}
 
-La librerÌa est·ndar de Yacas incluye tambiÈn c·lculo del determinante
+La librer√≠a est√°ndar de Yacas incluye tambi√©n c√°lculo del determinante
 y  la inversa  de una  matriz,  autovectores y  autovalores (en  casos
-simples) y resoluciÛn de sistemas  de ecuaciones lineales del tipo $Ax
+simples) y resoluci√≥n de sistemas  de ecuaciones lineales del tipo $Ax
 = b$ donde $A$ es una matriz y $x$ y $b$ son vectores.
 
 
@@ -485,35 +485,35 @@ simples) y resoluciÛn de sistemas  de ecuaciones lineales del tipo $Ax
 \index{Yacas!control de flujo}
 
 El lenguaje de  Yacas incluye algunas construcciones  y funciones para
-el control  de flujo. Para ello  necesitas saber tambiÈn que  Yacas te
+el control  de flujo. Para ello  necesitas saber tambi√©n que  Yacas te
 permite agrupar bloques  de instrucciones de forma  que aparezcan como
-una sola instrucciÛn. Para ello simplemente encierra las instrucciones
+una sola instrucci√≥n. Para ello simplemente encierra las instrucciones
 del  bloque entre  corchetes  (\verb+[+ y  \verb+]+),  o bien  utiliza
-la  funciÛn \verb+Prog()+  pas·ndole las  instrucciones separadas  por
+la  funci√≥n \verb+Prog()+  pas√°ndole las  instrucciones separadas  por
 \verb+;+.
 
 Para  los  bucles  disponemos  de  las  funciones  \verb+ForEach()+  y
-\verb+While()+. La  funciÛn \verb+ForEach (x, list) body+  ejecuta  el
+\verb+While()+. La  funci√≥n \verb+ForEach (x, list) body+  ejecuta  el
 bloque de  instrucciones \verb+body+  para cada  elemento de  la lista
 \verb+list+ asignando el valor de cada elemento a la variable \verb+x+
-en cada interaciÛn. La funciÛn \verb+While (predicate) body+ repite el
-bloque \verb+body+  hasta que  la condiciÛn  \verb+predicate+ devuelva
+en cada interaci√≥n. La funci√≥n \verb+While (predicate) body+ repite el
+bloque \verb+body+  hasta que  la condici√≥n  \verb+predicate+ devuelva
 \verb+False+.
 
-Para   los  condicionales   est·  la   funciÛn  
+Para   los  condicionales   est√°  la   funci√≥n  
 \verb+If (predicate, body1, body2)+,
 en la  que  se  ejecuta  el bloque  \verb+body1+  si
 \verb+predicate+ devuelve \verb+True+ o ejecuta el bloque \verb+body2+
 si \verb+predicate+  devuelve \verb+False+, y en  ambos casos devuelve
 el  valor devuelto  por  el  bloque ejecutado.  El  segundo bloque  es
-opcional.  Si  llamas  a  \verb+If (predicate,  body1)+  se  ejecutar·
+opcional.  Si  llamas  a  \verb+If (predicate,  body1)+  se  ejecutar√°
 el  bloque \verb+body1+  si  \verb+predicate+  devuelve \verb+True+  y
-devolver·  el valor  que devuelva  \verb+body1+, o  bien se  devolver·
-\verb+False+ si asÌ lo hace \verb+predicate+.
+devolver√°  el valor  que devuelva  \verb+body1+, o  bien se  devolver√°
+\verb+False+ si as√≠ lo hace \verb+predicate+.
 
-Como ejemplo de control de flujo construimos una lista con los n˙meros
+Como ejemplo de control de flujo construimos una lista con los n√∫meros
 enteros pares  de $2$ a  $20$ y calculamos el  producto de los  que no
-sean divisibles por $3$. Luego definimos  el factorial de un n˙mero de
+sean divisibles por $3$. Luego definimos  el factorial de un n√∫mero de
 forma recursiva.
 
 \begin{verbatim}
@@ -550,51 +550,51 @@ In> Factorial (25)
 Out> 15511210043330985984000000;
 \end{verbatim}
 
-Una  barra  invertida  \verb+\+  al  final  de  una  lÌnea  indica  al
-intÈrprete de Yacas que la lÌnea  no est· terminada, sino que contin˙a
-despuÈs  del salto  de carro.  En  este ejemplo  hemos utilizado  esto
-descaradamente. Esto se puede utilizar en el intÈrprete para hacer que
-nuestros comandos  sean m·s cÛmodos de  leer, pero no es  necesario al
+Una  barra  invertida  \verb+\+  al  final  de  una  l√≠nea  indica  al
+int√©rprete de Yacas que la l√≠nea  no est√° terminada, sino que contin√∫a
+despu√©s  del salto  de carro.  En  este ejemplo  hemos utilizado  esto
+descaradamente. Esto se puede utilizar en el int√©rprete para hacer que
+nuestros comandos  sean m√°s c√≥modos de  leer, pero no es  necesario al
 escribir un script.
 
 
 
-\section{Gr·ficas}
+\section{Gr√°ficas}
 
-\index{Yacas!gr·ficas}
+\index{Yacas!gr√°ficas}
 
-Yacas incorpora la posibilidad de representar gr·ficas bidimensionales
+Yacas incorpora la posibilidad de representar gr√°ficas bidimensionales
 utilizando  GNUplot, si  bien  esta capacidad  depende  de que  tengas
-instalado tambiÈn  el programa  GNUplot. Para saber  si tu  versiÛn de
-Yacas  tiene soporte  para  GNUplot  fÌjate en  la  primera lÌnea  que
-imprime el  intÈrprete cuando arranca, si  aparece \verb+[gnuplot.ys]+
-es   que   tu   versiÛn   de   Yacas   soporte   para   gr·ficas   con
-GNUplot\footnote{Esto  era cierto  hasta la  versiÛn 1.0.50  de Yacas,
-pero  en el  momento de  escribir esta  nota la  versiÛn 1.0.51  de mi
-m·quina no  aparece {\tt [gnuplot.ys]}  pero puede hacer  las gr·ficas
-con la funciÛn {\tt Plot2D}}.
+instalado tambi√©n  el programa  GNUplot. Para saber  si tu  versi√≥n de
+Yacas  tiene soporte  para  GNUplot  f√≠jate en  la  primera l√≠nea  que
+imprime el  int√©rprete cuando arranca, si  aparece \verb+[gnuplot.ys]+
+es   que   tu   versi√≥n   de   Yacas   soporte   para   gr√°ficas   con
+GNUplot\footnote{Esto  era cierto  hasta la  versi√≥n 1.0.50  de Yacas,
+pero  en el  momento de  escribir esta  nota la  versi√≥n 1.0.51  de mi
+m√°quina no  aparece {\tt [gnuplot.ys]}  pero puede hacer  las gr√°ficas
+con la funci√≥n {\tt Plot2D}}.
 
 \begin{verbatim}
 $ yacas
 [editvi.ys] [gnuplot.ys] [unix.ys]
 \end{verbatim}
 
-La funciÛn para  representar gr·ficas es \verb+Plot2D()+  y recibe dos
-par·metros: la expresiÛn  (o lista de expresiones)  para representar y
+La funci√≥n para  representar gr√°ficas es \verb+Plot2D()+  y recibe dos
+par√°metros: la expresi√≥n  (o lista de expresiones)  para representar y
 el  intervalo  de  la  variable  en  la  forma  {\tt  valor\_minimo  :
 valor\_maximo}.
 
-En anteriores versiones de Yacas, la funciÛn para representar gr·ficas
-era \verb+GnuPlot()+ y  recibÌa cuatro par·metros: el  valor mÌnimo de
-la  variable, el  valor m·ximo  de la  variable, el  n˙mero de  puntos
-utilizados para la representaciÛn y la funciÛn para representar. 
+En anteriores versiones de Yacas, la funci√≥n para representar gr√°ficas
+era \verb+GnuPlot()+ y  recib√≠a cuatro par√°metros: el  valor m√≠nimo de
+la  variable, el  valor m√°ximo  de la  variable, el  n√∫mero de  puntos
+utilizados para la representaci√≥n y la funci√≥n para representar. 
 
 En los  siguientes ejemplos  calculamos el el  polinomio de  Taylor de
-orden 5 para la funciÛn $\sin(x)$  en el origen y la representamos (en
-rojo) junto con la funciÛn $\sin(x)$ (en verde).
+orden 5 para la funci√≥n $\sin(x)$  en el origen y la representamos (en
+rojo) junto con la funci√≥n $\sin(x)$ (en verde).
 
 \begin{figura}{yacas_gnuplot}{0.8}
-\caption{RepresentaciÛn gr·fica con GNUplot desde Yacas}
+\caption{Representaci√≥n gr√°fica con GNUplot desde Yacas}
 \end{figura}
 
 \begin{verbatim}
@@ -610,19 +610,19 @@ Out> True;
 
 \section{Programando con Yacas}
 
-\index{Yacas!programaciÛn}
+\index{Yacas!programaci√≥n}
 
-Si bien  el intÈrprete de  Yacas proporciona una interfaz  cÛmoda para
-ejecutar  c·lculos, cuando  Èstos  se complican  resulta m·s  pr·ctico
+Si bien  el int√©rprete de  Yacas proporciona una interfaz  c√≥moda para
+ejecutar  c√°lculos, cuando  √©stos  se complican  resulta m√°s  pr√°ctico
 escribir un ``script'' y ejecutarlo  con Yacas. Para hacer un programa
 con Yacas escribe en un fichero  la secuencia de comandos que componen
 el  programa, incluyendo  definiciones de  funciones. Los  ficheros de
-script  de Yacas  suelen tener  tener la  extensiÛn {\tt  .ys} (no  es
+script  de Yacas  suelen tener  tener la  extensi√≥n {\tt  .ys} (no  es
 obligatorio).  
 
-Para ejecutar  el script simplemente  ejecuta Yacas d·ndole  el nombre
-del fichero como par·metro. La opciÛn {\tt -c} del comando {\tt yacas}
-hace que Yacas  no muestre los prompts \verb+In>+  y \verb+Out>+ (˙til
+Para ejecutar  el script simplemente  ejecuta Yacas d√°ndole  el nombre
+del fichero como par√°metro. La opci√≥n {\tt -c} del comando {\tt yacas}
+hace que Yacas  no muestre los prompts \verb+In>+  y \verb+Out>+ (√∫til
 para sesiones no interactivas, como el caso de ejecutar un script). El
 siguiente ejemplo  muestra como ejecutar  un script en Yacas,  en este
 caso el script es el fichero de ejemplo {\tt lagrange.ys}
@@ -631,28 +631,28 @@ caso el script es el fichero de ejemplo {\tt lagrange.ys}
 $ yacas -c lagrange.ys
 \end{verbatim}
 
-\begin{ejemplo}{lagrange.ys}{Script en Yacas que interpola una funciÛn}
+\begin{ejemplo}{lagrange.ys}{Script en Yacas que interpola una funci√≥n}
 \index{Yacas!script}
 Script en Yacas  que muestra un interpolante de Lagrage  para una nube
-de cinco  puntos tomados  de la funciÛn  $f(x) =  \frac{1}{1+x^2}$. En
+de cinco  puntos tomados  de la funci√≥n  $f(x) =  \frac{1}{1+x^2}$. En
 este  ejemplo el  interpolante de  Lagrange  no es  el adecuado,  pero
-nuestra intenciÛn  no es interpolar  $f(x)$
+nuestra intenci√≥n  no es interpolar  $f(x)$
 \end{ejemplo}
 
-Otra   forma  de   ejecutar  un   script  es   desde  el   intÈrprete,
-mediante  las  funciones  \verb+Load()+  y  \verb+Use()+.  La  funciÛn
-\verb+Load("script.ys")+  lee  el  fichero \verb+script.ys+  y  eval˙a
-todas  las   expresiones  que   encuentre  en  Èl.   Siempre  devuelve
+Otra   forma  de   ejecutar  un   script  es   desde  el   int√©rprete,
+mediante  las  funciones  \verb+Load()+  y  \verb+Use()+.  La  funci√≥n
+\verb+Load("script.ys")+  lee  el  fichero \verb+script.ys+  y  eval√∫a
+todas  las   expresiones  que   encuentre  en  √©l.   Siempre  devuelve
 \verb+True+.  \verb+Use()+  hace lo  mismo  que  \verb+Load()+ con  la
-salvedad de que sÛlo lee el fichero si no ha sido leÌdo antes por otra
+salvedad de que s√≥lo lee el fichero si no ha sido le√≠do antes por otra
 llamada \verb+Load()+ o \verb+Use()+.
 
-Un uso  com˙n de \verb+Use()+ es  cargar un fichero con  funciones con
-las que queremos trabajar desde el  intÈrprete, de modo que no tenemos
+Un uso  com√∫n de \verb+Use()+ es  cargar un fichero con  funciones con
+las que queremos trabajar desde el  int√©rprete, de modo que no tenemos
 que teclear  las funciones  cada vez  ni tampoco  hay que  ejecutar el
-script. La funciÛn \verb+Load()+ resulta  ˙til para ejecutar un script
-desde el  intÈrprete cuando queremos hacerlo  varias veces modificando
-el script sin salir del intÈrprete.
+script. La funci√≥n \verb+Load()+ resulta  √∫til para ejecutar un script
+desde el  int√©rprete cuando queremos hacerlo  varias veces modificando
+el script sin salir del int√©rprete.
 
 
 
@@ -660,22 +660,22 @@ el script sin salir del intÈrprete.
 
 \index{Yacas!ejemplo real}
 
-A continuaciÛn  explicamos un ejemplo  del uso  de Yacas ``en  la vida
-real'': calcular la sucesiÛn de Sturm  asociada a un polinomio real de
-una variable  real. Esta sucesiÛn  se utiliza  en el teorema  de Sturm
-para  calcular el  n˙mero  de  raÌces reales  de  un  polinomio en  un
-intervalo de la  recta real. El algoritmo para  calcular esta sucesiÛn
-de polinomios no es complicado, pero  por si no lo conoces aquÌ tienes
-una breve explicaciÛn:
+A continuaci√≥n  explicamos un ejemplo  del uso  de Yacas ``en  la vida
+real'': calcular la sucesi√≥n de Sturm  asociada a un polinomio real de
+una variable  real. Esta sucesi√≥n  se utiliza  en el teorema  de Sturm
+para  calcular el  n√∫mero  de  ra√≠ces reales  de  un  polinomio en  un
+intervalo de la  recta real. El algoritmo para  calcular esta sucesi√≥n
+de polinomios no es complicado, pero  por si no lo conoces aqu√≠ tienes
+una breve explicaci√≥n:
 
 El algoritmo  de Sturm parte  de un polinomio con  coeficientes reales
 $p(x)$  y su  derivada $p'(x)$.  Tomando $f_0(x)  = p(x)$  como primer
 polinomio  y $f_1(x)  =  p'(x)$ como  segundo  polinomio, se  realizan
-sucesivas divisiones euclÌdeas utilizando  en cada divisiÛn el divisor
+sucesivas divisiones eucl√≠deas utilizando  en cada divisi√≥n el divisor
 de la  anterior como dividendo y  el opuesto del resto  de la anterior
-como divisor. Al  cabo de un n˙mero finito de  iteraciones, en las que
-$f_j(x)$ es el resto de la divisiÛn $j-1$, se obtiene un resto nulo en
-la iteraciÛn $m+1$.
+como divisor. Al  cabo de un n√∫mero finito de  iteraciones, en las que
+$f_j(x)$ es el resto de la divisi√≥n $j-1$, se obtiene un resto nulo en
+la iteraci√≥n $m+1$.
 
 \begin{eqnarray*}
 f_0(x) & = & f_1(x) q_1(x) - f_2(x)          \\
@@ -686,38 +686,38 @@ f_{m-1}(x) & = & f_m(x) q_m(x)
 \end{eqnarray*}
 
 A  partir de  los polinomios  $f_j$ obtenidos  en estas  divisiones se
-construye la sucesiÛn de Sturm asociada a $p(x)$, que viene dada por
+construye la sucesi√≥n de Sturm asociada a $p(x)$, que viene dada por
 
 $$\left\{\hat{f}_j(x) = \frac{f_j(x)}{f_m(x)}\right\}_{j=0}^{n}$$
 
-El teorema  de Sturm garantiza que  el n˙mero de raÌces  del polinomio
+El teorema  de Sturm garantiza que  el n√∫mero de ra√≠ces  del polinomio
 $p(x)$ en  el intervalo  $[a,b]$ es exactamente  $V(a) -  V(b)$, donde
-$V(x_0)$ es el n˙mero de variaciones  de la sucesiÛn de Sturm evaluada
-en el punto $x_0$,  i.e. el n˙mero de cambios de  signo en la suceciÛn
+$V(x_0)$ es el n√∫mero de variaciones  de la sucesi√≥n de Sturm evaluada
+en el punto $x_0$,  i.e. el n√∫mero de cambios de  signo en la suceci√≥n
 $\left\{   \hat{f}_0(x_0),   \hat{f}_1(x_0),  \ldots,   \hat{f}_m(x_0)
 \right\}$.
 
-Para implementar esto en Yacas definimos la funciÛn \verb+Sturm()+ que
-recibe el polinomio \verb+P+ junto con la variable en la que Èste est·
+Para implementar esto en Yacas definimos la funci√≥n \verb+Sturm()+ que
+recibe el polinomio \verb+P+ junto con la variable en la que √©ste est√°
 expresado \verb+x+  y genera una  lista \verb+L+ con el  polinomio, su
-derivada  y los  sucesivos restos  de las  divisiones euclÌdeas.  Para
-ahorrar esfuerzo  computacional acotamos el  n˙mero de tÈrminos  de la
-lista con el grado del polinomio \verb+P(x)+, ya que Èste es el n˙mero
-m·ximo de divisiones necesarias para encontrar el m·ximo com˙n divisor
-del polinomio y  su derivada. Luego busca el ˙ltimo  polinomio no nulo
-en  \verb+L+, que  es  el  m·ximo com˙n  divisor  del  polinomio y  su
-derivada, y construye la sucesiÛn de Sturm en una nueva lista \verb+S+
-que  finalmente devuelve  como  valor  de retorno  de  la funciÛn.  La
-funciÛn \verb+Simplify+ simplifica cualquier expresiÛn que reciba.
+derivada  y los  sucesivos restos  de las  divisiones eucl√≠deas.  Para
+ahorrar esfuerzo  computacional acotamos el  n√∫mero de t√©rminos  de la
+lista con el grado del polinomio \verb+P(x)+, ya que √©ste es el n√∫mero
+m√°ximo de divisiones necesarias para encontrar el m√°ximo com√∫n divisor
+del polinomio y  su derivada. Luego busca el √∫ltimo  polinomio no nulo
+en  \verb+L+, que  es  el  m√°ximo com√∫n  divisor  del  polinomio y  su
+derivada, y construye la sucesi√≥n de Sturm en una nueva lista \verb+S+
+que  finalmente devuelve  como  valor  de retorno  de  la funci√≥n.  La
+funci√≥n \verb+Simplify+ simplifica cualquier expresi√≥n que reciba.
 
 \begin{ejemplo}{sturm.ys}{Script en Yacas que implementa el algoritmo de Sturm}
 Script en Yacas que implementa el algoritmo de Sturm.
 \end{ejemplo}
 
-En  el  script  escribimos  esta   funciÛn  y  aÒadimos  los  comandos
-necesarios  para  ejecutar  un test.  La  funciÛn  \verb+RandomPoly()+
+En  el  script  escribimos  esta   funci√≥n  y  a√±adimos  los  comandos
+necesarios  para  ejecutar  un test.  La  funci√≥n  \verb+RandomPoly()+
 genera un  polinomio aleatorio, lo mostramos  con \verb+PrettyForm()+,
-calculamos su sucesiÛn de Sturm y la mostramos con \verb+PrettyForm()+
+calculamos su sucesi√≥n de Sturm y la mostramos con \verb+PrettyForm()+
 de nuevo. El resultado de ejecutar el script es el siguiente:
 
 \begin{verbatim}
@@ -740,15 +740,15 @@ de nuevo. El resultado de ejecutar el script es el siguiente:
 \end{verbatim}
 
 Este ejemplo  real ha sido  extraido del programa presentado  por unos
-alumnos como trabajo para  asignatura ``¡lgebra Computacional'' que se
-imparte en la Facultad de Matem·ticas  de la Universidad de La Laguna.
-En  teorÌa  debieron realizar  el  trabajo  utilizando Maple  V,  pero
-propusieron al profesor la alternativa  de programarlo en Yacas y Èste
-aceptÛ con  curiosidad. El programa  aproxima las raÌces reales  de un
-polinomio utilizando el  algoritmo de Sturm para aislar  las raÌces en
-intervalos y aproxim·ndolas  con el mÈtodo de la  bisecciÛn (raÌces de
-multiplicidad  impar)  o  con  el mÈtodo  de  cristalizaciÛn  simulada
-(raÌces de multiplicidad par). El trabajo fue expuesto en clase y tuvo
-la calificaciÛn de sobresaliente, el cÛdigo y las transparencias est·n
+alumnos como trabajo para  asignatura ``√Ålgebra Computacional'' que se
+imparte en la Facultad de Matem√°ticas  de la Universidad de La Laguna.
+En  teor√≠a  debieron realizar  el  trabajo  utilizando Maple  V,  pero
+propusieron al profesor la alternativa  de programarlo en Yacas y √©ste
+acept√≥ con  curiosidad. El programa  aproxima las ra√≠ces reales  de un
+polinomio utilizando el  algoritmo de Sturm para aislar  las ra√≠ces en
+intervalos y aproxim√°ndolas  con el m√©todo de la  bisecci√≥n (ra√≠ces de
+multiplicidad  impar)  o  con  el m√©todo  de  cristalizaci√≥n  simulada
+(ra√≠ces de multiplicidad par). El trabajo fue expuesto en clase y tuvo
+la calificaci√≥n de sobresaliente, el c√≥digo y las transparencias est√°n
 disponibles en {\tt http://www.fmat.ull.es/\~{}miguev/algcomp/}
 

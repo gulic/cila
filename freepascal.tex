@@ -5,22 +5,22 @@
 \label{freepascal.tex}
 \index{FreePascal}
 
-El lenguaje de  programaciÛn Pascal es sencillo  y bastante did·ctico,
-por  lo que  se suele  enseÒar en  el primer  aÒo de  algunas carreras
-tÈcnicas como  Matem·ticas, FÌsica  o Inform·tica.  Normalmente, estos
-cursos o asignaturas  de programaciÛn tratan de  enseÒar al estudiante
-los conceptos  b·sicos de la  programaciÛn de computadores  sin entrar
+El lenguaje de  programaci√≥n Pascal es sencillo  y bastante did√°ctico,
+por  lo que  se suele  ense√±ar en  el primer  a√±o de  algunas carreras
+t√©cnicas como  Matem√°ticas, F√≠sica  o Inform√°tica.  Normalmente, estos
+cursos o asignaturas  de programaci√≥n tratan de  ense√±ar al estudiante
+los conceptos  b√°sicos de la  programaci√≥n de computadores  sin entrar
 en  demasiados  detalles  acerca  del funcionamiento  interno  de  los
-mismos. En este capÌtulo aprenderemos  las herramientas b·sicas que se
+mismos. En este cap√≠tulo aprenderemos  las herramientas b√°sicas que se
 encuentran  disponibles  en GNU/Linux  para  programar  en Pascal.  El
-compilador que  utilizaremos est· siendo desarrollado  por el proyecto
+compilador que  utilizaremos est√° siendo desarrollado  por el proyecto
 {\bf Free Pascal},  que proporciona un buen compilador  de Pascal para
-m˙ltiples  plataformas, entre  Èstas  GNU/Linux,  MS-DOS, MS  Windows,
+m√∫ltiples  plataformas, entre  √©stas  GNU/Linux,  MS-DOS, MS  Windows,
 Amiga, MaC OS y otras.
 
 Comenzaremos  escribiendo  un  ejemplo  muy sencillo  de  programa  en
-Pascal, el  tÌpico ``Hola Mundo''.  En cualquier editor  escribimos el
-siguiente cÛdigo y lo guardamos con el nombre {\tt HolaMundo.pas}
+Pascal, el  t√≠pico ``Hola Mundo''.  En cualquier editor  escribimos el
+siguiente c√≥digo y lo guardamos con el nombre {\tt HolaMundo.pas}
 
 \begin{ejemplo}{HolaMundo.pas}%
 {Ejemplo 1 de Pascal }
@@ -44,10 +44,10 @@ $ ls
 holamundo2    HolaMundo2.pas  holamundo2.o
 \end{verbatim}
 
-Como  podemos apreciar  en los  mensajes del  compilador, Èl  mismo se
+Como  podemos apreciar  en los  mensajes del  compilador, √©l  mismo se
 encarga de compilar,  ensamblar y enlazar el programa  para generar el
 fichero  ejecutable  {\tt  holamundo}.  Para  cambiar  el  nombre  del
-ejecutable resultante se utiliza la opciÛn {\tt -onombredelejecutable}
+ejecutable resultante se utiliza la opci√≥n {\tt -onombredelejecutable}
 (sin dejar espacio entre la {\tt o} y el nombre del ejecutable.
 
 \begin{verbatim}
@@ -75,18 +75,18 @@ Hola Mundo
 \end{verbatim}
 
 Veamos ahora  un ejemplo  del uso  de las  ``unidades'' en  Pascal. El
-concepto de unidades en Pascal es equivalente al de librerÌas en C. Se
-trata de  ficheros binarios  que obtenemos a  partir de  cÛdigo fuente
+concepto de unidades en Pascal es equivalente al de librer√≠as en C. Se
+trata de  ficheros binarios  que obtenemos a  partir de  c√≥digo fuente
 separado y  luego enlazamos  con el  programa principal.  Esto permite
-dividir el cÛdigo de un programa  en varios ficheros y evita tener que
-compilar todo el programa cada vez que se modifica una funciÛn. Con el
+dividir el c√≥digo de un programa  en varios ficheros y evita tener que
+compilar todo el programa cada vez que se modifica una funci√≥n. Con el
 uso de unidades  basta con recompilar la unidad en  la que se modifica
-el cÛdigo  fuente y volverla a  enlazar con el programa.  A diferencia
-del Borland  Pascal, el  compilador Free  Pascal utiliza  la extensiÛn
+el c√≥digo  fuente y volverla a  enlazar con el programa.  A diferencia
+del Borland  Pascal, el  compilador Free  Pascal utiliza  la extensi√≥n
 {\tt  ppu} (en  lugar  de {\tt  tpu}) para  los  ficheros binarios  de
 unidades.
 
-Tenemos para  este ejemplo  dos ficheros de  cÛdigo fuente  en Pascal,
+Tenemos para  este ejemplo  dos ficheros de  c√≥digo fuente  en Pascal,
 {\tt HolaMundo2.pas} y {\tt saludos.pas}.
 
 \begin{ejemplo}{HolaMundo2.pas}%
@@ -100,13 +100,13 @@ Ejemplo 2 de Pascal
 \end{ejemplo}
 
 Debemos  tener cuidado  con un  detalle: Los  nombres de  las unidades
-deben coincidir  con el nombre del  fichero en el que  est·n escritas,
+deben coincidir  con el nombre del  fichero en el que  est√°n escritas,
 i.e.  la unidad  {\tt  Saludos} no  se puede  escribir  en un  fichero
-llamado  {\tt Otronombre.pas}.  Adem·s,  los ficheros  en  los que  se
+llamado  {\tt Otronombre.pas}.  Adem√°s,  los ficheros  en  los que  se
 implementan las  unidades conviene que tengan  el nombre completamente
-en  {\bf min˙sculas}.  De lo  contrario, el  compilador FreePascal  no
-encontrar· la unidad al compilar un programa que la use, pero podremos
-a˙n compilarla manualmente. El siguiente ejemplo ilustra la situaciÛn:
+en  {\bf min√∫sculas}.  De lo  contrario, el  compilador FreePascal  no
+encontrar√° la unidad al compilar un programa que la use, pero podremos
+a√∫n compilarla manualmente. El siguiente ejemplo ilustra la situaci√≥n:
 
 \begin{verbatim}
 $ ls
@@ -161,7 +161,7 @@ holamundo2    HolaMundo2.pas  Saludos.pas
 holamundo2.o  saludos.o       saludos.ppu
 
 $ ./holamundo2
-øCÛmo te llamas? Pepe
+¬øC√≥mo te llamas? Pepe
 Hola Pepe
 
 $ mv Saludos.pas saludos.pas
@@ -185,15 +185,15 @@ holamundo2    HolaMundo2.pas  Saludos.pas
 holamundo2.o  saludos.o       saludos.ppu
 
 $ ./holamundo2
-øCÛmo te llamas? Pepe
+¬øC√≥mo te llamas? Pepe
 Hola Pepe
 \end{verbatim}
 
-En FreePascal para Linux, al contrario que la versiÛn windows de deste
-mismo compilador, hacer trazas a los programas es algo m·s complejo, y
+En FreePascal para Linux, al contrario que la versi√≥n windows de deste
+mismo compilador, hacer trazas a los programas es algo m√°s complejo, y
 requiere un programa adicional: GNU Debugger (GDB). Para utilizar este
-programa con nuestros programas en Pascal, debemos aÒadir un par·metro
-adicional en la lÌnea de comandos:
+programa con nuestros programas en Pascal, debemos a√±adir un par√°metro
+adicional en la l√≠nea de comandos:
 
 \begin{verbatim}
 
@@ -201,62 +201,62 @@ ppc386 -g programa.pas
 
 \end{verbatim}
 
-Con esto, ``incrustamos'' el cÛdigo fuente de nuestro programa en el
+Con esto, ``incrustamos'' el c√≥digo fuente de nuestro programa en el
 interior del ejecutable, de forma que si ejecutamos gdb pasando como
 argumento el nombre del programa, podremos hacerle una traza.
 
-Para saber  m·s acerca de  como hacer  una traza a  nuestros programas
-escritos  en Pascal,  puedes consultar  la  secciÛn sobre  GDB, en  la
-p·gina \pageref{gdb}.
+Para saber  m√°s acerca de  como hacer  una traza a  nuestros programas
+escritos  en Pascal,  puedes consultar  la  secci√≥n sobre  GDB, en  la
+p√°gina \pageref{gdb}.
 
 Otros argumentos interesantes del compilador de FreePascal:
 
 Sin entrar  demasiado en  las interioridades  de FreePascal,  creo que
-estas opciones pueden  ayudarte a la hora de compilar  una pr·ctica, o
-de estructurar mejor tus proyectos. AhÌ van:
+estas opciones pueden  ayudarte a la hora de compilar  una pr√°ctica, o
+de estructurar mejor tus proyectos. Ah√≠ van:
 
-{\tt -FUdirectorio}:  Esta opciÛn  nos permite guardar  las ``units'',
+{\tt -FUdirectorio}:  Esta opci√≥n  nos permite guardar  las ``units'',
 una vez compiladas, en el directorio especificado. Por ejemplo:
 
 \begin{verbatim}
 ppc386 -FUunits unidad.pas
 \end{verbatim}
 
-Para utilizar units que estÈn en otro directorio que no sea el actual,
-utilizamos el par·metro  {\tt -Fudirectorio} (nÛtese que  en este caso
-la ``u'' es min˙scula).
+Para utilizar units que est√©n en otro directorio que no sea el actual,
+utilizamos el par√°metro  {\tt -Fudirectorio} (n√≥tese que  en este caso
+la ``u'' es min√∫scula).
 
 %\index{Depuradores!Turbo Pascal 7}
 
-{\tt -So}: Usar esta opciÛn nos permitir· comprobar la compatibilidad
-de nuestro cÛdigo con Turbo Pascal 7
+{\tt -So}: Usar esta opci√≥n nos permitir√° comprobar la compatibilidad
+de nuestro c√≥digo con Turbo Pascal 7
 
-{\tt -Un}: Esta opciÛn nos permite llamar los ficheros de unidad (units)
-con otro nombre distinto al que hemos especificado en el cÛdigo tras
+{\tt -Un}: Esta opci√≥n nos permite llamar los ficheros de unidad (units)
+con otro nombre distinto al que hemos especificado en el c√≥digo tras
 la palabra reservada "unit"
 
-% Hey, serÌa bueno aÒadir unos cuantos switches m·s :-)
+% Hey, ser√≠a bueno a√±adir unos cuantos switches m√°s :-)
 
-Por ˙ltimo, algunos editores que ``se llevan bien'' con FreePascal:
+Por √∫ltimo, algunos editores que ``se llevan bien'' con FreePascal:
 
 {\tt Anjuta} Tal vez, el mejor  editor para programadores (o al menos,
-en opiniÛn del autor de este tema). Soporta resaltado de sintaxis para
+en opini√≥n del autor de este tema). Soporta resaltado de sintaxis para
 varios lenguajes, compilar y ejecutar desde el mismo editor, etc.
 
 {\tt Emacs} A pesar de su aparente dificultad de manejo, el modo de Pascal
-est· muy trabajado, permitiendo indentar autom·ticamente todo el cÛdigo
-tan sÛlo pulsando la tecla tab en cada lÌnea.
+est√° muy trabajado, permitiendo indentar autom√°ticamente todo el c√≥digo
+tan s√≥lo pulsando la tecla tab en cada l√≠nea.
 
-{\tt Vim} El autor de este tema  sÛlo ha usado de vim la funcionalidad
+{\tt Vim} El autor de este tema  s√≥lo ha usado de vim la funcionalidad
 de resaltado de sintaxis mientras programaba en Pascal. Esta se activa
-con la opciÛn ":syntax on".
+con la opci√≥n ":syntax on".
 
 {\tt Scite} Es un editor muy  minimalista, y algo lioso de configurar,
-pero es un editor para programadores  muy bueno, cÛmodo, y sobre todo,
-compacto (cabe en un disco de  1'44), adem·s de estar disponible tanto
+pero es un editor para programadores  muy bueno, c√≥modo, y sobre todo,
+compacto (cabe en un disco de  1'44), adem√°s de estar disponible tanto
 para plataformas Win32 como GNU/Linux.
 
-% Con esta  breve presentaciÛn  ya sabemos  lo suficiente  para compilar
-% pr·cticas  en  Pascal,  sÛlo  queda   aprender  el  lenguaje  y  pasar
-% muchas  horas  escribiendo  programas  para llegar  a  ser  autÈnticos
+% Con esta  breve presentaci√≥n  ya sabemos  lo suficiente  para compilar
+% pr√°cticas  en  Pascal,  s√≥lo  queda   aprender  el  lenguaje  y  pasar
+% muchas  horas  escribiendo  programas  para llegar  a  ser  aut√©nticos
 % programadores.

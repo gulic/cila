@@ -3,65 +3,65 @@
 %miguev: n-2
 
 \newcommand{\gimp}{{\sf The GIMP}~{}}
-\newcommand{\bir}{botÛn izquierdo del ratÛn~{}}
-\newcommand{\bcr}{botÛn central del ratÛn~{}}
-\newcommand{\bdr}{botÛn derecho del ratÛn~{}}
+\newcommand{\bir}{bot√≥n izquierdo del rat√≥n~{}}
+\newcommand{\bcr}{bot√≥n central del rat√≥n~{}}
+\newcommand{\bdr}{bot√≥n derecho del rat√≥n~{}}
 
 \chapter{The GIMP}
 \label{gimp.tex}
 \index{\gimp}
 
-\gimp es el Programa de ManipulaciÛn de Im·genes de GNU (The GNU Image
-Manipulation Program).  Es un  programa libremente  distribuible, ˙til
-para trabajos  como retoques de fotografÌa,  composiciÛn y publicaciÛn
-de im·genes. \gimp ha sido escrito por Peter Mattis y Spencer Kimball,
-y  liberado  bajo la  Licencia  General  P˙blica (GNU  General  Public
+\gimp es el Programa de Manipulaci√≥n de Im√°genes de GNU (The GNU Image
+Manipulation Program).  Es un  programa libremente  distribuible, √∫til
+para trabajos  como retoques de fotograf√≠a,  composici√≥n y publicaci√≥n
+de im√°genes. \gimp ha sido escrito por Peter Mattis y Spencer Kimball,
+y  liberado  bajo la  Licencia  General  P√∫blica (GNU  General  Public
 License). En octubre de 2005 \gimp 2.2 se encuentra disponible para varias
 plataformas UNIX (incluyendo GNU/Linux), Mac OS X y Microsoft Windows.
 
 
-\gimp es un programa bastante com˙n en las distribuciones de
+\gimp es un programa bastante com√∫n en las distribuciones de
 GNU/Linux,  y muy  popular  entre los  usuarios medios/avazanzados  de
-Linux. Para saber  m·s sobre \gimp o descargarlo visita  su p·gina web
-en  {\tt http://www.gimp.org}.  TambiÈn  puede  ser  de  utilidad  la
-traducciÛn al castellano de la Referencia de \gimp\cite{gimpref}.
+Linux. Para saber  m√°s sobre \gimp o descargarlo visita  su p√°gina web
+en  {\tt http://www.gimp.org}.  Tambi√©n  puede  ser  de  utilidad  la
+traducci√≥n al castellano de la Referencia de \gimp\cite{gimpref}.
 
 \section{Conceptos fundamentales}
 
 % Mapas de bits, modelos de colores, transparencia
 
 Antes de entrar  a conocer \gimp debes tener  claros ciertos conceptos
-y  tÈrminos  que encontrar·s  con  bastante  frecuencia en  documentos
-como  este y  en los  di·logos  del propio  \gimp. Vamos  a darte  una
-introducciÛn  a  estos  conceptos  sin entrar  en  demasiado  lujo  de
+y  t√©rminos  que encontrar√°s  con  bastante  frecuencia en  documentos
+como  este y  en los  di√°logos  del propio  \gimp. Vamos  a darte  una
+introducci√≥n  a  estos  conceptos  sin entrar  en  demasiado  lujo  de
 detalles.
 
 \subsection{Mapas de bits}
 \index{\gimp!mapas de bits}
 
-Existen varias formas de almacenar  im·genes en un fichero, pero \gimp
-sÛlo maneja una de estas formas:  la denominada ``mapa de bits''. Esta
-forma de  almacenar im·genes en ficheros  parte de la idea  de que una
+Existen varias formas de almacenar  im√°genes en un fichero, pero \gimp
+s√≥lo maneja una de estas formas:  la denominada ``mapa de bits''. Esta
+forma de  almacenar im√°genes en ficheros  parte de la idea  de que una
 imagen (rectangular) es una tabla de puntos, cada punto tiene un color
-exacto, que es uniforme dentro de  Èl, y es indivisible. Esta tabla de
+exacto, que es uniforme dentro de  √©l, y es indivisible. Esta tabla de
 puntos es lo que se denomina  un ``mapa'' de ``bits''. Estos puntos se
-denominan ``pÌxeles''.
+denominan ``p√≠xeles''.
 
-Las im·genes de mapa de bits tienen tamaÒos enteros; i.e. puedes crear
-una imagen  de $2000 \times  2500$ pÌxeles,  pero no de  $20.25 \times
-25.75$ pÌxeles.  Insisto en que  los pÌxeles son  indivisibles, porque
-son las cÈlulas o los ·tomos  que componen la imagen. Dependiendo del
-modelo de color que se utilice en una imagen, el color del pÌxel se
+Las im√°genes de mapa de bits tienen tama√±os enteros; i.e. puedes crear
+una imagen  de $2000 \times  2500$ p√≠xeles,  pero no de  $20.25 \times
+25.75$ p√≠xeles.  Insisto en que  los p√≠xeles son  indivisibles, porque
+son las c√©lulas o los √°tomos  que componen la imagen. Dependiendo del
+modelo de color que se utilice en una imagen, el color del p√≠xel se
 representa mediante un valor entero de 0 a 255 (escala de grises),
 una terna de valores enteros de 0 a 255 (RGB),
 o bien un valor entero menor que una cierta cantidad que limita el
-n˙mero de colores diferentes que pueden aparecer en la imagen (indexado).
+n√∫mero de colores diferentes que pueden aparecer en la imagen (indexado).
 
 \subsection{Modelos de colores}
 \index{\gimp!modelos de colores}
 
-Existen varios modos de representar el color de un pÌxel, 
-denominados  ``modelos de  colores''.  Veamos los m·s usuales:
+Existen varios modos de representar el color de un p√≠xel, 
+denominados  ``modelos de  colores''.  Veamos los m√°s usuales:
 
 \begin{description}
 
@@ -70,88 +70,88 @@ azul). Este modelo de  color se basa en la suma de  colores de la luz,
 que no  es la misma  que en  la pintura. En  la luz los  colores rojo,
 verde y azul ``suman'' blanco; i.e. si iluminaras un objeto blanco con
 un foco de color  rojo puro, otro de color verde puro  y otro de color
-azul puro,  verÌas el objeto de  color blanco. Si apagaras  el foco de
-color azul lo verÌas de color amarillo, porque en la luz (que no en la
+azul puro,  ver√≠as el objeto de  color blanco. Si apagaras  el foco de
+color azul lo ver√≠as de color amarillo, porque en la luz (que no en la
 pintura) los colores rojo y verde ``suman'' amarillo.
 
 A partir de esta propiedad de la luz, se puede descomponer el color de
-cada pÌxel  en tres  componentes que expresan  la proporciÛn  de rojo,
+cada p√≠xel  en tres  componentes que expresan  la proporci√≥n  de rojo,
 verde y azul que tiene ese color. Estas proporciones suelen expresarse
-con n˙meros {\bf  enteros} desde el  0 ($0\%$) hasta el  255 ($100\%$),
-asÌ un pÌxel rojo est· representado por la terna $(255,0,0)$, el color
+con n√∫meros {\bf  enteros} desde el  0 ($0\%$) hasta el  255 ($100\%$),
+as√≠ un p√≠xel rojo est√° representado por la terna $(255,0,0)$, el color
 amarillo  por  la  terna  $(255,255,0)$  y  el  blanco  por  la  terna
 $(255,255,255)$.
 
-Este modelo  de colores  es ideal  para los gr·ficos  de mapa  de bits
-generados por ordenador, y en el campo  de la imagen digital es el m·s
+Este modelo  de colores  es ideal  para los gr√°ficos  de mapa  de bits
+generados por ordenador, y en el campo  de la imagen digital es el m√°s
 extendido.
 
 \item[HSV]  son   las  iniciales  de  {\bf   Hue,  Saturation,  Value}
-(tonalidad, saturaciÛn e  intensidad). Este modelo es  similar al RGB
-pero en lugar de descomponer el color de cada pÌxel en sus componentes
-rojo verde y azul lo descompone  de una forma m·s descriptiva para los
+(tonalidad, saturaci√≥n e  intensidad). Este modelo es  similar al RGB
+pero en lugar de descomponer el color de cada p√≠xel en sus componentes
+rojo verde y azul lo descompone  de una forma m√°s descriptiva para los
 humanos.
 
 La  tonalidad (Hue)  representa el  color tal  como lo  entendemos los
-humanos  mediante  un  ·ngulo de  $0\textdegree$  a  $360\textdegree$.
+humanos  mediante  un  √°ngulo de  $0\textdegree$  a  $360\textdegree$.
 La  tonalidad comienza  por  el rojo  puro  ($0\textdegree$) y  avanza
 en  sentido   horario     hacia  el  amarillo   ($60\textdegree$),  el
 verde   ($120\textdegree$),  el   cian  ($180\textdegree$),   el  azul
 ($240\textdegree$), el magenta ($300\textdegree$) y finalmente regresa
 al rojo ($360\textdegree$).
 
-La saturaciÛn  (Saturation) representa la  pureza del color.  Un color
-sin saturaciÛn no  es color, es sÛlo  un tono de gris,  mientras que un
-color con saturaciÛn m·xima es un color puro.
+La saturaci√≥n  (Saturation) representa la  pureza del color.  Un color
+sin saturaci√≥n no  es color, es s√≥lo  un tono de gris,  mientras que un
+color con saturaci√≥n m√°xima es un color puro.
 
 La  intensidad  (Value)  representa   la  luminosidad del color.
 Un  color  sin intensidad es un negro absoluto  mientras que un color
-con luminosidad m·xima  es  un  blanco  puro,  sin importar  ni  la
-tonalidad  ni  la saturaciÛn.
+con luminosidad m√°xima  es  un  blanco  puro,  sin importar  ni  la
+tonalidad  ni  la saturaci√≥n.
 
-Aunque la tonalidad  es un ·ngulo y la saturaciÛn  y la intensidad son
+Aunque la tonalidad  es un √°ngulo y la saturaci√≥n  y la intensidad son
 porcentajes, en  los ficheros estos  valores se representan mediante
-n˙meros enteros entre  0 y 255.
+n√∫meros enteros entre  0 y 255.
 
 \item[HLS] se  refiere a {\bf Hue,  Lightness, Saturation} (tonalidad,
-luminosidad y saturaciÛn)  y es an·logo al HSV  intercambiando las dos
-˙ltimas componentes; es decir, la luminosidad es la intensidad.
+luminosidad y saturaci√≥n)  y es an√°logo al HSV  intercambiando las dos
+√∫ltimas componentes; es decir, la luminosidad es la intensidad.
 
 \end{description}
 
-En los  tres  modelos anteriores el color cada pÌxel se representa mediante
+En los  tres  modelos anteriores el color cada p√≠xel se representa mediante
 tres valores, cada uno con distintos rangos. Sin embargo, los ficheros de mapas
-de bits utilizan un byte (n˙mero entero entre 0 y 255) para almacenar cada uno
+de bits utilizan un byte (n√∫mero entero entre 0 y 255) para almacenar cada uno
 de estos valores, por lo que todos ellos quedan en el rango entre 0 y 255.
 Dado que el color se determina por tres valores enteros entre 0 y 255, se
-dispone de hasta $256^3 = 16777216$ colores distintos, que son m·s de los
+dispone de hasta $256^3 = 16777216$ colores distintos, que son m√°s de los
 que el ojo humano puede distinguir.
 
 \begin{description}
 
 \item[CMYK] hace referencia a {\bf Cyan, Magenta, Yellow, inK}, que es
 la  forma de  descomponer los  colores en  las imprentas: los tres colores
-b·sicos de la pintura (cyan, magenta y amarillo) y una cuarta componente
+b√°sicos de la pintura (cyan, magenta y amarillo) y una cuarta componente
 de color negro (tinta). Los modelos anteriores descomponen los colores
-bas·ndose  en la luz  porque est·n diseÒamos para las pantallas de ordenador y
-televisiÛn, pero el modelo CMYK descompone los colores bas·ndose en las
+bas√°ndose  en la luz  porque est√°n dise√±amos para las pantallas de ordenador y
+televisi√≥n, pero el modelo CMYK descompone los colores bas√°ndose en las
 mezclas de tintas empleadas en la imprenta.
 
-Debido a que \gimp ha sido diseÒado para gr·ficos generados por ordenador
-y no para trabajos  de preediciÛn  e impresiÛn, no  soporta este  modelo de
+Debido a que \gimp ha sido dise√±ado para gr√°ficos generados por ordenador
+y no para trabajos  de preedici√≥n  e impresi√≥n, no  soporta este  modelo de
 colores.
 
 \item[Escala de grises]  Este modelo es similar  al modelo HSV
-pero cada pÌxel  sÛlo tiene una componente que es  la intensidad. Esta
-forma  de representar  el color  sÛlo permite  representar escalas  de
-grises, por lo que cada pÌxel tiene un ˙nico valor que va de 0 (negro)
+pero cada p√≠xel  s√≥lo tiene una componente que es  la intensidad. Esta
+forma  de representar  el color  s√≥lo permite  representar escalas  de
+grises, por lo que cada p√≠xel tiene un √∫nico valor que va de 0 (negro)
 a 255 (blanco).
 
-\item[Indexado] Por ˙ltimo  vamos a recordar un modelo  de colores que
-no suele  usarse mucho. Algunas  veces la forma de  almacenar im·genes
-est· muy limitada  y hay que utilizar un n˙mero  m·ximo de colores muy
-reducido (por ejemplo 16 Û 256). En estos casos el valor de  cada pÌxel
-es un Ìndice que  hace referencia a  un color que  est· en una  tabla de
+\item[Indexado] Por √∫ltimo  vamos a recordar un modelo  de colores que
+no suele  usarse mucho. Algunas  veces la forma de  almacenar im√°genes
+est√° muy limitada  y hay que utilizar un n√∫mero  m√°ximo de colores muy
+reducido (por ejemplo 16 √≥ 256). En estos casos el valor de  cada p√≠xel
+es un √≠ndice que  hace referencia a  un color que  est√° en una  tabla de
 colores  previamente fijada  para  la  imagen, denominada ``paleta de colores''.
 
 \end{description}
@@ -159,59 +159,59 @@ colores  previamente fijada  para  la  imagen, denominada ``paleta de colores''.
 \subsection{Transparencias}
 \index{\gimp!transparencias}
 
-En  ocasiones  hay   que  trabajar  con  im·genes   que  tienen  zonas
-transparentes, donde los pÌxeles no tienen ning˙n color (simplemente
-no est·n). Sin embargo esa  propiedad de ``no estar'' no se
+En  ocasiones  hay   que  trabajar  con  im√°genes   que  tienen  zonas
+transparentes, donde los p√≠xeles no tienen ning√∫n color (simplemente
+no est√°n). Sin embargo esa  propiedad de ``no estar'' no se
 puede representar en los modelos de color que \gimp puede manejar. Por
-eso  se aÒade  un bit  (o byte)  adicional a  cada pÌxel  que representa  la
-transparencia  y esta  informaciÛn adicional  pasa a  formar un  nuevo
+eso  se a√±ade  un bit  (o byte)  adicional a  cada p√≠xel  que representa  la
+transparencia  y esta  informaci√≥n adicional  pasa a  formar un  nuevo
 canal  denominado ``canal  alpha''.
-%  M·s sobre  canales  en la  p·gina \pageref{gimp.canales}
+%  M√°s sobre  canales  en la  p√°gina \pageref{gimp.canales}
 
 
 
 % OBSOLETO
-% Antes  de  continuar  permÌteme  una  aclaraciÛn.  Encontrar·s  en  el
+% Antes  de  continuar  perm√≠teme  una  aclaraci√≥n.  Encontrar√°s  en  el
 % libro ejemplos  duplicados con dos  versiones de \gimp  con interfaces
 % diferentes. Cuando esto  suceda el primer ejemplo (o  de la izquierda)
-% corresponde a la versiÛn 1.2.3 (estable) y el segundo ejemplo (o el de
-% la derecha) corresponde a la versiÛn 1.3.15 (inestable).
+% corresponde a la versi√≥n 1.2.3 (estable) y el segundo ejemplo (o el de
+% la derecha) corresponde a la versi√≥n 1.3.15 (inestable).
 
 \section{Primeros pasos}
 
-La interfaz de usuario de \gimp resulta resulta extraÒa y poco intuitiva
-a simple vista, con un  caracterÌstico estilo que
+La interfaz de usuario de \gimp resulta resulta extra√±a y poco intuitiva
+a simple vista, con un  caracter√≠stico estilo que
 la  diferencia  de  las  interfaces de  programas  similares  como  el
-Photoshop  de Adobe.  La mayorÌa  de aplicaciones  de manipulaciÛn  de
-gr·ficos tienen una  ventana que ocupa toda la pantalla,  dentro de la
+Photoshop  de Adobe.  La mayor√≠a  de aplicaciones  de manipulaci√≥n  de
+gr√°ficos tienen una  ventana que ocupa toda la pantalla,  dentro de la
 cual se crean  nuevas ventanas. Esto es lo que  se denomina un entorno
-MDI. \gimp por el contrario tiene una pequeÒa ventana que apenas ocupa
-espacio  en  la  pantalla,  con  un escueto  men˙  y  los  botones  de
-herramientas y di·logos imprescindibles.
+MDI. \gimp por el contrario tiene una peque√±a ventana que apenas ocupa
+espacio  en  la  pantalla,  con  un escueto  men√∫  y  los  botones  de
+herramientas y di√°logos imprescindibles.
 
-Esta interfaz  produce la sensaciÛn  a primera  vista de que  \gimp no
-tiene apenas herramientas ni opciones de  men˙, pero no es verdad. Tan
-pronto  como crees  o abras  una imagen  ver·s que  al clickar  con el
-\bdr aparecer·  un men˙  lleno de  posibilidades que  exploraremos m·s
+Esta interfaz  produce la sensaci√≥n  a primera  vista de que  \gimp no
+tiene apenas herramientas ni opciones de  men√∫, pero no es verdad. Tan
+pronto  como crees  o abras  una imagen  ver√°s que  al clickar  con el
+\bdr aparecer√°  un men√∫  lleno de  posibilidades que  exploraremos m√°s
 adelante.
 
 Versiones anteriores de \gimp
-mostraban un di·logo de  instalaciÛn de usuario al ejecutarlo por primera vez.
-Este di·logo, que se refiere realmente a la personalizaciÛn del programa,
-preguntaba acerca de la resoluciÛn de la pantalla (suele ser 72 dpi),
+mostraban un di√°logo de  instalaci√≥n de usuario al ejecutarlo por primera vez.
+Este di√°logo, que se refiere realmente a la personalizaci√≥n del programa,
+preguntaba acerca de la resoluci√≥n de la pantalla (suele ser 72 dpi),
 los  directorios donde  guardar  ciertos objetos (brochas,  patrones,
-gradientes, etc.) y  el directorio de intercambio. Dado  que el di·logo
-estaba en espaÒol resultaba muy f·cil de seguir. Aceptar las opciones
+gradientes, etc.) y  el directorio de intercambio. Dado  que el di√°logo
+estaba en espa√±ol resultaba muy f√°cil de seguir. Aceptar las opciones
 por defecto era suficiente.
 
 En las versiones recientes de \gimp este dialogo se ha obviado para dar una
-mejor bienvenida al usuario ahorr·ndole todas esas preguntas. Conviene recordar,
-sin embargo, una precauciÛn necesaria a la hora de trabajar en entornos
+mejor bienvenida al usuario ahorr√°ndole todas esas preguntas. Conviene recordar,
+sin embargo, una precauci√≥n necesaria a la hora de trabajar en entornos
 con sistemas de ficheros remotos como NFS o Samba, en los que el directorio
-personal del usuario se encuentra en una m·quina distinta de la que ejecuta
-\gimp. En estos entornos se conveniente modificar la opciÛn {\sf Carpeta
+personal del usuario se encuentra en una m√°quina distinta de la que ejecuta
+\gimp. En estos entornos se conveniente modificar la opci√≥n {\sf Carpeta
 de intercambio} para que utilice {\tt /tmp}, como indica el texto de ayuda
-del di·logo de configuraciÛn correspondiente del \gimp
+del di√°logo de configuraci√≥n correspondiente del \gimp
 mostrado en la figura \ref{gimp-2.2_swap}.
 
 \begin{figura}{gimp-2.2_swap}{0.99}
@@ -223,26 +223,26 @@ mostrado en la figura \ref{gimp-2.2_swap}.
 
 Cuando finalmente \gimp se presenta ante nosotros vemos la ventana del
 ``consejo diario'',  donde podemos  leer trucos  y consejos  que \gimp
-tendr· la amabilidad de enseÒarnos. Es una buena idea leer estos consejos
+tendr√° la amabilidad de ense√±arnos. Es una buena idea leer estos consejos
 al menos una vez antes de utilizar \gimp por primera vez, puesto que
-proporciona informaciÛn muy ˙til y a en ocasiones poco evidente.
+proporciona informaci√≥n muy √∫til y a en ocasiones poco evidente.
 %
 Puedes regresar a la ventana del ``consejo diario'' para leer
-los consejos de \gimp en cualquier momento a travÈs del men˙
-\textsf{A\underbar{y}uda} \lyxarrow{} \textsf{\underbar{C}onsejo del dÌa} 
+los consejos de \gimp en cualquier momento a trav√©s del men√∫
+\textsf{A\underbar{y}uda} \lyxarrow{} \textsf{\underbar{C}onsejo del d√≠a} 
 en la ventana principal.
 
 La interfaz inical de \gimp (figura \ref{gimp-2.2_first})
-dedica una ventana separada para los di·logos
-de capas, canales y caminos que veremos m·s adelante. TambiÈn proporciona,
+dedica una ventana separada para los di√°logos
+de capas, canales y caminos que veremos m√°s adelante. Tambi√©n proporciona,
 en la ventana principal, un espacio opcional con las opciones actuales
-de la herramienta seleccionada. Si bien todo esto es muy ˙til cuando se lo
+de la herramienta seleccionada. Si bien todo esto es muy √∫til cuando se lo
 necesita, para empezar a manejar \gimp es prescindible. 
 
 Dado que la interfaz de \gimp es bastante flexible, dejaremos en manos
-del lector la configuraciÛn de la misma, pudieron cerrar di·logos que
-no utilice o por el contrario aÒadiendo los que considere necesarios.
-La figura \ref{gimp-2.2_minimal} muestra una configuraciÛn minimalista
+del lector la configuraci√≥n de la misma, pudieron cerrar di√°logos que
+no utilice o por el contrario a√±adiendo los que considere necesarios.
+La figura \ref{gimp-2.2_minimal} muestra una configuraci√≥n minimalista
 de la interfaz.
 
 \begin{figura}{gimp-2.2_first}{0.88}
@@ -250,17 +250,17 @@ de la interfaz.
 \end{figura}
 
 \begin{figura}{gimp-2.2_minimal}{0.18}
-\caption{ConfiguraciÛn minimalista de la interfaz de \gimp 2.2}
+\caption{Configuraci√≥n minimalista de la interfaz de \gimp 2.2}
 \end{figura}
 
 
 
-\section{Maniobras b·sicas}
+\section{Maniobras b√°sicas}
 
 Es importante que  tengas claros los conceptos  del anterior apartado.
-Si te  queda alguna duda  sobre los mismos vuÈlvelo  a leer. Si  no es
-suficiente busca informaciÛn en Internet,  pregunta a tu experto local
-o consulta alg˙n libro introductorio al manejo de im·genes digitales.
+Si te  queda alguna duda  sobre los mismos vu√©lvelo  a leer. Si  no es
+suficiente busca informaci√≥n en Internet,  pregunta a tu experto local
+o consulta alg√∫n libro introductorio al manejo de im√°genes digitales.
 
 Si  ya los  tienes claros,  pasemos a  explorar las  posibilidades que
 \gimp te ofrece.
@@ -268,83 +268,83 @@ Si  ya los  tienes claros,  pasemos a  explorar las  posibilidades que
 \subsection{Crear una imagen nueva}
 
 Para  empezar a  familiarizarte con  el  entorno de  trabajo de  \gimp
-empieza por  crear una imagen  nueva. Para  ello elige la  opciÛn {\sf
-Nuevo\dots} del men˙  de fichero ({\sf Fich.} o {\sf  Archivo}) o bien
-pulsa la combinaciÛn  de teclas {\tt C-N}. Ver·s un  cuadro de di·logo
+empieza por  crear una imagen  nueva. Para  ello elige la  opci√≥n {\sf
+Nuevo\dots} del men√∫  de fichero ({\sf Fich.} o {\sf  Archivo}) o bien
+pulsa la combinaci√≥n  de teclas {\tt C-N}. Ver√°s un  cuadro de di√°logo
 como los siguientes:
 
 \begin{figura}{gimp_new_image}{0.8}
-\caption{Cuadros de di·logo para crear una nueva imagen}
+\caption{Cuadros de di√°logo para crear una nueva imagen}
 \end{figura}
 
-En la  parte superior del  di·logo puedes  introducir la anchura  y la
-altura de la  imagen en pÌxeles. Si prefieres generar  el tamaÒo de tu
-imagen a partir del tamaÒo real que quieres obtener en la impresora (u
-otro  medio) la  parte central  del di·logo  te permite  establecer el
-tamaÒo de tu imagen en  milÌmetros (mm), centÌmetros (cm), puntos (pt)
-y picas (pc)  asÌ como la resoluciÛn que deseas  en pÌxeles por unidad
-de tamaÒo (que puede ser mm, cm, pt o pc).
+En la  parte superior del  di√°logo puedes  introducir la anchura  y la
+altura de la  imagen en p√≠xeles. Si prefieres generar  el tama√±o de tu
+imagen a partir del tama√±o real que quieres obtener en la impresora (u
+otro  medio) la  parte central  del di√°logo  te permite  establecer el
+tama√±o de tu imagen en  mil√≠metros (mm), cent√≠metros (cm), puntos (pt)
+y picas (pc)  as√≠ como la resoluci√≥n que deseas  en p√≠xeles por unidad
+de tama√±o (que puede ser mm, cm, pt o pc).
 
-Finalmente en la  parte inferior del di·logo puedes elegir  el tipo de
+Finalmente en la  parte inferior del di√°logo puedes elegir  el tipo de
 imagen y el tipo de relleno. El tipo de imagen debe ser {\sf RGB} para
-im·genes en color o bien {\sf Tonos  de gris} o {\sf Escala de grises}
-para im·genes  en blanco y  negro. El tipo  de relleno puede  ser {\sf
+im√°genes en color o bien {\sf Tonos  de gris} o {\sf Escala de grises}
+para im√°genes  en blanco y  negro. El tipo  de relleno puede  ser {\sf
 Frente} para  rellenar la imagen  con el  color de primer  plano, {\sf
 Fondo}  para  rellenar  la  imagen  con el  color  de  segundo  plano,
 {\sf  Blando} para  rellenar la  imagen de  color blanco  o bien  {\sf
-Transparente}  para  no rellenar  la  imagen  con ning˙n  color,  sino
+Transparente}  para  no rellenar  la  imagen  con ning√∫n  color,  sino
 dejarla transparente.
 
-El botÛn {\sf Restaurar} o {\sf Reiniciar} reestablece los valores del
-di·logo a sus valores por defecto.
+El bot√≥n {\sf Restaurar} o {\sf Reiniciar} reestablece los valores del
+di√°logo a sus valores por defecto.
 
 \subsection{Abrir un fichero de imagen}
 
-Probablemente ya  tendr·s alg˙n  fichero de  imagen que  puedas abrir.
-Pues es tan  f·cil como eligir la opciÛn {\sf  Abrir\dots} del men˙ de
-fichero ({\sf Fich.}  o {\sf Archivo}) o bien pulsa  la combinaciÛn de
-teclas {\tt  C-O}. El  cuadro de  di·logo es casi  igual al  cuadro de
-di·logo de  abrir fichero de GTK+,  excepto por la posibilidad  de ver
-una vista previa en miniatura de las im·genes antes de abrirlas.
+Probablemente ya  tendr√°s alg√∫n  fichero de  imagen que  puedas abrir.
+Pues es tan  f√°cil como eligir la opci√≥n {\sf  Abrir\dots} del men√∫ de
+fichero ({\sf Fich.}  o {\sf Archivo}) o bien pulsa  la combinaci√≥n de
+teclas {\tt  C-O}. El  cuadro de  di√°logo es casi  igual al  cuadro de
+di√°logo de  abrir fichero de GTK+,  excepto por la posibilidad  de ver
+una vista previa en miniatura de las im√°genes antes de abrirlas.
 
-Este cuadro de di·logo tambiÈn tiene un desplegable para determinar el
+Este cuadro de di√°logo tambi√©n tiene un desplegable para determinar el
 tipo de fichero que quieres abrir.  Por defecto \gimp reconoce el tipo
-de los ficheros autom·ticamente por el nombre y la cabecera del mismo.
-Si fallara tienes en ese desplegable  la opciÛn de especificar el tipo
-de fichero que est·s intentando abrir.
+de los ficheros autom√°ticamente por el nombre y la cabecera del mismo.
+Si fallara tienes en ese desplegable  la opci√≥n de especificar el tipo
+de fichero que est√°s intentando abrir.
 
 \subsection{Guardar una imagen en un fichero}
 
 Cuando quieras guardar una imagen en un fichero puede que te sorprenda
-que en el men˙ {\sf Fich.} Û  {\sf Archivo} no hay ninguna opciÛn para
-ello. Esto  es asÌ porque  quieres guardar {\bf  una} imagen y  por lo
-tanto es una operaciÛn que afecta a {\bf una} imagen en concreto.
+que en el men√∫ {\sf Fich.} √≥  {\sf Archivo} no hay ninguna opci√≥n para
+ello. Esto  es as√≠ porque  quieres guardar {\bf  una} imagen y  por lo
+tanto es una operaci√≥n que afecta a {\bf una} imagen en concreto.
 
-Para  acceder a  esta operaciÛn  debes  utilizar el  men˙ que  aparece
+Para  acceder a  esta operaci√≥n  debes  utilizar el  men√∫ que  aparece
 cuando clicas con el  \bdr en la ventana de la  imagen. Si has abierto
-un fichero de  imagen y sÛlo quieres grabar los  cambios puedes pulsar
-la combinaciÛn de teclas {\tt C-S} y ser· suficiente.
+un fichero de  imagen y s√≥lo quieres grabar los  cambios puedes pulsar
+la combinaci√≥n de teclas {\tt C-S} y ser√° suficiente.
 
 Si has  creado una imagen nueva  y quieres guardarla por  primera vez,
-puedes usar la  misma combinaciÛn de teclas, pero  aparecer· un cuadro
-de  di·logo para  preguntarte  por el  nombre del  fichero  en el  que
-la  quieres guardar  y  algunos  detalles m·s.  Lo  mismo suceder·  si
+puedes usar la  misma combinaci√≥n de teclas, pero  aparecer√° un cuadro
+de  di√°logo para  preguntarte  por el  nombre del  fichero  en el  que
+la  quieres guardar  y  algunos  detalles m√°s.  Lo  mismo suceder√°  si
 en  cualquier  imagen  eliges {\sf  Archivo}\lyxarrow{\sf  Guardar
-como...} en el men˙ de la imagen.
+como...} en el men√∫ de la imagen.
 
 \begin{figura}{gimp_save_as}{0.95}
-\caption{Cuadros de di·logo para guardar una imagen a fichero}
+\caption{Cuadros de di√°logo para guardar una imagen a fichero}
 \end{figura}
 
-Este  cuadro de  di·logo  es casi  idÈntido al  cuadro  de di·logo  de
+Este  cuadro de  di√°logo  es casi  id√©ntido al  cuadro  de di√°logo  de
 guardar  fichero de  GTK+, salvo  por  el desplegable  que te  permite
 elegir el formato de fichero con  el que quieres guardar la imagen. Si
-este desplegable eliges {\sf Por extensiÛn} \gimp adivinar· el formato
-de fichero que deseas usar seg˙n  la extensiÛn que le pongas al nombre
+este desplegable eliges {\sf Por extensi√≥n} \gimp adivinar√° el formato
+de fichero que deseas usar seg√∫n  la extensi√≥n que le pongas al nombre
 del fichero.
 
-Tanto si usas la  opciÛn {\sf Por extensiÛn} como si  no ver·s que hay
-algunas opciones  que no puedes  usar. Para  comprender a quÈ  se debe
+Tanto si usas la  opci√≥n {\sf Por extensi√≥n} como si  no ver√°s que hay
+algunas opciones  que no puedes  usar. Para  comprender a qu√©  se debe
 esto demos un repaso por los distintos formatos de ficheros soportados
 por \gimp
 
@@ -352,12 +352,12 @@ por \gimp
 % by Lasarux, mods by miguev
 \index{\gimp!formatos de fichero}
 
-Del  formato  del  fichero  que utilices  para  guardar  tus  im·genes
-depender·  la calidad  de  las  mismas (las  fotos  almacenadas en  un
-formato que permita bastante compresiÛn normalmente lo hace a costa de
-su calidad)  y el espacio  que ocupe. Algunos adem·s  pueden almacenar
-informaciÛn relativa al  tamaÒo de la foto para la  impresiÛn (TIFF) e
-informaciÛn sobre su transparencia (GIF, PNG).
+Del  formato  del  fichero  que utilices  para  guardar  tus  im√°genes
+depender√°  la calidad  de  las  mismas (las  fotos  almacenadas en  un
+formato que permita bastante compresi√≥n normalmente lo hace a costa de
+su calidad)  y el espacio  que ocupe. Algunos adem√°s  pueden almacenar
+informaci√≥n relativa al  tama√±o de la foto para la  impresi√≥n (TIFF) e
+informaci√≥n sobre su transparencia (GIF, PNG).
 
 \begin{description}
 
@@ -365,15 +365,15 @@ informaciÛn sobre su transparencia (GIF, PNG).
 permite guardar una imagen en forma de texto Ascii Art, con las mismas
 varientes que permite el programa {\sf aview}.
 
-\item [BMP]  fuÈ desarrollado  e impulsado por  Microsoft, propietario
+\item [BMP]  fu√© desarrollado  e impulsado por  Microsoft, propietario
 del mismo. BMP  es una abreviatura de Windows BitMaP  (Mapa de Bits de
-Windows). Este formato permite guadar im·genes en RGB o indexadas, sin
-comprimir o con la compresiÛn RLE (sin pÈrdidas).
+Windows). Este formato permite guadar im√°genes en RGB o indexadas, sin
+comprimir o con la compresi√≥n RLE (sin p√©rdidas).
 
 \item [CEL] es  originario del Animator Studio. Es  muy utilizado para
-guardar {\em sprites}, o mejor dicho im·genes pequeÒas para juegos.
+guardar {\em sprites}, o mejor dicho im√°genes peque√±as para juegos.
 
-\item [FITS] es el formato standard en AstronomÌa.
+\item [FITS] es el formato standard en Astronom√≠a.
 
 \item [FLI] fue  originalmete creado por Autodesk  para la realizacion
 de animaciones virtuales con ordenador.
@@ -382,115 +382,115 @@ de animaciones virtuales con ordenador.
 
 \item [GBR] es para las Brochas de \gimp (Gimp brush).
 
-\item [GIF]  (Formato de  Intercambio de  Gr·ficos) fue  inventado por
-CompuServe y es uno de los est·ndares de las im·genes en la World Wide
+\item [GIF]  (Formato de  Intercambio de  Gr√°ficos) fue  inventado por
+CompuServe y es uno de los est√°ndares de las im√°genes en la World Wide
 Web. Sin embargo, las patentes de Unisys e IBM que cubren el algoritmo
-de compresiÛn LZW que es utilizado  para crear los archivos GIF, hacen
+de compresi√≥n LZW que es utilizado  para crear los archivos GIF, hacen
 imposible tener software libre que genere GIFs adecuados.
 
 \item  [GIH]  lo usa  \gimp  para  guardar  las brochas  animadas  que
-aparecen  en las  herramientas. GIH  es el  acrÛninimo de  (GIMP Image
+aparecen  en las  herramientas. GIH  es el  acr√≥ninimo de  (GIMP Image
 Hose).
 
 \item [GIcon] es  el formato nativo de los iconos  \gimp. Este formato
-sÛlo permite escala de grises.
+s√≥lo permite escala de grises.
 
 \item [HRZ] es siempre a 256x240 pixels y es (o mejor, era) usado para
-ediciÛn de im·genes de TV. No tiene compresiÛn.
+edici√≥n de im√°genes de TV. No tiene compresi√≥n.
 
-\item [HTML] genera  una tabla HTML que emula cada  pÌxel de la imagen
-utilizando una celda vacÌa con el color de fondo igual al del pÌxel.
+\item [HTML] genera  una tabla HTML que emula cada  p√≠xel de la imagen
+utilizando una celda vac√≠a con el color de fondo igual al del p√≠xel.
 
 \item [MNG] (Multiple-image Network Graphics)  es un formato libre que
-substituir· a los GIFs animados.
+substituir√° a los GIFs animados.
 
-\item [Jpeg]  es acrÛnimo de  Joint Photographic Experts  Group (UniÛn
-de  Grupo  de  Expertos  en  FotografÌa)  y  funciona  con  todas  las
-profundidades de color. La compresiÛn  de la imagen es ajustable, pero
-altas compresiones daÒar·n la calidad final  de la foto, ya que es una
-compresiÛn con pÈrdidas.
+\item [Jpeg]  es acr√≥nimo de  Joint Photographic Experts  Group (Uni√≥n
+de  Grupo  de  Expertos  en  Fotograf√≠a)  y  funciona  con  todas  las
+profundidades de color. La compresi√≥n  de la imagen es ajustable, pero
+altas compresiones da√±ar√°n la calidad final  de la foto, ya que es una
+compresi√≥n con p√©rdidas.
 
-\item [MPEG]  es acrÛnimo  de Motion Picture  Experts Group  (Grupo de
-Expertos  en  AnimaciÛn). Es  un  bien  conocido  de los  formatos  de
-animaciÛn.
+\item [MPEG]  es acr√≥nimo  de Motion Picture  Experts Group  (Grupo de
+Expertos  en  Animaci√≥n). Es  un  bien  conocido  de los  formatos  de
+animaci√≥n.
 
 \item [PAT] es el formato nativo de Patrones (Patterns) de \gimp
 
-\item [PCX] este formato gr·fico fue creado por ZSoft y difundido por 
+\item [PCX] este formato gr√°fico fue creado por ZSoft y difundido por 
 la familia de programas de dibujo Paintbrush.                         
 
 \item [PIX] este  es el formato usado por  el programa Alias/Wavefront
-en estaciones SGI (Silicon Graphics). SÛlo permite im·genes a color de
-24-bits e im·genes en escala de grises de 8-bits.
+en estaciones SGI (Silicon Graphics). S√≥lo permite im√°genes a color de
+24-bits e im√°genes en escala de grises de 8-bits.
 
 \item [PNG] El  formato PNG (Portable Network Graphics)  es un formato
-gr·fico que usa compresiÛn sin  pÈrdidas (loseless compression). Es el
-formato actualmente  recomendado por  la organizaciÛn W3C  (World Wide
-Web Consortium)  para im·genes sin  pÈrdida de calidad.  Permite canal
+gr√°fico que usa compresi√≥n sin  p√©rdidas (loseless compression). Es el
+formato actualmente  recomendado por  la organizaci√≥n W3C  (World Wide
+Web Consortium)  para im√°genes sin  p√©rdida de calidad.  Permite canal
 alpha de 8 bits.
 
-\item [PNM] AcrÛnimo de Portable aNyMap. PNM permite paleta de colores
-indexada, escala de grises e im·genes a todo color.
+\item [PNM] Acr√≥nimo de Portable aNyMap. PNM permite paleta de colores
+indexada, escala de grises e im√°genes a todo color.
 
-\item [PSD] formato usado por  el Adobe Photoshop (\gimp mantendr· las
+\item [PSD] formato usado por  el Adobe Photoshop (\gimp mantendr√° las
 capas existentes).
 
-\item [PSP]  formato usado por  el PaintShop Pro (\gimp  mantendr· las
+\item [PSP]  formato usado por  el PaintShop Pro (\gimp  mantendr√° las
 capas existentes).
 
 \item  [PostScript  (PS)]  PostScript  fue creado  por  Adobe.  Es  un
-lenguaje  para  describir  p·ginas,  y  es  usado  principalmente  por
-impresoras y otros dispositivos de  impresiÛn. Es una manera estupenda
-de distribuir documentos. TambiÈn  podemos leer ficheros PDF (Acrobat)
-con esta opciÛn.
+lenguaje  para  describir  p√°ginas,  y  es  usado  principalmente  por
+impresoras y otros dispositivos de  impresi√≥n. Es una manera estupenda
+de distribuir documentos. Tambi√©n  podemos leer ficheros PDF (Acrobat)
+con esta opci√≥n.
 
 \item [SGI]  es el  formato originalmente  usado por  las aplicaciones
-gr·ficas de SGI.
+gr√°ficas de SGI.
 
-\item  [SUNRAS] acrÛnimo  de  SUN RASterfile.  Este  formato es  usado
+\item  [SUNRAS] acr√≥nimo  de  SUN RASterfile.  Este  formato es  usado
 principalmente por las diferentes  aplicaciones de Sun. Permite escala
 de grises, color indexado y todo color.
 
-\item [TGA]  este formato permite  compresiÛn a 8,  16, 24, 32  bits de
+\item [TGA]  este formato permite  compresi√≥n a 8,  16, 24, 32  bits de
 profundidad.
 
-\item [TIFF] es acrÛnimo de Tagged Image File Format. Este formato fuÈ
-diseÒado para ser un estandar. Este es un formato de alta calidad y es
-perfecto  cuando quieras  importar  im·genes de  otros programas  como
+\item [TIFF] es acr√≥nimo de Tagged Image File Format. Este formato fu√©
+dise√±ado para ser un estandar. Este es un formato de alta calidad y es
+perfecto  cuando quieras  importar  im√°genes de  otros programas  como
 FrameWork o Corel Draw.
 
-% \item  [URL] acrÛnimo  de Uniform  Resource Locator  (Localizador de
-% Recursos  Uniforme).  Podr·s  descargar una  im·gen  desde  internet
-% dirÈctamente al  {\sf GIMP}.  El formato del  nombre del  fichero es
-% {\tt ftp://direcciÛn/archivo} o {\tt http://direcciÛn/archivo}.
+% \item  [URL] acr√≥nimo  de Uniform  Resource Locator  (Localizador de
+% Recursos  Uniforme).  Podr√°s  descargar una  im√°gen  desde  internet
+% dir√©ctamente al  {\sf GIMP}.  El formato del  nombre del  fichero es
+% {\tt ftp://direcci√≥n/archivo} o {\tt http://direcci√≥n/archivo}.
 
-% \item [WMF] acrÛnimo de Windows Meta File (Meta Fichero de Windows).
-% Es un formato que permite guardar tanto gr·ficos vectoriales como en
+% \item [WMF] acr√≥nimo de Windows Meta File (Meta Fichero de Windows).
+% Es un formato que permite guardar tanto gr√°ficos vectoriales como en
 % mapas de bits.
 
 \item [XCF] es el  formato nativo de \gimp y es  el que debes utilizar
-siempre  que  puedas para  guardar  tus  im·genes mientras  las  estÈs
+siempre  que  puedas para  guardar  tus  im√°genes mientras  las  est√©s
 manipulando. Cuando termines de  manipularlas puedes guardar una copia
-en otro formato m·s exportable,  pero para mantener la calidad durante
-el proceso de manipulaciÛn es  conveniente usar este formato. No tiene
-ninguna compresiÛn.
+en otro formato m√°s exportable,  pero para mantener la calidad durante
+el proceso de manipulaci√≥n es  conveniente usar este formato. No tiene
+ninguna compresi√≥n.
 
 \item [XWD] (X Window Dump) es  el formato de las capturas tomadas por
-X-Window. SÛlo se utiliza de forma temporal.
+X-Window. S√≥lo se utiliza de forma temporal.
 
-\item  [XPM]  (X  PixMap)  es   un  formato  para  im·genes  pequeÒas,
-com˙nmente usado  para los  iconos de  las aplicaciones  de X-Windows.
+\item  [XPM]  (X  PixMap)  es   un  formato  para  im√°genes  peque√±as,
+com√∫nmente usado  para los  iconos de  las aplicaciones  de X-Windows.
 Permite canal alpha de 1 bit.
 
-\item [bzip2] comprime la imagen con  el compresor {\sf bzip2} (el m·s
+\item [bzip2] comprime la imagen con  el compresor {\sf bzip2} (el m√°s
 eficaz existente en Linux)
 
 \item [gzip] comprime  la imagen con el compresor {\sf  bzip2} (no tan
-eficaz como bzip2 pero sÌ m·s r·pido)
+eficaz como bzip2 pero s√≠ m√°s r√°pido)
 
 \item [XJT]  es un formato  que permite guardar  todo al igual  que el
 formato  XCF, pero  de una  forma sencilla  que permite  comprimir las
-im·genes y  recuperarlas sin necesidad  de utilizar \gimp.  Un fichero
+im√°genes y  recuperarlas sin necesidad  de utilizar \gimp.  Un fichero
 con este formato es realmente un  fichero tar que contiene las capas y
 los caminos en ficheros JPEG y un fichero de texto con las propiedades
 de las capas.
@@ -499,26 +499,26 @@ de las capas.
 
 \subsubsection{Elegir el formato adecuado}
 
-Como   ves    \gimp   puede    guardar   las   im·genes    en   muchos
-formatos  diferentes,  pero  la   elecciÛn  del  formato  es  problema
-tuyo\footnote{Recuerda: ``El problema es la elecciÛn''}. Para ayudarte
-en esta  elecciÛn vamos a considerar  la utilidad de los  formatos m·s
+Como   ves    \gimp   puede    guardar   las   im√°genes    en   muchos
+formatos  diferentes,  pero  la   elecci√≥n  del  formato  es  problema
+tuyo\footnote{Recuerda: ``El problema es la elecci√≥n''}. Para ayudarte
+en esta  elecci√≥n vamos a considerar  la utilidad de los  formatos m√°s
 usuales:
 
 \begin{description}
 
 \item [XCF] es  el formato adecuado para guardar un  trabajo a medias.
-Si  est·s retocando  una  foto, haciendo  una  composiciÛn compleja  o
+Si  est√°s retocando  una  foto, haciendo  una  composici√≥n compleja  o
 cualquier trabajo en  el que tengas capas,  selecciones, caminos, etc.
-el formato XCF es el m·s apropiado  puesto que es el formato nativo de
+el formato XCF es el m√°s apropiado  puesto que es el formato nativo de
 \gimp y  te permite conservar  todos los  atributos de la  imagen. Sin
-embargo este  formato no  tiene compresiÛn alguna  y adem·s  no puedes
+embargo este  formato no  tiene compresi√≥n alguna  y adem√°s  no puedes
 leerlo con otros programas.
 
-\item [PSD]  es el formato  del {\sf Adobe  PhotoShop} y en  teorÌa te
+\item [PSD]  es el formato  del {\sf Adobe  PhotoShop} y en  teor√≠a te
 permite  consevar todos  los atributos  de la  imagen, con  la ventaja
-aÒadida  de que  podr·s  abrirlo con  {\sf  PhotoShop}. Tampoco  tiene
-compresiÛn.
+a√±adida  de que  podr√°s  abrirlo con  {\sf  PhotoShop}. Tampoco  tiene
+compresi√≥n.
 
 \item  [gzip y  bzip2] te  permiten comprimir  tus ficheros  si tienes
 escasez de espacio y necesitas guardar tu imagen en formato XCF o PSD.
@@ -526,94 +526,94 @@ El  efecto es  el  mismo  que si  comprimieras  los  ficheros con  los
 comandos  {\tt gzip}  o {\tt  bzip2},  pero \gimp  te permite  hacerlo
 directamente sin necesidad de utilizar los comandos.
 
-\item [JPEG] es el formato de  fichero m·s popular en Internet, debido
-a  que  permite reducir  mucho  el  tamaÒo  de  un fichero  de  imagen
-aplicando  una  compresiÛn  {\bf  con} pÈrdidas.  Esta  compresiÛn  es
-adecuada  para  las  fotografÌas,  pero no  tanto  para  los  gr·ficos
+\item [JPEG] es el formato de  fichero m√°s popular en Internet, debido
+a  que  permite reducir  mucho  el  tama√±o  de  un fichero  de  imagen
+aplicando  una  compresi√≥n  {\bf  con} p√©rdidas.  Esta  compresi√≥n  es
+adecuada  para  las  fotograf√≠as,  pero no  tanto  para  los  gr√°ficos
 generados por ordenador. No permite transparencias ni capas.
 
-\item [PNG] es el formato m·s adecuado para los gr·ficos generados por
-ordenador,  ya que  aplica una  compresiÛn {\bf  sin} pÈrdidas  que se
-ajusta mejor a Èstos que la compresiÛn del formato JPEG.
+\item [PNG] es el formato m√°s adecuado para los gr√°ficos generados por
+ordenador,  ya que  aplica una  compresi√≥n {\bf  sin} p√©rdidas  que se
+ajusta mejor a √©stos que la compresi√≥n del formato JPEG.
 
-\item  [PostScript] (usualmente  encapsulado) es  la opciÛn  necesaria
-para incluir tus im·genes en un  documento escrito en \LaTeX (ver tema
+\item  [PostScript] (usualmente  encapsulado) es  la opci√≥n  necesaria
+para incluir tus im√°genes en un  documento escrito en \LaTeX (ver tema
 \ref{latex.tex} o \LyX (ver tema \ref{lyx.tex})
 
 \item [XPM] es el formato  usual para guardar iconos para aplicaciones
-X-Windows.  Sin  embargo  tambiÈn  puedes  usar  el  formato  PNG  que
-adem·s te  permite tener  256 niveles de  transparencia en  cada pÌxel
-(canal  alpha de  8 bits)  mientras que  XPM sÛlo  permite 2  (opaco o
+X-Windows.  Sin  embargo  tambi√©n  puedes  usar  el  formato  PNG  que
+adem√°s te  permite tener  256 niveles de  transparencia en  cada p√≠xel
+(canal  alpha de  8 bits)  mientras que  XPM s√≥lo  permite 2  (opaco o
 transparente, canal alpha de 1 bit).
 
-\item  [TIFF]  es  un  formato   de  alta  calidad  ˙til  para  enviar
-fotografÌas y diseÒos  por ordenador a las imprentas o  a personas que
+\item  [TIFF]  es  un  formato   de  alta  calidad  √∫til  para  enviar
+fotograf√≠as y dise√±os  por ordenador a las imprentas o  a personas que
 no trabajan con  \gimp. Permite guardar canal alpha de  8 bits y tiene
-compresiÛn sin pÈrdidas (LZW) o  con pÈrdidas (JPEG). TambiÈn se puede
-utilizar sin  compresiÛn. Sin embargo  el algoritmo de  compresiÛn LZW
-est· patentado y  no viene con la distribuciÛn libre  de \gimp, tienes
-que aÒadir un plug-in de distribuciÛn no libre.
+compresi√≥n sin p√©rdidas (LZW) o  con p√©rdidas (JPEG). Tambi√©n se puede
+utilizar sin  compresi√≥n. Sin embargo  el algoritmo de  compresi√≥n LZW
+est√° patentado y  no viene con la distribuci√≥n libre  de \gimp, tienes
+que a√±adir un plug-in de distribuci√≥n no libre.
 
 \item  [GIF] es  un  formato  propietario y  limitado  por la  patente
-del  algoritmo LZW,  por  lo  que cada  vez  m·s gente  (especialmente
-en  el  entorno  del  Software  Libre) est·  dejando  de  usarlo.  Sin
-embargo, si instalas  el plug-in de distribuciÛn  no libre mencionando
-anteriormente,  te  permite guardar  im·genes  en  este formato.  Este
-formato no  soporta color RGB, sÛlo  indexado, por lo que  tendr·s que
-transformar la  imagen primero. Por  otra parte sÌ te  permite guardar
-varias  capas  (m·s sobre  capas  en  la p·gina  \pageref{gimp.capas})
-y   construir  asÌ   animaciones  (m·s   sobre  esto   en  la   p·gina
+del  algoritmo LZW,  por  lo  que cada  vez  m√°s gente  (especialmente
+en  el  entorno  del  Software  Libre) est√°  dejando  de  usarlo.  Sin
+embargo, si instalas  el plug-in de distribuci√≥n  no libre mencionando
+anteriormente,  te  permite guardar  im√°genes  en  este formato.  Este
+formato no  soporta color RGB, s√≥lo  indexado, por lo que  tendr√°s que
+transformar la  imagen primero. Por  otra parte s√≠ te  permite guardar
+varias  capas  (m√°s sobre  capas  en  la p√°gina  \pageref{gimp.capas})
+y   construir  as√≠   animaciones  (m√°s   sobre  esto   en  la   p√°gina
 \pageref{gimp.animaciones.gif}).
 
 \end{description}
 
 \subsection{Exportar una imagen}
 
-Cuando hayas  elegido el formato  de fichero que  m·s se ajuste  a tus
+Cuando hayas  elegido el formato  de fichero que  m√°s se ajuste  a tus
 necesidades y te dispongas a guardar la imagen puede que te encuentres
-con el cuadro de di·logo de exportar  imagen. Esto se debe a que est·s
+con el cuadro de di√°logo de exportar  imagen. Esto se debe a que est√°s
 intentando guardar  una imagen  en un formato  que no  permite guardar
-todas las  propiedades de esa imagen.  Un caso tÌpico es  intentar una
-imagen con  m·s de  una capa  o con trasparencia  en formato  JPEG. La
-figura \ref{gimp_export} muestra los cuatros de di·logo de este caso.
+todas las  propiedades de esa imagen.  Un caso t√≠pico es  intentar una
+imagen con  m√°s de  una capa  o con trasparencia  en formato  JPEG. La
+figura \ref{gimp_export} muestra los cuatros de di√°logo de este caso.
 
 \begin{figura}{gimp_export}{1}
-\caption{Cuadros de di·logo para exportar una imagen antes de guardarla}
+\caption{Cuadros de di√°logo para exportar una imagen antes de guardarla}
 \end{figura}
 
 \subsection{Adquirir una imagen}
 
-\gimp puede  tambiÈn leer  im·genes de  otros dispositivos  de entrada
-adem·s  de  los  ficheros.  Dos  casos tÌpicos  son  las  capturas  de
-pantallas (screenshots) y los esc·ners.
+\gimp puede  tambi√©n leer  im√°genes de  otros dispositivos  de entrada
+adem√°s  de  los  ficheros.  Dos  casos t√≠picos  son  las  capturas  de
+pantallas (screenshots) y los esc√°ners.
 
 \subsubsection{Capturas de pantalla}
 
 Tomar una captura de pantalla con \gimp no es tan sencillo como pulsar
-la  tecla {\sf  Impre Pant},  pero es  m·s flexible.  En el  men˙ {\sf
-Fich.} o  {\sf Archivo} elige  la opciÛn {\sf Captura  de pantalla...}
-dentro del submen˙ {\sf Adquirir} o  {\sf Acquire}. Ver·s un cuadro de
-di·logo como los de la figura \ref{gimp_acquire}
+la  tecla {\sf  Impre Pant},  pero es  m√°s flexible.  En el  men√∫ {\sf
+Fich.} o  {\sf Archivo} elige  la opci√≥n {\sf Captura  de pantalla...}
+dentro del submen√∫ {\sf Adquirir} o  {\sf Acquire}. Ver√°s un cuadro de
+di√°logo como los de la figura \ref{gimp_acquire}
 
 \begin{figura}{gimp_acquire}{1}
-\caption{Cuadros de di·logo para tomar una captura de pantalla}
+\caption{Cuadros de di√°logo para tomar una captura de pantalla}
 \end{figura}
 
 \subsubsection{Escanear una imagen}
 
-La forma  m·s usual de  utilizar un scanner  en GNU/Linux es  a travÈs
-de  SANE\footnote{Scanner Access  Now  Easy, m·s  informaciÛn en  {\tt
+La forma  m√°s usual de  utilizar un scanner  en GNU/Linux es  a trav√©s
+de  SANE\footnote{Scanner Access  Now  Easy, m√°s  informaci√≥n en  {\tt
 http://www.mostang.com/sane/}} y su interfaz  {\sf xsane}. El programa
-{\sf xsane}  permite escanear  im·genes con  las opciones  b·sicas que
+{\sf xsane}  permite escanear  im√°genes con  las opciones  b√°sicas que
 proporciona el  scanner. 
 
-Sin  embargo las  im·genes  escaneadas suelen  necesitar retoques,  lo
-que  nos lleva  a querer  que  las im·genes  escaneadas sean  enviadas
-directamente a \gimp,  cosa que {\sf xsane} no hace  por sÌ solo. Para
-esto busca el  submen˙ {\sf Fich.}\lyxarrow{\sf Adquirir}\lyxarrow{\sf
+Sin  embargo las  im√°genes  escaneadas suelen  necesitar retoques,  lo
+que  nos lleva  a querer  que  las im√°genes  escaneadas sean  enviadas
+directamente a \gimp,  cosa que {\sf xsane} no hace  por s√≠ solo. Para
+esto busca el  submen√∫ {\sf Fich.}\lyxarrow{\sf Adquirir}\lyxarrow{\sf
 XSane} o {\sf Archivo}\lyxarrow{\sf Acquire}\lyxarrow{\sf XSane}.
 
-Si no  te aparece este men˙  haz un enlace simbÛlico  en tu directorio
+Si no  te aparece este men√∫  haz un enlace simb√≥lico  en tu directorio
 personal  {\tt  .gimp-1.2/plug-ins/}\footnote{Si  usas  \gimp  1.3  el
 directorio es  {\tt .gimp-1.3/plug-ins/}} que apunte  al ejecutable de
 {\sf xsane}. Esto se traduce en ejecutar el siguiente comando:
@@ -623,14 +623,14 @@ $ ln -s /usr/bin/xsane ~/.gimp-1.2/plug-ins/
 \end{verbatim}
 
 Debes reiniciar \gimp  para que este cambio tenga efecto.  Una vez que
-tengas el  submen˙ {\sf XSane}  ver·s que  al menos aparece  la opciÛn
-{\sf Device  dialog...}. Si  aparece una o  m·s entradas  diferentes a
+tengas el  submen√∫ {\sf XSane}  ver√°s que  al menos aparece  la opci√≥n
+{\sf Device  dialog...}. Si  aparece una o  m√°s entradas  diferentes a
 esta, se trata  de los scanners que tengas soportados  por Sane. Si no
-aparece ninguno elige  la opciÛn {\sf Device dialog...}  y {\sf xsane}
-buscar· la lista de scanners soportados en tu sistema.
+aparece ninguno elige  la opci√≥n {\sf Device dialog...}  y {\sf xsane}
+buscar√° la lista de scanners soportados en tu sistema.
 
-Cuando finalmente XSane  funcione para tÌ, ver·s un par  de ventanas y
-tal vez algunas m·s. Las m·s importantes son la ventana principal y la
+Cuando finalmente XSane  funcione para t√≠, ver√°s un par  de ventanas y
+tal vez algunas m√°s. Las m√°s importantes son la ventana principal y la
 de vista previa, que puedes ver en la figura \ref{xsane_main}.
 
 \begin{figura}{xsane_main}{0.99}
@@ -638,12 +638,12 @@ de vista previa, que puedes ver en la figura \ref{xsane_main}.
 \label{xsane_main}
 \end{figura}
 
-La ventana principal contiene un par de men˙s desplegables que siempre
-estar·n ahÌ,  otros que  dependen de  las opciones  que eligas  en los
+La ventana principal contiene un par de men√∫s desplegables que siempre
+estar√°n ah√≠,  otros que  dependen de  las opciones  que eligas  en los
 primeros.
 
-% El  men˙ desplegable  {\sf Modo  de  XSane} te  dar· a  elegir lo  que
-% quieres hacer con las im·genes escaneadas:
+% El  men√∫ desplegable  {\sf Modo  de  XSane} te  dar√° a  elegir lo  que
+% quieres hacer con las im√°genes escaneadas:
 % 
 % \begin{description}
 % 
@@ -657,19 +657,19 @@ primeros.
 % 
 % \item[Enviar por FAX] para enviarlo por FAX.
 % 
-% \item[Enviar  por   correo  electrÛnico]  para  enviarlo   por  correo
-% electrÛnico.
+% \item[Enviar  por   correo  electr√≥nico]  para  enviarlo   por  correo
+% electr√≥nico.
 % 
 % \end{description}
 
-Hay un men˙  desplegable importante que define el modelo  de color que
-quieres  utilizar  para las  im·genes  escaneadas.  Por defecto  suele
-aparecer  selecionado {\sf  Lineart}, pero  como  ver·s no  es el  m·s
-adecuado en la mayorÌa de los casos. Las posibilidades son:
+Hay un men√∫  desplegable importante que define el modelo  de color que
+quieres  utilizar  para las  im√°genes  escaneadas.  Por defecto  suele
+aparecer  selecionado {\sf  Lineart}, pero  como  ver√°s no  es el  m√°s
+adecuado en la mayor√≠a de los casos. Las posibilidades son:
 
 \begin{description}
 
-\item[Lineart] utiliza el modelo de color indexado con sÛlo 2 colores
+\item[Lineart] utiliza el modelo de color indexado con s√≥lo 2 colores
 
 \item[Grayscale] utiliza el modelo de escala de grises
 
@@ -678,30 +678,30 @@ adecuado en la mayorÌa de los casos. Las posibilidades son:
 \end{description}
 
 Dependiendo del modelo  de scanner y del soporte  de los controladores
-de Sane para  ese modelo ver·s otro men˙ desplegable  con las opciones
+de Sane para  ese modelo ver√°s otro men√∫ desplegable  con las opciones
 propias  de ese  modelo,  como puede  ser escanear  algo  plano o  una
-pelÌcula (negativa o de diapositiva).
+pel√≠cula (negativa o de diapositiva).
 
-Una  observaciÛn importante  si  utilizas los  modelos  de color  {\sf
-grayscale} o {\sf color} ver·s que  aparece un men˙ desplegable con la
-opciÛn {\sf  Rango de color completo}.  Si tienes un scanner  capaz de
-escanear pelÌculas (negativos o diapositivas) aquÌ tienes la opciÛn de
-utilizar el  rango de colores  corresponiente a la pelÌcula  que estÈs
-usando. Si no est·s escaneando  pelÌculas puedes dejarlo en {\sf Rango
+Una  observaci√≥n importante  si  utilizas los  modelos  de color  {\sf
+grayscale} o {\sf color} ver√°s que  aparece un men√∫ desplegable con la
+opci√≥n {\sf  Rango de color completo}.  Si tienes un scanner  capaz de
+escanear pel√≠culas (negativos o diapositivas) aqu√≠ tienes la opci√≥n de
+utilizar el  rango de colores  corresponiente a la pel√≠cula  que est√©s
+usando. Si no est√°s escaneando  pel√≠culas puedes dejarlo en {\sf Rango
 de color completo}.
 
-Debajo de  los men˙s desplegables  hay cuatro opciones que  se regulan
-mediante controles numÈricos o deslizadores, que son:
+Debajo de  los men√∫s desplegables  hay cuatro opciones que  se regulan
+mediante controles num√©ricos o deslizadores, que son:
 
 \begin{description}
 
-\item[La  resoluciÛn], i.e.  la cantidad  de pÌxeles  por pulgada.  La
-resoluciÛn mÌnima es de 12 dpi (ridÌcula) y la m·xima puede rondar los
+\item[La  resoluci√≥n], i.e.  la cantidad  de p√≠xeles  por pulgada.  La
+resoluci√≥n m√≠nima es de 12 dpi (rid√≠cula) y la m√°xima puede rondar los
 1200 dpi (depende del modelo del scanner). Normalmente para retocar la
-imagen y m·s  adelante imprimirla suele ser  suficiente una resoluciÛn
+imagen y m√°s  adelante imprimirla suele ser  suficiente una resoluci√≥n
 de 300 dpi para  calidad media o 600 dpi para alta  calidad. Si lo que
-quieres  es incluir  tu imagen  en una  p·gina web  es mejor  bajar la
-resoluciÛn para no obtener un fichero  demasiado grande, 100 Û 150 dpi
+quieres  es incluir  tu imagen  en una  p√°gina web  es mejor  bajar la
+resoluci√≥n para no obtener un fichero  demasiado grande, 100 √≥ 150 dpi
 puede estar bien.
 
 \item[El factor Gamma]
@@ -709,7 +709,7 @@ puede estar bien.
 \item[El Brillo] regula la luminosidad de la imagen escaneada.
 
 \item[El Contraste] puede acentuar o  atenuar las diferencias de color
-entre los pÌxeles de la imagen escaneada respecto del original.
+entre los p√≠xeles de la imagen escaneada respecto del original.
 
 \end{description}
 
@@ -718,11 +718,11 @@ funcionalidades:
 
 \begin{itemize}
 
-\item Desglosar  los controles por canales.  Normalmente regular·s los
+\item Desglosar  los controles por canales.  Normalmente regular√°s los
 controles gamma, brillo y contraste para la imagen afectando por igual
-a los tres canales: rojo, verde  y azul. Si est·s manipulando im·genes
-con  desequilibrios en  los  colores\footnote{Por ejemplo  fotografÌas
-tomadas con  pelÌcula para luz  de dÌa  en lugares iluminados  con luz
+a los tres canales: rojo, verde  y azul. Si est√°s manipulando im√°genes
+con  desequilibrios en  los  colores\footnote{Por ejemplo  fotograf√≠as
+tomadas con  pel√≠cula para luz  de d√≠a  en lugares iluminados  con luz
 artificial}  puedes necesitar  diferentes  ajuste de  gamma, brillo  o
 contraste para cada canal.
 
@@ -732,45 +732,45 @@ invierte aditivamente.
 
 \item Autoajustar los controles gamma, brillo y contraste. {\sf XSane}
 examina la imagen de la vista previa y trata de determinar los mejores
-valores  para estos  ajustes. Pueden  no ser  los ajustes  que m·s  te
-gusten, pero pueden ser una buena aproximaciÛn inicial.
+valores  para estos  ajustes. Pueden  no ser  los ajustes  que m√°s  te
+gusten, pero pueden ser una buena aproximaci√≥n inicial.
 
 \item Restablece los valores neutros  de los controles gamma, brillo y
 contraste. Estos valores son respectivamente $1$, $0$, $0$.
 
-\item Recupera  los ˙ltimos ajustes  de los controles gamma,  brillo y
+\item Recupera  los √∫ltimos ajustes  de los controles gamma,  brillo y
 contraste previamente memorizados.
 
 \item Memoriza los ajustes de los controles gamma, brillo y contraste.
 
 \end{itemize}
 
-Por ˙ltimo  en la parte  de abajo de  la ventana principal  tienes dos
-barras  de estado  que te  informan del  tamaÒo que  tendr· la  imagen
-escaneada finalmente.  Junto a  estas barras de  estado est·  el botÛn
+Por √∫ltimo  en la parte  de abajo de  la ventana principal  tienes dos
+barras  de estado  que te  informan del  tama√±o que  tendr√° la  imagen
+escaneada finalmente.  Junto a  estas barras de  estado est√°  el bot√≥n
 {\sf Escanear} y {\sf Cancelar}.
 
-Pero antes de  escanear una imagen pulsa el botÛn  {\sf Adquirir vista
-previa}. Al cabo de un tiempo ver·s  en la ventana una vista previa de
+Pero antes de  escanear una imagen pulsa el bot√≥n  {\sf Adquirir vista
+previa}. Al cabo de un tiempo ver√°s  en la ventana una vista previa de
 lo que hayas  puesto en el scanner. Si tu  scanner es antiguo, utiliza
-el puerto paralelo o est· en otra m·quina, esto puede tardar un poco.
+el puerto paralelo o est√° en otra m√°quina, esto puede tardar un poco.
 
 \begin{figura}{xsane_preview}{0.99}
 \caption{Vista previa de una revista en un scanner plano}
 \end{figura}
 
-Sobre esta vista  previa selecciona la regiÛn que  quieres escanear En
-caso de  duda sÈ generoso  y selecciona un poco  m·s de imagen,  ya la
-recortar·s  luego si  te  sobra. Lo  que {\bf  nunca}  debes hacer  es
-seleccionar  m·s all·  del lÌmite  fÌsico del  scanner, ya  que muchos
+Sobre esta vista  previa selecciona la regi√≥n que  quieres escanear En
+caso de  duda s√© generoso  y selecciona un poco  m√°s de imagen,  ya la
+recortar√°s  luego si  te  sobra. Lo  que {\bf  nunca}  debes hacer  es
+seleccionar  m√°s all√°  del l√≠mite  f√≠sico del  scanner, ya  que muchos
 scanners no tienen un sensor que  indique que han llegado al final del
-recorrido e intentan seguir m·s  all·. Si esto te sucede probablemente
-oir·s un sonido horrible y  entonces si no desconectas la alimentaciÛn
+recorrido e intentan seguir m√°s  all√°. Si esto te sucede probablemente
+oir√°s un sonido horrible y  entonces si no desconectas la alimentaci√≥n
 del  scanner puede  que  se rompa.  Aunque son  raros  los casos,  ten
 cuidado con esto.
 
-Una vez que  tengas seleccionada la regiÛn que  quieras escanear pulsa
-el  botÛn  {\sf Escanear}  y  espera  pacientemente  a que  la  imagen
+Una vez que  tengas seleccionada la regi√≥n que  quieras escanear pulsa
+el  bot√≥n  {\sf Escanear}  y  espera  pacientemente  a que  la  imagen
 escaneada aparezca en \gimp.
 
 \begin{figura}{xsane_final}{0.99}
@@ -781,93 +781,93 @@ escaneada aparezca en \gimp.
 \index{\gimp!herramientas}
 
 En  la ventana  principal de  \gimp tienes  una serie  de botones  con
-iconos que  son las herramientas,  adem·s de  accesos a los  di·los de
-selecciÛn de colores, brochas, patrones y gradientes. Cada herramienta
+iconos que  son las herramientas,  adem√°s de  accesos a los  di√°los de
+selecci√≥n de colores, brochas, patrones y gradientes. Cada herramienta
 tiene sus propias  opciones en cuyos detalles  procuraremos no entrar,
-pero  que debes  saber  que  est·n ahÌ  y  echarles  un vistazo.  Para
+pero  que debes  saber  que  est√°n ah√≠  y  echarles  un vistazo.  Para
 seleccionar  una herramienta  clica  sobre ella,  para  acceder a  sus
-opciones haz doble click sobre ella. Veamos quÈ son estas herramientas
-y di·logos y cu·l es su utilidad.
+opciones haz doble click sobre ella. Veamos qu√© son estas herramientas
+y di√°logos y cu√°l es su utilidad.
 
-\subsection{Herramientas de selecciÛn}
+\subsection{Herramientas de selecci√≥n}
 
 Las  primeras   seis  herramientas  son  para   hacer  selecciones  en
-la  imagen.  Una  selecciÛn  te  permite  limitar  el  efecto  de  las
-operaciones que  hagas en la imagen,  asÌ como cortar, copiar  y pegar
-regiones. Hay  una herramienta de  selecciÛn para cada uso.  La figura
+la  imagen.  Una  selecci√≥n  te  permite  limitar  el  efecto  de  las
+operaciones que  hagas en la imagen,  as√≠ como cortar, copiar  y pegar
+regiones. Hay  una herramienta de  selecci√≥n para cada uso.  La figura
 \ref{gimp_tools_selection}  muestra  los  botones  correspondientes  a
-estas herramientas, que pasamos a describir a continuaciÛn.
+estas herramientas, que pasamos a describir a continuaci√≥n.
 
 \begin{figura}{gimp_tools_selection}{0.8}
-\caption{Herramientas de selecciÛn}
+\caption{Herramientas de selecci√≥n}
 \end{figura}
 
 \subsubsection{Seleccionar regiones rectangulares (1)}
 \index{\gimp!herramientas!seleccionar regiones rectangulares}
 
-Esta  es la  herramienta  de  selecciÛn m·s  b·sica  y usual,  permite
+Esta  es la  herramienta  de  selecci√≥n m√°s  b√°sica  y usual,  permite
 seleccionar regiones  rectangulares o  cuadradas. Para  seleccionar un
-rect·ngulo marcando  dos esquinas opuestas  mantÈn pulsado el  \bir en
-una esquina y arrastra el ratÛn hasta la esquina opuesta, al soltar el
-\bir la regiÛn quedar· seleccionada. Si quieres seleccionar una regiÛn
-cuadrada mantÈn pulsada la tecla {\tt  Shift} {\bf antes de soltar} el
-\bir. Si  quieres que el punto  inicial sea el centro  de la selecciÛn
-mantÈn pulsada la  tecla {\tt Control} {\bf antes de  soltar} el \bir.
-Ambos efectos pueden sumarse si mantÈn pulsadas las teclas {\tt Shift}
+rect√°ngulo marcando  dos esquinas opuestas  mant√©n pulsado el  \bir en
+una esquina y arrastra el rat√≥n hasta la esquina opuesta, al soltar el
+\bir la regi√≥n quedar√° seleccionada. Si quieres seleccionar una regi√≥n
+cuadrada mant√©n pulsada la tecla {\tt  Shift} {\bf antes de soltar} el
+\bir. Si  quieres que el punto  inicial sea el centro  de la selecci√≥n
+mant√©n pulsada la  tecla {\tt Control} {\bf antes de  soltar} el \bir.
+Ambos efectos pueden sumarse si mant√©n pulsadas las teclas {\tt Shift}
 y {\tt Control} {\bf antes de soltar} el \bir.
 
-Adem·s  tambiÈn  puedes  sumar,  restar  e  intersectar  las  regiones
-seleccionadas. Para  sumar una nueva  selecciÛn a la  existente mantÈn
+Adem√°s  tambi√©n  puedes  sumar,  restar  e  intersectar  las  regiones
+seleccionadas. Para  sumar una nueva  selecci√≥n a la  existente mant√©n
 pulsada la  tecla {\tt  Shift} {\bf  antes de  pulsar} el  \bir (luego
 puedes soltarla antes de soltar el  \bir). Si lo que quieres es restar
-una  nueva selecciÛn  a  la  existente mantÈn  pulsada  la tecla  {\tt
+una  nueva selecci√≥n  a  la  existente mant√©n  pulsada  la tecla  {\tt
 Control} {\bf  antes de  pulsar} el \bir.  Para intersectar  una nueva
-selecciÛn con  la existente mantÈn  pulsadas las teclas {\tt  Shift} y
+selecci√≥n con  la existente mant√©n  pulsadas las teclas {\tt  Shift} y
 {\tt Control} {\bf antes de pulsar} el \bir.
 
-Las  operaciones de  suma,  resta e  intersecciÛn  de selecciones  son
-v·lidas para las siete herramientas de selecciÛn que describimos aquÌ.
+Las  operaciones de  suma,  resta e  intersecci√≥n  de selecciones  son
+v√°lidas para las siete herramientas de selecci√≥n que describimos aqu√≠.
 Si bien en algunas herramientas el  momento en el que debes pulsar las
 teclas {\tt Shift} o {\tt Control} pueden variar ligeramente, ya te lo
-indicaremos m·s adelante.  Si no te lo indicamos es  que se hace igual
-que con la selecciÛn de regiones rectangulares.
+indicaremos m√°s adelante.  Si no te lo indicamos es  que se hace igual
+que con la selecci√≥n de regiones rectangulares.
 
-\subsubsection{Seleccionar regiones elÌpticas (2)}
+\subsubsection{Seleccionar regiones el√≠pticas (2)}
 \index{\gimp!herramientas!seleccionar regiones }
 
 Su  manejo  es  exactamente  igual  que  el  de  la  herramienta  para
 seleccionar  regiones  rectangulares,  pero en  lugar  de  seleccionar
-regiones  rectangulares (o  cuadradas) las  regiones son  elÌpticas (o
+regiones  rectangulares (o  cuadradas) las  regiones son  el√≠pticas (o
 circulares).
 
 \subsubsection{Seleccionar regiones dibujadas a mano (3)}
 \index{\gimp!herramientas!seleccionar regiones dibujadas a mano}
 
-Esta  forma  de seleccionar  regiones  es  muy ˙til  para  seleccionar
-regiones   con  precisiÛn   cuando  \gimp   no  encuentre   una  forma
+Esta  forma  de seleccionar  regiones  es  muy √∫til  para  seleccionar
+regiones   con  precisi√≥n   cuando  \gimp   no  encuentre   una  forma
 suficientemente precisa  de hacerlo. No  es una herramienta  que debas
 utilizar  para  seleccionar  regiones  desde cero,  sino  para  afinar
 las  selecciones  que aproximes  mediante  las  otras herramientas  de
-selecciÛn.
+selecci√≥n.
 
-\subsubsection{Seleccionar regiones contÌnuas (4)}
-\index{\gimp!herramientas!seleccionar regiones contÌnuas }
+\subsubsection{Seleccionar regiones cont√≠nuas (4)}
+\index{\gimp!herramientas!seleccionar regiones cont√≠nuas }
 
-Sirve para seleccionar una regiÛn  de pÌxeles con colores muy cercanos
-al color del pÌxel sobre el  que se aplica la herramienta. Por ejemplo
-en una fotografÌa de paisaje clicando con esta herramienta en un cielo
-despejado quedarÌa seleccionado casi todo el cielo. Una caracterÌstica
+Sirve para seleccionar una regi√≥n  de p√≠xeles con colores muy cercanos
+al color del p√≠xel sobre el  que se aplica la herramienta. Por ejemplo
+en una fotograf√≠a de paisaje clicando con esta herramienta en un cielo
+despejado quedar√≠a seleccionado casi todo el cielo. Una caracter√≠stica
 importante de esta herramienta es  que las selecciones resultantes son
-contÌnuas, o mejor dicho conexas.
+cont√≠nuas, o mejor dicho conexas.
 
-\subsubsection{Seleccionar regiones utilizando curvas de BËzier (5)}
-\index{\gimp!herramientas!seleccionar regiones utilizando curvas de BËzier}
+\subsubsection{Seleccionar regiones utilizando curvas de B√®zier (5)}
+\index{\gimp!herramientas!seleccionar regiones utilizando curvas de B√®zier}
 
-Las  curvas de  bezier est·n  determinadas  por dos  puntos (origen  y
+Las  curvas de  bezier est√°n  determinadas  por dos  puntos (origen  y
 destino)  que determinan  los  extremos  de la  curva  y dos  vectores
-(atractores) que  determinan ``cÛmo'' llega  la curva a  sus extremos.
-Esta  herramienta  permite  seleccionar  regiones  delimit·ndolas  con
-curvas  de  BËzier  cerradas.  Los  polÌgonos  cerrados  son  un  caso
+(atractores) que  determinan ``c√≥mo'' llega  la curva a  sus extremos.
+Esta  herramienta  permite  seleccionar  regiones  delimit√°ndolas  con
+curvas  de  B√®zier  cerradas.  Los  pol√≠gonos  cerrados  son  un  caso
 particular de estas curvas. 
 
 El manejo de esta herramienta no es del todo trivial:
@@ -875,204 +875,204 @@ El manejo de esta herramienta no es del todo trivial:
 \begin{itemize}
 
 \item clica en  puntos de la imagen que pertenezcan  al contorno de la
-regiÛn  (o en  los  vÈrtices del  polÌgono)  que quieras  seleccionar,
+regi√≥n  (o en  los  v√©rtices del  pol√≠gono)  que quieras  seleccionar,
 terminando  en el  mismo punto  que empezaste.  Con esto  consigues un
-polÌgono cerrado  que es  tu primera aproximaciÛn  a la  curva cerrada
-final  que quieres  obtener\footnote{En algunos  contextos encontrar·s
-que estas curvas cerradas se denominan ``beziÈrgonos''}.
+pol√≠gono cerrado  que es  tu primera aproximaci√≥n  a la  curva cerrada
+final  que quieres  obtener\footnote{En algunos  contextos encontrar√°s
+que estas curvas cerradas se denominan ``bezi√©rgonos''}.
 
-\item Cuando tengas el polÌgono cerrado clica dentro del polÌgono y se
-convertir·  en  una  selecciÛn,  pero mantendr·  marcados  los  puntos
-originales. Si ya  tenÌas una selecciÛn existente este  era el momento
+\item Cuando tengas el pol√≠gono cerrado clica dentro del pol√≠gono y se
+convertir√°  en  una  selecci√≥n,  pero mantendr√°  marcados  los  puntos
+originales. Si ya  ten√≠as una selecci√≥n existente este  era el momento
 de  mantener pulsadas  las teclas  {\tt  Shift} o  {\tt Control}  para
 sumar, restar o intersectar ambas regiones.
 
-\item Si quieres mejorar la aproximaciÛn  de la curva de BËzier tienes
-que modificar los  atractores de cada punto. Para ello  clica y mantÈn
+\item Si quieres mejorar la aproximaci√≥n  de la curva de B√®zier tienes
+que modificar los  atractores de cada punto. Para ello  clica y mant√©n
 pulsado el \bir  sobre el punto cuyos atractores  quieras modificar, y
-ahora arrastra  el cuadradito  que aparecer· en  ambos extremos  de un
-segmento  centrado en  el  punto cuyos  atractores est·s  modificando.
+ahora arrastra  el cuadradito  que aparecer√° en  ambos extremos  de un
+segmento  centrado en  el  punto cuyos  atractores est√°s  modificando.
 Repite con todos los puntos que quieras cuantas veces quieras.
 
-\item Cuando tengas la curva modificada a tu gusto, tendr·s ocasiÛn de
-substituir la selecciÛn que ya tienes por una nueva con la forma de la
+\item Cuando tengas la curva modificada a tu gusto, tendr√°s ocasi√≥n de
+substituir la selecci√≥n que ya tienes por una nueva con la forma de la
 curva que  has obtenido; o bien  sumar, restar o intersectar  la nueva
-curva  con  la selecciÛn  previa.  Para  substituir simplemente  clica
-dentro de la  curva; para sumar, restar o  intersectar mantÈn pulsadas
+curva  con  la selecci√≥n  previa.  Para  substituir simplemente  clica
+dentro de la  curva; para sumar, restar o  intersectar mant√©n pulsadas
 las teclas correspondientes mientras clicas dentro de la curva.
 
 \end{itemize}
 
-La figura \ref{gimp_bezier} muestra  un ejemplo de selecciÛn realizada
-con curvas de BËzier.
+La figura \ref{gimp_bezier} muestra  un ejemplo de selecci√≥n realizada
+con curvas de B√®zier.
 
 \begin{figura}{gimp_bezier}{0.6}
-\caption{SelecciÛn realizada con curvas de BËzier}
+\caption{Selecci√≥n realizada con curvas de B√®zier}
 \end{figura}
 
 \subsubsection{Seleccionar formas de la imagen (6)}
 \index{\gimp!herramientas!seleccionar formas de la imagen}
 
-Esta herramienta, tambiÈn llamada  ``tijeras inteligentes'', se maneja
-igual que la selecciÛn de regiones mediantes curvas de BËzier, pero su
-forma de construir la curva que  determina los lÌmites de la regiÛn es
-m·s inteligente. Entre cada dos  puntos \gimp traza un camino buscando
+Esta herramienta, tambi√©n llamada  ``tijeras inteligentes'', se maneja
+igual que la selecci√≥n de regiones mediantes curvas de B√®zier, pero su
+forma de construir la curva que  determina los l√≠mites de la regi√≥n es
+m√°s inteligente. Entre cada dos  puntos \gimp traza un camino buscando
 bordes en  la imagen, eligiendo  la trayectoria  que deje a  sus lados
-pÌxeles con  mayores diferencias.  Esta herramienta es  sumamente ˙til
+p√≠xeles con  mayores diferencias.  Esta herramienta es  sumamente √∫til
 para  aproximar  selecciones de  objectos  en  una imagen  plana  (sin
 capas),  por ejemplo  para seleccionar  un  coche en  concreto en  una
-fotografÌa llena  de coches. La figura  \ref{gimp_scissors} muestra un
-ejemplo de selecciÛn realizada con tijeras inteligentes.
+fotograf√≠a llena  de coches. La figura  \ref{gimp_scissors} muestra un
+ejemplo de selecci√≥n realizada con tijeras inteligentes.
 
 \begin{figura}{gimp_scissors}{0.6}
-\caption{SelecciÛn realizada con tijeras inteligentes}
+\caption{Selecci√≥n realizada con tijeras inteligentes}
 \end{figura}
 
 \subsubsection{Seleccionar regiones por colores (7)}
 \index{\gimp!herramientas!seleccionar regiones por colores}
 
-Sirve para seleccionar {\bf todas} las regiones de pÌxeles con colores
-muy cercanos al color del pÌxel sobre el que se aplica la herramienta.
-Su manejo es idÈntico al de la selecciÛn de regiones contÌnuas, pero a
-diferencia de Èsta las selecciones resultantes {\bf no} son conexas.
+Sirve para seleccionar {\bf todas} las regiones de p√≠xeles con colores
+muy cercanos al color del p√≠xel sobre el que se aplica la herramienta.
+Su manejo es id√©ntico al de la selecci√≥n de regiones cont√≠nuas, pero a
+diferencia de √©sta las selecciones resultantes {\bf no} son conexas.
 
 % \begin{figura}{gimp_porcolores}{0.6}
-% \caption{SelecciÛn por colores sobre una regiÛn negra}
+% \caption{Selecci√≥n por colores sobre una regi√≥n negra}
 % \end{figura}
 
-\subsection{Herramientas de transformaciones geomÈtricas}
+\subsection{Herramientas de transformaciones geom√©tricas}
 
 Las  primeras   seis  herramientas  son  para   hacer  selecciones  en
-la  imagen.  Una  selecciÛn  te  permite  limitar  el  efecto  de  las
-operaciones que  hagas en la imagen,  asÌ como cortar, copiar  y pegar
-regiones. Hay  una herramienta de  selecciÛn para cada uso.  La figura
+la  imagen.  Una  selecci√≥n  te  permite  limitar  el  efecto  de  las
+operaciones que  hagas en la imagen,  as√≠ como cortar, copiar  y pegar
+regiones. Hay  una herramienta de  selecci√≥n para cada uso.  La figura
 \ref{gimp_tools_transformation} muestra los botones correspondientes a
-estas herramientas, que pasamos a describir a continuaciÛn.
+estas herramientas, que pasamos a describir a continuaci√≥n.
 
 \begin{figura}{gimp_tools_transformation}{0.99}
-\caption{Herramientas de transformaciones geomÈtricas}
+\caption{Herramientas de transformaciones geom√©tricas}
 \end{figura}
 
 
 \subsubsection{Mover capas y selecciones (8)}
 
 Esta herramienta tiene dos modos  de funcionamiento, dependiendo de si
-existe  una selecciÛn  o no.  Si  hay una  selecciÛn esta  herramienta
-desplaza  sus lÌmites,  pero  no  su contenido.  Si  no hay  selecciÛn
+existe  una selecci√≥n  o no.  Si  hay una  selecci√≥n esta  herramienta
+desplaza  sus l√≠mites,  pero  no  su contenido.  Si  no hay  selecci√≥n
 desplaza  la capa  sobre la  que  se aplique  el desplazamiento.  Esto
 quiere decir que si una imagen tiene varias capas e intentas mover con
-esta herramienta una de ellas debes aplicar la herramienta en un pÌxel
+esta herramienta una de ellas debes aplicar la herramienta en un p√≠xel
 que pertenezca  a la capa  que quieres  mover, teniendo cuidado  de no
 confundirte de capa por las transparencias.
 
-\subsubsection{Aumento y disminuciÛn (lupa) (9)}
+\subsubsection{Aumento y disminuci√≥n (lupa) (9)}
 
 El comportamiento de  esta herramienta es aumentar  el acercamiento de
-la vista  sobre la centrada en  el pÌxel donde se  aplica. Manteniendo
+la vista  sobre la centrada en  el p√≠xel donde se  aplica. Manteniendo
 pulsada la tecla {\tt Control} se invierte el comportamiento.
 
 \subsubsection{Recortar o redimensionar una imagen (10)}
 
-Cuando  haces  una  captura  de pantalla  o  escaneas  una  fotografÌa
-normalmente tienes  que quedarte sÛlo  con una  regiÛn de la  imagen y
+Cuando  haces  una  captura  de pantalla  o  escaneas  una  fotograf√≠a
+normalmente tienes  que quedarte s√≥lo  con una  regi√≥n de la  imagen y
 desechar el  resto. Esta herramienta  se ajusta perfectamente  a estet
-comentido.  Selecciona  con  ella  la regiÛn  que  quieres  conservar,
-puedes reajustar la selecciÛn  cuantas veces necesites arrastrando las
-esquinas de  la regiÛn.  Cuando finalmente  tengas la  regiÛn definida
-pulsa en {\sf Recortar} y obtendr·s el resultado deseado.
+comentido.  Selecciona  con  ella  la regi√≥n  que  quieres  conservar,
+puedes reajustar la selecci√≥n  cuantas veces necesites arrastrando las
+esquinas de  la regi√≥n.  Cuando finalmente  tengas la  regi√≥n definida
+pulsa en {\sf Recortar} y obtendr√°s el resultado deseado.
 
 % \begin{figura}{gimp-1.2_recortar}{0.5}
-% \caption{Cuadro de dÌalogo para recortar imagen en \gimp 1.2}
+% \caption{Cuadro de d√≠alogo para recortar imagen en \gimp 1.2}
 % \end{figura}
 
 \begin{figura}{gimp-1.3_recortar}{0.99}
-\caption{Cuadro de dÌalogo para recortar imagen en \gimp 1.3}
+\caption{Cuadro de d√≠alogo para recortar imagen en \gimp 1.3}
 \end{figura}
 
 
-\subsubsection{RotaciÛn, escalado, cizalladura y perspectiva (11)}
+\subsubsection{Rotaci√≥n, escalado, cizalladura y perspectiva (11)}
 
-Estas  herramientas est·n  reunidas  en  una sola  en  \gimp 1.2,  por
-lo  que  para  elegir  la  operaciÛn que  quieras  hacer  tendr·s  que
+Estas  herramientas est√°n  reunidas  en  una sola  en  \gimp 1.2,  por
+lo  que  para  elegir  la  operaci√≥n que  quieras  hacer  tendr√°s  que
 hacer  doble click  sobre  la  herramienta y  elegir  las opciones  en
-el  cu·dro  de di·logo  que  puedes  ver en  el  centro  de la  figura
+el  cu√°dro  de di√°logo  que  puedes  ver en  el  centro  de la  figura
 \ref{gimp_tools_transformation}.  En  \gimp  1.3  cada  una  de  estas
-herramientas tiene su propio botÛn en la caja de herramientas.
+herramientas tiene su propio bot√≥n en la caja de herramientas.
 
-Cuando se aplica una de estas herramientas sobre una selecciÛn pasamos
-a manejar esta  selecciÛn mediante la malla rectangular  mÌnima que la
+Cuando se aplica una de estas herramientas sobre una selecci√≥n pasamos
+a manejar esta  selecci√≥n mediante la malla rectangular  m√≠nima que la
 contenga.
 
 Cada  una  de  estas   herramientas  tiene  diferentes  efectos  sobre
-la  imagen  o  selecciÛn  sobre  la que  se  apliquen.  En  la  figura
+la  imagen  o  selecci√≥n  sobre  la que  se  apliquen.  En  la  figura
 \ref{gimp_transformations} puedes  ver los  efectos que  describimos a
-continuaciÛn:
+continuaci√≥n:
 
 \begin{figura}{gimp_transformations}{0.99}
-\caption{RotaciÛn, escalado, cizalladura y perspectiva en \gimp 1.3}
+\caption{Rotaci√≥n, escalado, cizalladura y perspectiva en \gimp 1.3}
 \end{figura}
 
 \begin{description}
 
-\item[RotaciÛn] transforma la selecciÛn  rot·ndola sobre un punto, que
+\item[Rotaci√≥n] transforma la selecci√≥n  rot√°ndola sobre un punto, que
 inicialmente es  el centro de  la malla rectangular.  Puedes desplazar
-este punto  arrastr·ndolo con el  ratÛn para  cambiar el centro  de la
-rotaciÛn, y rotar la malla arrastrando una de sus esquinas.
+este punto  arrastr√°ndolo con el  rat√≥n para  cambiar el centro  de la
+rotaci√≥n, y rotar la malla arrastrando una de sus esquinas.
 
 \item[Escalado] altera  la anchura y  altura de la  malla rectangular,
-manteniÈndola centrada  sober el  punto centrar de  referencia. Puedes
-desplazar este punto  arrastr·ndolo con el ratÛn y  modificar la malla
+manteni√©ndola centrada  sober el  punto centrar de  referencia. Puedes
+desplazar este punto  arrastr√°ndolo con el rat√≥n y  modificar la malla
 arrastrando una de sus esquinas o cualquier otro punto del interior de
 la malla.
 
 \item[Cizalladura] es un caso  particular de la siguiente herramienta.
-SÛlo  permite  desplazar  las  esquinas   de  la  malla  horizontal  o
-verticalmente para  desplazar un lado de  la malla en una  direcciÛn y
-sentido  y  el  lado  opuesto  en  la  misma  direcciÛn  pero  sentido
+S√≥lo  permite  desplazar  las  esquinas   de  la  malla  horizontal  o
+verticalmente para  desplazar un lado de  la malla en una  direcci√≥n y
+sentido  y  el  lado  opuesto  en  la  misma  direcci√≥n  pero  sentido
 contrario.
 
-\item[Perspectiva] es la transformaciÛn  m·s flexible, pues te permite
+\item[Perspectiva] es la transformaci√≥n  m√°s flexible, pues te permite
 desplazar  cada esquina  de  la  malla a  tu  antojo  para obtener  la
-deformaciÛn  que quieras.  TambiÈn puedes  desplazar el  punto central
+deformaci√≥n  que quieras.  Tambi√©n puedes  desplazar el  punto central
 para trasladar la malla.
 
 \end{description}
 
-\subsubsection{Invertir simÈtricamente (12)}
+\subsubsection{Invertir sim√©tricamente (12)}
 
-Esta herramienta  invierte simÈtricamente la selecciÛn,  capa o imagen
-donde se aplique.  Por defecto produce una  inversiÛn horizontal, para
-cambiar haz  doble click en  el botÛn de  la herremienta y  c·mbialo a
+Esta herramienta  invierte sim√©tricamente la selecci√≥n,  capa o imagen
+donde se aplique.  Por defecto produce una  inversi√≥n horizontal, para
+cambiar haz  doble click en  el bot√≥n de  la herremienta y  c√°mbialo a
 {\sf vertical}.
 
 \subsection{Herramientas de dibujo}
 
 \gimp tiene muchas  herramientas de dibujo, pero en este  tema vamos a
-tratar sÛlo las m·s b·sicas y usuales.
+tratar s√≥lo las m√°s b√°sicas y usuales.
 
 \begin{figura}{gimp_tools_drawing}{0.8}
-\caption{Herramientas b·sicas de dibujo}
+\caption{Herramientas b√°sicas de dibujo}
 \end{figura}
 
 \subsubsection{Recoger colores de la imagen (13)}
 
 Esta herramienta, comunmente denominada ``pipeta'', permite cambiar el
-color de frente tom·ndolo de una imagen abierta. Basta con hacer click
-en un pÌxel para que su  color quede seleccionado como color de frente
-y nos  muestra un  cuadro con la  informaciÛn del  color seleccionado:
+color de frente tom√°ndolo de una imagen abierta. Basta con hacer click
+en un p√≠xel para que su  color quede seleccionado como color de frente
+y nos  muestra un  cuadro con la  informaci√≥n del  color seleccionado:
 valores  RGB  ({\sf  Rojo},  {\sf  Verde}  y  {\sf  Azul}),  valor  de
-transparencia ({\sf Alpha}) y terna hexadecimal RGB (˙til para ediciÛn
-de p·ginas web).
+transparencia ({\sf Alpha}) y terna hexadecimal RGB (√∫til para edici√≥n
+de p√°ginas web).
 
 \begin{figura}{gimp_pipeta}{0.8}
-\caption{Cuadros de informaciÛn de color seleccionado con la pipeta}
+\caption{Cuadros de informaci√≥n de color seleccionado con la pipeta}
 \end{figura}
 
-% \subsubsection{AÒadir texto (14)}
+% \subsubsection{A√±adir texto (14)}
 
-% \subsubsection{Rellenar con un color o patrÛn (15)}
+% \subsubsection{Rellenar con un color o patr√≥n (15)}
 
-% \subsubsection{Dibujar trazos afilados de l·piz (16)}
+% \subsubsection{Dibujar trazos afilados de l√°piz (16)}
 
 % \subsubsection{Borrar al color de fondo o transparente (17)}
 
@@ -1080,7 +1080,7 @@ de p·ginas web).
 
 % \subsubsection{Rellenar con un gradiente de colores (19)}
 
-% \subsubsection{AerÛgrafo de presiÛn variable (20)}
+% \subsubsection{Aer√≥grafo de presi√≥n variable (20)}
 
 % \subsubsection{Pintar usando patrones o regiones de la imagen (20)}
 
@@ -1092,20 +1092,20 @@ de p·ginas web).
 
 % \subsubsection{Borronear (24)}
 
-% \section{Di·logos}
-% \index{\gimp!di·logos}
+% \section{Di√°logos}
+% \index{\gimp!di√°logos}
 
-% \subsection{SelecciÛn de color}
-% \index{\gimp!selecciÛn de color}
+% \subsection{Selecci√≥n de color}
+% \index{\gimp!selecci√≥n de color}
 
-% \subsection{SelecciÛn de brocha}
-% \index{\gimp!selecciÛn de brocha}
+% \subsection{Selecci√≥n de brocha}
+% \index{\gimp!selecci√≥n de brocha}
 
-% \subsection{SelecciÛn de patrÛn}
-% \index{\gimp!selecciÛn de patrÛn}
+% \subsection{Selecci√≥n de patr√≥n}
+% \index{\gimp!selecci√≥n de patr√≥n}
 
-% \subsection{SelecciÛn de gradiente}
-% \index{\gimp!selecciÛn de gradiente}
+% \subsection{Selecci√≥n de gradiente}
+% \index{\gimp!selecci√≥n de gradiente}
 
 % \subsection{Capas, canales y caminos}
 % \label{gimp.capas}
@@ -1123,7 +1123,7 @@ de p·ginas web).
 
 % \section{Scripts-Fu}
 
-% \section{TÈcnicas y trucos}
+% \section{T√©cnicas y trucos}
 
 % \subsection{Animaciones GIF}
 % \label{gimp.animaciones.gif}

@@ -8,7 +8,7 @@ Var
   nombre : string ;
 Begin
   TextColor(13) ;
-  write ('¿Cómo te llamas? ') ;
+  write ('Â¿CÃ³mo te llamas? ') ;
   TextColor(15) ;
   readln (nombre) ;
   TextColor(14) ;

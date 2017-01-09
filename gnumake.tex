@@ -4,70 +4,70 @@
 \chapter{GNU Make}\label{make}
 \label{gnumake.tex}
 
-A la hora de compilar un programa resulta evidente que utilizar la lÌnea
+A la hora de compilar un programa resulta evidente que utilizar la l√≠nea
 de comandos es molesto, incluso cuando se dispone de unos pocos archivos
-de cÛdigo fuente. Por ello es conveniente utilizar el programa {\sf {\sf
+de c√≥digo fuente. Por ello es conveniente utilizar el programa {\sf {\sf
 GNU Make}} para ayudarnos en dicho proceso.
 
-{\sf GNU Make} sabe que tareas debe realizar a travÈs de una serie
+{\sf GNU Make} sabe que tareas debe realizar a trav√©s de una serie
 de reglas descritas en un archivo de texto de nombre {\tt Makefile},
-habitualmente situado en el directorio de nuestro cÛdigo fuente. El
+habitualmente situado en el directorio de nuestro c√≥digo fuente. El
 comando {\tt make}\index{make}, al ser invocado desde dicho directorio,
 ejecuta las reglas del archivo {\tt Makefile}\index{Makefile},
-recompilando sÛlo las partes que han sido modificadas desde la ˙ltima
-compilaciÛn, y enlazando los archivos de cÛdigo objeto para generar el
+recompilando s√≥lo las partes que han sido modificadas desde la √∫ltima
+compilaci√≥n, y enlazando los archivos de c√≥digo objeto para generar el
 ejecutable.
 
-{\sf GNU Make} puede usarse con cualquier lenguaje de programaciÛn cuyas
-tareas puedan lanzarse mediante la lÌnea de comandos. En realidad, puede
+{\sf GNU Make} puede usarse con cualquier lenguaje de programaci√≥n cuyas
+tareas puedan lanzarse mediante la l√≠nea de comandos. En realidad, puede
 usarse para manejar cualquier conjunto de archivos dependientes entre
-sÌ, en los cuales algunos deban actualizarse mientras que otros no.
+s√≠, en los cuales algunos deban actualizarse mientras que otros no.
 
 
 \section{Makefile sencillo}
 
 Tomaremos como ejemplo uno de los programas del tema de GNU C/C++
-(vÈase tema \ref{gnuc}). Concretamente, utilizaremos el programa
-compilado y ejecutado en la p·gina \pageref{holafuncm}. Un ejemplo de
+(v√©ase tema \ref{gnuc}). Concretamente, utilizaremos el programa
+compilado y ejecutado en la p√°gina \pageref{holafuncm}. Un ejemplo de
 {\tt Makefile}, para compilar y enlazar dicho programa, puede ser el
 siguiente:
 
 \begin{ejemplo}{makefile1.mak}{Makefile sencillo}
 Makefile sencillo para compilar y enlazar el programa ejecutado en la
-p·gina \pageref{holafuncm}.
+p√°gina \pageref{holafuncm}.
 \end{ejemplo}
 
-Las lÌneas que comienzan con {\tt \#} son comentarios, no se ejecutan.
+Las l√≠neas que comienzan con {\tt \#} son comentarios, no se ejecutan.
 El resto son reglas que definen como generar el programa {\tt
 holamundo}. Cada regla empieza con un nombre seguido de {\tt :}. A
-continuaciÛn de cada regla pueden haber una o m·s lÌneas, iniciadas
+continuaci√≥n de cada regla pueden haber una o m√°s l√≠neas, iniciadas
 con tabulador, que especifican que comandos deben ser ejecutados para
 cumplir con dichas reglas.
 
 Si guardamos {\tt makefile1.mak} con el nombre {\tt Makefile} en el
-directorio donde est· el cÛdigo fuente del programa, podemos generar y
+directorio donde est√° el c√≥digo fuente del programa, podemos generar y
 probar nuestro programa de la siguiente manera:
 
 \begin{verbatim}
 $ make
 $ ./holamundo
-El que a buen ·rbol se arrima, buena sombra lo cobija,
+El que a buen √°rbol se arrima, buena sombra lo cobija,
 y el coseno de 0.500000 es 0.877583.
 \end{verbatim}
 
-TambiÈn es posible utilizar la opciÛn {\tt -f nombre\_makefile} para
+Tambi√©n es posible utilizar la opci√≥n {\tt -f nombre\_makefile} para
 especificar un nombre de archivo diferente a {\tt Makefile}. Por
 ejemplo:
 
 \begin{verbatim}
 $ make -f makefile1.mak
 $ ./holamundo
-El que a buen ·rbol se arrima, buena sombra lo cobija,
+El que a buen √°rbol se arrima, buena sombra lo cobija,
 y el coseno de 0.500000 es 0.877583.
 \end{verbatim}
 
 Como se puede apreciar, {\tt make} simplifica notablemente el proceso de
-compilaciÛn y enlazado de nuestra aplicaciÛn.
+compilaci√≥n y enlazado de nuestra aplicaci√≥n.
 
 
 \section{Reglas en los Makefile}
@@ -84,10 +84,10 @@ destino: requisito ...
 \begin{description}
 
 \item[Destino] Es el nombre de un archivo a crear. Normalmente un
-ejecutable o un archivo de cÛdigo objeto ({\tt *.o}). TambiÈn puede ser
+ejecutable o un archivo de c√≥digo objeto ({\tt *.o}). Tambi√©n puede ser
 el nombre de una tarea a realizar. Por ejemplo, es habitual utilizar
 {\em clean} como el {\em destino} de una regla que ejecuta los comandos
-necesarios para eliminar los archivos de cÛdigo objeto y otros archivos
+necesarios para eliminar los archivos de c√≥digo objeto y otros archivos
 de uso intermedio.
 
 \item[Requisito] Es el nombre de un archivo del cual depende el
@@ -95,22 +95,22 @@ de uso intermedio.
 requisito. Cuando el destino define el nombre de una tarea, no se
 definen requisitos.
 
-\item[Comando] Define una acciÛn a realizar para generar un {\em
-destino}. Puesto que la creaciÛn de un destino puede requerir varios
-comandos, estos deben ser indicados en lÌnea sucesivas, cada una de las
+\item[Comando] Define una acci√≥n a realizar para generar un {\em
+destino}. Puesto que la creaci√≥n de un destino puede requerir varios
+comandos, estos deben ser indicados en l√≠nea sucesivas, cada una de las
 cuales debe comenzar con un tabulador (no sirven los espacios). Los
-comandos son pasados al intÈrprete de comandos, el cual se encarga de
+comandos son pasados al int√©rprete de comandos, el cual se encarga de
 interpretarlos y ejecutarlos.
 
 \end{description}
 
 En el ejemplo anterior vemos un elemento adicional que no hemos
-comentado, {\tt $\backslash$} es el caracter de continuaciÛn de lÌnea.
-Colocado al final de una lÌnea, une dos lÌneas consecutivas como si
+comentado, {\tt $\backslash$} es el caracter de continuaci√≥n de l√≠nea.
+Colocado al final de una l√≠nea, une dos l√≠neas consecutivas como si
 fueran una sola. Se utiliza para facilitar la lectura.
 
 Cuando ejecutamos {\tt make} es necesario indicar el {\em destino} que
-queremos que sea generado. De lo contrario, se generar· el {\em destino}
+queremos que sea generado. De lo contrario, se generar√° el {\em destino}
 por defecto, que es el definido en la primera regla del {\tt Makefile}.
 Por ejemplo, si utilizamos el {\tt Makefile} anterior y ejecutamos {\tt
 make} de la siguiente manera:
@@ -121,8 +121,8 @@ rm holamundo \
    holamain.o holafuncm.o
 \end{verbatim}
 
-Tanto el ejecutable como los archivos de cÛdigo objeto de nuestra
-aplicaciÛn ser·n borrados. Sin embargo, si lo hacemos asÌ:
+Tanto el ejecutable como los archivos de c√≥digo objeto de nuestra
+aplicaci√≥n ser√°n borrados. Sin embargo, si lo hacemos as√≠:
 
 \begin{verbatim}
 $ make
@@ -136,48 +136,48 @@ ejecuta los comandos adecuados para generarlo conforme a las reglas
 descritas por el {\tt Makefile}. Evidentemente, se consigue el mismo
 efecto si ejecutamos {\tt make holamundo}.
 
-Una de las funcionalidades m·s importantes de {\tt make} es que evita
+Una de las funcionalidades m√°s importantes de {\tt make} es que evita
 generar los {\em destinos} ya existentes, o cuyos archivos de {\em
 requerimiento} no hayan cambiado. Para ello {\tt make} estudia las
 dependencias entre {\em destinos}. Por ejemplo, si ejecutamos {\tt
 make} con nuestro sencillo {\tt Makefile} de pruebas, el programa
-detectar·, a partir de las reglas, una dependencia entre el ejecutable
-{\tt holamundo} y los archivos de cÛdigo objeto {\tt holamain.o} y {\tt
+detectar√°, a partir de las reglas, una dependencia entre el ejecutable
+{\tt holamundo} y los archivos de c√≥digo objeto {\tt holamain.o} y {\tt
 holafuncm.o}. Y que estos a su vez dependen de {\tt holamain.c} y {\tt
 holafunc.h}, y {\tt holafuncm.c} y {\tt holafunc.h} respectivamente. El
 programa {\tt make} es capaz de detectar si alguno de los archivos de
-cÛdigo fuente ({\tt holamain.c}, {\tt holafuncm.c} u {\tt holafunc.h})
-fue modificado despuÈs de la ˙ltima ejecuciÛn. En caso de ser asÌ, {\tt
+c√≥digo fuente ({\tt holamain.c}, {\tt holafuncm.c} u {\tt holafunc.h})
+fue modificado despu√©s de la √∫ltima ejecuci√≥n. En caso de ser as√≠, {\tt
 make} invoca los {\em comandos} de la regla o reglas adecuadas para
-garantizar que {\tt holamain.o} y {\tt holafuncm.o} existen y est·n
-actualizados con respecto a los archivos de cÛdigo fuente de los que
+garantizar que {\tt holamain.o} y {\tt holafuncm.o} existen y est√°n
+actualizados con respecto a los archivos de c√≥digo fuente de los que
 dependen. Hecho esto, pasa a verificar si el ejecutable {\tt holamundo}
-existe y est· actualizado con respecto a los archivos de cÛdigo objeto
-de los que depende. De no ser asÌ, se ejecutan los {\em comandos}
+existe y est√° actualizado con respecto a los archivos de c√≥digo objeto
+de los que depende. De no ser as√≠, se ejecutan los {\em comandos}
 definidos en su regla con el fin de actualizar el ejecutable. Por lo
 tanto, {\sf GNU Make} garantiza que tengamos nuestro binario actualizado
-empleando el mÌnimo n˙mero de pasos posible.
+empleando el m√≠nimo n√∫mero de pasos posible.
 
 \section{Macros o variables}
 
 Las macros nos permiten definir constantes que utilizamos frecuentemente
-en nuestro archivo. La definiciÛn de una macro tiene la siguiente forma:
+en nuestro archivo. La definici√≥n de una macro tiene la siguiente forma:
 
 \begin{verbatim}
 MACRO1 = cadena de texto
 MACRO2 = otra cadena de texto
 \end{verbatim}
 
-Las macros pueden ser referenciadas indicando el nombre entre parÈntesis
+Las macros pueden ser referenciadas indicando el nombre entre par√©ntesis
 ({\tt ()}) o llaves ({\tt \{\}}) precedidas por el signo del dolar ({\tt
-\$}). Por ejemplo, las macros anteriores serÌan referenciadas como:
+\$}). Por ejemplo, las macros anteriores ser√≠an referenciadas como:
 
 \begin{verbatim}
 $(MACRO1)
 ${MACRO2}
 \end{verbatim}
 
-Algunas definiciones de macros v·lidas podrÌan ser:
+Algunas definiciones de macros v√°lidas podr√≠an ser:
 
 \begin{verbatim}
 LIBS = -lm
@@ -186,40 +186,40 @@ INCLUDES = holafunc.h
 DEBUG_FLAG =            # poner -g para depurar
 \end{verbatim}
 
-Los nombres de las macros pueden usar cualquier combinaciÛn de letras,
-n˙meros y subrayados. Adem·s, por convenio, suelen definirse en
-may˙sculas. Los valores pueden ser nulos como en la definiciÛn anterior
+Los nombres de las macros pueden usar cualquier combinaci√≥n de letras,
+n√∫meros y subrayados. Adem√°s, por convenio, suelen definirse en
+may√∫sculas. Los valores pueden ser nulos como en la definici√≥n anterior
 de {\tt DEBUG\_FLAG}, que nos muestra como un comentario puede ir a
-continuaciÛn de una definiciÛn. La propia definiciÛn de una macro puede
+continuaci√≥n de una definici√≥n. La propia definici√≥n de una macro puede
 contener referencias a otras macros definidas anterior o posteriormente.
 
-Una caracterÌsticas interesante de {\sf GNU Make} es la posibilidad de
-definir macros desde la lÌnea de comandos. Por ejemplo, podemos definir
-un valor para {\tt DEBUG\_FLAG}, que de otra forma tendrÌa un valor
+Una caracter√≠sticas interesante de {\sf GNU Make} es la posibilidad de
+definir macros desde la l√≠nea de comandos. Por ejemplo, podemos definir
+un valor para {\tt DEBUG\_FLAG}, que de otra forma tendr√≠a un valor
 nulo.
 
 \begin{verbatim} $ make DEBUG_FLAG=-g \end{verbatim}
 
 Las definiciones que incluyan espacios deben ir encerradas entre
-comillas dobles o simples, para que el intÈrprete de comandos se las
-entregue a {\tt make} como un ˙nico argumento. Por ejemplo:
+comillas dobles o simples, para que el int√©rprete de comandos se las
+entregue a {\tt make} como un √∫nico argumento. Por ejemplo:
 
 \begin{verbatim}
 $ make "LIBS= -lm -lX11"
 \end{verbatim}
 
-Las variables de entorno est·n disponibles, durante la ejecuciÛn de {\tt
+Las variables de entorno est√°n disponibles, durante la ejecuci√≥n de {\tt
 make}, como cualquier otra macro definida en el {\tt Makefile}.
 
 \subsection{Macros especiales}
 
 {\sf GNU Make} define algunas macros internas para simplificar nuestro
-trabajo. Podemos invocar {\tt make} con la opciÛn {\tt -p} para obtener
+trabajo. Podemos invocar {\tt make} con la opci√≥n {\tt -p} para obtener
 una lista de todas las macros, reglas y destinos que intervienen en la
-ejecuciÛn de {\tt make}.
+ejecuci√≥n de {\tt make}.
 
-Adem·s, hay unas pocas macros especiales que se definen en cada regla.
-Las m·s ˙tiles a la hora de crear nuestro {\tt Makefile} est·n descritas
+Adem√°s, hay unas pocas macros especiales que se definen en cada regla.
+Las m√°s √∫tiles a la hora de crear nuestro {\tt Makefile} est√°n descritas
 en el Cuadro \ref{makemacro}.
 
 \begin{table}[hbtp]
@@ -229,7 +229,7 @@ Variable & Contenido \\
 \hline
 {\tt @} & El nombre del archivo de {\em destino} de la regla \\
 \verb"<" & El nombre del primer {\em requisito} \\
-{\tt ?} & Los nombres de todos los {\em requisitos} que son m·s nuevos
+{\tt ?} & Los nombres de todos los {\em requisitos} que son m√°s nuevos
 que el {\em destino}, con espacios entre ellos \\
 \verb"^" & Los nombres de todos los {\em requisitos} \\
 \hline
@@ -241,24 +241,24 @@ Sabiendo todo esto podemos hacer uso de las macros para simplificar
 nuestro {\tt Makefile} de ejemplo:
 
 \begin{ejemplo}{makefile2.mak}{Makefile con macros}
-Makefile para compilar y enlazar el programa ejecutado en la p·gina
+Makefile para compilar y enlazar el programa ejecutado en la p√°gina
 \pageref{holafuncm}. Se han utilizado las macros de {\tt make} para
 simplificar y flexibilizar las reglas descritas en el archivo.
 \end{ejemplo}
 
-Las primeras lÌneas se utilizan para definir las macros que ser·n
+Las primeras l√≠neas se utilizan para definir las macros que ser√°n
 utilizadas en el resto de nuestro programa. Por ejemplo, definimos en
-{\tt LINK} el enlazador a utilizar, que ser· el definido internamente
+{\tt LINK} el enlazador a utilizar, que ser√° el definido internamente
 por {\tt make} en {\tt CC}; habitualmente el {\tt gcc}. Mientras que las
 variables {\tt CFLAGS} y {\tt LDFLAGS} especifican las opciones para el
 compilador y el enlazador respectivamente. En nuestro caso, indicamos
 con {\tt -lm} que queremos enlazar la biblioteca libm, con {\tt -g} que
-deseamos incluir el cÛdigo de depuraciÛn en el ejecutable de nuestro
-programa, y con {\tt -Wall} que el compilador debe avisarnos a la m·s
-mÌnima sospecha de un posible error en el programa.
+deseamos incluir el c√≥digo de depuraci√≥n en el ejecutable de nuestro
+programa, y con {\tt -Wall} que el compilador debe avisarnos a la m√°s
+m√≠nima sospecha de un posible error en el programa.
 
-Al utilizar el operador {\tt +=} durante la asignaciÛn, indicamos que
-los nuevos valores deben aÒadirse a los que ya tuvieran dichas macros
+Al utilizar el operador {\tt +=} durante la asignaci√≥n, indicamos que
+los nuevos valores deben a√±adirse a los que ya tuvieran dichas macros
 previamente. Es decir, indicamos algo similar a:
 
 \begin{verbatim}
@@ -266,31 +266,31 @@ CFLAGS = $(CFLAGS) -g -c
 LDFLAGS = $(LDFLAGS) -lm
 \end{verbatim}
 
-Solo que expresarlo de esa manera no est· permitido. Los valores previos
+Solo que expresarlo de esa manera no est√° permitido. Los valores previos
 de las variables pueden haber sido definidos internamente por {\tt
-make}, especificados desde la lÌnea de comandos durante la invocaciÛn
-del mismo, o a travÈs de la definiciÛn de variables de entorno del mismo
-nombre desde el intÈrprete de comandos.
+make}, especificados desde la l√≠nea de comandos durante la invocaci√≥n
+del mismo, o a trav√©s de la definici√≥n de variables de entorno del mismo
+nombre desde el int√©rprete de comandos.
 
-\section{Reglas implÌcitas}
+\section{Reglas impl√≠citas}
 
 Ciertas formas de generar un {\em destino} son utilizadas
-frecuentemente. Por ejemplo, la forma de obtener una archivo de cÛdigo
-objeto desde un archivo de cÛdigo fuente usando un compilador de C como
+frecuentemente. Por ejemplo, la forma de obtener una archivo de c√≥digo
+objeto desde un archivo de c√≥digo fuente usando un compilador de C como
 {\tt gcc}.
 
-Las reglas implÌcitas evitan tener que especificar de forma detallada
+Las reglas impl√≠citas evitan tener que especificar de forma detallada
 este tipo de dependencias cuando tienen que ser usadas. Por ejemplo,
-habitualmente el nombre los archivos de cÛdigo fuente en C termina
-en {\tt .c}, mientras que el nombre de los archivos de cÛdigo objeto
-termina en {\tt .o}. Se puede crear una regla implÌcita que indique a
+habitualmente el nombre los archivos de c√≥digo fuente en C termina
+en {\tt .c}, mientras que el nombre de los archivos de c√≥digo objeto
+termina en {\tt .o}. Se puede crear una regla impl√≠cita que indique a
 {\tt make} como compilar programas en C cuando detecta dichos sufijos en
 los nombres de los archivos.
 
-Un procedimiento para definir reglas implÌcitas es con la ayuda de
+Un procedimiento para definir reglas impl√≠citas es con la ayuda de
 reglas de sufijo. Por ejemplo, la siguiente regla describe como generar
-un archivos de cÛdigo objeto ({\tt *.o}) a partir de un archivo de
-cÛdigo fuente en C ({\tt *.c}):
+un archivos de c√≥digo objeto ({\tt *.o}) a partir de un archivo de
+c√≥digo fuente en C ({\tt *.c}):
 
 \begin{verbatim}
 .c.o:
@@ -298,7 +298,7 @@ cÛdigo fuente en C ({\tt *.c}):
 \end{verbatim}
 
 Sin embargo, en la actualidad se tiende a utilizar reglas de patrones
-por ser mucho m·s flexibles.
+por ser mucho m√°s flexibles.
 
 \begin{verbatim}
 %.o: %.c
@@ -306,35 +306,35 @@ por ser mucho m·s flexibles.
 \end{verbatim}
 
 Como podemos apreciar, en las reglas de patrones el caracter {\tt \%}
-hace de comodÌn.
+hace de comod√≠n.
 
 Con todo esto, nuevamente podemos simplificar nuestro {\tt Makefile}:
 
-\begin{ejemplo}{makefile3.mak}{Makefile con reglas implÌcitas}
-Makefile para compilar y enlazar el programa ejecutado en la p·gina
-\pageref{holafuncm}. Se han utilizado reglas implÌcitas para simplificar
-el archivo y hacerlo m·s general.
+\begin{ejemplo}{makefile3.mak}{Makefile con reglas impl√≠citas}
+Makefile para compilar y enlazar el programa ejecutado en la p√°gina
+\pageref{holafuncm}. Se han utilizado reglas impl√≠citas para simplificar
+el archivo y hacerlo m√°s general.
 \end{ejemplo}
 
 Para ayudarnos a la hora de crear nuestro {\tt Makefile}, {\sf GNU
-Make} incluye una serie de reglas implÌcitas definidas internamente.
-Estas definiciones pueden consultarse en la documentaciÛn del programa,
-ejecutando {\tt info make}, o con ayuda de la opciÛn {\tt -p} del mismo.
-En cualquier caso, las reglas m·s comunes, como la de compilar archivos
-de cÛdigo fuente en C, est·n ya definidas, por lo que nuestro {\tt
-Makefile} puede simplificarse a˙n m·s.
+Make} incluye una serie de reglas impl√≠citas definidas internamente.
+Estas definiciones pueden consultarse en la documentaci√≥n del programa,
+ejecutando {\tt info make}, o con ayuda de la opci√≥n {\tt -p} del mismo.
+En cualquier caso, las reglas m√°s comunes, como la de compilar archivos
+de c√≥digo fuente en C, est√°n ya definidas, por lo que nuestro {\tt
+Makefile} puede simplificarse a√∫n m√°s.
 
-\begin{ejemplo}{makefile4.mak}{Makefile con reglas implÌcitas internas}
-Makefile para compilar y enlazar el programa ejecutado en la p·gina
-\pageref{holafuncm}. Se han utilizado reglas implÌcitas internas para
+\begin{ejemplo}{makefile4.mak}{Makefile con reglas impl√≠citas internas}
+Makefile para compilar y enlazar el programa ejecutado en la p√°gina
+\pageref{holafuncm}. Se han utilizado reglas impl√≠citas internas para
 simplificar el archivo.
 \end{ejemplo}
 
 {\sf GNU Make} es un programa muy potente que no permite extender
 nuestro {\tt Makefile} con nuevos {\em destinos} que se encarguen de
-tareas como: generar la documentaciÛn de ayuda, que generar bibliotecas
-de enlace din·mico con las funciones de uso m·s frecuente, que generar
-otros ejecutables que formen parte de la aplicaciÛn, e incluso
-empaquetar nuestro programa y lo dejarlo listo para su instalaciÛn en
+tareas como: generar la documentaci√≥n de ayuda, que generar bibliotecas
+de enlace din√°mico con las funciones de uso m√°s frecuente, que generar
+otros ejecutables que formen parte de la aplicaci√≥n, e incluso
+empaquetar nuestro programa y lo dejarlo listo para su instalaci√≥n en
 cualquier sistema.
 

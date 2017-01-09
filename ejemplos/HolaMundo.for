@@ -1,4 +1,4 @@
-* Programa b·sico de HolaMundo
+* Programa b√°sico de HolaMundo
 
       Program HolaMundo
 

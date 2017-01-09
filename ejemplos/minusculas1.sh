@@ -1,5 +1,5 @@
 #!/bin/sh
-# minusculas1.sh .- Utilización de la sentencia "for".
+# minusculas1.sh .- UtilizaciÃ³n de la sentencia "for".
 # Copiado de http://www.linuxgazette.com/issue25/dearman.html
 
 DIR=$1

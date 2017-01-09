@@ -5,34 +5,34 @@
 \label{gnuplot.tex}
 
 
-Gnuplot es el programa encargado de hacer  las gr·ficas 2D y 3D que se
+Gnuplot es el programa encargado de hacer  las gr√°ficas 2D y 3D que se
 visualizaban  en  Octave.  Gnuplot  es un  programa  independiente  de
-Octave, que  usado por sÌ  mismo te permite hacer  representaciones de
-funciones  continuas  y  de  tablas  de  datos.  Octave  sÛlo  usa  un
+Octave, que  usado por s√≠  mismo te permite hacer  representaciones de
+funciones  continuas  y  de  tablas  de  datos.  Octave  s√≥lo  usa  un
 subconjunto de las funcionalidades de Gnuplot.
 
-La primera caracterÌstica  de Gnuplot es que es muy  similar a Octave
+La primera caracter√≠stica  de Gnuplot es que es muy  similar a Octave
 en funcionamiento,  es decir, que  posee una interfaz de  comandos muy
-poderosa que  tambiÈn puedes utilizar escribiendo  scripts. Esta forma
+poderosa que  tambi√©n puedes utilizar escribiendo  scripts. Esta forma
 de trabajar tiene  sus desventajas y sus ventajas.  Las desventajas es
-que necesitas  una curva  de aprendizaje m·s  lenta, donde  tienes que
-haberte mirado  por lo  menos la  descripciÛn de  uno de  los comandos
-({\tt plot}) para  poder empezar a hacer algo.  Cuando est·s tanteando
-datos mejor que uses otro programa  que te permita hacer las cosas m·s
+que necesitas  una curva  de aprendizaje m√°s  lenta, donde  tienes que
+haberte mirado  por lo  menos la  descripci√≥n de  uno de  los comandos
+({\tt plot}) para  poder empezar a hacer algo.  Cuando est√°s tanteando
+datos mejor que uses otro programa  que te permita hacer las cosas m√°s
 interactivamente. Pero cuando ya tienes claro lo que tienes que hacer,
 por ejemplo, sobre una tabla de datos,  y tienes 100 tablas de datos a
 las que hacer  lo mismo, poder hacer  un script puede ser  de una gran
 ayuda.
 
-La  otra  caracterÌstica  destacable  de Gnuplot  es  la  variedad  de
+La  otra  caracter√≠stica  destacable  de Gnuplot  es  la  variedad  de
 formatos de  salida de que  dispone, que  se pueden seleccionar  en el
 script.  Te permite  exportar  a formatos  vectoriales (xfig,  {\TeX},
 postscript),  formatos  bitmap (png,  pbm),  o  formatos de  impresora
-(epson, hp, etc).  Con esto puedes tener tu gr·fica  retocada por xfig
-en tu publicaciÛn en  LaTeX, o bien puesta en tu p·gina  web (png) y o
+(epson, hp, etc).  Con esto puedes tener tu gr√°fica  retocada por xfig
+en tu publicaci√≥n en  LaTeX, o bien puesta en tu p√°gina  web (png) y o
 bien impresa directamente en una impresora.
 
-Al ejecutar gnuplot en un shell entramos a su lÌnea de comandos:
+Al ejecutar gnuplot en un shell entramos a su l√≠nea de comandos:
 
 \begin{verbatim}
 alberto@mencey:~$ gnuplot
@@ -58,70 +58,70 @@ gnuplot>
 \end{verbatim}
 
 Como fuente  de ayuda teclea  {\tt help}  desde dentro del  programa y
-despuÈs de una pantalla introductoria te saldr· un prompt sobre el que
-podr·s escribir, o bien un nombre que elegir·s de los topics que se te
+despu√©s de una pantalla introductoria te saldr√° un prompt sobre el que
+podr√°s escribir, o bien un nombre que elegir√°s de los topics que se te
 presentan, o bien un nombre de comando si quieres conocer su sintaxis.
 
 Como has  visto, el formato  de salida es  x11 (visualizar en  las X).
 Para ver un listado de los  diferentes tipos de salida disponibles usa
 {\tt set terminal}.
 
-\section{RepresentaciÛn de expresiones analÌticas}
+\section{Representaci√≥n de expresiones anal√≠ticas}
 
-La  parte  m·s sencilla  y  pr·ctica  de  Gnuplot es  la  presentaciÛn
-de  funciones  continuas, tanto  en  forma  explÌcita {\tt  y=f(x)}  o
-{\tt  z=f(x,y)},  como  puede  ser en  forma  paramÈtrica:  curvas  2D
+La  parte  m√°s sencilla  y  pr√°ctica  de  Gnuplot es  la  presentaci√≥n
+de  funciones  continuas, tanto  en  forma  expl√≠cita {\tt  y=f(x)}  o
+{\tt  z=f(x,y)},  como  puede  ser en  forma  param√©trica:  curvas  2D
 {\tt (x,y)=f(t)},  curvas 3D  {\tt (x,y,z)=f(u)}, superficies  3D {\tt
 (x,y,z)=f(u,v)}.
 
 Con  {\tt help  functions} tenemos  un  listado de  las funciones  que
 admite. Una  gran desventaja que  tiene es que muestrea  las funciones
-a  intervalos  regulares,  por  tanto,  no  hace  ning˙n  an·lisis  de
-discontinuidades  (lo que  se nota  en, por  ejemplo, la  funciÛn {\tt
-floor}), aunque sÌ se puede  configurar para que reduzca el intervalo.
-Si queremos  imponer cual ser· el  rango del eje  X o el Y  lo ponemos
-entre corchetes antes de la funciÛn. Algunos ejemplos:
+a  intervalos  regulares,  por  tanto,  no  hace  ning√∫n  an√°lisis  de
+discontinuidades  (lo que  se nota  en, por  ejemplo, la  funci√≥n {\tt
+floor}), aunque s√≠ se puede  configurar para que reduzca el intervalo.
+Si queremos  imponer cual ser√° el  rango del eje  X o el Y  lo ponemos
+entre corchetes antes de la funci√≥n. Algunos ejemplos:
 
 
 \begin{verbatim}
 gnuplot> plot x                        # identidad
 gnuplot> plot abs(x)                   # valor absoluto
-gnuplot> plot x**2                     # par·bola
+gnuplot> plot x**2                     # par√°bola
 gnuplot> plot [-1:1] sqrt(1-x**2)      # semicircunferencia
 gnuplot> plot [] [-0.1:1.1] exp(-x**2) # gaussiana
-gnuplot> plot [-1:4] gamma(x)          # funciÛn gamma
-gnuplot> plot floor(x)                 # funciÛn redondeo hacia abajo
+gnuplot> plot [-1:4] gamma(x)          # funci√≥n gamma
+gnuplot> plot floor(x)                 # funci√≥n redondeo hacia abajo
 gnuplot> plot x-floor(x)               # diente de sierra
 gnuplot> splot x**2+y**2               # plot en 3D
 gnuplot> splot sqrt(1-x**2+y**2)              
-gnuplot> set isosamples 20,20          # cambia la resoluciÛn
+gnuplot> set isosamples 20,20          # cambia la resoluci√≥n
 gnuplot> replot                 
-gnuplot> set isosamples 50,50          # cambia la resoluciÛn
-gnuplot> set contour		       # activa lÌneas de nivel
+gnuplot> set isosamples 50,50          # cambia la resoluci√≥n
+gnuplot> set contour		       # activa l√≠neas de nivel
 gnuplot> replot
-gnuplot> set parametric                # modo paramÈtrico 
+gnuplot> set parametric                # modo param√©trico 
 
 	dummy variable is t for curves, u/v for surfaces
-gnuplot> set samples 500                   # mejor resoluciÛn (+lento)
+gnuplot> set samples 500                   # mejor resoluci√≥n (+lento)
 gnuplot> plot sin(7*t),cos(5*t)            # lissajous en 2D
 gnuplot> splot sin(5*u),sin(6*u),sin(7*u)  # lissajous en 3D
-gnuplot> set samples 100                   # menor resoluciÛn (+r·pido)
+gnuplot> set samples 100                   # menor resoluci√≥n (+r√°pido)
 gnuplot> splot cos(u)*cos(v),cos(u)*sin(v),sin(u)  # esfera en 3D
 \end{verbatim}
 
-\section{RepresentaciÛn de archivos de datos}
+\section{Representaci√≥n de archivos de datos}
 
- Gnuplot  tambiÈn tiene un  modo para trabajar con  archivos de
-datos con m˙ltiples columnas. Cuando los  archivos de datos tienen 1 Û
-2  columnas  se  presentan  directamente.  Si  un  archivo  tiene  m·s
+ Gnuplot  tambi√©n tiene un  modo para trabajar con  archivos de
+datos con m√∫ltiples columnas. Cuando los  archivos de datos tienen 1 √≥
+2  columnas  se  presentan  directamente.  Si  un  archivo  tiene  m√°s
 de  2 columnas  se  pueden presentar  columnas arbitrariamente,  hacer
-operaciones matem·ticas  sencillas entre  columnas. Veamos esto  en un
-ejemplo real (bastante prolijo) donde  un servidor genera una lÌnea de
+operaciones matem√°ticas  sencillas entre  columnas. Veamos esto  en un
+ejemplo real (bastante prolijo) donde  un servidor genera una l√≠nea de
 log de  load, logins y  carga de cpu, a  cada hora y  queremos obtener
-gr·ficas que muestren la evoluciÛn en el tiempo 
+gr√°ficas que muestren la evoluci√≥n en el tiempo 
 
 \begin{verbatim}
-# Ejemplo para la monitorizaciÛn de carga de un servidor en el tiempo
+# Ejemplo para la monitorizaci√≥n de carga de un servidor en el tiempo
 
 set title "Convex     November 1-7 1989    Circadian"
 set key left box
@@ -143,19 +143,19 @@ pause -1 "Hit return to continue"
 reset
 \end{verbatim}
 
- Como ˙ltimo  ejemplo, vamos a probar un script  donde se hacen
-ajustes por el mÈtodo de mÌnimos  cuadrados con Gnuplot. En el ejemplo
-se realizan ajustes a una recta  variando los pesos, pero el mÈtodo de
-ajuste que utiliza Gnuplot permite  poner cualquier funciÛn de ajuste,
+ Como √∫ltimo  ejemplo, vamos a probar un script  donde se hacen
+ajustes por el m√©todo de m√≠nimos  cuadrados con Gnuplot. En el ejemplo
+se realizan ajustes a una recta  variando los pesos, pero el m√©todo de
+ajuste que utiliza Gnuplot permite  poner cualquier funci√≥n de ajuste,
 simplemente definiendo las variables y constantes y dando unos valores
 iniciales a las constantes. 
 
 \begin{verbatim}
-# ajustes por mÌnimos cuadrados en Gnuplot 
+# ajustes por m√≠nimos cuadrados en Gnuplot 
 
-y(x) = a*x + b   # funciÛn a la que se ajustar·
+y(x) = a*x + b   # funci√≥n a la que se ajustar√°
 a = 0.0          # valores iniciales
-b = 0.0          # de los par·metros
+b = 0.0          # de los par√°metros
 
 fit y(x) 'gnuplot-fit.dat' via a, b
 set title 'Ajuste sin pesar'

@@ -9,22 +9,22 @@ void menu_ (float *a, int *n)
     m  =  0;
     op = -1;
     
-    printf ("\n\tEjemplo de programación conjunta Fortran y C\n");
-    printf ("\n\tCILA -- Curso de Introducción a Linux para Alumnos\n");
+    printf ("\n\tEjemplo de programaciÃ³n conjunta Fortran y C\n");
+    printf ("\n\tCILA -- Curso de IntroducciÃ³n a Linux para Alumnos\n");
     while (op)
     {
-        printf ("\nMenú:\n");
+        printf ("\nMenÃº:\n");
         printf (" 1. Vaciar el vector\n");
-        printf (" 2. Añadir un elemento al vector\n");
+        printf (" 2. AÃ±adir un elemento al vector\n");
         printf (" 3. Ordenar el vector\n");
         printf (" 4. Mostrar el vector\n");
-        printf (" 0. Salir del menú\n");
-        printf ("Elije una opción (0/1/2/3/4): ");
+        printf (" 0. Salir del menÃº\n");
+        printf ("Elije una opciÃ³n (0/1/2/3/4): ");
         while (scanf ("%d", &op) != 1)
         {
             scanf ("%50s", trash);
-            printf ("La opción %s no es válida\n", trash);
-            printf ("Elije una opción (0/1/2/3/4): ");
+            printf ("La opciÃ³n %s no es vÃ¡lida\n", trash);
+            printf ("Elije una opciÃ³n (0/1/2/3/4): ");
         } /* while */
         switch (op)
         {
@@ -35,12 +35,12 @@ void menu_ (float *a, int *n)
                 printf ("El vector ha sido vaciado\n");
                 break;
             case 2:
-                printf ("Introduce un número real: ");
+                printf ("Introduce un nÃºmero real: ");
                 while (scanf ("%f", a+m) != 1)
                 {
                     scanf ("%50s", trash);
-                    printf ("%s no es un número real\n", trash);
-                    printf ("Introduce un número real: ");
+                    printf ("%s no es un nÃºmero real\n", trash);
+                    printf ("Introduce un nÃºmero real: ");
                 } /* while */
                 m++;
                 break;
@@ -49,15 +49,15 @@ void menu_ (float *a, int *n)
                 printf ("El vector ha sido ordenado\n");
                 break;
             case 4:
-                printf ("\n\tEl vector contiene %d números\n", m);
+                printf ("\n\tEl vector contiene %d nÃºmeros\n", m);
                 for (i = 0; i < m; i++)
                     printf ("\ta[%d] = %f\n", i, a[i]);
                 break;
             case 0:
-                printf ("Menú terminado\n");
+                printf ("MenÃº terminado\n");
                 break;
             default:
-                printf ("La opción %d no es válida\n", op);
+                printf ("La opciÃ³n %d no es vÃ¡lida\n", op);
         } /* switch */
     } /* while */
 } /* menu */

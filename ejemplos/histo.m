@@ -1,7 +1,7 @@
 #!/usr/bin/octave -qf
 y=randn(100,1);   # matriz num aleatorios normal
 clearplot;        # borra grafico
-axis("auto","normal"); # ejes autom·ticos
+axis("auto","normal"); # ejes autom√°ticos
 hold off;         # no superpone siguientes graficos
 subplot(1,2,1);   # cuadrante 1 de 2
 title("datos aleatorios en eje y");

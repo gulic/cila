@@ -17,7 +17,7 @@ a'*b   # vector 4x1 x vector 1x4
 c=diag([1,2,3,4]) # creacion de matrices diagonales
 inv(c) # inversa de una matriz
 det(c) # determinante de una matriz
-eye(4) # matriz identidad de dimensión 4
+eye(4) # matriz identidad de dimensiÃ³n 4
 rand(4,3) # matriz de numeros aleatorios 4x3
 
 # plot en 2d
@@ -38,7 +38,7 @@ mesh(x,y,mz)
 
 # funcion FFT (Fast Fourier Transform)
 x=[-1:0.01:1];
-y=(abs(x)<0.2); # escalon generado con una comparación
+y=(abs(x)<0.2); # escalon generado con una comparaciÃ³n
 plot(x,y) # funcion original
 f=abs(fftshift(fft(y)));
 plot(f)  # funcion transformada

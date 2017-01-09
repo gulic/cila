@@ -2,97 +2,97 @@
 	Borrador del reparto de los contenidos del CILA entre 
 	los profesores y las horas disponibles
 
- Módulos
- I.   Entorno GNU/Linux  (3 días, 15 horas en 3 clases de  5 horas)
- II.  Instalación        (2 días, 20 horas en 2 clases de 10 horas)
- III. Documentación      (2 días,  8 horas en 2 clases de  4 horas)
- IV.  Matemáticas        (1 día,   4 horas en 1 clase)
- V.   Programación       (2 días,  8 horas en 2 clases de  4 horas)
+ MÃ³dulos
+ I.   Entorno GNU/Linux  (3 dÃ­as, 15 horas en 3 clases de  5 horas)
+ II.  InstalaciÃ³n        (2 dÃ­as, 20 horas en 2 clases de 10 horas)
+ III. DocumentaciÃ³n      (2 dÃ­as,  8 horas en 2 clases de  4 horas)
+ IV.  MatemÃ¡ticas        (1 dÃ­a,   4 horas en 1 clase)
+ V.   ProgramaciÃ³n       (2 dÃ­as,  8 horas en 2 clases de  4 horas)
 
  Horas por profesor:
- - Félix:      4             =  4.0 horas
- - Jesús:      2 + 3 + 5     = 10.0 horas
+ - FÃ©lix:      4             =  4.0 horas
+ - JesÃºs:      2 + 3 + 5     = 10.0 horas
  - Alberto:  2.5 + 2 + 5     = 10.5 horas
  - Miguel:   2.5 + 4 + 2 + 3 = 10.5 horas
 
- Módulo I:   Entorno GNU/Linux
- 1. Historia de GNU/Linux.                               (Félix/miguev,   0.5)
- 2. El entorno del intérprete de comandos, con mtools.   (Félix/miguev,     1)
+ MÃ³dulo I:   Entorno GNU/Linux
+ 1. Historia de GNU/Linux.                               (FÃ©lix/miguev,   0.5)
+ 2. El entorno del intÃ©rprete de comandos, con mtools.   (FÃ©lix/miguev,     1)
  3. El entorno X-Window, Gnome, KDE.                     
     - X-Window                                           (Alberto,   0.5)
 	- GNOME                                              (Alberto,     1)
 	- KDE                                                (Carlos,     1)
- 4. Sistemas de ayuda y documentación                    (Alberto,     1)
+ 4. Sistemas de ayuda y documentaciÃ³n                    (Alberto,     1)
  5. Aplicaciones para Internet: 
-    - Navegadores: Netscape, Mozilla, Konqueror, Galeon  (Jesús,     3)
+    - Navegadores: Netscape, Mozilla, Konqueror, Galeon  (JesÃºs,     3)
 	- Correo: Mutt, Evolution                            (Jesus,   1)
 	- FTP, gFTP                                          (Jesus, 0.5)
 	- SSH                                                (Jesus, 0.5)
  6. Aplicaciones diversas: 
     - gnotepad, gnumeric, devhelp,
 
- Módulo II:  Instalación (Debian GNU/Linux 3.0, 8 CDs, 25 plazas)
+ MÃ³dulo II:  InstalaciÃ³n (Debian GNU/Linux 3.0, 8 CDs, 25 plazas)
  1. Sistema base (particiones y Lilo)
  2. Hardware y kernel (kernel-package)
- 3. Administración básica (adduser, floppy, cdrom, APT)
- 4. Software para los módulos del TILA.
+ 3. AdministraciÃ³n bÃ¡sica (adduser, floppy, cdrom, APT)
+ 4. Software para los mÃ³dulos del TILA.
  5. Paquetes en fuentes (bajar, compilar e instalar videolan y xine con aa) 
  6. Software adicional (a gusto del consumidor)
 
- Módulo III: Edición de gráficos y documentos
- 1. OpenOffice                          (Félix/Jesús,    2.5)
- 2. HTML                                (Félix/Jesús,    1.5)
- 3. Edición de gráficos:
+ MÃ³dulo III: EdiciÃ³n de grÃ¡ficos y documentos
+ 1. OpenOffice                          (FÃ©lix/JesÃºs,    2.5)
+ 2. HTML                                (FÃ©lix/JesÃºs,    1.5)
+ 3. EdiciÃ³n de grÃ¡ficos:
     - DIA                               (Miguel,   0.5)
     - QCad                              (Miguel,   0.5)
     - The GIMP                          (Miguel,   0.5)
  4. LyX                                 (Miguel,   0.5)
  5. LaTeX                               (Miguel,     2)
 
- Módulo IV:  Herramientas para matemáticas
+ MÃ³dulo IV:  Herramientas para matemÃ¡ticas
  1. Octave                              (Alberto, 1.25)
  2. GNUplot                             (Alberto, 0.75)
  3. R                                   (Miguev,  1.25)
  4. Yacas                               (Miguev,  0.75)
 
- Módulo V:   Herramientas de programación
+ MÃ³dulo V:   Herramientas de programaciÃ³n
  1. Editores: 
     - VI, VIM, GVIM                     (Miguel,   1)
 	- GNU Emacs                         (Alberto,  1)
  2. FreePascal                          (Miguel, 0.5)
  3. GNU Fortran                         (Miguel, 0.5)
- 4. GNU C/C++                           (Jesús,    1)
- 5. GNU Make                            (Jesús,    1)
- 6. Depuradores: gdb y ddd.             (Jesús,  1.5)
- 7. Java                                (Jesús,  0.5)
- 8. Bash.                               (Jesús,    1)
+ 4. GNU C/C++                           (JesÃºs,    1)
+ 5. GNU Make                            (JesÃºs,    1)
+ 6. Depuradores: gdb y ddd.             (JesÃºs,  1.5)
+ 7. Java                                (JesÃºs,  0.5)
+ 8. Bash.                               (JesÃºs,    1)
 
 
- Versión resumida de Agosto 2002:
- 1. Historia y conceptos de GNU/Linux                            (Félix,  0.25)
- 2. Intérprete de comandos                                       (Félix,  0.75)
- 3. El entorno X-Window. Gestores de ventanas                    (Jesús,   0.5)
- 4. El escritorio GNOME                                          (Jesús,   0.5)
- 5. El escritorio KDE                                            (Félix,   0.5)
- 6. Documentación y sistemas de ayuda                            (Félix,   0.5)
+ VersiÃ³n resumida de Agosto 2002:
+ 1. Historia y conceptos de GNU/Linux                            (FÃ©lix,  0.25)
+ 2. IntÃ©rprete de comandos                                       (FÃ©lix,  0.75)
+ 3. El entorno X-Window. Gestores de ventanas                    (JesÃºs,   0.5)
+ 4. El escritorio GNOME                                          (JesÃºs,   0.5)
+ 5. El escritorio KDE                                            (FÃ©lix,   0.5)
+ 6. DocumentaciÃ³n y sistemas de ayuda                            (FÃ©lix,   0.5)
  7. Herramientas de red: Navegadores y correo                    (Alberto,   2)
- 8. Herramientas de red: SSH, FTP                                (Jesús,     1)
- 9. Aplicaciones para gráficos: DIA, Qcad, GIMP                  (Miguel,    1)
+ 8. Herramientas de red: SSH, FTP                                (JesÃºs,     1)
+ 9. Aplicaciones para grÃ¡ficos: DIA, Qcad, GIMP                  (Miguel,    1)
 10. Aplicaciones para documentos: LaTeX, LyX, OpenOffice         (Miguel,    1)
 11. Instalar programas compilando: VideoLan Client               (Miguel,    1)
  
 
- Versión resumida de Octubre 2002:
- 1. Historia y conceptos de GNU/Linux                            (Félix,   0.5)
- 2. Intérprete de comandos                                       (Félix,     1)
- 3. El entorno X-Window. Gestores de ventanas                    (Jesús,   0.5)
- 4. El escritorio GNOME                                          (Jesús,     1)
- 5. El escritorio KDE                                            (Félix,     1)
- 6. Sistemas de ayuda y documentación                            (Félix,   0.5)
- 7. Herramientas de red de GNU/Linux                             (Jesús,   0.5)
+ VersiÃ³n resumida de Octubre 2002:
+ 1. Historia y conceptos de GNU/Linux                            (FÃ©lix,   0.5)
+ 2. IntÃ©rprete de comandos                                       (FÃ©lix,     1)
+ 3. El entorno X-Window. Gestores de ventanas                    (JesÃºs,   0.5)
+ 4. El escritorio GNOME                                          (JesÃºs,     1)
+ 5. El escritorio KDE                                            (FÃ©lix,     1)
+ 6. Sistemas de ayuda y documentaciÃ³n                            (FÃ©lix,   0.5)
+ 7. Herramientas de red de GNU/Linux                             (JesÃºs,   0.5)
  7. Herramientas de red de GNU/Linux                             (Alberto, 1.5)
- 8. Documentación y sistemas de ayuda                            (Alberto,   1)
- 9. El entorno de programación FreePascal                        (Miguel,  0.5)
+ 8. DocumentaciÃ³n y sistemas de ayuda                            (Alberto,   1)
+ 9. El entorno de programaciÃ³n FreePascal                        (Miguel,  0.5)
 10. El compilador GNU Fortran 77                                 (Miguel,  0.5)
-11. Herramientas de programación: depuradores, editores, etc.    (Miguel,    1)
+11. Herramientas de programaciÃ³n: depuradores, editores, etc.    (Miguel,    1)
 

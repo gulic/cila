@@ -5,7 +5,7 @@ Sturm (P, x) := [
     L := Append (L, P(x));
     L := Append (L, D(x) P(x));
 
-    /* El número de términos en la sucesión de Sturm asociada a P(x)
+    /* El nÃºmero de tÃ©rminos en la sucesiÃ³n de Sturm asociada a P(x)
      * es siempre no superior al grado del polinomio P(x) */
     For ( i := 3 , i <= Degree(P(x)) , i++ )
       L := Append (L, - Mod ( L[i-2] , L[i-1] ) );

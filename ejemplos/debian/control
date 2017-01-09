@@ -1,7 +1,7 @@
 Source: cila-ejemplos
 Section: doc
 Priority: optional
-Maintainer: Miguel 羘gel Vilela Garc韆 (miguev) <miguev@gulic.org>
+Maintainer: Miguel 脕ngel Vilela Garc铆a (miguev) <miguev@gulic.org>
 Build-Depends: debhelper (>> 3.0.0), make, tetex-extra, tetex-eurosym, dvips, gs-common
 Standards-Version: 3.5.2
 
@@ -10,7 +10,7 @@ Architecture: all
 Depends: ${shlibs:Depends}
 Recommends: cila-base, cila-libro
 Suggests: cila-extra, cila-libro-src
-Description: Ejemplos de c骴igo del Curso de Introducci髇 a Linux para Alumnos
- Libro del Curso de Introducci髇 a Linux para Alumnos
+Description: Ejemplos de c贸digo del Curso de Introducci贸n a Linux para Alumnos
+ Libro del Curso de Introducci贸n a Linux para Alumnos
  .
- Este paquete contiene los ejemplos de c骴igo utilizados en el CILA
+ Este paquete contiene los ejemplos de c贸digo utilizados en el CILA

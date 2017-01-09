@@ -1,21 +1,21 @@
 %Autor: _ese
 %_ese: 21
 
-\chapter{El intÈrprete de comandos}
+\chapter{El int√©rprete de comandos}
 \label{comandos.tex}
-\index{Comandos, intÈrprete}
-\section{øQuÈ es un intÈrprete de comandos?}
+\index{Comandos, int√©rprete}
+\section{¬øQu√© es un int√©rprete de comandos?}
 
-Si  bien  manejarse en  Linux  es  cada vez  m·s  f·cil,  debido a  la
-proliferaciÛn  de escritorios,  los  comienzos no  siempre fueron  asÌ
-de  f·ciles. De  hecho,  puede  ocurrir que  nos  encontremos con  una
-emergencia  en el  que  no  nos quede  m·s  remedio  que trabajar  con
+Si  bien  manejarse en  Linux  es  cada vez  m√°s  f√°cil,  debido a  la
+proliferaci√≥n  de escritorios,  los  comienzos no  siempre fueron  as√≠
+de  f√°ciles. De  hecho,  puede  ocurrir que  nos  encontremos con  una
+emergencia  en el  que  no  nos quede  m√°s  remedio  que trabajar  con
 comandos.
 
-Un intÈrprete  de comandos tiene el  aspecto de una pantalla  llena de
+Un int√©rprete  de comandos tiene el  aspecto de una pantalla  llena de
 letras, generalmente con fondo  negro y letras blancas\footnote{Aunque
 inicialmente  eran  de fondo  negro  con  letras  de color  naranja  o
-verde.}, y que en la ˙ltima lÌnea inferior, se suele ver lo siguiente:
+verde.}, y que en la √∫ltima l√≠nea inferior, se suele ver lo siguiente:
 
 \begin{verbatim}
 [cila@gulic]$
@@ -28,18 +28,18 @@ consola. Estos comandos pueden ser de diferentes clases:
 \begin{itemize}
 \item Programas ejecutables.
 
-\item Scripts (guiones) del intÈrprete.
+\item Scripts (guiones) del int√©rprete.
 
 \item Scripts (guiones) de lenguajes de  script como {\sf Python},  {\sf Perl},
 {\sf Tcl}, etc.
 
-\item Macros del intÈrprete.
+\item Macros del int√©rprete.
 \end{itemize}
 
-Todos  tienen en  com˙n que  son ficheros:  al cargar  un programa  en
-Linux, se ordena al intÈrprete que busque el fichero con el nombre del
+Todos  tienen en  com√∫n que  son ficheros:  al cargar  un programa  en
+Linux, se ordena al int√©rprete que busque el fichero con el nombre del
 programa y una vez encontrado, lo ejecute si el usuario tiene permisos
-de ejecuciÛn.
+de ejecuci√≥n.
 
 Los comandos tienen el siguiente aspecto:
 
@@ -49,7 +49,7 @@ Los comandos tienen el siguiente aspecto:
 [cila@gulic]$ ls
 \end{verbatim}
 
-TambiÈn funcionan con opciones:
+Tambi√©n funcionan con opciones:
 
 \begin{verbatim}
 [cila@gulic]$ fdisk -v
@@ -57,7 +57,7 @@ TambiÈn funcionan con opciones:
 [cila@gulic]$ ls -al
 \end{verbatim}
 
-Y con par·metros:
+Y con par√°metros:
 
 \begin{verbatim}
 [cila@gulic]$ fdisk /dev/hda
@@ -65,7 +65,7 @@ Y con par·metros:
 [cila@gulic]$ ls *.txt
 \end{verbatim}
 
-Con opciones y par·metros:
+Con opciones y par√°metros:
 
 \begin{verbatim}
 [cila@gulic]$ rpm -qpl joe-1.0.3.rpm
@@ -76,8 +76,8 @@ Con opciones y par·metros:
 Al  ser Linux  un sistema  {\em multitarea}  y {\em  multiusuario}, se
 aportan  ventajas que  se  agradecen  incluso en  un  sistema PC  {\em
 monousuario}.  Una de  estas ventajas  es  que se  puede trabajar  con
-seis  consolas  virtuales, que  es  como  si pudiÈramos  trabajar  con
-varias  sesiones  simult·neas, entendiendo  por  sesiÛn  el tiempo  de
+seis  consolas  virtuales, que  es  como  si pudi√©ramos  trabajar  con
+varias  sesiones  simult√°neas, entendiendo  por  sesi√≥n  el tiempo  de
 trabajo  desde que  el usuario  entra  tras identificarse  en el  {\tt
 login}\index{login} de entrada  hasta que abandona el  sistema. Lo que
 significa realmente que el mismo  usuario puede entrar varias veces al
@@ -96,45 +96,45 @@ En lo sucesivo usaremos esta nomenclatura:\\
 \item {\tt S-F1} $\Rightarrow$ {\tt Shift}  y {\tt F1}.\\
 \end{itemize}
 \vspace{-1cm}
-Donde {\tt Shift} es la tecla de las may˙sculas.
+Donde {\tt Shift} es la tecla de las may√∫sculas.
 \end{nota}
 
-Si se quiere acceder a una  consola desde un entorno gr·fico, entonces
+Si se quiere acceder a una  consola desde un entorno gr√°fico, entonces
 se pulsan las combinaciones {\tt C-A-F1} a {\tt C-A-F6}
 
 \section{Directorios y nombres de ficheros}
 
 \subsection{Trabajar con directorios.}
 
-\subsubsection{Estructura del ·rbol de directorios}
+\subsubsection{Estructura del √°rbol de directorios}
 
-Toda  la informaciÛn  (ya  sean  textos, im·genes,  bases  de datos  o
-informaciÛn para  la configuraciÛn  del sistema)  se almacena  en {\em
+Toda  la informaci√≥n  (ya  sean  textos, im√°genes,  bases  de datos  o
+informaci√≥n para  la configuraci√≥n  del sistema)  se almacena  en {\em
 ficheros}, que a su vez se guardan en {\em directorios}. Con todas las
 herramientas y programas existentes se  puede acceder a estos ficheros
 para ver su contenido o  modificarlo. En la Figura \ref{arbol} podemos
-ver una ejemplo de dicha estructura en ·rbol.
+ver una ejemplo de dicha estructura en √°rbol.
 
 \begin{figura}{arbol}{0.7}
-\caption{Estructura    en   ·rbol    de   directorios    en   sistemas
+\caption{Estructura    en   √°rbol    de   directorios    en   sistemas
 UNIX}\label{arbol}
 \end{figura}
 
 Todos los  ficheros y  directorios de  un sistema  UNIX cuelgan  de un
-directorio principal  llamado {\em raÌz}\index{directorio  raÌz, raÌz,
+directorio principal  llamado {\em ra√≠z}\index{directorio  ra√≠z, ra√≠z,
 /}, que se  representa como {\tt /}. En la  Figura \ref{arbol} podemos
-observar como del  directorio raÌz {\tt /}  cuelgan otros directorios,
+observar como del  directorio ra√≠z {\tt /}  cuelgan otros directorios,
 como {\tt etc} o {\tt home}.
 
 En  dicho  esquema  diferenciamos  los directorios  de  los  ficheros,
-complementando el  final del  nombre de los  primeros con  el car·cter
+complementando el  final del  nombre de los  primeros con  el car√°cter
 {\tt /}.  En el  mismo esquema vemos  como algunos  directorios pueden
 contener otros directorios,  como es el caso de {\tt  home}, que es el
-{\em padre} de los directorios {\tt usr1} y {\tt usr2}. TambiÈn pueden
+{\em padre} de los directorios {\tt usr1} y {\tt usr2}. Tambi√©n pueden
 contener algunos  ficheros, como es  el caso de  {\tt dev}, que  es el
 padre de {\tt  dsp}; o el propio  {\tt usr2}, que es el  padre de {\tt
-trabajo.txt}. Este  ˙ltimo fichero tiene  la {\em ruta  absoluta} {\tt
-/home/usr2/trabajo.txt}, que  define su localizaciÛn dentro  del ·rbol
+trabajo.txt}. Este  √∫ltimo fichero tiene  la {\em ruta  absoluta} {\tt
+/home/usr2/trabajo.txt}, que  define su localizaci√≥n dentro  del √°rbol
 de directorios.
 
 Todos  los directorios  de  un  sistema UNIX  contienen  al menos  dos
@@ -152,39 +152,39 @@ especiales} en  el directorio  {\tt /dev}. Por  ejemplo, en  la Figura
 con la tarjeta de sonido instalada en el sistema.
 
 A diferencia de  los sistemas MS-DOS/Windows, en los  sistemas UNIX no
-se  reparten los  directorios en  funciÛn de  si est·n  en una  unidad
-fÌsica o en  otra ({\tt C:}, {\tt D:}, etc.).  Durante el arranque del
+se  reparten los  directorios en  funci√≥n de  si est√°n  en una  unidad
+f√≠sica o en  otra ({\tt C:}, {\tt D:}, etc.).  Durante el arranque del
 sistema,  cada  uno los  archivos  representativos  de los  diferentes
-discos  duros, particiones  y dem·s  elementos de  almacenamientos son
-asociados a  un directorio del directorio  raÌz. A este proceso  se lo
-denomina {\em montaje}\index{Montar}, y no  sÛlo es revesible sino que
+discos  duros, particiones  y dem√°s  elementos de  almacenamientos son
+asociados a  un directorio del directorio  ra√≠z. A este proceso  se lo
+denomina {\em montaje}\index{Montar}, y no  s√≥lo es revesible sino que
 es completamente  configurable. Por ejemplo, en  la Figura \ref{arbol}
-el directorio {\tt  /home} podrÌa estar en una  particiÛn diferente en
+el directorio {\tt  /home} podr√≠a estar en una  partici√≥n diferente en
 un disco duro distinto al que contiene  a {\tt /} o a {\tt /etc}. Nada
 en el esquema o  en el trabajo con el sistema  nos permite apreciar la
 diferencia. Por  tanto, no tiene  sentido escribir en la  consola {\tt
-C:}, tal  y como harÌamos  en MS-DOS. Solamente debemos  dirigirnos al
-directorio asociado a esa particiÛn que para MS-DOS es {\tt C:}.
+C:}, tal  y como har√≠amos  en MS-DOS. Solamente debemos  dirigirnos al
+directorio asociado a esa partici√≥n que para MS-DOS es {\tt C:}.
 
-Hay que  destacar que  cuando el  usuario accede  a una  sesiÛn, Linux
-``envÌa'' al usuario a su directorio  de trabajo. Cuando entro como el
-usuario  {\tt cila},  en  el momento  de entrar  me  encontrarÈ en  el
-directorio  {\tt /home/cila}.  …ste  ser· mi  directorio personal,  en
+Hay que  destacar que  cuando el  usuario accede  a una  sesi√≥n, Linux
+``env√≠a'' al usuario a su directorio  de trabajo. Cuando entro como el
+usuario  {\tt cila},  en  el momento  de entrar  me  encontrar√© en  el
+directorio  {\tt /home/cila}.  √âste  ser√° mi  directorio personal,  en
 donde  tengo  libertad absoluta  para  hacer  lo  que quiera  con  mis
-ficheros y directorios  ubicados ahÌ. Sin embargo no  podrÈ hacer todo
-lo que quiera en el directorio {\tt /home/pepe}. øPor quÈ? Pues por la
-sencilla razÛn de que Linux tiene un sistema de permisos que concede o
+ficheros y directorios  ubicados ah√≠. Sin embargo no  podr√© hacer todo
+lo que quiera en el directorio {\tt /home/pepe}. ¬øPor qu√©? Pues por la
+sencilla raz√≥n de que Linux tiene un sistema de permisos que concede o
 restringe  libertades sobre  los  directorios y  ficheros  que hay  en
-Linux. øSignifica eso  que puede existir un usuario  ``dios'' en Linux
-que puede  hacer totalmente  cualquier cosa  en Linux?  SÌ, Èse  es el
-usuario {\tt  root}\index{root}. Sin  embargo, para los  propÛsitos de
-este curso,  sÛlo nos remitiremos a  la cuenta de trabajo  del usuario
+Linux. ¬øSignifica eso  que puede existir un usuario  ``dios'' en Linux
+que puede  hacer totalmente  cualquier cosa  en Linux?  S√≠, √©se  es el
+usuario {\tt  root}\index{root}. Sin  embargo, para los  prop√≥sitos de
+este curso,  s√≥lo nos remitiremos a  la cuenta de trabajo  del usuario
 {\em cila}.
 
 
-\subsubsection{Comandos sobre el ·rbol de directorios}
+\subsubsection{Comandos sobre el √°rbol de directorios}
 
-Para movernos por el ·rbol  de directorios emplearemos el comando {\tt
+Para movernos por el √°rbol  de directorios emplearemos el comando {\tt
 cd} ({\sf Change Directory}) \index{Comandos!cd}
 
 \begin{verbatim}
@@ -194,11 +194,11 @@ cd} ({\sf Change Directory}) \index{Comandos!cd}
 Es decir, nos vamos al directorio {\tt /etc}
 
 Si  simplemente escribimos  {\tt  cd} sin  especificar  el nombre  del
-directorio, esto ser·  igual que escribir {\tt cd  /home/cila} o {\tt
-cd}, es decir,  me envÌa a {\bf mi propio  directorio de trabajo} (que
+directorio, esto ser√°  igual que escribir {\tt cd  /home/cila} o {\tt
+cd}, es decir,  me env√≠a a {\bf mi propio  directorio de trabajo} (que
 es como irse a casa).
 
-øCÛmo sÈ  yo en  quÈ directorio  me encuentro?  Basta con  escribir el
+¬øC√≥mo s√©  yo en  qu√© directorio  me encuentro?  Basta con  escribir el
 comando {\tt pwd} ({\sf Print Work Directory}).
 \index{Comandos!pwd}
 
@@ -207,7 +207,7 @@ comando {\tt pwd} ({\sf Print Work Directory}).
 /home/cila/
 \end{verbatim}
 
-Y la salida que obtendrÈ es:
+Y la salida que obtendr√© es:
 
 \begin{verbatim}
 /home/cila
@@ -228,7 +228,7 @@ matematicas.sgml        sobre.sgml           compila*
 internet.sgml           presentacion.sgml    temario.estado
 \end{verbatim}
 
-El comando {\tt ls} admite par·metros tales como {\tt -a, -l}
+El comando {\tt ls} admite par√°metros tales como {\tt -a, -l}
 
 \begin{verbatim}
 [cila@gulic]$ ls -a -l
@@ -236,71 +236,71 @@ El comando {\tt ls} admite par·metros tales como {\tt -a, -l}
 [cila@gulic]$ ls -la
 \end{verbatim}
 
-ObsÈrvese que ambas  formas de escribir los  par·metros son igualmente
-v·lidas.  Como anotaciÛn,  si queremos  ver que  par·metros se  pueden
+Obs√©rvese que ambas  formas de escribir los  par√°metros son igualmente
+v√°lidas.  Como anotaci√≥n,  si queremos  ver que  par√°metros se  pueden
 utilizar  en   un  comando,   normalmente  basta  con   escribir  {\tt
 nombre\_comando --help}.
 
 \begin{verbatim}
 [cila@gulic]$ ls --help
-Modo de empleo: ls [OPCI”N]... [FICHERO]...
-Muestra informaciÛn acerca de los FICHEROs (del directorio actual por defecto).
-Ordena las entradas alfabÈticamente si no se especifica ninguna de las
+Modo de empleo: ls [OPCI√ìN]... [FICHERO]...
+Muestra informaci√≥n acerca de los FICHEROs (del directorio actual por defecto).
+Ordena las entradas alfab√©ticamente si no se especifica ninguna de las
 opciones -cftuSUX ni --sort.
 
-Los argumentos obligatorios para las opciones largas son tambiÈn obligatorios
+Los argumentos obligatorios para las opciones largas son tambi√©n obligatorios
 para las opciones cortas
   -a, --all                  do not hide entries starting with .
   -A, --almost-all           do not list implied . and ..
       --author               print the author of each file
   -b, --escape               print octal escapes for nongraphic characters
-      --block-size=TAMA—O    utiliza bloques de TAMA—O bytes
+      --block-size=TAMA√ëO    utiliza bloques de TAMA√ëO bytes
   -B, --ignore-backups       no muestra la entradas que terminan con ~
   -c                         con -lt: ordena por ctime y muestra ctime (fecha
-                               de ˙ltima modificaciÛn del fichero)
+                               de √∫ltima modificaci√≥n del fichero)
                                con -l: muestra ctime y ordena por nombre
                                en cualquier otro caso: ordena por ctime
   -C                         muestra las entradas por columnas
-      --color[=CU¡NDO]       especifica si se usar· color para distinguir los
-                               tipos de ficheros. CU¡NDO puede ser `never',
+      --color[=CU√ÅNDO]       especifica si se usar√° color para distinguir los
+                               tipos de ficheros. CU√ÅNDO puede ser `never',
                                `always' o `auto'
   -d, --directory            muestra las entradas de los directorios en lugar
                              de sus contenidos
   -D, --dired                genera el resultado para el modo `dired' de Emacs
   -f                         no ordena, utiliza -aU, no utiliza -lst
-  -F, --classify             aÒade un indicador (uno de */=@|) a las entradas
+  -F, --classify             a√±ade un indicador (uno de */=@|) a las entradas
       --format=PALABRA       across -x, commas -m, horizontal -x, long -l,
                                single-column -1, verbose -l, vertical -C
       --full-time            como -l --time-style=full-iso
   -g                         como -l, pero no muestra el propietario
-  -G, --no-group             no muestra la informaciÛn del grupo
-  -h, --human-readable       muestra los tamaÒos de forma legible
+  -G, --no-group             no muestra la informaci√≥n del grupo
+  -h, --human-readable       muestra los tama√±os de forma legible
                              (p.e. 1K 234M 2G)
-      --si                   an·logo, pero utilizando potencias de 1000,
+      --si                   an√°logo, pero utilizando potencias de 1000,
                              no de 1024
-  -H, --dereference-command-line  sigue los enlaces simbÛlicos en la lÌnea de
-                                  Ûrdenes
-      --indicator-style=PALABRA  aÒade un indicador con estilo PALABRA a los
+  -H, --dereference-command-line  sigue los enlaces simb√≥licos en la l√≠nea de
+                                  √≥rdenes
+      --indicator-style=PALABRA  a√±ade un indicador con estilo PALABRA a los
                                  nombres de las entradas: none (predeterminado),
                                  classify (-F), file-type (-p)
-  -i, --inode                muestra el n˙mero de nodo-i de cada fichero
-  -I, --ignore=PATR”N        no lista las entradas que coincidan (encajen)
-                             con PATR”N de shell
+  -i, --inode                muestra el n√∫mero de nodo-i de cada fichero
+  -I, --ignore=PATR√ìN        no lista las entradas que coincidan (encajen)
+                             con PATR√ìN de shell
   -k                         como --block-size=1K
   -l                         utiliza un formato de listado largo
-  -L, --dereference          al mostrar la informaciÛn de un fichero para un
-                               enlace simbÛlico, muestra la informaciÛn del
+  -L, --dereference          al mostrar la informaci√≥n de un fichero para un
+                               enlace simb√≥lico, muestra la informaci√≥n del
                                fichero al que apunta el enlace en lugar de la
                                del propio enlace
   -m                         rellena el ancho con una lista de entradas
                              separadas por comas
-  -n, --numeric-uid-gid      como -l, pero muestra los UIDs y GIDs numÈricos
+  -n, --numeric-uid-gid      como -l, pero muestra los UIDs y GIDs num√©ricos
   -N, --literal              muestra los nombres literalmente (no trata p.ej.
                              los caracteres de control de forma especial)
   -o                         como -l, pero no muestra el grupo
-  -p  --file-type            aÒade un indicador (uno de /=@|) a las entradas
-  -q, --hide-control-chars   imprime ? en lugar de los caracteres no gr·ficos
-      --show-control-chars   muestra los caracteres no gr·ficos tal y como
+  -p  --file-type            a√±ade un indicador (uno de /=@|) a las entradas
+  -q, --hide-control-chars   imprime ? en lugar de los caracteres no gr√°ficos
+      --show-control-chars   muestra los caracteres no gr√°ficos tal y como
                              son (predeterminado a menos que el programa sea
                              `ls' y la salida sea un terminal)
   -Q, --quote-name           encierra los nombres de las entradas entre
@@ -310,59 +310,59 @@ para las opciones cortas
                                literal, locale, shell, shell-always, c, escape
   -r, --reverse              invierte el orden, en su caso
   -R, --recursive            muestra los subdirectorios recursivamente
-  -s, --size                 muestra el tamaÒo de cada fichero, en bloques
-  -S                         ordena los ficheros por tamaÒo
+  -s, --size                 muestra el tama√±o de cada fichero, en bloques
+  -S                         ordena los ficheros por tama√±o
       --sort=PALABRA         extension -X, none -U, size -S, time -t, version -v
                              status -c, time -t, atime -u, access -u, use -u
-      --time=PALABRA         muestra la fecha seg˙n PALABRA, en lugar de la
-                             fecha de modificaciÛn:
-                               atime, access, use, ctime Û status; utiliza
-                               la fecha especificada como clave de ordenaciÛn
+      --time=PALABRA         muestra la fecha seg√∫n PALABRA, en lugar de la
+                             fecha de modificaci√≥n:
+                               atime, access, use, ctime √≥ status; utiliza
+                               la fecha especificada como clave de ordenaci√≥n
                                si --sort=time
       --time-style=PALABRA   muestra la fecha utilizando el estilo PALABRA:
                                full-iso, iso, locale, posix-iso, +FORMATO
                              FORMATO se interpreta como en `date'; si FORMATO
-                             es FORMATO1<nuevalÌnea>FORMATO2, FORMATO1 se
+                             es FORMATO1<nueval√≠nea>FORMATO2, FORMATO1 se
                              aplica a los ficheros no recientes y FORMATO2
                              a los ficheros recientes
-  -t                         ordena por la fecha de modificaciÛn
-  -T, --tabsize=COLS         establece los topes de tabulaciÛn a cada COLS
+  -t                         ordena por la fecha de modificaci√≥n
+  -T, --tabsize=COLS         establece los topes de tabulaci√≥n a cada COLS
                              en lugar de 8
   -u                         con -lt: ordena por atime y muestra atime (fecha
-                               de ˙ltimo acceso al fichero)
+                               de √∫ltimo acceso al fichero)
                                con -l: muestra atime y ordena por nombre
                                en cualquier otro caso: ordena por atime
   -U                         no ordena; muestra las entradas en el orden del
                              directorio
-  -v                         ordena por versiÛn
+  -v                         ordena por versi√≥n
   -w, --width=COLS           establece el ancho de la pantalla en lugar del
                              valor actual
-  -x                         muestra las entradas por lÌneas en vez de por
+  -x                         muestra las entradas por l√≠neas en vez de por
                              columnas
-  -X                         ordena alfabÈticamente por la extensiÛn de la
+  -X                         ordena alfab√©ticamente por la extensi√≥n de la
                              entrada
-  -1                         muestra un fichero por cada lÌnea
+  -1                         muestra un fichero por cada l√≠nea
       --help     muestra esta ayuda y finaliza
-      --version  muestra la versiÛn y finaliza
+      --version  muestra la versi√≥n y finaliza
 
-TAMA—O puede ser (o puede ser un entero seguido opcionalmente por) uno
-de los siguientes: kB 1.000, K 1.024, MB 1.000.000, M 1.048.576, y asÌ
+TAMA√ëO puede ser (o puede ser un entero seguido opcionalmente por) uno
+de los siguientes: kB 1.000, K 1.024, MB 1.000.000, M 1.048.576, y as√≠
 en adelante para G, T, P, E, Z, Y.
 
 Por defecto, no se emplea color para distinguir los tipos de ficheros. Esto
-equivale a usar --color=none. Usar la opciÛn --color sin el argumento opcional
-CU¡NDO equivale a usar --color=always. Con --color=auto, sÛlo se muestran
-los cÛdigos de color si la salida est·ndar est· conectada a un terminal (tty).
+equivale a usar --color=none. Usar la opci√≥n --color sin el argumento opcional
+CU√ÅNDO equivale a usar --color=always. Con --color=auto, s√≥lo se muestran
+los c√≥digos de color si la salida est√°ndar est√° conectada a un terminal (tty).
 
 Comunicar bichos a <bug-fileutils@gnu.org>.
 \end{verbatim}
 
 
 Para consultar con detenimiento esta ayuda, el autor recomienda usar
-{\tt ls --help | more}, y que seg˙n se avanza con la informaciÛn, se
+{\tt ls --help | more}, y que seg√∫n se avanza con la informaci√≥n, se
 pulsa la barra espaciadora, y para salir, se pulsa la tecla {\tt q}.
 
-ObsÈrvese que  se pueden  escribir los par·metros  de dos  formas: una
+Obs√©rvese que  se pueden  escribir los par√°metros  de dos  formas: una
 corta ({\tt -l, -a}) y otra larga ({\tt --all, --help}).
 
 Para crear  un directorio, usaremos {\tt  mkdir nombre\_directorio}.
@@ -376,21 +376,21 @@ Mientras que para eliminarlo  usaremos {\tt rmdir nombre\_directorio}.
 %\newpage
 
 \begin{nota}
-El directorio que se quiere eliminar  debe estar vacÌo y no debe haber
-nadie  trabajando en  Èl en  ese  momento. En  caso de  que haya  otro
-usuario dentro, el sistema avisar· con un mensaje de error y desistir·
-todo intento de eliminaciÛn.
+El directorio que se quiere eliminar  debe estar vac√≠o y no debe haber
+nadie  trabajando en  √©l en  ese  momento. En  caso de  que haya  otro
+usuario dentro, el sistema avisar√° con un mensaje de error y desistir√°
+todo intento de eliminaci√≥n.
 \end{nota}
 
 Evidentemente, podemos  crear y destruir  un directorio dando  su ruta
-completa o sÛlo  su nombre si nos encontramos en  el directorio que lo
-contiene. En  caso de querer borrar  de un sÛlo golpe  un directorio y
+completa o s√≥lo  su nombre si nos encontramos en  el directorio que lo
+contiene. En  caso de querer borrar  de un s√≥lo golpe  un directorio y
 todo su  contenido disponemos  del comando {\tt  rm} con  las opciones
 {\tt  -rf}.
 
 \begin{nota}
 Mucho cuidado con  borrar directorios enteros sin comprobar  lo que se
-hace, porque Èsta es una operaciÛn irreversible.\\
+hace, porque √©sta es una operaci√≥n irreversible.\\
 \end{nota}
 
 \begin{verbatim}
@@ -398,10 +398,10 @@ hace, porque Èsta es una operaciÛn irreversible.\\
 [cila@gulic]$ rm -rf tmp
 \end{verbatim}
 
-ObsÈrvese que los comandos  anteriores borran los subdirectorios {\tt
+Obs√©rvese que los comandos  anteriores borran los subdirectorios {\tt
 pepe} y {\tt tmp} del directorio actual. Como hemos comentado, podemos
 emplear rutas absolutas  para crear o borrar  un directorio cualquiera
-del ·rbol de directorios.
+del √°rbol de directorios.
 
 \begin{verbatim}
 [cila@gulic]$ mkdir /home/cila/pepe
@@ -410,7 +410,7 @@ del ·rbol de directorios.
 
 \subsection{Trabajando con ficheros}
 
-\subsubsection{Comandos sobre el ·rbol de ficheros}
+\subsubsection{Comandos sobre el √°rbol de ficheros}
 
 El  comando  para  copiar  un   fichero  es  {\tt  cp  fichero\_origen
 fichero\_destino}, es decir, que copiamos el fichero {\tt pepe.txt} en
@@ -423,15 +423,15 @@ fichero\_destino}, es decir, que copiamos el fichero {\tt pepe.txt} en
 El   comando  para   mover  o   renombrar  un   fichero  es   {\tt  mv
 fichero\_origen fichero\_destino},  es decir, que copiamos  el fichero
 {\tt pepe.txt} en {\tt juan.txt},  pero {\tt pepe.txt} deja de existir
-fÌsicamente.
+f√≠sicamente.
 
 \begin{verbatim}
 [cila@gulic]$ mv pepe.txt juan.txt
 \end{verbatim}
 
 \begin{nota}
-El  intÈrprete  de  comandos  \textbf{SÕ} distingue  en  may˙sculas  y
-min˙sculas,  tanto en  el  caso de  los  comandos como  en  el de  los
+El  int√©rprete  de  comandos  \textbf{S√ç} distingue  en  may√∫sculas  y
+min√∫sculas,  tanto en  el  caso de  los  comandos como  en  el de  los
 ficheros y directorios. Esto significa que el comando mv es totalmente
 diferente a {\tt  Mv}, {\tt mV} y {\tt MV}.  Asimismo, el fichero {\tt
 pepe.txt}  no es  el mismo  fichero que  {\tt Pepe.txt},  ni que  {\tt
@@ -445,46 +445,46 @@ emplear el comando {\tt rm nombre\_fichero}.
 [cila@gulic]$ rm pepe.txt juan.txt
 \end{verbatim}
 
-\subsubsection{UtilizaciÛn de comodines}
+\subsubsection{Utilizaci√≥n de comodines}
 
 En ocasiones el  nombre de los directorios o ficheros  sobre los que
 estamos trabajando  contienen partes comunes que  podemos utilizar con
 ayuda  de  comodines  para  facilitarnos  el uso  de  la  interfaz  de
 comandos.
 
-En general el car·cter {\tt *} al  indicar el nombre de un fichero o
-directorio  es sustituido  por  un n˙mero  indeterminado de  cualquier
-combinaciÛn de caracteres. Por ejemplo,
+En general el car√°cter {\tt *} al  indicar el nombre de un fichero o
+directorio  es sustituido  por  un n√∫mero  indeterminado de  cualquier
+combinaci√≥n de caracteres. Por ejemplo,
 
 \begin{verbatim}
 [cila@gulic]$ rm pe*
 \end{verbatim}
 
-\noindent borrar· cualquier  ficheros que empiecen por {\tt  pe} en el
+\noindent borrar√° cualquier  ficheros que empiecen por {\tt  pe} en el
 directorio actual. Mientras que,
 
 \begin{verbatim}
 [cila@gulic]$ cp *txt* tmp/
 \end{verbatim}
 
-\noindent copiar· los ficheros que contengan la cadena {\tt txt} en el
+\noindent copiar√° los ficheros que contengan la cadena {\tt txt} en el
 nombre al directorio {\tt tmp}.
 
-El car·cter {\tt ?} al indicar el nombre de un fichero sÛlo representa
-a {\em un} car·cter cualquiera.
+El car√°cter {\tt ?} al indicar el nombre de un fichero s√≥lo representa
+a {\em un} car√°cter cualquiera.
 
 \begin{verbatim}
 [cila@gulic]$ mv pepe?.txt tmp/
 \end{verbatim}
 
-El  ejemplo  anterior  mover·  archivos como  {\tt  pepe.txt}  o  {\tt
+El  ejemplo  anterior  mover√°  archivos como  {\tt  pepe.txt}  o  {\tt
 pepa.txt} al directorio {\tt tmp}.
 
 \subsubsection{Sistema de permisos}
 
 A la hora  de trabajar con ficheros, es necesario  entender el sistema
 de  permisos de  los ficheros  y  directorios. Si  escribimos {\tt  ls
--l}\index{Ficheros!permisos,  Ficheros!propietario,  Ficheros!tamaÒo},
+-l}\index{Ficheros!permisos,  Ficheros!propietario,  Ficheros!tama√±o},
 nos encontramos con la siguiente salida: \index{Fichero!permisos}
 
 \begin{verbatim}
@@ -515,17 +515,17 @@ drwxrwxr-x  2 cila  cila    4096 oct 28 23:20 CVS/
 -rw-rw-r--  1 cila  cila    7417 oct 27 23:10 xwindow.sgml
 \end{verbatim}
 
-La primera letra a  la izquierda de cada lÌnea nos  indica si se trata
+La primera letra a  la izquierda de cada l√≠nea nos  indica si se trata
 de un fichero (``-'') o un directorio (``d'').
 
-DespuÈs nos  encontramos con tres  grupos de tres letras  ({\tt rwx}),
-que seg˙n estÈn activados (la propia letra, {\tt r},{\tt w},{\tt x}) o
-desactivados (un guiÛn,  -) nos concede o deniega  permisos de lectura
-({\tt r}), escritura  ({\tt w}) y ejecuciÛn ({\tt x}).  øY por quÈ son
+Despu√©s nos  encontramos con tres  grupos de tres letras  ({\tt rwx}),
+que seg√∫n est√©n activados (la propia letra, {\tt r},{\tt w},{\tt x}) o
+desactivados (un gui√≥n,  -) nos concede o deniega  permisos de lectura
+({\tt r}), escritura  ({\tt w}) y ejecuci√≥n ({\tt x}).  ¬øY por qu√© son
 tres  grupos? Pues  porque las  tres  primeras letras  se refieren  al
-propio usuario que  es el dueÒo de esos ficheros,  el segundo grupo se
+propio usuario que  es el due√±o de esos ficheros,  el segundo grupo se
 refiere al grupo de usuario que  pertenece ese usuario, y el tercero a
-los  usuarios ``extraÒos``  o  ''ajenos'' al  usuario.  Por tanto,  si
+los  usuarios ``extra√±os``  o  ''ajenos'' al  usuario.  Por tanto,  si
 leemos:
 
 \begin{center}
@@ -533,20 +533,20 @@ $-\underbrace{rw-}_{u}\underbrace{rw-}_{g}\underbrace{r--}_{o}$
 \end{center}
 
 \noindent vemos que se trata de un fichero (-) con permisos de lectura
-y escritura  para el usuario  y el grupo al  que pertenece, y  de sÛlo
-lectura para un ``extraÒo''.
+y escritura  para el usuario  y el grupo al  que pertenece, y  de s√≥lo
+lectura para un ``extra√±o''.
 
-El  siguiente  serÌa un  fichero  de  lectura, escritura  y  ejecuciÛn
-˙nicamente para el usuario pro\-pie\-ta\-rio del fichero.
+El  siguiente  ser√≠a un  fichero  de  lectura, escritura  y  ejecuci√≥n
+√∫nicamente para el usuario pro\-pie\-ta\-rio del fichero.
 
 \begin{center}
 $-\underbrace{rwx}_{u}\underbrace{---}_{g}\underbrace{---}_{o}$
 \end{center}
 
-Este  ˙ltimo  ejemplo es  un  directorio  ({\tt  d}) con  permisos  de
-lectura,  escritura y  ejecuciÛn  para el  usuario y  el  grupo, y  de
-lectura y ejecuciÛn para el ``extraÒo''. En el caso de directorios, el
-permiso de  ejecuciÛn es equivalente  a permiso para  ``ejecutar'' los
+Este  √∫ltimo  ejemplo es  un  directorio  ({\tt  d}) con  permisos  de
+lectura,  escritura y  ejecuci√≥n  para el  usuario y  el  grupo, y  de
+lectura y ejecuci√≥n para el ``extra√±o''. En el caso de directorios, el
+permiso de  ejecuci√≥n es equivalente  a permiso para  ``ejecutar'' los
 programas que hay en el directorio.
 
 \begin{center}
@@ -559,8 +559,8 @@ y el segundo  es el nombre del grupo, que  casualmente coincide con el
 nombre  del usuario.
 
 \begin{nota}
-Debemos tener en cuenta que {\bf  jam·s podremos eliminar un fichero o
-retocarlo  si no  tenemos permisos  de  escritura sobre  Èl}.
+Debemos tener en cuenta que {\bf  jam√°s podremos eliminar un fichero o
+retocarlo  si no  tenemos permisos  de  escritura sobre  √©l}.
 \end{nota}
 
 Si queremos que un fichero cambie de propietario, lo haremos, con {\tt
@@ -575,8 +575,8 @@ miguel}.
 
 De   igual   forma,   para   cambiarlo   de   grupo,   usaremos   {\tt
 chgrp}\index{Comandos!chgrp}. Si  {\tt pepe.txt} era del  grupo de los
-profesores,  y queremos  que sea  del grupo  de los  estudiantes, sÛlo
-habr· que escribir lo siguiente:
+profesores,  y queremos  que sea  del grupo  de los  estudiantes, s√≥lo
+habr√° que escribir lo siguiente:
 
 \begin{verbatim}
 [cila@gulic]$ chgrp estudiantes pepe.txt
@@ -589,25 +589,25 @@ bajo ciertas condiciones:
 $ ls -l hola
 -rw-r--r--    1 miguev   108             0 ago 10 20:27 hola
 $ chown frodo hola
-chown: hola: OperaciÛn no permitida
+chown: hola: Operaci√≥n no permitida
 \end{verbatim}
 
 Esto es normal en sistemas donde hay cuotas de usuario. Las cuotas son
-un mecanismo de limitaciÛn para que  los usuarios no puedan ocupar m·s
+un mecanismo de limitaci√≥n para que  los usuarios no puedan ocupar m√°s
 de un  determinado volumen (su cuota)  en el disco. Si  este mecanismo
-est· activo  no se permite  a los  usuarios cambiar el  propietario de
-ning˙n fichero, ya que podrÌa usarse  este cambio para ocupar la cuota
+est√° activo  no se permite  a los  usuarios cambiar el  propietario de
+ning√∫n fichero, ya que podr√≠a usarse  este cambio para ocupar la cuota
 de otro usuario.
 
 \index{Comandos!chmod, Ficheros!permisos}
 Finalmente, para  cambiar los permisos  de un fichero, lo  haremos con
 {\tt chmod},  indicando a  que tipo de  usuario queremos  asignarlos y
-sobre quÈ permisos.  Para indicar el usuario  propietario, usaremos el
-par·metro {\tt u}, el  de grupo ser· {\tt g} y el  ajeno ser· {\tt o},
+sobre qu√© permisos.  Para indicar el usuario  propietario, usaremos el
+par√°metro {\tt u}, el  de grupo ser√° {\tt g} y el  ajeno ser√° {\tt o},
 (de {\tt otros}). Para indicar el tipo de permiso, usaremos las letras
-{\tt  r},  {\tt w},  {\tt  x},  seg˙n  sean  de lectura,  escritura  o
-ejecuciÛn  respectivamente. Y  para conceder  o denegar,  usaremos los
-sÌmbolos ``+'' y ``-'':
+{\tt  r},  {\tt w},  {\tt  x},  seg√∫n  sean  de lectura,  escritura  o
+ejecuci√≥n  respectivamente. Y  para conceder  o denegar,  usaremos los
+s√≠mbolos ``+'' y ``-'':
 
 \begin{verbatim}
 [cila@gulic]$ chmod u+rwx pepe.txt
@@ -615,7 +615,7 @@ sÌmbolos ``+'' y ``-'':
 
 Este ejemplo sirve para dar todos los permisos al usuario.
 
-En el  siquiente ejemplo  daremos permisos de  lectura y  ejecuciÛn al
+En el  siquiente ejemplo  daremos permisos de  lectura y  ejecuci√≥n al
 usuario  y al  grupo,  pero  no de  escritura  sobre  el fichero  {\tt
 compila}.
 
@@ -623,14 +623,14 @@ compila}.
 [cila@gulic]$ chmod ug+r-x compila
 \end{verbatim}
 
-O quitar el permiso de ejecuciÛn a  todos los usuarios sin que se vean
+O quitar el permiso de ejecuci√≥n a  todos los usuarios sin que se vean
 afectados los otros tipos de permisos:
 
 \begin{verbatim}
 [cila@gulic]$ chmod -x probar
 \end{verbatim}
 
-\section{Comandos b·sicos para sobrevivir}
+\section{Comandos b√°sicos para sobrevivir}
 
 A  parte de  los comandos  para el  manejo de  ficheros y  directorios
 existen  algunos otros  que  conviene conocer  puesto que  simplifican
@@ -638,29 +638,29 @@ notablemente nuestro quehacer diario.
 
 \subsection{Teclas especiales}
 
-La interfaz de comandos est· llena de atajos de teclado diseÒados para
+La interfaz de comandos est√° llena de atajos de teclado dise√±ados para
 facilitarnos  la vida.  La  mayor parte  se  apoyan en  el  uso de  un
-historial de los ˙ltimos comandos ejecutados. …stos son algunos de los
-atajos m·s importantes:
+historial de los √∫ltimos comandos ejecutados. √âstos son algunos de los
+atajos m√°s importantes:
 
 \begin{description}
 
 \item[{\tt Teclas del cursor}] Las  flechas hacia arriba y hacia abajo
 nos  permiten  elegir  un  comando  de entre  los  almacenados  en  el
 historial de la interfaz de comandos. Las flechas hacia la izquierda y
-hacia la derecha  nos permiten movernos por la lÌnea  de comandos para
+hacia la derecha  nos permiten movernos por la l√≠nea  de comandos para
 editarla.
 
 \item[{\tt TAB}] Si  mientras escribimos el nombre de un  comando o el
 de  un  fichero tenemos  alguna  duda  podemos  pulsar {\tt  TAB}.  La
-interfaz de comandos nos ayudar· completando el nombre en la medida de
+interfaz de comandos nos ayudar√° completando el nombre en la medida de
 lo posible.  En caso  de que  no sepa darnos  una respuesta  por haber
 varias soluciones  disponibles podemos pulsar nuevamente  para que nos
 muestre  una lista  de  las mismas.  La interfaz  de  comandos nos  lo
-indicar· con una seÒal sonora si no hay ninguna soluciÛn posible.
+indicar√° con una se√±al sonora si no hay ninguna soluci√≥n posible.
 
 \item[{\tt  S-Re. Pag.  y S-Av.  Pag.}] Nos  permiten movernos  por el
-b˙ffer de  pantalla de la  consola para  ver texto que  en condiciones
+b√∫ffer de  pantalla de la  consola para  ver texto que  en condiciones
 normales no podemos observar puesto  que el desplazamiento vertical lo
 ha dejado fuera de la misma.
 
@@ -670,11 +670,11 @@ ha dejado fuera de la misma.
 
 \end{description}
 
-\subsection{Imprimir en la salida est·ndar}
+\subsection{Imprimir en la salida est√°ndar}
 
-Uno   de   los  comandos   m·s   pr·cticos   y  utilizados   es   {\tt
+Uno   de   los  comandos   m√°s   pr√°cticos   y  utilizados   es   {\tt
 cat}\index{Comandos!cat}.   Dicho   comando  encadena   los   archivos
-especificados y los imprime por pantalla uno detr·s de otro.
+especificados y los imprime por pantalla uno detr√°s de otro.
 
 \begin{verbatim}
 [cila@gulic]$ cat pepe.txt juan.txt
@@ -683,46 +683,46 @@ especificados y los imprime por pantalla uno detr·s de otro.
 En realidad los comandos de la consola de GNU/Linux no entienden la
 salida por pantalla y la entrada por teclado de la misma forma que la
 entendemos nosotros. La mayor parte de los comandos toman toda o parte
-de la informaciÛn que necesitan para realizar su trabajo de lo que se
-denomina la {\em entrada est·ndar}.  De la misma manera, utilizan la
-{\em salida est·ndar} para mostrar los resultado de su trabajo, y la
-{\em salida de error est·ndar} para mostrar los mensajes de los
-errores producidos durante la realizaciÛn de la misma.
+de la informaci√≥n que necesitan para realizar su trabajo de lo que se
+denomina la {\em entrada est√°ndar}.  De la misma manera, utilizan la
+{\em salida est√°ndar} para mostrar los resultado de su trabajo, y la
+{\em salida de error est√°ndar} para mostrar los mensajes de los
+errores producidos durante la realizaci√≥n de la misma.
 
-En general la {\em entrada est·ndar} suele estar asociada a la entrada
-por teclado, mientras que la {\em salida est·ndar} y la {\em salida de
-error est·ndar}  suelen estar sociadas  a la salida por  pantalla. Sin
+En general la {\em entrada est√°ndar} suele estar asociada a la entrada
+por teclado, mientras que la {\em salida est√°ndar} y la {\em salida de
+error est√°ndar}  suelen estar sociadas  a la salida por  pantalla. Sin
 embargo, Linux nos proporciona mecanismos para que cualquiera de estas
 {\em entrada/salidas} pueda ser redirigida a un fichero. De esa manera
 la entrada  a un  comando puede haber  sido almacenada  previamente; o
 podemos  guardar  la salida  de  un  comando  en  un fichero  para  su
-posterior an·lisis.
+posterior an√°lisis.
 
-En  todo caso  la caraterÌstica  de la  interfaz de  comandos que  nos
-interesa es aquella que permite  redirigir la {\em salida est·ndar} de
-un comando a la {\em entrada est·ndar} de otro.
+En  todo caso  la carater√≠stica  de la  interfaz de  comandos que  nos
+interesa es aquella que permite  redirigir la {\em salida est√°ndar} de
+un comando a la {\em entrada est√°ndar} de otro.
 
 \begin{verbatim}
 [cila@gulic]$ cat pepe.txt | sort
 [cila@gulic]$ ls -l | more
 \end{verbatim}
 
-En el ejemplo  anterior utilizamos el {\em metacar·cter}  {\tt |} para
+En el ejemplo  anterior utilizamos el {\em metacar√°cter}  {\tt |} para
 redirigir la salida del comando {\tt  cat} (es decir, el contenido del
 fichero  {\tt pepe.txt})  a  la  entrada del  comando  {\tt sort}.  El
-comando {\tt  sort}\index{Comandos!sort} toma las lÌneas  de texto que
-provienen de la {\em entrada est·ndar},  las ordena, y las muestra por
-su  {\em  salida est·ndar}.  Por  lo  tanto,  el ejemplo  muestra  por
-pantalla el contenido de {\tt pepe.txt} ordenado alfabÈticamente.
+comando {\tt  sort}\index{Comandos!sort} toma las l√≠neas  de texto que
+provienen de la {\em entrada est√°ndar},  las ordena, y las muestra por
+su  {\em  salida est√°ndar}.  Por  lo  tanto,  el ejemplo  muestra  por
+pantalla el contenido de {\tt pepe.txt} ordenado alfab√©ticamente.
 
 En el mismo ejemplo redirigimos la  salida de {\tt ls} al comando {\tt
-more}.  El comando  {\tt more}\index{Comandos!more}  resulta muy  ˙til
+more}.  El comando  {\tt more}\index{Comandos!more}  resulta muy  √∫til
 cuando  el contenido  de  un fichero  o  la salida  de  un comando  es
 lo  suficientemente grande  como  para no  caber  completamente en  la
 pantalla. En esos casos {\tt more} nos permite ver el texto pantalla a
 pantalla, utilizando la barra espaciadora para avanzar por el mismo.
 
-Un comando  mucho m·s  potente pero  con una  utilidad similar  a {\tt
+Un comando  mucho m√°s  potente pero  con una  utilidad similar  a {\tt
 more} es {\tt less}\index{Comandos!less}.
 
 \begin{verbatim}
@@ -731,15 +731,15 @@ more} es {\tt less}\index{Comandos!less}.
 
 El comando {\tt less} nos permite utilizar las teclas del cursor, {\tt
 Re. Pag.}  y {\tt Av.  Pag.} para avanzar  y retroceder por  el texto.
-TambiÈn podemos iniciar una b˙squeda, o continuar una ya iniciada, con
+Tambi√©n podemos iniciar una b√∫squeda, o continuar una ya iniciada, con
 las  teclas  {\tt  /}  y  {\tt  n}  respectivamente.  Muchas  son  las
-caracterÌsticas de {\tt less}, aunque  nos conformaremos con saber que
+caracter√≠sticas de {\tt less}, aunque  nos conformaremos con saber que
 con {\tt  h} podemos consultar la  ayuda del comando mientras  que con
 {\tt q} salimos del mismo.
 
 En general los comandos que hemos estudiado son programas de consola
 como otros cualesquiera. Por lo tanto pueden ser llamados
-directamente, e incluso en muchos casos disponen de opciones de lÌnea
+directamente, e incluso en muchos casos disponen de opciones de l√≠nea
 de comandos.
 
 \begin{verbatim}
@@ -750,18 +750,18 @@ de comandos.
 \subsection{El comando {\tt man}}
 \index{Comandos!man}
 
-El comando  {\tt man} es muy  ˙til, ya que nos  dar· mucha informaciÛn
-sobre la mayorÌa de los comandos con los que vamos a trabajar.
+El comando  {\tt man} es muy  √∫til, ya que nos  dar√° mucha informaci√≥n
+sobre la mayor√≠a de los comandos con los que vamos a trabajar.
 
 \begin{verbatim}
 [cila@gulic]$ man bash
 \end{verbatim}
 
-Omitimos  la informaciÛn  de salida  ya que  puede ser  muy extensa  e
-invita al lector a que lo pruebe Èl mismo.
+Omitimos  la informaci√≥n  de salida  ya que  puede ser  muy extensa  e
+invita al lector a que lo pruebe √©l mismo.
 
 En cualquier  caso, en  el tema \ref{documentacion}  estudiaremos este
-comando con m·s detenimiento.
+comando con m√°s detenimiento.
 
 \subsection{El comando {\tt gzip}}
 \index{Comandos!gzip}
@@ -771,30 +771,30 @@ el algoritmo {\sf Lempel-Ziv}.
 
 \begin{verbatim}
 [cila@gulic]$ gzip pepe.txt
-b˙squeda  \end{verbatim}
+b√∫squeda  \end{verbatim}
 
 Por regla  general el fichero  desaparece y en  su lugar se  crea otro
-comprimido y con el mismo nombre m·s el sufijo {\tt .gz}.
+comprimido y con el mismo nombre m√°s el sufijo {\tt .gz}.
 
-La  descompresiÛn  se  realiza  utilizando  la  opciÛn  {\tt  -d}.  Es
+La  descompresi√≥n  se  realiza  utilizando  la  opci√≥n  {\tt  -d}.  Es
 importante destacar  que, al  igual que  antes, el  archivo comprimido
-desaparece para dejar en su lugar la versiÛn descomprimida.
+desaparece para dejar en su lugar la versi√≥n descomprimida.
 
 \begin{verbatim}
 [cila@gulic]$ gzip -d pepe.txt.gz
 \end{verbatim}
 
 Debido a la incomodidad de tener que comprimir/descomprimir para poder
-acceder  a la  informaciÛn son  muchos  los comandos  que cuentan  con
-versiones especialmente diseÒadas  para manipular archivos comprimidos
+acceder  a la  informaci√≥n son  muchos  los comandos  que cuentan  con
+versiones especialmente dise√±adas  para manipular archivos comprimidos
 directamente. Es  el caso  de {\tt  zless}\index{Comandos!zless}, {\tt
 zgrep}\index{Comandos!zgrep},  {\tt  zcat}\index{Comandos!zcat},  {\tt
 zmore}\index{Comandos!zmore}, etc\dots
 
 Pese  a lo  extendido  del uso  de  {\tt gzip}  en  la actualidad  hay
-muchos otros  algoritmos con  ratios de  compresiÛn mayores.  Por ello
+muchos otros  algoritmos con  ratios de  compresi√≥n mayores.  Por ello
 se  han  creado comandos  compatibles,  en  cuanto  a opciones  de  la
-lÌnea  de  comandos,  con  {\tt   gzip},  pero  que  implementan  esos
+l√≠nea  de  comandos,  con  {\tt   gzip},  pero  que  implementan  esos
 otros  algoritmos. Es  el  caso  de {\tt  bzip2}\index{Comandos!bzip2}
 y   de   los   comandos  {\tt   bzless}\index{Comandos!bzless},   {\tt
 bzgrep}\index{Comandos!bzgrep},   {\tt   bzcat}\index{Comandos!bzcat},
@@ -803,22 +803,22 @@ bzgrep}\index{Comandos!bzgrep},   {\tt   bzcat}\index{Comandos!bzcat},
 \subsection{El comando {\tt tar}}
 \index{Comandos!tar}
 
-El  comando {\tt  tar} permite  la  manipulaciÛn de  {\em ficheros  de
-archivo} en  formato {\sf TAR}.  Dichos ficheros est·n  diseÒados para
-almacenar uno  o m·s  ficheros y/o directorios  y toda  la informaciÛn
-relacionada con  los mismos. Entre  esa informaciÛn se  encuentran las
-fechas  de acceso  y modificaciÛn,  los permisos,  el propietario,  el
+El  comando {\tt  tar} permite  la  manipulaci√≥n de  {\em ficheros  de
+archivo} en  formato {\sf TAR}.  Dichos ficheros est√°n  dise√±ados para
+almacenar uno  o m√°s  ficheros y/o directorios  y toda  la informaci√≥n
+relacionada con  los mismos. Entre  esa informaci√≥n se  encuentran las
+fechas  de acceso  y modificaci√≥n,  los permisos,  el propietario,  el
 grupo,  etc. El  origen del  comando {\tt  tar} se  remonta al  uso de
-dipositivos sencuenciales  (como por  ejemplo cintas  magnÈticas) para
+dipositivos sencuenciales  (como por  ejemplo cintas  magn√©ticas) para
 almacenar  copias de  seguridad de  los  archivos del  sistema. En  la
-actualidad no  es sino  una forma  de empaquetar  en un  ˙nico archivo
-pedazos concretos del ·rbol de directorios de nuestro sistema.
+actualidad no  es sino  una forma  de empaquetar  en un  √∫nico archivo
+pedazos concretos del √°rbol de directorios de nuestro sistema.
 
-Para crear  un archivo {\sf  TAR} basta  con que utilicemos  la opciÛn
+Para crear  un archivo {\sf  TAR} basta  con que utilicemos  la opci√≥n
 {\tt -c} seguida por la lista de ficheros y/o directorios que queremos
 empaquetar. En general el archivo {\sf TAR} resultante se vuelca  a la
-{\em  salida  est·ndar}.  Puesto  que eso  resulta  poco  pr·ctico  es
-habitual utilizar la opciÛn {\tt -f} seguida del nombre del fichero de
+{\em  salida  est√°ndar}.  Puesto  que eso  resulta  poco  pr√°ctico  es
+habitual utilizar la opci√≥n {\tt -f} seguida del nombre del fichero de
 destino.
 
 \begin{verbatim}
@@ -829,7 +829,7 @@ En el ejemplo  anterior {\tt fichero.tar} almacena  tanto los ficheros
 {\tt pepe.txt} y {\tt juan.txt}  como el contenido del directorio {\tt
 /bin}.
 
-Los datos almacenados en los  ficheros {\sf TAR} no est·n comprimidos.
+Los datos almacenados en los  ficheros {\sf TAR} no est√°n comprimidos.
 Por  ello es  habitual  utilizar  las opciones  {\tt  -z}  o {\tt  -j}
 para  que {\tt  tar} pase  el  fichero por  {\tt gzip}  o {\tt  bzip2}
 respectivamente, cuando termine de empaquetar los ficheros.
@@ -838,9 +838,9 @@ respectivamente, cuando termine de empaquetar los ficheros.
 [cila@gulic]$ tar -zcf fichero.tar.gz pepe.txt /bin
 \end{verbatim}
 
-Para recuperar los ficheros originales se sustituye la opciÛn {\tt -c}
+Para recuperar los ficheros originales se sustituye la opci√≥n {\tt -c}
 por {\tt  -x}, mientras que  para verificar la integridad  del archivo
-sin tener que desempaquetarlo se utiliza la opciÛn {\tt -t}.
+sin tener que desempaquetarlo se utiliza la opci√≥n {\tt -t}.
 
 \begin{verbatim}
 [cila@gulic]$ tar -xf fichero.tar
@@ -854,9 +854,9 @@ sin tener que desempaquetarlo se utiliza la opciÛn {\tt -t}.
 Cuando deseamos  localizar un cadena de  texto dentro de uno  o varios
 ficheros  solemos  recurrir  al  comando  {\tt  grep}.  Dicho  comando
 requiere que  se especifique la cadena  de texto a buscar  seguida del
-nombre de  los ficheros en  los que  realizar la b˙squeda.  Puesto que
+nombre de  los ficheros en  los que  realizar la b√∫squeda.  Puesto que
 alguno de los  caracteres de la cadena de texto  a buscar pueden tener
-alg˙n significado especial  para la interfaz de  comandos dicha cadena
+alg√∫n significado especial  para la interfaz de  comandos dicha cadena
 suele ir entrecomillada.
 
 \begin{verbatim}
@@ -868,18 +868,18 @@ Como  se puede  observar, en  el  primer ejemplo  estamos buscando  la
 cadena  de  texto \verb|'cila'|  dentro  de  todos los  ficheros  del
 directorio actual.
 
-En  general {\tt  grep}  es  sensible a  may˙sculas  y min˙sculas.  Si
-queremos eliminar dicho comportamiento  podemos emplear la opciÛn {\tt
--i}.  TambiÈn  podemos pedir  que  nos  indique  dÛnde {\bf  NO}  est·
-la  cadena indicada  utilizando  la  opciÛn {\tt  -v}.  Por otro  lado
-las  b˙squedas  pueden  extenderse por  directorios  y  subdirectorios
-utilizando la opciÛn {\tt -r}.
+En  general {\tt  grep}  es  sensible a  may√∫sculas  y min√∫sculas.  Si
+queremos eliminar dicho comportamiento  podemos emplear la opci√≥n {\tt
+-i}.  Tambi√©n  podemos pedir  que  nos  indique  d√≥nde {\bf  NO}  est√°
+la  cadena indicada  utilizando  la  opci√≥n {\tt  -v}.  Por otro  lado
+las  b√∫squedas  pueden  extenderse por  directorios  y  subdirectorios
+utilizando la opci√≥n {\tt -r}.
 
-En realidad  {\tt grep} no  sÛlo nos permite utilizar  simples cadenas
+En realidad  {\tt grep} no  s√≥lo nos permite utilizar  simples cadenas
 para buscar dentro  de los ficheros indicados. El  comandos {\tt grep}
 nos permite utilizar {\em expresiones  regulares}. Es decir, dentro de
 nuestra cadena de texto podemos utilizar caracteres con un significado
-especial con los  que podemos buscar casi cualquier  tipo de expresiÛn
+especial con los  que podemos buscar casi cualquier  tipo de expresi√≥n
 entre nuestros archivos. Puesto que las expresiones regulares se salen
 completamente  del  alcance de  este  tema  recomendamos consultar  el
 tema correspondiente.
@@ -895,28 +895,28 @@ tema correspondiente.
 \item [clear]\index{Comandos!clear}  Limpia la pantalla de  la consola
 (tecla {\tt C-l})
 
-\item  [locate]\index{Comandos!locate} Es  la  orden  de b˙squeda  m·s
-r·pida y sencilla para localizar un archivo.
+\item  [locate]\index{Comandos!locate} Es  la  orden  de b√∫squeda  m√°s
+r√°pida y sencilla para localizar un archivo.
 
 \item  [reset]\index{Comandos!reset} Si  observamos que  escribimos en
 pantalla y no aparece el texto pero al pulsar {\tt Enter} realmente se
-est· escribiendo,  o que  los colores  o los textos  de la  consola se
-corrompen,  puede  ser  que  alguna  aplicaciÛn  en  modo  texto  haya
-finalizado  bruscamente  no restaurando  los  valores  est·ndar de  la
+est√° escribiendo,  o que  los colores  o los textos  de la  consola se
+corrompen,  puede  ser  que  alguna  aplicaci√≥n  en  modo  texto  haya
+finalizado  bruscamente  no restaurando  los  valores  est√°ndar de  la
 consola  al  salir.  Con  esto  forzamos  unos  valores  por  defecto,
 regenerando la pantalla.
 
 \item [top]\index{Comandos!top}  Muestra los procesos que  se ejecutan
-en  el  momento  actual,  informando  de los  recursos  que  se  est·n
+en  el  momento  actual,  informando  de los  recursos  que  se  est√°n
 consumiendo.
 
 \item  [whoami]\index{Comandos!whoami}  El   curioso  nombre  de  este
-comando proviene {\em  Who am I?} ({\em øQuiÈn soy?}),  que indica que
+comando proviene {\em  Who am I?} ({\em ¬øQui√©n soy?}),  que indica que
 este comando es capaz de informarnos  del nombre de usuario con que se
-entrÛ en esa consola. Puede parecer  una tonterÌa, pero si una persona
+entr√≥ en esa consola. Puede parecer  una tonter√≠a, pero si una persona
 entra en dos sesiones,  en una como {\tt root} y  en otra como usuario
-normal,  si no  se  sabe  quiÈn es  en  ese  momento, podrÌan  ocurrir
-accidentes catastrÛficos.
+normal,  si no  se  sabe  qui√©n es  en  ese  momento, podr√≠an  ocurrir
+accidentes catastr√≥ficos.
 
 \end{description}
 
@@ -924,24 +924,24 @@ accidentes catastrÛficos.
 
 Como hemos dicho anteriormente, en  Linux no existen las unidades como
 {\tt A:} o {\tt C:}. Para acceder a un disco es necesario primero {\em
-montarlo}\index{Montar}, esto  es asignarle un lugar  dentro del ·rbol
+montarlo}\index{Montar}, esto  es asignarle un lugar  dentro del √°rbol
 de directorios del sistema.
 
 Por  ejemplo,  podemos asignar  a  la  disquetera el  directorio  {\tt
 /floppy}, al CD-ROM el directorio {\tt /cdrom} o a la grabadora de CDs
 el  directorio {\tt  /grabata}.  Normalmente los  directorios para  la
-disquetera y el  lector de CD-ROM est·n ya asignados  desde el momento
+disquetera y el  lector de CD-ROM est√°n ya asignados  desde el momento
 de instalar el  sistema, aunque se puede cambiar a  voluntad (si somos
 {\tt root}).
 
 Para    montar     un    disco    utilizamos    el     comando    {\tt
-mount}\index{Montar!mount} indic·ndole como  par·metros el dispositivo
+mount}\index{Montar!mount} indic√°ndole como  par√°metros el dispositivo
 al que queremos acceder, el directorio en el que lo queremos montar, y
-el  sistema de  archivos utilizado  para ordenar  la informaciÛn.  Sin
+el  sistema de  archivos utilizado  para ordenar  la informaci√≥n.  Sin
 embargo,  el  administrador ({\tt  root})  suele  indicar todos  estos
-par·metros  en el  fichero {\tt  fichero}, y  los usuarios  tienen que
+par√°metros  en el  fichero {\tt  fichero}, y  los usuarios  tienen que
 conformarse montar lo  que {\tt root} les permita. En  nuestro caso el
-seÒor {\tt root}  ha determinado que los usuarios  sÛlo podemos montar
+se√±or {\tt root}  ha determinado que los usuarios  s√≥lo podemos montar
 la disquetera en el directorio {\tt /floppy}.
 
 \begin{verbatim}
@@ -951,21 +951,21 @@ mount: only root can do that
 \end{verbatim}
 
 Una vez montado el disquete en  el directorio {\tt /floppy} ya podemos
-acceder  y  manipular  sus  ficheros y  subdirectorios  como  m·s  nos
+acceder  y  manipular  sus  ficheros y  subdirectorios  como  m√°s  nos
 convenga. Desde la  perspectiva del usuario no  hay ninguna diferencia
 entre trabajar en ese directorio y trabajar en otro cualquiera.
 
-Pobre de quien  saque el disquete sin desmontarlo. øPor  quÈ? Pues por
+Pobre de quien  saque el disquete sin desmontarlo. ¬øPor  qu√©? Pues por
 tres razones:
 
 \begin{enumerate}
 
-\item  Existe el  riesgo de  que perdamos  la informaciÛn  que hayamos
+\item  Existe el  riesgo de  que perdamos  la informaci√≥n  que hayamos
 grabado en el disquete.
 
-\item Ning˙n otro usuario podr· usar la disquetera, al menos hasta que
+\item Ning√∫n otro usuario podr√° usar la disquetera, al menos hasta que
 se reinicie el  ordenador o el {\tt root} tenga  tiempo para forzar el
-que la unidad sea desmontanda, lo cual no le har· gracia a nadie.
+que la unidad sea desmontanda, lo cual no le har√° gracia a nadie.
 
 \item El  Sr. root puede  mosquearse con quien lo  haga, y a  nadie le
 conviene tener mosqueado al Sr. root.
@@ -979,7 +979,7 @@ Para desmontar el disquete simplemente utilizamos el sencillo comando
 $ umount /floppy
 \end{verbatim}
 
-Como ˙ltimo ejemplo, hagamos lo siguiente:
+Como √∫ltimo ejemplo, hagamos lo siguiente:
 
 \begin{verbatim}
 $ mount /floppy
@@ -987,17 +987,17 @@ $ cd /floppy
 $ umount /floppy
 \end{verbatim}
 
-øVerdad que no funciona? Esto se debe a que en el momento de desmontar
+¬øVerdad que no funciona? Esto se debe a que en el momento de desmontar
 la  disketera, {\bf  no debe  haber NADIE  dentro} de  ese directorio.
 Recordemos que estamos en un  sistema multiusuario y puede ocurrir que
-m·s  de una  persona  acceda  a la  disquetera  o  a otro  dispositivo
+m√°s  de una  persona  acceda  a la  disquetera  o  a otro  dispositivo
 desmontable, como  el CD-ROM. Por  tanto, hemos de asegurarnos  que no
 hay nadie.
 
-Para comprobar en un momento dado  si el disquete est· montado podemos
+Para comprobar en un momento dado  si el disquete est√° montado podemos
 usar el comando {\tt df}\index{Comandos!df}, que nos informa sobre los
-{\em  sistemas  de  ficheros}  que  est·n  montados  y  su  estado  de
-almacenamiento.  La opciÛn  {\tt  -h} nos  muestra  las cantidades  en
+{\em  sistemas  de  ficheros}  que  est√°n  montados  y  su  estado  de
+almacenamiento.  La opci√≥n  {\tt  -h} nos  muestra  las cantidades  en
 cifras {\em humanas}.
 
 \begin{verbatim}
@@ -1009,24 +1009,24 @@ euler:/usr/soft       3.9G  5.4M  3.7G   0% /usr/soft
 /dev/fd0              1.4M  758k  665k  53% /floppy
 \end{verbatim}
 
-AquÌ  vemos  que la  segunda  particiÛn  del  primer disco  duro  {\tt
-/dev/hda2} est· montada en el directorio {\tt /}, los directorios {\tt
-/home} y  {\tt /usr/soft} del  servidor {\tt euler} est·n  montados en
-sus equivalente locales, y el  disquete {\tt /dev/fd0} est· montado en
+Aqu√≠  vemos  que la  segunda  partici√≥n  del  primer disco  duro  {\tt
+/dev/hda2} est√° montada en el directorio {\tt /}, los directorios {\tt
+/home} y  {\tt /usr/soft} del  servidor {\tt euler} est√°n  montados en
+sus equivalente locales, y el  disquete {\tt /dev/fd0} est√° montado en
 el directorio {\tt /floppy}.
 
 \section{Unidades de disco con mtools}
 
-En general, la mayor parte de los disquetes que usamos est·n en
+En general, la mayor parte de los disquetes que usamos est√°n en
 formato DOS/Windows.  Cuando disponemos de uno esos disquetes podemos
 acceder a su contenido de forma sencilla con las {\sf
 mtools}\index{mtools}.
 
-{\sf mtools} es  una colecciÛn de herramientas de  dominio p˙blico que
+{\sf mtools} es  una colecci√≥n de herramientas de  dominio p√∫blico que
 permite a sistemas  UNIX manipular ficheros en un  sistema de archivos
-DOS/Windows (tÌpicamente un disquete). {\sf mtools} es suficiente para
-dar acceso  a sistemas de  archivos DOS/Windows. Por  ejemplo, Ûrdenes
-como  {\tt mdir  a:}  funcionan en  el disquete  {\tt  A:} sin  ning˙n
+DOS/Windows (t√≠picamente un disquete). {\sf mtools} es suficiente para
+dar acceso  a sistemas de  archivos DOS/Windows. Por  ejemplo, √≥rdenes
+como  {\tt mdir  a:}  funcionan en  el disquete  {\tt  A:} sin  ning√∫n
 montaje preliminar ni otro procedimiento  de inicio (suponiendo que el
 {\tt /etc/mtools.conf}  sea correcto). Gracias  a todo ello,  con {\sf
 mtools} se puede cambiar de disquete sin tener que desmontar y montar.
@@ -1060,22 +1060,22 @@ que es completamente equivalente a:
 $ mcopy a:/TEST/TEST1.TXT test2.txt
 \end{verbatim}
 
-Como  es obvio  las  {\sf  mtools} no  distinguen  entre may˙sculas  y
-min˙sculas  en  el acceso  al  sistema  de archivos  DOS/Windows.  Sin
-embargo, si permiten la utilizaciÛn de  comodines (como {\tt *} o {\tt
+Como  es obvio  las  {\sf  mtools} no  distinguen  entre may√∫sculas  y
+min√∫sculas  en  el acceso  al  sistema  de archivos  DOS/Windows.  Sin
+embargo, si permiten la utilizaci√≥n de  comodines (como {\tt *} o {\tt
 ?}) tanto cuando especificamos un nombre de archivo Linux, como cuando
 hacemos lo mismo con nombres de archivo DOS/Windows.
 
-En cuanto a  las letras de dispositivo, com˙nmente la  unidad {\tt A:}
+En cuanto a  las letras de dispositivo, com√∫nmente la  unidad {\tt A:}
 es la  primera unidad de  disquete, la unidad  {\tt B:} es  la segunda
 unidad de disquete,  la unidad {\tt J:}  es una unidad {\em  Jaz} y la
 unidad  {\tt Z:}  es  una  unidad {\em  Zip}.  Sin  embargo todo  esto
-puede   configurarse  mediante  el fichero  de  configuraciÛn  {\tt
+puede   configurarse  mediante  el fichero  de  configuraci√≥n  {\tt
 /etc/mtools.conf}.
 
 \subsection {Lista de comandos}
 
-A continuaciÛn presentamos  algunos de los comandos  m·s utilizados de
+A continuaci√≥n presentamos  algunos de los comandos  m√°s utilizados de
 las {\sf mtools}.
 
 \subsubsection{mattrib}\index{mtools!mattrib}
@@ -1103,10 +1103,10 @@ $ mcd a:/TEST
 $ mcopy a:TEST1.TXT test2.txt
 \end{verbatim}
 
-CopiarÌamos  el  archivo  {\tt  TEST1.TXT}   tal  y  como  lo  hicimos
-anteriormente (p·gina \pageref{mcopyej}).
+Copiar√≠amos  el  archivo  {\tt  TEST1.TXT}   tal  y  como  lo  hicimos
+anteriormente (p√°gina \pageref{mcopyej}).
 
-A diferencia de los sistemas DOS/Windows, con {\sf mtools} sÛlo hay un
+A diferencia de los sistemas DOS/Windows, con {\sf mtools} s√≥lo hay un
 directorio  de  trabajo  actual  para  todas las  unidades,  y  no  un
 directorio de trabajo diferente para cada unidad.
 
@@ -1122,12 +1122,12 @@ $ mcopy fichero_fuente_dos
 \end{verbatim}
 
 El comando copia el {\tt fichero\_fuente} al {\tt fichero\_destino}, o
-copia m˙ltiples ficheros  al directorio de destino  indicado. Fuente y
+copia m√∫ltiples ficheros  al directorio de destino  indicado. Fuente y
 destino pueden ser ficheros de DOS o de Linux. La presencia, o no, del
-indicador de  letra del dispositivo  es el que determina  quÈ ficheros
-son de DOS y cu·les de Linux.
+indicador de  letra del dispositivo  es el que determina  qu√© ficheros
+son de DOS y cu√°les de Linux.
 
-Si sÛlo  se suministra uno  de los  par·metros fuente, se  supone como
+Si s√≥lo  se suministra uno  de los  par√°metros fuente, se  supone como
 destino el directorio actual de trabajo en el sistema Linux.
 
 \subsubsection{mdel}\index{mtools!mdel}
@@ -1189,7 +1189,7 @@ $ mformat <unidad:>
 \subsubsection{mmd}\index{mtools!mmd}
 
 El comando  {\tt mmd} se emplea  para crear un nuevo  directorio en un
-sistema  de archivos  DOS.  El comando  informar· de  un  error si  el
+sistema  de archivos  DOS.  El comando  informar√° de  un  error si  el
 directorio ya existe.
 
 \begin{verbatim}
@@ -1211,8 +1211,8 @@ $ mmove directorio_fuente directorio_destino
 \subsubsection{mrd}\index{mtools!mrd}
 
 El comando {\tt mrd} se emplea para borrar un directorio de un sistema
-de  archivos  DOS/Windows. El  comando  volver·  con  un error  si  el
-directorio no existe o no est· vacÌo.
+de  archivos  DOS/Windows. El  comando  volver√°  con  un error  si  el
+directorio no existe o no est√° vac√≠o.
 
 \begin{verbatim}
 $ mrd directorio_dos
@@ -1221,13 +1221,13 @@ $ mrd directorio_dos
 \subsubsection{mtype}\index{mtools!mtype}
 
 El  comando  {\tt mtype}  muestra  el fichero  DOS/Windows
-especificado, en la pantalla o en la salida est·ndar.
+especificado, en la pantalla o en la salida est√°ndar.
 
 \begin{verbatim}
 $ mtype fichero_dos
 \end{verbatim}
 
-Con este capÌtulo quedan explicados los rudimentos para saber moverse
+Con este cap√≠tulo quedan explicados los rudimentos para saber moverse
 por Linux.
 \\
-°Feliz exploraciÛn!
+¬°Feliz exploraci√≥n!

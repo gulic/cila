@@ -1,5 +1,5 @@
 // saludo.h .- Ejemplo de programa en C++.
-//              Declaración de la clase saludo.
+//              DeclaraciÃ³n de la clase saludo.
 
 class saludo
 {

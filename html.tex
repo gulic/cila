@@ -1,4 +1,4 @@
-%Autor: FÈlix J. Marcelo Wirnitzer
+%Autor: F√©lix J. Marcelo Wirnitzer
 %email: fmarcelo@mencey.neuroomante.com
 %chat: _ese en #gulic/irc.hispano.org
 
@@ -7,37 +7,37 @@
 \newcommand{\com}{``}
 \newcommand{\elto}[1]{{\tt $<$#1$>$}}
 
-Los orÌgenes de HTML se sit˙an en la necesidad de proporcionar una
-estructura a documentos que fueran accesibles a travÈs de la red. M·s
-que definir la apariencia de un documento, HTML describe cÛmo deberÌa
-construirse. Con una met·fora visual, HTML le explica cÛmo se deben
+Los or√≠genes de HTML se sit√∫an en la necesidad de proporcionar una
+estructura a documentos que fueran accesibles a trav√©s de la red. M√°s
+que definir la apariencia de un documento, HTML describe c√≥mo deber√≠a
+construirse. Con una met√°fora visual, HTML le explica c√≥mo se deben
 encajar seis planchas de madera para crear un cubo, pero no dice nada
 sobre si la madera debe ser de roble, pino o caoba, o si debe
 barnizarse o pintarse.
 
 A  lo  largo del  tiempo,  la  demanda  de  los usuarios  ha  motivado
-la  inclusiÛn  de  elementos  relativos   a  la  presentaciÛn  en  las
-especificaciones  de  HTML, a  pesar  de  que  cada  vez se  veÌa  m·s
+la  inclusi√≥n  de  elementos  relativos   a  la  presentaci√≥n  en  las
+especificaciones  de  HTML, a  pesar  de  que  cada  vez se  ve√≠a  m√°s
 claro  que la  idea  original de  HTML era  definir  estructuras y  no
 presentaciones. Tratemos de explicarlo mejor:  la idea original es que
-cuando hacemos  una p·gina  web con HTML,  deberÌamos disponer  de dos
-ficheros:  la propia  p·gina web  con  el contenido  que nos  interesa
+cuando hacemos  una p√°gina  web con HTML,  deber√≠amos disponer  de dos
+ficheros:  la propia  p√°gina web  con  el contenido  que nos  interesa
 mostrar  y  un  fichero  de estilos.  Combinando  estos  dos  ficheros
-tendremos  nuestra p·gina  web.  Ahora  bien, con  el  tiempo, se  han
-fundido estos dos ficheros en uno sÛlo creando un gran problema que es
-de no seguir  los est·ndares que inicialmente se crearon.  Y Èse es el
-principal  problema de  ver p·ginas  webs desde  distintos navegadores
-\footnote{No hay  m·s que  recordar cuando leemos  ``P·gina optimizada
+tendremos  nuestra p√°gina  web.  Ahora  bien, con  el  tiempo, se  han
+fundido estos dos ficheros en uno s√≥lo creando un gran problema que es
+de no seguir  los est√°ndares que inicialmente se crearon.  Y √©se es el
+principal  problema de  ver p√°ginas  webs desde  distintos navegadores
+\footnote{No hay  m√°s que  recordar cuando leemos  ``P√°gina optimizada
 por Internet Explorer'' o lo mismo para el Nestcape}
 
-\section{DefiniciÛn de la estructura de un documento}
+\section{Definici√≥n de la estructura de un documento}
 
-Todos los documentos HTML est·n formados por cuatro partes:
+Todos los documentos HTML est√°n formados por cuatro partes:
 
 \begin{enumerate}
 
-\item Una lÌnea declarando quÈ versiÛn  de HTML se ha usado para crear
-el documento.  Esta parte  es simplemente esta  lÌnea:
+\item Una l√≠nea declarando qu√© versi√≥n  de HTML se ha usado para crear
+el documento.  Esta parte  es simplemente esta  l√≠nea:
 
 \begin{verbatim}
 <!DOCTYPE HTML PUBLIC = "-//W3C//DTD HTML 4.0 Transitional//EN"
@@ -45,17 +45,17 @@ el documento.  Esta parte  es simplemente esta  lÌnea:
 \end{verbatim}
 
 \item Un  elemento HTML  que describe el  documento como  un documento
-HTML. Todos los  contenidos de un documento HTML, con  la excepciÛn de
-la declaraciÛn  del tipo de do\-cu\-men\-to,  \textbf{deben encerrarse
+HTML. Todos los  contenidos de un documento HTML, con  la excepci√≥n de
+la declaraci√≥n  del tipo de do\-cu\-men\-to,  \textbf{deben encerrarse
 entre  las  etiquetas  \elto{HTML}   y  \elto{/HTML}}.  El  resto  del
-documento se  encontrar· entre las  etiquetas de apertura y  cierre de
+documento se  encontrar√° entre las  etiquetas de apertura y  cierre de
 HTML.
 
-\item  Una  secciÛn  que  declara el  encabezado,  con  las  etiquetas
-\elto{HEAD} y \elto{/HEAD}. Esta secciÛn contendr· \textit{metadatos},
-que  son  datos  que  describen otros  datos  e  incluyen  informaciÛn
-tal  como  palabras  claves  o descripciones  cortas  que  usar·n  las
-herramientas de b˙squeda  de la Red, autor  del documento, informaciÛn
+\item  Una  secci√≥n  que  declara el  encabezado,  con  las  etiquetas
+\elto{HEAD} y \elto{/HEAD}. Esta secci√≥n contendr√° \textit{metadatos},
+que  son  datos  que  describen otros  datos  e  incluyen  informaci√≥n
+tal  como  palabras  claves  o descripciones  cortas  que  usar√°n  las
+herramientas de b√∫squeda  de la Red, autor  del documento, informaci√≥n
 del  control de  versiones  y cualquier  otro dato  que  no pueda  ser
 considerado como contenido del documento.
 
@@ -65,8 +65,8 @@ documento. Para  ello se pueden  utilizar las etiquetas  \elto{BODY} o
 
 \end{enumerate}
 
-Por tanto, un  documento muy b·sico HTML que  contuviera un encabezado
-con un tÌtulo tendrÌa el siguiente aspecto:
+Por tanto, un  documento muy b√°sico HTML que  contuviera un encabezado
+con un t√≠tulo tendr√≠a el siguiente aspecto:
 
 \begin{verbatim}
 <!DOCTYPE HTML PUBLIC = "-//W3C//DTD HTML 4.0 Transitional//EN"
@@ -78,27 +78,27 @@ con un tÌtulo tendrÌa el siguiente aspecto:
 </HTML>
 \end{verbatim}
 
-\section{øQuÈ hacemos con esto?}
+\section{¬øQu√© hacemos con esto?}
 
 Con  este somero  ejemplo lo  que  se debe  hacer es  guardarlo en  un
-fichero de texto con la extensiÛn {\tt  .htm} o {\tt .html} y desde un
-navegador (Konqueror,  Netscape o Galeon, seg˙n  se prefiera) abrir el
+fichero de texto con la extensi√≥n {\tt  .htm} o {\tt .html} y desde un
+navegador (Konqueror,  Netscape o Galeon, seg√∫n  se prefiera) abrir el
 fichero con el nombre con que lo hemos guardado.
 Desde ese momento ya podemos ver resultados.
 
 Cada vez que cambiemos algo, lo guardamos e indicamos al navegador que
-refresque la informaciÛn.
+refresque la informaci√≥n.
 
 
 \section{El cuerpo del documento}
 
-Como su  propio nombre indica, en  el cuerpo, del documento  se sit˙an
+Como su  propio nombre indica, en  el cuerpo, del documento  se sit√∫an
 los contenidos del documento. Es  lo que normalmente se considera como
 el ``contenido" del propio  documento o el  texto de un  libro sin
 pensar en las cubiertas o tapas del libro.
 
 Estos contenidos  deben encerrarse  entre las etiquetas  \elto{BODY} y
-\elto{/BODY}, que deben estar situados {\bf inmediatamente} despuÈs de
+\elto{/BODY}, que deben estar situados {\bf inmediatamente} despu√©s de
 \elto{/HEAD}.
 
 \begin{verbatim}
@@ -110,7 +110,7 @@ Estos contenidos  deben encerrarse  entre las etiquetas  \elto{BODY} y
    </TITLE>
 
    <BODY>
-        AquÌ ya estamos dentro del propio cuerpo.
+        Aqu√≠ ya estamos dentro del propio cuerpo.
    </BODY>
 </HTML>
 \end{verbatim}
@@ -122,7 +122,7 @@ atributos o propiedades, que pueden ser los siguientes:
 
 \item[ALINK] Especifica el color de un enlace cuando se activa.
 
-\item[BACKGROUND="imagen"]  Especifica un  gr·fico que  se usar·  como
+\item[BACKGROUND="imagen"]  Especifica un  gr√°fico que  se usar√°  como
 fondo a modo de mosaico para el documento.
 
 \item[BGCOLOR="nombrecolor"]   Especifica  el   color  de   fondo  del
@@ -147,10 +147,10 @@ Los colores que se pueden usar son:
         \item Grey (Gris)
         \item Green (Verde)
         \item Lime (Verde Lima)
-        \item Maroon (MarrÛn
+        \item Maroon (Marr√≥n
         \item Navy (Azul Marino)
         \item Olive (Verde oliva)
-        \item Purple (P˙rpura)
+        \item Purple (P√∫rpura)
         \item Red (Rojo)
         \item Silver (Plata)
         \item Teal (Azul Verdoso)
@@ -162,27 +162,27 @@ Por ejemplo,
 
 \begin{verbatim}
 <BODY BGCOLOR="Blue" Text="Yellow" >
-        Esto es una p·gina web con letras amarillas y fondo azul.
+        Esto es una p√°gina web con letras amarillas y fondo azul.
 </BODY>
 \end{verbatim}
 
 \section{Estructura del contenido de un documento con encabezados}
 
 Casi todos  los documentos  pueden dividirse  en distintos  bloques de
-texto  o  apoyarse  con  informaciÛn adicional  como  ilustraciones  o
-fotografÌas. Incluso los documentos  HTML m·s b·sicos presentar·n este
+texto  o  apoyarse  con  informaci√≥n adicional  como  ilustraciones  o
+fotograf√≠as. Incluso los documentos  HTML m√°s b√°sicos presentar√°n este
 comportamiento.
 
-Por ejemplo,  puede que su  documento tenga dos p·rrafos,  una imagen,
-una  cita  y un  p·rrafo  final,  por lo  que  podrÌa  decirse que  su
+Por ejemplo,  puede que su  documento tenga dos p√°rrafos,  una imagen,
+una  cita  y un  p√°rrafo  final,  por lo  que  podr√≠a  decirse que  su
 documento consta de cinco bloques diferentes.
 
-Para  ello, echamos  mano de  los encabezados.  …stos constan  de seis
+Para  ello, echamos  mano de  los encabezados.  √âstos constan  de seis
 niveles, desde \elto{H1}  hasta \elto{H6}, es decir, de  mayor a menor
-importancia.  Lo que  entendemos por  nivel de  importancia no  es m·s
-que  resaltar un  texto variando  su tamaÒo.  Evidentemente, un  texto
-resaltar· con un gran tamaÒo frente a otro de menor tamaÒo. Por tanto,
-con \elto{H1} obtendremos el mayor tamaÒo y con \elto{H6} el menor.
+importancia.  Lo que  entendemos por  nivel de  importancia no  es m√°s
+que  resaltar un  texto variando  su tama√±o.  Evidentemente, un  texto
+resaltar√° con un gran tama√±o frente a otro de menor tama√±o. Por tanto,
+con \elto{H1} obtendremos el mayor tama√±o y con \elto{H6} el menor.
 
 \begin{verbatim}
 <H1>
@@ -203,17 +203,17 @@ con \elto{H1} obtendremos el mayor tamaÒo y con \elto{H6} el menor.
 
 \subsection{Formato de texto}
 
-\subsubsection*{P·rrafo}
+\subsubsection*{P√°rrafo}
 
-El tipo m·s b·sico de formatos de  texto es la agrupaciÛn de frases en
-p·rrafos. Para ello se usa el elemento \elto{P}:
+El tipo m√°s b√°sico de formatos de  texto es la agrupaci√≥n de frases en
+p√°rrafos. Para ello se usa el elemento \elto{P}:
 
 \begin{verbatim}
-<P>El tipo m·s b·sico de formatos de texto es la agrupaciÛn de
-frases en p·rrafos.</P>
+<P>El tipo m√°s b√°sico de formatos de texto es la agrupaci√≥n de
+frases en p√°rrafos.</P>
 \end{verbatim}
 
-\subsubsection*{…nfasis}
+\subsubsection*{√ânfasis}
 
 En casi todos  los bloques existe una  parte que se le  quiere dar una
 mayor importancia  que el resto del  texto. HTML marca esta  parte con
@@ -224,9 +224,9 @@ Si te digo que no, es que quiero decir <EM>NO</EM>.
 \end{verbatim}
 
 \noindent
-\subsubsection*{…nfasis fuerte}
+\subsubsection*{√ânfasis fuerte}
 
-Como todo en la vida, hay tambiÈn grados de acentuar el Ènfasis en las
+Como todo en la vida, hay tambi√©n grados de acentuar el √©nfasis en las
 cosas. Esto lo hacemos con \elto{STRONG}:
 
 \begin{verbatim}
@@ -235,27 +235,27 @@ Si te digo que no, es que quiero decir <STRONG>NO</STRONG>.
 
 \subsection{Listas}
 
-Las listas en HTML se dividen en tres categorÌas b·sicas:
+Las listas en HTML se dividen en tres categor√≠as b√°sicas:
 
 \begin{itemize}
 \item \textit{Listas numeradas}
 \item \textit{Listas no numeradas}
-\item \textit{Listas de definiciÛn}
+\item \textit{Listas de definici√≥n}
 \end{itemize}
 
-Las dos primeras son similares.  Una \textit{lista numerada} usar· los
+Las dos primeras son similares.  Una \textit{lista numerada} usar√° los
 elementos  \elto{OL} y  \elto{/OL} mientras  que una  \textit{lista no
-numerada} har· uso de los  elementos \elto{UL} y \elto{/UL}. Dentro de
+numerada} har√° uso de los  elementos \elto{UL} y \elto{/UL}. Dentro de
 estos elementos, para  marcar cada miembro de la lista,  se utiliza la
-etiqueta com˙n \elto{LI}.
+etiqueta com√∫n \elto{LI}.
 
 \subsubsection*{Listas no numeradas}
 
-Son aquÈllas cuyos elementos no siguen un orden determinado, aunque se
+Son aqu√©llas cuyos elementos no siguen un orden determinado, aunque se
 muestran en el orden en el que se escriban en el archivo fuente.
 
 Para crear una lista no numerada, se usa la etiqueta \elto{UL} seguido
-de una colecciÛn de elementos con \elto{LI}:
+de una colecci√≥n de elementos con \elto{LI}:
 
 \begin{verbatim}
 <P>Coches que he tenido</P>
@@ -269,12 +269,12 @@ de una colecciÛn de elementos con \elto{LI}:
 
 \subsubsection*{Listas numeradas}
 
-Son aquÈllas  cuyos elementos deben  seguir un orden  determinado. Por
+Son aqu√©llas  cuyos elementos deben  seguir un orden  determinado. Por
 ejemplo, los  pasos que  deben seguir  en una receta  de cocina  o las
 instrucciones para montar en bicicleta.
 
 Para crear una lista numerada, se usa la etiqueta \elto{OL} seguido de
-una colecciÛn de elementos con \elto{LI}:
+una colecci√≥n de elementos con \elto{LI}:
 
 \begin{verbatim}
 <P>Cosas que tengo que hacer hoy</P>
@@ -288,10 +288,10 @@ una colecciÛn de elementos con \elto{LI}:
 \subsubsection*{Listas de definiciones}
 
 Estas listas se  diferencian de las anteriores en que  cada entrada de
-la lista  consta de dos partes:  el tÈrmino definido, \elto{DT},  y la
-propia descripciÛn de la definiciÛn,  \elto{DD}. La lista comienza con
-la etiqueta de las listas  de definiciones, \elto{DL}. Cada definiciÛn
-debe tener obligatoriamente un tÈrmino  y una descripciÛn, tal como se
+la lista  consta de dos partes:  el t√©rmino definido, \elto{DT},  y la
+propia descripci√≥n de la definici√≥n,  \elto{DD}. La lista comienza con
+la etiqueta de las listas  de definiciones, \elto{DL}. Cada definici√≥n
+debe tener obligatoriamente un t√©rmino  y una descripci√≥n, tal como se
 ve en este ejemplo:
 
 \begin{verbatim}
@@ -301,7 +301,7 @@ ve en este ejemplo:
      </DT>
 
      <DT>BIOS
-       <DD>Sistema de entrada y salida b·sico</DD>
+       <DD>Sistema de entrada y salida b√°sico</DD>
      </DT>
   </DL>
 \end{verbatim}
@@ -317,40 +317,40 @@ principales:
 estructura de la tabla.
 
 \item [WIDTH:] Valor que  indica la anchura que se le  quiere dar a la
-tabla en proporciÛn con la anchura total de la tabla del navegador (es
+tabla en proporci√≥n con la anchura total de la tabla del navegador (es
 decir, una valor de 100 indica que  la tabla debe ocupar todo el ancho
-disponible de la ventana, lo cual no equivale al tÈrmino de ``pantalla
+disponible de la ventana, lo cual no equivale al t√©rmino de ``pantalla
 completa").
 
 \item [BORDER:] Determina la anchura del  borde de la tabla, medido en
-pÌxels. Un valor de 0 (cero) hace que no se ponga borde.
+p√≠xels. Un valor de 0 (cero) hace que no se ponga borde.
 
-\item [FRAME:]  TambiÈn se  posible colocar un  marco alrededor  de la
-tabla. El  valor predeterminado es  `` \textit{void}" (vacÌo),  lo que
-significa que no existe ning˙n  marco. Se admiten valores alternativos
-para indicar cada uno de los lados  o una combinaciÛn de los lados del
+\item [FRAME:]  Tambi√©n se  posible colocar un  marco alrededor  de la
+tabla. El  valor predeterminado es  `` \textit{void}" (vac√≠o),  lo que
+significa que no existe ning√∫n  marco. Se admiten valores alternativos
+para indicar cada uno de los lados  o una combinaci√≥n de los lados del
 marco.
 
 \item [RULES:] Son separadores visuales entre filas, columnas o grupos
 de celdas en el interior de la tabla. De este modo se puede incluir un
 separador  vertical entre  las columnas  pero ninguno  que separe  las
-filas entre sÌ. El valor predeterminado es ``\textit{none}" (ninguno),
-que significa que no se mostrar· ning˙n separador. Los separadores son
+filas entre s√≠. El valor predeterminado es ``\textit{none}" (ninguno),
+que significa que no se mostrar√° ning√∫n separador. Los separadores son
 elementos visuales distintos a los bordes.
 
 \item [CELLSPACING:] Espacio  entre las celdas, de la  tabla medido en
-pÌxels, cuyo valor predeterminado es 0 (cero).
+p√≠xels, cuyo valor predeterminado es 0 (cero).
 
 \item [CELLPADDING:] Espacio entre de  la celda y su contenido, medido
-tambiÈn en pÌxels, cuyo valor predeterminado es 0 (cero).
+tambi√©n en p√≠xels, cuyo valor predeterminado es 0 (cero).
 
 \end{description}
 
 Lo  primero  que  hacemos  es  poner una  tabla  entre  las  etiquetas
-\elto{TABLE} Y \elto{/TABLE}. DespuÈs se va  de lÌnea en lÌnea con las
+\elto{TABLE} Y \elto{/TABLE}. Despu√©s se va  de l√≠nea en l√≠nea con las
 etiquetas  \elto{TR} Y  \elto{/TR}.  Dentro de  ellas,  ya usamos  las
-etiquetas  para  cada celdas  de  estas  lÌneas  que son  \elto{TD}  y
-\elto{/TD}, que ser·n tantas como columnas queramos:
+etiquetas  para  cada celdas  de  estas  l√≠neas  que son  \elto{TD}  y
+\elto{/TD}, que ser√°n tantas como columnas queramos:
 
 %\newpage
 
@@ -371,7 +371,7 @@ etiquetas  para  cada celdas  de  estas  lÌneas  que son  \elto{TD}  y
                 <TD>Estamos en la segunda celda de la segunda fila</TD>
                 <TD>Estamos en la tercera celda de la segunda fila</TD>
         </TR>
-;Y asÌ sucesivamente ...
+;Y as√≠ sucesivamente ...
 </TABLE>
 \end{verbatim}
 
@@ -381,27 +381,27 @@ ponemos \elto{TD}\elto{/TD}
 \subsection{Enlaces}
 
 Antes que  nada, pasemos a  definir lo que  es un enlace.  Todos hemos
-visto que cuando navegamos por una  p·gina web, hay ciertas palabras o
-gr·ficos que en el momento de  pasar el puntero del ratÛn se convierte
-en  una mano  indic·ndonos que  si pinchamos  ahÌ nos  enviar· a  otra
-p·gina web.  Pues bien, eso  es un enlace y  en el momento  de crearlo
-dentro de un documento HTML tendr· el siguiente aspecto:
+visto que cuando navegamos por una  p√°gina web, hay ciertas palabras o
+gr√°ficos que en el momento de  pasar el puntero del rat√≥n se convierte
+en  una mano  indic√°ndonos que  si pinchamos  ah√≠ nos  enviar√° a  otra
+p√°gina web.  Pues bien, eso  es un enlace y  en el momento  de crearlo
+dentro de un documento HTML tendr√° el siguiente aspecto:
 
 \begin{verbatim}
-<A HREF="http://www.google.com">Este enlace nos lleva a la p·gina del
+<A HREF="http://www.google.com">Este enlace nos lleva a la p√°gina del
 Google</A>
 \end{verbatim}
 
-Donde el  texto que hemos escrito,  "Este enlace..." es el  ·rea donde
-debemos pinchar  con el ratÛn  para acceder a  esa p·gina. No  sÛlo se
-puede meter texto, sino tambiÈn im·genes u otros objetos.
+Donde el  texto que hemos escrito,  "Este enlace..." es el  √°rea donde
+debemos pinchar  con el rat√≥n  para acceder a  esa p√°gina. No  s√≥lo se
+puede meter texto, sino tambi√©n im√°genes u otros objetos.
 
-Con esto tambiÈn podemos hacer un acceso a un correo electrÛnico:
+Con esto tambi√©n podemos hacer un acceso a un correo electr√≥nico:
 
 \begin{verbatim}
 <A HREF="mailto:cila@fmat.ull.es">Podemos probar a enviar un mensaje
 a los autores de este libro</A>
 \end{verbatim}
 
-Con todo  lo explicado  en esta introducciÛn  podemos empezar  a hacer
+Con todo  lo explicado  en esta introducci√≥n  podemos empezar  a hacer
 nuestros pinitos en el apasionante mundo del lenguaje HTML.

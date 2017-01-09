@@ -3,54 +3,54 @@
 	reparto de la tarea de escritura de
 	los temas correspondientes para el libro.
 
- MÛdulos
- I.   Entorno GNU/Linux  (3 dÌas, 12 horas)
- II.  InstalaciÛn        (2 dÌas, 20 horas en jornadas de 10 horas)
- III. DocumentaciÛn      (2 dÌas)
- IV.  Matem·ticas        (1 dÌas)
- V.   ProgramaciÛn       (2 dÌas)
- VI.  ProgramaciÛn avanzada (?? dÌas)
+ M√≥dulos
+ I.   Entorno GNU/Linux  (3 d√≠as, 12 horas)
+ II.  Instalaci√≥n        (2 d√≠as, 20 horas en jornadas de 10 horas)
+ III. Documentaci√≥n      (2 d√≠as)
+ IV.  Matem√°ticas        (1 d√≠as)
+ V.   Programaci√≥n       (2 d√≠as)
+ VI.  Programaci√≥n avanzada (?? d√≠as)
 
- MÛdulo I:   Entorno GNU/Linux
- 1. Historia de GNU/Linux.                                                 <== FÈlix
- 2. El entorno del intÈrprete de comandos, con mtools.                     <== FÈlix
- 3. El entorno X-Window, Gnome, KDE.                                       <== Jes˙s y Carlos C.
- 4. Aplicaciones para Internet: Mozilla, Konqueror, Mutt, SSH              <== Jes˙s y Alberto
+ M√≥dulo I:   Entorno GNU/Linux
+ 1. Historia de GNU/Linux.                                                 <== F√©lix
+ 2. El entorno del int√©rprete de comandos, con mtools.                     <== F√©lix
+ 3. El entorno X-Window, Gnome, KDE.                                       <== Jes√∫s y Carlos C.
+ 4. Aplicaciones para Internet: Mozilla, Konqueror, Mutt, SSH              <== Jes√∫s y Alberto
  5. Aplicaciones diversas: gnotepad, openoffice, GIMP, acroread            <== Teresa
- 6. Sistemas de ayuda y documentaciÛn                                      <== VÌctor
+ 6. Sistemas de ayuda y documentaci√≥n                                      <== V√≠ctor
 
- MÛdulo II:  InstalaciÛn (Debian GNU/Linux 3.0, 8 CDs, 25 plazas)          <== RenÈ y EdÌn
+ M√≥dulo II:  Instalaci√≥n (Debian GNU/Linux 3.0, 8 CDs, 25 plazas)          <== Ren√© y Ed√≠n
  1. Sistema base (particiones y Lilo)
  2. Hardware y kernel (kernel-package)
- 3. AdministraciÛn b·sica (adduser, floppy, cdrom, APT)
- 4. Software para los mÛdulos del TILA.
+ 3. Administraci√≥n b√°sica (adduser, floppy, cdrom, APT)
+ 4. Software para los m√≥dulos del TILA.
  5. Paquetes en fuentes (bajar, compilar e instalar videolan y xine con aalib) 
  6. Software adicional (a gusto del consumidor)
 
- MÛdulo III: EdiciÛn de gr·ficos y documentos
- 1. EdiciÛn de gr·ficos: DIA, QCad, The GIMP                               <== Pedro y Miguel ¡ngel
+ M√≥dulo III: Edici√≥n de gr√°ficos y documentos
+ 1. Edici√≥n de gr√°ficos: DIA, QCad, The GIMP                               <== Pedro y Miguel √Ångel
  2. OpenOffice                                                             <== Carlos P.
- 3. HTML                                                                   <== FÈlix
- 4. LyX                                                                    <== Miguel ¡ngel
- 5. LaTeX                                                                  <== Miguel ¡ngel
+ 3. HTML                                                                   <== F√©lix
+ 4. LyX                                                                    <== Miguel √Ångel
+ 5. LaTeX                                                                  <== Miguel √Ångel
 
- MÛdulo IV:  Herramientas para matem·ticas
+ M√≥dulo IV:  Herramientas para matem√°ticas
  1. Octave y SciLab                                                        <== Alberto
  2. GNUplot                                                                <== Alberto
- 3. R                                                                      <== Miguel ¡ngel
- 4. Yacas                                                                  <== Miguel ¡ngel
+ 3. R                                                                      <== Miguel √Ångel
+ 4. Yacas                                                                  <== Miguel √Ångel
 
- MÛdulo V:   Herramientas de programaciÛn
- 1. Editores: VI, VIM y GNU Emacs                                          <== Carlos C. y Miguel ¡ngel
+ M√≥dulo V:   Herramientas de programaci√≥n
+ 1. Editores: VI, VIM y GNU Emacs                                          <== Carlos C. y Miguel √Ångel
  2. FreePascal                                                             <== Carlos C.
- 3. GNU Fortran                                                            <== Miguel ¡ngel
- 4. GNU C/C++                                                              <== Jes˙s
- 5. GNU Make                                                               <== Jes˙s
- 6. Depuradores: gdb y ddd                                                 <== Jes˙s
+ 3. GNU Fortran                                                            <== Miguel √Ångel
+ 4. GNU C/C++                                                              <== Jes√∫s
+ 5. GNU Make                                                               <== Jes√∫s
+ 6. Depuradores: gdb y ddd                                                 <== Jes√∫s
  7. Java                                                                   <== Carlos C.
- 8. Bash                                                                   <== Jes˙s
+ 8. Bash                                                                   <== Jes√∫s
 
- MÛdulo VI:  ProgramaciÛn avanzada (no preocuparse por este)
+ M√≥dulo VI:  Programaci√≥n avanzada (no preocuparse por este)
  1. PHP + [My|Postgre]SQL
  2. Perl
  3. Python (NumPy, python-stats, python-scientist)

@@ -1,22 +1,22 @@
-* Conocerás los  orígenes y la filosofía  de GNU/Linux,
-  aprenderás a desenvolverte en los entornos de trabajo
-  que GNU/Linux te proporciona (intérpretes de comandos
-  y escritorios GNOME y  KDE) y te defenderás manejando
+* ConocerÃ¡s los  orÃ­genes y la filosofÃ­a  de GNU/Linux,
+  aprenderÃ¡s a desenvolverte en los entornos de trabajo
+  que GNU/Linux te proporciona (intÃ©rpretes de comandos
+  y escritorios GNOME y  KDE) y te defenderÃ¡s manejando
   GNU/Linux a lo largo y ancho de Internet.
 
-* Aprenderás  a crear  documentos de  todo tipo  con la
+* AprenderÃ¡s  a crear  documentos de  todo tipo  con la
   calidad de una imprenta  profesional gracias a LaTeX,
-  además de  gráficos, esquemas y  diseños vectoriales,
-  que podrás incluir en  documentos escritos en LaTeX o
-  con la suite ofimática StarOffice.
+  ademÃ¡s de  grÃ¡ficos, esquemas y  diseÃ±os vectoriales,
+  que podrÃ¡s incluir en  documentos escritos en LaTeX o
+  con la suite ofimÃ¡tica StarOffice.
 
-* Si  necesitas utilidades  para Matemáticas,  dispones
-  de  Octave   para  cálculo  numérico,   GNUPlot  para
-  representaciones    gráficas,    R   para    análisis
-  estadístico y Yacas para cálculo simbólico.
+* Si  necesitas utilidades  para MatemÃ¡ticas,  dispones
+  de  Octave   para  cÃ¡lculo  numÃ©rico,   GNUPlot  para
+  representaciones    grÃ¡ficas,    R   para    anÃ¡lisis
+  estadÃ­stico y Yacas para cÃ¡lculo simbÃ³lico.
 
-* Sobre la  base de  tus conocimientos  de programación
-  aprenderás a manejar las herramientas de programación
-  más  importantes disponibles  en GNU/Linux:  potentes
-  editores  para   escribir  código,   compiladores  de
+* Sobre la  base de  tus conocimientos  de programaciÃ³n
+  aprenderÃ¡s a manejar las herramientas de programaciÃ³n
+  mÃ¡s  importantes disponibles  en GNU/Linux:  potentes
+  editores  para   escribir  cÃ³digo,   compiladores  de
   Pascal, Fortran, C/C++, Java y depuradores.

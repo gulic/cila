@@ -1,5 +1,5 @@
 /* holafuncm.c .- Ejemplo de programa que require la biblioteca de
- *        funciones matem·ticas. DefiniciÛn de holafunc().
+ *        funciones matem√°ticas. Definici√≥n de holafunc().
  */
 
 #include <math.h>
@@ -11,7 +11,7 @@ holafunc (const char *str)
 {
   float a, b;
 
-  printf ("El que a buen ·rbol se arrima, %s,\n", str);
+  printf ("El que a buen √°rbol se arrima, %s,\n", str);
 
   a = 0.5;
   b = cos (a);

@@ -6,43 +6,43 @@
 \label{gprof.tex}
 
 Puede  sernos de  mucha  utilidad ejecutar  nuestro software  a
-travÈs de un  {\em profiler}, como puede ser {\tt  gprof}, pues que Èste
-nos  proporcionar· suficiente  informaciÛn  para  detectar cuellos  de
-botella en nuestro programa y asÌ poder corregirlos.
+trav√©s de un  {\em profiler}, como puede ser {\tt  gprof}, pues que √©ste
+nos  proporcionar√° suficiente  informaci√≥n  para  detectar cuellos  de
+botella en nuestro programa y as√≠ poder corregirlos.
 
 \section{El profiler gprof}
 
 Como ya  se ha dicho,  a menudo  deseamos mejorar  el  rendimiento  de
-nuestro  programa,  pero  en determinadas  ocasiones  resulta  difÌcil
-conocer dÛnde  est·n localizados los  cuellos de botella.  Bien podrÌa
-ser una funciÛn que consuma una  gran cantidad de tiempo de ejecuciÛn,
-como alguna otra que, aunque  muy r·pida, se ejecuta demasiadas veces.
-Detectar esto nos  permitir· optimizar el cÛdigo de nuestra aplicaciÛn,
-sustituyendo por macros o funciones {\tt inline} aquellas m·s llamadas
-(para eliminar el retardo de resoluciÛn  de la llamada) y mejorando el
-cÛdigo en sÌ.
+nuestro  programa,  pero  en determinadas  ocasiones  resulta  dif√≠cil
+conocer d√≥nde  est√°n localizados los  cuellos de botella.  Bien podr√≠a
+ser una funci√≥n que consuma una  gran cantidad de tiempo de ejecuci√≥n,
+como alguna otra que, aunque  muy r√°pida, se ejecuta demasiadas veces.
+Detectar esto nos  permitir√° optimizar el c√≥digo de nuestra aplicaci√≥n,
+sustituyendo por macros o funciones {\tt inline} aquellas m√°s llamadas
+(para eliminar el retardo de resoluci√≥n  de la llamada) y mejorando el
+c√≥digo en s√≠.
 
-Para   compilar  nuestra   aplicaciÛn   de  forma   que  gprof   pueda
-posteriormente extraer toda esta  informaciÛn, simplemente aÒadimos el
-par·metro {\tt -pg} al compilador  GCC. Una vez hecho esto, procedemos
-a ejecutar  el programa en  sÌ, y tras  salir correctamente de  Èl (al
+Para   compilar  nuestra   aplicaci√≥n   de  forma   que  gprof   pueda
+posteriormente extraer toda esta  informaci√≥n, simplemente a√±adimos el
+par√°metro {\tt -pg} al compilador  GCC. Una vez hecho esto, procedemos
+a ejecutar  el programa en  s√≠, y tras  salir correctamente de  √©l (al
 finalizar {\tt main()},  o tras un {\tt exit()}),  observaremos que se
 ha generado un nuevo fichero en  el directorio de trabajo llamado {\tt
-gmon.out}. SÛlo nos queda pasar este archivo a travÈs de gprof, con el
+gmon.out}. S√≥lo nos queda pasar este archivo a trav√©s de gprof, con el
 siguiente formato: \\
 
 \begin{verbatim}
 gprof <opciones> <ejecutable> <gmon.out>
 \end{verbatim}
 
-En  nuestro  sempiterno  ejemplo  de  programa,  ejecutarÌamos la orden
+En  nuestro  sempiterno  ejemplo  de  programa,  ejecutar√≠amos la orden
 {\tt  gprof miprograma gmon.out}.
 
-Hay una opciÛn que merece la  pena destacar, que nos muestra el cÛdigo
+Hay una opci√≥n que merece la  pena destacar, que nos muestra el c√≥digo
 fuente  de nuestro  programa junto  con un  conteo de  ejecuciones por
-lÌnea. Esta opciÛn se activa con el par·metro {\tt -A}.
+l√≠nea. Esta opci√≥n se activa con el par√°metro {\tt -A}.
 
-Una  vez  m·s,  ampliaremos  nuestros  conocimientos  acerca  de  esta
+Una  vez  m√°s,  ampliaremos  nuestros  conocimientos  acerca  de  esta
 herramienta usando el comando {\tt info  gprof}, o bien con la lectura
 del manual de GNU. %\cite{gprof}.
 

@@ -2,52 +2,52 @@
 
 \chapter{PHP}
 
-\section{IntroducciÛn}
+\section{Introducci√≥n}
 
-PHP es  un lenguaje diseÒado  para la generaciÛn din·mica  de p·ginas.
+PHP es  un lenguaje dise√±ado  para la generaci√≥n din√°mica  de p√°ginas.
 web Los  ficheros de PHP  se almacenan en  el servidor y  se ejecutan.
 cuando un  usuario introduce en su  navegador la direccion de  una de.
-estas p·ginas. Estas, a su vez, contienen cÛdigo a partir del cual se.
-generan p·ginas est·ticas en formato HTML                            .
+estas p√°ginas. Estas, a su vez, contienen c√≥digo a partir del cual se.
+generan p√°ginas est√°ticas en formato HTML                            .
 
-La utilidad de  esto es que podemos crear  autom·ticamente p·ginas web
-que se actualicen solas, bas·ndose en una fuente de datos.
+La utilidad de  esto es que podemos crear  autom√°ticamente p√°ginas web
+que se actualicen solas, bas√°ndose en una fuente de datos.
 
-Por  ejemplo, si  quisiÈramos que  cada vez  que el  usuario accede  a
-nuestra p·gina, en esta apareciera la fecha y la hora, serÌa imposible
-conseguirlo a partir de ficheros est·ticos ``html''.
+Por  ejemplo, si  quisi√©ramos que  cada vez  que el  usuario accede  a
+nuestra p√°gina, en esta apareciera la fecha y la hora, ser√≠a imposible
+conseguirlo a partir de ficheros est√°ticos ``html''.
 
-Por  tanto,  la  soluciÛn  serÌa  tener  en  el  servidor  un  fichero
+Por  tanto,  la  soluci√≥n  ser√≠a  tener  en  el  servidor  un  fichero
 ``hora.php'',   mediante  el   cual,  cuando   alguien  accediera   a:
 http://miservidor.com/hora.php, tuviera la hora del instante en que se
-ejecutÛ el cÛdigo php.
+ejecut√≥ el c√≥digo php.
 
-Cada vez que alguien le diera a ``recargar'' en el navegador, verÌa la
+Cada vez que alguien le diera a ``recargar'' en el navegador, ver√≠a la
 hora actual, sin embargo, como podremos  comprobar, si se hace clic en
-el botÛn  ``ver cÛdigo  fuente'' del  navegador, sÛlo  verÌamos cÛdigo
-html conteniendo por alg˙n lugar la hora en que se generÛ la p·gina.
+el bot√≥n  ``ver c√≥digo  fuente'' del  navegador, s√≥lo  ver√≠amos c√≥digo
+html conteniendo por alg√∫n lugar la hora en que se gener√≥ la p√°gina.
 
 PHP tiene  todas las  ventajas que  tienen otros  lenguajes utilizados
-para generaciÛn din·mica de contenido web como PERL y ASP, y otras que
-ninguno de estos  permiten hacer de una forma flexible  y cÛmoda, como
-por ejemplo la creaciÛn de ficheros de Macromedia Flash, im·genes (con
-el mÛdulo GDLib), informes en formato PDF, etc.
+para generaci√≥n din√°mica de contenido web como PERL y ASP, y otras que
+ninguno de estos  permiten hacer de una forma flexible  y c√≥moda, como
+por ejemplo la creaci√≥n de ficheros de Macromedia Flash, im√°genes (con
+el m√≥dulo GDLib), informes en formato PDF, etc.
 
 \section{Primeros Pasos}
 
-Todo script php est· delimitado por los identificadores \verb+<?php+ y
-\verb+?>+. Dentro de estos sÌmbolos, va  escrito todo el cÛdigo php de
+Todo script php est√° delimitado por los identificadores \verb+<?php+ y
+\verb+?>+. Dentro de estos s√≠mbolos, va  escrito todo el c√≥digo php de
 este.
 
-La primera funciÛn  que veremos de PHP ser· ''echo'',  que nos permite
-imprimir  texto o  tags HTML  en nuestra  p·gina. La  funciÛn echo  va
-siempre acompaÒada de unos parÈntesis  y comillas(simples o dobles) en
-caso  de que  vayamos a  imprimir una  o varias  cadenas est·ticas  de
-texto, y puede  ir o no acompaÒada  de estos en caso de  que vayamos a
-imprimir sÛlo el contenido de una o varias variables.
+La primera funci√≥n  que veremos de PHP ser√° ''echo'',  que nos permite
+imprimir  texto o  tags HTML  en nuestra  p√°gina. La  funci√≥n echo  va
+siempre acompa√±ada de unos par√©ntesis  y comillas(simples o dobles) en
+caso  de que  vayamos a  imprimir una  o varias  cadenas est√°ticas  de
+texto, y puede  ir o no acompa√±ada  de estos en caso de  que vayamos a
+imprimir s√≥lo el contenido de una o varias variables.
 
 
-Como con el resto de los  lenguajes, vamos a empezar viendo como serÌa
+Como con el resto de los  lenguajes, vamos a empezar viendo como ser√≠a
 un "hola mundo" en PHP.
 
 \begin{verbatim}
@@ -58,10 +58,10 @@ echo("<center><font size=7>Hola, Mundo!</font></center>");
 ?>
 \end{verbatim}
 
-Este sencillo  script nos permite  ver como diferenciar el  cÛdigo PHP
-del cÛdigo HTML,  pues si introdujÈramos cÛdigo HTML  suelto dentro de
-los delimitadores \verb+<?php+  y \verb+?>+, el mÛdulo  PHP de nuestro
-servidor web provocarÌa un error de interpretaciÛn.
+Este sencillo  script nos permite  ver como diferenciar el  c√≥digo PHP
+del c√≥digo HTML,  pues si introduj√©ramos c√≥digo HTML  suelto dentro de
+los delimitadores \verb+<?php+  y \verb+?>+, el m√≥dulo  PHP de nuestro
+servidor web provocar√≠a un error de interpretaci√≥n.
 
 PHP es  un lenguaje  muy flexible.  Nos permite  imprimir el  valor de
 variables dentro de  cadenas de texto sin tener que  cerrar y volver a
@@ -78,34 +78,34 @@ echo("Tenemos $limones limones y $naranjas naranjas.");
 
 \end{verbatim}
 
-FÌjate  que  no es  lo  mismo  escribir: {\tt  echo("Tenemos  $limones
+F√≠jate  que  no es  lo  mismo  escribir: {\tt  echo("Tenemos  $limones
 limones  y $naranjas  naranjas."); }  que {\tt  echo('Tenemos $limones
 limones y $naranjas naranjas."); }.
 
-La primera lÌnea,  para $limones=2 y $naranjas=3  imprimir· "Tenemos 2
-limones y  3 naranjas",  mientras que  la segunda  imprimir· ''Tenemos
+La primera l√≠nea,  para $limones=2 y $naranjas=3  imprimir√° "Tenemos 2
+limones y  3 naranjas",  mientras que  la segunda  imprimir√° ''Tenemos
 $limones limones  y $naranjas naranjas".  Es decir, si  utilizamos las
 dobles  comillas,  tendremos  que  los  valores  de  las  variable  se
 despliegan dentro de estas. Si  utilizamos, por el contrario, comillas
-simples, lo que haya entre ellas se imprimir· tal cual.
+simples, lo que haya entre ellas se imprimir√° tal cual.
 
 Es importante  saber que cuando  uno necesita utilizar comillas  en el
 HTML resultante  de nuestro  script PHP,  conviene que  ''escape'' las
-comillas, o de  lo contrario el interpretador mostrar·  una p·gina con
-un error de compilaciÛn.
+comillas, o de  lo contrario el interpretador mostrar√°  una p√°gina con
+un error de compilaci√≥n.
 
 por ejemplo, si queremos mostrar el tag html:
 
 {\tt   <a    href="http://www.fmat.ull.es/~frodo">},   tendremos   que
 hacerlo   de    la   siguiente    forma   en   php:    {\tt   echo("<a
-href=\"http://www.fmat.ull.es/~frodo\">");}.  (FÌjate  en  las  barras
+href=\"http://www.fmat.ull.es/~frodo\">");}.  (F√≠jate  en  las  barras
 invertidas que se anteponen a cada  una de las comillas que van dentro
-del par de comillas de la funciÛn "echo".
+del par de comillas de la funci√≥n "echo".
 
-Para la  inclusiÛn de  cÛdigo HTML previamente  escrito dentro  de una
-p·gina que se genera din·micamente  (por ejemplo, supÛn que tienes una
-cabecera, un pie  de p·gina predefinidos para tu sitio  web, y quieres
-que varÌe sÛlo el cuerpo de la p·gina, para darle un diseÒo uniforme),
+Para la  inclusi√≥n de  c√≥digo HTML previamente  escrito dentro  de una
+p√°gina que se genera din√°micamente  (por ejemplo, sup√≥n que tienes una
+cabecera, un pie  de p√°gina predefinidos para tu sitio  web, y quieres
+que var√≠e s√≥lo el cuerpo de la p√°gina, para darle un dise√±o uniforme),
 utilizamos el comando {\tt include}.
 
 Por ejemplo:
@@ -114,7 +114,7 @@ Por ejemplo:
 <?php
 
 include "include/cabecera.php";
-echo("Hola! este es el cuerpo de la p·gina");
+echo("Hola! este es el cuerpo de la p√°gina");
 include"include/pie.php;
 
 ?>
@@ -126,14 +126,14 @@ include"include/pie.php;
 
 Para  el uso  de las  estructuras de  control PHP  es muy  parecido al
 lenguaje ''C'', tanto por el uso  de llaves para delimitar los bloques
-de cÛdigo como por usar la misma sintaxis. Distinguiremos dos tipos de
+de c√≥digo como por usar la misma sintaxis. Distinguiremos dos tipos de
 estructuras de control:
 
 \subsection{Condicionales: If, Switch}
 
-If: Este condicional nos permite ejecutar  un bloque de cÛdigo en caso
-de que se  de una condiciÛn determinada. Por decirlo  de alguna forma,
-la sintaxis podrÌa ser:
+If: Este condicional nos permite ejecutar  un bloque de c√≥digo en caso
+de que se  de una condici√≥n determinada. Por decirlo  de alguna forma,
+la sintaxis podr√≠a ser:
 
 \begin{verbatim}
 
@@ -145,7 +145,7 @@ If (condicion){
 
 \end{verbatim}
 
-O, si es m·s corto lo que queremos hacer dada esa condiciÛn, podrÌa ser:
+O, si es m√°s corto lo que queremos hacer dada esa condici√≥n, podr√≠a ser:
 
 \begin{verbatim}
 	
@@ -172,30 +172,30 @@ if ($a<$b) {
 
 \subsection{Repetitivas: While,For}
 
-\section{Como estructurar nuestro cÛdigo en php}
+\section{Como estructurar nuestro c√≥digo en php}
 
 Las funciones. 
 
 \section{Manejo de formularios}
 
 
-\section{UtilizaciÛn  de bases  de  datos} Aunque  PHP soporta  varias
+\section{Utilizaci√≥n  de bases  de  datos} Aunque  PHP soporta  varias
 clases de servidores  de base de datos,  debido a que cada  uno usa un
-interfaz distinto,  resulta bastante  incÛmodo tener que  aprender las
+interfaz distinto,  resulta bastante  inc√≥modo tener que  aprender las
 funciones  de PHP  para cada  uno  de ellos.  Es por  ello que  suelen
-utilizarse librerÌas adicionales (no incluidas con PHP, pero sÌ con la
-mayorÌa de las distribuciones Linux), como la que utilizaremos en este
+utilizarse librer√≠as adicionales (no incluidas con PHP, pero s√≠ con la
+mayor√≠a de las distribuciones Linux), como la que utilizaremos en este
 texto/curso: AdoDB.
 
 AdoDB nos  permite cambiar  de sistema de  bases de  datos simplemente
-cambiando un par·metro al realizar la conexiÛn a la Base de datos (BDD
-de ahora en adelante) , de  forma que una aplicaciÛn PHP diseÒada para
+cambiando un par√°metro al realizar la conexi√≥n a la Base de datos (BDD
+de ahora en adelante) , de  forma que una aplicaci√≥n PHP dise√±ada para
 correr  con  Oracle,  puede  ser  portada  para  funcionar  en  MySql,
-Informix, etc. con tan sÛlo cambiar una lÌnea de cÛdigo.
+Informix, etc. con tan s√≥lo cambiar una l√≠nea de c√≥digo.
 
 
-\section{CreaciÛn de im·genes din·micamente}
+\section{Creaci√≥n de im√°genes din√°micamente}
 
-\section {BibliografÌa recomendada}
+\section {Bibliograf√≠a recomendada}
 
 

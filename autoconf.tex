@@ -2,42 +2,42 @@
 
 \chapter{GNU Autoconf}\label{autoconf}
 
-No hay  que olvidar que,  desde que  la proliferaciÛn de  los sistemas
+No hay  que olvidar que,  desde que  la proliferaci√≥n de  los sistemas
 UNIX ha ido en aumento, han surgido diferentes implementaciones; antes
-de que  se estableciese el est·ndar  {\em POSIX}, esto dio  lugar a un
+de que  se estableciese el est√°ndar  {\em POSIX}, esto dio  lugar a un
 tremendo  caos,  que obligaba  a  los  desarrolladores interesados  en
 hacer  su software  multiplataforma  a usar  diversos artificios,  que
-permitiesen la migraciÛn  de su programa a otros sabores  de UNIX. A˙n
+permitiesen la migraci√≥n  de su programa a otros sabores  de UNIX. A√∫n
 cuando {\em POSIX}  se dio a conocer, los  diversos sistemas adoptaron
-dicho est·ndar en distintas fechas,  y a˙n existen ligeras diferencias
-que  serÌan  una  traba  para nuestro  propÛsito.  Fueron  necesarias,
-entonces, el uso de ciertas herramientas que facilitaran la adaptaciÛn
-de nuestro  cÛdigo a  estas posibles diferencias,  y adem·s  que dicha
-tarea fuese  lo m·s automatizada  posible, para que el  futuro usuario
+dicho est√°ndar en distintas fechas,  y a√∫n existen ligeras diferencias
+que  ser√≠an  una  traba  para nuestro  prop√≥sito.  Fueron  necesarias,
+entonces, el uso de ciertas herramientas que facilitaran la adaptaci√≥n
+de nuestro  c√≥digo a  estas posibles diferencias,  y adem√°s  que dicha
+tarea fuese  lo m√°s automatizada  posible, para que el  futuro usuario
 pudiese  compilar el  paquete de  software sin  necesidad de  realizar
 complicados pasos.  Aunque existen muchos programas  que cumplen estas
 especificaciones,  son de  destacar los  elaborados desde  el proyecto
 GNU: {\tt autoconf}, {\tt automake} y {\tt libtool}.
 
-\section{IntroducciÛn a autoconf}
+\section{Introducci√≥n a autoconf}
 
 La herramienta GNU autoconf, con el tiempo, se ha convertido en una de
-las  m·s  ˙tiles  y  necesarias  a la  hora  de  desarrollar  software
+las  m√°s  √∫tiles  y  necesarias  a la  hora  de  desarrollar  software
 multiplataforma. Las diferencias entre diferentes arquitecturas obliga
 al programador a conocerlas con  detalle. Con {\tt autoconf}, podremos
 generar  un script  que nos  evite la  mayor parte  del trabajo.  Este
-script, llamado {\tt configure}, generar· unos ficheros {\tt makefile}
+script, llamado {\tt configure}, generar√° unos ficheros {\tt makefile}
 modificados para adaptarse a nuestro sistema.
 
 El  modo de  funcionamiento de  {\tt autoconf}  se basa  en el  uso de
-macros  m4 para  resumir  las operaciones  de  comprobaciÛn que  deben
+macros  m4 para  resumir  las operaciones  de  comprobaci√≥n que  deben
 hacerse. Estas macros comienzan todas con  el prefijo {\tt AC\_} y son
-sustituidas por una porciÛn de cÛdigo  en el lenguaje de script de una
+sustituidas por una porci√≥n de c√≥digo  en el lenguaje de script de una
 shell tipo Bourne.
 
 Las  macros  se  definen  en  un  fichero  {\tt  configure.in},  y  al
-ser  procesado  este  fichero  con  {\tt  autoconf},  se  generar·  el
-correspondiente   script  {\tt   configure}.  SÛlo   dos  macros   son
+ser  procesado  este  fichero  con  {\tt  autoconf},  se  generar√°  el
+correspondiente   script  {\tt   configure}.  S√≥lo   dos  macros   son
 imprescindibles para nuestro programa:
 
 \begin{verbatim}
@@ -46,53 +46,53 @@ AC_INIT(fichero_unico_fuentes)
 
 La llamada a  {\tt AC\_INIT} comprueba que existe  el fichero indicado
 para  asegurarse de  que se  encuentra en  el directorio  correcto. En
-nuestro ejemplo, podrÌamos  usar {\tt main.c}. Se  utiliza al comienzo
-del fichero de configuraciÛn.
+nuestro ejemplo, podr√≠amos  usar {\tt main.c}. Se  utiliza al comienzo
+del fichero de configuraci√≥n.
 
-La  otra llamada  se sit˙a  al final  del fichero,  e indica  dÛnde se
-recogeran los resultados  de la ejecuciÛn del  script. Normalmente, el
+La  otra llamada  se sit√∫a  al final  del fichero,  e indica  d√≥nde se
+recogeran los resultados  de la ejecuci√≥n del  script. Normalmente, el
 destino es el fichero {makefile}:
 
 \begin{verbatim}
 AC_OUTPUT(fichero_salida)
 \end{verbatim}
 
-Una  vez que  nuestro  script  estÈ listo,  tras  procesar el  fichero
-{\tt  configure.in}   con  {\tt  autoconf},  Èste   necesitar·  de  un
+Una  vez que  nuestro  script  est√© listo,  tras  procesar el  fichero
+{\tt  configure.in}   con  {\tt  autoconf},  √©ste   necesitar√°  de  un
 fichero adicional  {\tt makefile.in}  que contenga nuestras  reglas de
-compilaciÛn. SÛlo que en este  fichero, usaremos expresiones como {\tt
-CC=@CC@} que ser·n sustituÌdas por el  script con el valor adecuado al
-generar  el  {\tt  makefile}  final. TambiÈn  podemos  hacer  exportar
+compilaci√≥n. S√≥lo que en este  fichero, usaremos expresiones como {\tt
+CC=@CC@} que ser√°n sustitu√≠das por el  script con el valor adecuado al
+generar  el  {\tt  makefile}  final. Tambi√©n  podemos  hacer  exportar
 ciertas  definiciones a  un  fichero {\tt  config.h}, que  incluiremos
-en  nuestros fuentes,  sin  m·s que  definir  el correspondiente  {\tt
+en  nuestros fuentes,  sin  m√°s que  definir  el correspondiente  {\tt
 config.h.in} y usar la  macro {\tt AC\_CONFIG\_HEADER} para establecer
 dicho fichero  de cabecera.  Para facilitar la  tarea de  escritura de
-la  cabecera  {\tt config.h.in},  tenemos  a  nuestra disposiciÛn  una
+la  cabecera  {\tt config.h.in},  tenemos  a  nuestra disposici√≥n  una
 herramienta que viene con autoconf,  llamada {\tt autoheader}. Una vez
-que nuestro {\tt  configure.in} estÈ listo, la usaremos  para crear la
+que nuestro {\tt  configure.in} est√© listo, la usaremos  para crear la
 cabecera de entrada.
 
 En  {\tt  configure.in}  podemos introducir  comentarios,  simplemente
-precediÈndolos del modificador {\tt dnd} al principio de la lÌnea.
+precedi√©ndolos del modificador {\tt dnd} al principio de la l√≠nea.
 
 Las macros  que hay  disponibles son  muy numerosas,  y como  dicta la
-intuiciÛn, se  pueden crear  macros nuevas.  Para este  particular, es
-recomendable leer la guÌa en lÌnea del lenguaje de macros M4, con {\tt
+intuici√≥n, se  pueden crear  macros nuevas.  Para este  particular, es
+recomendable leer la gu√≠a en l√≠nea del lenguaje de macros M4, con {\tt
 info m4}.
 
 Algunas macros de ejemplo son las siguientes:
 
 \begin{description}
 
-\item{AC\_PROG\_CC} :  Decide quÈ  compilador de  C usar,  seteando la
+\item{AC\_PROG\_CC} :  Decide qu√©  compilador de  C usar,  seteando la
 variable CC.
 
 \item{AC\_CHECK\_PROG (prog)} : Comprueba que el programa existe en el
 path actual.
 
 \item{AC\_CHECK\_LIB (lib,  fun, action1,  action2} : Determina  si la
-funciÛn fun existe  en la librerÌa lib intentando  enlazar un programa
-con lib. Ejecuta action1 si el test resultÛ ser correcto, o action2 en
+funci√≥n fun existe  en la librer√≠a lib intentando  enlazar un programa
+con lib. Ejecuta action1 si el test result√≥ ser correcto, o action2 en
 caso contrario.
 
 \item{AC\_CHECK\_HEADER  (head)}  :  Determina  la  existencia  de  la
@@ -104,14 +104,14 @@ WORDS\_BIGENDIAN.
 
 \item{AC\_C\_INLINE} : Si el compilador  no soporta las palabras clave
 inline, \_\_inline\_\_  o \_\_inline, entonces define  inline como una
-cadena vacÌa.
+cadena vac√≠a.
 
-\item{AC\_CONFIG\_HEADER}  :  Fichero  de   cabecera  donde  ir·n  las
-definiciones pertinentes para el cÛdigo fuente de nuestro programa.
+\item{AC\_CONFIG\_HEADER}  :  Fichero  de   cabecera  donde  ir√°n  las
+definiciones pertinentes para el c√≥digo fuente de nuestro programa.
 
 \end{description}
 
-Como  siempre, una  de  las mejores  referencias  de documentaciÛn  se
-encuentra en el comando {\tt info  autoconf}. %TambiÈn en este caso, se
-%elaborÛ  un  manual  tÈcnico  \cite{autoconf}  que  es  perfecto  como
+Como  siempre, una  de  las mejores  referencias  de documentaci√≥n  se
+encuentra en el comando {\tt info  autoconf}. %Tambi√©n en este caso, se
+%elabor√≥  un  manual  t√©cnico  \cite{autoconf}  que  es  perfecto  como
 %material complementario.

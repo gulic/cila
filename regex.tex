@@ -8,7 +8,7 @@
 \label{regex.tex}
 
 Las expresiones  regulares se comprenden  mejor desde su  utilidad que
-desde su definiciÛn, asÌ que vamos  a introducirlas con el ejemplo que
+desde su definici√≥n, as√≠ que vamos  a introducirlas con el ejemplo que
 utilizan en el libro \cite{mastregex}.
 
 Imagina que  necesitas una herramienta para  buscar palabras repetidas
@@ -16,119 +16,119 @@ en  documentos,  cosas  como   ``esto  esto'',  un  problema  bastante
 frecuente en  documentos que son  editados una  y otra vez  (como este
 libro). 
 
-TendrÌas que  escribir una soluciÛn que:  detectara palabras repetidas
-de una lÌnea a  la siguiente, cuando una palabra est·  al final de una
-lÌnea y tambiÈn al principio de  la siguiente lÌnea; que no tuviera en
-cuenta  si las  letras est·n  en min˙sculas  o may˙sculas  y encontrar
-palabras  repetidas en  medio de  cÛdigo HTML,  \LaTeX, \LyX~  u otros
-lenguajes de marcado usados en documentaciÛn.
+Tendr√≠as que  escribir una soluci√≥n que:  detectara palabras repetidas
+de una l√≠nea a  la siguiente, cuando una palabra est√°  al final de una
+l√≠nea y tambi√©n al principio de  la siguiente l√≠nea; que no tuviera en
+cuenta  si las  letras est√°n  en min√∫sculas  o may√∫sculas  y encontrar
+palabras  repetidas en  medio de  c√≥digo HTML,  \LaTeX, \LyX~  u otros
+lenguajes de marcado usados en documentaci√≥n.
 
 Esto  es un  problema  real,  y el  autor  del libro  \cite{mastregex}
-escribiÛ  esta  soluciÛn y  se  viÛ  sorprendido  por la  cantidad  de
-palabras  repetidas que  encontrÛ en  el propio  libro. Este  problema
+escribi√≥  esta  soluci√≥n y  se  vi√≥  sorprendido  por la  cantidad  de
+palabras  repetidas que  encontr√≥ en  el propio  libro. Este  problema
 puede  resolverse  de   muchas  maneras  y  en   muchos  lenguajes  de
-programaciÛn,  pero   las  expresiones  regulares  son   sin  duda  la
-herramienta que hacen este tipo de  problemas m·s f·ciles y r·pidos de
+programaci√≥n,  pero   las  expresiones  regulares  son   sin  duda  la
+herramienta que hacen este tipo de  problemas m√°s f√°ciles y r√°pidos de
 resolver.
 
-\section{DefiniciÛn de expresiÛn regular}
+\section{Definici√≥n de expresi√≥n regular}
 
-Una {\em expresiÛn  regular} es un literal (cadena  de caracteres) que
-define  una  serie de  reglas  que  debe  cumplir una  expresiÛn  para
-considerar que {\em encaja} con la expresiÛn regular. Esto se consigue
+Una {\em expresi√≥n  regular} es un literal (cadena  de caracteres) que
+define  una  serie de  reglas  que  debe  cumplir una  expresi√≥n  para
+considerar que {\em encaja} con la expresi√≥n regular. Esto se consigue
 utilizando caracteres con significados especiales para {\em describir}
-un patrÛn con el que deben encajar las expresiones.
+un patr√≥n con el que deben encajar las expresiones.
 
 Los  caracteres   con  significados   especiales  se   denominan  {\em
-metacaracteres}, y aunque  la mayorÌa son comunes  entre los distintos
+metacaracteres}, y aunque  la mayor√≠a son comunes  entre los distintos
 estilos   de  expresiones   regulares  hay   diferencias  y   conviene
 estudiarlos  desde la  herramienta en  la que  usemos las  expresiones
-regulares. AsÌ, nos encontramos con  expresiones regulares de UNIX, de
+regulares. As√≠, nos encontramos con  expresiones regulares de UNIX, de
 VI, de PERL, de Emacs, etc. y no tienen la misma sintaxis exactamente.
 
-Dado  que  esto  no  es  un  curso  de  programaciÛn  no  veremos  las
-expresiones regulares al  estilo de lenguajes de  programaciÛn sino al
+Dado  que  esto  no  es  un  curso  de  programaci√≥n  no  veremos  las
+expresiones regulares al  estilo de lenguajes de  programaci√≥n sino al
 estilo de los editores de texto.
 
 \section{Expresiones regulares en VI \& VIM}
 \index{Expresiones regulares!con VIM }
 
-Una de las  funcionalidades m·s queridas de {\sf VI}  es la b˙squeda y
-\index{VIM!b˙squeda y substituciÛn}
-sustituciÛn de texto.  Para empezar pensemos en  simples palabras, por
+Una de las  funcionalidades m√°s queridas de {\sf VI}  es la b√∫squeda y
+\index{VIM!b√∫squeda y substituci√≥n}
+sustituci√≥n de texto.  Para empezar pensemos en  simples palabras, por
 ejemplo en substituir  la palabra ``coche'' por  la palabra ``carro''.
-El  comando para  la substituciÛn  es {\tt  :s} y  tiene el  siguiente
+El  comando para  la substituci√≥n  es {\tt  :s} y  tiene el  siguiente
 esquema:
 
 \begin{verbatim}
 :rango/busca/sustituye/[gc]
 \end{verbatim}
 
-Lo que pongas en {\tt rango}  determina la regiÛn del fichero que ser·
-afectada por el  comando. Puedes poner dos n˙meros  de lÌnea separados
-por  coma para  afectar  a  todas las  lÌneas  entre  esas dos  (ambas
-inclusive), o  bien substituir el  n˙mero de  la segunda lÌnea  por un
-\verb.$. para extender la regiÛn  afectada hasta el final del fichero.
-Si en lugar de lÌneas poner \verb.%. afectar· a todo el fichero.
+Lo que pongas en {\tt rango}  determina la regi√≥n del fichero que ser√°
+afectada por el  comando. Puedes poner dos n√∫meros  de l√≠nea separados
+por  coma para  afectar  a  todas las  l√≠neas  entre  esas dos  (ambas
+inclusive), o  bien substituir el  n√∫mero de  la segunda l√≠nea  por un
+\verb.$. para extender la regi√≥n  afectada hasta el final del fichero.
+Si en lugar de l√≠neas poner \verb.%. afectar√° a todo el fichero.
 
-Las opciones  {\tt g} y  {\tt c} del  final son opcionales.  La opciÛn
-{\tt g} hace  que se substituyan todas las ocurrencias  en cada lÌnea,
-ya que si  no la especificas sÛlo se substituye  la primera ocurrencia
-de cada lÌnea.  La opciÛn {\tt c} hace que  {\tt VI} pida confirmaciÛn
+Las opciones  {\tt g} y  {\tt c} del  final son opcionales.  La opci√≥n
+{\tt g} hace  que se substituyan todas las ocurrencias  en cada l√≠nea,
+ya que si  no la especificas s√≥lo se substituye  la primera ocurrencia
+de cada l√≠nea.  La opci√≥n {\tt c} hace que  {\tt VI} pida confirmaci√≥n
 antes de substituir cada ocurrencia.
 
-La expresiÛn {\tt busca} es el patrÛn que {\sf VIM} buscar·. Puede ser
-una  palabra,  o  m·s  en  general una  {\em  expresiÛn  regular}.  La
-expresiÛn {\tt substituye}  es el patrÛn que {\sf  VIM} utilizar· para
-substituir en las ocurrencias, y  tambiÈn puede ser una {\em expresiÛn
+La expresi√≥n {\tt busca} es el patr√≥n que {\sf VIM} buscar√°. Puede ser
+una  palabra,  o  m√°s  en  general una  {\em  expresi√≥n  regular}.  La
+expresi√≥n {\tt substituye}  es el patr√≥n que {\sf  VIM} utilizar√° para
+substituir en las ocurrencias, y  tambi√©n puede ser una {\em expresi√≥n
 regular}.
 
 En  {\sf  VI}  las   expresiones  regulares  utilizan  los  siguientes
 metacaracteres: \verb_. ^ $ [ ] \ * - /_
 
 El punto  (\verb_._) encaja  con cualquier  caracter, \verb.$.  con el
-final de la lÌnea, \verb.^. con el  principio de la lÌnea cuando es el
-primero en la expresiÛn regular, mientras  que en otro caso encaja con
+final de la l√≠nea, \verb.^. con el  principio de la l√≠nea cuando es el
+primero en la expresi√≥n regular, mientras  que en otro caso encaja con
 cualquier caracter que  {\bf no} sea el que le  suceda. Los caracteres
 \verb.-.,  \verb.[.  y  \verb.].  permiten  definir  rangos,  \verb.*.
-extiende el  significado de la  expresiÛn que  le preceda a  ninguna o
+extiende el  significado de la  expresi√≥n que  le preceda a  ninguna o
 varias  ocurrencias de  la misma.  La barra  \verb./. se  utiliza para
-separar  los  patrones de  b˙squeda.  Para  utilizar alguno  de  estos
+separar  los  patrones de  b√∫squeda.  Para  utilizar alguno  de  estos
 caracteres  de forma  que  encajen consigo  mismos  (por ejemplo  para
-buscar un punto en el  texto) hay que {\em escaparlos} anteponiÈndoles
+buscar un punto en el  texto) hay que {\em escaparlos} anteponi√©ndoles
 una barra invertida (\verb.\.).
 
 Otros  caracteres   adquieren  un  significado  especial   cuando  son
-precedidos de la barra invertida.  AsÌ \verb.\|. es el operador ``o'',
-es decir la  expresiÛn \verb.casa\|coche. encaja con {\tt  casa} y con
-{\tt coche}.  Los sÌmbolos de desigualdad  permiten delimitar palabras
-en un patrÛn, usando \verb.\<. que  encaja con el principio de palabra
-y \verb.\>. con  el final. AsÌ podremos sustituir la  palabra {\tt vi}
+precedidos de la barra invertida.  As√≠ \verb.\|. es el operador ``o'',
+es decir la  expresi√≥n \verb.casa\|coche. encaja con {\tt  casa} y con
+{\tt coche}.  Los s√≠mbolos de desigualdad  permiten delimitar palabras
+en un patr√≥n, usando \verb.\<. que  encaja con el principio de palabra
+y \verb.\>. con  el final. As√≠ podremos sustituir la  palabra {\tt vi}
 por {\tt vim} sin que cambien palabras del texto como {\tt vivir}.
 
 \begin{verbatim}
 :s/\<vi\>/vim
 \end{verbatim}
 
-Podemos  utilizar el  car·cter  \verb.^. para  indicar  que no  exista
-ningun car·cter antes  de la expresiÛn regular  que queremos sustituir
-en esa lÌnea, y el car·cter  \verb.$. para indica que no exista ningun
-car·cter despuÈas  de la expresiÛn  regular que queremos  sustituir en
-usa lÌnea. Vamos a ver unos ejemplos:
+Podemos  utilizar el  car√°cter  \verb.^. para  indicar  que no  exista
+ningun car√°cter antes  de la expresi√≥n regular  que queremos sustituir
+en esa l√≠nea, y el car√°cter  \verb.$. para indica que no exista ningun
+car√°cter despu√©as  de la expresi√≥n  regular que queremos  sustituir en
+usa l√≠nea. Vamos a ver unos ejemplos:
 
 \begin{verbatim}
 :s/^vi/vim/g
 \end{verbatim}
 
 En este  ejemplo, se cambia  la palabra {\tt vi}  por {\tt vim}  si no
-existe ningun car·cter delante de la palabra {\tt vi}.
+existe ningun car√°cter delante de la palabra {\tt vi}.
 
 \begin{verbatim}
 :s/vi$/vim
 \end{verbatim}
 
 En el anterior ejemplo, se sustituye la palabra {\tt vi} por {\tt vim}
-que se encuentre al final de una lÌnea.
+que se encuentre al final de una l√≠nea.
 
 \begin{verbatim}
 :s/^vi$/vim
@@ -147,21 +147,21 @@ trabajar con expresiones regulares.
 {\tt \verb.\d.} & Digitos \\
 {\tt \verb.\h.} & Cualquier letra \\
 {\tt \verb.\w.} & Letras y digitos \\
-{\tt \verb.\l.} & Letras min˙sculas \\
-{\tt \verb.\u.} & Letras may˙sculas \\
+{\tt \verb.\l.} & Letras min√∫sculas \\
+{\tt \verb.\u.} & Letras may√∫sculas \\
 \hline
 \end{tabular}
 \caption{Metacaracteres en las expresiones regulares de VI}
 \end{table}
 
 Vamos a poner un ejemplo con este tipo de comandos. Si queremos buscar
-en el texto fechas con el formato DD/MM/AAAA, lo que harÌamos serÌa:
+en el texto fechas con el formato DD/MM/AAAA, lo que har√≠amos ser√≠a:
 
 \begin{verbatim}
 /\d\d\/\d\d\/\d\d\d\d
 \end{verbatim}
 
-O por ejemplo  si buscamos palabras que empiezen con  may˙sculas de un
+O por ejemplo  si buscamos palabras que empiezen con  may√∫sculas de un
 modo sencillo podemos hacer:
 
 \begin{verbatim}
@@ -169,64 +169,64 @@ modo sencillo podemos hacer:
 \end{verbatim}
 
 Ahora vamos a  introducir unos elementos nuevos  para hacer reemplazos
-y  busquedas  m·s  ``profesionales''.  Uno   de  ellos  son  los  {\em
+y  busquedas  m√°s  ``profesionales''.  Uno   de  ellos  son  los  {\em
 cuantificadores}.\index{VIM!expresiones  regulares!cuantificadores} Si
-necesitamos  buscar   en  un  documento  grandes   grupos  de  n˙meros
-de  9  cifras  por  ejemplo  nos  resultarÌa  muy  laborioso  escribir
+necesitamos  buscar   en  un  documento  grandes   grupos  de  n√∫meros
+de  9  cifras  por  ejemplo  nos  resultar√≠a  muy  laborioso  escribir
 \verb./\d\d\d\d\d\d\d\d\d..    Los   cuantificadores    son   diversas
-expresiones que nos permiten definir  el n˙mero de veces que aparecer·
-el  tipo de  caracter que  queremos  buscar. Los  m·s importantes  son
-\verb.\+., relaciona  el caracter que aparece  una o m·s veces  en una
-palabra, \verb.\=., relaciona el caracter que aparece 0, 1 o m·s veces
+expresiones que nos permiten definir  el n√∫mero de veces que aparecer√°
+el  tipo de  caracter que  queremos  buscar. Los  m√°s importantes  son
+\verb.\+., relaciona  el caracter que aparece  una o m√°s veces  en una
+palabra, \verb.\=., relaciona el caracter que aparece 0, 1 o m√°s veces
 en  una  palabra.  Con  \verb.\{n,m}.  relaciona  el  caracter  si  se
-encuentra entre  n y  m veces. La  expresiÛn \verb.\{n}.  relaciona el
-caracter si se  encutra n veces. AsÌ en el  ejemplo anterior podrÌamos
+encuentra entre  n y  m veces. La  expresi√≥n \verb.\{n}.  relaciona el
+caracter si se  encutra n veces. As√≠ en el  ejemplo anterior podr√≠amos
 usar:
 
 \begin{verbatim}
 /\d\{9}
 \end{verbatim}
 
-y nos mostrarÌa las expresiones que contengan 9 digitos.
+y nos mostrar√≠a las expresiones que contengan 9 digitos.
 
 Podemos combinar los cuantificadores con los rangos de caracteres para
 conseguir mejores resultados. Los  rangos de expresiones regulares son
-definidos dentro  de \verb.[].. Por ejemplo,  \verb./[a-h]. buscar· en
+definidos dentro  de \verb.[].. Por ejemplo,  \verb./[a-h]. buscar√° en
 el  texto  todos las  letras  entre  la a  y  la  h, ambas  inclusive,
-\verb./[A-H].  harÌa  lo  mismo   en  may˙sculas.  TambiÈn  existe  un
+\verb./[A-H].  har√≠a  lo  mismo   en  may√∫sculas.  Tambi√©n  existe  un
 valor  negativo  en los  rangos,  es  el  {\tt \verb.^.}.  El  comando
-\verb./[^j-z]. mostrar· todas las letras min˙sculas anteriores a la j.
+\verb./[^j-z]. mostrar√° todas las letras min√∫sculas anteriores a la j.
 
-Para   buscar   may˙sculas   o   min˙sculas   hay   algo   mejor   que
+Para   buscar   may√∫sculas   o   min√∫sculas   hay   algo   mejor   que
 los   rangos   \verb.[a-z].  y   \verb.[A-Z].,   que   son  las   {\em
 clases}\index{VIM!expresiones   regulares!clases}.   Las   clases   se
 refieren mediante  palabras encerradas entre \verb.[[:.  y \verb.:]].,
-por  lo  que para  buscar  una  expresiÛn  mediante clases  el  patrÛn
-de  b˙squeda deber·  contener  \verb.[[:clase:]]. Las  clases que  nos
+por  lo  que para  buscar  una  expresi√≥n  mediante clases  el  patr√≥n
+de  b√∫squeda deber√°  contener  \verb.[[:clase:]]. Las  clases que  nos
 interesan son:
 
 \begin{table}[htbp]
 \centering
 \begin{tabular}{|c|l|}
 \hline
-{\tt \verb.[[:lower:]].} & cualquier letra min˙scula (incluida {\tt Ò}) \\
-{\tt \verb.[[:upper:]].} & cualquier letra may˙scula (incluida {\tt —}) \\
+{\tt \verb.[[:lower:]].} & cualquier letra min√∫scula (incluida {\tt √±}) \\
+{\tt \verb.[[:upper:]].} & cualquier letra may√∫scula (incluida {\tt √ë}) \\
 {\tt \verb.[[:alpha:]].} & cualquier letra \\
-{\tt \verb.[[:digit:]].} & cualquier dÌgito \\
+{\tt \verb.[[:digit:]].} & cualquier d√≠gito \\
 \hline
 \end{tabular}
 \caption{Metacaracteres en las expresiones regulares de VI}
 \end{table}
 
 Tambien   podemos   cambiar  el   orden   de   las  frases   de   todo
-un   texto    o   de   zonas   especÌficas,    utilizando   los   {\em
+un   texto    o   de   zonas   espec√≠ficas,    utilizando   los   {\em
 agrupadores}\index{VIM!expresiones regulares!agrupadores}. Se trata de
 crear  grupos de  expresiones  que luego  para sustituir  utilizaremos
 expresiones  que  nos permitan  reordenarlos.  Para  definir un  grupo
 se  utiliza \verb.\(\).,  el  texto  que se  encuentre  entre esos  el
-parÈntesis ``escapados''  ser· la expresion que  buscar·. Por ejemplo,
+par√©ntesis ``escapados''  ser√° la expresion que  buscar√°. Por ejemplo,
 estamos usando  un archivo con  varios nombres de ciudades,  pero para
-poder utilizarlo necesitamos que todos esten al principio de la lÌnea,
+poder utilizarlo necesitamos que todos esten al principio de la l√≠nea,
 sin ningun espacio, podemos utilizar el siguiente comando:
 
 \begin{verbatim}
@@ -234,8 +234,8 @@ sin ningun espacio, podemos utilizar el siguiente comando:
 \end{verbatim}
 
 El anterior comando busca en todo el documento (\verb.%.) que contenga
-cualquier n˙mero espacios al principio de la lÌnea (\verb.\(\s\+\).) y
-que detr·s contenga alg˙n texto(\verb.\(\w\+\)). y lo sustituye por la
-exresiÛn(\verb.\2.), es  decir, solo  mantiene el grupo  \verb.\2., el
+cualquier n√∫mero espacios al principio de la l√≠nea (\verb.\(\s\+\).) y
+que detr√°s contenga alg√∫n texto(\verb.\(\w\+\)). y lo sustituye por la
+exresi√≥n(\verb.\2.), es  decir, solo  mantiene el grupo  \verb.\2., el
 que contiene la palabra.
 

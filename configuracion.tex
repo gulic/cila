@@ -1,38 +1,38 @@
 %Autor: mojopikon
 
 % MojoPikon les ruega que no le majen por las posibles desfiguraciones que este texto sufra
-% en momentos concretos debido a un "lo pongo así y luego más adelante cuando lo tenga más
+% en momentos concretos debido a un "lo pongo asÃ­ y luego mÃ¡s adelante cuando lo tenga mÃ¡s
 % perfiladito lo pongo bien puestito".
 % GRACIAS.
 
-\chapter{Configuración}\index{configuración}
+\chapter{ConfiguraciÃ³n}\index{configuraciÃ³n}
 
 \section{El Kernel de Linux}
 
-\subsection{Introducción}:
+\subsection{IntroducciÃ³n}:
 
-Con  la  cantidad de  distribuciones  de  Linux  que  hay hoy  en  día
-circulando por  la red,  escribir cualquier texto  sobre configuración
-requeriría dedicar un libro entero para cubrir las distintas formas de
-configuración que tienen cada una de estas: el SaX y el yast2 de SuSE,
+Con  la  cantidad de  distribuciones  de  Linux  que  hay hoy  en  dÃ­a
+circulando por  la red,  escribir cualquier texto  sobre configuraciÃ³n
+requerirÃ­a dedicar un libro entero para cubrir las distintas formas de
+configuraciÃ³n que tienen cada una de estas: el SaX y el yast2 de SuSE,
 los paneles  de control de mandrake,  y otras cosas por  el estilo son
-cosas que  no abordaremos aquí,  por ser específicas, e  inútiles para
+cosas que  no abordaremos aquÃ­,  por ser especÃ­ficas, e  inÃºtiles para
 los usuarios que no tengan estas distribuciones.
 
-Sin  embargo, en  esta  sección veremos  algunas  técnicas que  puedan
-servirnos para cualquier distribución de linux.
+Sin  embargo, en  esta  secciÃ³n veremos  algunas  tÃ©cnicas que  puedan
+servirnos para cualquier distribuciÃ³n de linux.
 
-¿Como configuro mi ...?
+Â¿Como configuro mi ...?
 
-Para cualquier  periférico o dispositivo  de tu ordenador  que quieras
-configurar, lo normal será que antes cargues en memoria el controlador
+Para cualquier  perifÃ©rico o dispositivo  de tu ordenador  que quieras
+configurar, lo normal serÃ¡ que antes cargues en memoria el controlador
 (driver) que lo va a manejar.  En otros sistemas operativos, lo normal
 es que venga un ejecutable que se encargue de configurarlo todo.
 
-En Linux, los controladores pueden venir  así (como por ejemplo, es el
-caso de los controladores para modems  de Conexant), en cuyo caso sólo
-hay que  ejecutar un pequeño  programita que se encarga  de instalarlo
-todo, aunque por  desgracia no es el caso más  frecuente. Lo normal es
+En Linux, los controladores pueden venir  asÃ­ (como por ejemplo, es el
+caso de los controladores para modems  de Conexant), en cuyo caso sÃ³lo
+hay que  ejecutar un pequeÃ±o  programita que se encarga  de instalarlo
+todo, aunque por  desgracia no es el caso mÃ¡s  frecuente. Lo normal es
 que tengas que seguir los siguientes pasos:
 
 \begin{itemize}
@@ -45,18 +45,18 @@ que tengas que seguir los siguientes pasos:
 
 \item Que el  kernel lo detecte por que el  kernel que estemos usando 
 tenga soporte  para el dispositivo  que queremos. En este  caso, solo 
-nos  quedaría configurar  los  programas que  vayan  a utilizar  este 
-dispositivo o periférico.                                             
+nos  quedarÃ­a configurar  los  programas que  vayan  a utilizar  este 
+dispositivo o perifÃ©rico.                                             
 
 \item Que el kernel no lo  detecte. En este caso, tendremos que seguir
 uno de estos pasos:
 
 \begin{itemize}
 
-\item  Si  nuestra distribución  de  linux  trae el  controlador  para
-nuestro dispositivo como un módulo ya compilado, deberemos cargarlo.
+\item  Si  nuestra distribuciÃ³n  de  linux  trae el  controlador  para
+nuestro dispositivo como un mÃ³dulo ya compilado, deberemos cargarlo.
 
-\Large{FIXME:: Mira la sección ``Cargando Módulos''. ::FIXME}
+\Large{FIXME:: Mira la secciÃ³n ``Cargando MÃ³dulos''. ::FIXME}
 
 \item ``recompilar  el kernel'' con los  controladores apropiados que 
 se encarguen de manejar el dispositivo que queremos instalar.         
@@ -73,31 +73,31 @@ se encarguen de manejar el dispositivo que queremos instalar.
 
 Aunque  pueda  parecer algo  muy  complejo,  por  lo raro  que  suena,
 configurar  y   recompilar  el   kernel  no  suele   consistir  (salvo
-dispositivos muy  nuevos),más que en  elegir algunas opciones  en unos
-cuantos menús,  escribir unos pocos  comandos y esperar un  rato, cuyo
-largo variará según la potencia de nuestra máquina.
+dispositivos muy  nuevos),mÃ¡s que en  elegir algunas opciones  en unos
+cuantos menÃºs,  escribir unos pocos  comandos y esperar un  rato, cuyo
+largo variarÃ¡ segÃºn la potencia de nuestra mÃ¡quina.
 
 En primer lugar, necesitamos asegurarnos de tener instaladas:
 
 \begin{itemize}
 
-\item El código  fuente del kernel. (Suele venir en  paquetes con nombres 
-como  kernel-source,  o  kernel-source-2.4.18,  o  similar).  También 
-puedes  bajar la  última versión  del kernel  en ftp.kernel.org,  que 
-probablemente será lo más adecuado si tu dispositivo es muy nuevo.    
+\item El cÃ³digo  fuente del kernel. (Suele venir en  paquetes con nombres 
+como  kernel-source,  o  kernel-source-2.4.18,  o  similar).  TambiÃ©n 
+puedes  bajar la  Ãºltima versiÃ³n  del kernel  en ftp.kernel.org,  que 
+probablemente serÃ¡ lo mÃ¡s adecuado si tu dispositivo es muy nuevo.    
 
 \item Las utilidades de desarrollo GNU (make,gcc,etc).
 
-\item Si  queremos configurarlo  por medio de  menús desde  las X-window, 
-necesitaremos  tener instaladas  las  librerías tk  (se instalan  por 
-defecto en la gran mayoría de los casos).                             
+\item Si  queremos configurarlo  por medio de  menÃºs desde  las X-window, 
+necesitaremos  tener instaladas  las  librerÃ­as tk  (se instalan  por 
+defecto en la gran mayorÃ­a de los casos).                             
 
-\item  Si queremos  configurarlo por  medio de  menús en  modo texto, 
+\item  Si queremos  configurarlo por  medio de  menÃºs en  modo texto, 
 necesitaremos  tener  instalado  el paquete  libncurses5-dev  (en  tu 
-distribución  podría  tener  un  nombre  distinto,  como  curses-dev, 
+distribuciÃ³n  podrÃ­a  tener  un  nombre  distinto,  como  curses-dev, 
 ncurses-devel, o  similar. Son  todos lo mismo).  \Large{FIXME:: Para 
-más  información sobre  como instalar  paquetes, mira  la sección  de 
-instalación. ::FIXME}.                                                
+mÃ¡s  informaciÃ³n sobre  como instalar  paquetes, mira  la secciÃ³n  de 
+instalaciÃ³n. ::FIXME}.                                                
 
 \end{itemize}
 
@@ -112,7 +112,7 @@ Una vez estamos seguros de tener todo esto instalado, hacemos lo siguiente:
 # cd /usr/src/linux
 \end{verbatim}
 
-También  es posible  que  los  fuentes una  vez  instalados estén  en 
+TambiÃ©n  es posible  que  los  fuentes una  vez  instalados estÃ©n  en 
 formato  comprimido  .tar.gz,  o   .tar.bz2  en  el  directorio  {\tt 
 /usr/src}. En ese caso,deberemos descomprimirlos con:                 
 
@@ -124,53 +124,53 @@ formato  comprimido  .tar.gz,  o   .tar.bz2  en  el  directorio  {\tt
 o sustituyendo {\tt bzcat} por {\tt zcat} si el fichero es un .tar.gz.
 
 Por cuestiones de compatibilidad con otras cosas que podemos instalar 
-después, conviene  crear un enlace  simbólico llamado {\tt  linux} al 
+despuÃ©s, conviene  crear un enlace  simbÃ³lico llamado {\tt  linux} al 
 directorio donde se encuentren los  fuentes. Por ejemplo, si acabo de 
 descomprimir los fuentes a {\tt kernel-source-2.4.20}, estando dentro 
-del directorio {\tt /usr/src}, usaría el comando                      
+del directorio {\tt /usr/src}, usarÃ­a el comando                      
 
 \begin{verbatim}
 # ln -s kernel-source-2.4.20 linux
 \end{verbatim}
 
-\item Ejecutamos la  utilidad de configuración del  kernel, estando ya
+\item Ejecutamos la  utilidad de configuraciÃ³n del  kernel, estando ya
 dentro de {\tt /usr/src/linux}.
 
 \begin{verbatim}
 # make menuconfig
 \end{verbatim}
 
-Nota: Para utilizar menús en modo  X-window, en lugar de utilizar make
-menuconfig, utilizaríamos el comando
+Nota: Para utilizar menÃºs en modo  X-window, en lugar de utilizar make
+menuconfig, utilizarÃ­amos el comando
 
 \begin{verbatim}
 # make xconfig
 \end{verbatim}
 
-No  obstante,  debido  a  que  podríamos  no  tener  X-window  cuando 
-necesitemos configurar  nuestro kernel,  aquí utilizaremos  {\tt make 
+No  obstante,  debido  a  que  podrÃ­amos  no  tener  X-window  cuando 
+necesitemos configurar  nuestro kernel,  aquÃ­ utilizaremos  {\tt make 
 menuconfig}.                                                          
 
-\item Debería  aparecer un  menú lleno  de opciones,  si no  nos sale
-antes un mensaje  de error diciéndonos que no  tenemos instaladas las
-libncurses5-dev. (Ver más arriba para solucionar este problema). 
+\item DeberÃ­a  aparecer un  menÃº lleno  de opciones,  si no  nos sale
+antes un mensaje  de error diciÃ©ndonos que no  tenemos instaladas las
+libncurses5-dev. (Ver mÃ¡s arriba para solucionar este problema). 
 
 A  pesar de  que todas  estas opciones  puedan desconcertarnos  en un 
-principio,  sólo necesitaremos  configurar  algunas  para que  nuesto 
+principio,  sÃ³lo necesitaremos  configurar  algunas  para que  nuesto 
 sistema funcione  correctamente. Debido a  que ya hay  libros enteros 
-que hablan sobre  cada una de estas opciones, sólo  mencionaré las de 
-uso más común.
+que hablan sobre  cada una de estas opciones, sÃ³lo  mencionarÃ© las de 
+uso mÃ¡s comÃºn.
 
-En estos menús, veremos muchas opciones  de las cuales cada una tiene 
+En estos menÃºs, veremos muchas opciones  de las cuales cada una tiene 
 3  estados: Y<>  M<>  N<>. Como  algunos podran  suponer,  Y<> y  N<> 
-significan "Sí" o "No". Esto  significa que, cuando usemos este nuevo 
+significan "SÃ­" o "No". Esto  significa que, cuando usemos este nuevo 
 kernel que  vamos a compilar,  las opciones que hayamos  marcado como 
-"Y",  estarán  disponibles,  y  por  tanto,  si  por  ejemplo,  hemos 
+"Y",  estarÃ¡n  disponibles,  y  por  tanto,  si  por  ejemplo,  hemos 
 seleccionado  "Y" en  el  driver  para la  tarjeta  de sonido  "Sound 
-Blaster", cuando  iniciemos linux con  ese kernel, este  detectará la 
+Blaster", cuando  iniciemos linux con  ese kernel, este  detectarÃ¡ la 
 tarjeta "Sound Blaster", y podremos utilizarla.                       
 
-La opción de compilar como módulo nos permite tener los controladores
+La opciÃ³n de compilar como mÃ³dulo nos permite tener los controladores
 en un directorio.
 
 \end{itemize}

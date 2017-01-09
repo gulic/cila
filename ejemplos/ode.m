@@ -11,7 +11,7 @@ endfunction
 
 # condicion inicial
 x0 = [ 4; 1.1; 4 ];
-# generación del eje t para la simulacion
+# generaciÃ³n del eje t para la simulacion
 t = linspace (0, 50, 100);
 # simulacion
 y = lsode ("f", x0, t);

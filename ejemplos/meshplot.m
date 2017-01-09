@@ -4,7 +4,7 @@
 function configura
     hold off;               # no superpone siguientes graficos
     clearplot();            # limpiamos
-    axis("auto","normal");  # ejes autom·ticos
+    axis("auto","normal");  # ejes autom√°ticos
     subplot(1,1,1);         # nos ponemos en una sola ventana
     xlabel("eje x");        #
     ylabel("eje y");        # ponemos etiquetas

@@ -3,206 +3,206 @@
 %iCorrecam: 4
 
 \newcommand{\windows}{\mbox{Microsoft Windows}}
-\chapter{IntroducciÛn a GNU/Linux}
+\chapter{Introducci√≥n a GNU/Linux}
 \label{introduccion.tex}
 
 \section{Un poco de historia}
 
-\subsection{OrÌgenes de UNIX y sus versiones.}
+\subsection{Or√≠genes de UNIX y sus versiones.}
 
-{\bf UNIX}\index{UNIX} es uno de los sistemas operativos m·s populares
+{\bf UNIX}\index{UNIX} es uno de los sistemas operativos m√°s populares
 del mundo. Es  una marca registrada de {\bf  The Open Group}\index{The
 Open   Group},  aunque   originalmente  fue   desarrollado  por   {\bf
 AT\&T}\index{AT\&T}.
 
 UNIX  es  un  sistema  operativo  real.  Por  sistema  operativo  real
-se  entiende   que  debe   tener  como  mÌnimo   dos  caracterÌsticas:
-m·s   de   una   persona   puede    acceder   al   mismo   tiempo   al
+se  entiende   que  debe   tener  como  m√≠nimo   dos  caracter√≠sticas:
+m√°s   de   una   persona   puede    acceder   al   mismo   tiempo   al
 ordenador   y,  mientras   lo   hacen,  cada   una   de  ellas   puede
-ejecutar  m˙ltiples   aplicaciones.  A  esto   se  le  llama   ser  un
+ejecutar  m√∫ltiples   aplicaciones.  A  esto   se  le  llama   ser  un
 sistema  operativo   {\em  multiusuario}\index{multiusuario}   y  {\em
-multitarea}\index{multitarea}.  UNIX fue  diseÒado originalmente  para
-ser  ese tipo  de sistema  multitarea,  en  los aÒos  70, y  para
+multitarea}\index{multitarea}.  UNIX fue  dise√±ado originalmente  para
+ser  ese tipo  de sistema  multitarea,  en  los a√±os  70, y  para
 que  se pudiera  ejecutar en  {\em mainframes}\index{mainframes}  y en
 miniordenadores.
 
 Con  UNIX, cada  usuario accede  al  sistema utilizando  un nombre  de
 acceso. Opcionalmente,  aunque es  altamente recomendable,  el usuario
-debe proporcionar una contraseÒa que asegura que la persona que accede
+debe proporcionar una contrase√±a que asegura que la persona que accede
 es quien dice ser. Este mecanismo de control permite limitar el acceso
-de  los usuarios  a los  ordenadores, algo  especialmente ˙til  cuando
-Èstos est·n  conectados en  red. Dicho  proceso de  autentificaciÛn es
+de  los usuarios  a los  ordenadores, algo  especialmente √∫til  cuando
+√©stos est√°n  conectados en  red. Dicho  proceso de  autentificaci√≥n es
 conocido coloquialmente como {\tt  login}\index{login}, puesto que ese
 es el nombre del programa  que tradicionalmente se encarga del trabajo
 de permitir o denegar el acceso a un usuario.
 
-UNIX  funciona pr·cticamente  en  cualquier plataforma  que haya  sido
-construida. Muchos  fabricantes han  adquirido el cÛdigo  fuente (IBM;
+UNIX  funciona pr√°cticamente  en  cualquier plataforma  que haya  sido
+construida. Muchos  fabricantes han  adquirido el c√≥digo  fuente (IBM;
 Hewlett-Packard, Sun,  etc.) y  desarrollado sus propias  versiones, a
-las que han incorporado su toque personal a lo largo de los aÒos. Pero
-no son  los ˙nicos que  contin˙an modificando UNIX. Cuando  el sistema
-se  desarrollÛ  por  primera  vez, el  cÛdigo  fuente  se  proporcionÛ
+las que han incorporado su toque personal a lo largo de los a√±os. Pero
+no son  los √∫nicos que  contin√∫an modificando UNIX. Cuando  el sistema
+se  desarroll√≥  por  primera  vez, el  c√≥digo  fuente  se  proporcion√≥
 gratuitamente a las universidades y a los institutos. Dos de ellas han
-estado en  primera lÌnea  desde el primer  momento: la  Universidad de
-California en Berkeley y el Instituto TecnolÛgico de Massachussetts.
+estado en  primera l√≠nea  desde el primer  momento: la  Universidad de
+California en Berkeley y el Instituto Tecnol√≥gico de Massachussetts.
 
 Como  podemos imaginar,  el desarrollo  de  UNIX se  produjo de  forma
-bastante desordenada.  Gente de  todo el  mundo comenzÛ  a desarrollar
-herramientas y mejoras para UNIX. Desgraciadamente, no existÌa ninguna
-coordinaciÛn que  guiase todo el  desarrollo, lo cual  produjo grandes
-diferencias entre las distintas versiones.  Aunque a dÌa de hoy muchas
+bastante desordenada.  Gente de  todo el  mundo comenz√≥  a desarrollar
+herramientas y mejoras para UNIX. Desgraciadamente, no exist√≠a ninguna
+coordinaci√≥n que  guiase todo el  desarrollo, lo cual  produjo grandes
+diferencias entre las distintas versiones.  Aunque a d√≠a de hoy muchas
 de esas diferencias  se mantienen, en la actualidad la  mayor parte de
-las  implementaciones  de  UNIX  cumplen con  el  est·ndar  {\bf  IEEE
+las  implementaciones  de  UNIX  cumplen con  el  est√°ndar  {\bf  IEEE
 POSIX.1}\index{POSIX}.  Esto  simplifica  notablemente  el  desarrollo
 de  aplicaciones, puesto  que  garantiza la  compatibilidad entre  las
 diferentes implementaciones de UNIX.
 
-El mayor inconveniente de UNIX es  que es muy grande. TambiÈn es caro,
-especialmente en sus versiones para PC. Y aquÌ es donde aparece Linux,
-pues, como se explica con m·s  detalle un poco m·s adelante, se diseÒÛ
-para ser  pequeÒo, r·pido  y barato. Hasta  ahora los  diseÒadores han
-tenido Èxito.
+El mayor inconveniente de UNIX es  que es muy grande. Tambi√©n es caro,
+especialmente en sus versiones para PC. Y aqu√≠ es donde aparece Linux,
+pues, como se explica con m√°s  detalle un poco m√°s adelante, se dise√±√≥
+para ser  peque√±o, r√°pido  y barato. Hasta  ahora los  dise√±adores han
+tenido √©xito.
 
 Linux fue  creado originalmente  por {\em  Linus Torvalds}\index{Linus
-Torvalds} en  la Universidad  de Helsinki,  Finlandia, all·  por 1991.
-Linus basÛ el Linux en una  pequeÒa implementaciÛn de UNIX para PC con
-fines did·cticos  llamada {\em  Minix}\index{Minix}. A finales  de ese
-aÒo se  hizo p˙blico  Linux con  la versiÛn 0.10.  Un mes  despuÈs, en
-diciembre, apareciÛ la  versiÛn 0.11. Linus hizo que  el cÛdigo fuente
-fuera de libre disposiciÛn y animÛ  a otras personas a colaborar en su
-desarrollo.  Lo hicieron.  Linux  contin˙a su  desarrollo  hoy en  dÌa
-gracias a un equipo mundial dirigido por Èl mismo que trabaja a travÈs
+Torvalds} en  la Universidad  de Helsinki,  Finlandia, all√°  por 1991.
+Linus bas√≥ el Linux en una  peque√±a implementaci√≥n de UNIX para PC con
+fines did√°cticos  llamada {\em  Minix}\index{Minix}. A finales  de ese
+a√±o se  hizo p√∫blico  Linux con  la versi√≥n 0.10.  Un mes  despu√©s, en
+diciembre, apareci√≥ la  versi√≥n 0.11. Linus hizo que  el c√≥digo fuente
+fuera de libre disposici√≥n y anim√≥  a otras personas a colaborar en su
+desarrollo.  Lo hicieron.  Linux  contin√∫a su  desarrollo  hoy en  d√≠a
+gracias a un equipo mundial dirigido por √©l mismo que trabaja a trav√©s
 de Internet.
 
 Gran   parte   del  {\em   software}   desarrollado   para  Linux   se
-creÛ   a  travÈs   del  proyecto   GNU  de   la  {\bf   Free  Software
+cre√≥   a  trav√©s   del  proyecto   GNU  de   la  {\bf   Free  Software
 Fundation}\index{FSF,Free Software Fundation}.
 
 \subsection{El {\em Software Libre} y la licencia GPL}
 
 Llegados a este punto, nos encontramos  con un nuevo concepto: el {\em
 Software Libre}. Tiene  su origen en el nacimiento  del {\em software}
-en EE.UU.,  cuando la  inform·tica era un  feudo reservado  a empresas
+en EE.UU.,  cuando la  inform√°tica era un  feudo reservado  a empresas
 y  universidades,  y  los programadores  intercambiaban  trucos  ({\em
-hacks}, en inglÈs)  que hacÌan brotar chispas en  los enormes cerebros
-electrÛnicos. Por aquel entonces hacÌa  sus pinitos digitales un joven
+hacks}, en ingl√©s)  que hac√≠an brotar chispas en  los enormes cerebros
+electr√≥nicos. Por aquel entonces hac√≠a  sus pinitos digitales un joven
 programador, {\em Richard M. Stallman}\index{Richard M. Stallman} que,
-al igual  que sus compaÒeros de  profesiÛn, fue testigo de  la primera
-gran transformaciÛn del mundo de la programaciÛn en industria cerrada.
+al igual  que sus compa√±eros de  profesi√≥n, fue testigo de  la primera
+gran transformaci√≥n del mundo de la programaci√≥n en industria cerrada.
 
-Cuenta este  inform·tico que, un  buen dÌa, aparecieron por  la puerta
-abogados que prohibieron a estos programadores compartir su cÛdigo (el
-cÛdigo  de  sus  programas)  y les  obligaron  a  ocultar  celosamente
-cualquier  informaciÛn  que  pudiera  ser usada  por  la  competencia.
-Adem·s, decidieron  que las empresas  guardarÌan bajo llave  el cÛdigo
+Cuenta este  inform√°tico que, un  buen d√≠a, aparecieron por  la puerta
+abogados que prohibieron a estos programadores compartir su c√≥digo (el
+c√≥digo  de  sus  programas)  y les  obligaron  a  ocultar  celosamente
+cualquier  informaci√≥n  que  pudiera  ser usada  por  la  competencia.
+Adem√°s, decidieron  que las empresas  guardar√≠an bajo llave  el c√≥digo
 fuente de  sus programas (la  secuencia original de  instrucciones que
-los hace funcionar de una determinada manera) y sÛlo entregarÌan a sus
-clientes  el  cÛdigo  binario  (los  unos y  ceros  que  el  ordenador
-entiende, pero  apenas pueden  interpretar las personas).  Por ˙ltimo,
+los hace funcionar de una determinada manera) y s√≥lo entregar√≠an a sus
+clientes  el  c√≥digo  binario  (los  unos y  ceros  que  el  ordenador
+entiende, pero  apenas pueden  interpretar las personas).  Por √∫ltimo,
 obligaron a  los trabajadores a aceptar  la idea de que  quien violaba
-estas normas no sÛlo cometÌa un  delito, sino tambiÈn un pecado propio
+estas normas no s√≥lo comet√≠a un  delito, sino tambi√©n un pecado propio
 de un loco, o de un {\em pirata}.
 
-AÒos m·s tarde,  este dogma inform·tico se  extendiÛ hasta convertirse
+A√±os m√°s tarde,  este dogma inform√°tico se  extendi√≥ hasta convertirse
 en el  actual mercado  del {\em software},  donde comprar  un programa
 significaba  adquirir el  derecho a  usarlo,  pero no  a abrirlo  para
-saber cÛmo  funciona ni,  mucho menos, a  copiarlo o  modificarlo; una
+saber c√≥mo  funciona ni,  mucho menos, a  copiarlo o  modificarlo; una
 prerrogativa que corresponde en exclusiva a la empresa fabricante.
 
-Stallman, convencido de que a la sociedad se le habÌa robado un debate
-importante sobre  la evoluciÛn  de la tecnologÌa  (la frase  ``{\it es
-como si te vendieran un coche con  el capÛ sellado, para que no puedas
-ver el motor}'' es una de  las analogÌas m·s usadas para explicar esta
-realidad mercantil),  decidiÛ dejar su  trabajo y emprender  una tarea
-mucho  m·s altruista:  responder  al modelo  propietario  con un  {\em
+Stallman, convencido de que a la sociedad se le hab√≠a robado un debate
+importante sobre  la evoluci√≥n  de la tecnolog√≠a  (la frase  ``{\it es
+como si te vendieran un coche con  el cap√≥ sellado, para que no puedas
+ver el motor}'' es una de  las analog√≠as m√°s usadas para explicar esta
+realidad mercantil),  decidi√≥ dejar su  trabajo y emprender  una tarea
+mucho  m√°s altruista:  responder  al modelo  propietario  con un  {\em
 software}  del que  nadie pudiera  apropiarse, con  un {\em  software}
 libre.
 
-Se trataba,  seg˙n su promotor, de  poner en marcha un  nuevo contrato
-por el que los usuarios recibieran siempre el cÛdigo fuente y, adem·s,
+Se trataba,  seg√∫n su promotor, de  poner en marcha un  nuevo contrato
+por el que los usuarios recibieran siempre el c√≥digo fuente y, adem√°s,
 el derecho inalienable a modificarlo a  su gusto. A este movimiento se
-le  bautizÛ  con el  crÌptico  nombre  de {\bf  GNU}\index{GNU,General
-Public Licence},  y para defenderlo  se creÛ la {\bf  Licencia P˙blica
-General}  ({\bf GPL}\index{GPL},  sus siglas  en inglÈs),  un peculiar
+le  bautiz√≥  con el  cr√≠ptico  nombre  de {\bf  GNU}\index{GNU,General
+Public Licence},  y para defenderlo  se cre√≥ la {\bf  Licencia P√∫blica
+General}  ({\bf GPL}\index{GPL},  sus siglas  en ingl√©s),  un peculiar
 contrato  mercantil  que,  a  diferencia  de  las  licencias  de  {\em
-software} tradicionales, no sÛlo no restringe la posibilidad de copiar
+software} tradicionales, no s√≥lo no restringe la posibilidad de copiar
 y redistribuir los programas, sino que anima a los usuarios a hacerlo.
 
-Este  nuevo  orden  inform·tico  fue recibido  con  entusiasmo  en  la
+Este  nuevo  orden  inform√°tico  fue recibido  con  entusiasmo  en  la
 entonces  incipiente  comunidad  de  programadores  que  pululaba  por
-Internet, pero tambiÈn  con cierta inquietud. De  hecho, el movimiento
-GNU  fue visto  con  recelo  desde algunos  sectores  de la  poblaciÛn
+Internet, pero tambi√©n  con cierta inquietud. De  hecho, el movimiento
+GNU  fue visto  con  recelo  desde algunos  sectores  de la  poblaci√≥n
 estadounidense, que lo tacharon de ``izquierdoso'', por su tendencia a
-compartir su  trabajo y por su  aversiÛn al concepto de  propiedad que
-habÌa establecido la industria del {\em software}.
+compartir su  trabajo y por su  aversi√≥n al concepto de  propiedad que
+hab√≠a establecido la industria del {\em software}.
 
-\subsection{øQuÈ es Linux y GNU/Linux?}
+\subsection{¬øQu√© es Linux y GNU/Linux?}
 
-Con ideologÌa o sin  ella, el movimiento GNU se extendiÛ  por la Red y
-empezÛ a dar sus frutos, y asÌ  naciÛ Linux. LÌnea a lÌnea, programa a
-programa, el sistema operativo del  ping¸ino (la mascota de Linux que,
-por cierto, responde al nombre de  Tux) se convirtiÛ en poco tiempo en
-el producto  m·s famoso del  cÛdigo abierto y, paradÛjicamente,  en la
-apuesta de m·s de una multinacional en el sector inform·tico.
+Con ideolog√≠a o sin  ella, el movimiento GNU se extendi√≥  por la Red y
+empez√≥ a dar sus frutos, y as√≠  naci√≥ Linux. L√≠nea a l√≠nea, programa a
+programa, el sistema operativo del  ping√ºino (la mascota de Linux que,
+por cierto, responde al nombre de  Tux) se convirti√≥ en poco tiempo en
+el producto  m√°s famoso del  c√≥digo abierto y, parad√≥jicamente,  en la
+apuesta de m√°s de una multinacional en el sector inform√°tico.
 
 Lo   que    realmente   se   entiende    por   Linux   es    el   {\em
-kernel}\index{kernel}, el  ``corazÛn'' de cualquier  sistema operativo
-tipo UNIX.  Pero el  kernel por  sÌ solo no  forma todavÌa  un sistema
+kernel}\index{kernel}, el  ``coraz√≥n'' de cualquier  sistema operativo
+tipo UNIX.  Pero el  kernel por  s√≠ solo no  forma todav√≠a  un sistema
 operativo.  Justamente para  UNIX  existe multitud  de {\em  software}
-libre, lo  que significa que  tambiÈn est· disponible para  Linux. Son
+libre, lo  que significa que  tambi√©n est√° disponible para  Linux. Son
 estas  utilidades  las  que  realmente forman  el  sistema  operativo.
 Entonces es cuando podemos hablar de {\bf GNU/Linux}\index{GNU/Linux}.
 
 La gran  cantidad de de programas  de {\em software} libre  permite la
-creaciÛn de  diferentes sistemas  Linux, cada uno  con un  conjunto de
-programas, entorno  gr·fico o  sistema de instalaciÛn  diferente. Cada
-una de estas  agrupaciones particulares de software  entorno al n˙cleo
+creaci√≥n de  diferentes sistemas  Linux, cada uno  con un  conjunto de
+programas, entorno  gr√°fico o  sistema de instalaci√≥n  diferente. Cada
+una de estas  agrupaciones particulares de software  entorno al n√∫cleo
 de  Linux es  lo que  denominamos distribuciones.  En general,  cuando
 hablamos  de  Linux,  nos  estamos  refiriendo  a  cualquiera  de  sus
-distribuciones. Las  m·s conocidas  son {\em  Debian}, {\em  Red Hat},
-{\em SuSE}, {\em Mandrake}. De todas ellas,  la que m·s se acerca a la
-filosofÌa del movimiento GNU es Debian  ya que es fruto del trabajo de
+distribuciones. Las  m√°s conocidas  son {\em  Debian}, {\em  Red Hat},
+{\em SuSE}, {\em Mandrake}. De todas ellas,  la que m√°s se acerca a la
+filosof√≠a del movimiento GNU es Debian  ya que es fruto del trabajo de
 un gran grupo de voluntarios repartidos por el mundo, mientras que las
 otras pertenecen a empresas privadas dedicadas al desarrollo de Linux.
 
 \section{Distribuciones de Linux}
 
 Lo que vulgarmente conocemos como Linux, debiera llamarse oficialmente
-como GNU/Linux. El motivo no es otro sino que el corazÛn de un sistema
-Linux est· formado por un n˙cleo (Linux)  al que se le han aÒadido las
+como GNU/Linux. El motivo no es otro sino que el coraz√≥n de un sistema
+Linux est√° formado por un n√∫cleo (Linux)  al que se le han a√±adido las
 utilidades  desarrolladas  por  la  gente de  la  {\em  Free  Software
-Foundation (GNU)}, o al menos asÌ era en los primeros momentos.
+Foundation (GNU)}, o al menos as√≠ era en los primeros momentos.
 
-Hoy en  dÌa, la lista  de colaboradores en  el desarrollo de  Linux es
+Hoy en  d√≠a, la lista  de colaboradores en  el desarrollo de  Linux es
 inmensa, estando  formada tanto  por personas como  usted, o  como yo,
-como  por las  m·s grandes  compaÒÌas del  sector inform·tico  actual.
+como  por las  m√°s grandes  compa√±√≠as del  sector inform√°tico  actual.
 Parece que  ha pasado una eternidad  (5 de Octubre de  1991), desde el
-momento que Linus anunciÛ la  primera versiÛn ``oficial'' de Linux, la
-0.02. Ya podÌa ejecutar bash (el shell de GNU) y gcc (el compilador de
-C de GNU), pero no hacÌa mucho m·s.
+momento que Linus anunci√≥ la  primera versi√≥n ``oficial'' de Linux, la
+0.02. Ya pod√≠a ejecutar bash (el shell de GNU) y gcc (el compilador de
+C de GNU), pero no hac√≠a mucho m√°s.
 
-En ese anuncio, puso frases como Èstas:
+En ese anuncio, puso frases como √©stas:
 
 \begin{quotation}
-``{\em [\dots]øSuspir·is al  recordar aquellos dÌas de  Minix-1.1, cuando los
-hombres eran hombres  y escribÌan sus propios drivers?  øOs sentÌs sin
-ning˙n proyecto interesante y os  gustarÌa tener un verdadero S.O. que
-pudierais modificar a  placer? øOs resulta frustrante el  tener sÛlo a
-Minix? Entonces, este artÌculo es para vosotros.[\dots]}''
+``{\em [\dots]¬øSuspir√°is al  recordar aquellos d√≠as de  Minix-1.1, cuando los
+hombres eran hombres  y escrib√≠an sus propios drivers?  ¬øOs sent√≠s sin
+ning√∫n proyecto interesante y os  gustar√≠a tener un verdadero S.O. que
+pudierais modificar a  placer? ¬øOs resulta frustrante el  tener s√≥lo a
+Minix? Entonces, este art√≠culo es para vosotros.[\dots]}''
 \end{quotation} 
 
-Hoy dÌa, a partir de esas frases (y de lo que implicaban), han surgido
+Hoy d√≠a, a partir de esas frases (y de lo que implicaban), han surgido
 distribuciones de  Linux para todos  los gustos. Algunas de  ellas son
 las que figuran en este listado:
 
 \begin{itemize}
 
 % La URL no funciona (404)
-% \item {\bf  Conectiva}: Una distribuciÛn  BrasileÒa de Linux.  \\ {\tt
+% \item {\bf  Conectiva}: Una distribuci√≥n  Brasile√±a de Linux.  \\ {\tt
 % http://www.cfhl.com.br}
 
-\item  {\bf Debian}\index{Distribuciones!Debian}:  La distribuciÛn  de
-Linux m·s  libre disponible hoy  dÌa, mantenida  por un gran  grupo de
+\item  {\bf Debian}\index{Distribuciones!Debian}:  La distribuci√≥n  de
+Linux m√°s  libre disponible hoy  d√≠a, mantenida  por un gran  grupo de
 voluntarios. \\ {\tt http://www.debian.org}
 
 % La URL no funciona (404)
@@ -214,48 +214,48 @@ convierte  un   PC  en  un   Servidor  de  Internet  Linux.   \\  {\tt
 http://www.e-smith.net}
 
 \item  {\bf   Mandrake}\index{Distribuciones!Mandrake}:  Una   de  las
-distribuciones m·s  recientes, basada en  Red Hat y {\sf  KDE}.\\ {\tt
+distribuciones m√°s  recientes, basada en  Red Hat y {\sf  KDE}.\\ {\tt
 http://www.linux-mandrake.com}
 
-\item {\bf  muLinux}: DistribuciÛn  de Linux,  totalmente configurable
+\item {\bf  muLinux}: Distribuci√≥n  de Linux,  totalmente configurable
 y  minimalista,   casi  completa  y  orientada   al  usuario.  muLinux
 reside  en  un  solo  diskette  reformateado  a  1722K  y  dispone  de
-varios  diskettes adicionales.  Requisitos mÌnimos  PC 386-8M  \\ {\tt
+varios  diskettes adicionales.  Requisitos m√≠nimos  PC 386-8M  \\ {\tt
 http://sunsite.dk/mulinux/}
 
-\item {\bf  NoMad}: Su principal  propÛsito es  ayudar a su  creador a
-ser  feliz,  d·ndole algo  que  hacer  en  su  tiempo libre.  \\  {\tt
+\item {\bf  NoMad}: Su principal  prop√≥sito es  ayudar a su  creador a
+ser  feliz,  d√°ndole algo  que  hacer  en  su  tiempo libre.  \\  {\tt
 http://www.nomadlinux.com}
 
 \item   {\bf  Project   Independence}:   Project  Independence   busca
-facilitar  la   vida  a   los  reciÈn  llegados   a  Linux.   \\  {\tt
+facilitar  la   vida  a   los  reci√©n  llegados   a  Linux.   \\  {\tt
 http://independence.seul.org}
 
 \item   {\bf  Red   Hat}\index{Distribuciones!Red  Hat}:   La  primera
-distribuciÛn Linux en dirigirse seriamente hacia los usuarios finales.
+distribuci√≥n Linux en dirigirse seriamente hacia los usuarios finales.
 \\ {\tt http://www.redhat.com}
 
 \item {\bf SEUL (Simple End-User  Linux)}: Un proyecto basado en Linux
 que  pretende  convertirse en  una  alternativa  viable frente  a  los
 sistemas operativos comerciales. \\ {\tt http://www.seul.org}
 
-\item {\bf Slackware}: Una distribuciÛn histÛrica: La DistribuciÛn. \\
+\item {\bf Slackware}: Una distribuci√≥n hist√≥rica: La Distribuci√≥n. \\
 {\tt http://www.slackware.com}
 
-\item {\bf Stampede}: Una distribuciÛn compilada para Pentium. \\ {\tt
+\item {\bf Stampede}: Una distribuci√≥n compilada para Pentium. \\ {\tt
 http://www.stampede.org}
 
-\item  {\bf   S.u.S.E.}\index{Distribuciones!SuSE}:  Una  distribuciÛn
+\item  {\bf   S.u.S.E.}\index{Distribuciones!SuSE}:  Una  distribuci√≥n
 alemana,  orientada  al usuario  final.  Colaboran  activamente en  el
 desarrollo del sistema {\sf X-Window}. \\ {\tt http://www.suse.com}
 
 % La URL no funciona
-% \item  {\bf The  LÊtOS Project}:  Ofrece una  distribuciÛn Linux  para
-% el  p˙blico  en general,  ofreciÈndolo  como  alternativa al  software
-% propietario.   LÊtOS  incluir·   instalaciÛn  gr·fica,   detecciÛn  de
+% \item  {\bf The  L√¶tOS Project}:  Ofrece una  distribuci√≥n Linux  para
+% el  p√∫blico  en general,  ofreci√©ndolo  como  alternativa al  software
+% propietario.   L√¶tOS  incluir√°   instalaci√≥n  gr√°fica,   detecci√≥n  de
 % hardware, etc. \\ {\tt http://www.laetos.org}
 
-\item  {\bf  Yellow  Dog  Linux}: Una  distribuciÛn  para  ordenadores
+\item  {\bf  Yellow  Dog  Linux}: Una  distribuci√≥n  para  ordenadores
 Macintosh PPC y G3. \\ {\tt http://www.yellowdoglinux.com}
 
 \end{itemize}
@@ -263,132 +263,132 @@ Macintosh PPC y G3. \\ {\tt http://www.yellowdoglinux.com}
 \section{Paquetes de software en Linux}\index{paquetes}
 
 El gran  volumen de  software disponible  en la  mayor parte  de estas
-distribuciones suele hacer muy difÌcil  incluso las tareas m·s b·sicas
-de administraciÛn.  Para simplificar  el proceso  se suele  recurrir a
+distribuciones suele hacer muy dif√≠cil  incluso las tareas m√°s b√°sicas
+de administraci√≥n.  Para simplificar  el proceso  se suele  recurrir a
 {\em empaquetar} el software.
 
-Un {\em paquete}\index{paquetes}  no es m·s que  un archivo comprimido
+Un {\em paquete}\index{paquetes}  no es m√°s que  un archivo comprimido
 que contiene todo o parte de  los archivos necesarios para ejecutar un
-determinado programa  de software. Adem·s, los  paquetes contienen las
-rutinas  necesarias para  la  correcta  instalaciÛn, desinstalaciÛn  y
-actualizaciÛn del  software que contienen.  El uso de los  paquetes es
-tan potente que se ha extendido a otros elementos, tales como galerÌas
-de fondos de escritorio, documentaciÛn, scripts, etc.
+determinado programa  de software. Adem√°s, los  paquetes contienen las
+rutinas  necesarias para  la  correcta  instalaci√≥n, desinstalaci√≥n  y
+actualizaci√≥n del  software que contienen.  El uso de los  paquetes es
+tan potente que se ha extendido a otros elementos, tales como galer√≠as
+de fondos de escritorio, documentaci√≥n, scripts, etc.
 
 Los criterios  bajo los  cuales un determinado  grupo de  programas se
-agrupa en un mismo paquete, o  un ˙nico software monolÌtico se reparte
-entre  varios, son  particulares de  cada distribuciÛn.  Lo que  sÌ es
-com˙n  a todas  ellas  es que  la  gestiÛn  de los  mismos  se hace  a
-travÈs  de una  compleja base  de datos.  Utilizando las  herramientas
-adecuadas  podemos consultar  que paquetes  est·n instalados  o cuales
-est·n  disponibles para  su  instalaciÛn. Con  la mismas  herramientas
+agrupa en un mismo paquete, o  un √∫nico software monol√≠tico se reparte
+entre  varios, son  particulares de  cada distribuci√≥n.  Lo que  s√≠ es
+com√∫n  a todas  ellas  es que  la  gesti√≥n  de los  mismos  se hace  a
+trav√©s  de una  compleja base  de datos.  Utilizando las  herramientas
+adecuadas  podemos consultar  que paquetes  est√°n instalados  o cuales
+est√°n  disponibles para  su  instalaci√≥n. Con  la mismas  herramientas
 podemos instalar, desinstalar o  actualizar un paquete garantizando la
-integridad de nuestro  sistema. La base de  datos mantiene informaciÛn
+integridad de nuestro  sistema. La base de  datos mantiene informaci√≥n
 de las dependencia entre paquetes, por lo que podemos estar informados
 en todo momento de que paquetes se necesitan para instalar uno dado, o
-quÈ paquetes no podemos desinstalar porque son requeridos por otro que
-si lo est·.
+qu√© paquetes no podemos desinstalar porque son requeridos por otro que
+si lo est√°.
 
-Los formatos de paquetes m·s extendidos son los {\tt rpm}\index{rpm} y
+Los formatos de paquetes m√°s extendidos son los {\tt rpm}\index{rpm} y
 los {\tt deb}\index{deb}. Los  primeros son utilizado mayoritariamente
-por la distribuciÛn {\em Red Hat} y sus derivadas (como {\em Mandrake}
-y {\em  SuSE}). Los  segundos son empleados  por la  distribuciÛn {\em
+por la distribuci√≥n {\em Red Hat} y sus derivadas (como {\em Mandrake}
+y {\em  SuSE}). Los  segundos son empleados  por la  distribuci√≥n {\em
 Debian} y sus derivadas.
 
-El empaquetado  del software y  la gestiÛn de  paquetes es una  de las
+El empaquetado  del software y  la gesti√≥n de  paquetes es una  de las
 grandes ventajas que presentan las distribuciones Linux frente a otros
 sistemas operativos. Una vez que te acostumbras a sus ventajas se hace
-muy difÌcil vivir sin ellas.
+muy dif√≠cil vivir sin ellas.
 
-Bueno, para terminar este r·pido  repaso, comentar que en este listado
-no se  encuentran, ni muchÌsimo menos,  todas las opciones de  las que
+Bueno, para terminar este r√°pido  repaso, comentar que en este listado
+no se  encuentran, ni much√≠simo menos,  todas las opciones de  las que
 puede disfrutar  con Linux. Basta  dar una vuelta por  los principales
-buscadores de  Internet, y  se dar·  cuenta uno de  hasta dÛnde  se ha
+buscadores de  Internet, y  se dar√°  cuenta uno de  hasta d√≥nde  se ha
 llegado actualmente.
 
 \section{GNU/Linux: cara y cruz}
 
 \subsection{La cara}
 
-Enumeramos las ventajas de Linux a continuaciÛn:
+Enumeramos las ventajas de Linux a continuaci√≥n:
 
 \begin{itemize}
 
 \item {\bf  Multitarea total}. Se  pueden ejecutar varias tareas  y se
 puede acceder a varios dispositivos al mismo tiempo.
 
-\item {\bf Memoria virtual}. Linux puede  usar una porciÛn de su disco
+\item {\bf Memoria virtual}. Linux puede  usar una porci√≥n de su disco
 duro como memoria virtual, lo que aumenta la eficiencia del sistema al
-mantener los procesos activos en la  memoria fÌsica (RAM) y al colocar
+mantener los procesos activos en la  memoria f√≠sica (RAM) y al colocar
 las partes  inactivas o usadas con  menos frecuencia en la  memoria de
-disco.  La memoria  virtual  permite utilizar  la  m·xima cantidad  de
-memoria posible del sistema y permite que no se produzca fragmentaciÛn
+disco.  La memoria  virtual  permite utilizar  la  m√°xima cantidad  de
+memoria posible del sistema y permite que no se produzca fragmentaci√≥n
 de la memoria.
 
 \item {\bf  Soporte multiusuario}.  Linux permite que  varios usuarios
-accedan  a su  sistema simult·neamente  sin que  haya conflicto  entre
-ellos, proporcion·ndole a cada su propio espacio de trabajo.
+accedan  a su  sistema simult√°neamente  sin que  haya conflicto  entre
+ellos, proporcion√°ndole a cada su propio espacio de trabajo.
 
-\item  {\bf CÛdigo  fuente  no  propietario}. El  kernel  de Linux  no
-utiliza  cÛdigo de  {\bf AT\&T}  ni ninguna  otra fuente  propietaria.
-Otras organizaciones, como las  compaÒÌas comerciales, el proyecto GNU
+\item  {\bf C√≥digo  fuente  no  propietario}. El  kernel  de Linux  no
+utiliza  c√≥digo de  {\bf AT\&T}  ni ninguna  otra fuente  propietaria.
+Otras organizaciones, como las  compa√±√≠as comerciales, el proyecto GNU
 y los programadores de todo  el mundo, han desarrollado {\em software}
 para Linux.
 
 \item {\bf Soporte mediante {\em  software} GNU}. Linux puede ejecutar
 una amplia  variedad de  {\em \mbox{software}}, disponible  gracias al
 proyecto GNU. Este {\em software} incluye de todo, desde desarrollo de
-aplicaciones (GNU C y GNU C++)  a la administraciÛn del sistema (gawk,
+aplicaciones (GNU C y GNU C++)  a la administraci√≥n del sistema (gawk,
 groff, etc.) y juegos (GNU Chess, GnuGo, y NetHack).
 
 \item  {\bf  Estabilidad}.  Linux  presenta una  gran  estabilidad  en
-la  gestiÛn de  sus  procesos  internos del  sistema.  Es muy  difÌcil
-conseguir que Linux  se ``cuelgue'' y, por supuesto, jam·s  se ver· un
+la  gesti√≥n de  sus  procesos  internos del  sistema.  Es muy  dif√≠cil
+conseguir que Linux  se ``cuelgue'' y, por supuesto, jam√°s  se ver√° un
 ``pantallazo azul'' de los conocidos por \windows.
 
 \item {\bf Gran oferta de software}.  Aunque Linux no sea tan conocido
-por el p˙blico como lo es \windows, eso no quiere decir que no existan
+por el p√∫blico como lo es \windows, eso no quiere decir que no existan
 aplicaciones  para el  usuario  medio. Por  el  contrario, cuando  uno
-utiliza Linux, seg˙n  pasan los dÌas, se tiene la  sensaciÛn de que no
-necesita para  nada \windows\  porque todo  lo que  Èste ofrece  ya lo
+utiliza Linux, seg√∫n  pasan los d√≠as, se tiene la  sensaci√≥n de que no
+necesita para  nada \windows\  porque todo  lo que  √©ste ofrece  ya lo
 tiene Linux. Llega un momento en que no se echa de menos a \windows.
 
 \item {\bf  Defensa contra los  virus}. Aunque  la mayor parte  de los
 virus  que rondan  por Internet  son desarrollados  para \windows,  es
-cierto que existen algunos para Linux, pero son m·s difÌciles de crear
+cierto que existen algunos para Linux, pero son m√°s dif√≠ciles de crear
 debido a  que Linux emplea un  sistema de permisos sobre  los ficheros
-previniendo los  posibles desastres que se  ven todos los dÌas  en los
-entornos de \windows.  Si a eso aÒadimos que los  virus para \windows\
-no se pueden  ejecutar en Linux salvo contadÌsimos  casos, nos podemos
+previniendo los  posibles desastres que se  ven todos los d√≠as  en los
+entornos de \windows.  Si a eso a√±adimos que los  virus para \windows\
+no se pueden  ejecutar en Linux salvo contad√≠simos  casos, nos podemos
 hacer una idea del grado de seguridad con que cuenta Linux.
 
-\item {\bf RelaciÛn con Internet}. Debido a que Linux creciÛ gracias a
+\item {\bf Relaci√≥n con Internet}. Debido a que Linux creci√≥ gracias a
 Internet, digamos que  ambos hablan en el mismo lenguaje  y por tanto,
-se ve claramente que navegar por  Internet con Linux es m·s r·pido que
-con Microsoft  Windows. Obviamente, Èsta  es una opiniÛn  personal del
+se ve claramente que navegar por  Internet con Linux es m√°s r√°pido que
+con Microsoft  Windows. Obviamente, √©sta  es una opini√≥n  personal del
 autor de este documento.
 
-\item {\bf Entornos gr·ficos}. Hasta hace unos aÒos, trabajar en Linux
-sÛlo  era posible  desde  consola, ese  entorno  negro con  caracteres
-blancos  (similar al  MS-DOS, pero  m·s  potente). Con  la llegada  de
+\item {\bf Entornos gr√°ficos}. Hasta hace unos a√±os, trabajar en Linux
+s√≥lo  era posible  desde  consola, ese  entorno  negro con  caracteres
+blancos  (similar al  MS-DOS, pero  m√°s  potente). Con  la llegada  de
 Microsoft  Windows, la  comunidad Linux  se  vio de  forma obligada  a
-desarrollar  nuevos  entornos gr·ficos  para  no  perder el  tren.  La
-gran  diferencia  con Microsoft  Windows  es  que mientras  Èste  sÛlo
-dispone de un  escritorio, en Linux podemos elegir  con quÈ escritorio
-queremos trabajar. Los m·s conocidos  son {\sf KDE}, {\sf GNOME}, {\sf
+desarrollar  nuevos  entornos gr√°ficos  para  no  perder el  tren.  La
+gran  diferencia  con Microsoft  Windows  es  que mientras  √©ste  s√≥lo
+dispone de un  escritorio, en Linux podemos elegir  con qu√© escritorio
+queremos trabajar. Los m√°s conocidos  son {\sf KDE}, {\sf GNOME}, {\sf
 AfterStep}, {\sf  Enlightenment} y {\sf  Window Maker}; donde  los dos
-primeros son los  m·s populares. Lo m·s curioso del  asunto es que con
-ellos se ha iniciado una ``guerra dialÈctica'' sobre cu·l es mejor. Al
+primeros son los  m√°s populares. Lo m√°s curioso del  asunto es que con
+ellos se ha iniciado una ``guerra dial√©ctica'' sobre cu√°l es mejor. Al
 final, la  ventaja reside en la  variedad con la que  el usuario puede
-decidir con cu·l se siente m·s cÛmodo.
+decidir con cu√°l se siente m√°s c√≥modo.
 
 \item {\bf Servidores  caseros}. Parece mentira, pero  en casa podemos
-tener un servidor  web, o un servidor FTP con  nuestro Linux. SÛlo hay
-que leer la documentaciÛn de cÛmo hay que hacerlo.
+tener un servidor  web, o un servidor FTP con  nuestro Linux. S√≥lo hay
+que leer la documentaci√≥n de c√≥mo hay que hacerlo.
 
 \item {\bf La comunidad Linux}.  A diferencia de \windows, Linux tiene
 una comunidad de voluntarios con ganas  de ayudar a los que les cuesta
-adentrarse  en este  mundo.  Y  todo por  af·n  de  colaborar en  este
+adentrarse  en este  mundo.  Y  todo por  af√°n  de  colaborar en  este
 proyecto. Podemos decir  que esta comunidad tiene  un gran sentimiento
 de solidaridad.
 
@@ -396,53 +396,53 @@ de solidaridad.
 
 \subsection{La cruz}
 
-Obviamente,  como todo  sistema  operativo, Linux  no  est· exento  de
-desventajas, como vemos aquÌ:
+Obviamente,  como todo  sistema  operativo, Linux  no  est√° exento  de
+desventajas, como vemos aqu√≠:
 
 \begin{itemize}
 
-\item {\bf Entorno  ·rido}. Aunque en los ˙ltimos aÒos  el panorama ha
+\item {\bf Entorno  √°rido}. Aunque en los √∫ltimos a√±os  el panorama ha
 mejorado considerablemente,  no podemos olvidar que  para trabajar con
 Linux,  sobre todo  si se  viene de  \windows, hay  que aprender  unas
-cuantas nociones  si no se  quiere tener la  sensaciÛn de que  se est·
+cuantas nociones  si no se  quiere tener la  sensaci√≥n de que  se est√°
 perdido.  Todo ello  radica  en que  Linux no  es  tan intuitivo  como
-Microsoft  Windows,  pero  afortunadamente  las  diferentes  compaÒÌas
+Microsoft  Windows,  pero  afortunadamente  las  diferentes  compa√±√≠as
 comerciales  han aportado  herramientas que  facilitan esas  tareas al
-usuario. SÛlo hay que cambiar un poco el ``chip''.
+usuario. S√≥lo hay que cambiar un poco el ``chip''.
 
 \item {\bf Soporte de hardware}. Por desgracia, como se ve claramente,
-el mercado de los sistemas inform·ticos de escritorio est· orientado a
+el mercado de los sistemas inform√°ticos de escritorio est√° orientado a
 \windows. Prueba de ellos es que el 90\% de los PC lo tienen instalado
-sin  usar otro.  AsÌ  que, los  fabricantes de  hardware  sÛlo se  han
+sin  usar otro.  As√≠  que, los  fabricantes de  hardware  s√≥lo se  han
 preocupado de  crear los controladores de  dispositivo compatibles con
 \windows\  sin  pensar en  los  restantes  sistemas como  Linux,  Mac,
 BeOS  y otros.  Ello ha  obligado a  que fueran  los propios  usuarios
 programadores  los  que  desarrollaran sus  propios  controladores  de
 dispositivo.  Con el  tiempo, dada  la demanda  creciente de  usuarios
 decididos a utilizar Linux algunos  fabricantes ha comenzado a acceder
-a las demandas de estos ˙ltimos.
+a las demandas de estos √∫ltimos.
 
-\item {\bf ConfiguraciÛn del sistema operativo}. Hasta hace bien poco,
+\item {\bf Configuraci√≥n del sistema operativo}. Hasta hace bien poco,
 instalar y  configurar Linux en su  casa en condiciones era  una tarea
-ardua y bastante complicada. Ello hacÌa  que mucha gente se rindiera y
+ardua y bastante complicada. Ello hac√≠a  que mucha gente se rindiera y
 siguiera  con Microsoft  Windows.  Las  diferentes distribuciones  han
 tenido  en cuenta  estos  problemas y  han  aportado herramientas  que
-ayudan al  sufrido usuario  a hacerlo  todo de  forma m·s  intuitiva y
-autom·tica. Entre estas herramientas est·n  las encargadas de la parte
-de la instalaciÛn del {\em hardware} y {\em software}.
+ayudan al  sufrido usuario  a hacerlo  todo de  forma m√°s  intuitiva y
+autom√°tica. Entre estas herramientas est√°n  las encargadas de la parte
+de la instalaci√≥n del {\em hardware} y {\em software}.
 
-\item {\bf No todo el software necesario est· presente}. Es cierto que
+\item {\bf No todo el software necesario est√° presente}. Es cierto que
 casi todo el software que un usuario necesita ya lo aporta Linux. Pero
-hay  situaciones  en  las  que una  persona  necesita  una  aplicaciÛn
+hay  situaciones  en  las  que una  persona  necesita  una  aplicaci√≥n
 concreta  y ve  que  debe  utilizar Microsoft  Windows  para usar  esa
-aplicaciÛn. De  todas formas, siempre surgen  desarrolladores con af·n
+aplicaci√≥n. De  todas formas, siempre surgen  desarrolladores con af√°n
 de ayudar que terminan desarrollando esas aplicaciones.
 
-\item  {\bf  AdministraciÛn  de  Linux}.   Como  todo,  si  se  quiere
+\item  {\bf  Administraci√≥n  de  Linux}.   Como  todo,  si  se  quiere
 administrar Linux  de forma profunda,  ya no vale usar  los asistentes
-gr·ficos como en \windows, sino que hay que leer mucha documentaciÛn y
+gr√°ficos como en \windows, sino que hay que leer mucha documentaci√≥n y
 experimentar. A  cambio se  gana una experiencia  que en  \windows\ es
-difÌcil de conseguir.
+dif√≠cil de conseguir.
 
 \end{itemize}
 
@@ -450,20 +450,20 @@ difÌcil de conseguir.
 
 \subsection{Software}
 
-Tal vez  por su escasa repercusiÛn  en el ·mbito domÈstico,  uno pueda
+Tal vez  por su escasa repercusi√≥n  en el √°mbito dom√©stico,  uno pueda
 pensar  que  la cantidad  de  software  es  bastante escasa.  Todo  lo
 contrario. De  hecho se pueden  encontrar bastantes utilidades  en las
-p·ginas webs propias de las distribuciones.
+p√°ginas webs propias de las distribuciones.
 
-TambiÈn se pueden encontrar aplicaciones en otras p·ginas o servidores
+Tambi√©n se pueden encontrar aplicaciones en otras p√°ginas o servidores
 FTP con software propio, como  {\sf StarOffice}, {\sf KDE}, {\sf QCAD}
-y {\sf VariCAD} (Èstos dos ˙ltimos  son aplicaciones que aspiran a ser
+y {\sf VariCAD} (√©stos dos √∫ltimos  son aplicaciones que aspiran a ser
 serias alternativas  a {\sf AutoCAD}  aplicadas a los  entornos UNIX),
 etc.
 
 Si el  usuario proviene del entorno  \windows, tal vez pueda  tener la
-sensaciÛn de que ``{\em SÌ, trabaja como Windows, pero no es igual que
-Windows\dots}'', y le gustarÌa encontrar las herramientas con el mismo
+sensaci√≥n de que ``{\em S√≠, trabaja como Windows, pero no es igual que
+Windows\dots}'', y le gustar√≠a encontrar las herramientas con el mismo
 aspecto que este sistema operativo. Los desarrolladores han optado por
 tres caminos:
 
@@ -473,50 +473,50 @@ tres caminos:
 tienen esas  aplicaciones que existen  en \windows, aunque  su aspecto
 externo no tenga nada que ver con el \windows.
 
-\item El segundo camino aÒade adem·s el aspecto externo original de la
-aplicaciÛn que  funciona en \windows  con  el fin de que  el usuario se
+\item El segundo camino a√±ade adem√°s el aspecto externo original de la
+aplicaci√≥n que  funciona en \windows  con  el fin de que  el usuario se
 encuentre en un entorno familiar.
 
-\item El tercero  es el m·s dr·stico ya que  se crean herramientas con
+\item El tercero  es el m√°s dr√°stico ya que  se crean herramientas con
 aspectos y funcionalidades totalmente  diferentes a esas aplicaciones,
 pero igualmente eficientes e inclusos superiores en algunos casos.
 
 \end{itemize}
 
 Para plasmar  en un  ejemplo de lo  que se acaba  de decir,  basta con
-nombrar una de las aplicaciones m·s utilizadas en el entorno Microsoft
+nombrar una de las aplicaciones m√°s utilizadas en el entorno Microsoft
 Windows que es  {\sf MS Word}. Del primer ejemplo  nos encontramos con
-{\sf KWord}, desarrollado por el equipo que creÛ {\sf KDE}.
+{\sf KWord}, desarrollado por el equipo que cre√≥ {\sf KDE}.
 
 El  segundo es  {\sf  AbiWord}. El  autor reconoce  que  es casi  como
-utilizar  el {\sf  MS  Word}, aunque  es evidente  que  a˙n le  faltan
+utilizar  el {\sf  MS  Word}, aunque  es evidente  que  a√∫n le  faltan
 bastantes opciones por desarrollar.
 
 Y  el tercero  es el  \LaTeX, una  herramienta muy  potente, pero  que
-quiz·s desconcierte  a los usuarios  noveles debido a  su complejidad.
-Como anÈcdota  aclarativa, el libro que  el lector tiene ahora  en sus
-manos  y est·  leyendo se  ha escrito  usando precisamente  \LaTeX. Al
-final la elecciÛn depende del propio usuario.
+quiz√°s desconcierte  a los usuarios  noveles debido a  su complejidad.
+Como an√©cdota  aclarativa, el libro que  el lector tiene ahora  en sus
+manos  y est√°  leyendo se  ha escrito  usando precisamente  \LaTeX. Al
+final la elecci√≥n depende del propio usuario.
 
-Una cosa est·  clara: {\bf Hay software m·s que  suficiente para Linux
+Una cosa est√°  clara: {\bf Hay software m√°s que  suficiente para Linux
 como para detener un tren}.
 
-\subsection{DocumentaciÛn}
+\subsection{Documentaci√≥n}
 
-La  documentaciÛn  b·sica  sobre  Linux se  puede  encontrar  en  {\tt
+La  documentaci√≥n  b√°sica  sobre  Linux se  puede  encontrar  en  {\tt
 http://es.tldp.org/} (en castellano)  y {\tt http://www.tldp.org/} (en
-inglÈs). En ellos  se pueden encontrar tutoriales y  cursos que pueden
+ingl√©s). En ellos  se pueden encontrar tutoriales y  cursos que pueden
 ayudar a los usuarios a adentrarse en el mundo Linux.
 
-Cabe destacar  que los documentos  m·s utilizados son los  COMOs ({\em
-HOW-TO} en inglÈs) que son una guÌa bastante ˙til sobre alguna cosa en
+Cabe destacar  que los documentos  m√°s utilizados son los  COMOs ({\em
+HOW-TO} en ingl√©s) que son una gu√≠a bastante √∫til sobre alguna cosa en
 concreto que se quiere hacer.
 
-Otra  forma de  encontrar  informaciÛn es  buscando  en las  m˙ltiples
-p·ginas webs referidas al tema, sin olvidar tambiÈn echar un vistazo a
+Otra  forma de  encontrar  informaci√≥n es  buscando  en las  m√∫ltiples
+p√°ginas webs referidas al tema, sin olvidar tambi√©n echar un vistazo a
 
-Por  ˙ltimo, si  se quiere  informaciÛn  r·pida de  alg˙n programa  en
-concreto, no hay  m·s que utilizar los manuales, es  decir, el comando
-{\tt man}, las p·ginas  info con el comando {\tt info}  o buscar en la
-documentaciÛn  del  programa  en  cuestiÛn  en  los  directorios  {\tt
+Por  √∫ltimo, si  se quiere  informaci√≥n  r√°pida de  alg√∫n programa  en
+concreto, no hay  m√°s que utilizar los manuales, es  decir, el comando
+{\tt man}, las p√°ginas  info con el comando {\tt info}  o buscar en la
+documentaci√≥n  del  programa  en  cuesti√≥n  en  los  directorios  {\tt
 /usr/share/} y {\tt /usr/share/doc/}.

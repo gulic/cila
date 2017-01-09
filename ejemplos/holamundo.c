@@ -5,6 +5,6 @@
 int
 main (void)
 {
-  puts ("El que a buen árbol se arrima, buena sombra le cobija.\n");
+  puts ("El que a buen Ã¡rbol se arrima, buena sombra le cobija.\n");
   return 0;
 }

@@ -7,38 +7,37 @@
 % ========
 
 % Paquete para poder escribir los caracteres especiales sin necesidad de
-% comandos. La opciÛn 'latin1' se corresponde con el standar ISO-8859-1
-% (tambiÈn es v·lido para ISO-8859-15, aunque no reconoce el §)
-\usepackage[latin1]{inputenc}
+% comandos.
+\usepackage[utf8x]{inputenc}
 
 % Paquete para castellanizar las variables del documento.
 \usepackage[spanish]{babel}
 
-% Paquete de sÌmbolos de LaTeX y de la AMS (American Mathematical Society)
+% Paquete de s√≠mbolos de LaTeX y de la AMS (American Mathematical Society)
 \usepackage{latexsym}
 \usepackage{amssymb}
 
-% Paquetes para inclusiÛn de gr·ficos Encapsulados PostScript
+% Paquetes para inclusi√≥n de gr√°ficos Encapsulados PostScript
 \usepackage[dvips]{graphicx}
 
-% Paquete para el sÌmbolo oficial del §uro
+% Paquete para el s√≠mbolo oficial del ¬§uro
 \usepackage{eurosym}
 
-% Paquete para construir los Ìndices con makeindex.
+% Paquete para construir los √≠ndices con makeindex.
 \usepackage{makeidx}
 
 % Paquete para hiperenlaces HTML
 \usepackage{html}
 
-% Paquete para filas m˙ltiples (para tablas)
+% Paquete para filas m√∫ltiples (para tablas)
 \usepackage{multirow}
 
-% Paquete para vieguerÌas con verbatim
+% Paquete para vieguer√≠as con verbatim
 \usepackage{verbatim}
 
 % Estilo para los apuntes del CILA, 
-% tomando cÛdigo de los paquetes fncychap y ull.
-% Este paquete debe ser el ˙ltimo en ser incluido, 
+% tomando c√≥digo de los paquetes fncychap y ull.
+% Este paquete debe ser el √∫ltimo en ser incluido, 
 % ya que sobreescribe definiciones de otros paquetes
 % (p.ej. babel)
 \usepackage{cila-html}
@@ -47,23 +46,23 @@
 
 %%%
 %%% Comando para crear el nombre de LyX tal como lo hace el propio LyX
-%%% esta lÌnea (con \providedcommand) es incluida por LyX al exportar a LaTeX
+%%% esta l√≠nea (con \providedcommand) es incluida por LyX al exportar a LaTeX
 %%%
 \newcommand{\LyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
 
 %%%
 %%% Comandos para siglas
 %%%
-\newcommand{\FMAT}{{\sc Facultad de Matem·ticas}}
+\newcommand{\FMAT}{{\sc Facultad de Matem√°ticas}}
 \newcommand{\ULL}{{\sc Universidad de La Laguna}}
 \newcommand{\GULiC}{{\sc Grupo de Usuarios de Linux de Canarias}}
-\newcommand{\CILA}{Curso de IntroduciÛn a Linux para Alumnos}
-\newcommand{\PILA}{Party de InstalaciÛn de Linux para Alumnos}
-\newcommand{\TIL}{Taller de IniciaciÛn a Linux}
-\newcommand{\TILA}{Taller de IniciaciÛn a Linux para Alumnos}
+\newcommand{\CILA}{Curso de Introduci√≥n a Linux para Alumnos}
+\newcommand{\PILA}{Party de Instalaci√≥n de Linux para Alumnos}
+\newcommand{\TIL}{Taller de Iniciaci√≥n a Linux}
+\newcommand{\TILA}{Taller de Iniciaci√≥n a Linux para Alumnos}
 
 %%%
-%%% Anula la conversiÛn a may˙sculas
+%%% Anula la conversi√≥n a may√∫sculas
 %%%
 \renewcommand{\MakeUppercase}{}
 
@@ -71,13 +70,13 @@
 % COMIENZO DEL DOCUMENTO
 \begin{document}
 
-% ModificaciÛn de algunas variables para adaptarlas a nuestro uso particular
-\renewcommand{\partname}{M”DULO}
+% Modificaci√≥n de algunas variables para adaptarlas a nuestro uso particular
+\renewcommand{\partname}{M√ìDULO}
 \renewcommand{\chaptername}{TEMA}
-\renewcommand{\listtablename}{Õndice de tablas}
+\renewcommand{\listtablename}{√çndice de tablas}
 \renewcommand{\tablename}{Tabla}
 
-% Õndices general, de tablas, de figuras y de ejemplos
+% √çndices general, de tablas, de figuras y de ejemplos
 \tableofcontents\newpage\thispagestyle{empty}
 \listoffigures\newpage\thispagestyle{empty}
 \listoftables\newpage\thispagestyle{empty}
@@ -86,17 +85,17 @@
 % Parte principal
 \mainmatter
 
-% InclusiÛn de los ficheros en el orden apropiado.
+% Inclusi√≥n de los ficheros en el orden apropiado.
 \input{html_includes.tex}
 
 % Parte posterior
 \backmatter
 
-% BibliografÌa, generado por BIBTeX
+% Bibliograf√≠a, generado por BIBTeX
 \bibliographystyle{plain}
 \bibliography{biblio}
 
-% Õndice terminolÛgico
+% √çndice terminol√≥gico
 \printindex
 
 

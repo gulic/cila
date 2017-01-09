@@ -7,49 +7,48 @@
 % ========
 
 % Paquete pare que las fuentes se vean bien en los PDF. 
-% Garcias a JosÈ Miguel Espadero Guillermo por seÒalarlo.
-% No est· puesto porque las tildes funcionan mal
+% Garcias a Jos√© Miguel Espadero Guillermo por se√±alarlo.
+% No est√° puesto porque las tildes funcionan mal
 % \usepackage{pslatex}
 
 % Paquete para poder escribir los caracteres especiales sin necesidad de
-% comandos. La opciÛn 'latin1' se corresponde con el standar ISO-8859-1
-% (tambiÈn es v·lido para ISO-8859-15, aunque no reconoce el §)
-\usepackage[latin1]{inputenc}
+% comandos.
+\usepackage[utf8x]{inputenc}
 
 % Paquete para castellanizar las variables del documento.
 \usepackage[spanish,activeacute]{babel}
 
-% Paquete de sÌmbolos de LaTeX y de la AMS (American Mathematical Society)
+% Paquete de s√≠mbolos de LaTeX y de la AMS (American Mathematical Society)
 \usepackage{latexsym}
 \usepackage{amssymb}
 \usepackage{amsmath}
 
-% Estilo de cabeceras y piÈs de p·gina.
+% Estilo de cabeceras y pi√©s de p√°gina.
 \usepackage{fancyhdr}
 
-% Paquetes para inclusiÛn de gr·ficos Encapsulados PostScript
+% Paquetes para inclusi√≥n de gr√°ficos Encapsulados PostScript
 \usepackage{graphics}
 \usepackage{graphicx}
 %\usepackage{psfig}
 \usepackage{subfigure}
 
-% Paquete para el sÌmbolo oficial del §uro
+% Paquete para el s√≠mbolo oficial del ¬§uro
 \usepackage{eurosym}
 
-% Paquete para construir los Ìndices con makeindex.
+% Paquete para construir los √≠ndices con makeindex.
 \usepackage{makeidx}
 
 % Paquete para hiperenlaces HTML
 %\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
 
-% Paquete para filas m˙ltiples (para tablas)
+% Paquete para filas m√∫ltiples (para tablas)
 \usepackage{multirow}
 
-% Paquete para usar colores, en las p·ginas y en las tablas
+% Paquete para usar colores, en las p√°ginas y en las tablas
 \usepackage{color}
 \usepackage{colortbl}
 
-% Paquete para vieguerÌas con verbatim
+% Paquete para vieguer√≠as con verbatim
 %\usepackage{verbatim}
 \usepackage{fancyvrb}
 
@@ -57,8 +56,8 @@
 %\usepackage{crop}
 
 % Estilo para los apuntes del TILA, 
-% tomando cÛdigo de los paquetes fncychap y ull.
-% Este paquete debe ser el ˙ltimo en ser incluido, 
+% tomando c√≥digo de los paquetes fncychap y ull.
+% Este paquete debe ser el √∫ltimo en ser incluido, 
 % ya que sobreescribe definiciones de otros paquetes
 % (p.ej. babel)
 \usepackage{cila}
@@ -75,9 +74,9 @@
 %\crop[cam,info,horigin=-0.41in,vorigin=-5mm]
 %\crop[cam,info,horigin=-10mm,vorigin=-5mm]
 
-% El  comando  \sloppy relaja  los  p·rrafos  y  evita muchos  de  los
+% El  comando  \sloppy relaja  los  p√°rrafos  y  evita muchos  de  los
 % desbordamientos  horizontales. Esto  se  logra  permitiendo que  los
-% espacios entre palabras lleguen a ser m·s grandes.
+% espacios entre palabras lleguen a ser m√°s grandes.
 \sloppy
 
 % Parte frontal
@@ -85,20 +84,20 @@
 \frontmatter
 \include{portada}
 
-% ModificaciÛn de algunas variables para adaptarlas a nuestro uso particular
-\renewcommand{\partname}{M”DULO}
+% Modificaci√≥n de algunas variables para adaptarlas a nuestro uso particular
+\renewcommand{\partname}{M√ìDULO}
 \renewcommand{\chaptername}{TEMA}
-\renewcommand{\listtablename}{Õndice de tablas}
+\renewcommand{\listtablename}{√çndice de tablas}
 \renewcommand{\tablename}{Tabla}
 
-% PresentaciÛn y Contribuciones
+% Presentaci√≥n y Contribuciones
 \pagestyle{plain}
 \incluye{presentacion}
 \incluye{contrib}
 \newpage
 \pagestyle{fancy}
 
-% Õndices general, de tablas, de figuras y de ejemplos
+% √çndices general, de tablas, de figuras y de ejemplos
 \tableofcontents\newpage\thispagestyle{empty}
 \listoffigures\newpage\thispagestyle{empty}
 \listoftables\newpage\thispagestyle{empty}
@@ -107,16 +106,16 @@
 % Parte principal
 \mainmatter
 
-% InclusiÛn de los ficheros en el orden apropiado.
+% Inclusi√≥n de los ficheros en el orden apropiado.
 \input{toc_includes.tex}
 
 % Parte posterior
 \backmatter
 
-% Õndice terminolÛgico
+% √çndice terminol√≥gico
 \printindex\newpage\thispagestyle{empty}
 
-% BibliografÌa, generado por BIBTeX
+% Bibliograf√≠a, generado por BIBTeX
 \bibliographystyle{plain}
 \bibliography{biblio}
 

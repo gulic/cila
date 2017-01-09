@@ -1,11 +1,11 @@
-%%% Copyright   Miguel ¡ngel Vilela
-%%%             Facultad de Matem·ticas
+%%% Copyright   Miguel √Ångel Vilela
+%%%             Facultad de Matem√°ticas
 %%%             Universidad de La Laguna
-%%%             C/ AstrofÌsico Francisco S·nchez
+%%%             C/ Astrof√≠sico Francisco S√°nchez
 %%%             E-mail miguev@fmat.ull.es
 %%%
 %%% With code from: fncychap.sty, written by Ulf A. Lindgren <lindgren@ae.chalmers.se>
-%%%                 ull.sty,      written by Manolo G. Rom·n <mroman@ull.es>
+%%%                 ull.sty,      written by Manolo G. Rom√°n <mroman@ull.es>
 %%%
 %%%
 %%% Note        Premission is granted to modify this file under
@@ -26,35 +26,35 @@
 %%%
 %%% Comandos para siglas
 %%%
-\newcommand{\FMAT}{{\sc Facultad de Matem·ticas}}
+\newcommand{\FMAT}{{\sc Facultad de Matem√°ticas}}
 \newcommand{\ULL}{{\sc Universidad de La Laguna}}
 \newcommand{\GULiC}{{\sc Grupo de Usuarios de Linux de Canarias}}
-\newcommand{\CILA}{Curso de IntroduciÛn a Linux para Alumnos}
-\newcommand{\PILA}{Party de InstalaciÛn de Linux para Alumnos}
-\newcommand{\TIL}{Taller de IniciaciÛn a Linux}
-\newcommand{\TILA}{Taller de IniciaciÛn a Linux para Alumnos}
+\newcommand{\CILA}{Curso de Introduci√≥n a Linux para Alumnos}
+\newcommand{\PILA}{Party de Instalaci√≥n de Linux para Alumnos}
+\newcommand{\TIL}{Taller de Iniciaci√≥n a Linux}
+\newcommand{\TILA}{Taller de Iniciaci√≥n a Linux para Alumnos}
 
 
-%%% ImplementaciÛn en  TeX del  "Õndice de  ejemplos" Crea  el entorno
+%%% Implementaci√≥n en  TeX del  "√çndice de  ejemplos" Crea  el entorno
 %%% "ejemplo" y el contador "nejemplo" Su uso es:
 %%%
-%%% En el lugar donde se desee  poner el "Õndice de ejemplos" utilizar
+%%% En el lugar donde se desee  poner el "√çndice de ejemplos" utilizar
 %%% el comando \listadeejemplos
 %%%
 %%% Para poner  un ejemplo  en el documento:  (Los dos  argumentos son
 %%% obligatorios)
 %%%
-%%% \begin{ejemplo}{Nombre del fichero de ejemplo}{DescripciÛn corta del ejemplo}
-%%%   DescripciÛn y comentarios del ejemplo.
+%%% \begin{ejemplo}{Nombre del fichero de ejemplo}{Descripci√≥n corta del ejemplo}
+%%%   Descripci√≥n y comentarios del ejemplo.
 %%% \end{ejemplo}
 %%%
-%%% El nombre  del fichero titular·  el ejemplo en la  parte superior,
+%%% El nombre  del fichero titular√°  el ejemplo en la  parte superior,
 %%% con una etiqueta de "Fichero <nombrefichero>"
 %%%
-%%% La descripcion corta ser· la referencia que aparecer· en el Õndice
+%%% La descripcion corta ser√° la referencia que aparecer√° en el √çndice
 %%% de ejemplos.
 %%%
-%%% La descripciÛn (mas larga) del ejemplo aparecera recuadrada debajo
+%%% La descripci√≥n (mas larga) del ejemplo aparecera recuadrada debajo
 %%% del mismo.
 %%%
 %%% Ejemplo de uso:
@@ -66,26 +66,26 @@
 %%%
 \usepackage{moreverb}
 \newcommand{\listadeejemplos}{%
-\cleardoublepage\chapter*{Õndice de ejemplos}% Creamos el Ìndice de ejemplos
+\cleardoublepage\chapter*{√çndice de ejemplos}% Creamos el √≠ndice de ejemplos
 \label{IndiceDeEjemplos}\@starttoc{lde}}%      y lo etiquetamos 
 \newcounter{nejemplo}[chapter]%                Contador subordinado al chapter
 \newcommand{\ejemploname}{Ejemplo }%           Nombre de la etiqueta
 \newcommand{\ejemplopath}{ejemplos/}%          Directorio de ejemplos
 \newenvironment{ejemplo}[2]{%                  Entorno "ejemplo", 2 argumentos
-\newcommand{\source}{#1} %                     DescripciÛn corta del ejemplo
-\newcommand{\descripcion}{{\tt[#1]} #2} %      DescripciÛn larga del ejemplo
-\vspace*{2mm}%                                 PequeÒo margen superior 
+\newcommand{\source}{#1} %                     Descripci√≥n corta del ejemplo
+\newcommand{\descripcion}{{\tt[#1]} #2} %      Descripci√≥n larga del ejemplo
+\vspace*{2mm}%                                 Peque√±o margen superior 
 \noindent\fbox{\sf Fichero \tt \source}%        Nombre del fichero del ejemplo
 \newline\rule[5mm]{\textwidth}{1pt} %                  Regla separadora al principio
 \stepcounter{nejemplo}%                        Se incremente el contador y
-\addcontentsline{lde}{section}{%               se aÒade una lÌnea al Ìndice
+\addcontentsline{lde}{section}{%               se a√±ade una l√≠nea al √≠ndice
 \protect\numberline{\thechapter.\thenejemplo}\descripcion}%  de ejemplos
 \vspace{-15mm}%                				   Se ajustan espacios
 \verbatimtabinput[8]{\ejemplopath\source}%     Se incluye el fichero fuente
 \vspace{-6mm}%                				   Se ajustan espacios
 \rule[1mm]{\textwidth}{1pt}\newline %          Se inserta un \n y otra regla
 \begin{tabular}{|p{0.97\textwidth}|}%          Se abre una tabla para la
-\hline%\rowcolor[gray]{0.9}%                   descripciÛn del ejemplo, con
+\hline%\rowcolor[gray]{0.9}%                   descripci√≥n del ejemplo, con
 \sf\ejemploname\thechapter.\thenejemplo:}{\\ % color gris claro de fondo
 \hline\end{tabular}\vspace{4mm}}%              Se deja un espacio vertical 
 
@@ -98,7 +98,7 @@
 
 
 %%%
-%%%  Extraido de cila-latex.sty (de Tom·s Bautista)
+%%%  Extraido de cila-latex.sty (de Tom√°s Bautista)
 %%%
 \newcommand{\manual}{Manual de \emph{\LaTeX{}}~\cite{manual}} 
 \newcommand{\companion}{\emph{The \LaTeX{} Companion}~\cite{companion}} 
@@ -106,7 +106,7 @@
 \newcommand{\contrib}[3]{#1\quad$<$\texttt{#2}$>$%
 {\small\\\quad\textit{#3}}\\[1ex]}
 %
-% Algunas instrucciones para ayudar a la creaciÛn del Ìndice de
+% Algunas instrucciones para ayudar a la creaci√≥n del √≠ndice de
 % materias.
 %
 %\newcommand{\bs}{\symbol{'134}}%Print backslash
@@ -116,7 +116,7 @@
   \renewcommand{\bs}{\symbol{92}}%Print backslash
 \fi
 %\newcommand{\bs}{\ensuremath{\mathtt{\backslash}}}%Imprime barra invertida
-% Entrada en el Ìndice para una orden
+% Entrada en el √≠ndice para una orden
 \newcommand{\cih}[1]{%
 \index{\LaTeX!instrucciones!#1@\texttt{\bs#1}}%
 \index{\LaTeX!#1@\texttt{\hspace*{-1.2ex}\bs #1}}}
@@ -126,19 +126,19 @@
 \index{\LaTeX!paquetes!#1@\textsf{#1}}%
 \index{\LaTeX!#1@\textsf{#1}}%
 \textsf{#1}}
-% Entrada en el Ìndice de entorno
+% Entrada en el √≠ndice de entorno
 \newcommand{\ei}[1]{%
 \index{\LaTeX!entornos!\texttt{#1}}%
 \index{\LaTeX!#1@\texttt{#1}}%
 \texttt{#1}}
-% Entrada en el Ìndice para mensajes
+% Entrada en el √≠ndice para mensajes
 \newcommand{\wni}[1]{%
 \index{\LaTeX!mensaje!\texttt{#1}}%
 \texttt{#1}}
-% Entrada en el Ìndice de una palabra
+% Entrada en el √≠ndice de una palabra
 \newcommand{\wi}[1]{#1\index{\LaTeX!#1}}
 %
-% Instrucciones de composiciÛn
+% Instrucciones de composici√≥n
 %
 \newenvironment{command}%
     {\nopagebreak\par\small\addvspace{3.2ex plus 0.8ex minus 0.2ex}%
@@ -149,7 +149,7 @@
         minus 0.2ex}%
      \vskip -\parskip}
 %
-% ComposiciÛn de fragmentos de cÛdigo
+% Composici√≥n de fragmentos de c√≥digo
 %
 \newenvironment{code}{\begin{quote}}{\end{quote}}
 %
@@ -157,7 +157,7 @@
 \newenvironment{intro}{\sffamily}{\vspace*{2ex minus 1.5ex}}
 %
 %
-% Entrada de sÌmbolo para la tabla de sÌmbolos matem·ticos
+% Entrada de s√≠mbolo para la tabla de s√≠mbolos matem√°ticos
 %
 \newcommand{\X}[1]{$#1$&\texttt{\string#1}\hspace*{1ex}}
 % Text normal.... 
@@ -169,7 +169,7 @@
 \newcommand{\W}[2]{$#1{#2}$&
   \texttt{\string#1}\texttt{\string{\string#2\string}}\hspace*{1ex}}
 \newcommand{\Y}[1]{$\big#1$ &\texttt{\string#1}}  %
-% Tabla de sÌmbolos matem·ticos
+% Tabla de s√≠mbolos matem√°ticos
 \newsavebox{\symbbox}
 \newenvironment{symbols}[1]%
 {\par\vspace*{2ex}
@@ -187,7 +187,7 @@
 % --- ejemplo ----
 % Este es un entorno para mostrar ejemplso en LaTeX.
 % En la parte izquierda se muestra el texto fuente
-% y en la derecha la composiciÛn.
+% y en la derecha la composici√≥n.
 %
 % \begin{example}
 % \Large Esto es grande
@@ -206,7 +206,7 @@
   \verbatim@start}%
  {\immediate\closeout\example@out\@esphack\endgroup%
 %
-% Y aquÌ lo que se ha aÒadido
+% Y aqu√≠ lo que se ha a√±adido
 %
   \par\small\addvspace{3ex plus 1ex}\vskip -\parskip
   \noindent
@@ -233,6 +233,6 @@
  {\vspace{-1ex}\hrule \end{minipage}\end{center}}
 
 %%%
-%%%  AÒadidos para poder compilar 
+%%%  A√±adidos para poder compilar 
 %%%
-\newcommand{\guia}{GuÌa local}
+\newcommand{\guia}{Gu√≠a local}

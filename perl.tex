@@ -4,23 +4,23 @@
 
 \section{Que es PERL}
 
-PERL es un lenguaje de scripts o guiones creado por Larry Wall en 1988, que, a pesar de haber tenido su m·xima difusiÛn con la apariciÛn de internet y el web, viene siendo utilizado desde hace varios aÒos por administradores de sistemas para la automatizaciÛn de tareas rutinarias, como pueden ser gestiÛn de grandes vol˙menes de usuarios, b˙squeda de patrones de texto mediante expresiones regulares, realizaciÛn de copias selectivas de seguridad, etc.
+PERL es un lenguaje de scripts o guiones creado por Larry Wall en 1988, que, a pesar de haber tenido su m√°xima difusi√≥n con la aparici√≥n de internet y el web, viene siendo utilizado desde hace varios a√±os por administradores de sistemas para la automatizaci√≥n de tareas rutinarias, como pueden ser gesti√≥n de grandes vol√∫menes de usuarios, b√∫squeda de patrones de texto mediante expresiones regulares, realizaci√≥n de copias selectivas de seguridad, etc.
 
-% Existen una enorme variedad de mÛdulos para PERL (baste decir el listado de ellos en texto plano ocupa varios megabytes). Tanto este listado como estos mÛdulos pueden encontrarse en la web de recursos para perl http://www.cpan.org
+% Existen una enorme variedad de m√≥dulos para PERL (baste decir el listado de ellos en texto plano ocupa varios megabytes). Tanto este listado como estos m√≥dulos pueden encontrarse en la web de recursos para perl http://www.cpan.org
 
-Como lenguaje interpretado, su potencia radica en su gran portabilidad siempre que los mÛdulos que se empleen se encuentren en la plataforma en que el script vaya a ser utilizado.
+Como lenguaje interpretado, su potencia radica en su gran portabilidad siempre que los m√≥dulos que se empleen se encuentren en la plataforma en que el script vaya a ser utilizado.
 
-Pese a la creencia popular, PERL sirve para desarrollar casi cualquier tipo de programa, pues entre sus mÛdulos se encuentran, por poner algunos ejemplos, mÛdulos de OpenGL (EspecificaciÛn para la creaciÛn de gr·ficos 3D),para el tratamiento de audio digital, o para la creaciÛn de interfaces gr·ficas, ya sea bajo plataformas corriendo sistemas GNU/Linux,Variantes de UNIX,Apple MacOs, Microsoft Windows, etc.
+Pese a la creencia popular, PERL sirve para desarrollar casi cualquier tipo de programa, pues entre sus m√≥dulos se encuentran, por poner algunos ejemplos, m√≥dulos de OpenGL (Especificaci√≥n para la creaci√≥n de gr√°ficos 3D),para el tratamiento de audio digital, o para la creaci√≥n de interfaces gr√°ficas, ya sea bajo plataformas corriendo sistemas GNU/Linux,Variantes de UNIX,Apple MacOs, Microsoft Windows, etc.
 
 \section{Donde conseguir PERL}
 
-La versiÛn oficial de PERL est· disponible de forma gratuita en la web oficial del proyecto PERL (http://www.perl.org) para las distintas plataformas anteriormente citadas.
+La versi√≥n oficial de PERL est√° disponible de forma gratuita en la web oficial del proyecto PERL (http://www.perl.org) para las distintas plataformas anteriormente citadas.
 
-Por otro lado, hay distribuciones empaquetadas por empresas, con algunos mÛdulos m·s que la versiÛn oficial ``base''.
+Por otro lado, hay distribuciones empaquetadas por empresas, con algunos m√≥dulos m√°s que la versi√≥n oficial ``base''.
 
-Destaca por su comodidad de instalaciÛn y la cantidad de mÛdulos disponibles ``activeperl'', de activestate (http://www.activestate.com).
+Destaca por su comodidad de instalaci√≥n y la cantidad de m√≥dulos disponibles ``activeperl'', de activestate (http://www.activestate.com).
 
-Activeperl est· disponible para Linux y para Windows, y puede ser descargado tambiÈn de forma gratuita.
+Activeperl est√° disponible para Linux y para Windows, y puede ser descargado tambi√©n de forma gratuita.
 
 \section{Primeros pasos}
 
@@ -32,9 +32,9 @@ PERL lee los scripts a partir de ficheros de texto plano. Para ejecutarlos, suel
 
 \end{verbatim}
 
-Esto ejecuta el guiÛn contenido en el fichero ``fichero.pl''. Esto no resulta muy sorprendente, desde luego.
+Esto ejecuta el gui√≥n contenido en el fichero ``fichero.pl''. Esto no resulta muy sorprendente, desde luego.
 
-Para ejecutar scripts PERL en GNU/Linux o UNIX, podemos recurrir a colocar al principio del guiÛn una lÌnea como esta:
+Para ejecutar scripts PERL en GNU/Linux o UNIX, podemos recurrir a colocar al principio del gui√≥n una l√≠nea como esta:
 
 \begin{verbatim}
 
@@ -42,7 +42,7 @@ Para ejecutar scripts PERL en GNU/Linux o UNIX, podemos recurrir a colocar al pr
 
 \end{verbatim}
 
-Con esto conseguiremos, tras dar permisos de ejecuciÛn al script mediante chmod 755 fichero.pl, poder ejecutarlo poniendo desde el shell:
+Con esto conseguiremos, tras dar permisos de ejecuci√≥n al script mediante chmod 755 fichero.pl, poder ejecutarlo poniendo desde el shell:
 
 \begin {verbatim}
 
@@ -50,7 +50,7 @@ Con esto conseguiremos, tras dar permisos de ejecuciÛn al script mediante chmod 
 
 \end{verbatim}
 
-Para probar que realmente nuestro intÈrprete PERL funciona correctamente, probemos un apasionante y a la vez complejo programa:
+Para probar que realmente nuestro int√©rprete PERL funciona correctamente, probemos un apasionante y a la vez complejo programa:
 
 \begin {verbatim}
 
@@ -59,23 +59,23 @@ print ``Hola mundo!\n'';
 
 \end{verbatim}
 
-\section{Entrada,salida y sint·xis b·sica}
+\section{Entrada,salida y sint√°xis b√°sica}
 
-La sint·xis de PERL a muchos programadores nos recuerda a la de C, por que emplea llaves ``{ }'', puntos y comas al final de las lÌneas, e incluso gran parte
-de las estructuras de control de C, las cuales se manejan de forma casi idÈntica en ambos lenguajes, y que veremos en el siguiente apartado. 
+La sint√°xis de PERL a muchos programadores nos recuerda a la de C, por que emplea llaves ``{ }'', puntos y comas al final de las l√≠neas, e incluso gran parte
+de las estructuras de control de C, las cuales se manejan de forma casi id√©ntica en ambos lenguajes, y que veremos en el siguiente apartado. 
 
-Para insertar comentarios en nuestro cÛdigo, emplearemos el caracter de ``almohadilla''.
+Para insertar comentarios en nuestro c√≥digo, emplearemos el caracter de ``almohadilla''.
 
 \begin{verbatim}
-# Esto es un comentario en PERL. Esta lÌnea no hace nada, pero tampoco
-# provoca errores de compilaciÛn en nuestro programa.
+# Esto es un comentario en PERL. Esta l√≠nea no hace nada, pero tampoco
+# provoca errores de compilaci√≥n en nuestro programa.
 \end{verbatim}
 
-Las variables en PERL son de tres tipos: arrays, escalares y estructuras ``hash''. Estas ser·n descritas en profundidad en la secciÛn ``Estructuras de datos, de control y operadores''. De momento, nos contentaremos con saber que los escalares son variables que sÛlo almacenan UN dato y que pueden contener datos numÈricos, cadenas ascii, etc y que se denotan anteponiendo a su nombre un signo de dolar. Se aplican las normas estandar de otros lenguajes para nombrar estas variables, como son no utilizar n˙meros al principio del identificador, no utilizar espacios y no utilizar palabras reservadas como identificadores.
-Cualquier omisiÛn en el cumplimiento de estas normas provocar· irremisiblemente un error de interpretaciÛn.
+Las variables en PERL son de tres tipos: arrays, escalares y estructuras ``hash''. Estas ser√°n descritas en profundidad en la secci√≥n ``Estructuras de datos, de control y operadores''. De momento, nos contentaremos con saber que los escalares son variables que s√≥lo almacenan UN dato y que pueden contener datos num√©ricos, cadenas ascii, etc y que se denotan anteponiendo a su nombre un signo de dolar. Se aplican las normas estandar de otros lenguajes para nombrar estas variables, como son no utilizar n√∫meros al principio del identificador, no utilizar espacios y no utilizar palabras reservadas como identificadores.
+Cualquier omisi√≥n en el cumplimiento de estas normas provocar√° irremisiblemente un error de interpretaci√≥n.
 
 
-Se puede hacer corresponder a una variable de tipo escalar una cadena mediante el uso de el igual y las comillas simples. Para los valores numÈricos se pone sÌmplemente el igual y el valor, sin comillas. Ejemplo:
+Se puede hacer corresponder a una variable de tipo escalar una cadena mediante el uso de el igual y las comillas simples. Para los valores num√©ricos se pone s√≠mplemente el igual y el valor, sin comillas. Ejemplo:
 
 \begin{verbatim}
 
@@ -86,7 +86,7 @@ $numero_de_piso = '5';
 
 \end{verbatim}
 
-NÛtese que si pusieramos las comillas para asignar un valor numÈrico a una variable escalar, PERL interpretarÌa dicha variable como una cadena de caracteres ASCII, por lo que no podrÌamos, por ejemplo, sumar o restar dichos n˙meros.
+N√≥tese que si pusieramos las comillas para asignar un valor num√©rico a una variable escalar, PERL interpretar√≠a dicha variable como una cadena de caracteres ASCII, por lo que no podr√≠amos, por ejemplo, sumar o restar dichos n√∫meros.
 
 Es importante conocer que podemos utilizar tanto comillas simples como comillas dobles para asignar cadenas a escalares. Pero existe una diferencia.
 
@@ -99,7 +99,7 @@ print 'Me llamo $nombre''; # Imprime: Me llamo $nombre\n
 \end{verbatim}
 
 
-Ahora que ya sabemos lo b·sico de las reglas del juego, veamos algo m·s sobre la funciÛn print.
+Ahora que ya sabemos lo b√°sico de las reglas del juego, veamos algo m√°s sobre la funci√≥n print.
 
 
 
@@ -115,9 +115,9 @@ Ahora que ya sabemos lo b·sico de las reglas del juego, veamos algo m·s sobre la
 
 \section{Ficheros}
 
-\section{AutomatizaciÛn de tareas y ejecuciÛn de comandos externos}
+\section{Automatizaci√≥n de tareas y ejecuci√≥n de comandos externos}
 
-\section{Interfaces b·sicas de usuario en modo texto}
+\section{Interfaces b√°sicas de usuario en modo texto}
 
-\section{BibliografÌa recomendada}
+\section{Bibliograf√≠a recomendada}
 

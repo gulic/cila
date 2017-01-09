@@ -1,8 +1,8 @@
-# ajustes por mÌnimos cuadrados en gnuplot 
+# ajustes por m√≠nimos cuadrados en gnuplot 
 
-y(x) = a*x + b   # funcion a la que se ajustar·
+y(x) = a*x + b   # funcion a la que se ajustar√°
 a = 0.0          # valores iniciales
-b = 0.0          # de los par·metros
+b = 0.0          # de los par√°metros
 
 fit y(x) 'gnuplot-fit.dat' via a, b
 set title 'Ajuste sin pesar'

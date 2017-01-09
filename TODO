@@ -2,95 +2,95 @@
 Lista de cosas que faltan por incorporar al libro
 =================================================
 
-Si se  te ocurren m·s ap˙ntalas  al final, en la  parte "Sugerido". Si
-ganan la  consideraciÛn del equipo  o simplemente alguien  (que puedes
-ser t˙) decide escribirlas entonces se borrar·n de este fichero porque
-pasar·n a ser WIP ("Work In Progress")
+Si se  te ocurren m√°s ap√∫ntalas  al final, en la  parte "Sugerido". Si
+ganan la  consideraci√≥n del equipo  o simplemente alguien  (que puedes
+ser t√∫) decide escribirlas entonces se borrar√°n de este fichero porque
+pasar√°n a ser WIP ("Work In Progress")
 
 
 Urgente
 =======
 
- - ReesctructuraciÛn jer·rquica de  los ficheros (capÌtulos, ejemplos,
-   e im·genes)
+ - Reesctructuraci√≥n jer√°rquica de  los ficheros (cap√≠tulos, ejemplos,
+   e im√°genes)
  
- - Convertir todas im·genes a PNG.
+ - Convertir todas im√°genes a PNG.
 
 Prioritario
 ===========
 
  - Pantallazos: Repetirlos  en formato  PNG (apt-get  install netpbm).
    Por  favor  procuren utilizar  pantallazos  no  mayores de  800x600
-   pÌxeles, pues m·s  grandes no quedan del todo  bien al imprimirlos.
+   p√≠xeles, pues m√°s  grandes no quedan del todo  bien al imprimirlos.
    Las pantallazos  deben hacerse en  escritorios Gnome 2.2 y  KDE 3.1
    con fondos temas claros y bonitos, nada de escritorios minimalistas
-   y oscuros (esto tambiÈn va por mÌ 0:-)
+   y oscuros (esto tambi√©n va por m√≠ 0:-)
 
- - Tema de Yacas. Actualizar de GnuPlot a Plot2D. AÒadir ejemplos m·s
-   jugosos de ¡lgebra Lineal y polinomios.
+ - Tema de Yacas. Actualizar de GnuPlot a Plot2D. A√±adir ejemplos m√°s
+   jugosos de √Ålgebra Lineal y polinomios.
 
- - Tema de  OpenOffice. Carlos PÈrez  (aka Sirma) a  aportado material
-   para este tema.  Se trata de un tema sobre  StarOffice que escribiÛ
-   para los  cursos de LuCAS, asÌ  que hay que adaptarlo  para que sea
-   v·lido para OpenOffice. TambiÈn hay que substituir los pantallazos.
+ - Tema de  OpenOffice. Carlos P√©rez  (aka Sirma) a  aportado material
+   para este tema.  Se trata de un tema sobre  StarOffice que escribi√≥
+   para los  cursos de LuCAS, as√≠  que hay que adaptarlo  para que sea
+   v√°lido para OpenOffice. Tambi√©n hay que substituir los pantallazos.
 
- - ManipulaciÛn  de gr·ficos.  HabrÌa que  dividirlo en  varios temas,
-   tratando un programa  por tema, de forma que  constituyan un mÛdulo
-   independiente. Los programas m·s interesantes que consideramos son:
-   The  GIMP, DIA,  Qcad  y  alguno de  dibujo  vectorial. Pablo  RuÌz
-   M˙zquiz se  ha ofrecido para  escribir sobre Blender,  Miguel ¡ngel
-   (aka miguev) est· dispuesto a escribir  sobre DIA y The GIMP. Falta
-   alguien  que escriba  sobre QCad  y estarÌa  bien hacer  algo sobre
-   sodipodi. Manolo podrÌa aÒadir un tema sobre sketch.
+ - Manipulaci√≥n  de gr√°ficos.  Habr√≠a que  dividirlo en  varios temas,
+   tratando un programa  por tema, de forma que  constituyan un m√≥dulo
+   independiente. Los programas m√°s interesantes que consideramos son:
+   The  GIMP, DIA,  Qcad  y  alguno de  dibujo  vectorial. Pablo  Ru√≠z
+   M√∫zquiz se  ha ofrecido para  escribir sobre Blender,  Miguel √Ångel
+   (aka miguev) est√° dispuesto a escribir  sobre DIA y The GIMP. Falta
+   alguien  que escriba  sobre QCad  y estar√≠a  bien hacer  algo sobre
+   sodipodi. Manolo podr√≠a a√±adir un tema sobre sketch.
 
- - Tema de GNU  Emacs. AbrÌa que dejarlo  como el de VI,  salvo que en
+ - Tema de GNU  Emacs. Abr√≠a que dejarlo  como el de VI,  salvo que en
    lugar de enrollarse con las expresiones regulares se pueden mostrar
    la cantidad de cosas que pueden hacerse desde Emacs. Imprescindible
    el quakemacs ;-)
 
- - AdministraciÛn b·sica.  EstarÌa bien  aÒadir unos  cuantos consejos
-   para salvar problemas  en la compilaciÛn de  programas y librerÌas.
-   Esto  puede ser  muy interesante  tambiÈn para  que la  gente pueda
-   probar herramientas nuevas  que no estÈn empaquetadas  en binario o
+ - Administraci√≥n b√°sica.  Estar√≠a bien  a√±adir unos  cuantos consejos
+   para salvar problemas  en la compilaci√≥n de  programas y librer√≠as.
+   Esto  puede ser  muy interesante  tambi√©n para  que la  gente pueda
+   probar herramientas nuevas  que no est√©n empaquetadas  en binario o
    cuyos paquetes suelen estar obsoletos.
 
- - Llenar m·s  el apÈndice de  referencias en internet. Hacer  que las
-   URLs queden como hiperenlaces en la versiÛn PDF.
+ - Llenar m√°s  el ap√©ndice de  referencias en internet. Hacer  que las
+   URLs queden como hiperenlaces en la versi√≥n PDF.
 
 Sugerido
 ========
 
- - Probar a cambiar los Ìndices de materias, figuras, etc al final.
-   (sugerencia de Pablo RuÌz M˙zquiz)
+ - Probar a cambiar los √≠ndices de materias, figuras, etc al final.
+   (sugerencia de Pablo Ru√≠z M√∫zquiz)
 
- - CompilaciÛn  del  kernel.   No  sÈ  si  meterlo  en   la  parte  de
-   administaciÛn  o  en  la  de   instalaciÛn.  Todos sabemos  que  el
+ - Compilaci√≥n  del  kernel.   No  s√©  si  meterlo  en   la  parte  de
+   administaci√≥n  o  en  la  de   instalaci√≥n.  Todos sabemos  que  el
    kernel-howto  explica  todo esto  bien,  pero  si no  recuerdo  mal
-   supone que  el lector tiene  una base  no mÌnima en  Linux. EstarÌa
+   supone que  el lector tiene  una base  no m√≠nima en  Linux. Estar√≠a
    bien  explicar por  encima los  pasos y  luego dar  trucos para  la
-   configuraciÛn de los dispositivos  m·s tÌpicos: scanner, impresora,
-   grabadora de  CD/DVD, lector DVD,  PDAs vÌa USB, etc.  Por supuesto
-   este  podrÌa ser  un tema  _muy_  abierto, porque  cada uno  podrÌa
-   explicar  cÛmo  configurar  los dispositivos  interesantes  que  ha
+   configuraci√≥n de los dispositivos  m√°s t√≠picos: scanner, impresora,
+   grabadora de  CD/DVD, lector DVD,  PDAs v√≠a USB, etc.  Por supuesto
+   este  podr√≠a ser  un tema  _muy_  abierto, porque  cada uno  podr√≠a
+   explicar  c√≥mo  configurar  los dispositivos  interesantes  que  ha
    conseguido rular.
 
- - Introducciones a  programaciÛn en  varios lenguajes  que o  bien no
-   suelen  enseÒarse  en  los  centros docentes  o  bien  se  explican
+ - Introducciones a  programaci√≥n en  varios lenguajes  que o  bien no
+   suelen  ense√±arse  en  los  centros docentes  o  bien  se  explican
    malamente. Por  ejemplo: Python, PHP, Perl,  MySQL, PostgreSQL. Hay
    algo hecho, pero se trata de la parte "menos prioritaria" ya que el
-   libro  est·  dirigido  a  novatos,  y pocos  novatos  se  ponen   a
+   libro  est√°  dirigido  a  novatos,  y pocos  novatos  se  ponen   a
    programar  por amor  al  arte en  un lenguaje  que  nadie les  haya
    pedido.
 
- - Herramientas para diseÒo electrÛnico. HabrÌa que buscar un software
+ - Herramientas para dise√±o electr√≥nico. Habr√≠a que buscar un software
    que realmente  pueda suplir las  necesidades de un  estudiante. Los
-   que he visto  hasta ahora son gEDA, oregano y  DIA. Me quedarÌa con
+   que he visto  hasta ahora son gEDA, oregano y  DIA. Me quedar√≠a con
    gEDA, aunque es un poco complicado de hechar a caminar.
 
- - DiseÒo 3D øquÈ  tal blender o vertex? øAlguien con  CI 7486 que sea
+ - Dise√±o 3D ¬øqu√©  tal blender o vertex? ¬øAlguien con  CI 7486 que sea
    capaz de explicar esto a un estudiante novato? X-D
 
- - Herramientas  para  quÌmica. Que  recuerde  ahora  mismo existe  un
+ - Herramientas  para  qu√≠mica. Que  recuerde  ahora  mismo existe  un
    software escrito en Python,  llamado PyMol, que permite representar
-   molÈculas y no sÈ si tambiÈn hacer simulaciones.
+   mol√©culas y no s√© si tambi√©n hacer simulaciones.
 

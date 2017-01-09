@@ -1,48 +1,48 @@
 
 
-			LIBRO DEL CURSO DE INTROUCCI”N A LINUX PARA ALUMNOS
+			LIBRO DEL CURSO DE INTROUCCI√ìN A LINUX PARA ALUMNOS
 			===================================================
 
-	Este fichero contiene informaciÛn de lectura _obligada_ para los
+	Este fichero contiene informaci√≥n de lectura _obligada_ para los
 	colaboradores y recomendada para los curiosos. Los apartados son:
 
 	- Contenido:			Ficheros contenidos en este directorio/paquete
 	- Herramientas LaTeX:	Programas y utilidades LaTeX necesarias
 	- Paquetes LaTeX:		Paquetes del compilador LaTeX que utilizamos
 	- Comandos LaTeX:		Recordatorio de los comandos LaTeX que
-							utilizamos y para quÈ los utilizamos
+							utilizamos y para qu√© los utilizamos
 
 
 	Convenciones
 	============
-	Lee el fichero presentacion.tex, lÌneas 218 a 294. SÕ, AHORA.
+	Lee el fichero presentacion.tex, l√≠neas 218 a 294. S√ç, AHORA.
 
 
-	Este directorio deberÌa contener (al menos) los ficheros
+	Este directorio deber√≠a contener (al menos) los ficheros
 	========================================================
 
 	- LEEME				Este fichero
 	- tareas			Fichero donde apuntamos lo que vamos haciendo
 	- Makefile			Instrucciones para GNU Make
-	- main.tex			Fichero principal del cÛdgido LaTeX
+	- main.tex			Fichero principal del c√≥dgido LaTeX
 	- cila.sty			Paquete LaTeX (basado en fncychap.sty)
-	- imagenes			Directorio donde pondremos todos los gr·ficos
-	- ejemplos			Directorio donde pondremos los ejemplos de cÛdigo
+	- imagenes			Directorio donde pondremos todos los gr√°ficos
+	- ejemplos			Directorio donde pondremos los ejemplos de c√≥digo
 	- portada.tex		Portadas y notas de copyright
-	- presentacion.tex	PresentaciÛn de los apuntes
+	- presentacion.tex	Presentaci√≥n de los apuntes
 	- contrib.tex		Lista de contribuciones
-	- introduccion.tex	CapÌtulo 'IntroducciÛn a GNU/Linux'
-	- fdles.tex			ApÈndice con la GNU FDL en castellano
-	- biblio.bib		Base de datos bibliobr·fica en formato BIBTeX
+	- introduccion.tex	Cap√≠tulo 'Introducci√≥n a GNU/Linux'
+	- fdles.tex			Ap√©ndice con la GNU FDL en castellano
+	- biblio.bib		Base de datos bibliobr√°fica en formato BIBTeX
 	- *.tex				Temas de los apuntes, un fichero .tex por tema
 
 
 	Herramientas LaTeX
 	==================
 
-	- LaTeX				compilador LaTeX con sus fuentes y paquÈtes
-	- BIBTeX			compilador LaTeX de bibliografÌas
-	- MAKEINDEX			compilador LaTeX de Ìndices terminolÛgicos
+	- LaTeX				compilador LaTeX con sus fuentes y paqu√©tes
+	- BIBTeX			compilador LaTeX de bibliograf√≠as
+	- MAKEINDEX			compilador LaTeX de √≠ndices terminol√≥gicos
 	- dvips				convertidor de DVI a PostScript
 	- ps2pdf			convertidor de PostScript a PDF
 	- latex2html		convertidor de LaTeX a HTML (prescindible)
@@ -53,30 +53,29 @@
 	==============
 	
 	- inputenc			convierte los caracteres especiales a los comandos
-						LaTex apropiados, lo usaremos con la opciÛn 'latin1'
-						para ISO-8859-1 e ISO-8859-15
+						LaTex apropiados, lo usaremos con la opci√≥n 'utf8x'
 	- babel				convierte los nombres de variables al castellano,
-						us·ndolo con la opciÛn 'spanish'
-	- fancyheadings		facilita el uso de cabeceras y pies de p·gina
+						us√°ndolo con la opci√≥n 'spanish'
+	- fancyheadings		facilita el uso de cabeceras y pies de p√°gina
 						personalizados
-	- graphicx			facilita la inclusiÛn de gr·ficos, con m·s opciones
+	- graphicx			facilita la inclusi√≥n de gr√°ficos, con m√°s opciones
 						que el paquete 'graphics'
-	- psfig				facilita la manipulaciÛn de gr·ficos PostScript
-	- eurosym			permite el uso del sÌmbolo del §uro
+	- psfig				facilita la manipulaci√≥n de gr√°ficos PostScript
+	- eurosym			permite el uso del s√≠mbolo del ¬§uro
 	- makeidx			combinado con MAKEINDEX lo usaremos para construir
-						el Ìndice terminolÛgico
-	- html				permite introducir referencias a p·ginas web (URLs)
-						que al traducir a HTML resultan en enl·ces
+						el √≠ndice terminol√≥gico
+	- html				permite introducir referencias a p√°ginas web (URLs)
+						que al traducir a HTML resultan en enl√°ces
 	- color             Permite usar colores en los formatos PostScript y PDF.
-						⁄senlo con precauciÛn.
+						√ösenlo con precauci√≥n.
 	- colortbl			Permite colorear columnas y filas de tablas (PS, PDF).
-						⁄senlo con precauciÛn.
+						√ösenlo con precauci√≥n.
 	- verbatim			proporciona potentes usos de entornos verbatim
-	- cila				mejora el aspecto de las p·ginas que abren partes
-						o capÌtulos (bas·ndose en el paquete FancChapter),
-						dem·s de definir algunas siglas, longitudes, y 
+	- cila				mejora el aspecto de las p√°ginas que abren partes
+						o cap√≠tulos (bas√°ndose en el paquete FancChapter),
+						dem√°s de definir algunas siglas, longitudes, y 
 						constantes. Implementa el entorno para ejemplos y 
-						el Õndice de ejemplos. Debe ser el ˙ltimo.
+						el √çndice de ejemplos. Debe ser el √∫ltimo.
 
 
 	Chuleta de comandos LaTex utilizados
@@ -85,14 +84,14 @@
 	{\sf TextoSinAdornos}
 		Cambia el texto al tipo de 'sin adornos'
 	
-	{\tt TextoEnM·quinaDeEscribir}
+	{\tt TextoEnM√°quinaDeEscribir}
 		Cambia el texto al tipo de 'maquina de escribir'
 
 	{\bf TextoEnNegrita}
 		Cambia el texto al tipo en 'negrita'
 
-	{\em TextoEnIt·lica}
-		Cambia el texto al tipo 'it·lica'
+	{\em TextoEnIt√°lica}
+		Cambia el texto al tipo 'it√°lica'
 	
 	{\sc TextoEnVersalita}
 		Cambia el texto al tipo 'versalita'
@@ -101,10 +100,10 @@
 		Introduce el texto 'Grupo de Usuarios de Linux de Canarias'
 	
 	\CILA
-		Introduce el texto 'Curso de IntroducciÛn a Linux para Alumnos'
+		Introduce el texto 'Curso de Introducci√≥n a Linux para Alumnos'
 	
 	\PILA
-		Introduce el texto 'Party de InstalaciÛn de Linux para Alumnos'
+		Introduce el texto 'Party de Instalaci√≥n de Linux para Alumnos'
 	
 	\LaTeX
 		Introduce el logotipo de LaTeX
@@ -115,36 +114,36 @@
 	\LyX
 		Introduce el logotipo de LyX
 
-	\chapter{NombreCapÌtulo}
-		Comienza un capÌtulo, no se cierra
+	\chapter{NombreCap√≠tulo}
+		Comienza un cap√≠tulo, no se cierra
 	
-	\chapter*{NombreCapÌtulo}
-		Igual que el anterior, pero no numera el capÌtulo ni incrementa
-		el contador de capÌtulo
+	\chapter*{NombreCap√≠tulo}
+		Igual que el anterior, pero no numera el cap√≠tulo ni incrementa
+		el contador de cap√≠tulo
 
-	\section{NombreSecciÛn}
-		Comienza una secciÛn, no se cierra
+	\section{NombreSecci√≥n}
+		Comienza una secci√≥n, no se cierra
 
-	\section*{NombreSecciÛn}
-		Igual que el anterior, pero no numera el capÌtulo ni incrementa
-		el contador de capÌtulo
+	\section*{NombreSecci√≥n}
+		Igual que el anterior, pero no numera el cap√≠tulo ni incrementa
+		el contador de cap√≠tulo
 
-	\subsection{NombreSubsecciÛn}
-		Comienza una subsecciÛn, no se cierra
+	\subsection{NombreSubsecci√≥n}
+		Comienza una subsecci√≥n, no se cierra
 
 	\begin{verbatim}
-		Comienza un entorno en el que el texto se mostrar· cal cual
-		sea tecleado. Lo usaremos para cÛdigo fuente, salidas de un
+		Comienza un entorno en el que el texto se mostrar√° cal cual
+		sea tecleado. Lo usaremos para c√≥digo fuente, salidas de un
 		terminal, contenido de ficheros de ejemplo, etc. 
 		Se cierra con \end{verbatim}
 
-	\begin{ejemplo}{Nombre del fichero}{DescripciÛn corta del ejemplo}
-		Comienza un entorno destinado a mostrar ejemplos, sÛlo para
-		cÛdigo fuente de programas. Para usarlo lÈanse los comentarios
-		del fichero cila.sty (lÌneas 77 a 104)
+	\begin{ejemplo}{Nombre del fichero}{Descripci√≥n corta del ejemplo}
+		Comienza un entorno destinado a mostrar ejemplos, s√≥lo para
+		c√≥digo fuente de programas. Para usarlo l√©anse los comentarios
+		del fichero cila.sty (l√≠neas 77 a 104)
 	
 	\begin{itemize}
-		Comienza una lista desordenada (sin n˙meros). Los elementos 
+		Comienza una lista desordenada (sin n√∫meros). Los elementos 
 		de la lista se indican con \item y la lista se cierra con 
 		\end{itemize}
 
@@ -153,7 +152,7 @@
 		Se cierra con \end{enumerate}
 
 	\label{NombreEtiqueta}
-		Etiqueta una posiciÛn en el documento, la cual se podr· referenciar
+		Etiqueta una posici√≥n en el documento, la cual se podr√° referenciar
 		con \ref o \pageref
 	
 	\ref{NombreEtiqueta}
@@ -161,32 +160,32 @@
 		\label{NombreEtiqueta}
 
 	\pageref{NombreEtiqueta}
-		Introduce una referencia a la p·gina del documento donde se
+		Introduce una referencia a la p√°gina del documento donde se
 		encuentre \label{NombreEtiqueta}
 
 	\index{NombreEtiqueta}
-		Introduce una referencia para usar en el Ìndice terminolÛgico.
+		Introduce una referencia para usar en el √≠ndice terminol√≥gico.
 	
 	\cite{NombreObra}
-		Introduce una referencia a una obra de la bibliografÌa
+		Introduce una referencia a una obra de la bibliograf√≠a
 
 	\begin{quote}
-		Comienza un entorno en el que se incrementan los m·rgenes
+		Comienza un entorno en el que se incrementan los m√°rgenes
 		laterales, lo usaremos para citas textuales y similares.
 		Se cierra con \end{quote}
 
 	\begin{center}
-		Comienza un entorno en el que el texto est· centrado y sin 
-		ajustar la longitud de las lÌneas, se cierra con \end{center}
+		Comienza un entorno en el que el texto est√° centrado y sin 
+		ajustar la longitud de las l√≠neas, se cierra con \end{center}
 	
 	\begin{flushright}
-		Comienza un entorno en el que el texto est· ajustado a la
-		derecha, y sin ajustar la longitud de las lÌneas, se cierra
+		Comienza un entorno en el que el texto est√° ajustado a la
+		derecha, y sin ajustar la longitud de las l√≠neas, se cierra
 		con \end{flushright}
 
 	\begin{flushleft}
-		Comienza un entorno en el que el texto est· ajustado a la
-		izquierda, y sin ajustar la longitud de las lÌneas, se cierra
+		Comienza un entorno en el que el texto est√° ajustado a la
+		izquierda, y sin ajustar la longitud de las l√≠neas, se cierra
 		con \end{flushleft}
 
 

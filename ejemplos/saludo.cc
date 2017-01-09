@@ -1,5 +1,5 @@
 // saludo.cc .- Ejemplo de programa en C++.
-//              Definición de los miembros de la clase saludo.
+//              DefiniciÃ³n de los miembros de la clase saludo.
 
 #include <iostream.h>
 #include "saludo.h"

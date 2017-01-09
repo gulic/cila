@@ -6,5 +6,5 @@
         y
         saltos
         de
-        línea
+        lÃ­nea
 

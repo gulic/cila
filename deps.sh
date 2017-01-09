@@ -3,7 +3,7 @@
 # Script chapucero para buscar referencias muertas, i.e.
 # \ref{algo} o \pageref{algo} cuando no hay \label{algo}
 #
-# Miguel ¡ngel Vilela, Septiembre 2002
+# Miguel √Ångel Vilela, Septiembre 2002
 
 if ! test -a labels
 then

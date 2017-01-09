@@ -5,34 +5,34 @@
 \chapter{Depuradores}
 \label{depuradores.tex}
 \index{Depuradores}
-\section{Depurando la aplicaciÛn}
+\section{Depurando la aplicaci√≥n}
 
 Se suele decir que el 10\% del  tiempo de desarrollo de un programa se
-dedica a la codificaciÛn y el 90\% restante a la depuraciÛn. Al margen
+dedica a la codificaci√≥n y el 90\% restante a la depuraci√≥n. Al margen
 de  que sea  cierto o  no la  verdad es  que es  de vital  importancia
 disponer de las  herramientas adecuadas para corregir  los errores del
 software en un tiempo razonable.
 
-La primera  recomendaciÛn es  dejar que  {\tt lclint}  analice nuestro
-cÛdigo  para  que  busque  y notifique  cualquier  inconsistencia.  Es
-importante destacar que dicho programa es mucho m·s potente detectando
-posibles errores que  el analizador sint·ctico del {\tt  gcc} debido a
-que  el  compilador asume  que  ya  hemos  pasado nuestro  cÛdigo  por
-un  programa  como  {\tt  lclint}.  Esa  suposiciÛn  permite  al  {\tt
+La primera  recomendaci√≥n es  dejar que  {\tt lclint}  analice nuestro
+c√≥digo  para  que  busque  y notifique  cualquier  inconsistencia.  Es
+importante destacar que dicho programa es mucho m√°s potente detectando
+posibles errores que  el analizador sint√°ctico del {\tt  gcc} debido a
+que  el  compilador asume  que  ya  hemos  pasado nuestro  c√≥digo  por
+un  programa  como  {\tt  lclint}.  Esa  suposici√≥n  permite  al  {\tt
 gcc}  realizar  ciertas optimizaciones  que  mejoran  su velocidad  de
-compilaciÛn.
+compilaci√≥n.
 
 \begin{verbatim}
 $ lclint main.c holafunc.c
 \end{verbatim}
 
 Si disponemos de nuestro programa perfectamente compilado y observamos
-que  presenta alg˙n  error del  que no  sabemos determinar  su origen,
+que  presenta alg√∫n  error del  que no  sabemos determinar  su origen,
 significa  que ha  llegado la  hora utilizar  el depurador.  GNU/Linux
 dispone del {\sf  GNU Debugger} bajo el  comando {\tt gdb}\label{gdb}.
-Para  \index{Depuradores!GNU  Debugger   (GDB)}  usarlo  sÛlo  debemos
-ejecutarlo  especificando  el  nombre  del programa  en  la  lÌnea  de
-comandos; y haber compilado nuestro programa con la opciÛn {\tt -g}.
+Para  \index{Depuradores!GNU  Debugger   (GDB)}  usarlo  s√≥lo  debemos
+ejecutarlo  especificando  el  nombre  del programa  en  la  l√≠nea  de
+comandos; y haber compilado nuestro programa con la opci√≥n {\tt -g}.
 
 \begin{verbatim}
 $ gdb holamundo
@@ -47,18 +47,18 @@ This GDB was configured as "i386-linux"...
 \end{verbatim}
 
 En ese momento tendremos al {\tt gdb} esperando alguno de los comandos
-de depuraciÛn.  A con\-ti\-nua\-ciÛn  disponemos de  una lista  de los
-comandos m·s b·sicos.
+de depuraci√≥n.  A con\-ti\-nua\-ci√≥n  disponemos de  una lista  de los
+comandos m√°s b√°sicos.
 
 \begin{description}
 
-\item[{\tt break}]  Sit˙a un punto  de ruptura  en la lÌnea  o funciÛn
+\item[{\tt break}]  Sit√∫a un punto  de ruptura  en la l√≠nea  o funci√≥n
 indicada como argumento.
 
-\item[{\tt continue}]  Contin˙a la ejecuciÛn  de un programa  que est·
+\item[{\tt continue}]  Contin√∫a la ejecuci√≥n  de un programa  que est√°
 siendo depurado y se encuentra detenido en un punto de ruptura.
 
-\item[{\tt display  exp}] Muestra el  valor de la expresiÛn  {\tt exp}
+\item[{\tt display  exp}] Muestra el  valor de la expresi√≥n  {\tt exp}
 cada vez que el programa se detiene.
 
 \item[{\tt  help}] Lista  las clases  de comandos  disponibles. Si  el
@@ -66,39 +66,39 @@ comando va  seguido por un nombre  de clase se listan  los comandos de
 dicha clase.  Si va seguido  por un nombre  de comando se  muestra una
 ayuda completa del comando indicado.
 
-\item[{\tt  list}]  Lista una  lÌnea  o  funciÛn especificada.  Si  el
-comando  va seguido  del nombre  de  una funciÛn,  el comando  muestra
-dicha  funciÛn. Si  va  seguido de  un n˙mero  de  lÌnea, muestra  esa
-lÌnea.  En  programas  de  varios  archivos  se  puede  utilizar  {\tt
-nombre\_archivo:nombre\_funcion} o {\tt nombre\_archivo:numero\_lÌnea}
+\item[{\tt  list}]  Lista una  l√≠nea  o  funci√≥n especificada.  Si  el
+comando  va seguido  del nombre  de  una funci√≥n,  el comando  muestra
+dicha  funci√≥n. Si  va  seguido de  un n√∫mero  de  l√≠nea, muestra  esa
+l√≠nea.  En  programas  de  varios  archivos  se  puede  utilizar  {\tt
+nombre\_archivo:nombre\_funcion} o {\tt nombre\_archivo:numero\_l√≠nea}
 para  listar  los  contenidos  de  un archivo  particular.  Si  no  se
-especifican argumentos se  lista desde la ˙ltima lÌnea  mostrada; y si
-se  especifican  dos n˙meros  de  lÌnea  separados  por una  coma,  se
-muestran las lÌneas comprendidas en el intervalo.
+especifican argumentos se  lista desde la √∫ltima l√≠nea  mostrada; y si
+se  especifican  dos n√∫meros  de  l√≠nea  separados  por una  coma,  se
+muestran las l√≠neas comprendidas en el intervalo.
 
-\item[{\tt next}] EjecuciÛn paso a  paso pero ignorando las llamadas a
+\item[{\tt next}] Ejecuci√≥n paso a  paso pero ignorando las llamadas a
 funciones.
 
-\item[{\tt print exp}]  Muestra el valor de la expresiÛn  {\tt exp} en
+\item[{\tt print exp}]  Muestra el valor de la expresi√≥n  {\tt exp} en
 el punto actual.
 
 \item[{\tt quit}] Salir del {\tt gdb}.
 
-\item[{\tt run}] Inicia la ejecuciÛn  del programa. Los argumentos del
+\item[{\tt run}] Inicia la ejecuci√≥n  del programa. Los argumentos del
 comando son los argumentos que se le pasan al programa.
 
-\item[{\tt  step}] EjecuciÛn  paso  a paso  incluso  de las  funciones
+\item[{\tt  step}] Ejecuci√≥n  paso  a paso  incluso  de las  funciones
 llamadas por el programa.
 
-\item[{\tt undisplay  exp}] Deja de  mostrar el valor de  la expresiÛn
+\item[{\tt undisplay  exp}] Deja de  mostrar el valor de  la expresi√≥n
 {\tt exp} cada vez que el programa se detiene.
 
 \end{description}
 
-El  n˙mero  de  comandos  es  mucho m·s  grande  pero  basta  con  los
+El  n√∫mero  de  comandos  es  mucho m√°s  grande  pero  basta  con  los
 anteriores para agilizar enormemente  nuestro trabajo. Una alternativa
 a todo  esto es  usar el {\tt  ddd} que se  puede considerar  como una
-interfaz gr·fica  para el {\tt gdb}.  Funciona sobre las {\sf  X} y su
+interfaz gr√°fica  para el {\tt gdb}.  Funciona sobre las {\sf  X} y su
 uso es semejante a de los depuradores existentes en otras plataformas.
 
 \section{Data Display Debugger: DDD}
@@ -106,21 +106,21 @@ uso es semejante a de los depuradores existentes en otras plataformas.
 
 Como ya  hemos comentado anteriormente los  programadores suelen pasar
 mucho tiempo utilizando un depuraror  para buscar fallos que no son
-faciles de encontrar simplemente mirando el cÛdigo, esto suele ocurrir
-muy  habitualmente cuando  se trabaja  con memoria  din·mica, pues  la
-asignacion de  Èsta no se hace  en tiempo de compilaciÛn,  sino que se
-hace en  tiempo de  ejecuciÛn y  es m·s  complicado seguirle  la pista
-cuando estamos escribiendo cÛdigo, adem·s normalmente los analizadores
-sint·cticos de los compiladores no  detectan muchos de los errores que
+faciles de encontrar simplemente mirando el c√≥digo, esto suele ocurrir
+muy  habitualmente cuando  se trabaja  con memoria  din√°mica, pues  la
+asignacion de  √©sta no se hace  en tiempo de compilaci√≥n,  sino que se
+hace en  tiempo de  ejecuci√≥n y  es m√°s  complicado seguirle  la pista
+cuando estamos escribiendo c√≥digo, adem√°s normalmente los analizadores
+sint√°cticos de los compiladores no  detectan muchos de los errores que
 cometemos por ser ``legales'' en determinadas circunstancias.\\
 
 Hemos presentado el {\tt  gdb} que es muy util y  potente, de hecho es
 uno de los pocos depuradores  que encontramos para los sistemas linux.
 El  {\tt  gdb}  es  feo,  de  eso  tampoco  hay  duda  y  no  queremos
-que  las cosas  sean tan  poco  amigables. AsÌ  aparecen muchos  otros
+que  las cosas  sean tan  poco  amigables. As√≠  aparecen muchos  otros
 programas que, utilizando  ellos el {\tt gdb}  por nosotros, consiguen
-presentarnos una cara m·s amistosa de este fant·stico depurador. Ahora
-ver·s uno de los m·s laureados, el {\sf Data Display Debugger}.
+presentarnos una cara m√°s amistosa de este fant√°stico depurador. Ahora
+ver√°s uno de los m√°s laureados, el {\sf Data Display Debugger}.
 
 \begin{figure}[hbtp]
 \centering
@@ -138,8 +138,8 @@ Para mostrar el contenido de las  variables lo que tendremos que hacer
 es, como se dice coloquialmente, colocar un {\em watch} a la variable.
 En {\tt ddd} esto  es muy sencillo de hacer y  hay varias maneras, una
 de ellas puede ser  escribir el nombre de la variable  en el cuadro de
-texto que  tenemos justo por  debajo de la barra  de men˙ y  pulsar el
-botÛn de watch que est· al mismo nivel un poco m·s a la derecha:
+texto que  tenemos justo por  debajo de la barra  de men√∫ y  pulsar el
+bot√≥n de watch que est√° al mismo nivel un poco m√°s a la derecha:
 
 \begin{figure}[hbtp]
 \centering
@@ -147,8 +147,8 @@ botÛn de watch que est· al mismo nivel un poco m·s a la derecha:
 \caption{Barra de herramientas}
 \end{figure}
 
-Otra forma de hacerlo quiz· m·s r·pida poner el cursor del ratÛn sobre
-el nombre de la variable en  el cÛdigo fuente, pulsar el boton derecho
+Otra forma de hacerlo quiz√° m√°s r√°pida poner el cursor del rat√≥n sobre
+el nombre de la variable en  el c√≥digo fuente, pulsar el boton derecho
 y escoger la opcion display.
 
 \begin{figure}[hbtp]
@@ -160,27 +160,27 @@ y escoger la opcion display.
 \subsection{Colocar puntos de  ruptura (Breakpoints)}
 \index{Depuradores!puntos de ruptura}
 
-Bueno, ya tenemos un watch de la variable, pero\ldots øque pasa cuando
-pulsamos sobre el botÛn de run? °No vemos nada! Bueno, eso es una
+Bueno, ya tenemos un watch de la variable, pero\ldots ¬øque pasa cuando
+pulsamos sobre el bot√≥n de run? ¬°No vemos nada! Bueno, eso es una
 circunstancia pasajera, vamos a colocar un {\em punto de ruptura} o
 punto de ruptura.
 
-Los puntos de ruptura son lugares donde el depurador har· que nuestro
-programa pare la ejecucuÛn para, de esta manera, analizar detenidamente
+Los puntos de ruptura son lugares donde el depurador har√° que nuestro
+programa pare la ejecucu√≥n para, de esta manera, analizar detenidamente
 el estado de nuestro programa. La manera de colocar un punto de ruptura
-en el {\tt ddd} es simplemente desplazarse hasta la lÌnea donde deseamos
+en el {\tt ddd} es simplemente desplazarse hasta la l√≠nea donde deseamos
 colocar el punto de ruptura y hacer un doble click con el boton
-izquierdo del ratÛn.
+izquierdo del rat√≥n.
 
-Vemos que se nos coloca un sÌmbolo de stop donde hemos hecho el doble
+Vemos que se nos coloca un s√≠mbolo de stop donde hemos hecho el doble
 click, lo que indica que hay un punto de ruptura. Si pulsamos sobre el
 punto de ruptura con el boton derecho vemos que se nos da la opcion
-de desactivarlo, quitarlo y una muy extraÒa de propiedades. La opcion
+de desactivarlo, quitarlo y una muy extra√±a de propiedades. La opcion
 de propiedades hace que nos aparezca un cuadro de dialogo en el cual
-podemos introducir una expresiÛn, Èsta expresiÛn se utiliza para hacer
-que nuestro punto de ruptura sea inteligente y no pare la ejecuciÛn
-siempre que el programa pase por allÌ, sino que solo se parar· cuando
-la expresiÛn se cumpla, por ejemplo, si ponemos el punto de ruptura en
+podemos introducir una expresi√≥n, √©sta expresi√≥n se utiliza para hacer
+que nuestro punto de ruptura sea inteligente y no pare la ejecuci√≥n
+siempre que el programa pase por all√≠, sino que solo se parar√° cuando
+la expresi√≥n se cumpla, por ejemplo, si ponemos el punto de ruptura en
 un bucle con 10.000 iteraciones y nosotros queremos que se pare cuando
 la i (variable que cuenta las iteraciones) llegue a 5000 pues lo que
 hemos de poner en propiedades del punto de ruptura es {\tt i = 5000} y
@@ -193,14 +193,14 @@ interesan.
 \caption{Breakpoints, o puntos de ruptura}
 \end{figure}
 
-\subsection{EjecuciÛn paso a paso}
-\index{Depuradores!ejecuciÛn paso a paso}
+\subsection{Ejecuci√≥n paso a paso}
+\index{Depuradores!ejecuci√≥n paso a paso}
 
 Ahora que ya tienes un watch y un punto de ruptura, en este momento
 solo podemos ir saltanto de punto de ruptura en punto de ruptura, y
-esto no nos es suficiente asÌ que vamos a intentar controlar m·s el
-flujo de ejecuciÛn de nuestros programas. Para esta tarea tenemos varias
-herramientas comunes en la mayorÌa de depuradores, en el caso del dd las
+esto no nos es suficiente as√≠ que vamos a intentar controlar m√°s el
+flujo de ejecuci√≥n de nuestros programas. Para esta tarea tenemos varias
+herramientas comunes en la mayor√≠a de depuradores, en el caso del dd las
 encontramos en una ventana que tenemos flotando sobre el depurador, con
 lo cual no es complicado utilizarlas, siempre las tenemos a mano y son
 las siguientes:
@@ -211,67 +211,67 @@ las siguientes:
 nombre indica, para ejecutar nuestro programa paso a paso. Normalmente
 lo que hacemos es colocar un punto de ruptura al inicio de la funcion o
 procedimiento que queremos analizar y luego ir pulsando {\tt step} para
-analizar sentencia a sentencia que es lo que hace nuesto cÛdigo.}
+analizar sentencia a sentencia que es lo que hace nuesto c√≥digo.}
 
 \item[{\em Next}:]{(siguiente) muy parecida a step, solo que pulsando
-{\tt next} si en el cÛdigo hay una llamada a una funcion o procedimiento
-no entramos en ella, sino que ejecuta Èsta y nos colocamos en la
-siguiente lÌnea del programa.}
+{\tt next} si en el c√≥digo hay una llamada a una funcion o procedimiento
+no entramos en ella, sino que ejecuta √©sta y nos colocamos en la
+siguiente l√≠nea del programa.}
 
 \item[{\em Until}:]{(hasta) esta herramienta nos sirve para ejecutar el
-programa hasta la posiciÛn actual del cursor, es muy parecida a un punto
+programa hasta la posici√≥n actual del cursor, es muy parecida a un punto
 de ruptura temporal.}
 
 \item[{\em Cont}:]{(continuar) saltamos hasta el siguiente punto de
-ruptura o hasta el final del programa si es que no hay ning˙n punto de
-ruptura m·s en el flujo de ejecuciÛn.}
+ruptura o hasta el final del programa si es que no hay ning√∫n punto de
+ruptura m√°s en el flujo de ejecuci√≥n.}
 
 \end{description}
 
-A  parte de  estas  herramientas  tenemos algunas  m·s  que se  suelen
+A  parte de  estas  herramientas  tenemos algunas  m√°s  que se  suelen
 utilizar  menos, por  ejemplo  aquellas que  ejecutan exactamente  una
-instrucciÛn (de cÛdigo m·quina).
+instrucci√≥n (de c√≥digo m√°quina).
 
-\subsection{VisiÛn de punteros}
-\index{Depuradores!visiÛn de punteros}
+\subsection{Visi√≥n de punteros}
+\index{Depuradores!visi√≥n de punteros}
 
 Probablemente estabas deseando que existiera  una cosa como la que vas
 a ver. No te asombres de la  potencia de este depurador, es uno de los
-pocos que lo  hacen y de ahÌ  viene su buena fama. La  capacidad de la
+pocos que lo  hacen y de ah√≠  viene su buena fama. La  capacidad de la
 que hablamos es la de {\em ver} los punteros.
 
-Seguramente has hecho  m·s de un programa con memoria  din·mica que no
-acababa de  funcionar bien porque se  te perdÌan punteros y  no sabias
-muy bien  por donde andaban  o a  dÛnde estaban apuntando,  pues bien,
-esto ya no es excusa para entregar una pr·ctica a medio hacer, el {\tt
+Seguramente has hecho  m√°s de un programa con memoria  din√°mica que no
+acababa de  funcionar bien porque se  te perd√≠an punteros y  no sabias
+muy bien  por donde andaban  o a  d√≥nde estaban apuntando,  pues bien,
+esto ya no es excusa para entregar una pr√°ctica a medio hacer, el {\tt
 ddd} viene en nuestra ayuda  y tenemos la {\em herramienta definitiva}
-para la depuraciÛn con punteros.\\
+para la depuraci√≥n con punteros.\\
 
 Cuando  haces un  watch de  una  estructura (record)  salen todos  los
-campos en un  recuadro y los punteros tambiÈn salen  como otro tipo de
-dato  cualquiera. Cuando  tienes {\tt  \$0}  en la  informaciÛn de  un
+campos en un  recuadro y los punteros tambi√©n salen  como otro tipo de
+dato  cualquiera. Cuando  tienes {\tt  \$0}  en la  informaci√≥n de  un
 puntero quiere  decir que  el puntero  es {\tt  Nil} (nulo),  y cuando
-tenemos un n˙mero  precedido del sÌmbolo {\tt \$} quiere  decir que el
-puntero est· apuntando  a esa zona de memoria, por  lo tanto, podremos
+tenemos un n√∫mero  precedido del s√≠mbolo {\tt \$} quiere  decir que el
+puntero est√° apuntando  a esa zona de memoria, por  lo tanto, podremos
 mostrar el  contenido de esa  zona de memoria. Si  decidimos mostrarla
-aparecer·  otro cuadro,  como  el que  inicialmente  tenÌamos, con  la
-informaciÛn de  la zona de memoria  apuntada por el puntero  que hemos
+aparecer√°  otro cuadro,  como  el que  inicialmente  ten√≠amos, con  la
+informaci√≥n de  la zona de memoria  apuntada por el puntero  que hemos
 decidido expandir  y una  flecha desde el  recuadro original  hasta el
 nuevo, marcada con el nombre del puntero expandido.
 
 De  esta manera  es  muy sencillo  seguir  los punteros  y  ver a  que
-posiciones est·n apuntando, ver si  estamos asignando cosas a punteros
-que son nulos asÌ como que pinta va teniendo la estructura que estamos
+posiciones est√°n apuntando, ver si  estamos asignando cosas a punteros
+que son nulos as√≠ como que pinta va teniendo la estructura que estamos
 construyendo en memoria, lo cual ayuda  mucho a la hora de moverse por
 las estructuras que fabricamos.
 
-Un ejemplo  de lo  que se puede  hacer es mostrar  un ·rbol  para, por
+Un ejemplo  de lo  que se puede  hacer es mostrar  un √°rbol  para, por
 ejemplo, comprobar que todos los  punteros que salen de nuestros nodos
-hoja est·n  a {\tt  Nil} y  de esa manera  asegurarnos de  que nuestro
+hoja est√°n  a {\tt  Nil} y  de esa manera  asegurarnos de  que nuestro
 programa no va a fracasar.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=\textwidth]{imagenes/ddd_punteros.eps}
-\caption{Estructura de un ·rbol binario}
+\caption{Estructura de un √°rbol binario}
 \end{figure}
