@@ -1,192 +1,120 @@
+# LIBRO DEL CURSO DE INTROUCCIÓN A LINUX PARA ALUMNOS
+
+----
+
+Este fichero contiene información de lectura _obligada_ para los  colaboradores y recomendada para los curiosos. Los apartados son:
+
+ - _Contenido_:  
+   : Ficheros contenidos en este directorio/paquete
+ - _Herramientas LaTeX_:  
+   : Programas y utilidades LaTeX necesarias
+ - _Paquetes LaTeX_:  
+   : Paquetes del compilador LaTeX que utilizamos
+ - _Comandos LaTeX_:  
+   : Recordatorio de los comandos LaTeX que utilizamos y para qué los utilizamos
 
 
-			LIBRO DEL CURSO DE INTROUCCIÓN A LINUX PARA ALUMNOS
-			===================================================
-
-	Este fichero contiene información de lectura _obligada_ para los
-	colaboradores y recomendada para los curiosos. Los apartados son:
-
-	- Contenido:			Ficheros contenidos en este directorio/paquete
-	- Herramientas LaTeX:	Programas y utilidades LaTeX necesarias
-	- Paquetes LaTeX:		Paquetes del compilador LaTeX que utilizamos
-	- Comandos LaTeX:		Recordatorio de los comandos LaTeX que
-							utilizamos y para qué los utilizamos
+## Convenciones
+Lee el fichero [presentacion.tex](presentacion.tex), a partir de la línea 285. _SÍ_, _AHORA_.
 
 
-	Convenciones
-	============
-	Lee el fichero presentacion.tex, líneas 218 a 294. SÍ, AHORA.
+Este directorio debería contener (al menos) los ficheros
+
+ - README (Este fichero)
+ - tareas (Fichero donde apuntamos lo que vamos haciendo)
+ - Makefile (Instrucciones para GNU Make)
+ - main.tex (Fichero principal del códgido LaTeX)
+ - cila.sty (Paquete LaTeX (basado en fncychap.sty))
+ - imagenes (Directorio donde pondremos todos los gráficos)
+ - ejemplos (Directorio donde pondremos los ejemplos de código)
+ - portada.tex (Portadas y notas de copyright)
+ - presentacion.tex (Presentación de los apuntes)
+ - contrib.tex (Lista de contribuciones)
+ - introduccion.tex (Capítulo 'Introducción a GNU/Linux')
+ - fdles.tex (Apéndice con la GNU FDL en castellano)
+ - biblio.bib (Base de datos bibliobráfica en formato BIBTeX)
+ - *.tex (Temas de los apuntes, un fichero .tex por tema)
+
+## Herramientas LaTeX
+
+ - _LaTeX_: compilador LaTeX con sus fuentes y paquétes
+ - _BIBTeX_: compilador LaTeX de bibliografías
+ - _MAKEINDEX_: compilador LaTeX de índices terminológicos
+ - _dvips_: convertidor de DVI a PostScript
+ - _ps2pdf_: convertidor de PostScript a PDF
+ - _latex2html_: convertidor de LaTeX a HTML (prescindible)
+
+## Paquetes LaTeX
+
+ - _inputenc_: convierte los caracteres especiales a los comandos LaTex apropiados, lo usaremos con la opción 'utf8x'
+ - _babel_: convierte los nombres de variables al castellano, usándolo con la opción 'spanish'
+ - _fancyheadings_: facilita el uso de cabeceras y pies de página personalizados
+ - _graphicx_: facilita la inclusión de gráficos, con más opciones que el paquete 'graphics'
+ - _psfig_: facilita la manipulación de gráficos PostScript
+ - _eurosym_: permite el uso del símbolo del ¤uro
+ - _makeidx_: combinado con MAKEINDEX lo usaremos para construir el índice terminológico
+ - _html_: permite introducir referencias a páginas web (URLs) que al traducir a HTML resultan en enláces
+ - _color_: Permite usar colores en los formatos PostScript y PDF. Úsenlo con precaución.
+ - _colortbl_: Permite colorear columnas y filas de tablas (PS, PDF). Úsenlo con precaución.
+ - _verbatim_: proporciona potentes usos de entornos verbatim
+ - _cila_: mejora el aspecto de las páginas que abren partes o capítulos (basándose en el paquete FancChapter), demás de definir algunas siglas, longitudes, y constantes. Implementa el entorno para ejemplos y el Índice de ejemplos. Debe ser el último.
 
 
-	Este directorio debería contener (al menos) los ficheros
-	========================================================
+## Chuleta de comandos LaTex utilizados
+`{\sf TextoSinAdornos}` _Cambia el texto al tipo de 'sin adornos'_
 
-	- LEEME				Este fichero
-	- tareas			Fichero donde apuntamos lo que vamos haciendo
-	- Makefile			Instrucciones para GNU Make
-	- main.tex			Fichero principal del códgido LaTeX
-	- cila.sty			Paquete LaTeX (basado en fncychap.sty)
-	- imagenes			Directorio donde pondremos todos los gráficos
-	- ejemplos			Directorio donde pondremos los ejemplos de código
-	- portada.tex		Portadas y notas de copyright
-	- presentacion.tex	Presentación de los apuntes
-	- contrib.tex		Lista de contribuciones
-	- introduccion.tex	Capítulo 'Introducción a GNU/Linux'
-	- fdles.tex			Apéndice con la GNU FDL en castellano
-	- biblio.bib		Base de datos bibliobráfica en formato BIBTeX
-	- *.tex				Temas de los apuntes, un fichero .tex por tema
+`{\tt TextoEnMáquinaDeEscribir}` _Cambia el texto al tipo de 'maquina de escribir'_
 
+`{\bf TextoEnNegrita}` _Cambia el texto al tipo en 'negrita'_
 
-	Herramientas LaTeX
-	==================
+`{\em TextoEnItálica}` _Cambia el texto al tipo 'itálica'_
 
-	- LaTeX				compilador LaTeX con sus fuentes y paquétes
-	- BIBTeX			compilador LaTeX de bibliografías
-	- MAKEINDEX			compilador LaTeX de índices terminológicos
-	- dvips				convertidor de DVI a PostScript
-	- ps2pdf			convertidor de PostScript a PDF
-	- latex2html		convertidor de LaTeX a HTML (prescindible)
+`{\sc TextoEnVersalita}` _Cambia el texto al tipo 'versalita'_
 
+`\GULiC` _Introduce el texto 'Grupo de Usuarios de Linux de Canarias'_
 
+`\CILA` _Introduce el texto 'Curso de Introducción a Linux para Alumnos'_
 
-	Paquetes LaTeX
-	==============
-	
-	- inputenc			convierte los caracteres especiales a los comandos
-						LaTex apropiados, lo usaremos con la opción 'utf8x'
-	- babel				convierte los nombres de variables al castellano,
-						usándolo con la opción 'spanish'
-	- fancyheadings		facilita el uso de cabeceras y pies de página
-						personalizados
-	- graphicx			facilita la inclusión de gráficos, con más opciones
-						que el paquete 'graphics'
-	- psfig				facilita la manipulación de gráficos PostScript
-	- eurosym			permite el uso del símbolo del ¤uro
-	- makeidx			combinado con MAKEINDEX lo usaremos para construir
-						el índice terminológico
-	- html				permite introducir referencias a páginas web (URLs)
-						que al traducir a HTML resultan en enláces
-	- color             Permite usar colores en los formatos PostScript y PDF.
-						Úsenlo con precaución.
-	- colortbl			Permite colorear columnas y filas de tablas (PS, PDF).
-						Úsenlo con precaución.
-	- verbatim			proporciona potentes usos de entornos verbatim
-	- cila				mejora el aspecto de las páginas que abren partes
-						o capítulos (basándose en el paquete FancChapter),
-						demás de definir algunas siglas, longitudes, y 
-						constantes. Implementa el entorno para ejemplos y 
-						el Índice de ejemplos. Debe ser el último.
+`\PILA` _Introduce el texto 'Party de Instalación de Linux para Alumnos'_
 
+`\LaTeX` _Introduce el logotipo de LaTeX_
 
-	Chuleta de comandos LaTex utilizados
-	====================================
-	
-	{\sf TextoSinAdornos}
-		Cambia el texto al tipo de 'sin adornos'
-	
-	{\tt TextoEnMáquinaDeEscribir}
-		Cambia el texto al tipo de 'maquina de escribir'
+`\TeX` _Introduce el logotipo de TeX_
 
-	{\bf TextoEnNegrita}
-		Cambia el texto al tipo en 'negrita'
+`\LyX` _Introduce el logotipo de LyX_
 
-	{\em TextoEnItálica}
-		Cambia el texto al tipo 'itálica'
-	
-	{\sc TextoEnVersalita}
-		Cambia el texto al tipo 'versalita'
-	
-	\GULiC
-		Introduce el texto 'Grupo de Usuarios de Linux de Canarias'
-	
-	\CILA
-		Introduce el texto 'Curso de Introducción a Linux para Alumnos'
-	
-	\PILA
-		Introduce el texto 'Party de Instalación de Linux para Alumnos'
-	
-	\LaTeX
-		Introduce el logotipo de LaTeX
-	
-	\TeX
-		Introduce el logotipo de TeX
-	
-	\LyX
-		Introduce el logotipo de LyX
+`\chapter{NombreCapítulo}` _Comienza un capítulo, no se cierra_
 
-	\chapter{NombreCapítulo}
-		Comienza un capítulo, no se cierra
-	
-	\chapter*{NombreCapítulo}
-		Igual que el anterior, pero no numera el capítulo ni incrementa
-		el contador de capítulo
+`\chapter*{NombreCapítulo}` _Igual que el anterior, pero no numera el capítulo ni incrementa el contador de capítulo_
 
-	\section{NombreSección}
-		Comienza una sección, no se cierra
+`\section{NombreSección}` _Comienza una sección, no se cierra_
 
-	\section*{NombreSección}
-		Igual que el anterior, pero no numera el capítulo ni incrementa
-		el contador de capítulo
+`\section*{NombreSección}` _Igual que el anterior, pero no numera el capítulo ni incrementa el contador de capítulo_
 
-	\subsection{NombreSubsección}
-		Comienza una subsección, no se cierra
+`\subsection{NombreSubsección}` _Comienza una subsección, no se cierra_
 
-	\begin{verbatim}
-		Comienza un entorno en el que el texto se mostrará cal cual
-		sea tecleado. Lo usaremos para código fuente, salidas de un
-		terminal, contenido de ficheros de ejemplo, etc. 
-		Se cierra con \end{verbatim}
+`\begin{verbatim}` _Comienza un entorno en el que el texto se mostrará cal cual sea tecleado. Lo usaremos para código fuente, salidas de un terminal, contenido de ficheros de ejemplo, etc. Se cierra con_ `\end{verbatim}`.
 
-	\begin{ejemplo}{Nombre del fichero}{Descripción corta del ejemplo}
-		Comienza un entorno destinado a mostrar ejemplos, sólo para
-		código fuente de programas. Para usarlo léanse los comentarios
-		del fichero cila.sty (líneas 77 a 104)
-	
-	\begin{itemize}
-		Comienza una lista desordenada (sin números). Los elementos 
-		de la lista se indican con \item y la lista se cierra con 
-		\end{itemize}
+`\begin{ejemplo}{Nombre del fichero}{Descripción corta del ejemplo}` _Comienza un entorno destinado a mostrar ejemplos, sólo para código fuente de programas. Para usarlo léanse los comentarios del fichero [cila.sty](cila.sty) (a partir de la línea 124)_
 
-	\begin{enumerate}
-		Igual que la anterior, pero los elementos se muestran numerados.
-		Se cierra con \end{enumerate}
+`\begin{itemize}` _Comienza una lista desordenada (sin números). Los elementos de la lista se indican con `\item` y la lista se cierra con_ `\end{itemize}`.
 
-	\label{NombreEtiqueta}
-		Etiqueta una posición en el documento, la cual se podrá referenciar
-		con \ref o \pageref
-	
-	\ref{NombreEtiqueta}
-		Introduce una referencia al punto del documento donde se encuentre
-		\label{NombreEtiqueta}
+`\begin{enumerate}` _Igual que la anterior, pero los elementos se muestran numerados. Se cierra con_ `\end{enumerate}`.
 
-	\pageref{NombreEtiqueta}
-		Introduce una referencia a la página del documento donde se
-		encuentre \label{NombreEtiqueta}
+`\label{NombreEtiqueta}` _Etiqueta una posición en el documento, la cual se podrá referenciar con_ `\ref` _o_ `\pageref`.
 
-	\index{NombreEtiqueta}
-		Introduce una referencia para usar en el índice terminológico.
-	
-	\cite{NombreObra}
-		Introduce una referencia a una obra de la bibliografía
+`\ref{NombreEtiqueta}` _Introduce una referencia al punto del documento donde se encuentre_ `\label{NombreEtiqueta}`.
 
-	\begin{quote}
-		Comienza un entorno en el que se incrementan los márgenes
-		laterales, lo usaremos para citas textuales y similares.
-		Se cierra con \end{quote}
+`\pageref{NombreEtiqueta}` _Introduce una referencia a la página del documento donde se encuentre_ `\label{NombreEtiqueta}`.
 
-	\begin{center}
-		Comienza un entorno en el que el texto está centrado y sin 
-		ajustar la longitud de las líneas, se cierra con \end{center}
-	
-	\begin{flushright}
-		Comienza un entorno en el que el texto está ajustado a la
-		derecha, y sin ajustar la longitud de las líneas, se cierra
-		con \end{flushright}
+`\index{NombreEtiqueta}` _Introduce una referencia para usar en el índice terminológico._
 
-	\begin{flushleft}
-		Comienza un entorno en el que el texto está ajustado a la
-		izquierda, y sin ajustar la longitud de las líneas, se cierra
-		con \end{flushleft}
+`\cite{NombreObra}` _Introduce una referencia a una obra de la bibliografía_
 
+`\begin{quote}` _Comienza un entorno en el que se incrementan los márgenes laterales, lo usaremos para citas textuales y similares. Se cierra con_ `\end{quote}`.
 
+`\begin{center}` _Comienza un entorno en el que el texto está centrado y sin ajustar la longitud de las líneas, se cierra con_  `\end{center}`.
 
+`\begin{flushright}` _Comienza un entorno en el que el texto está ajustado a la derecha, y sin ajustar la longitud de las líneas, se cierra con_ `\end{flushright}`.
+
+`\begin{flushleft}` _Comienza un entorno en el que el texto está ajustado a la izquierda, y sin ajustar la longitud de las líneas, se cierra con_ `\end{flushleft}`.
