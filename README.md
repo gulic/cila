@@ -1,18 +1,17 @@
-# LIBRO DEL CURSO DE INTROUCCIÓN A LINUX PARA ALUMNOS
+# LIBRO DEL CURSO DE INTRODUCCIÓN A LINUX PARA ALUMNOS
 
 ----
 
 Este fichero contiene información de lectura _obligada_ para los  colaboradores y recomendada para los curiosos. Los apartados son:
 
  - _Contenido_:  
-   : Ficheros contenidos en este directorio/paquete
+   Ficheros contenidos en este directorio/paquete
  - _Herramientas LaTeX_:  
-   : Programas y utilidades LaTeX necesarias
+   Programas y utilidades LaTeX necesarias
  - _Paquetes LaTeX_:  
-   : Paquetes del compilador LaTeX que utilizamos
+   Paquetes del compilador LaTeX que utilizamos
  - _Comandos LaTeX_:  
-   : Recordatorio de los comandos LaTeX que utilizamos y para qué los utilizamos
-
+   Recordatorio de los comandos LaTeX que utilizamos y para qué los utilizamos
 
 ## Convenciones
 Lee el fichero [presentacion.tex](presentacion.tex), a partir de la línea 285. _SÍ_, _AHORA_.
